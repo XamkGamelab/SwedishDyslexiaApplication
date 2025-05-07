@@ -35,6 +35,11 @@ namespace SwedishApp.Input
                 inputMap.AppControls.Enable();
             }
         }
+        
+        private void OnDestroy()
+        {
+            inputMap?.AppControls.Disable();
+        }
 
         /// <summary>
         /// This method handles invoking events tied to the state of the enter-key
