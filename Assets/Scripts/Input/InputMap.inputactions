@@ -1,0 +1,94 @@
+{
+    "name": "InputMap",
+    "maps": [
+        {
+            "name": "AppControls",
+            "id": "183d2fd7-1b08-4729-b8c3-9d694c3fc3e9",
+            "actions": [
+                {
+                    "name": "TabAction",
+                    "type": "Button",
+                    "id": "bfbfbbf0-8492-4ab9-8bd0-fcb620605359",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "EnterAction",
+                    "type": "Button",
+                    "id": "a1b0bfa9-58b8-429c-ad49-a570145621c3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftAction",
+                    "type": "Button",
+                    "id": "934195a1-b0ac-4ac1-88eb-d6b9ae47b736",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightAction",
+                    "type": "Button",
+                    "id": "45e40b84-7881-437a-917f-7ee07496ec48",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f9c88971-8e36-44bf-8483-d77be7006e4d",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TabAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50d3b9c9-f313-476a-adaf-9285e5f6c1e1",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EnterAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e722b859-1641-4d19-ae80-f23a007e9970",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86fb666b-f23e-42f9-93ab-7a4189c8c255",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
