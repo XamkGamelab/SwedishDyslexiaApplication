@@ -46,7 +46,7 @@ namespace SwedishApp.Input
             }
         }
         
-        private void OnDestroy()
+        private void OnDisable()
         {
             inputMap?.UI.Disable();
         }
