@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 namespace SwedishApp.UI
@@ -18,14 +20,23 @@ namespace SwedishApp.UI
         public event Action LightmodeOnEvent;
         public event Action LightmodeOffEvent;
 
-        //Font size related
+        //Font related
+        [field: SerializeField] public TMP_FontAsset legibleFont { get; private set; }
+        [field: SerializeField] public TMP_FontAsset basicFont { get; private set; }
+        public int legibleSpacing { get; private set; } = 8;
+        public int basicSpacing { get; private set; } = 0;
+        [SerializeField] private Toggle toggleHyperlegible;
         [SerializeField] private Toggle fontSmallToggle;
         [SerializeField] private Toggle fontMediumToggle;
         [SerializeField] private Toggle fontLargeToggle;
         private bool fontSettingsSubscribed = false;
+        public event Action LegibleModeOnEvent;
+        public event Action LegibleModeOffEvent;
         public event Action FontSmallEvent;
         public event Action FontMediumEvent;
         public event Action FontLargeEvent;
+        public event Action FontLegibleEvent;
+        public event Action FontBasicEvent;
 
         enum FontSize
         {
@@ -61,6 +72,18 @@ namespace SwedishApp.UI
             fontSmallToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.small, toggleOn));
             fontMediumToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.medium, toggleOn));
             fontLargeToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.large, toggleOn));
+            toggleHyperlegible.onValueChanged.AddListener((toggleOn) =>
+            {
+                if (toggleOn)
+                {
+                    LegibleModeOnEvent?.Invoke();
+                }
+                else
+                {
+                    LegibleModeOffEvent?.Invoke();
+                }
+            });
+            
             toggleLightmodeBtn.onClick.AddListener(ToggleLightmode);
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
         }

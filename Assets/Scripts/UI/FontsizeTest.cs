@@ -1,14 +1,13 @@
-using SwedishApp.UI;
 using TMPro;
 using UnityEngine;
 
-namespace SwedishApp
+namespace SwedishApp.UI
 {
     public class FontsizeTest : MonoBehaviour
     {
-        int smallSize = 30;
-        int mediumSize = 39;
-        int largeSize = 48;
+        int smallSize = 36;
+        int mediumSize = 46;
+        int largeSize = 56;
 
         [SerializeField] private TextMeshProUGUI testText;
 
@@ -18,6 +17,16 @@ namespace SwedishApp
             UIManager.instance.FontSmallEvent += () => {testText.fontSize = smallSize;};
             UIManager.instance.FontMediumEvent += () => {testText.fontSize = mediumSize;};
             UIManager.instance.FontLargeEvent += () => {testText.fontSize = largeSize;};
+            UIManager.instance.LegibleModeOnEvent += () => 
+            {
+                testText.font = UIManager.instance.legibleFont;
+                testText.characterSpacing = UIManager.instance.legibleSpacing;
+            };
+            UIManager.instance.LegibleModeOffEvent += () =>
+            {
+                testText.font = UIManager.instance.basicFont;
+                testText.characterSpacing = UIManager.instance.basicSpacing;
+            };
         }
     }
 }
