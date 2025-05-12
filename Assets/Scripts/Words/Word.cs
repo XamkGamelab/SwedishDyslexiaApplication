@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace SwedishApp.Words
 {
     [System.Serializable]

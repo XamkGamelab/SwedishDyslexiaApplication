@@ -1,5 +1,8 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using SwedishApp.Words;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -12,13 +15,24 @@ namespace SwedishApp.UI
     /// </summary>
     public class UIManager : MonoBehaviour
     {
+        public TextMeshProUGUI TEST_VERB;
+        public VerbList verbList;
+
         //Singleton
         public static UIManager instance { get; private set; }
 
         //Lightmode related
         public bool LightmodeOn { get; private set; } = false;
+        private bool lightmodeHelper = false;
         public event Action LightmodeOnEvent;
         public event Action LightmodeOffEvent;
+        public readonly Color32 Lightgrey = new(235, 235, 235, 255);
+        public readonly Color32 Darkgrey = new(23, 26, 33, 255);
+        public readonly Color32 LightmodeHighlight = new(1, 111, 185, 255);
+        public readonly Color32 DarkmodeHighlight = new(239, 160, 11, 255);
+        [SerializeField] private Image backgroundImage;
+        [SerializeField] private List<TextMeshProUGUI> lightmodableTexts;
+        [SerializeField] private List<Image> lightmodableImages;
 
         //Font related
         [field: SerializeField] public TMP_FontAsset legibleFont { get; private set; }
@@ -83,9 +97,15 @@ namespace SwedishApp.UI
                     LegibleModeOffEvent?.Invoke();
                 }
             });
-            
+
             toggleLightmodeBtn.onClick.AddListener(ToggleLightmode);
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
+            LightmodeOnEvent += TestVerbOutput;
+            LightmodeOffEvent += TestVerbOutput;
+            LightmodeOnEvent += ToggleBackgroundColor;
+            LightmodeOffEvent += ToggleBackgroundColor;
+
+            TestVerbOutput();
         }
 
         #region lightmode related methods
@@ -97,10 +117,12 @@ namespace SwedishApp.UI
         {
             if (LightmodeOn)
             {
+                LightmodeOn = false;
                 LightmodeOnEvent?.Invoke();
             }
             else
             {
+                LightmodeOn = true;
                 LightmodeOffEvent?.Invoke();
             }
             StartCoroutine(SliderLerp());
@@ -174,15 +196,15 @@ namespace SwedishApp.UI
             toggleLightmodeBtn.interactable = false;
             float timer = 0f;
 
-            if (LightmodeOn)
+            if (lightmodeHelper)
             {
                 while (timer < lerpDuration)
                 {
                     timer += Time.deltaTime;
                     toggledSlider.value = Mathf.Lerp(1f, 0f, timer / lerpDuration);
+                    lightmodeHelper = false;
                     yield return null;
                 }
-                LightmodeOn = false;
             }
             else
             {
@@ -190,14 +212,35 @@ namespace SwedishApp.UI
                 {
                     timer += Time.deltaTime;
                     toggledSlider.value = Mathf.Lerp(0f, 1f, timer / lerpDuration);
+                    lightmodeHelper = true;
                     yield return null;
                 }
-                LightmodeOn = true;
             }
 
             toggleLightmodeBtn.interactable = true;
         }
 
         #endregion
+
+        private void ToggleBackgroundColor()
+        {
+            if (LightmodeOn)
+            {
+                backgroundImage.color = Lightgrey;
+                lightmodableTexts.ForEach((textObject) => textObject.color = Darkgrey);
+                lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
+            }
+            else
+            {
+                backgroundImage.color = Darkgrey;
+                lightmodableTexts.ForEach((textObject) => textObject.color = Lightgrey);
+                lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
+            }
+        }
+
+        private void TestVerbOutput()
+        {
+            TEST_VERB.text = verbList.verbList[0].PastPlusPerfectTenseWord();
+        }
     }
 }
