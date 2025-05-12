@@ -898,7 +898,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &322238875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2080,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2122,6 +2122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7137040be279d4e865220715af5cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fontSmallToggle: {fileID: 770180348}
+  fontMediumToggle: {fileID: 175734907}
+  fontLargeToggle: {fileID: 251087126}
   toggleSettingsBtn: {fileID: 1562606396}
   settingsMenu: {fileID: 967184554}
   toggleLightmodeBtn: {fileID: 840503709}
@@ -2248,7 +2251,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &773041044
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,6 +4008,7 @@ GameObject:
   - component: {fileID: 1477926175}
   - component: {fileID: 1477926177}
   - component: {fileID: 1477926176}
+  - component: {fileID: 1477926178}
   m_Layer: 5
   m_Name: TestText
   m_TagString: Untagged
@@ -4078,8 +4082,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 39
+  m_fontSizeBase: 39
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4130,6 +4134,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477926174}
   m_CullTransparentMesh: 1
+--- !u!114 &1477926178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477926174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45db64ff62a372e4c97fced31d1a135b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testText: {fileID: 1477926176}
 --- !u!1 &1485010302
 GameObject:
   m_ObjectHideFlags: 0
@@ -5583,7 +5600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1955284599
 RectTransform:
   m_ObjectHideFlags: 0
