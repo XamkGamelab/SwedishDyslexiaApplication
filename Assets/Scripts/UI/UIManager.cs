@@ -90,6 +90,9 @@ namespace SwedishApp.UI
 
         #region lightmode related methods
 
+        /// <summary>
+        /// Toggles the light mode off or on and updates the toggle UI accordingly
+        /// </summary>
         private void ToggleLightmode()
         {
             if (LightmodeOn)
@@ -107,11 +110,16 @@ namespace SwedishApp.UI
 
         #region settings related methods
 
+        /// <summary>
+        /// Changes the font size
+        /// </summary>
+        /// <param name="_size"> Changes font size (small, medium or large) </param>
+        /// <param name="_toggledOn"> If _toggledOn = true, check the font size </param>
         private void PickFontSize(FontSize _size, bool _toggledOn)   //font size is an enum, 1=small, 2=medium, 3=large
         {
-            if (!_toggledOn) return;
+            if (!_toggledOn) return; // Doesn't go through the case options
 
-            switch (_size)
+            switch (_size)           // _toggledOn = true
             {
                 case FontSize.small:
                     fontSmallToggle.interactable = false;
@@ -140,6 +148,9 @@ namespace SwedishApp.UI
             }
         }
 
+        /// <summary>
+        /// Toggles settings menu on or off
+        /// </summary>
         private void ToggleSettingsMenu()
         {
             if (settingsOpen)
@@ -154,6 +165,10 @@ namespace SwedishApp.UI
             }
         }
 
+        /// <summary>
+        /// Makes the dark mode toggle slide to the opposite side
+        /// </summary>
+        /// <returns> Yields null to advance to next frame </returns>
         private IEnumerator SliderLerp()
         {
             toggleLightmodeBtn.interactable = false;
