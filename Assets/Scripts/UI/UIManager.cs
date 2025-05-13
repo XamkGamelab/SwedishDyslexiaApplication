@@ -107,15 +107,15 @@ namespace SwedishApp.UI
             if (LightmodeOn)
             {
                 LightmodeOn = false;
-                textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
-                lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
+                textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
+                lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
                 LightmodeOnEvent?.Invoke();
             }
             else
             {
                 LightmodeOn = true;
-                textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
-                lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
+                textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
+                lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
                 LightmodeOffEvent?.Invoke();
             }
             StartCoroutine(SliderLerp());

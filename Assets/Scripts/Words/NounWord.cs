@@ -1,16 +1,26 @@
 using SwedishApp.UI;
+using UnityEngine;
 
 namespace SwedishApp.Words
 {
+    /// <summary>
+    /// This class handles constructing nouns in their various forms while highlighting the
+    /// word's "core".
+    /// </summary>
     [System.Serializable]
     public class NounWord : Word
     {
         public string wordCore = "katt";
+        [Header ("Epämääräinen artikkeli")]
         public string wordGenderStart = "en";
+        [Header ("Määräinen pääte")]
         public string wordGenderEnd = "en";
+        [Header ("Epämääräisen monikon pääte")]
         public string wordPluralEnd = "er";
+        [Tooltip ("Vaatiiko monikko \"flera\" sanan?")]
         public bool fleraPlural = false;
         private readonly string flera = "flera";
+        [Header ("Määräisen monikon pääte")]
         public string wordKnownPluralEnd = "erna";
 
         public string NounWithGenderStart()
