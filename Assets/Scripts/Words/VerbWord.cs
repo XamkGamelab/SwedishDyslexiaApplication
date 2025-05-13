@@ -1,9 +1,11 @@
 using SwedishApp.UI;
 using UnityEngine;
-using UnityEditor;
 
 namespace SwedishApp.Words
 {
+    /// <summary>
+    /// This class handles constructing verbs while highlighting the "core" of the word
+    /// </summary>
     [System.Serializable]
     public class VerbWord : Word
     {
@@ -33,10 +35,11 @@ namespace SwedishApp.Words
         [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string pastPlusPerfectTenseEnd = "it";
 
-        private readonly string colorTagStartDark = "<color=#EFA00B>";
-        private readonly string colorTagStartLight = "<color=#016FB9>";
-        private readonly string colorTagEnd = "</color>";
-
+        /// <summary>
+        /// This outputs the word in its base form with the core highlighted.
+        /// If the verb is irregular, highlight the entire word.
+        /// </summary>
+        /// <returns>Return described above.</returns>
         public string BaseformWord()
         {
             if (baseformIsRegular && UIManager.instance.LightmodeOn)
@@ -57,6 +60,11 @@ namespace SwedishApp.Words
             }
         }
 
+        /// <summary>
+        /// This outputs the word in its current tense with the core highlighted.
+        /// If the verb is irregular, highlight the entire word.
+        /// </summary>
+        /// <returns>Return described above.</returns>
         public string CurrentTenseWord()
         {
             if (currentTenseIsRegular && UIManager.instance.LightmodeOn)
@@ -77,6 +85,11 @@ namespace SwedishApp.Words
             }
         }
 
+        /// <summary>
+        /// This outputs the word in its past tense with the core highlighted.
+        /// If the verb is irregular, highlight the entire word.
+        /// </summary>
+        /// <returns>Return described above.</returns>
         public string PastTenseWord()
         {
             if (pastTenseIsRegular && UIManager.instance.LightmodeOn)
@@ -97,6 +110,11 @@ namespace SwedishApp.Words
             }
         }
 
+        /// <summary>
+        /// This outputs the word in its past perfect tense with the core highlighted.
+        /// If the verb is irregular, highlight the entire word.
+        /// </summary>
+        /// <returns>Return described above.</returns>
         public string PastPerfectTenseWord()
         {
             if (pastPerfectTenseIsRegular && UIManager.instance.LightmodeOn)
@@ -117,6 +135,11 @@ namespace SwedishApp.Words
             }
         }
 
+        /// <summary>
+        /// This outputs the word in its pluperfect past tense with the core highlighted.
+        /// If the verb is irregular, highlight the entire word.
+        /// </summary>
+        /// <returns>Return described above.</returns>
         public string PastPlusPerfectTenseWord()
         {
             if (pastPlusPerfectTenseIsRegular && UIManager.instance.LightmodeOn)

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c0a6a5f7c85924696e5b5e2e53a326, type: 3}
+  m_Name: TestNounList
+  m_EditorClassIdentifier: 
+  nounList:
+  - swedishWord: en katt
+    finnishWord: kissa
+    wordCore: katt
+    wordGenderStart: en
+    wordGenderEnd: en
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordKnownPluralEnd: erna
+  - swedishWord: "\xF6ga"
+    finnishWord: "silm\xE4"
+    wordCore: "\xF6g"
+    wordGenderStart: ett
+    wordGenderEnd: at
+    wordPluralEnd: on
+    fleraPlural: 1
+    wordKnownPluralEnd: onen

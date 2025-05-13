@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: TestVerbList
   m_EditorClassIdentifier: 
   verbList:
-  - wordCore: var
+  - swedishWord: var
+    finnishWord: olla
+    wordCore: var
     baseformIsRegular: 1
     baseformEnd: a
     currentTenseIsRegular: 0
