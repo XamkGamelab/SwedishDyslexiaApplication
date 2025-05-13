@@ -17,6 +17,7 @@ namespace SwedishApp.UI
     {
         public TextMeshProUGUI TEST_VERB;
         public VerbList verbList;
+        public NounList nounList;
 
         //Singleton
         public static UIManager instance { get; private set; }
@@ -31,7 +32,7 @@ namespace SwedishApp.UI
         public readonly Color32 LightmodeHighlight = new(1, 111, 185, 255);
         public readonly Color32 DarkmodeHighlight = new(239, 160, 11, 255);
         [SerializeField] private Image backgroundImage;
-        [SerializeField] private List<TextMeshProUGUI> lightmodableTexts;
+        [SerializeField] private List<TextMeshProUGUI> textObjectList;
         [SerializeField] private List<Image> lightmodableImages;
 
         //Font related
@@ -86,24 +87,12 @@ namespace SwedishApp.UI
             fontSmallToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.small, toggleOn));
             fontMediumToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.medium, toggleOn));
             fontLargeToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.large, toggleOn));
-            toggleHyperlegible.onValueChanged.AddListener((toggleOn) =>
-            {
-                if (toggleOn)
-                {
-                    LegibleModeOnEvent?.Invoke();
-                }
-                else
-                {
-                    LegibleModeOffEvent?.Invoke();
-                }
-            });
+            toggleHyperlegible.onValueChanged.AddListener((toggleOn) => ToggleHyperlegibleFont(toggleOn));
 
             toggleLightmodeBtn.onClick.AddListener(ToggleLightmode);
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
             LightmodeOnEvent += TestVerbOutput;
             LightmodeOffEvent += TestVerbOutput;
-            LightmodeOnEvent += ToggleBackgroundColor;
-            LightmodeOffEvent += ToggleBackgroundColor;
 
             TestVerbOutput();
         }
@@ -118,11 +107,15 @@ namespace SwedishApp.UI
             if (LightmodeOn)
             {
                 LightmodeOn = false;
+                textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
+                lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
                 LightmodeOnEvent?.Invoke();
             }
             else
             {
                 LightmodeOn = true;
+                textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
+                lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
                 LightmodeOffEvent?.Invoke();
             }
             StartCoroutine(SliderLerp());
@@ -131,6 +124,28 @@ namespace SwedishApp.UI
         #endregion
 
         #region settings related methods
+
+        private void ToggleHyperlegibleFont(bool _toggledOn)
+        {
+            if (_toggledOn)
+            {
+                textObjectList.ForEach((textObject) => 
+                {
+                    textObject.font = legibleFont;
+                    textObject.characterSpacing = legibleSpacing;
+                });
+                LegibleModeOnEvent?.Invoke();
+            }
+            else
+            {
+                textObjectList.ForEach((textObject) => 
+                {
+                    textObject.font = basicFont;
+                    textObject.characterSpacing = basicSpacing;
+                });
+                LegibleModeOffEvent?.Invoke();
+            }
+        }
 
         /// <summary>
         /// Changes the font size
@@ -222,25 +237,9 @@ namespace SwedishApp.UI
 
         #endregion
 
-        private void ToggleBackgroundColor()
-        {
-            if (LightmodeOn)
-            {
-                backgroundImage.color = Lightgrey;
-                lightmodableTexts.ForEach((textObject) => textObject.color = Darkgrey);
-                lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
-            }
-            else
-            {
-                backgroundImage.color = Darkgrey;
-                lightmodableTexts.ForEach((textObject) => textObject.color = Lightgrey);
-                lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
-            }
-        }
-
         private void TestVerbOutput()
         {
-            TEST_VERB.text = verbList.verbList[0].PastPlusPerfectTenseWord();
+            TEST_VERB.text = nounList.nounList[1].PluralKnownNoun();
         }
     }
 }

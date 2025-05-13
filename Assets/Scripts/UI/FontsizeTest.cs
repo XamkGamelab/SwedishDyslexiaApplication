@@ -17,16 +17,6 @@ namespace SwedishApp.UI
             UIManager.instance.FontSmallEvent += () => {testText.fontSize = smallSize;};
             UIManager.instance.FontMediumEvent += () => {testText.fontSize = mediumSize;};
             UIManager.instance.FontLargeEvent += () => {testText.fontSize = largeSize;};
-            UIManager.instance.LegibleModeOnEvent += () => 
-            {
-                testText.font = UIManager.instance.legibleFont;
-                testText.characterSpacing = UIManager.instance.legibleSpacing;
-            };
-            UIManager.instance.LegibleModeOffEvent += () =>
-            {
-                testText.font = UIManager.instance.basicFont;
-                testText.characterSpacing = UIManager.instance.basicSpacing;
-            };
         }
     }
 }
