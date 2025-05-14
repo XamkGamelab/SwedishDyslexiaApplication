@@ -38,6 +38,8 @@ namespace SwedishApp.Minigames
         {
             checkWordButton.onClick.AddListener(CheckWord);
             inputReader.SubmitEvent += CheckWord;
+            UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
+            UIManager.instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
         }
 
         // Update is called once per frame
@@ -151,6 +153,24 @@ namespace SwedishApp.Minigames
         {
             wordLetterInputFields.Clear();
             Destroy(wordInputFieldHolder.gameObject);
+            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
+            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToBasicFont;
+        }
+
+        private void SwapFieldsToLegibleFont()
+        {
+            foreach (TMP_InputField inputField in wordLetterInputFields)
+            {
+                inputField.fontAsset = UIManager.instance.legibleFont;
+            }
+        }
+
+        private void SwapFieldsToBasicFont()
+        {
+            foreach (TMP_InputField inputField in wordLetterInputFields)
+            {
+                inputField.fontAsset = UIManager.instance.basicFont;
+            }
         }
     }
 }
