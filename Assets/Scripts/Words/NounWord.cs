@@ -20,7 +20,7 @@ namespace SwedishApp.Words
         public string wordGenderEnd = "en";
         [Header ("Epämääräisen monikon pääte")]
         public string wordPluralEnd = "er";
-        [Tooltip ("Vaatiiko monikko \"flera\" sanan?")]
+            [Tooltip ("Vaatiiko monikko \"flera\" sanan?")]
         public bool fleraPlural = false;
         private readonly string flera = "flera";
         [Header ("Määräisen monikon pääte")]

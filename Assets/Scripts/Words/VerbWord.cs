@@ -9,30 +9,45 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class VerbWord : Word
     {
+        public enum ConjugationClass
+        {
+            I = 1,
+            II,
+            III,
+            IV
+        }
+
+        public ConjugationClass conjugationClass;
+
         public string wordCore = "var";
+
         [Header ("Perusmuoto")]
         public bool baseformIsRegular = true;
-        [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string baseformEnd = "a";
+
         [Header ("Preesens")]
         public bool currentTenseIsRegular = false;
-        [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string currentTenseEnd = "är";
+
         [Header ("Imperfekti")]
         public bool pastTenseIsRegular = true;
-        [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string pastTenseEnd = "";
+
         [Header ("Perfekti")]
         public bool pastPerfectTenseIsRegular = true;
-        [Tooltip ("Please remember to put a space at the end of this string!")]
+            [Tooltip ("Please remember to put a space at the end of this string!")]
         public string pastPerfectTenseStart = "har ";
-        [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string pastPerfectTenseEnd = "it";
+
         [Header ("Pluskvamperfekti")]
         public bool pastPlusPerfectTenseIsRegular = true;
-        [Tooltip ("Please remember to put a space at the end of this string!")]
+            [Tooltip ("Please remember to put a space at the end of this string!")]
         public string pastPlusPerfectTenseStart = "hade ";
-        [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string pastPlusPerfectTenseEnd = "it";
 
         /// <summary>

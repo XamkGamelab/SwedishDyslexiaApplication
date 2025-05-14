@@ -19,6 +19,7 @@ namespace SwedishApp.UI
         public TextMeshProUGUI TEST_VERB;
         public VerbList verbList;
         public NounList nounList;
+        public AdjectiveList adjectiveList;
 
         [Header("Input Related")]
         [SerializeField] private InputReader inputReader;
@@ -261,7 +262,7 @@ namespace SwedishApp.UI
 
         private void TestVerbOutput()
         {
-            TEST_VERB.text = nounList.nounList[1].PluralKnownNoun();
+            TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveSuperlativeDefinitivePlural();
         }
     }
 }

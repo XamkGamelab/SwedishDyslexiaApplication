@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e46bd9483508848bd9906bc184604e, type: 3}
   m_Name: TestAdjectiveList
   m_EditorClassIdentifier: 
-  adjectiveList: []
+  adjectiveList:
+  - swedishWord: varm
+    finnishWord: "l\xE4mmin"
+    wordCore: varm
+    wordDefinitiveEnd: a
+    wordEttEnd: t
+    comparativeIsRegular: 1
+    wordComparativeEnd: are
+    comparativeDefinitiveIsRegular: 1
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: ast
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: aste
