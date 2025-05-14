@@ -252,7 +252,7 @@ namespace SwedishApp.Input
                 {
                     ""name"": """",
                     ""id"": ""1f2c79b5-b975-42d3-be7f-94f8db500da0"",
-                    ""path"": ""*/{Submit}"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
@@ -263,7 +263,7 @@ namespace SwedishApp.Input
                 {
                     ""name"": """",
                     ""id"": ""edeae8d5-76c9-42f3-be7f-32354c755aa9"",
-                    ""path"": ""*/{Cancel}"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
