@@ -10,6 +10,9 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class NounWord : Word
     {
+        [Range(1, 5)]
+        public int declensionClass;
+
         public string wordCore = "katt";
         [Header ("Epämääräinen artikkeli")]
         public string wordGenderStart = "en";
