@@ -1,7 +1,6 @@
 using SwedishApp.UI;
 using UnityEngine;
 
-
 namespace SwedishApp.Words
 {
     /// <summary>
@@ -10,32 +9,36 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class AdjectiveWord : Word
     {
+        // I added an indentation in front of the tooltips for easier legibility
+
         [Header("Perusmuoto")]
         public string wordCore = "varm";
+            [Tooltip ("(e.g. 'a')")]
         public string wordDefinitiveEnd = "a";
+            [Tooltip("(e.g. 't')")]
         public string wordEttEnd = "t";
 
         [Header ("M‰‰r‰llinen muoto")]
-        // I added an indentation in front of the tooltips for easier legibility
-            [Tooltip("Please remember to put a space at the end of this string!")]
-        public string wordDefinitiveStartEn = "den ";
-            [Tooltip("Please remember to put a space at the end of this string!")]
-        public string wordDefinitiveStartEtt = "det ";
-            [Tooltip("Please remember to put a space at the end of this string!")]
-        public string wordDefinitiveStartPlural = "de ";
+        public readonly string wordDefinitiveStartEn = "den ";
+        public readonly string wordDefinitiveStartEtt = "det ";
+        public readonly string wordDefinitiveStartPlural = "de ";
 
         [Header("Komparatiivi")]
+            [Tooltip("Check this box if the word is regular")]
         public bool comparativeIsRegular = true;
             [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string wordComparativeEnd = "are";
+        [Tooltip("Check this box if the word is regular")]
         public bool comparativeDefinitiveIsRegular = true;
 
         [Header("Superlatiivi")]
+            [Tooltip("Check this box if the word is regular")]
         public bool superlativeIsRegular = true;
-            [Tooltip("If this form is irregular, set this variable to be the whole word")]
+            [Tooltip("(e.g. 'ast') If this form is irregular, set this variable to be the whole word")]
         public string wordSuperlativeEnd = "ast";
+            [Tooltip("Check this box if the word is regular")]
         public bool superlativeDefinitiveIsRegular = true;
-            [Tooltip("If this form is irregular, set this variable to be the whole word")]
+            [Tooltip("(e.g. 'aste') If this form is irregular, set this variable to be the whole word")]
         public string wordDefinitiveSuperlativeEnd = "aste";
 
 

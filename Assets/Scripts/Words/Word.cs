@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace SwedishApp.Words
 {
     /// <summary>
@@ -6,6 +8,7 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class Word
     {
+        [Header ("Opeteltava sana")]
         public string swedishWord;
         public string finnishWord;
 
