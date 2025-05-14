@@ -15,6 +15,7 @@ MonoBehaviour:
   verbList:
   - swedishWord: var
     finnishWord: olla
+    conjugationClass: 4
     wordCore: var
     baseformIsRegular: 1
     baseformEnd: a
