@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -42,8 +43,18 @@ namespace SwedishApp.Input
             {
                 inputMap = new();
                 inputMap.UI.SetCallbacks(this);
-                inputMap.UI.Enable();
+                inputMap.UI.Disable();
             }
+        }
+
+        public void EnableInputs()
+        {
+            inputMap.UI.Enable();
+        }
+
+        public void DisableInputs()
+        {
+            inputMap.UI.Disable();
         }
         
         private void OnDisable()

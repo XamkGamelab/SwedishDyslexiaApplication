@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using SwedishApp.Input;
+using SwedishApp.UI;
 using SwedishApp.Words;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SwedishApp.Minigames
 {
@@ -17,19 +19,25 @@ namespace SwedishApp.Minigames
             ToFinnish = 1
         }
 
+        [SerializeField] private InputReader inputReader;
+
         private GameMode? gameMode = null;
         private Stack<Word> words;
         private Word currentWord = null;
 
-        [SerializeField] private GameObject inputFieldHandlerPrefab;
+        [SerializeField] private GameObject translateMinigameBG;
+        [SerializeField] private Button checkWordButton;
+        [SerializeField] private GameObject wordInputFieldHolderPrefab;
         [SerializeField] private GameObject wordLetterInputPrefab;
-        private Transform inputFieldHandlerTransform;
-        private TMP_InputField[] wordLetterInputFields;
+        private Transform wordInputFieldHolder;
+        private InputFieldHandling inputFieldHandler;
+        private List<TMP_InputField> wordLetterInputFields;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-        
+            checkWordButton.onClick.AddListener(CheckWord);
+            inputReader.SubmitEvent += CheckWord;
         }
 
         // Update is called once per frame
@@ -42,12 +50,13 @@ namespace SwedishApp.Minigames
         /// This method sets up relevant variables required to start a game
         /// </summary>
         /// <param name="_wordType">This tells the script what word type will be used for the game</param>
-        /// <param name="_verbList">Give a VerbList object as parameter if setting up a verb translation minigame, otherwise set to null</param>
-        /// <param name="_nounList">Give a NounList object as parameter if setting up a noun translation minigame, otherwise set to null</param>
-        private void StartGame(GameMode _gameMode, List<Word> _words)
+        /// <param name="_words">Give a list of Word-objects as parameter, this is used as the word list for the translation game</param>
+        public void StartGame(GameMode _gameMode, List<Word> _words)
         {
+            translateMinigameBG.SetActive(true);
             gameMode = _gameMode;
             words = new(_words.ToArray());
+            SetupNewWord();
         }
 
         /// <summary>
@@ -65,11 +74,13 @@ namespace SwedishApp.Minigames
                     if (wordLetterInputFields[i].text[0] == currentWord.swedishWord[i])
                     {
                         //THIS LETTER WAS CORRECT, DO WE DO A GREEN LITTLE HIGHLIGHT?
+                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
                         correctLettersCount++;
                     }
                     else
                     {
                         //THIS LETTER WAS INCORRECT, SHOW INDICATOR
+                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
                     }
                 }
                 if (correctLettersCount == currentWord.swedishWord.Length) wordWasCorrect = true;
@@ -81,11 +92,13 @@ namespace SwedishApp.Minigames
                     if (wordLetterInputFields[i].text[0] == currentWord.finnishWord[i])
                     {
                         //THIS LETTER WAS CORRECT, DO WE DO A GREEN LITTLE HIGHLIGHT?
+                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
                         correctLettersCount++;
                     }
                     else
                     {
                         //THIS LETTER WAS INCORRECT, SHOW INDICATOR
+                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
                     }
                 }
                 if (correctLettersCount == currentWord.finnishWord.Length) wordWasCorrect = true;
@@ -103,27 +116,41 @@ namespace SwedishApp.Minigames
         private void SetupNewWord()
         {
             currentWord = words.Pop();
+            wordLetterInputFields = new();
 
-            inputFieldHandlerTransform = Instantiate(inputFieldHandlerPrefab.transform);
+            wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
+            inputFieldHandler = wordInputFieldHolder.GetComponent<InputFieldHandling>();
 
             if (gameMode == GameMode.ToSwedish)
             {
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
-                    wordLetterInputFields[i] = Instantiate(wordLetterInputPrefab, inputFieldHandlerTransform).GetComponent<TMP_InputField>();
-                    wordLetterInputFields[i].GetComponent<InputFieldHandling>().index = i;
+                    int indexHolder = 0;
+                    wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
+                    wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
+                    indexHolder = i;
+                    wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
                 }
             }
             else if (gameMode == GameMode.ToFinnish)
             {
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
-                    wordLetterInputFields[i] = Instantiate(wordLetterInputPrefab, inputFieldHandlerTransform).GetComponent<TMP_InputField>();
-                    wordLetterInputFields[i].GetComponent<InputFieldHandling>().index = i;
+                    int indexHolder = 0;
+                    wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
+                    wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
+                    indexHolder = i;
+                    wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
                 }
             }
 
-            wordLetterInputFields[0].Select();
+            wordLetterInputFields[0].ActivateInputField();
+        }
+
+        private void DeleteOldWord()
+        {
+            wordLetterInputFields.Clear();
+            Destroy(wordInputFieldHolder.gameObject);
         }
     }
 }

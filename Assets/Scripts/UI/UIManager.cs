@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using SwedishApp.Input;
+using SwedishApp.Minigames;
 using SwedishApp.Words;
 using TMPro;
 using UnityEngine;
@@ -15,36 +17,39 @@ namespace SwedishApp.UI
     /// </summary>
     public class UIManager : MonoBehaviour
     {
+        [Header("TEMP")]
         public TextMeshProUGUI TEST_VERB;
         public VerbList verbList;
         public NounList nounList;
 
+        [Header("Input Related")]
+        [SerializeField] private InputReader inputReader;
         //Singleton
         public static UIManager instance { get; private set; }
 
-        //Lightmode related
-        public bool LightmodeOn { get; private set; } = false;
+        [Header("Lightmode Related")]
+        [SerializeField] private Image backgroundImage;
+        [SerializeField] private List<TextMeshProUGUI> textObjectList;
+        [SerializeField] private List<Image> lightmodableImages;
         private bool lightmodeHelper = false;
+        public bool LightmodeOn { get; private set; } = false;
         public event Action LightmodeOnEvent;
         public event Action LightmodeOffEvent;
         public readonly Color32 Lightgrey = new(235, 235, 235, 255);
         public readonly Color32 Darkgrey = new(23, 26, 33, 255);
         public readonly Color32 LightmodeHighlight = new(1, 111, 185, 255);
         public readonly Color32 DarkmodeHighlight = new(239, 160, 11, 255);
-        [SerializeField] private Image backgroundImage;
-        [SerializeField] private List<TextMeshProUGUI> textObjectList;
-        [SerializeField] private List<Image> lightmodableImages;
 
-        //Font related
-        [field: SerializeField] public TMP_FontAsset legibleFont { get; private set; }
-        [field: SerializeField] public TMP_FontAsset basicFont { get; private set; }
-        public int legibleSpacing { get; private set; } = 8;
-        public int basicSpacing { get; private set; } = 0;
+        [Header("Font Related")]
         [SerializeField] private Toggle toggleHyperlegible;
         [SerializeField] private Toggle fontSmallToggle;
         [SerializeField] private Toggle fontMediumToggle;
         [SerializeField] private Toggle fontLargeToggle;
-        private bool fontSettingsSubscribed = false;
+        [field: SerializeField] public TMP_FontAsset legibleFont { get; private set; }
+        [field: SerializeField] public TMP_FontAsset basicFont { get; private set; }
+        public int legibleSpacing { get; private set; } = 8;
+        public int basicSpacing { get; private set; } = 0;
+        // private bool fontSettingsSubscribed = false;
         public event Action LegibleModeOnEvent;
         public event Action LegibleModeOffEvent;
         public event Action FontSmallEvent;
@@ -60,13 +65,20 @@ namespace SwedishApp.UI
             large
         }
 
-        //Settings related
+        [Header("Settings Related")]
         private bool settingsOpen = false;
         [SerializeField] private Button toggleSettingsBtn;
         [SerializeField] private GameObject settingsMenu;
         [SerializeField] private Button toggleLightmodeBtn;
         [SerializeField] private Slider toggledSlider;
         [SerializeField] private float lerpDuration = 0.06f;
+
+        [Header("Minigame Related")]
+        [SerializeField] private Button startTranslateMinigameToFinnish;
+        // [SerializeField] private Button startTranslateMinigameToSwedish;
+        [SerializeField] private TranslateMinigame translateMinigame;
+
+        #region unity default methods
 
         private void Awake()
         {
@@ -94,8 +106,22 @@ namespace SwedishApp.UI
             LightmodeOnEvent += TestVerbOutput;
             LightmodeOffEvent += TestVerbOutput;
 
+            startTranslateMinigameToFinnish.onClick.AddListener(() =>
+                translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList)));
+            // startTranslateMinigameToSwedish.onClick.AddListener(() =>
+            //     translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList)));
+
             TestVerbOutput();
+
+            inputReader.EnableInputs();
         }
+
+        private void OnApplicationQuit()
+        {
+            inputReader.DisableInputs();
+        }
+
+        #endregion
 
         #region lightmode related methods
 
