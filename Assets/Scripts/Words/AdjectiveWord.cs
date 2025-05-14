@@ -40,7 +40,7 @@ namespace SwedishApp.Words
 
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// e.g. "varm" or "stor"
         /// </summary>
         /// <returns>Return described above.</returns>
@@ -57,7 +57,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// e.g. "varmt" or "stort"
         /// </summary>
         /// <returns>Return described above.</returns>
@@ -74,7 +74,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// e.g. "den varma" or "den stora"
         /// </summary>
         /// <returns>Return described above.</returns>
@@ -91,7 +91,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// e.g. "det varma" or "det stora"
         /// </summary>
         /// <returns>Return described above.</returns>
@@ -108,7 +108,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// e.g. "de varma" or "de stora"
         /// </summary>
         /// <returns>Return described above.</returns>
@@ -125,7 +125,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
         /// e.g. "varmare" or "större"
         /// </summary>
@@ -154,7 +154,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
         /// e.g. "den varmare" or "den större"
         /// </summary>
@@ -162,11 +162,11 @@ namespace SwedishApp.Words
         public string AdjectiveComparativeDefinitiveEn()
         {
             // Regular
-            if (comparativeIsRegular && UIManager.instance.LightmodeOn)
+            if (comparativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
             }
-            else if (comparativeIsRegular && !UIManager.instance.LightmodeOn)
+            else if (comparativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
             }
@@ -183,7 +183,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
         /// e.g. "det varmare" or "det större"
         /// </summary>
@@ -191,11 +191,11 @@ namespace SwedishApp.Words
         public string AdjectiveComparativeDefinitiveEtt()
         {
             // Regular
-            if (comparativeIsRegular && UIManager.instance.LightmodeOn)
+            if (comparativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
             }
-            else if (comparativeIsRegular && !UIManager.instance.LightmodeOn)
+            else if (comparativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
             }
@@ -212,7 +212,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
         /// e.g. "de varmare" or "de större"
         /// </summary>
@@ -220,11 +220,11 @@ namespace SwedishApp.Words
         public string AdjectiveComparativeDefinitivePlural()
         {
             // Regular
-            if (comparativeIsRegular && UIManager.instance.LightmodeOn)
+            if (comparativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
             }
-            else if (comparativeIsRegular && !UIManager.instance.LightmodeOn)
+            else if (comparativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
             }
@@ -241,7 +241,7 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
         /// e.g. "varmast" or "störst"
         /// </summary>
@@ -270,19 +270,19 @@ namespace SwedishApp.Words
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
         /// e.g. "den varmaste" or "den största"
         /// </summary>
         /// <returns>Return described above.</returns>
-        public string AdjectiveSuperlativeEn()
+        public string AdjectiveSuperlativeDefinitiveEn()
         {
             // Regular
-            if (superlativeIsRegular && UIManager.instance.LightmodeOn)
+            if (superlativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
             }
-            else if (comparativeIsRegular && !UIManager.instance.LightmodeOn)
+            else if (superlativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
             }
@@ -290,28 +290,28 @@ namespace SwedishApp.Words
             // Irregular
             else if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
             }
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
         /// e.g. "det varmaste" or "det största"
         /// </summary>
         /// <returns>Return described above.</returns>
-        public string AdjectiveSuperlativeEtt()
+        public string AdjectiveSuperlativeDefinitiveEtt()
         {
             // Regular
-            if (superlativeIsRegular && UIManager.instance.LightmodeOn)
+            if (superlativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
             }
-            else if (comparativeIsRegular && !UIManager.instance.LightmodeOn)
+            else if (superlativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
             }
@@ -319,28 +319,28 @@ namespace SwedishApp.Words
             // Irregular
             else if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
             }
         }
 
         /// <summary>
-        /// This outputs the word in its current tense with the core highlighted.
+        /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
         /// e.g. "de varmaste" or "de största"
         /// </summary>
         /// <returns>Return described above.</returns>
-        public string AdjectiveSuperlativePlural()
+        public string AdjectiveSuperlativeDefinitivePlural()
         {
             // Regular
-            if (superlativeIsRegular && UIManager.instance.LightmodeOn)
+            if (superlativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
             }
-            else if (comparativeIsRegular && !UIManager.instance.LightmodeOn)
+            else if (superlativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
             {
                 return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
             }
@@ -348,11 +348,11 @@ namespace SwedishApp.Words
             // Irregular
             else if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
             }
         }
     }
