@@ -1,13 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using SwedishApp.Input;
 using SwedishApp.Minigames;
 using SwedishApp.Words;
 using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 namespace SwedishApp.UI
@@ -56,8 +54,6 @@ namespace SwedishApp.UI
         public event Action FontSmallEvent;
         public event Action FontMediumEvent;
         public event Action FontLargeEvent;
-        public event Action FontLegibleEvent;
-        public event Action FontBasicEvent;
 
         enum FontSize
         {
