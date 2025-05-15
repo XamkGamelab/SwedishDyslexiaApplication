@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using SwedishApp.Input;
 using SwedishApp.Minigames;
 using SwedishApp.Words;
@@ -15,7 +16,7 @@ namespace SwedishApp.UI
     /// </summary>
     public class UIManager : MonoBehaviour
     {
-        [Header("TEMP")]
+        [Header("Word Lists")]
         public TextMeshProUGUI TEST_VERB;
         public VerbList verbList;
         public NounList nounList;
@@ -26,10 +27,17 @@ namespace SwedishApp.UI
         //Singleton
         public static UIManager instance { get; private set; }
 
+        [Header("Minigame Related")]
+        [SerializeField] private Button startTranslationGameToFinnishBtn; 
+        [SerializeField] private Button startTranslationGameToSwedishBtn; 
+        [SerializeField] private TranslateMinigame translateMinigame;
+
         [Header("Lightmode Related")]
         [SerializeField] private Image backgroundImage;
         [SerializeField] private List<TextMeshProUGUI> textObjectList;
         [SerializeField] private List<Image> lightmodableImages;
+        [SerializeField] private List<TextMeshProUGUI> textObjectListReverseLight;
+        [SerializeField] private List<Image> lightmodableImagesReverse;
         private bool lightmodeHelper = false;
         public bool LightmodeOn { get; private set; } = false;
         public event Action LightmodeOnEvent;
@@ -70,11 +78,6 @@ namespace SwedishApp.UI
         [SerializeField] private Slider toggledSlider;
         [SerializeField] private float lerpDuration = 0.06f;
 
-        [Header("Minigame Related")]
-        [SerializeField] private Button startTranslateMinigameToFinnish;
-        // [SerializeField] private Button startTranslateMinigameToSwedish;
-        [SerializeField] private TranslateMinigame translateMinigame;
-
         #region unity default methods
 
         private void Awake()
@@ -103,10 +106,10 @@ namespace SwedishApp.UI
             LightmodeOnEvent += TestVerbOutput;
             LightmodeOffEvent += TestVerbOutput;
 
-            startTranslateMinigameToFinnish.onClick.AddListener(() =>
+            startTranslationGameToFinnishBtn.onClick.AddListener(() =>
                 translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList)));
-            // startTranslateMinigameToSwedish.onClick.AddListener(() =>
-            //     translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList)));
+            startTranslationGameToSwedishBtn.onClick.AddListener(() =>
+                translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList)));
 
             TestVerbOutput();
 
@@ -117,6 +120,12 @@ namespace SwedishApp.UI
         {
             inputReader.DisableInputs();
         }
+
+        #endregion
+
+        #region minigame related methods
+
+
 
         #endregion
 
@@ -132,6 +141,8 @@ namespace SwedishApp.UI
                 LightmodeOn = false;
                 textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
                 lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
+                textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
+                lightmodableImagesReverse.ForEach((textObject) => textObject.color = Lightgrey);
                 LightmodeOnEvent?.Invoke();
             }
             else
@@ -139,9 +150,23 @@ namespace SwedishApp.UI
                 LightmodeOn = true;
                 textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
                 lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
+                textObjectListReverseLight.ForEach((textObject) => textObject.color = Lightgrey);
+                lightmodableImagesReverse.ForEach((textObject) => textObject.color = Darkgrey);
                 LightmodeOffEvent?.Invoke();
             }
             StartCoroutine(SliderLerp());
+        }
+
+        #endregion
+
+        #region word list related methods
+
+        private void ScrambleWordLists()
+        {
+            System.Random rng = new();
+            verbList.verbList = verbList.verbList.OrderBy(a => rng.Next()).ToList();
+            nounList.nounList = nounList.nounList.OrderBy(a => rng.Next()).ToList();
+            adjectiveList.adjectiveList = adjectiveList.adjectiveList.OrderBy(a => rng.Next()).ToList();
         }
 
         #endregion
