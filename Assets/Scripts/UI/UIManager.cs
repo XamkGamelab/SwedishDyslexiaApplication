@@ -16,6 +16,9 @@ namespace SwedishApp.UI
     /// </summary>
     public class UIManager : MonoBehaviour
     {
+        //Singleton
+        public static UIManager instance { get; private set; }
+
         [Header("Word Lists")]
         public TextMeshProUGUI TEST_VERB;
         public VerbList verbList;
@@ -24,8 +27,7 @@ namespace SwedishApp.UI
 
         [Header("Input Related")]
         [SerializeField] private InputReader inputReader;
-        //Singleton
-        public static UIManager instance { get; private set; }
+        private Vector2 mousePos;
 
         [Header("Minigame Related")]
         [SerializeField] private Button startTranslationGameToFinnishBtn; 
@@ -74,6 +76,7 @@ namespace SwedishApp.UI
         private bool settingsOpen = false;
         [SerializeField] private Button toggleSettingsBtn;
         [SerializeField] private GameObject settingsMenu;
+        private RectTransform settingsRect;
         [SerializeField] private Button toggleLightmodeBtn;
         [SerializeField] private Slider toggledSlider;
         [SerializeField] private float lerpDuration = 0.06f;
@@ -96,16 +99,25 @@ namespace SwedishApp.UI
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            settingsRect = settingsMenu.GetComponent<RectTransform>();
+
+            //Add input events
+            inputReader.ClickEvent += ClickOffCloseSettings;
+            inputReader.PointEvent += GetMousePosition;
+
+            //Add listeners to settings-related buttons
             fontSmallToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.small, toggleOn));
             fontMediumToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.medium, toggleOn));
             fontLargeToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.large, toggleOn));
             toggleHyperlegible.onValueChanged.AddListener((toggleOn) => ToggleHyperlegibleFont(toggleOn));
-
             toggleLightmodeBtn.onClick.AddListener(ToggleLightmode);
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
+
+            //Testing light mode effects on verb output
             LightmodeOnEvent += TestVerbOutput;
             LightmodeOffEvent += TestVerbOutput;
 
+            //Add listeners to minigame buttons
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
                 translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList)));
             startTranslationGameToSwedishBtn.onClick.AddListener(() =>
@@ -136,22 +148,23 @@ namespace SwedishApp.UI
         /// </summary>
         private void ToggleLightmode()
         {
-            if (LightmodeOn)
-            {
-                LightmodeOn = false;
-                textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
-                lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
-                textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
-                lightmodableImagesReverse.ForEach((textObject) => textObject.color = Lightgrey);
-                LightmodeOnEvent?.Invoke();
-            }
-            else
+            //Lightmode goes ON here
+            if (!LightmodeOn)
             {
                 LightmodeOn = true;
                 textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
                 lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Lightgrey);
                 lightmodableImagesReverse.ForEach((textObject) => textObject.color = Darkgrey);
+                LightmodeOnEvent?.Invoke();
+            }
+            else
+            {
+                LightmodeOn = false;
+                textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
+                lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
+                textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
+                lightmodableImagesReverse.ForEach((textObject) => textObject.color = Lightgrey);
                 LightmodeOffEvent?.Invoke();
             }
             StartCoroutine(SliderLerp());
@@ -247,6 +260,20 @@ namespace SwedishApp.UI
             {
                 settingsMenu.SetActive(true);
                 settingsOpen = true;
+            }
+        }
+
+        private void GetMousePosition(Vector2 _pos)
+        {
+            mousePos = _pos;
+        }
+
+        private void ClickOffCloseSettings()
+        {
+            if (!RectTransformUtility.RectangleContainsScreenPoint(settingsRect, mousePos))
+            {
+                settingsMenu.SetActive(false);
+                settingsOpen = false;
             }
         }
 

@@ -31,8 +31,11 @@ namespace SwedishApp.Minigames
 
         [Header("Game variables")]
         [SerializeField] private float nextWordDelayTime = 1.5f;
+        private int score = 0;
+        private int activeGameMaxPoints = 0;
 
         [Header("UI related")]
+        [SerializeField] private Button abortGameButton;
         [SerializeField] private GameObject translateMinigameBG;
         [SerializeField] private Button checkWordButton;
         [SerializeField] private GameObject wordInputFieldHolderPrefab;
@@ -43,10 +46,15 @@ namespace SwedishApp.Minigames
         private List<TMP_InputField> wordLetterInputFields;
         private List<TextMeshProUGUI> letterTextRefs;
 
+        [Header("Lightmode Related")]
+        [SerializeField] private Sprite abortSpriteDarkmode;
+        [SerializeField] private Sprite abortSpriteLightmode;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             checkWordButton.onClick.AddListener(CheckWord);
+            abortGameButton.onClick.AddListener(AbortGame);
             inputReader.SubmitEventCancelled += CheckWord;
             inputReader.SubmitEventHeld += DeleteOldWord;
             UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
@@ -69,6 +77,8 @@ namespace SwedishApp.Minigames
             translateMinigameBG.SetActive(true);
             gameMode = _gameMode;
             words = new(_words.ToArray());
+            activeGameMaxPoints = words.Count;
+            abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? abortSpriteLightmode : abortSpriteDarkmode;
             SetupNewWord();
         }
 
@@ -122,6 +132,7 @@ namespace SwedishApp.Minigames
             if (wordWasCorrect)
             {
                 //DO A LITTLE THING IF WORD WAS CORRECT!!!
+                score++;
             }
         }
 
@@ -169,8 +180,8 @@ namespace SwedishApp.Minigames
                 }
             }
 
-            UIManager.instance.LightmodeOnEvent += SetInputBoxesToLightmode;
-            UIManager.instance.LightmodeOffEvent += SetInputBoxesToDarkmode;
+            UIManager.instance.LightmodeOnEvent += ChangeToLightmode;
+            UIManager.instance.LightmodeOffEvent += ChangeToDarkmode;
             wordLetterInputFields[0].ActivateInputField();
         }
 
@@ -186,8 +197,8 @@ namespace SwedishApp.Minigames
             Destroy(wordInputFieldHolder.gameObject);
             UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
             UIManager.instance.LegibleModeOnEvent -= SwapFieldsToBasicFont;
-            UIManager.instance.LightmodeOnEvent -= SetInputBoxesToLightmode;
-            UIManager.instance.LightmodeOffEvent -= SetInputBoxesToDarkmode;
+            UIManager.instance.LightmodeOnEvent -= ChangeToLightmode;
+            UIManager.instance.LightmodeOffEvent -= ChangeToDarkmode;
             wordToTranslateText.text = "";
 
             StartCoroutine(DelayBeforeNewWord());
@@ -205,33 +216,60 @@ namespace SwedishApp.Minigames
             }
             else
             {
-                EndGame();
+                CompleteGame();
             }
         }
 
-        private void EndGame()
+        private void CompleteGame()
         {
             Debug.Log("game completed yippee");
+            translateMinigameBG.SetActive(false);
+        }
+
+        private void AbortGame()
+        {
+            Debug.Log("game aborted");
+
+            //unsubscribe events
+            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
+            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToBasicFont;
+            UIManager.instance.LightmodeOnEvent -= ChangeToLightmode;
+            UIManager.instance.LightmodeOffEvent -= ChangeToDarkmode;
+
+            //clear variables
+            words = new();
+            currentWord = new();
+            wordToTranslateText.text = "";
+            score = 0;
+            activeGameMaxPoints = 0;
+            wordLetterInputFields.Clear();
+            letterTextRefs.Clear();
+
+            //destroy word object, disable translate minigame ui
+            Destroy(wordInputFieldHolder.gameObject);
+            translateMinigameBG.SetActive(false);
         }
 
         #region lightmode related
 
-        private void SetInputBoxesToLightmode()
-        {
-            for (int i = 0; i < wordLetterInputFields.Count; i++)
-            {
-                wordLetterInputFields[i].image.color = UIManager.instance.Lightgrey;
-                letterTextRefs[i].color = UIManager.instance.Darkgrey;
-            }
-        }
-
-        private void SetInputBoxesToDarkmode()
+        private void ChangeToLightmode()
         {
             for (int i = 0; i < wordLetterInputFields.Count; i++)
             {
                 wordLetterInputFields[i].image.color = UIManager.instance.Darkgrey;
                 letterTextRefs[i].color = UIManager.instance.Lightgrey;
             }
+            abortGameButton.image.sprite = abortSpriteLightmode;
+        }
+
+        private void ChangeToDarkmode()
+        {
+            for (int i = 0; i < wordLetterInputFields.Count; i++)
+            {
+                wordLetterInputFields[i].image.color = UIManager.instance.Lightgrey;
+                letterTextRefs[i].color = UIManager.instance.Darkgrey;
+            }
+            abortGameButton.image.sprite = abortSpriteDarkmode;
         }
 
         private void SwapFieldsToLegibleFont()
