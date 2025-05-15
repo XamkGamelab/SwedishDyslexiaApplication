@@ -253,7 +253,7 @@ namespace SwedishApp.Input
                     ""name"": """",
                     ""id"": ""1f2c79b5-b975-42d3-be7f-94f8db500da0"",
                     ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=0.5,pressPoint=0.6)"",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
                     ""action"": ""Submit"",

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using SwedishApp.Input;
 using SwedishApp.UI;
@@ -19,12 +20,19 @@ namespace SwedishApp.Minigames
             ToFinnish = 1
         }
 
+        [Header("Input related")]
         [SerializeField] private InputReader inputReader;
 
         private GameMode? gameMode = null;
         private Stack<Word> words;
         private Word currentWord = null;
+        private bool wordWasChecked = false;
+        private bool canDeleteWord = false;
 
+        [Header("Game variables")]
+        [SerializeField] private float nextWordDelayTime = 1.5f;
+
+        [Header("UI related")]
         [SerializeField] private GameObject translateMinigameBG;
         [SerializeField] private Button checkWordButton;
         [SerializeField] private GameObject wordInputFieldHolderPrefab;
@@ -39,7 +47,8 @@ namespace SwedishApp.Minigames
         void Start()
         {
             checkWordButton.onClick.AddListener(CheckWord);
-            inputReader.SubmitEvent += CheckWord;
+            inputReader.SubmitEventCancelled += CheckWord;
+            inputReader.SubmitEventHeld += DeleteOldWord;
             UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
             UIManager.instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
         }
@@ -69,6 +78,8 @@ namespace SwedishApp.Minigames
         private void CheckWord()
         {
             bool wordWasCorrect = false;
+            wordWasChecked = true;
+            canDeleteWord = true;
             int correctLettersCount = 0;
 
             if (gameMode == GameMode.ToSwedish)
@@ -122,6 +133,7 @@ namespace SwedishApp.Minigames
             currentWord = words.Pop();
             wordLetterInputFields = new();
             letterTextRefs = new();
+            wordWasChecked = false;
 
             wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
             inputFieldHandler = wordInputFieldHolder.GetComponent<InputFieldHandling>();
@@ -164,6 +176,11 @@ namespace SwedishApp.Minigames
 
         private void DeleteOldWord()
         {
+            if (!wordWasChecked) return;
+            if (!canDeleteWord) return;
+            
+            canDeleteWord = false;
+            Debug.Log("delete word called");
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
             Destroy(wordInputFieldHolder.gameObject);
@@ -172,7 +189,32 @@ namespace SwedishApp.Minigames
             UIManager.instance.LightmodeOnEvent -= SetInputBoxesToLightmode;
             UIManager.instance.LightmodeOffEvent -= SetInputBoxesToDarkmode;
             wordToTranslateText.text = "";
+
+            StartCoroutine(DelayBeforeNewWord());
         }
+
+        private IEnumerator DelayBeforeNewWord()
+        {
+            //hit a particle effect or some other thing if wordWasCorrect
+
+            yield return new WaitForSeconds(nextWordDelayTime);
+
+            if (words.Count > 0)
+            {
+                SetupNewWord();
+            }
+            else
+            {
+                EndGame();
+            }
+        }
+
+        private void EndGame()
+        {
+            Debug.Log("game completed yippee");
+        }
+
+        #region lightmode related
 
         private void SetInputBoxesToLightmode()
         {
@@ -207,5 +249,7 @@ namespace SwedishApp.Minigames
                 inputField.fontAsset = UIManager.instance.basicFont;
             }
         }
+
+        #endregion
     }
 }
