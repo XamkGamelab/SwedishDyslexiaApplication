@@ -29,9 +29,11 @@ namespace SwedishApp.Minigames
         [SerializeField] private Button checkWordButton;
         [SerializeField] private GameObject wordInputFieldHolderPrefab;
         [SerializeField] private GameObject wordLetterInputPrefab;
+        [SerializeField] private TextMeshProUGUI wordToTranslateText;
         private Transform wordInputFieldHolder;
         private InputFieldHandling inputFieldHandler;
         private List<TMP_InputField> wordLetterInputFields;
+        private List<TextMeshProUGUI> letterTextRefs;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -119,12 +121,14 @@ namespace SwedishApp.Minigames
         {
             currentWord = words.Pop();
             wordLetterInputFields = new();
+            letterTextRefs = new();
 
             wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
             inputFieldHandler = wordInputFieldHolder.GetComponent<InputFieldHandling>();
 
             if (gameMode == GameMode.ToSwedish)
             {
+                wordToTranslateText.text = currentWord.finnishWord;
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
                     int indexHolder = 0;
@@ -132,10 +136,14 @@ namespace SwedishApp.Minigames
                     wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
                     indexHolder = i;
                     wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+                    letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
+                    wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
+                    letterTextRefs[i].color = UIManager.instance.LightmodeOn ? UIManager.instance.Lightgrey : UIManager.instance.Darkgrey;
                 }
             }
             else if (gameMode == GameMode.ToFinnish)
             {
+                wordToTranslateText.text = currentWord.swedishWord;
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
                     int indexHolder = 0;
@@ -143,18 +151,45 @@ namespace SwedishApp.Minigames
                     wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
                     indexHolder = i;
                     wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+                    letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
+                    wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
+                    letterTextRefs[i].color = UIManager.instance.LightmodeOn ? UIManager.instance.Lightgrey : UIManager.instance.Darkgrey;
                 }
             }
 
+            UIManager.instance.LightmodeOnEvent += SetInputBoxesToLightmode;
+            UIManager.instance.LightmodeOffEvent += SetInputBoxesToDarkmode;
             wordLetterInputFields[0].ActivateInputField();
         }
 
         private void DeleteOldWord()
         {
             wordLetterInputFields.Clear();
+            letterTextRefs.Clear();
             Destroy(wordInputFieldHolder.gameObject);
             UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
             UIManager.instance.LegibleModeOnEvent -= SwapFieldsToBasicFont;
+            UIManager.instance.LightmodeOnEvent -= SetInputBoxesToLightmode;
+            UIManager.instance.LightmodeOffEvent -= SetInputBoxesToDarkmode;
+            wordToTranslateText.text = "";
+        }
+
+        private void SetInputBoxesToLightmode()
+        {
+            for (int i = 0; i < wordLetterInputFields.Count; i++)
+            {
+                wordLetterInputFields[i].image.color = UIManager.instance.Lightgrey;
+                letterTextRefs[i].color = UIManager.instance.Darkgrey;
+            }
+        }
+
+        private void SetInputBoxesToDarkmode()
+        {
+            for (int i = 0; i < wordLetterInputFields.Count; i++)
+            {
+                wordLetterInputFields[i].image.color = UIManager.instance.Darkgrey;
+                letterTextRefs[i].color = UIManager.instance.Lightgrey;
+            }
         }
 
         private void SwapFieldsToLegibleFont()
