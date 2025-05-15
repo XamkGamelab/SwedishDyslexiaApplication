@@ -20,8 +20,10 @@ namespace SwedishApp.Input
         public event Action<Vector2> ScrollEvent;
         public event Action<Vector3> PositionChangeEvent;
         public event Action<Quaternion> RotationChangeEvent;
-        public event Action SubmitEvent;
+        public event Action SubmitEventStarted;
         public event Action SubmitEventCancelled;
+        public event Action SubmitEventHeld;
+        private bool submitWasHeld = false;
         public event Action CancelEvent;
         public event Action CancelEventCancelled;
         public event Action TabEvent;
@@ -69,13 +71,20 @@ namespace SwedishApp.Input
 
         public void OnSubmit(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Performed)
+            if (context.phase == InputActionPhase.Started)
             {
-                SubmitEvent?.Invoke();
+                submitWasHeld = false;
+                SubmitEventStarted?.Invoke();
             }
             else if (context.phase == InputActionPhase.Canceled)
             {
+                if (submitWasHeld == false)
                 SubmitEventCancelled?.Invoke();
+            }
+            else if (context.phase == InputActionPhase.Performed)
+            {
+                submitWasHeld = true;
+                SubmitEventHeld?.Invoke();
             }
         }
 
