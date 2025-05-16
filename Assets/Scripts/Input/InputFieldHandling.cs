@@ -45,12 +45,32 @@ namespace SwedishApp.Input
             if (_input.x < 0)
             {
                 if (index > 0)
-                    holder.GetChild(index - 1).GetComponent<TMP_InputField>().ActivateInputField();
+                {
+                    TMP_InputField nextField = holder.GetChild(index - 1).GetComponent<TMP_InputField>();
+                    if (nextField.interactable)
+                    {
+                        nextField.ActivateInputField();
+                    }
+                    else if (index > 1)
+                    {
+                        holder.GetChild(index - 2).GetComponent<TMP_InputField>().ActivateInputField();
+                    }
+                }
             }
             else if (_input.x > 0)
             {
                 if (index + 1 < holder.childCount)
-                    holder.GetChild(index + 1).GetComponent<TMP_InputField>().ActivateInputField();
+                {
+                    TMP_InputField nextField = holder.GetChild(index + 1).GetComponent<TMP_InputField>();
+                    if (nextField.interactable)
+                    {
+                        nextField.ActivateInputField();
+                    }
+                    else if (index + 2 < holder.childCount)
+                    {
+                        holder.GetChild(index + 2).GetComponent<TMP_InputField>().ActivateInputField();
+                    }
+                }
             }
         }
 
@@ -61,16 +81,38 @@ namespace SwedishApp.Input
         public void GoNextField()
         {
             if (!inputField.IsActive()) return;
-
-            if (inputField.text.Length == 0 && index > 0)
+            if (inputField.text == " ")
             {
-                holder.GetChild(index - 1).GetComponent<TMP_InputField>().ActivateInputField();
+                inputField.text = "";
+                inputField.ActivateInputField();
                 return;
             }
 
-            if (inputField.text.Length == 1 && index + 1 < holder.childCount)
+            if (inputField.text.Length == 0 && index > 0)
             {
-                holder.GetChild(index + 1).GetComponent<TMP_InputField>().ActivateInputField();
+                TMP_InputField nextField = holder.GetChild(index - 1).GetComponent<TMP_InputField>();
+                if (nextField.interactable)
+                {
+                    nextField.ActivateInputField();
+                }
+                else if (index > 1)
+                {
+                    holder.GetChild(index - 2).GetComponent<TMP_InputField>().ActivateInputField();
+                }
+                // holder.GetChild(index - 1).GetComponent<TMP_InputField>().ActivateInputField();
+            }
+            else if (inputField.text.Length == 1 && index + 1 < holder.childCount)
+            {
+                TMP_InputField nextField = holder.GetChild(index + 1).GetComponent<TMP_InputField>();
+                if (nextField.interactable)
+                {
+                    nextField.ActivateInputField();
+                }
+                else if (index + 2 < holder.childCount)
+                {
+                    holder.GetChild(index + 2).GetComponent<TMP_InputField>().ActivateInputField();
+                }
+                // holder.GetChild(index + 1).GetComponent<TMP_InputField>().ActivateInputField();
             }
         }
     }
