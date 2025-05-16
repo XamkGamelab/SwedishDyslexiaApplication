@@ -91,29 +91,42 @@ namespace SwedishApp.Minigames
             wordWasChecked = true;
             canDeleteWord = true;
             int correctLettersCount = 0;
+            int wordLetterCount = 0;
 
             if (gameMode == GameMode.ToSwedish)
             {
-                for (int i = 0; i < currentWord.swedishWord.Length; i++)
+                foreach (char letter in currentWord.swedishWord)
                 {
-                    if (wordLetterInputFields[i].text[0] == currentWord.swedishWord[i])
-                    {
-                        //THIS LETTER WAS CORRECT, DO WE DO A GREEN LITTLE HIGHLIGHT?
-                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
-                        correctLettersCount++;
-                    }
-                    else
-                    {
-                        //THIS LETTER WAS INCORRECT, SHOW INDICATOR
-                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
-                    }
+                    if (letter != ' ')
+                    wordLetterCount++;
                 }
+                for (int i = 0; i < currentWord.swedishWord.Length; i++)
+                    {
+                        if (currentWord.swedishWord[i] == ' ') continue;
+                        if (wordLetterInputFields[i].text[0] == currentWord.swedishWord[i])
+                        {
+                            //THIS LETTER WAS CORRECT, DO WE DO A GREEN LITTLE HIGHLIGHT?
+                            wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
+                            correctLettersCount++;
+                        }
+                        else
+                        {
+                            //THIS LETTER WAS INCORRECT, SHOW INDICATOR
+                            wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
+                        }
+                    }
                 if (correctLettersCount == currentWord.swedishWord.Length) wordWasCorrect = true;
             }
             else if (gameMode == GameMode.ToFinnish)
             {
+                foreach (char letter in currentWord.finnishWord)
+                {
+                    if (letter != ' ')
+                    wordLetterCount++;
+                }
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
+                    if (currentWord.finnishWord[i] == ' ') continue;
                     if (wordLetterInputFields[i].text[0] == currentWord.finnishWord[i])
                     {
                         //THIS LETTER WAS CORRECT, DO WE DO A GREEN LITTLE HIGHLIGHT?
@@ -154,11 +167,15 @@ namespace SwedishApp.Minigames
                 wordToTranslateText.text = currentWord.finnishWord;
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
-                    int indexHolder = 0;
+                    int indexHolder = i;
                     wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
                     wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
-                    indexHolder = i;
                     wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+                    if (currentWord.swedishWord[i] == ' ')
+                    {
+                        wordLetterInputFields[i].image.enabled = false;
+                        wordLetterInputFields[i].interactable = false;
+                    }
                     letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
                     wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
                     letterTextRefs[i].color = UIManager.instance.LightmodeOn ? UIManager.instance.Lightgrey : UIManager.instance.Darkgrey;
@@ -169,11 +186,15 @@ namespace SwedishApp.Minigames
                 wordToTranslateText.text = currentWord.swedishWord;
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
-                    int indexHolder = 0;
+                    int indexHolder = i;
                     wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
                     wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
-                    indexHolder = i;
                     wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+                    if (currentWord.finnishWord[i] == ' ')
+                    {
+                        wordLetterInputFields[i].image.enabled = false;
+                        wordLetterInputFields[i].interactable = false;
+                    }
                     letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
                     wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
                     letterTextRefs[i].color = UIManager.instance.LightmodeOn ? UIManager.instance.Lightgrey : UIManager.instance.Darkgrey;
@@ -191,7 +212,6 @@ namespace SwedishApp.Minigames
             if (!canDeleteWord) return;
             
             canDeleteWord = false;
-            Debug.Log("delete word called");
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
             Destroy(wordInputFieldHolder.gameObject);
