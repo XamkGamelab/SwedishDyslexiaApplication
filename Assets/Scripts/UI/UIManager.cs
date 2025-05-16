@@ -128,6 +128,9 @@ namespace SwedishApp.UI
             inputReader.EnableInputs();
         }
 
+        /// <summary>
+        /// Disable inputs on application quit or Unity yells at me
+        /// </summary>
         private void OnApplicationQuit()
         {
             inputReader.DisableInputs();
@@ -144,7 +147,8 @@ namespace SwedishApp.UI
         #region lightmode related methods
 
         /// <summary>
-        /// Toggles the light mode off or on and updates the toggle UI accordingly
+        /// Toggles the light mode on or off and updates the toggle UI accordingly. This also invokes an
+        /// event that can be used elsewhere to handle changes related to light mode changes.
         /// </summary>
         private void ToggleLightmode()
         {
@@ -174,6 +178,9 @@ namespace SwedishApp.UI
 
         #region word list related methods
 
+        /// <summary>
+        /// This method can be used to randomize the contents of the word lists
+        /// </summary>
         private void ScrambleWordLists()
         {
             System.Random rng = new();
@@ -263,13 +270,21 @@ namespace SwedishApp.UI
             }
         }
 
+        /// <summary>
+        /// This method fetches the mouse position based on the input reader
+        /// </summary>
+        /// <param name="_pos">Vector2 indicating the position of the mouse</param>
         private void GetMousePosition(Vector2 _pos)
         {
             mousePos = _pos;
         }
 
+        /// <summary>
+        /// When the player clicks outside of the settings window while it's active, it gets deactivated.
+        /// </summary>
         private void ClickOffCloseSettings()
         {
+            if (!settingsOpen) return;
             if (!RectTransformUtility.RectangleContainsScreenPoint(settingsRect, mousePos))
             {
                 settingsMenu.SetActive(false);
@@ -312,6 +327,9 @@ namespace SwedishApp.UI
 
         #endregion
 
+        /// <summary>
+        /// Temporary method, used for testing word outputs
+        /// </summary>
         private void TestVerbOutput()
         {
             TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveSuperlativeDefinitivePlural();
