@@ -15,6 +15,7 @@ MonoBehaviour:
   nounList:
   - swedishWord: en katt
     finnishWord: kissa
+    enOrEtt: 1
     declensionClass: 3
     wordCore: katt
     wordGenderStart: en
@@ -24,6 +25,7 @@ MonoBehaviour:
     wordKnownPluralEnd: erna
   - swedishWord: "\xF6ga"
     finnishWord: "silm\xE4"
+    enOrEtt: 2
     declensionClass: 5
     wordCore: "\xF6g"
     wordGenderStart: ett

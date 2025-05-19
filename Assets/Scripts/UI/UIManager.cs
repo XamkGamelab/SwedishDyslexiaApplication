@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using SwedishApp.Core;
 using SwedishApp.Input;
 using SwedishApp.Minigames;
 using SwedishApp.Words;
@@ -18,6 +19,7 @@ namespace SwedishApp.UI
     {
         //Singleton
         public static UIManager instance { get; private set; }
+        private AudioManager _audioManager;
 
         [Header("Word Lists")]
         public TextMeshProUGUI TEST_VERB;
@@ -25,16 +27,16 @@ namespace SwedishApp.UI
         public NounList nounList;
         public AdjectiveList adjectiveList;
 
-        [Header("Input Related")]
+        [Header("Input-Related")]
         [SerializeField] private InputReader inputReader;
         private Vector2 mousePos;
 
-        [Header("Minigame Related")]
+        [Header("Minigame-Related")]
         [SerializeField] private Button startTranslationGameToFinnishBtn;
         [SerializeField] private Button startTranslationGameToSwedishBtn;
         [SerializeField] private TranslateMinigame translateMinigame;
 
-        [Header("Lightmode Related")]
+        [Header("Lightmode-Related")]
         [SerializeField] private Image backgroundImage;
         [SerializeField] private List<TextMeshProUGUI> textObjectList;
         [SerializeField] private List<Image> lightmodableImages;
@@ -49,7 +51,7 @@ namespace SwedishApp.UI
         public readonly Color32 LightmodeHighlight = new(1, 111, 185, 255);
         public readonly Color32 DarkmodeHighlight = new(239, 160, 11, 255);
 
-        [Header("Font Related")]
+        [Header("Font-Related")]
         [SerializeField] private Toggle toggleHyperlegible;
         [SerializeField] private Toggle fontSmallToggle;
         [SerializeField] private Toggle fontMediumToggle;
@@ -65,7 +67,7 @@ namespace SwedishApp.UI
         public event Action FontMediumEvent;
         public event Action FontLargeEvent;
 
-        [Header("Credits Related")]
+        [Header("Credits-Related")]
         [SerializeField] private GameObject creditsScreen;
         [SerializeField] private Button openCreditsButton;
         [SerializeField] private Button closeCreditsButton;
@@ -77,7 +79,7 @@ namespace SwedishApp.UI
             large
         }
 
-        [Header("Settings Related")]
+        [Header("Settings-Related")]
         private bool settingsOpen = false;
         [SerializeField] private Button toggleSettingsBtn;
         [SerializeField] private GameObject settingsMenu;
@@ -104,6 +106,9 @@ namespace SwedishApp.UI
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            _audioManager = FindAnyObjectByType<AudioManager>();
+            if (_audioManager == null) Debug.LogError("_audioManager is NULL");
+
             settingsRect = settingsMenu.GetComponent<RectTransform>();
 
             //Add input events
@@ -147,13 +152,13 @@ namespace SwedishApp.UI
 
         #endregion
 
-        #region minigame related methods
+        #region minigame-related methods
 
 
 
         #endregion
 
-        #region lightmode related methods
+        #region lightmode-related methods
 
         /// <summary>
         /// Toggles the light mode on or off and updates the toggle UI accordingly. This also invokes an
@@ -165,6 +170,7 @@ namespace SwedishApp.UI
             if (!LightmodeOn)
             {
                 LightmodeOn = true;
+                _audioManager.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
                 lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Lightgrey);
@@ -174,6 +180,7 @@ namespace SwedishApp.UI
             else
             {
                 LightmodeOn = false;
+                _audioManager.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
                 lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
@@ -185,7 +192,7 @@ namespace SwedishApp.UI
 
         #endregion
 
-        #region word list related methods
+        #region word list-related methods
 
         /// <summary>
         /// This method can be used to randomize the contents of the word lists
@@ -200,7 +207,7 @@ namespace SwedishApp.UI
 
         #endregion
 
-        #region settings related methods
+        #region settings-related methods
 
         private void ToggleHyperlegibleFont(bool _toggledOn)
         {
