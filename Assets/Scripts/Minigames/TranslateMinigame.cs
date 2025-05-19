@@ -61,14 +61,8 @@ namespace SwedishApp.Minigames
             UIManager.instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-
         /// <summary>
-        /// This method sets up relevant variables required to start a game
+        /// This method sets up relevant variables required to start a game and calls the method to set up the first word
         /// </summary>
         /// <param name="_wordType">This tells the script what word type will be used for the game</param>
         /// <param name="_words">Give a list of Word-objects as parameter, this is used as the word list for the translation game</param>
@@ -78,7 +72,13 @@ namespace SwedishApp.Minigames
             gameMode = _gameMode;
             words = new(_words.ToArray());
             activeGameMaxPoints = words.Count;
+
+            //Abort game button's sprite is set according to if light mode is on
             abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? abortSpriteLightmode : abortSpriteDarkmode;
+
+            //And make abort button react to light mode changes!
+            UIManager.instance.LightmodeOnEvent += ChangeAbortButtonToLightmode;
+            UIManager.instance.LightmodeOffEvent += ChangeAbortButtonToDarkmode;
             SetupNewWord();
         }
 
@@ -93,49 +93,55 @@ namespace SwedishApp.Minigames
             int correctLettersCount = 0;
             int wordLetterCount = 0;
 
+            //If the gamemode is set to translate into swedish
             if (gameMode == GameMode.ToSwedish)
             {
+                //Grab the amount of valid letters in the swedish word
                 foreach (char letter in currentWord.swedishWord)
                 {
                     if (letter != ' ')
-                    wordLetterCount++;
+                        wordLetterCount++;
                 }
+                //For every letter in the word, set a highlight depending if the letter was correct or not
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
-                    {
-                        if (currentWord.swedishWord[i] == ' ') continue;
-                        if (wordLetterInputFields[i].text[0] == currentWord.swedishWord[i])
-                        {
-                            //THIS LETTER WAS CORRECT, DO WE DO A GREEN LITTLE HIGHLIGHT?
-                            wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
-                            correctLettersCount++;
-                        }
-                        else
-                        {
-                            //THIS LETTER WAS INCORRECT, SHOW INDICATOR
-                            wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
-                        }
-                    }
-                if (correctLettersCount == currentWord.swedishWord.Length) wordWasCorrect = true;
-            }
-            else if (gameMode == GameMode.ToFinnish)
-            {
-                foreach (char letter in currentWord.finnishWord)
                 {
-                    if (letter != ' ')
-                    wordLetterCount++;
-                }
-                for (int i = 0; i < currentWord.finnishWord.Length; i++)
-                {
-                    if (currentWord.finnishWord[i] == ' ') continue;
-                    if (wordLetterInputFields[i].text[0] == currentWord.finnishWord[i])
+                    if (currentWord.swedishWord[i] == ' ') continue;
+                    if (wordLetterInputFields[i].text[0] == currentWord.swedishWord[i])
                     {
-                        //THIS LETTER WAS CORRECT, DO WE DO A GREEN LITTLE HIGHLIGHT?
+                        //This is the 'correct' indicator
                         wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
                         correctLettersCount++;
                     }
                     else
                     {
-                        //THIS LETTER WAS INCORRECT, SHOW INDICATOR
+                        //This is the 'incorrect' indicator
+                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+                if (correctLettersCount == currentWord.swedishWord.Length) wordWasCorrect = true;
+            }
+            //If the gamemode is set to translate into finnish
+            else if (gameMode == GameMode.ToFinnish)
+            {
+                //Grab the amount of valid letters in the finnish word
+                foreach (char letter in currentWord.finnishWord)
+                {
+                    if (letter != ' ')
+                        wordLetterCount++;
+                }
+                //For every letter in the word, set a highlight depending on if the letter was correct or not
+                for (int i = 0; i < currentWord.finnishWord.Length; i++)
+                {
+                    if (currentWord.finnishWord[i] == ' ') continue;
+                    if (wordLetterInputFields[i].text[0] == currentWord.finnishWord[i])
+                    {
+                        //This is the 'correct' indicator
+                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
+                        correctLettersCount++;
+                    }
+                    else
+                    {
+                        //This is the 'incorrect' indicator
                         wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
                     }
                 }
@@ -159,71 +165,103 @@ namespace SwedishApp.Minigames
             letterTextRefs = new();
             wordWasChecked = false;
 
+            //Setup a new holder for all the individual input fields
             wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
             inputFieldHandler = wordInputFieldHolder.GetComponent<InputFieldHandling>();
 
+            //If the gamemode is set to translate into swedish
             if (gameMode == GameMode.ToSwedish)
             {
+                //Show the word to be translated
                 wordToTranslateText.text = currentWord.finnishWord;
+
+                //Create an input field for every letter of the word
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
                     int indexHolder = i;
                     wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
+
+                    //Add listeners to input fields. These are used for navigating between each input field of the word
                     wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
                     wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+
+                    //If the letter in the word is a space, disable visuals and make input field unable to be interacted with
                     if (currentWord.swedishWord[i] == ' ')
                     {
                         wordLetterInputFields[i].image.enabled = false;
                         wordLetterInputFields[i].interactable = false;
                     }
+
+                    //Save references to the text slot of each input field, used when changing font settings!
                     letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
+
+                    //Set initial input field background and font colors based on if light mode is enabled or not
                     wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
                     letterTextRefs[i].color = UIManager.instance.LightmodeOn ? UIManager.instance.Lightgrey : UIManager.instance.Darkgrey;
                 }
             }
+            //If the gamemode is set to translate into finnish
             else if (gameMode == GameMode.ToFinnish)
             {
+                //Show the word to be translated
                 wordToTranslateText.text = currentWord.swedishWord;
+
+                //Create an input field for every letter of the word
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
                     int indexHolder = i;
                     wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
+
+                    //Add listeners to input fields. These are used for navigating between each input field of the word
                     wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
                     wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+
+                    //If the letter in the word is a space, disable visuals and make input field unable to be interacted with
                     if (currentWord.finnishWord[i] == ' ')
                     {
                         wordLetterInputFields[i].image.enabled = false;
                         wordLetterInputFields[i].interactable = false;
                     }
+
+                    //Save references to the text slot of each input field, used when changing font settings!
                     letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
+
+                    //Set initial input field background and font colors based on if light mode is enabled or not
                     wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
                     letterTextRefs[i].color = UIManager.instance.LightmodeOn ? UIManager.instance.Lightgrey : UIManager.instance.Darkgrey;
                 }
             }
 
-            UIManager.instance.LightmodeOnEvent += ChangeToLightmode;
-            UIManager.instance.LightmodeOffEvent += ChangeToDarkmode;
+            UIManager.instance.LightmodeOnEvent += ChangeInputFieldsToLightmode;
+            UIManager.instance.LightmodeOffEvent += ChangeInputFieldsToDarkmode;
             wordLetterInputFields[0].ActivateInputField();
         }
 
+        /// <summary>
+        /// Ran when going to next word. Clears word-related variables and unsubscribes events related to fonts
+        /// </summary>
         private void DeleteOldWord()
         {
             if (!wordWasChecked) return;
             if (!canDeleteWord) return;
-            
+
             canDeleteWord = false;
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
             Destroy(wordInputFieldHolder.gameObject);
             UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
-            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToBasicFont;
-            UIManager.instance.LightmodeOnEvent -= ChangeToLightmode;
-            UIManager.instance.LightmodeOffEvent -= ChangeToDarkmode;
+            UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
+            UIManager.instance.LightmodeOnEvent -= ChangeInputFieldsToLightmode;
+            UIManager.instance.LightmodeOffEvent -= ChangeInputFieldsToDarkmode;
             wordToTranslateText.text = "";
 
             StartCoroutine(DelayBeforeNewWord());
         }
 
+        /// <summary>
+        /// This delays the appearance of the new word by a set amount, should help with juiciness later
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator DelayBeforeNewWord()
         {
             //hit a particle effect or some other thing if wordWasCorrect
@@ -240,23 +278,32 @@ namespace SwedishApp.Minigames
             }
         }
 
+        /// <summary>
+        /// This handles whatever we decide to do when a game is completed
+        /// </summary>
         private void CompleteGame()
         {
             Debug.Log("game completed yippee");
             translateMinigameBG.SetActive(false);
         }
 
+        /// <summary>
+        /// This method interrupts the game without finishing it. Events are unsubscribed, variables cleared,
+        /// word holder is destroyed, and the minigame screen is set inactive.
+        /// </summary>
         private void AbortGame()
         {
             Debug.Log("game aborted");
 
-            //unsubscribe events
+            //Unsubscribe events
             UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
-            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToBasicFont;
-            UIManager.instance.LightmodeOnEvent -= ChangeToLightmode;
-            UIManager.instance.LightmodeOffEvent -= ChangeToDarkmode;
+            UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
+            UIManager.instance.LightmodeOnEvent -= ChangeInputFieldsToLightmode;
+            UIManager.instance.LightmodeOffEvent -= ChangeInputFieldsToDarkmode;
+            UIManager.instance.LightmodeOnEvent -= ChangeAbortButtonToLightmode;
+            UIManager.instance.LightmodeOffEvent -= ChangeAbortButtonToDarkmode;
 
-            //clear variables
+            //Clear variables
             words = new();
             currentWord = new();
             wordToTranslateText.text = "";
@@ -265,33 +312,56 @@ namespace SwedishApp.Minigames
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
 
-            //destroy word object, disable translate minigame ui
+            //Destroy word object, disable translate minigame ui
             Destroy(wordInputFieldHolder.gameObject);
             translateMinigameBG.SetActive(false);
         }
 
         #region lightmode related
 
-        private void ChangeToLightmode()
+        /// <summary>
+        /// This method handles changing the abort button to be visible when light mode is toggled on
+        /// </summary>
+        private void ChangeAbortButtonToLightmode()
+        {
+            abortGameButton.image.sprite = abortSpriteLightmode;
+        }
+
+        /// <summary>
+        /// This method handles changing the abort button to be visible when light mode is toggled off
+        /// </summary>
+        private void ChangeAbortButtonToDarkmode()
+        {
+            abortGameButton.image.sprite = abortSpriteDarkmode;
+        }
+
+        /// <summary>
+        /// This method handles changing the word's input fields to be visible when light mode is toggled on
+        /// </summary>
+        private void ChangeInputFieldsToLightmode()
         {
             for (int i = 0; i < wordLetterInputFields.Count; i++)
             {
                 wordLetterInputFields[i].image.color = UIManager.instance.Darkgrey;
                 letterTextRefs[i].color = UIManager.instance.Lightgrey;
             }
-            abortGameButton.image.sprite = abortSpriteLightmode;
         }
 
-        private void ChangeToDarkmode()
+        /// <summary>
+        /// This method handles changing the word's input fields to be visible when light mode is toggled off
+        /// </summary>
+        private void ChangeInputFieldsToDarkmode()
         {
             for (int i = 0; i < wordLetterInputFields.Count; i++)
             {
                 wordLetterInputFields[i].image.color = UIManager.instance.Lightgrey;
                 letterTextRefs[i].color = UIManager.instance.Darkgrey;
             }
-            abortGameButton.image.sprite = abortSpriteDarkmode;
         }
 
+        /// <summary>
+        /// This method handles changing the word's input fields to the activated font
+        /// </summary>
         private void SwapFieldsToLegibleFont()
         {
             foreach (TMP_InputField inputField in wordLetterInputFields)
@@ -300,6 +370,9 @@ namespace SwedishApp.Minigames
             }
         }
 
+        /// <summary>
+        /// This method handles changing the word's input fields to the activated font
+        /// </summary>
         private void SwapFieldsToBasicFont()
         {
             foreach (TMP_InputField inputField in wordLetterInputFields)

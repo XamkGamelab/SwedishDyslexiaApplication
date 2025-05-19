@@ -34,7 +34,7 @@ namespace SwedishApp.Input
 
         /// <summary>
         /// This method navigates between input fields based on the input events, taking into account
-        /// the index limits.
+        /// the index limits. If the next field is space, it's not interactable and is skipped.
         /// </summary>
         /// <param name="_input">This parameter is received from the input event which invokes
         /// this method</param>
@@ -42,30 +42,38 @@ namespace SwedishApp.Input
         {
             if (!inputField.IsActive()) return;
 
+            //If moving left
             if (_input.x < 0)
             {
+                //And there is space to move left
                 if (index > 0)
                 {
                     TMP_InputField nextField = holder.GetChild(index - 1).GetComponent<TMP_InputField>();
+                    //And the next field is interactable, set it active
                     if (nextField.interactable)
                     {
                         nextField.ActivateInputField();
                     }
+                    //Or if the next field is not interactable and there is space, skip it
                     else if (index > 1)
                     {
                         holder.GetChild(index - 2).GetComponent<TMP_InputField>().ActivateInputField();
                     }
                 }
             }
+            //If moving right
             else if (_input.x > 0)
             {
+                //And there is space to move right
                 if (index + 1 < holder.childCount)
                 {
                     TMP_InputField nextField = holder.GetChild(index + 1).GetComponent<TMP_InputField>();
+                    //And the next field is interactable, set it active
                     if (nextField.interactable)
                     {
                         nextField.ActivateInputField();
                     }
+                    //Or if the next field is not interactable and there is space, skip it
                     else if (index + 2 < holder.childCount)
                     {
                         holder.GetChild(index + 2).GetComponent<TMP_InputField>().ActivateInputField();
@@ -77,6 +85,7 @@ namespace SwedishApp.Input
         /// <summary>
         /// This method is called when an input field's value is changed, and is used to go to either
         /// the next input field or the previous one, depending if the field was cleared or filled.
+        /// If the next field is space, it's not interactable and is skipped.
         /// </summary>
         public void GoNextField()
         {
@@ -88,31 +97,35 @@ namespace SwedishApp.Input
                 return;
             }
 
+            //Go to previous valid input field if the current field was cleared
             if (inputField.text.Length == 0 && index > 0)
             {
                 TMP_InputField nextField = holder.GetChild(index - 1).GetComponent<TMP_InputField>();
+                //If next field is interactable, set it active
                 if (nextField.interactable)
                 {
                     nextField.ActivateInputField();
                 }
+                //Else, if there is enough space and the input field is not interactable, skip it
                 else if (index > 1)
                 {
                     holder.GetChild(index - 2).GetComponent<TMP_InputField>().ActivateInputField();
                 }
-                // holder.GetChild(index - 1).GetComponent<TMP_InputField>().ActivateInputField();
             }
+            //Go to next valid input field if the current field was filled
             else if (inputField.text.Length == 1 && index + 1 < holder.childCount)
             {
                 TMP_InputField nextField = holder.GetChild(index + 1).GetComponent<TMP_InputField>();
+                //If next field is interactable, set it active
                 if (nextField.interactable)
                 {
                     nextField.ActivateInputField();
                 }
+                //If next field was not interactable and there is space, skip and activate next field
                 else if (index + 2 < holder.childCount)
                 {
                     holder.GetChild(index + 2).GetComponent<TMP_InputField>().ActivateInputField();
                 }
-                // holder.GetChild(index + 1).GetComponent<TMP_InputField>().ActivateInputField();
             }
         }
     }
