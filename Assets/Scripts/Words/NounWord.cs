@@ -1,5 +1,6 @@
 using SwedishApp.UI;
 using UnityEngine;
+using static SwedishApp.Words.VerbWord;
 
 namespace SwedishApp.Words
 {
@@ -10,6 +11,14 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class NounWord : Word
     {
+        public enum EnOrEtt
+        {
+            en = 1, 
+            ett = 2
+        }
+
+        public EnOrEtt enOrEtt;
+
         [Range(1, 5)]
         public int declensionClass;
 
