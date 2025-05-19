@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 4c72df6f9ae10ff489150a1f7d2c6829
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4640734427557798527
+    second: XGS_logo_official_pos-1-1-1024x1024_0
+  - first:
+      213: -4301708625708039821
+    second: XGS_logo_official_pos-1-1-1024x1024_1
+  - first:
+      213: 7508321802964827882
+    second: XGS_logo_official_pos-1-1-1024x1024_2
+  - first:
+      213: -7165417346783449233
+    second: XGS_logo_official_pos-1-1-1024x1024_3
+  - first:
+      213: -4022440766245070496
+    second: XGS_logo_official_pos-1-1-1024x1024_4
+  - first:
+      213: 4590818882280950945
+    second: XGS_logo_official_pos-1-1-1024x1024_5
+  - first:
+      213: -2935288424290248604
+    second: XGS_logo_official_pos-1-1-1024x1024_6
+  - first:
+      213: 5480344852584634652
+    second: XGS_logo_official_pos-1-1-1024x1024_7
+  - first:
+      213: -7194501725098654317
+    second: XGS_logo_official_pos-1-1-1024x1024_8
+  - first:
+      213: -6096113557803389661
+    second: XGS_logo_official_pos-1-1-1024x1024_9
+  - first:
+      213: -8944283587117901486
+    second: XGS_logo_official_pos-1-1-1024x1024_10
+  - first:
+      213: -4166299342518151211
+    second: XGS_logo_official_pos-1-1-1024x1024_11
+  - first:
+      213: 8931485009807416499
+    second: XGS_logo_official_pos-1-1-1024x1024_12
+  - first:
+      213: -1548619710202943662
+    second: XGS_logo_official_pos-1-1-1024x1024_13
+  - first:
+      213: 5006061279745699804
+    second: XGS_logo_official_pos-1-1-1024x1024_14
+  - first:
+      213: 3710332548539119778
+    second: XGS_logo_official_pos-1-1-1024x1024_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 713
+        width: 68
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f72228bcf53376040800000000000000
+      internalID: 4640734427557798527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 713
+        width: 75
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371407ddbc24d44c0800000000000000
+      internalID: -4301708625708039821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 713
+        width: 76
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeef90526eae23860800000000000000
+      internalID: 7508321802964827882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 713
+        width: 65
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6fec8913e25f8c90800000000000000
+      internalID: -7165417346783449233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_4
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 621
+        width: 907
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06999e55f6b6d28c0800000000000000
+      internalID: -4022440766245070496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_5
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 412
+        width: 169
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac0382437dd5bf30800000000000000
+      internalID: 4590818882280950945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_6
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 411
+        width: 153
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4681ddcdab2c347d0800000000000000
+      internalID: -2935288424290248604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_7
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 411
+        width: 272
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1992f87b981e0c40800000000000000
+      internalID: 5480344852584634652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_8
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 411
+        width: 130
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3954f839ccef72c90800000000000000
+      internalID: -7194501725098654317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_9
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 240
+        width: 88
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32dafac8401466ba0800000000000000
+      internalID: -6096113557803389661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_10
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 241
+        width: 95
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2591b7367758fd380800000000000000
+      internalID: -8944283587117901486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_11
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 240
+        width: 96
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7134d62d45e26c0800000000000000
+      internalID: -4166299342518151211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_12
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 241
+        width: 110
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc1c4e9b4203fb70800000000000000
+      internalID: 8931485009807416499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_13
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 241
+        width: 19
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2576f291492328ae0800000000000000
+      internalID: -1548619710202943662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_14
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 240
+        width: 122
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf641fe53a197540800000000000000
+      internalID: 5006061279745699804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XGS_logo_official_pos-1-1-1024x1024_15
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 240
+        width: 88
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a87e327bcfbd7330800000000000000
+      internalID: 3710332548539119778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      XGS_logo_official_pos-1-1-1024x1024_0: 4640734427557798527
+      XGS_logo_official_pos-1-1-1024x1024_1: -4301708625708039821
+      XGS_logo_official_pos-1-1-1024x1024_10: -8944283587117901486
+      XGS_logo_official_pos-1-1-1024x1024_11: -4166299342518151211
+      XGS_logo_official_pos-1-1-1024x1024_12: 8931485009807416499
+      XGS_logo_official_pos-1-1-1024x1024_13: -1548619710202943662
+      XGS_logo_official_pos-1-1-1024x1024_14: 5006061279745699804
+      XGS_logo_official_pos-1-1-1024x1024_15: 3710332548539119778
+      XGS_logo_official_pos-1-1-1024x1024_2: 7508321802964827882
+      XGS_logo_official_pos-1-1-1024x1024_3: -7165417346783449233
+      XGS_logo_official_pos-1-1-1024x1024_4: -4022440766245070496
+      XGS_logo_official_pos-1-1-1024x1024_5: 4590818882280950945
+      XGS_logo_official_pos-1-1-1024x1024_6: -2935288424290248604
+      XGS_logo_official_pos-1-1-1024x1024_7: 5480344852584634652
+      XGS_logo_official_pos-1-1-1024x1024_8: -7194501725098654317
+      XGS_logo_official_pos-1-1-1024x1024_9: -6096113557803389661
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

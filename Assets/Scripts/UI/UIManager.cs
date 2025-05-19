@@ -30,8 +30,8 @@ namespace SwedishApp.UI
         private Vector2 mousePos;
 
         [Header("Minigame Related")]
-        [SerializeField] private Button startTranslationGameToFinnishBtn; 
-        [SerializeField] private Button startTranslationGameToSwedishBtn; 
+        [SerializeField] private Button startTranslationGameToFinnishBtn;
+        [SerializeField] private Button startTranslationGameToSwedishBtn;
         [SerializeField] private TranslateMinigame translateMinigame;
 
         [Header("Lightmode Related")]
@@ -64,6 +64,11 @@ namespace SwedishApp.UI
         public event Action FontSmallEvent;
         public event Action FontMediumEvent;
         public event Action FontLargeEvent;
+
+        [Header("Credits Related")]
+        [SerializeField] private GameObject creditsScreen;
+        [SerializeField] private Button openCreditsButton;
+        [SerializeField] private Button closeCreditsButton;
 
         enum FontSize
         {
@@ -116,6 +121,10 @@ namespace SwedishApp.UI
             //Testing light mode effects on verb output
             LightmodeOnEvent += TestVerbOutput;
             LightmodeOffEvent += TestVerbOutput;
+
+            //Add listeners to credits buttons
+            openCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(true));
+            closeCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(false));
 
             //Add listeners to minigame buttons
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
@@ -197,7 +206,7 @@ namespace SwedishApp.UI
         {
             if (_toggledOn)
             {
-                textObjectList.ForEach((textObject) => 
+                textObjectList.ForEach((textObject) =>
                 {
                     textObject.font = legibleFont;
                     textObject.characterSpacing = legibleSpacing;
@@ -206,7 +215,7 @@ namespace SwedishApp.UI
             }
             else
             {
-                textObjectList.ForEach((textObject) => 
+                textObjectList.ForEach((textObject) =>
                 {
                     textObject.font = basicFont;
                     textObject.characterSpacing = basicSpacing;
