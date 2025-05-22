@@ -152,6 +152,16 @@ namespace SwedishApp.UI
                 flashCardMinigame.StartNounGame(nounList.nounList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
+            startFlashcardVerbGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartVerbGame(verbList.verbList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
+            startFlashcardAdjectiveGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartAdjectiveGame(adjectiveList.adjectiveList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
 
             TestVerbOutput();
 
