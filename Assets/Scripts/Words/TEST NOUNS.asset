@@ -20,9 +20,11 @@ MonoBehaviour:
     wordCore: strump
     wordGenderStart: 'en '
     wordGenderEnd: an
+    wordPluralIsRegular: 1
     wordPluralEnd: or
     fleraPlural: 0
-    wordKnownPluralEnd: orna
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: erna
     darkModeSprite: {fileID: -8176270613256908275, guid: f5b964d23557b964ca951d73d5132707, type: 3}
     lightModeSprite: {fileID: 8406624337460424413, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
   - swedishWord: fisk
@@ -32,9 +34,11 @@ MonoBehaviour:
     wordCore: fisk
     wordGenderStart: en
     wordGenderEnd: en
+    wordPluralIsRegular: 1
     wordPluralEnd: ar
     fleraPlural: 0
-    wordKnownPluralEnd: arna
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: erna
     darkModeSprite: {fileID: -5284978090353819794, guid: ae6373c18c5a7b8498726d237507185c, type: 3}
     lightModeSprite: {fileID: 4800491361462287803, guid: c9ec22da82b023e46a22c4f36041c4a6, type: 3}
   - swedishWord: apelsin
@@ -44,9 +48,11 @@ MonoBehaviour:
     wordCore: apelsin
     wordGenderStart: 'en '
     wordGenderEnd: en
+    wordPluralIsRegular: 1
     wordPluralEnd: er
     fleraPlural: 0
-    wordKnownPluralEnd: erna
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: erna
     darkModeSprite: {fileID: -6976594321004325502, guid: 7bc7f498e3ef7d54191f4ff6f6103edd, type: 3}
     lightModeSprite: {fileID: -3487294453972797993, guid: 8cc15415087d0554d91073ad4064cb69, type: 3}
   - swedishWord: katt
@@ -56,20 +62,24 @@ MonoBehaviour:
     wordCore: katt
     wordGenderStart: 'en '
     wordGenderEnd: en
+    wordPluralIsRegular: 1
     wordPluralEnd: er
     fleraPlural: 0
-    wordKnownPluralEnd: erna
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: erna
     darkModeSprite: {fileID: -8158698541435643476, guid: 2a1abbdc5c511134397d4958c5a24010, type: 3}
     lightModeSprite: {fileID: -2964730047163184024, guid: c1817d43664010b40a315c061f9cd7ed, type: 3}
-  - swedishWord: katt
-    finnishWord: kissa
+  - swedishWord: bok
+    finnishWord: kirja
     enOrEtt: 1
     declensionClass: 3
-    wordCore: apelsin
+    wordCore: bok
     wordGenderStart: 'en '
     wordGenderEnd: en
-    wordPluralEnd: er
+    wordPluralIsRegular: 0
+    wordPluralEnd: "b\xF6cker"
     fleraPlural: 0
-    wordKnownPluralEnd: erna
-    darkModeSprite: {fileID: -8158698541435643476, guid: 2a1abbdc5c511134397d4958c5a24010, type: 3}
-    lightModeSprite: {fileID: -2964730047163184024, guid: c1817d43664010b40a315c061f9cd7ed, type: 3}
+    wordDefinitivePluralIsRegular: 0
+    wordDefinitivePluralEnd: "b\xF6ckerna"
+    darkModeSprite: {fileID: -8081673117593735394, guid: f3bb133b5149a03409ace3db4e2b69f3, type: 3}
+    lightModeSprite: {fileID: -6259389986677317759, guid: 84948089c79714a4cb8f0629583338dc, type: 3}
