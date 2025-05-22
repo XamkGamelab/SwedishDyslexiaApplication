@@ -13,23 +13,27 @@ MonoBehaviour:
   m_Name: TestNounList
   m_EditorClassIdentifier: 
   nounList:
-  - swedishWord: en katt
+  - swedishWord: katt
     finnishWord: kissa
     enOrEtt: 1
     declensionClass: 3
     wordCore: katt
-    wordGenderStart: en
+    wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralEnd: er
     fleraPlural: 0
     wordKnownPluralEnd: erna
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "\xF6ga"
     finnishWord: "silm\xE4"
     enOrEtt: 2
     declensionClass: 5
     wordCore: "\xF6g"
-    wordGenderStart: ett
+    wordGenderStart: 'ett '
     wordGenderEnd: at
     wordPluralEnd: on
     fleraPlural: 1
     wordKnownPluralEnd: onen
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}

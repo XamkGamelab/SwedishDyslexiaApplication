@@ -35,6 +35,9 @@ namespace SwedishApp.Words
         [Header ("Määräisen monikon pääte")]
         public string wordKnownPluralEnd = "erna";
 
+        public Sprite darkModeSprite;
+        public Sprite lightModeSprite;
+
         public string NounWithGenderStart()
         {
             if (UIManager.instance.LightmodeOn)
