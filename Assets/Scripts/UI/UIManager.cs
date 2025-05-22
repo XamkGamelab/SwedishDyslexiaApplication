@@ -49,6 +49,8 @@ namespace SwedishApp.UI
         [SerializeField] private List<Image> lightmodableImages;
         [SerializeField] private List<TextMeshProUGUI> textObjectListReverseLight;
         [SerializeField] private List<Image> lightmodableImagesReverse;
+        [field: SerializeField] public Sprite abortSpriteDarkmode { get; private set; }
+        [field: SerializeField] public Sprite abortSpriteLightmode { get; private set; }
         private bool lightmodeHelper = false;
         public bool LightmodeOn { get; private set; } = false;
         public event Action LightmodeOnEvent;
