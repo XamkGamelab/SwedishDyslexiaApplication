@@ -62,7 +62,7 @@ namespace SwedishApp.Minigames
             nounObject.wordSwedishBaseText.text = nounWords[activeWordIndex].NounWithGenderStart();
             nounObject.wordSwedishDefinitiveText.text = nounWords[activeWordIndex].NounWithGenderEnd();
             nounObject.wordSwedishPluralText.text = nounWords[activeWordIndex].PluralNoun();
-            nounObject.wordSwedishDefinitivePluralText.text = nounWords[activeWordIndex].PluralKnownNoun();
+            nounObject.wordSwedishDefinitivePluralText.text = nounWords[activeWordIndex].PluralDefinitiveNoun();
             nounObject.wordDeclensionClassText.text = nounWords[activeWordIndex].declensionClass.ToString();
         }
 
