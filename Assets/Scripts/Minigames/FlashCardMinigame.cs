@@ -24,19 +24,34 @@ namespace SwedishApp.Minigames
         [SerializeField] private FlashCardVerb verbObject;
         [SerializeField] private FlashCardAdjective adjectiveObject;
         [SerializeField] private Button nextWordBtn;
+        [SerializeField] private Button abortGameButton;
         private bool gameEnding = false;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             nounObject.gameObject.SetActive(false);
+            abortGameButton.onClick.AddListener(EndGame);
+            
+            //Abort game button's sprite is set according to if light mode is on
+            abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.abortSpriteLightmode : UIManager.instance.abortSpriteDarkmode;
+            UIManager.instance.LightmodeOnEvent += AbortButtonToLightmode;
+            UIManager.instance.LightmodeOffEvent += AbortButtonToDarkmode;
         }
 
-        // Update is called once per frame
-        void Update()
+        #region lightmode related methods
+
+        private void AbortButtonToLightmode()
         {
-
+            abortGameButton.image.sprite = UIManager.instance.abortSpriteLightmode;
         }
+
+        private void AbortButtonToDarkmode()
+        {
+            abortGameButton.image.sprite = UIManager.instance.abortSpriteDarkmode;
+        }
+
+        #endregion
 
         #region noun related methods
 

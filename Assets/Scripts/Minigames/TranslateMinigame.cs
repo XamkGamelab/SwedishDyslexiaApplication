@@ -46,10 +46,6 @@ namespace SwedishApp.Minigames
         private List<TMP_InputField> wordLetterInputFields;
         private List<TextMeshProUGUI> letterTextRefs;
 
-        [Header("Lightmode Related")]
-        [SerializeField] private Sprite abortSpriteDarkmode;
-        [SerializeField] private Sprite abortSpriteLightmode;
-
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -74,7 +70,7 @@ namespace SwedishApp.Minigames
             activeGameMaxPoints = words.Count;
 
             //Abort game button's sprite is set according to if light mode is on
-            abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? abortSpriteLightmode : abortSpriteDarkmode;
+            abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.abortSpriteLightmode : UIManager.instance.abortSpriteDarkmode;
 
             //And make abort button react to light mode changes!
             UIManager.instance.LightmodeOnEvent += ChangeAbortButtonToLightmode;
@@ -324,7 +320,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void ChangeAbortButtonToLightmode()
         {
-            abortGameButton.image.sprite = abortSpriteLightmode;
+            abortGameButton.image.sprite = UIManager.instance.abortSpriteLightmode;
         }
 
         /// <summary>
@@ -332,7 +328,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void ChangeAbortButtonToDarkmode()
         {
-            abortGameButton.image.sprite = abortSpriteDarkmode;
+            abortGameButton.image.sprite = UIManager.instance.abortSpriteDarkmode;
         }
 
         /// <summary>
