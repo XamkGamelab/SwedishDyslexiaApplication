@@ -15,5 +15,9 @@ namespace SwedishApp.Words
         protected readonly string colorTagStartDark = "<color=#EFA00B>";
         protected readonly string colorTagStartLight = "<color=#016FB9>";
         protected readonly string colorTagEnd = "</color>";
+
+        [Header("Sprite")]
+        public Sprite darkModeSprite;
+        public Sprite lightModeSprite;
     }
 }

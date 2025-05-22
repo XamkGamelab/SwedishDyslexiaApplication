@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_Fish_DM_0: -5284978090353819794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
