@@ -1,5 +1,4 @@
 using TMPro;
-using UnityEngine;
 
 namespace SwedishApp.Minigames
 {
@@ -8,5 +7,6 @@ namespace SwedishApp.Minigames
         public TextMeshProUGUI wordSwedishDefinitiveText;
         public TextMeshProUGUI wordSwedishPluralText;
         public TextMeshProUGUI wordSwedishDefinitivePluralText;
+        public TextMeshProUGUI wordDeclensionClassText;
     }
 }

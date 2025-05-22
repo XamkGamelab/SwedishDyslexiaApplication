@@ -1,6 +1,5 @@
 using SwedishApp.UI;
 using UnityEngine;
-using static SwedishApp.Words.VerbWord;
 
 namespace SwedishApp.Words
 {
