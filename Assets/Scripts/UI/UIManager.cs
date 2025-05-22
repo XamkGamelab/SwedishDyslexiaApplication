@@ -35,6 +35,13 @@ namespace SwedishApp.UI
         [SerializeField] private Button startTranslationGameToFinnishBtn;
         [SerializeField] private Button startTranslationGameToSwedishBtn;
         [SerializeField] private TranslateMinigame translateMinigame;
+        [SerializeField] private GameObject flashcardGameTypeMenu;
+        [SerializeField] private Button openFlashcardMenuBtn;
+        [SerializeField] private Button closeFlashcardMenuBtn;
+        [SerializeField] private Button startFlashcardNounGameBtn;
+        [SerializeField] private Button startFlashcardVerbGameBtn;
+        [SerializeField] private Button startFlashcardAdjectiveGameBtn;
+        [SerializeField] private FlashCardMinigame flashCardMinigame;
 
         [Header("Lightmode-Related")]
         [SerializeField] private Image backgroundImage;
@@ -131,11 +138,20 @@ namespace SwedishApp.UI
             openCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(true));
             closeCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(false));
 
-            //Add listeners to minigame buttons
+            //Add listeners to translate minigame buttons
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
                 translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList)));
             startTranslationGameToSwedishBtn.onClick.AddListener(() =>
                 translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList)));
+
+            //Add listeners to flashcard minigame buttons
+            openFlashcardMenuBtn.onClick.AddListener(() => flashcardGameTypeMenu.SetActive(true));
+            closeFlashcardMenuBtn.onClick.AddListener(() => flashcardGameTypeMenu.SetActive(false));
+            startFlashcardNounGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartNounGame(nounList.nounList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
 
             TestVerbOutput();
 
