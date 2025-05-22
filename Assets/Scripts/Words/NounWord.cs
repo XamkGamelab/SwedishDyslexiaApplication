@@ -23,16 +23,23 @@ namespace SwedishApp.Words
 
         public string wordCore = "katt";
         [Header ("Epämääräinen artikkeli")]
-        public string wordGenderStart = "en";
+        public string wordGenderStart = "en ";
         [Header ("Määräinen pääte")]
         public string wordGenderEnd = "en";
-        [Header ("Epämääräisen monikon pääte")]
+        [Header ("Epämääräinen monikko")]
+        public bool wordPluralIsRegular = true;
+            [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string wordPluralEnd = "er";
             [Tooltip ("Vaatiiko monikko \"flera\" sanan?")]
         public bool fleraPlural = false;
-        private readonly string flera = "flera";
-        [Header ("Määräisen monikon pääte")]
-        public string wordKnownPluralEnd = "erna";
+        private readonly string flera = "flera ";
+        [Header ("Määräinen monikko")]
+        public bool wordDefinitivePluralIsRegular = true;
+            [Tooltip("If this form is irregular, set this variable to be the whole word")]
+        public string wordDefinitivePluralEnd = "erna";
+
+        public Sprite darkModeSprite;
+        public Sprite lightModeSprite;
 
         public string NounWithGenderStart()
         {
@@ -60,33 +67,63 @@ namespace SwedishApp.Words
 
         public string PluralNoun()
         {
-            if (fleraPlural && UIManager.instance.LightmodeOn)
+            // Irregular
+            if (fleraPlural && !wordPluralIsRegular && UIManager.instance.LightmodeOn)
             {
-                return string.Concat(flera, colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);
+                return string.Concat(flera, colorTagStartLight, wordPluralEnd, colorTagEnd);                // Light mode on, flera
             }
+            else if (fleraPlural && !wordPluralIsRegular && !UIManager.instance.LightmodeOn)    
+            {
+                return string.Concat(flera, colorTagStartDark, wordPluralEnd, colorTagEnd);                 // Dark mode on, flera
+            }
+            if (!fleraPlural && !wordPluralIsRegular && UIManager.instance.LightmodeOn)
+            {
+                return string.Concat(colorTagStartLight, wordPluralEnd, colorTagEnd);                       // Light mode on, not flera
+            }
+            else if (!fleraPlural && !wordPluralIsRegular && !UIManager.instance.LightmodeOn)
+            {
+                return string.Concat(colorTagStartDark, wordPluralEnd, colorTagEnd);                        // Dark mode on, not flera
+            }
+
+            // Regular
             else if (fleraPlural && !UIManager.instance.LightmodeOn)
             {
-                return string.Concat(flera, colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);
+                return string.Concat(flera, colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);      // Light mode on, flera
+            }
+            else if (fleraPlural && UIManager.instance.LightmodeOn)
+            {
+                return string.Concat(flera, colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);       // Dark mode on, flera
             }
             else if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);
+                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);             // Light mode on, not flera
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);
+                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);              // Not flera, dark mode
             }
         }
 
-        public string PluralKnownNoun()
+        public string PluralDefinitiveNoun()
         {
-            if (UIManager.instance.LightmodeOn)
+            // Irregular
+            if (!wordDefinitivePluralIsRegular && UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordKnownPluralEnd);
+                return string.Concat(colorTagStartLight, wordDefinitivePluralEnd, colorTagEnd);             // Light mode on
+            }
+            else if (!wordDefinitivePluralIsRegular)
+            {
+                return string.Concat(colorTagStartDark, wordDefinitivePluralEnd, colorTagEnd);              // Dark mode on
+            }
+
+            // Regular
+            else if (UIManager.instance.LightmodeOn)
+            {
+                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordDefinitivePluralEnd);   // Light mode on
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordKnownPluralEnd);
+                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordDefinitivePluralEnd);    // Dark mode on
             }
         }
     }

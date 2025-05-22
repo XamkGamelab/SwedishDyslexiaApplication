@@ -29,3 +29,5 @@ MonoBehaviour:
     pastPlusPerfectTenseIsRegular: 1
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: it
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}

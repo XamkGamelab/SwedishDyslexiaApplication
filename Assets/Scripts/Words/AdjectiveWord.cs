@@ -41,6 +41,8 @@ namespace SwedishApp.Words
             [Tooltip("(e.g. 'aste') If this form is irregular, set this variable to be the whole word")]
         public string wordDefinitiveSuperlativeEnd = "aste";
 
+        public Sprite darkModeSprite;
+        public Sprite lightModeSprite;
 
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.

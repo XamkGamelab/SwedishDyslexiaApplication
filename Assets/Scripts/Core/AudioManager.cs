@@ -20,11 +20,13 @@ namespace SwedishApp.Core
         [Header("Music")]
         [SerializeField] private AudioSource _menuMusic1;   // Not depressing I hope
         [SerializeField] private AudioSource _menuMusic2;   // Dyslexiyass
+        [SerializeField] private AudioSource _menuMusic3;   // Chill bgm
         [SerializeField] private AudioSource _gameMusic;    // Background sound
-        public bool _menuMusic1Playing = false;
-        public bool _menuMusic2Playing = false;
-        public bool _buzzingPlaying = false;
-        public bool _gameMusicPlaying = false;
+        private bool _menuMusic1Playing = false;
+        private bool _menuMusic2Playing = false;
+        private bool _menuMusic3Playing = false;
+        private bool _buzzingPlaying = false;
+        private bool _gameMusicPlaying = false;
 
         [Header("SFX")]
         [SerializeField] private AudioSource _menuSelect1;  // Beep
@@ -56,12 +58,14 @@ namespace SwedishApp.Core
             {
                 _menuMusic1.Play();
                 _menuMusic2.Stop();
+                _menuMusic3.Stop();
                 _gameMusic.Stop();
                 _buzzing.Stop();
                 _menuMusic1.volume = 1.0f;
                 _menuMusic1.pitch = 0.7f;
                 _menuMusic1Playing = true;
                 _menuMusic2Playing = false;
+                _menuMusic3Playing = false;
                 _gameMusicPlaying = false;
                 _buzzingPlaying = false;
             }
@@ -72,6 +76,7 @@ namespace SwedishApp.Core
             {
                 _menuMusic1.Stop();
                 _menuMusic2.Play();
+                _menuMusic3.Stop();
                 _gameMusic.Stop();
                 _buzzing.Stop();
                 _menuMusic2.volume = 1.0f;
@@ -79,6 +84,27 @@ namespace SwedishApp.Core
                 _menuMusic2.pitch = 1.0f;
                 _menuMusic1Playing = false;
                 _menuMusic2Playing = true;
+                _menuMusic3Playing = false;
+                _gameMusicPlaying = false;
+                _buzzingPlaying = false;
+            }
+        }
+
+        public void StartMenuMusic3()  // Alternative music
+        {
+            if (!_menuMusic2Playing)
+            {
+                _menuMusic1.Stop();
+                _menuMusic2.Stop();
+                _menuMusic3.Play();
+                _gameMusic.Stop();
+                _buzzing.Stop();
+                _menuMusic2.volume = 1.0f;
+                _menuMusic2.panStereo = -0.3f;
+                _menuMusic2.pitch = 1.0f;
+                _menuMusic1Playing = false;
+                _menuMusic2Playing = false;
+                _menuMusic3Playing = true;
                 _gameMusicPlaying = false;
                 _buzzingPlaying = false;
             }
@@ -89,12 +115,14 @@ namespace SwedishApp.Core
             {
                 _menuMusic1.Stop();
                 _menuMusic2.Stop();
+                _menuMusic3.Stop();
                 _gameMusic.Play();
                 _buzzing.Stop();
                 _gameMusic.volume = 1.0f;
                 _gameMusic.pitch = 0.9f;
                 _menuMusic1Playing = false;
                 _menuMusic2Playing = false;
+                _menuMusic3Playing = false;
                 _gameMusicPlaying = true;
                 _buzzingPlaying = false;
             }
@@ -105,12 +133,14 @@ namespace SwedishApp.Core
             {
                 _menuMusic1.Stop();
                 _menuMusic2.Stop();
+                _menuMusic3.Stop();
                 _gameMusic.Stop();
                 _buzzing.Play();
                 _buzzing.volume = 3.0f;
                 _buzzing.panStereo = -0.25f;
                 _menuMusic1Playing = false;
                 _menuMusic2Playing = false;
+                _menuMusic3Playing = false;
                 _gameMusicPlaying = false;
                 _buzzingPlaying = true;
             }

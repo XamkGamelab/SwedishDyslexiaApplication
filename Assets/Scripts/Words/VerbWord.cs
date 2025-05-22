@@ -50,6 +50,9 @@ namespace SwedishApp.Words
             [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string pastPlusPerfectTenseEnd = "it";
 
+        public Sprite darkModeSprite;
+        public Sprite lightModeSprite;
+
         /// <summary>
         /// This outputs the word in its base form with the core highlighted.
         /// If the verb is irregular, highlight the entire word.
