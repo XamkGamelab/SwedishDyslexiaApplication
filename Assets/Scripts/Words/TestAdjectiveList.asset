@@ -15,9 +15,15 @@ MonoBehaviour:
   adjectiveList:
   - swedishWord: varm
     finnishWord: "l\xE4mmin"
+    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
     wordCore: varm
-    wordDefinitiveEnd: a
+    wordEnEnd: 
     wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: a
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
     comparativeIsRegular: 1
     wordComparativeEnd: are
     comparativeDefinitiveIsRegular: 1
@@ -25,3 +31,39 @@ MonoBehaviour:
     wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1
     wordDefinitiveSuperlativeEnd: aste
+  - swedishWord: liten
+    finnishWord: pieni
+    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    wordCore: lite
+    wordEnEnd: n
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: lilla
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: "sm\xE5"
+    comparativeIsRegular: 0
+    wordComparativeEnd: mindre
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: mindst
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: mindst
+  - swedishWord: liten
+    finnishWord: pieni
+    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    wordCore: lite
+    wordEnEnd: n
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: lilla
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: "sm\xE5"
+    comparativeIsRegular: 0
+    wordComparativeEnd: mindre
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: mindst
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: mindst

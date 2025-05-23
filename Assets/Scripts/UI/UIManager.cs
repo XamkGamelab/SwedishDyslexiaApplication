@@ -376,7 +376,7 @@ namespace SwedishApp.UI
         /// </summary>
         private void TestVerbOutput()
         {
-            TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveSuperlativeDefinitivePlural();
+            TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveEtt();
         }
     }
 }

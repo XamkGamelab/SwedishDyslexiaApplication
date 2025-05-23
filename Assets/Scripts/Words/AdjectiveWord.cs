@@ -13,11 +13,17 @@ namespace SwedishApp.Words
 
         [Header("Perusmuoto")]
         public string wordCore = "varm";
-            [Tooltip ("(e.g. 'a')")]
-        public string wordDefinitiveEnd = "a";
+            [Tooltip("(e.g. 'n') Leave blank if just adding 't' to the core word makes the word's gender into ett")]
+        public string wordEnEnd = "";
             [Tooltip("(e.g. 't')")]
         public string wordEttEnd = "t";
-        public bool wordDefinitivePluralIsRegular = true;
+            [Tooltip("Check this box if the word is regular")]
+        public bool definitiveIsRegular = true;
+            [Tooltip("(e.g. 'a') If this form is irregular, set this variable to be the whole word")]
+        public string wordDefinitiveEnd = "a";
+            [Tooltip("Check this box if the word is regular")]
+        public bool definitivePluralIsRegular = true;
+            [Tooltip("If a 4th form exists, set this variable to that word")]
         public string wordDefinitivePluralIrregular = "";
 
         [Header ("M‰‰r‰llinen muoto")]
@@ -30,7 +36,7 @@ namespace SwedishApp.Words
         public bool comparativeIsRegular = true;
             [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string wordComparativeEnd = "are";
-        [Tooltip("Check this box if the word is regular")]
+            [Tooltip("Check this box if the word is regular")]
         public bool comparativeDefinitiveIsRegular = true;
 
         [Header("Superlatiivi")]
@@ -52,11 +58,11 @@ namespace SwedishApp.Words
         {
             if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd);
+                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordEnEnd);
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd);
+                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordEnEnd);
             }
         }
 
@@ -118,22 +124,28 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveDefinitivePlural()
         {
-            if (UIManager.instance.LightmodeOn && wordDefinitivePluralIsRegular)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                if (definitivePluralIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordDefinitivePluralIrregular, colorTagEnd);
+                }
             }
-            else if (!UIManager.instance.LightmodeOn && wordDefinitivePluralIsRegular)
+            else
             {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
-            }
+                if (definitivePluralIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordDefinitivePluralIrregular, colorTagEnd);
 
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordDefinitivePluralIrregular, colorTagEnd);
-            }
-            else 
-            {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordDefinitivePluralIrregular, colorTagEnd);
+                }
             }
         }
 
@@ -145,24 +157,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveComparative()
         {
-            // Regular
-            if (comparativeIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                if (comparativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(colorTagStartLight, wordComparativeEnd, colorTagEnd);
+                }
             }
-            else if (comparativeIsRegular && !UIManager.instance.LightmodeOn)
+            else    // Dark mode
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
-            }
-
-            // Irregular
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartLight, wordComparativeEnd, colorTagEnd);
-            }
-            else
-            {
-                return string.Concat(colorTagStartDark, wordComparativeEnd, colorTagEnd);
+                if (comparativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(colorTagStartDark, wordComparativeEnd, colorTagEnd);
+                }
             }
         }
 
@@ -174,24 +189,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveComparativeDefinitiveEn()
         {
-            // Regular
-            if (comparativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                if (comparativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordComparativeEnd, colorTagEnd);
+                }
             }
-            else if (comparativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
+            else    // Dark mode
             {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
-            }
-
-            // Irregular
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordComparativeEnd, colorTagEnd);
-            }
-            else
-            {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordComparativeEnd, colorTagEnd);
+                if (comparativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordComparativeEnd, colorTagEnd);
+                }
             }
         }
 
@@ -203,24 +221,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveComparativeDefinitiveEtt()
         {
-            // Regular
-            if (comparativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                if (comparativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordComparativeEnd, colorTagEnd);
+                }
             }
-            else if (comparativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
+            else    // Dark mode
             {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
-            }
-
-            // Irregular
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordComparativeEnd, colorTagEnd);
-            }
-            else
-            {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordComparativeEnd, colorTagEnd);
+                if (comparativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordComparativeEnd, colorTagEnd);
+                }
             }
         }
 
@@ -232,24 +253,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveComparativeDefinitivePlural()
         {
-            // Regular
-            if (comparativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                if (comparativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordComparativeEnd, colorTagEnd);
+                }
             }
-            else if (comparativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
+            else    // Dark mode
             {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
-            }
-
-            // Irregular
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordComparativeEnd, colorTagEnd);
-            }
-            else
-            {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordComparativeEnd, colorTagEnd);
+                if (comparativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordComparativeEnd, colorTagEnd);
+                }
             }
         }
 
@@ -261,24 +285,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveSuperlative()
         {
-            // Regular
-            if (superlativeIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordSuperlativeEnd);
+                if (superlativeIsRegular)
+                {   // Regular
+                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordSuperlativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(colorTagStartLight, wordSuperlativeEnd, colorTagEnd);
+                }
             }
-            else if (comparativeIsRegular && !UIManager.instance.LightmodeOn)
+            else    // Dark mode
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordSuperlativeEnd);
-            }
-
-            // Irregular
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartLight, wordSuperlativeEnd, colorTagEnd);
-            }
-            else
-            {
-                return string.Concat(colorTagStartDark, wordSuperlativeEnd, colorTagEnd);
+                if (superlativeIsRegular)
+                {   // Regular
+                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordSuperlativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(colorTagStartDark, wordSuperlativeEnd, colorTagEnd);
+                }
             }
         }
 
@@ -290,24 +317,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveSuperlativeDefinitiveEn()
         {
-            // Regular
-            if (superlativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                if (superlativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                }
             }
-            else if (superlativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
+            else    // Dark mode
             {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
-            }
-
-            // Irregular
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
-            }
-            else
-            {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                if (superlativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                }
             }
         }
 
@@ -319,24 +349,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveSuperlativeDefinitiveEtt()
         {
-            // Regular
-            if (superlativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                if (superlativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                }
             }
-            else if (superlativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
+            else    // Dark mode
             {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
-            }
-
-            // Irregular
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
-            }
-            else
-            {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                if (superlativeDefinitiveIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                }
             }
         }
 
@@ -348,24 +381,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveSuperlativeDefinitivePlural()
         {
-            // Regular
-            if (superlativeDefinitiveIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                if (definitivePluralIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                }
             }
-            else if (superlativeDefinitiveIsRegular && !UIManager.instance.LightmodeOn)
+            else    // Dark mode
             {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
-            }
-
-            // Irregular
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordDefinitiveSuperlativeEnd, colorTagEnd);
-            }
-            else
-            {
-                return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                if (definitivePluralIsRegular)
+                {   // Regular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                }
+                else
+                {   // Irregular
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordDefinitiveSuperlativeEnd, colorTagEnd);
+                }
             }
         }
     }
