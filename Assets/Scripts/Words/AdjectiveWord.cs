@@ -1,4 +1,5 @@
 using SwedishApp.UI;
+using TMPro;
 using UnityEngine;
 
 namespace SwedishApp.Words
@@ -406,3 +407,18 @@ namespace SwedishApp.Words
         }
     }
 }
+
+// This code's function names
+//AdjectiveEn
+//AdjectiveEtt
+//AdjectiveDefinitiveEn
+//AdjectiveDefinitiveEtt
+//AdjectiveDefinitivePlural
+//AdjectiveComparative
+//AdjectiveComparativeDefinitiveEn
+//AdjectiveComparativeDefinitiveEtt
+//AdjectiveComparativeDefinitivePlural
+//AdjectiveSuperlative
+//AdjectiveSuperlativeDefinitiveEn
+//AdjectiveSuperlativeDefinitiveEtt
+//AdjectiveSuperlativeDefinitivePlural

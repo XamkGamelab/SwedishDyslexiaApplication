@@ -22,7 +22,6 @@ namespace SwedishApp.UI
         private AudioManager _audioManager;
 
         [Header("Word Lists")]
-        public TextMeshProUGUI TEST_VERB;
         public VerbList verbList;
         public NounList nounList;
         public AdjectiveList adjectiveList;
@@ -80,6 +79,22 @@ namespace SwedishApp.UI
         [SerializeField] private GameObject creditsScreen;
         [SerializeField] private Button openCreditsButton;
         [SerializeField] private Button closeCreditsButton;
+
+        [Header("TEMPORARY")]
+        public TextMeshProUGUI TEST_VERB;
+        public TextMeshProUGUI adjectiveEn;
+        public TextMeshProUGUI adjectiveEtt;
+        public TextMeshProUGUI adjectiveDefinitiveEn;
+        public TextMeshProUGUI adjectiveDefinitiveEtt;
+        public TextMeshProUGUI adjectiveDefinitivePlural;
+        public TextMeshProUGUI adjectiveComparative;
+        public TextMeshProUGUI adjectiveComparativeDefinitiveEn;
+        public TextMeshProUGUI adjectiveComparativeDefinitiveEtt;
+        public TextMeshProUGUI adjectiveComparativeDefinitivePlural;
+        public TextMeshProUGUI adjectiveSuperlative;
+        public TextMeshProUGUI adjectiveSuperlativeDefinitiveEn;
+        public TextMeshProUGUI adjectiveSuperlativeDefinitiveEtt;
+        public TextMeshProUGUI adjectiveSuperlativeDefinitivePlural;
 
         enum FontSize
         {
@@ -376,7 +391,34 @@ namespace SwedishApp.UI
         /// </summary>
         private void TestVerbOutput()
         {
-            TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveEtt();
+            TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveSuperlativeDefinitivePlural();
+            adjectiveEn.text = adjectiveList.adjectiveList[2].AdjectiveEn();    // 3 = liten
+            adjectiveEtt.text = adjectiveList.adjectiveList[2].AdjectiveEtt();
+            adjectiveDefinitiveEn.text = adjectiveList.adjectiveList[2].AdjectiveDefinitiveEn();
+            adjectiveDefinitiveEtt.text = adjectiveList.adjectiveList[2].AdjectiveDefinitiveEtt();
+            adjectiveDefinitivePlural.text = adjectiveList.adjectiveList[2].AdjectiveDefinitivePlural();
+            adjectiveComparative.text = adjectiveList.adjectiveList[2].AdjectiveComparative();
+            adjectiveComparativeDefinitiveEn.text = adjectiveList.adjectiveList[2].AdjectiveComparativeDefinitiveEn();
+            adjectiveComparativeDefinitiveEtt.text = adjectiveList.adjectiveList[2].AdjectiveComparativeDefinitiveEtt();
+            adjectiveComparativeDefinitivePlural.text = adjectiveList.adjectiveList[2].AdjectiveComparativeDefinitivePlural();
+            adjectiveSuperlative.text = adjectiveList.adjectiveList[2].AdjectiveSuperlative();
+            adjectiveSuperlativeDefinitiveEn.text = adjectiveList.adjectiveList[2].AdjectiveSuperlativeDefinitiveEn();
+            adjectiveSuperlativeDefinitiveEtt.text = adjectiveList.adjectiveList[2].AdjectiveSuperlativeDefinitiveEtt();
+            adjectiveSuperlativeDefinitivePlural.text = adjectiveList.adjectiveList[2].AdjectiveSuperlativeDefinitivePlural();
         }
     }
 }
+
+//adjectiveEn;
+//adjectiveEtt;
+//adjectiveDefinitiveEn;
+//adjectiveDefinitiveEtt;
+//adjectiveDefinitivePlural;
+//adjectiveComparative;
+//adjectiveComparativeDefinitiveEn;
+//adjectiveComparativeDefinitiveEtt;
+//adjectiveComparativeDefinitivePlural;
+//adjectiveSuperlative;
+//adjectiveSuperlativeDefinitiveEn;
+//adjectiveSuperlativeDefinitiveEtt;
+//adjectiveSuperlativeDefinitivePlural;
