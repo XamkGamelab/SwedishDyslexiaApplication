@@ -51,7 +51,6 @@ namespace SwedishApp.Core
                 Debug.LogError($"Found more than one AudioManager, destroying duplicate. Fix this!");
             }
         }
-
         public void StartMenuMusic1()
         {
             if (!_menuMusic1Playing)

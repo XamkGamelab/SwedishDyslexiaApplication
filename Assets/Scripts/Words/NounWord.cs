@@ -38,9 +38,6 @@ namespace SwedishApp.Words
             [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string wordDefinitivePluralEnd = "erna";
 
-        public Sprite darkModeSprite;
-        public Sprite lightModeSprite;
-
         public string NounWithGenderStart()
         {
             if (UIManager.instance.LightmodeOn)
@@ -86,11 +83,11 @@ namespace SwedishApp.Words
             }
 
             // Regular
-            else if (fleraPlural && !UIManager.instance.LightmodeOn)
+            else if (fleraPlural && UIManager.instance.LightmodeOn)
             {
                 return string.Concat(flera, colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);      // Light mode on, flera
             }
-            else if (fleraPlural && UIManager.instance.LightmodeOn)
+            else if (fleraPlural && !UIManager.instance.LightmodeOn)
             {
                 return string.Concat(flera, colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);       // Dark mode on, flera
             }

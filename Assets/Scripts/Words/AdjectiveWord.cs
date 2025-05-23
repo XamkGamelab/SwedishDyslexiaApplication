@@ -17,6 +17,8 @@ namespace SwedishApp.Words
         public string wordDefinitiveEnd = "a";
             [Tooltip("(e.g. 't')")]
         public string wordEttEnd = "t";
+        public bool wordDefinitivePluralIsRegular = true;
+        public string wordDefinitivePluralIrregular = "";
 
         [Header ("M‰‰r‰llinen muoto")]
         public readonly string wordDefinitiveStartEn = "den ";
@@ -40,9 +42,6 @@ namespace SwedishApp.Words
         public bool superlativeDefinitiveIsRegular = true;
             [Tooltip("(e.g. 'aste') If this form is irregular, set this variable to be the whole word")]
         public string wordDefinitiveSuperlativeEnd = "aste";
-
-        public Sprite darkModeSprite;
-        public Sprite lightModeSprite;
 
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
@@ -119,13 +118,22 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveDefinitivePlural()
         {
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn && wordDefinitivePluralIsRegular)
             {
                 return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
             }
-            else
+            else if (!UIManager.instance.LightmodeOn && wordDefinitivePluralIsRegular)
             {
                 return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+            }
+
+            else if (UIManager.instance.LightmodeOn)
+            {
+                return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordDefinitivePluralIrregular, colorTagEnd);
+            }
+            else 
+            {
+                return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordDefinitivePluralIrregular, colorTagEnd);
             }
         }
 
