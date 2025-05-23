@@ -56,7 +56,11 @@ namespace SwedishApp.UI
         public event Action LightmodeOnEvent;
         public event Action LightmodeOffEvent;
         public readonly Color32 Lightgrey = new(235, 235, 235, 255);
+        public readonly Color32 LightgreyDarker = new(200, 200, 200, 255);
+        public readonly Color32 LightgreyHalfAlpha = new(235, 235, 235, 127);
         public readonly Color32 Darkgrey = new(23, 26, 33, 255);
+        public readonly Color32 DarkgreyLighter = new(46, 52, 66, 255);
+        public readonly Color32 DarkgreyHalfAlpha = new(23, 26, 33, 127);
         public readonly Color32 LightmodeHighlight = new(1, 111, 185, 255);
         public readonly Color32 DarkmodeHighlight = new(239, 160, 11, 255);
 
