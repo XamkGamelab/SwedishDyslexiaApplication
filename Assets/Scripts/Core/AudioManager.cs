@@ -92,7 +92,7 @@ namespace SwedishApp.Core
 
         public void StartMenuMusic3()  // Alternative music
         {
-            if (!_menuMusic3Playing)
+            if (!_menuMusic2Playing)
             {
                 _menuMusic1.Stop();
                 _menuMusic2.Stop();
