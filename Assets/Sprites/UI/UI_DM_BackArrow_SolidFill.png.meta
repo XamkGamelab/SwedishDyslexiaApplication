@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_DM_BackArrow_SolidFill_0: 4803331762499240660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
