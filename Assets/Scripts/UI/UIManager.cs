@@ -19,10 +19,8 @@ namespace SwedishApp.UI
     {
         //Singleton
         public static UIManager instance { get; private set; }
-        private AudioManager _audioManager;
 
         [Header("Word Lists")]
-        public TextMeshProUGUI TEST_VERB;
         public VerbList verbList;
         public NounList nounList;
         public AdjectiveList adjectiveList;
@@ -45,22 +43,35 @@ namespace SwedishApp.UI
 
         [Header("Lightmode-Related")]
         [SerializeField] private Image backgroundImage;
+        [SerializeField] private Image cardtypeBackground;
         [SerializeField] private List<TextMeshProUGUI> textObjectList;
         [SerializeField] private List<Image> lightmodableImages;
         [SerializeField] private List<TextMeshProUGUI> textObjectListReverseLight;
         [SerializeField] private List<Image> lightmodableImagesReverse;
+        [SerializeField] private List<Image> highlightImages;
+        [SerializeField] private List<Image> highlightImagesReverse;
+        [SerializeField] private List<Image> buttonImages;
         [field: SerializeField] public Sprite abortSpriteDarkmode { get; private set; }
         [field: SerializeField] public Sprite abortSpriteLightmode { get; private set; }
+        [field: SerializeField] public Sprite buttonSpriteDarkmode { get; private set; }
+        [field: SerializeField] public Sprite buttonSpriteLightmode { get; private set; }
         private bool lightmodeHelper = false;
         public bool LightmodeOn { get; private set; } = false;
         public event Action LightmodeOnEvent;
         public event Action LightmodeOffEvent;
         public readonly Color32 Lightgrey = new(235, 235, 235, 255);
+        public readonly Color32 LightgreyDarker = new(200, 200, 200, 255);
+        public readonly Color32 LightgreyHalfAlpha = new(235, 235, 235, 127);
+        public readonly Color32 LightgreyMostAlpha = new(235, 235, 235, 210);
         public readonly Color32 Darkgrey = new(23, 26, 33, 255);
+        public readonly Color32 DarkgreyLighter = new(46, 52, 66, 255);
+        public readonly Color32 DarkgreyHalfAlpha = new(23, 26, 33, 127);
+        public readonly Color32 DarkgreyMostAlpha = new(23, 26, 33, 248);
         public readonly Color32 LightmodeHighlight = new(1, 111, 185, 255);
         public readonly Color32 DarkmodeHighlight = new(239, 160, 11, 255);
 
         [Header("Font-Related")]
+        private List<TextMeshProUGUI> textFields;
         [SerializeField] private Toggle toggleHyperlegible;
         [SerializeField] private Toggle fontSmallToggle;
         [SerializeField] private Toggle fontMediumToggle;
@@ -79,6 +90,7 @@ namespace SwedishApp.UI
         [Header("Credits-Related")]
         [SerializeField] private GameObject creditsScreen;
         [SerializeField] private Button openCreditsButton;
+        [SerializeField] private TextMeshProUGUI openCreditsText;
         [SerializeField] private Button closeCreditsButton;
 
         enum FontSize
@@ -92,6 +104,7 @@ namespace SwedishApp.UI
         private bool settingsOpen = false;
         [SerializeField] private Button toggleSettingsBtn;
         [SerializeField] private GameObject settingsMenu;
+        [SerializeField] private Image settingsMenuImage;
         private RectTransform settingsRect;
         [SerializeField] private Button toggleLightmodeBtn;
         [SerializeField] private Slider toggledSlider;
@@ -115,8 +128,8 @@ namespace SwedishApp.UI
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            _audioManager = FindAnyObjectByType<AudioManager>();
-            if (_audioManager == null) Debug.LogError("_audioManager is NULL");
+            textFields = textObjectList;
+            textFields.AddRange(textObjectListReverseLight);
 
             settingsRect = settingsMenu.GetComponent<RectTransform>();
 
@@ -131,10 +144,6 @@ namespace SwedishApp.UI
             toggleHyperlegible.onValueChanged.AddListener((toggleOn) => ToggleHyperlegibleFont(toggleOn));
             toggleLightmodeBtn.onClick.AddListener(ToggleLightmode);
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
-
-            //Testing light mode effects on verb output
-            LightmodeOnEvent += TestVerbOutput;
-            LightmodeOffEvent += TestVerbOutput;
 
             //Add listeners to credits buttons
             openCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(true));
@@ -164,8 +173,6 @@ namespace SwedishApp.UI
                 flashCardMinigame.StartAdjectiveGame(adjectiveList.adjectiveList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
-
-            TestVerbOutput();
 
             inputReader.EnableInputs();
         }
@@ -198,21 +205,39 @@ namespace SwedishApp.UI
             if (!LightmodeOn)
             {
                 LightmodeOn = true;
-                _audioManager.PlayLightModeToggle();
+                AudioManager.Instance.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
-                lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
+                lightmodableImages.ForEach((imgObject) => imgObject.color = Lightgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Lightgrey);
-                lightmodableImagesReverse.ForEach((textObject) => textObject.color = Darkgrey);
+                lightmodableImagesReverse.ForEach((imgObject) => imgObject.color = Darkgrey);
+                highlightImages.ForEach((imgObject) => imgObject.color = LightmodeHighlight);
+                highlightImagesReverse.ForEach((imgObject) => imgObject.color = DarkmodeHighlight);
+                buttonImages.ForEach((buttonImg) => buttonImg.sprite = buttonSpriteLightmode);
+
+                cardtypeBackground.color = LightgreyMostAlpha;
+                closeFlashcardMenuBtn.image.sprite = abortSpriteLightmode;
+                openCreditsText.color = Darkgrey;
+                settingsMenuImage.sprite = buttonSpriteLightmode;
+
                 LightmodeOnEvent?.Invoke();
             }
-            else
+            else //Darkmode goes ON here
             {
                 LightmodeOn = false;
-                _audioManager.PlayLightModeToggle();
+                AudioManager.Instance.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
-                lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
+                lightmodableImages.ForEach((imgObject) => imgObject.color = Darkgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
-                lightmodableImagesReverse.ForEach((textObject) => textObject.color = Lightgrey);
+                lightmodableImagesReverse.ForEach((imgObject) => imgObject.color = Lightgrey);
+                highlightImages.ForEach((imgObject) => imgObject.color = DarkmodeHighlight);
+                highlightImagesReverse.ForEach((imgObject) => imgObject.color = LightmodeHighlight);
+                buttonImages.ForEach((buttonImg) => buttonImg.sprite = buttonSpriteDarkmode);
+
+                cardtypeBackground.color = DarkgreyMostAlpha;
+                closeFlashcardMenuBtn.image.sprite = abortSpriteDarkmode;
+                openCreditsText.color = Lightgrey;
+                settingsMenuImage.sprite = buttonSpriteDarkmode;
+
                 LightmodeOffEvent?.Invoke();
             }
             StartCoroutine(SliderLerp());
@@ -241,7 +266,7 @@ namespace SwedishApp.UI
         {
             if (_toggledOn)
             {
-                textObjectList.ForEach((textObject) =>
+                textFields.ForEach((textObject) =>
                 {
                     textObject.font = legibleFont;
                     textObject.characterSpacing = legibleSpacing;
@@ -250,7 +275,7 @@ namespace SwedishApp.UI
             }
             else
             {
-                textObjectList.ForEach((textObject) =>
+                textFields.ForEach((textObject) =>
                 {
                     textObject.font = basicFont;
                     textObject.characterSpacing = basicSpacing;
@@ -370,13 +395,5 @@ namespace SwedishApp.UI
         }
 
         #endregion
-
-        /// <summary>
-        /// Temporary method, used for testing word outputs
-        /// </summary>
-        private void TestVerbOutput()
-        {
-            TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveSuperlativeDefinitivePlural();
-        }
     }
 }

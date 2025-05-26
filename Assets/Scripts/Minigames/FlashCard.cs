@@ -6,23 +6,28 @@ using UnityEngine.UI;
 
 namespace SwedishApp.Minigames
 {
+    /// <summary>
+    /// This class is the base for all visible flash cards. Used to handle the
+    /// text fields and other "reactive" UI elements of the flash card.
+    /// </summary>
     [RequireComponent(typeof(Button))]
     public class FlashCardBase : MonoBehaviour
     {
+        //Simple state tracker for the card, used in "animations"
         public enum State
         {
             Finnish = 0,
             Flipping,
             Swedish
         }
-        private Button thisButton;
         public State state { get; private set; }
+        private Button thisButton;
         private TextMeshProUGUI[] textsInChildren;
         [SerializeField] public GameObject cardFinnishSide;
         [SerializeField] private GameObject cardSwedishSide;
         [SerializeField] private Image hintImage;
-        [SerializeField] private Sprite darkmodeImage;
-        [SerializeField] private Sprite lightmodeImage;
+        public Sprite darkmodeSprite { get; set; }
+        public Sprite lightmodeSprite { get; set; }
 
         [SerializeField] private float flipTime = 0.3f;
 
@@ -37,45 +42,69 @@ namespace SwedishApp.Minigames
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            //get references
             thisButton = GetComponent<Button>();
-            thisButton.onClick.AddListener(CallFlip);
+
+            //set initial state
             state = State.Finnish;
 
             //like and subscribe
+            thisButton.onClick.AddListener(CallFlip);
             UIManager.instance.LightmodeOnEvent += LightsOn;
             UIManager.instance.LightmodeOffEvent += LightsOff;
         }
 
+        public void SetInitialElements(Sprite _lightmodeSprite = null, Sprite _darkmodeSprite = null)
+        {
+            lightmodeSprite = _lightmodeSprite;
+            darkmodeSprite = _darkmodeSprite;
+            if (lightmodeSprite != null && darkmodeSprite != null)
+                hintImage.sprite = UIManager.instance.LightmodeOn ? lightmodeSprite : darkmodeSprite;
+        }
+
+        /// <summary>
+        /// This method is attached to the card's button component. Used to call the flip "animation" coroutine.
+        /// </summary>
         private void CallFlip()
         {
             if (state == State.Flipping) return;
             StartCoroutine(HandleFlip());
         }
 
+        /// <summary>
+        /// This method handles changing all the card's relevant elements to lightmode
+        /// </summary>
         public void LightsOn()
         {
             foreach (TextMeshProUGUI text in textsInChildren)
             {
                 text.color = UIManager.instance.Lightgrey;
             }
-            if (lightmodeImage != null)
+            if (lightmodeSprite != null)
             {
-                hintImage.sprite = lightmodeImage;
+                hintImage.sprite = lightmodeSprite;
             }
         }
 
+        /// <summary>
+        /// This method handles changing all the card's relevant elements to darkmode
+        /// </summary>
         public void LightsOff()
         {
             foreach (TextMeshProUGUI text in textsInChildren)
             {
                 text.color = UIManager.instance.Darkgrey;
             }
-            if (darkmodeImage != null)
+            if (darkmodeSprite != null)
             {
-                hintImage.sprite = darkmodeImage;
+                hintImage.sprite = darkmodeSprite;
             }
         }
 
+        /// <summary>
+        /// This method makes sure the finnish side of the card is visible when next card is
+        /// placed on the screen.
+        /// </summary>
         public void ResetToFinnishSide()
         {
             state = State.Finnish;
@@ -83,6 +112,11 @@ namespace SwedishApp.Minigames
             cardSwedishSide.SetActive(false);
         }
 
+        /// <summary>
+        /// This method handles the flip "animation" of the card. In actuality the card's x-scale
+        /// is lerped to 0, the contents are changed, and it's lerped back to 1.
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator HandleFlip()
         {
             if (state == State.Finnish)

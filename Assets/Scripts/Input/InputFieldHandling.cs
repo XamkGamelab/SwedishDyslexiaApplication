@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -18,6 +19,12 @@ namespace SwedishApp.Input
         {
             holder = GetComponent<RectTransform>();
             inputReader.NavigateEvent += Navigate;
+        }
+
+        private void OnDestroy()
+        {
+            inputField.DeactivateInputField();
+            inputReader.NavigateEvent -= Navigate;
         }
 
         /// <summary>
@@ -60,6 +67,11 @@ namespace SwedishApp.Input
                         holder.GetChild(index - 2).GetComponent<TMP_InputField>().ActivateInputField();
                     }
                 }
+                else
+                {
+                    inputField.DeactivateInputField();
+                    inputField.ActivateInputField();
+                }
             }
             //If moving right
             else if (_input.x > 0)
@@ -78,6 +90,11 @@ namespace SwedishApp.Input
                     {
                         holder.GetChild(index + 2).GetComponent<TMP_InputField>().ActivateInputField();
                     }
+                }
+                else
+                {
+                    inputField.DeactivateInputField();
+                    inputField.ActivateInputField();
                 }
             }
         }
@@ -126,6 +143,11 @@ namespace SwedishApp.Input
                 {
                     holder.GetChild(index + 2).GetComponent<TMP_InputField>().ActivateInputField();
                 }
+            }
+            else
+            {
+                inputField.DeactivateInputField();
+                inputField.ActivateInputField();
             }
         }
     }
