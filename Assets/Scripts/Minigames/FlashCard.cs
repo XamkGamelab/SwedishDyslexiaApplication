@@ -26,8 +26,8 @@ namespace SwedishApp.Minigames
         [SerializeField] public GameObject cardFinnishSide;
         [SerializeField] private GameObject cardSwedishSide;
         [SerializeField] private Image hintImage;
-        [SerializeField] private Sprite darkmodeImage;
-        [SerializeField] private Sprite lightmodeImage;
+        public Sprite darkmodeSprite { get; set; }
+        public Sprite lightmodeSprite { get; set; }
 
         [SerializeField] private float flipTime = 0.3f;
 
@@ -42,13 +42,24 @@ namespace SwedishApp.Minigames
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            //get references
             thisButton = GetComponent<Button>();
-            thisButton.onClick.AddListener(CallFlip);
+
+            //set initial state
             state = State.Finnish;
 
             //like and subscribe
+            thisButton.onClick.AddListener(CallFlip);
             UIManager.instance.LightmodeOnEvent += LightsOn;
             UIManager.instance.LightmodeOffEvent += LightsOff;
+        }
+
+        public void SetInitialElements(Sprite _lightmodeSprite = null, Sprite _darkmodeSprite = null)
+        {
+            lightmodeSprite = _lightmodeSprite;
+            darkmodeSprite = _darkmodeSprite;
+            if (lightmodeSprite != null && darkmodeSprite != null)
+                hintImage.sprite = UIManager.instance.LightmodeOn ? lightmodeSprite : darkmodeSprite;
         }
 
         /// <summary>
@@ -69,9 +80,9 @@ namespace SwedishApp.Minigames
             {
                 text.color = UIManager.instance.Lightgrey;
             }
-            if (lightmodeImage != null)
+            if (lightmodeSprite != null)
             {
-                hintImage.sprite = lightmodeImage;
+                hintImage.sprite = lightmodeSprite;
             }
         }
 
@@ -84,9 +95,9 @@ namespace SwedishApp.Minigames
             {
                 text.color = UIManager.instance.Darkgrey;
             }
-            if (darkmodeImage != null)
+            if (darkmodeSprite != null)
             {
-                hintImage.sprite = darkmodeImage;
+                hintImage.sprite = darkmodeSprite;
             }
         }
 

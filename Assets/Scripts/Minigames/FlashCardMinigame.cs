@@ -87,6 +87,8 @@ namespace SwedishApp.Minigames
             nounObject.wordSwedishPluralText.text = nounWords[activeWordIndex].PluralNoun();
             nounObject.wordSwedishDefinitivePluralText.text = nounWords[activeWordIndex].PluralDefinitiveNoun();
             nounObject.wordDeclensionClassText.text = nounWords[activeWordIndex].declensionClass.ToString();
+
+            nounObject.SetInitialElements(nounWords[activeWordIndex].lightModeSprite, nounWords[activeWordIndex].darkModeSprite);
         }
 
         /// <summary>
@@ -100,15 +102,16 @@ namespace SwedishApp.Minigames
             gameObject.SetActive(true);
             nounObject.gameObject.SetActive(true);
 
+            //(Re)set variables
+            nounWords = _nounWords;
+            activeWordIndex = 0;
+
             //Set initial colors
             if (UIManager.instance.LightmodeOn)
                 nounObject.LightsOn();
             else
                 nounObject.LightsOff();
 
-            //(Re)set variables
-            nounWords = _nounWords;
-            activeWordIndex = 0;
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextNoun);
@@ -176,6 +179,8 @@ namespace SwedishApp.Minigames
             verbObject.wordSwedishPastPerfectText.text = verbWords[activeWordIndex].PastPerfectTenseWord();
             verbObject.wordSwedishPastPlusPerfectText.text = verbWords[activeWordIndex].PastPlusPerfectTenseWord();
             verbObject.wordConjugationClassText.text = verbWords[activeWordIndex].conjugationClass.ToString();
+
+            verbObject.SetInitialElements(verbWords[activeWordIndex].lightModeSprite, verbWords[activeWordIndex].darkModeSprite);
         }
 
         /// <summary>
@@ -262,6 +267,8 @@ namespace SwedishApp.Minigames
             adjectiveObject.wordSwedishBaseText.text = adjectiveWords[activeWordIndex].swedishWord;
             adjectiveObject.wordSwedishComparativeText.text = adjectiveWords[activeWordIndex].AdjectiveComparative();
             adjectiveObject.wordSwedishSuperlativeText.text = adjectiveWords[activeWordIndex].AdjectiveSuperlative();
+
+            adjectiveObject.SetInitialElements(adjectiveWords[activeWordIndex].lightModeSprite, adjectiveWords[activeWordIndex].darkModeSprite);
         }
 
         /// <summary>
