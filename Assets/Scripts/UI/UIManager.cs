@@ -51,6 +51,8 @@ namespace SwedishApp.UI
         [SerializeField] private List<Image> lightmodableImagesReverse;
         [field: SerializeField] public Sprite abortSpriteDarkmode { get; private set; }
         [field: SerializeField] public Sprite abortSpriteLightmode { get; private set; }
+        [field: SerializeField] public Sprite buttonSpriteDarkmode { get; private set; }
+        [field: SerializeField] public Sprite buttonSpriteLightmode { get; private set; }
         private bool lightmodeHelper = false;
         public bool LightmodeOn { get; private set; } = false;
         public event Action LightmodeOnEvent;
@@ -83,6 +85,7 @@ namespace SwedishApp.UI
         [Header("Credits-Related")]
         [SerializeField] private GameObject creditsScreen;
         [SerializeField] private Button openCreditsButton;
+        [SerializeField] private TextMeshProUGUI openCreditsText;
         [SerializeField] private Button closeCreditsButton;
 
         enum FontSize
@@ -207,9 +210,12 @@ namespace SwedishApp.UI
                 lightmodableImages.ForEach((textObject) => textObject.color = Lightgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Lightgrey);
                 lightmodableImagesReverse.ForEach((textObject) => textObject.color = Darkgrey);
+                openCreditsButton.image.sprite = buttonSpriteLightmode;
+                openCreditsText.color = Darkgrey;
+
                 LightmodeOnEvent?.Invoke();
             }
-            else
+            else //Darkmode goes ON here
             {
                 LightmodeOn = false;
                 _audioManager.PlayLightModeToggle();
@@ -217,6 +223,9 @@ namespace SwedishApp.UI
                 lightmodableImages.ForEach((textObject) => textObject.color = Darkgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
                 lightmodableImagesReverse.ForEach((textObject) => textObject.color = Lightgrey);
+                openCreditsButton.image.sprite = buttonSpriteDarkmode;
+                openCreditsText.color = Lightgrey;
+
                 LightmodeOffEvent?.Invoke();
             }
             StartCoroutine(SliderLerp());

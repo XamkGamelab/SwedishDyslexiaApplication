@@ -38,6 +38,9 @@ namespace SwedishApp.Minigames
         [SerializeField] private Button abortGameButton;
         [SerializeField] private GameObject translateMinigameBG;
         [SerializeField] private Button checkWordButton;
+        [SerializeField] private Button nextWordButton;
+        [SerializeField] private TextMeshProUGUI checkWordTxt;
+        [SerializeField] private TextMeshProUGUI nextWordTxt;
         [SerializeField] private GameObject wordInputFieldHolderPrefab;
         [SerializeField] private GameObject wordLetterInputPrefab;
         [SerializeField] private TextMeshProUGUI wordToTranslateText;
@@ -49,7 +52,9 @@ namespace SwedishApp.Minigames
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            //Subscribe to various events
             checkWordButton.onClick.AddListener(CheckWord);
+            nextWordButton.onClick.AddListener(DeleteOldWord);
             abortGameButton.onClick.AddListener(AbortGame);
             inputReader.SubmitEventCancelled += CheckWord;
             inputReader.SubmitEventHeld += DeleteOldWord;
@@ -69,8 +74,13 @@ namespace SwedishApp.Minigames
             words = new(_words.ToArray());
             activeGameMaxPoints = words.Count;
 
-            //Abort game button's sprite is set according to if light mode is on
+            //Buttons' sprites are set according to if light mode is on
             abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.abortSpriteLightmode : UIManager.instance.abortSpriteDarkmode;
+            checkWordButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.buttonSpriteLightmode : UIManager.instance.buttonSpriteDarkmode;
+            nextWordButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.buttonSpriteLightmode : UIManager.instance.buttonSpriteDarkmode;
+            //Text colors as well
+            checkWordTxt.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
+            nextWordTxt.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
 
             //And make abort button react to light mode changes!
             UIManager.instance.LightmodeOnEvent += ToLightmode;
@@ -153,6 +163,7 @@ namespace SwedishApp.Minigames
             }
 
             wordLetterInputFields[0].Select();
+            nextWordButton.gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -264,6 +275,7 @@ namespace SwedishApp.Minigames
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
             Destroy(wordInputFieldHolder.gameObject);
+            nextWordButton.gameObject.SetActive(false);
             UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
             UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
             wordToTranslateText.text = "";
@@ -336,6 +348,10 @@ namespace SwedishApp.Minigames
         private void ToLightmode()
         {
             abortGameButton.image.sprite = UIManager.instance.abortSpriteLightmode;
+            checkWordButton.image.sprite = UIManager.instance.buttonSpriteLightmode;
+            nextWordButton.image.sprite = UIManager.instance.buttonSpriteLightmode;
+            checkWordTxt.color = UIManager.instance.Darkgrey;
+            nextWordTxt.color = UIManager.instance.Darkgrey;
 
             //Input fields
             for (int i = 0; i < wordLetterInputFields.Count; i++)
@@ -357,6 +373,10 @@ namespace SwedishApp.Minigames
         private void ToDarkmode()
         {
             abortGameButton.image.sprite = UIManager.instance.abortSpriteDarkmode;
+            checkWordButton.image.sprite = UIManager.instance.buttonSpriteDarkmode;
+            nextWordButton.image.sprite = UIManager.instance.buttonSpriteDarkmode;
+            checkWordTxt.color = UIManager.instance.Lightgrey;
+            nextWordTxt.color = UIManager.instance.Lightgrey;
 
             //Input fields
             for (int i = 0; i < wordLetterInputFields.Count; i++)

@@ -1,6 +1,7 @@
 using System.Collections;
 using SwedishApp.UI;
 using SwedishApp.Words;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,7 @@ namespace SwedishApp.Minigames
 
         [Header("Game flow related buttons")]
         [SerializeField] private Button nextWordBtn;
+        [SerializeField] private TextMeshProUGUI nextWordTxt;
         [SerializeField] private Button abortGameButton;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,11 +38,13 @@ namespace SwedishApp.Minigames
         {
             nounObject.gameObject.SetActive(false);
             abortGameButton.onClick.AddListener(EndGame);
-
-            //Abort game button's sprite is set according to if light mode is on
-            abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.abortSpriteLightmode : UIManager.instance.abortSpriteDarkmode;
             UIManager.instance.LightmodeOnEvent += FlashcardGameToLightmode;
             UIManager.instance.LightmodeOffEvent += FlashcardGameToDarkmode;
+
+            //Buttons' sprites are set according to whether or not light mode is on
+            abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.abortSpriteLightmode : UIManager.instance.abortSpriteDarkmode;
+            nextWordBtn.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.buttonSpriteLightmode : UIManager.instance.buttonSpriteDarkmode;
+            nextWordTxt.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
         }
 
         #region lightmode related methods
@@ -52,6 +56,8 @@ namespace SwedishApp.Minigames
         private void FlashcardGameToLightmode()
         {
             abortGameButton.image.sprite = UIManager.instance.abortSpriteLightmode;
+            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
+            nextWordTxt.color = UIManager.instance.Darkgrey;
         }
 
         /// <summary>
@@ -61,6 +67,8 @@ namespace SwedishApp.Minigames
         private void FlashcardGameToDarkmode()
         {
             abortGameButton.image.sprite = UIManager.instance.abortSpriteDarkmode;
+            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
+            nextWordTxt.color = UIManager.instance.Lightgrey;
         }
 
         #endregion
