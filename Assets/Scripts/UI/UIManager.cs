@@ -83,30 +83,6 @@ namespace SwedishApp.UI
 
         [Header("TEMPORARY")]
         public TextMeshProUGUI TEST_VERB;
-        public TextMeshProUGUI adjectiveEn;
-        public TextMeshProUGUI adjectiveEtt;
-        public TextMeshProUGUI adjectiveDefinitiveEn;
-        public TextMeshProUGUI adjectiveDefinitiveEtt;
-        public TextMeshProUGUI adjectiveDefinitivePlural;
-        public TextMeshProUGUI adjectiveComparative;
-        public TextMeshProUGUI adjectiveComparativeDefinitiveEn;
-        public TextMeshProUGUI adjectiveComparativeDefinitiveEtt;
-        public TextMeshProUGUI adjectiveComparativeDefinitivePlural;
-        public TextMeshProUGUI adjectiveSuperlative;
-        public TextMeshProUGUI adjectiveSuperlativeDefinitiveEn;
-        public TextMeshProUGUI adjectiveSuperlativeDefinitiveEtt;
-        public TextMeshProUGUI adjectiveSuperlativeDefinitivePlural;
-
-        public TextMeshProUGUI nounWithGenderStart;
-        public TextMeshProUGUI nounWithGenderEnd;
-        public TextMeshProUGUI pluralNoun;
-        public TextMeshProUGUI pluralDefinitiveNoun;
-
-        public TextMeshProUGUI baseformWord;
-        public TextMeshProUGUI currentTenseWord;
-        public TextMeshProUGUI pastTenseWord;
-        public TextMeshProUGUI pastPerfectTenseWord;
-        public TextMeshProUGUI pastPlusPerfectTenseWord;
 
         enum FontSize
         {
@@ -159,11 +135,7 @@ namespace SwedishApp.UI
             toggleLightmodeBtn.onClick.AddListener(ToggleLightmode);
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
 
-            //Testing light mode effects on word output
-            LightmodeOnEvent += TestAdjectiveOutput;
-            LightmodeOffEvent += TestAdjectiveOutput;
-            LightmodeOnEvent += TestNounOutput;
-            LightmodeOffEvent += TestNounOutput;
+            //Testing light mode effects on verb output
             LightmodeOnEvent += TestVerbOutput;
             LightmodeOffEvent += TestVerbOutput;
 
@@ -196,8 +168,6 @@ namespace SwedishApp.UI
                 flashcardGameTypeMenu.SetActive(false);
             });
 
-            TestAdjectiveOutput();
-            TestNounOutput();
             TestVerbOutput();
 
             inputReader.EnableInputs();
@@ -407,39 +377,9 @@ namespace SwedishApp.UI
         /// <summary>
         /// Temporary methods, used for testing word outputs
         /// </summary>
-        private void TestAdjectiveOutput()
-        {
-            TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveSuperlativeDefinitivePlural();
-            adjectiveEn.text = adjectiveList.adjectiveList[1].AdjectiveEn();    // 3 = liten
-            adjectiveEtt.text = adjectiveList.adjectiveList[1].AdjectiveEtt();
-            adjectiveDefinitiveEn.text = adjectiveList.adjectiveList[1].AdjectiveDefinitiveEn();
-            adjectiveDefinitiveEtt.text = adjectiveList.adjectiveList[1].AdjectiveDefinitiveEtt();
-            adjectiveDefinitivePlural.text = adjectiveList.adjectiveList[1].AdjectiveDefinitivePlural();
-            adjectiveComparative.text = adjectiveList.adjectiveList[1].AdjectiveComparative();
-            adjectiveComparativeDefinitiveEn.text = adjectiveList.adjectiveList[1].AdjectiveComparativeDefinitiveEn();
-            adjectiveComparativeDefinitiveEtt.text = adjectiveList.adjectiveList[1].AdjectiveComparativeDefinitiveEtt();
-            adjectiveComparativeDefinitivePlural.text = adjectiveList.adjectiveList[1].AdjectiveComparativeDefinitivePlural();
-            adjectiveSuperlative.text = adjectiveList.adjectiveList[1].AdjectiveSuperlative();
-            adjectiveSuperlativeDefinitiveEn.text = adjectiveList.adjectiveList[1].AdjectiveSuperlativeDefinitiveEn();
-            adjectiveSuperlativeDefinitiveEtt.text = adjectiveList.adjectiveList[1].AdjectiveSuperlativeDefinitiveEtt();
-            adjectiveSuperlativeDefinitivePlural.text = adjectiveList.adjectiveList[1].AdjectiveSuperlativeDefinitivePlural();
-        }
-
-        private void TestNounOutput()
-        {
-            nounWithGenderStart.text = nounList.nounList[5].NounWithGenderStart();
-            nounWithGenderEnd.text = nounList.nounList[5].NounWithGenderEnd();
-            pluralNoun.text = nounList.nounList[5].PluralNoun();
-            pluralDefinitiveNoun.text = nounList.nounList[5].PluralDefinitiveNoun();
-        }
-
         private void TestVerbOutput()
         {
-            baseformWord.text = verbList.verbList[1].BaseformWord();
-            currentTenseWord.text = verbList.verbList[1].CurrentTenseWord();
-            pastTenseWord.text = verbList.verbList[1].PastTenseWord();
-            pastPerfectTenseWord.text = verbList.verbList[1].PastPerfectTenseWord();
-            pastPlusPerfectTenseWord.text = verbList.verbList[1].PastPlusPerfectTenseWord();
+            TEST_VERB.text = adjectiveList.adjectiveList[0].AdjectiveSuperlativeDefinitivePlural();
         }
-    }
+   }
 }
