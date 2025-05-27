@@ -4022,21 +4022,21 @@ MonoBehaviour:
   - {fileID: 762251535}
   - {fileID: 8268995072798844279}
   - {fileID: 31170701}
+  - {fileID: 1628833341}
   - {fileID: 1727519243}
-  - {fileID: 1842458519}
+  - {fileID: 798005779}
   - {fileID: 1749513979213323118}
   - {fileID: 5675793369148047357}
   - {fileID: 3147569198272118524}
   - {fileID: 6906830862546620637}
   - {fileID: 2090361359}
-  - {fileID: 684539690}
+  - {fileID: 1842458519}
   - {fileID: 6105433506321127962}
   - {fileID: 3129606052654161071}
   - {fileID: 157919193075039321}
   - {fileID: 2622451891451877970}
   - {fileID: 2935679577655481882}
-  - {fileID: 1628833341}
-  - {fileID: 798005779}
+  - {fileID: 684539690}
   lightmodableImages:
   - {fileID: 1764682699}
   - {fileID: 1727957900}
@@ -4069,6 +4069,7 @@ MonoBehaviour:
   - {fileID: 2070543271}
   - {fileID: 306954587}
   - {fileID: 1899608743}
+  flashcardBases:
   - {fileID: 1913427434238011456}
   - {fileID: 2247274482428037956}
   - {fileID: 4621283194386016245}
@@ -4076,6 +4077,8 @@ MonoBehaviour:
   <abortSpriteLightmode>k__BackingField: {fileID: 21300000, guid: fd8576d6eaaeda5449b822a08f944440, type: 3}
   <buttonSpriteDarkmode>k__BackingField: {fileID: 21300000, guid: 4194ed24eec173d478fcf329aa0cc3c0, type: 3}
   <buttonSpriteLightmode>k__BackingField: {fileID: 21300000, guid: 305703af104ac7642b04581ba533339d, type: 3}
+  <cardSpriteDarkmode>k__BackingField: {fileID: 4977559380755642629, guid: 7f379786e7a1ac94cb89027c7ceeae5a, type: 3}
+  <cardSpriteLightmode>k__BackingField: {fileID: 1466947323784572085, guid: 5277fd503462a1f48bf95e4a81f774c5, type: 3}
   toggleHyperlegible: {fileID: 1742683878}
   fontSmallToggle: {fileID: 770180348}
   fontMediumToggle: {fileID: 175734907}

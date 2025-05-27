@@ -51,10 +51,13 @@ namespace SwedishApp.UI
         [SerializeField] private List<Image> highlightImages;
         [SerializeField] private List<Image> highlightImagesReverse;
         [SerializeField] private List<Image> buttonImages;
+        [SerializeField] private List<Image> flashcardBases;
         [field: SerializeField] public Sprite abortSpriteDarkmode { get; private set; }
         [field: SerializeField] public Sprite abortSpriteLightmode { get; private set; }
         [field: SerializeField] public Sprite buttonSpriteDarkmode { get; private set; }
         [field: SerializeField] public Sprite buttonSpriteLightmode { get; private set; }
+        [field: SerializeField] public Sprite cardSpriteDarkmode { get; private set; }
+        [field: SerializeField] public Sprite cardSpriteLightmode { get; private set; }
         private bool lightmodeHelper = false;
         public bool LightmodeOn { get; private set; } = false;
         public event Action LightmodeOnEvent;
@@ -213,6 +216,7 @@ namespace SwedishApp.UI
                 highlightImages.ForEach((imgObject) => imgObject.color = LightmodeHighlight);
                 highlightImagesReverse.ForEach((imgObject) => imgObject.color = DarkmodeHighlight);
                 buttonImages.ForEach((buttonImg) => buttonImg.sprite = buttonSpriteLightmode);
+                flashcardBases.ForEach((baseImg) => baseImg.sprite = cardSpriteLightmode);
 
                 cardtypeBackground.color = LightgreyMostAlpha;
                 closeFlashcardMenuBtn.image.sprite = abortSpriteLightmode;
@@ -232,6 +236,7 @@ namespace SwedishApp.UI
                 highlightImages.ForEach((imgObject) => imgObject.color = DarkmodeHighlight);
                 highlightImagesReverse.ForEach((imgObject) => imgObject.color = LightmodeHighlight);
                 buttonImages.ForEach((buttonImg) => buttonImg.sprite = buttonSpriteDarkmode);
+                flashcardBases.ForEach((baseImg) => baseImg.sprite = cardSpriteDarkmode);
 
                 cardtypeBackground.color = DarkgreyMostAlpha;
                 closeFlashcardMenuBtn.image.sprite = abortSpriteDarkmode;
