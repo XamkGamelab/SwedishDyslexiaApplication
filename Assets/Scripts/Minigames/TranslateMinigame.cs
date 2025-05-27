@@ -207,6 +207,7 @@ namespace SwedishApp.Minigames
                     //Set initial input field background and font colors based on if light mode is enabled or not
                     wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
                     letterTextRefs[i].color = UIManager.instance.LightmodeOn ? UIManager.instance.Lightgrey : UIManager.instance.Darkgrey;
+                    letterTextRefs[i].font = UIManager.instance.hyperlegibleOn ? UIManager.instance.legibleFont : UIManager.instance.basicFont;
                 }
             }
             //If the gamemode is set to translate into finnish
@@ -310,7 +311,7 @@ namespace SwedishApp.Minigames
         {
             Debug.Log("game completed yippee");
             translateMinigameBG.SetActive(false);
-            
+
             //Unsubscribe events
             UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
             UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;

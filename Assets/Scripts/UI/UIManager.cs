@@ -75,6 +75,7 @@ namespace SwedishApp.UI
 
         [Header("Font-Related")]
         private List<TextMeshProUGUI> textFields;
+        public bool hyperlegibleOn { get; private set; } = true;
         [SerializeField] private Toggle toggleHyperlegible;
         [SerializeField] private Toggle fontSmallToggle;
         [SerializeField] private Toggle fontMediumToggle;
@@ -271,6 +272,7 @@ namespace SwedishApp.UI
         {
             if (_toggledOn)
             {
+                hyperlegibleOn = true;
                 textFields.ForEach((textObject) =>
                 {
                     textObject.font = legibleFont;
@@ -280,6 +282,7 @@ namespace SwedishApp.UI
             }
             else
             {
+                hyperlegibleOn = false;
                 textFields.ForEach((textObject) =>
                 {
                     textObject.font = basicFont;
