@@ -10,8 +10,6 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class AdjectiveWord : Word
     {
-        // I added an indentation in front of the tooltips for easier legibility
-
         [Header("Perusmuoto")]
         public string wordCore = "varm";
             [Tooltip("(e.g. 'n') Leave blank if just adding 't' to the core word makes the word's gender into ett")]
@@ -93,11 +91,25 @@ namespace SwedishApp.Words
         {
             if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                if (definitiveIsRegular)
+                {
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                }
+                else
+                {
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordDefinitiveEnd, colorTagEnd);
+                }
             }
             else
             {
-                return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+                if (definitiveIsRegular)
+                {
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+                }
+                else
+                {
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordDefinitiveEnd, colorTagEnd);
+                }
             }
         }
 
@@ -110,11 +122,25 @@ namespace SwedishApp.Words
         {
             if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                if (definitiveIsRegular)
+                {
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                }
+                else
+                {
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordDefinitiveEnd, colorTagEnd);
+                }
             }
             else
             {
-                return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+                if (definitiveIsRegular)
+                {
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+                }
+                else
+                {
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordDefinitiveEnd, colorTagEnd);
+                }
             }
         }
 
@@ -160,7 +186,7 @@ namespace SwedishApp.Words
         {
             if (UIManager.instance.LightmodeOn)
             {
-                if (comparativeDefinitiveIsRegular)
+                if (comparativeIsRegular)
                 {   // Regular
                     return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
                 }
@@ -171,7 +197,7 @@ namespace SwedishApp.Words
             }
             else    // Dark mode
             {
-                if (comparativeDefinitiveIsRegular)
+                if (comparativeIsRegular)
                 {   // Regular
                     return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
                 }
@@ -407,18 +433,19 @@ namespace SwedishApp.Words
         }
     }
 }
-
 // This code's function names
-//AdjectiveEn
-//AdjectiveEtt
-//AdjectiveDefinitiveEn
-//AdjectiveDefinitiveEtt
-//AdjectiveDefinitivePlural
-//AdjectiveComparative
-//AdjectiveComparativeDefinitiveEn
-//AdjectiveComparativeDefinitiveEtt
-//AdjectiveComparativeDefinitivePlural
-//AdjectiveSuperlative
-//AdjectiveSuperlativeDefinitiveEn
-//AdjectiveSuperlativeDefinitiveEtt
-//AdjectiveSuperlativeDefinitivePlural
+/*
+AdjectiveEn
+AdjectiveEtt
+AdjectiveDefinitiveEn
+AdjectiveDefinitiveEtt
+AdjectiveDefinitivePlural
+AdjectiveComparative
+AdjectiveComparativeDefinitiveEn
+AdjectiveComparativeDefinitiveEtt
+AdjectiveComparativeDefinitivePlural
+AdjectiveSuperlative
+AdjectiveSuperlativeDefinitiveEn
+AdjectiveSuperlativeDefinitiveEtt
+AdjectiveSuperlativeDefinitivePlural
+*/

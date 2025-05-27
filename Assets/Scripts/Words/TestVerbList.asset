@@ -15,19 +15,37 @@ MonoBehaviour:
   verbList:
   - swedishWord: var
     finnishWord: olla
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
     conjugationClass: 4
     wordCore: var
     baseformIsRegular: 1
     baseformEnd: a
     currentTenseIsRegular: 0
     currentTenseEnd: "\xE4r"
-    pastTenseIsRegular: 1
-    pastTenseEnd: 
+    pastTenseIsRegular: 0
+    pastTenseEnd: var
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
     pastPerfectTenseEnd: it
     pastPlusPerfectTenseIsRegular: 1
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: it
+  - swedishWord: jobba
+    finnishWord: "ty\xF6skennell\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    conjugationClass: 1
+    wordCore: jobba
+    baseformIsRegular: 1
+    baseformEnd: 
+    currentTenseIsRegular: 1
+    currentTenseEnd: r
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: t
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t

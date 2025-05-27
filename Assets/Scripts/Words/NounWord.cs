@@ -64,40 +64,47 @@ namespace SwedishApp.Words
 
         public string PluralNoun()
         {
-            // Irregular
-            if (fleraPlural && !wordPluralIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(flera, colorTagStartLight, wordPluralEnd, colorTagEnd);                // Light mode on, flera
-            }
-            else if (fleraPlural && !wordPluralIsRegular && !UIManager.instance.LightmodeOn)    
-            {
-                return string.Concat(flera, colorTagStartDark, wordPluralEnd, colorTagEnd);                 // Dark mode on, flera
-            }
-            if (!fleraPlural && !wordPluralIsRegular && UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartLight, wordPluralEnd, colorTagEnd);                       // Light mode on, not flera
-            }
-            else if (!fleraPlural && !wordPluralIsRegular && !UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartDark, wordPluralEnd, colorTagEnd);                        // Dark mode on, not flera
-            }
-
-            // Regular
-            else if (fleraPlural && UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(flera, colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);      // Light mode on, flera
-            }
-            else if (fleraPlural && !UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(flera, colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);       // Dark mode on, flera
-            }
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);             // Light mode on, not flera
+                // Irregular
+                if (fleraPlural && !wordPluralIsRegular)
+                {   // Flera
+                    return string.Concat(flera, colorTagStartLight, wordPluralEnd, colorTagEnd);
+                }
+                else if (!fleraPlural)
+                {   // Not flera
+                    return string.Concat(colorTagStartLight, wordPluralEnd, colorTagEnd);
+                }
+                // Regular
+                else if (fleraPlural)
+                {   // Flera
+                    return string.Concat(flera, colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);
+                }
+                else
+                {   // Not flera
+                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);
+                }
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);              // Not flera, dark mode
+                // Irregular
+                if (fleraPlural && !wordPluralIsRegular)
+                {   // Flera
+                    return string.Concat(flera, colorTagStartDark, wordPluralEnd, colorTagEnd);
+                }
+                else if (!fleraPlural && !wordPluralIsRegular)
+                {   // Not flera
+                    return string.Concat(colorTagStartDark, wordPluralEnd, colorTagEnd);
+                }
+                // Regular
+                else if (fleraPlural)
+                {   // Flera
+                    return string.Concat(flera, colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);
+                }
+                else
+                {   // Not flera
+                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);
+                }
             }
         }
 
@@ -125,3 +132,10 @@ namespace SwedishApp.Words
         }
     }
 }
+// This code's function names
+/*
+NounWithGenderStart
+NounWithGenderEnd
+PluralNoun
+PluralDefinitiveNoun
+*/
