@@ -58,8 +58,6 @@ namespace SwedishApp.Minigames
             abortGameButton.onClick.AddListener(AbortGame);
             inputReader.SubmitEventCancelled += CheckWord;
             inputReader.SubmitEventHeld += DeleteOldWord;
-            UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
-            UIManager.instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
         }
 
         /// <summary>
@@ -260,6 +258,8 @@ namespace SwedishApp.Minigames
                     }
                 }
             }
+            UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
+            UIManager.instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
             wordLetterInputFields[0].Select();
         }
 
@@ -310,6 +310,12 @@ namespace SwedishApp.Minigames
         {
             Debug.Log("game completed yippee");
             translateMinigameBG.SetActive(false);
+            
+            //Unsubscribe events
+            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
+            UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
+            UIManager.instance.LightmodeOnEvent -= ToLightmode;
+            UIManager.instance.LightmodeOffEvent -= ToDarkmode;
         }
 
         /// <summary>
@@ -339,6 +345,32 @@ namespace SwedishApp.Minigames
             Destroy(wordInputFieldHolder.gameObject);
             translateMinigameBG.SetActive(false);
         }
+
+        #region font related
+
+        /// <summary>
+        /// This method handles changing the word's input fields to the activated font
+        /// </summary>
+        private void SwapFieldsToLegibleFont()
+        {
+            foreach (TMP_InputField inputField in wordLetterInputFields)
+            {
+                inputField.fontAsset = UIManager.instance.legibleFont;
+            }
+        }
+
+        /// <summary>
+        /// This method handles changing the word's input fields to the activated font
+        /// </summary>
+        private void SwapFieldsToBasicFont()
+        {
+            foreach (TMP_InputField inputField in wordLetterInputFields)
+            {
+                inputField.fontAsset = UIManager.instance.basicFont;
+            }
+        }
+
+        #endregion
 
         #region lightmode related
 
@@ -389,28 +421,6 @@ namespace SwedishApp.Minigames
                 colorBlock.disabledColor = UIManager.instance.LightgreyHalfAlpha;
                 wordLetterInputFields[i].colors = colorBlock;
                 letterTextRefs[i].color = UIManager.instance.Darkgrey;
-            }
-        }
-
-        /// <summary>
-        /// This method handles changing the word's input fields to the activated font
-        /// </summary>
-        private void SwapFieldsToLegibleFont()
-        {
-            foreach (TMP_InputField inputField in wordLetterInputFields)
-            {
-                inputField.fontAsset = UIManager.instance.legibleFont;
-            }
-        }
-
-        /// <summary>
-        /// This method handles changing the word's input fields to the activated font
-        /// </summary>
-        private void SwapFieldsToBasicFont()
-        {
-            foreach (TMP_InputField inputField in wordLetterInputFields)
-            {
-                inputField.fontAsset = UIManager.instance.basicFont;
             }
         }
 

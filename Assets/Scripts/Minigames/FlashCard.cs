@@ -60,6 +60,8 @@ namespace SwedishApp.Minigames
             darkmodeSprite = _darkmodeSprite;
             if (lightmodeSprite != null && darkmodeSprite != null)
                 hintImage.sprite = UIManager.instance.LightmodeOn ? lightmodeSprite : darkmodeSprite;
+            else
+                hintImage.enabled = false;
         }
 
         /// <summary>
@@ -78,7 +80,7 @@ namespace SwedishApp.Minigames
         {
             foreach (TextMeshProUGUI text in textsInChildren)
             {
-                text.color = UIManager.instance.Lightgrey;
+                text.color = UIManager.instance.Darkgrey;
             }
             if (lightmodeSprite != null)
             {
@@ -93,7 +95,7 @@ namespace SwedishApp.Minigames
         {
             foreach (TextMeshProUGUI text in textsInChildren)
             {
-                text.color = UIManager.instance.Darkgrey;
+                text.color = UIManager.instance.Lightgrey;
             }
             if (darkmodeSprite != null)
             {
