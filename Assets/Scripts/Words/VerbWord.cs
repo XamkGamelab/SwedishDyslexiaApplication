@@ -1,5 +1,6 @@
 using SwedishApp.UI;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace SwedishApp.Words
 {
@@ -57,23 +58,46 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string BaseformWord()
         {
-            if (baseformIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, baseformEnd);
-            }
-            else if (baseformIsRegular && !UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, baseformEnd);
-            }
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartLight, baseformEnd, colorTagEnd);
+                if (baseformIsRegular)
+                {
+                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, baseformEnd);
+                }
+                else
+                {
+                    return string.Concat(colorTagStartLight, baseformEnd, colorTagEnd);
+                }
             }
             else
             {
-                return string.Concat(colorTagStartDark, baseformEnd, colorTagEnd);
+                if (baseformIsRegular)
+                {
+                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, baseformEnd);
+                }
+                else
+                {
+                    return string.Concat(colorTagStartDark, baseformEnd, colorTagEnd);
+                }
             }
         }
+            //if (baseformIsRegular && UIManager.instance.LightmodeOn)
+            //{
+            //    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, baseformEnd);
+            //}
+            //else if (baseformIsRegular && !UIManager.instance.LightmodeOn)
+            //{
+            //    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, baseformEnd);
+            //}
+            //else if (UIManager.instance.LightmodeOn)
+            //{
+            //    return string.Concat(colorTagStartLight, baseformEnd, colorTagEnd);
+            //}
+            //else
+            //{
+            //    return string.Concat(colorTagStartDark, baseformEnd, colorTagEnd);
+            //}
+
 
         /// <summary>
         /// This outputs the word in its current tense with the core highlighted.
@@ -82,22 +106,29 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string CurrentTenseWord()
         {
-            if (currentTenseIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, currentTenseEnd);
-            }
-            else if (currentTenseIsRegular && !UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, currentTenseEnd);
-            }
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartLight, currentTenseEnd, colorTagEnd);
+                if (currentTenseIsRegular)
+                {
+                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, currentTenseEnd);
+                }
+                else
+                {
+                    return string.Concat(colorTagStartLight, currentTenseEnd, colorTagEnd);
+                }
             }
             else
             {
-                return string.Concat(colorTagStartDark, currentTenseEnd, colorTagEnd);
+                if (currentTenseIsRegular)
+                {
+                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, currentTenseEnd);
+                }
+                else
+                {
+                    return string.Concat(colorTagStartDark, currentTenseEnd, colorTagEnd);
+                }
             }
+
         }
 
         /// <summary>
@@ -107,21 +138,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string PastTenseWord()
         {
-            if (pastTenseIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, pastTenseEnd);
-            }
-            else if (pastTenseIsRegular && !UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, pastTenseEnd);
-            }
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(colorTagStartLight, pastTenseEnd, colorTagEnd);
+                if (pastTenseIsRegular)
+                {
+                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, pastTenseEnd);
+                }
+                else
+                {
+                    return string.Concat(colorTagStartLight, pastTenseEnd, colorTagEnd);
+                }
             }
             else
             {
-                return string.Concat(colorTagStartDark, pastTenseEnd, colorTagEnd);
+                if (pastTenseIsRegular)
+                {
+                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, pastTenseEnd);
+                }
+                else
+                {
+                    return string.Concat(colorTagStartDark, pastTenseEnd, colorTagEnd);
+                }
             }
         }
 
@@ -132,21 +169,27 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string PastPerfectTenseWord()
         {
-            if (pastPerfectTenseIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(pastPerfectTenseStart, colorTagStartLight, wordCore, colorTagEnd, pastPerfectTenseEnd);
-            }
-            else if (pastPerfectTenseIsRegular && !UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(pastPerfectTenseStart, colorTagStartDark, wordCore, colorTagEnd, pastPerfectTenseEnd);
-            }
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(pastPerfectTenseStart, colorTagStartLight, pastPerfectTenseEnd, colorTagEnd);
+                if (pastPerfectTenseIsRegular)
+                {
+                    return string.Concat(pastPerfectTenseStart, colorTagStartLight, wordCore, colorTagEnd, pastPerfectTenseEnd);
+                }
+                else
+                {
+                    return string.Concat(pastPerfectTenseStart, colorTagStartLight, pastPerfectTenseEnd, colorTagEnd);
+                }
             }
             else
             {
-                return string.Concat(pastPerfectTenseStart, colorTagStartDark, pastPerfectTenseEnd, colorTagEnd);
+                if (pastPerfectTenseIsRegular)
+                {
+                    return string.Concat(pastPerfectTenseStart, colorTagStartDark, wordCore, colorTagEnd, pastPerfectTenseEnd);
+                }
+                else
+                {
+                    return string.Concat(pastPerfectTenseStart, colorTagStartDark, pastPerfectTenseEnd, colorTagEnd);
+                }
             }
         }
 
@@ -157,22 +200,36 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string PastPlusPerfectTenseWord()
         {
-            if (pastPlusPerfectTenseIsRegular && UIManager.instance.LightmodeOn)
+            if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(pastPlusPerfectTenseStart, colorTagStartLight, wordCore, colorTagEnd, pastPlusPerfectTenseEnd);
-            }
-            else if (pastPlusPerfectTenseIsRegular && !UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, wordCore, colorTagEnd, pastPlusPerfectTenseEnd);
-            }
-            else if (UIManager.instance.LightmodeOn)
-            {
-                return string.Concat(pastPlusPerfectTenseStart, colorTagStartLight, pastPlusPerfectTenseIsRegular, colorTagEnd);
+                if (pastPlusPerfectTenseIsRegular)
+                {
+                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartLight, wordCore, colorTagEnd, pastPlusPerfectTenseEnd);
+                }
+                else
+                {
+                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartLight, pastPlusPerfectTenseIsRegular, colorTagEnd);
+                }
             }
             else
             {
-                return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, pastPlusPerfectTenseIsRegular, colorTagEnd);
+                if (pastPlusPerfectTenseIsRegular)
+                {
+                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, wordCore, colorTagEnd, pastPlusPerfectTenseEnd);
+                }
+                else
+                {
+                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, pastPlusPerfectTenseIsRegular, colorTagEnd);
+                }
             }
         }
     }
 }
+// This code's function names
+/*
+BaseformWord
+CurrentTenseWord
+PastTenseWord
+PastPerfectTenseWord
+PastPlusPerfectTenseWord
+ */

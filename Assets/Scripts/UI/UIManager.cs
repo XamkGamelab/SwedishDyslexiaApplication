@@ -24,6 +24,7 @@ namespace SwedishApp.UI
         public VerbList verbList;
         public NounList nounList;
         public AdjectiveList adjectiveList;
+       
 
         [Header("Input-Related")]
         [SerializeField] private InputReader inputReader;
@@ -96,6 +97,9 @@ namespace SwedishApp.UI
         [SerializeField] private Button openCreditsButton;
         [SerializeField] private TextMeshProUGUI openCreditsText;
         [SerializeField] private Button closeCreditsButton;
+
+        [Header("TEMPORARY")]
+        public TextMeshProUGUI TEST_VERB;
 
         enum FontSize
         {

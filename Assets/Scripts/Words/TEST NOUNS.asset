@@ -18,7 +18,7 @@ MonoBehaviour:
     darkModeSprite: {fileID: -8176270613256908275, guid: f5b964d23557b964ca951d73d5132707, type: 3}
     lightModeSprite: {fileID: 8406624337460424413, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
     enOrEtt: 1
-    declensionClass: 1
+    declensionClass: 2
     wordCore: strump
     wordGenderStart: 'en '
     wordGenderEnd: an

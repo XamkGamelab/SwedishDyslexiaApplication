@@ -91,16 +91,16 @@ namespace SwedishApp.Core
 
         public void StartMenuMusic3()  // Alternative music
         {
-            if (!_menuMusic2Playing)
+            if (!_menuMusic3Playing)
             {
                 _menuMusic1.Stop();
                 _menuMusic2.Stop();
                 _menuMusic3.Play();
                 _gameMusic.Stop();
                 _buzzing.Stop();
-                _menuMusic2.volume = 1.0f;
-                _menuMusic2.panStereo = -0.3f;
-                _menuMusic2.pitch = 1.0f;
+                _menuMusic3.volume = 1.0f;
+                _menuMusic3.panStereo = -0.3f;
+                _menuMusic3.pitch = 1.0f;
                 _menuMusic1Playing = false;
                 _menuMusic2Playing = false;
                 _menuMusic3Playing = true;
@@ -144,7 +144,6 @@ namespace SwedishApp.Core
                 _buzzingPlaying = true;
             }
         }
-
         public void PlayMenuSelect1()
         {
             _menuSelect1.Play();
@@ -182,8 +181,4 @@ namespace SwedishApp.Core
             _incorrect.volume = 1.0f;
         }
     }
-
 }
-
-// Tutorial 1: https://adamwreed93.medium.com/how-to-create-and-utilize-an-audio-manager-in-unity-627123d2483
-// Tutorial 2: https://medium.com/@cwagoner78/creating-an-organized-sound-system-and-playing-sounds-in-unity-82cbb48060ff
