@@ -51,6 +51,36 @@ namespace SwedishApp.Core
                 Debug.LogError($"Found more than one AudioManager, destroying duplicate. Fix this!");
             }
         }
+
+        private void AudioSettings()
+        {
+            _menuMusic1.        volume      = 1.0f;
+            _menuMusic1.        pitch       = 0.7f;
+
+            _menuMusic2.        volume      = 1.0f;
+            _menuMusic2.        panStereo   = -0.3f;
+            _menuMusic2.        pitch       = 1.0f;
+
+            _menuMusic3.        volume      = 1.0f;
+            _menuMusic3.        panStereo   = -0.3f;
+            _menuMusic3.        pitch       = 1.0f;
+
+            _gameMusic.         volume      = 1.0f;
+            _gameMusic.         pitch       = 0.9f;
+
+            _buzzing.           volume      = 3.0f;
+            _buzzing.           panStereo   = -0.25f;
+
+            _menuSelect1.       volume      = 1.0f;
+            _menuSelect2.       volume      = 2.0f;
+            _menuSelect3.       volume      = 0.05f;
+            _lightModeToggle.   volume      = 1.0f;
+            _lightModeToggle.   panStereo   = -0.6f;
+            _inputSound.        volume      = 1.0f;
+            _correct.           volume      = 0.5f;
+            _incorrect.         volume      = 1.0f;
+        }
+
         public void StartMenuMusic1()
         {
             if (!_menuMusic1Playing)
@@ -60,8 +90,6 @@ namespace SwedishApp.Core
                 _menuMusic3.Stop();
                 _gameMusic.Stop();
                 _buzzing.Stop();
-                _menuMusic1.volume = 1.0f;
-                _menuMusic1.pitch = 0.7f;
                 _menuMusic1Playing = true;
                 _menuMusic2Playing = false;
                 _menuMusic3Playing = false;
@@ -78,9 +106,6 @@ namespace SwedishApp.Core
                 _menuMusic3.Stop();
                 _gameMusic.Stop();
                 _buzzing.Stop();
-                _menuMusic2.volume = 1.0f;
-                _menuMusic2.panStereo = -0.3f;
-                _menuMusic2.pitch = 1.0f;
                 _menuMusic1Playing = false;
                 _menuMusic2Playing = true;
                 _menuMusic3Playing = false;
@@ -98,9 +123,6 @@ namespace SwedishApp.Core
                 _menuMusic3.Play();
                 _gameMusic.Stop();
                 _buzzing.Stop();
-                _menuMusic3.volume = 1.0f;
-                _menuMusic3.panStereo = -0.3f;
-                _menuMusic3.pitch = 1.0f;
                 _menuMusic1Playing = false;
                 _menuMusic2Playing = false;
                 _menuMusic3Playing = true;
@@ -117,8 +139,6 @@ namespace SwedishApp.Core
                 _menuMusic3.Stop();
                 _gameMusic.Play();
                 _buzzing.Stop();
-                _gameMusic.volume = 1.0f;
-                _gameMusic.pitch = 0.9f;
                 _menuMusic1Playing = false;
                 _menuMusic2Playing = false;
                 _menuMusic3Playing = false;
@@ -135,8 +155,6 @@ namespace SwedishApp.Core
                 _menuMusic3.Stop();
                 _gameMusic.Stop();
                 _buzzing.Play();
-                _buzzing.volume = 3.0f;
-                _buzzing.panStereo = -0.25f;
                 _menuMusic1Playing = false;
                 _menuMusic2Playing = false;
                 _menuMusic3Playing = false;
@@ -147,38 +165,30 @@ namespace SwedishApp.Core
         public void PlayMenuSelect1()
         {
             _menuSelect1.Play();
-            _menuSelect1.volume = 1.0f;
         }
         public void PlayMenuSelect2()
         {
             _menuSelect2.Play();
-            _menuSelect2.volume = 1.0f;
         }
         public void PlayMenuSelect3()
         {
             _menuSelect3.Play();
-            _menuSelect3.volume = 0.25f;
         }
         public void PlayLightModeToggle()
         {
             _lightModeToggle.Play();
-            _lightModeToggle.volume = 1.0f;
-            _lightModeToggle.panStereo = -0.6f;
         }
         public void PlayInputSound()
         {
             _inputSound.Play();
-            _inputSound.volume = 1.0f;
         }
         public void PlayCorrect()
         {
             _correct.Play();
-            _correct.volume = 0.5f;
         }
         public void PlayIncorrect()
         {
             _incorrect.Play();
-            _incorrect.volume = 1.0f;
         }
     }
 }

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Flashcard_botton_White_Blue_0: -8954047569857291205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
