@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SwedishApp.Core
 {
@@ -39,6 +40,11 @@ namespace SwedishApp.Core
         [SerializeField] private AudioSource _correct;
         [SerializeField] private AudioSource _incorrect;
 
+        [Header("Audio settings")]
+        private readonly float musicVolume = 1.0f;
+
+        [SerializeField] public Slider volumeSlider;
+
         private void Awake()
         {
             if(_instance == null)
@@ -52,20 +58,32 @@ namespace SwedishApp.Core
             }
         }
 
+        private void Start()
+        {
+            if(!PlayerPrefs.HasKey("musicVolume"))      // If there isn't previous saved values, set volume to default
+            {
+                PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+            }
+            else
+            {
+                Load();
+            }
+        }
+
         private void AudioSettings()
         {
-            _menuMusic1.        volume      = 1.0f;
+            _menuMusic1.        volume      = musicVolume;
             _menuMusic1.        pitch       = 0.7f;
 
-            _menuMusic2.        volume      = 1.0f;
+            _menuMusic2.        volume      = musicVolume;
             _menuMusic2.        panStereo   = -0.3f;
             _menuMusic2.        pitch       = 1.0f;
 
-            _menuMusic3.        volume      = 1.0f;
+            _menuMusic3.        volume      = musicVolume;
             _menuMusic3.        panStereo   = -0.3f;
             _menuMusic3.        pitch       = 1.0f;
 
-            _gameMusic.         volume      = 1.0f;
+            _gameMusic.         volume      = musicVolume;
             _gameMusic.         pitch       = 0.9f;
 
             _buzzing.           volume      = 3.0f;
@@ -80,7 +98,21 @@ namespace SwedishApp.Core
             _correct.           volume      = 0.5f;
             _incorrect.         volume      = 1.0f;
         }
+        public void ChangeVolume()
+        {
+            AudioListener.volume = volumeSlider.value;
+            Save();
+        }
 
+        private void Load()
+        {
+            volumeSlider.value = PlayerPrefs.GetFloat("soundsVolume");
+        }
+
+        private void Save()
+        {
+            PlayerPrefs.SetFloat("soundsVolume", volumeSlider.value);
+        }
         public void StartMenuMusic1()
         {
             if (!_menuMusic1Playing)

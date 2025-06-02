@@ -1253,7 +1253,19 @@ MonoBehaviour:
   m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &217840865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,7 +2726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayCorrect
+        m_MethodName: PlayMenuSelect1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10173,6 +10185,7 @@ MonoBehaviour:
   _inputSound: {fileID: 111855205}
   _correct: {fileID: 1014521929}
   _incorrect: {fileID: 1800394849}
+  volumeSlider: {fileID: 194931270}
 --- !u!4 &1441901106
 Transform:
   m_ObjectHideFlags: 0
@@ -11652,7 +11665,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayCorrect
+        m_MethodName: PlayMenuSelect1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12084,7 +12097,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect3
+        m_MethodName: PlayMenuSelect1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
