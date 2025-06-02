@@ -69,11 +69,11 @@ namespace SwedishApp.Words
                 // Irregular
                 if (fleraPlural && !wordPluralIsRegular)
                 {   // Flera
-                    return string.Concat(flera, colorTagStartLight, wordPluralEnd, colorTagEnd);
+                    return string.Concat(flera, colorTagStartLight, wordCore, wordPluralEnd, colorTagEnd);
                 }
                 else if (!fleraPlural)
                 {   // Not flera
-                    return string.Concat(colorTagStartLight, wordPluralEnd, colorTagEnd);
+                    return string.Concat(colorTagStartLight, wordCore, wordPluralEnd, colorTagEnd);
                 }
                 // Regular
                 else if (fleraPlural)
