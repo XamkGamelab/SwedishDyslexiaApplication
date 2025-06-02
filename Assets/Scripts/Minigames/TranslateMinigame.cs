@@ -202,7 +202,7 @@ namespace SwedishApp.Minigames
                     }
 
                     //Save references to the text slot of each input field, used when changing font settings!
-                    letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
+                    letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
 
                     //Set initial input field background and font colors based on if light mode is enabled or not
                     wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
