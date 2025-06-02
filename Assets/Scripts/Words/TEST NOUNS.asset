@@ -18,7 +18,7 @@ MonoBehaviour:
     darkModeSprite: {fileID: -8176270613256908275, guid: f5b964d23557b964ca951d73d5132707, type: 3}
     lightModeSprite: {fileID: 8406624337460424413, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
     enOrEtt: 1
-    declensionClass: 2
+    declensionClass: 3
     wordCore: strump
     wordGenderStart: 'en '
     wordGenderEnd: an
@@ -26,7 +26,7 @@ MonoBehaviour:
     wordPluralEnd: or
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: erna
+    wordDefinitivePluralEnd: orna
   - swedishWord: fisk
     finnishWord: kala
     darkModeSprite: {fileID: -5284978090353819794, guid: ae6373c18c5a7b8498726d237507185c, type: 3}
@@ -40,7 +40,7 @@ MonoBehaviour:
     wordPluralEnd: ar
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: erna
+    wordDefinitivePluralEnd: arna
   - swedishWord: apelsin
     finnishWord: appelsiini
     darkModeSprite: {fileID: -6976594321004325502, guid: 7bc7f498e3ef7d54191f4ff6f6103edd, type: 3}
