@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Flashcard_botton_Black_Yellow_0: 3970252983705062730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
