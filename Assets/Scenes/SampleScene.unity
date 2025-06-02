@@ -1349,6 +1349,7 @@ GameObject:
   - component: {fileID: 292850452}
   - component: {fileID: 292850451}
   - component: {fileID: 292850450}
+  - component: {fileID: 292850453}
   m_Layer: 5
   m_Name: BGM3
   m_TagString: Untagged
@@ -1422,11 +1423,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartMenuMusic3
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 292850453}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1470,6 +1471,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292850448}
   m_CullTransparentMesh: 1
+--- !u!114 &292850453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292850448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 460be31b1a3a3204ba2e8a78e19f2a87, type: 3}
+  volume: 1
+  pitch: 1
+  pan: -0.3
 --- !u!1 &306954584
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,6 +3265,7 @@ GameObject:
   - component: {fileID: 651202445}
   - component: {fileID: 651202444}
   - component: {fileID: 651202443}
+  - component: {fileID: 651202446}
   m_Layer: 5
   m_Name: BGM2
   m_TagString: Untagged
@@ -3321,11 +3339,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartMenuMusic2
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 651202446}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3369,6 +3387,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651202441}
   m_CullTransparentMesh: 1
+--- !u!114 &651202446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651202441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 77e94600b23b0fa4e97515a4e0dad559, type: 3}
+  volume: 1
+  pitch: 1
+  pan: -0.3
 --- !u!1 &682994695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3743,6 +3777,7 @@ GameObject:
   - component: {fileID: 735112214}
   - component: {fileID: 735112213}
   - component: {fileID: 735112212}
+  - component: {fileID: 735112215}
   m_Layer: 5
   m_Name: BGM1
   m_TagString: Untagged
@@ -3816,11 +3851,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartMenuMusic1
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 735112215}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3864,6 +3899,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735112210}
   m_CullTransparentMesh: 1
+--- !u!114 &735112215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735112210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 0607c8a7e3da5154c9566b67b60e36d7, type: 3}
+  volume: 1
+  pitch: 0.7
+  pan: 0
 --- !u!1 &735774235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,7 +4420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &771795196
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4628,6 +4679,7 @@ GameObject:
   - component: {fileID: 851720906}
   - component: {fileID: 851720905}
   - component: {fileID: 851720904}
+  - component: {fileID: 851720907}
   m_Layer: 5
   m_Name: BGM4
   m_TagString: Untagged
@@ -4701,11 +4753,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartGameMusic
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 851720907}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4749,6 +4801,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851720902}
   m_CullTransparentMesh: 1
+--- !u!114 &851720907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851720902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 0ac79c6a2bb5aca4e93a86d415bbe13c, type: 3}
+  volume: 1
+  pitch: 0.9
+  pan: 0
 --- !u!114 &886155916 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3583364451934141585, guid: 031193864ce93f749b9b95cd103572a0, type: 3}
@@ -6854,6 +6922,7 @@ GameObject:
   - component: {fileID: 1248404199}
   - component: {fileID: 1248404198}
   - component: {fileID: 1248404197}
+  - component: {fileID: 1248404200}
   m_Layer: 5
   m_Name: Buzzing
   m_TagString: Untagged
@@ -6927,11 +6996,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartBuzzing
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1248404200}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6975,6 +7044,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248404195}
   m_CullTransparentMesh: 1
+--- !u!114 &1248404200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248404195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: ddc4107b8e36ca440b5c66c870a73f16, type: 3}
+  volume: 3
+  pitch: -0.25
+  pan: 0
 --- !u!1 &1260473996
 GameObject:
   m_ObjectHideFlags: 0
@@ -8109,10 +8194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61493b2153bdbec4ebdb36094a1df266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuMusic1: {fileID: 1962702257}
-  _menuMusic2: {fileID: 1496958270}
-  _menuMusic3: {fileID: 482532269}
-  _gameMusic: {fileID: 1083686946}
+  menuMusic: {fileID: 0}
   _menuSelect1: {fileID: 1207702317}
   _menuSelect2: {fileID: 1224359217}
   _menuSelect3: {fileID: 311768895}
@@ -8121,6 +8203,7 @@ MonoBehaviour:
   _inputSound: {fileID: 111855205}
   _correct: {fileID: 1014521929}
   _incorrect: {fileID: 1800394849}
+  volumeSlider: {fileID: 0}
 --- !u!4 &1441901106
 Transform:
   m_ObjectHideFlags: 0
