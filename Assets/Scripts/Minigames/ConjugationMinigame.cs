@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using SwedishApp.Input;
 using SwedishApp.Words;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SwedishApp.Minigames
 {
@@ -29,13 +31,24 @@ namespace SwedishApp.Minigames
         private string activeWordWantedFormNoHighlight;
         private bool formIsRegular;
         private bool wordWasChecked;
+        private int correctWordsCount = 0;
+        private bool wordWasCorrect = false;
+        public bool gameIsEnding { get; private set; } = false;
 
         [Header("Variable References")]
+        [SerializeField] private InputReader inputReader;
         [SerializeField] private TextMeshProUGUI finnishWordTxt;
         [SerializeField] private TextMeshProUGUI swedishBaseWordTxt;
         [SerializeField] private TextMeshProUGUI conjugationClassTxt;
+        [SerializeField] private GameObject irregularHint;
+        [SerializeField] private Button checkWordBtn;
+        [SerializeField] private Button nextWordBtn;
         [SerializeField] private GameObject inputfieldHolder;
         [SerializeField] private GameObject singleInputfield;
+        [SerializeField] private float newWordDelay = 1f;
+        [SerializeField] private float gameEndDelay = 1.5f;
+
+        //Input field related references
         private InputFieldHandling inputFieldHandling;
         private List<TMP_InputField> singleInputfields;
         private List<TextMeshProUGUI> fieldTextRefs;
@@ -50,13 +63,19 @@ namespace SwedishApp.Minigames
             gameObject.SetActive(true);
             conjugateInto = _conjugateInto;
             verbList = new(_verbList);
+            correctWordsCount = 0;
+
+            //Like and subscribe
+            inputReader.SubmitEventCancelled += CheckWord;
+            inputReader.SubmitEventHeld += NextWord;
+            checkWordBtn.onClick.AddListener(CheckWord);
+            nextWordBtn.onClick.AddListener(NextWord);
+
+            InitializeNewWord();
         }
 
-        private void NewTask(bool _overrideRequirement = false)
+        private void InitializeNewWord()
         {
-            //Check if this method can be reasonably run; if not, return
-            if (!wordWasChecked && !_overrideRequirement) return;
-
             //Get new active word & set relevant variables
             activeWord = verbList.Pop();
             wordWasChecked = false;
@@ -85,12 +104,15 @@ namespace SwedishApp.Minigames
                     break;
                 default:
                     string errorMessage = string.Concat($"Something went horribly wrong with randomly determining word conjugation form:\n",
-                    $"conjugateInto value was set to {conjugateInto} when only values between 2-5 can be safely handled!");
+                    $"conjugateInto value was set to {conjugateInto} when only values between 2-5 can be safely handled! Ref: {typeof(ConjugateInto)}");
                     Debug.LogError(errorMessage);
                     return;
             }
 
             //Update GUI
+            if (!formIsRegular) irregularHint.SetActive(true);
+            else irregularHint.SetActive(false);
+
             finnishWordTxt.text = activeWord.finnishWord;   //CHANGE THIS TO WORK WITH THE CURRENT FORM
             swedishBaseWordTxt.text = activeWord.swedishWord;
             conjugationClassTxt.text = string.Concat("Taivutusluokka ", activeWord.conjugationClass.ToString());
@@ -102,6 +124,8 @@ namespace SwedishApp.Minigames
 
             for (int i = 0; i < activeWordWantedForm.Length; i++)
             {
+                int indexHolder = i;
+
                 //This part handles ignoring the word's highlight tags. Should eventually be replaced by a system
                 //that builds the word without the highlight directly in the word's class
                 if (activeWordWantedForm[i] == '<')
@@ -116,9 +140,14 @@ namespace SwedishApp.Minigames
                 }
                 if (ignoreLetters) continue;
 
+                //Grab refs
                 singleInputfields.Add(Instantiate(singleInputfield, inputFieldHandling.transform).GetComponent<TMP_InputField>());
                 fieldTextRefs.Add(singleInputfields[i].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
                 chars.Add(activeWordWantedForm[i]);
+
+                //Like and subscribe
+                singleInputfields[i].onValueChanged.AddListener((s) => inputFieldHandling.GoNextField());
+                singleInputfields[i].onSelect.AddListener((s) => inputFieldHandling.GetActiveIndex(indexHolder));
             }
             activeWordWantedFormNoHighlight = new(chars.ToArray());
             Debug.Log($"Active word without highlight tags should be: {activeWordWantedFormNoHighlight}");
@@ -126,17 +155,91 @@ namespace SwedishApp.Minigames
 
         private void CheckWord()
         {
+            if (gameIsEnding || !checkWordBtn.interactable) return;
+
+            int correctLettersCount = 0;
+            int wordLetterCount = 0;
+
+            List<char> chars = new();
+            for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
+            {
+                if (!singleInputfields[i].enabled) continue;
+                chars.Add(singleInputfields[i].text[0]);
+                wordLetterCount++;
+            }
+            string givenString = new(chars.ToArray());
+            givenString.ToLower();
+
+            for (int i = 0; i < singleInputfields.Count; i++)
+            {
+                if (activeWordWantedFormNoHighlight[i] == ' ' || singleInputfields[i].text == "") continue;
+                if (givenString[i] == activeWordWantedFormNoHighlight[i])
+                {
+                    //Activate "correct" indicator
+                    fieldTextRefs[i].transform.GetChild(0).gameObject.SetActive(true);
+                    fieldTextRefs[i].transform.GetChild(1).gameObject.SetActive(false);
+                    correctLettersCount++;
+                }
+                else
+                {
+                    //Activate "correct" indicator
+                    fieldTextRefs[i].transform.GetChild(0).gameObject.SetActive(false);
+                    fieldTextRefs[i].transform.GetChild(1).gameObject.SetActive(true);
+                }
+            }
+
+            if (correctLettersCount == wordLetterCount)
+            {
+                wordWasCorrect = true;      //PROBABLY PLAY SOME SORT OF AN EFFECT FOR CORRECT ANSWER HERE
+                correctWordsCount++;
+            }
+
+            wordWasChecked = true;
+            nextWordBtn.gameObject.SetActive(true);
+        }
+
+        private void NextWord()
+        {
+            if (!wordWasChecked || gameIsEnding) return;
             if (verbList == null || verbList.Count == 0)
             {
                 EndGame();
+                return;
             }
-            
-            wordWasChecked = true;
+            DeleteOldWord();
+            StartCoroutine(NextWordDelay());
+        }
+
+        private void DeleteOldWord()
+        {
+            Destroy(inputFieldHandling);
         }
 
         private void EndGame()
         {
+            //Shouldn't need to reset any variables as they're set at the start of the game anyway
+            gameIsEnding = true;
+            inputReader.SubmitEventCancelled -= CheckWord;
+            inputReader.SubmitEventHeld -= NextWord;
+            checkWordBtn.onClick.RemoveListener(CheckWord);
+            nextWordBtn.onClick.RemoveListener(NextWord);
+            Destroy(inputFieldHandling);
+            StartCoroutine(GameEndDelay());
+        }
 
+        private IEnumerator NextWordDelay()
+        {
+            checkWordBtn.interactable = false;
+            nextWordBtn.gameObject.SetActive(false);
+            yield return new WaitForSeconds(newWordDelay);
+            checkWordBtn.interactable = true;
+            InitializeNewWord();
+        }
+
+        private IEnumerator GameEndDelay()
+        {
+            yield return new WaitForSeconds(gameEndDelay);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -106,11 +106,21 @@ namespace SwedishApp.Minigames
                     if (letter != ' ')
                         wordLetterCount++;
                 }
+
+                //Translate given answer to lowercase to ease checking
+                List<char> chars = new();
+                for (int i = 0; i < currentWord.swedishWord.Length; i++)
+                {
+                    chars.Add(wordLetterInputFields[i].text[0]);
+                }
+                string givenString = new(chars.ToArray());
+                givenString.ToLower();
+
                 //For every letter in the word, set a highlight depending if the letter was correct or not
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
                     if (currentWord.swedishWord[i] == ' ' || wordLetterInputFields[i].text == "") continue;
-                    if (wordLetterInputFields[i].text[0] == currentWord.swedishWord[i])
+                    if (givenString[i] == currentWord.swedishWord[i])
                     {
                         //This is the 'correct' indicator
                         wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
@@ -133,11 +143,21 @@ namespace SwedishApp.Minigames
                     if (letter != ' ')
                         wordLetterCount++;
                 }
+
+                //Translate given answer to lowercase to ease checking
+                List<char> chars = new();
+                for (int i = 0; i < currentWord.finnishWord.Length; i++)
+                {
+                    chars.Add(wordLetterInputFields[i].text[0]);
+                }
+                string givenString = new(chars.ToArray());
+                givenString.ToLower();
+
                 //For every letter in the word, set a highlight depending on if the letter was correct or not
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
                     if (currentWord.finnishWord[i] == ' ' || wordLetterInputFields[i].text == "") continue;
-                    if (wordLetterInputFields[i].text[0] == currentWord.finnishWord[i])
+                    if (givenString[i] == currentWord.finnishWord[i])
                     {
                         //This is the 'correct' indicator
                         wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
