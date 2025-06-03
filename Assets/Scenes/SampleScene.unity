@@ -8175,6 +8175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441901106}
   - component: {fileID: 1441901105}
+  - component: {fileID: 1441901107}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -8194,16 +8195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61493b2153bdbec4ebdb36094a1df266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuMusic: {fileID: 0}
+  menuMusic: {fileID: 1962702257}
   _menuSelect1: {fileID: 1207702317}
   _menuSelect2: {fileID: 1224359217}
   _menuSelect3: {fileID: 311768895}
-  _buzzing: {fileID: 1011420755}
   _lightModeToggle: {fileID: 611631468}
   _inputSound: {fileID: 111855205}
   _correct: {fileID: 1014521929}
   _incorrect: {fileID: 1800394849}
-  volumeSlider: {fileID: 0}
+  volumeSlider: {fileID: 194931270}
 --- !u!4 &1441901106
 Transform:
   m_ObjectHideFlags: 0
@@ -8221,6 +8221,22 @@ Transform:
   - {fileID: 540753273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1441901107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441901104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 0607c8a7e3da5154c9566b67b60e36d7, type: 3}
+  volume: 1
+  pitch: 0.7
+  pan: 0
 --- !u!1 &1448593283
 GameObject:
   m_ObjectHideFlags: 0
