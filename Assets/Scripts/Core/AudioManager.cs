@@ -30,6 +30,10 @@ namespace SwedishApp.Core
         [SerializeField] private AudioSource _menuSelect1;  // Beep
         [SerializeField] private AudioSource _menuSelect2;  // Bonk
         [SerializeField] private AudioSource _menuSelect3;  // Elevator
+        [SerializeField] private AudioSource _menuSelect4;  // Elevator 2
+        [SerializeField] private AudioSource _menuSelect5;  // Drum 1
+        [SerializeField] private AudioSource _menuSelect6;  // Drum 2
+        [SerializeField] private AudioSource _menuSelect7;  // Drum 3
 
         [SerializeField] private AudioSource _lightModeToggle;
         [SerializeField] private AudioSource _inputSound;
@@ -43,7 +47,7 @@ namespace SwedishApp.Core
 
         private void Awake()
         {
-            if(_instance == null)
+            if (_instance == null)
             {
                 _instance = this;
             }
@@ -85,19 +89,23 @@ namespace SwedishApp.Core
             //_buzzing.           volume      = 3.0f;
             //_buzzing.           panStereo   = -0.25f;
 
-            _menuSelect1.       volume      = 1.0f;
-            _menuSelect2.       volume      = 2.0f;
-            _menuSelect3.       volume      = 0.05f;
-            _lightModeToggle.   volume      = 1.0f;
-            _lightModeToggle.   panStereo   = -0.6f;
-            _inputSound.        volume      = 1.0f;
-            _correct.           volume      = 0.5f;
-            _incorrect.         volume      = 1.0f;
+            _menuSelect1.       volume = volumeSlider.value /*1.0f * */;
+            _menuSelect2.       volume = volumeSlider.value /*2.0f * */;
+            _menuSelect3.       volume = volumeSlider.value /*0.05f * */;
+            _lightModeToggle.   volume = volumeSlider.value /*1.0f * */;
+            _inputSound.        volume = volumeSlider.value /*1.0f * */;
+            _correct.           volume = volumeSlider.value /*0.5f * */;
+            _incorrect.         volume = volumeSlider.value /*1.0f * */;
+            _menuSelect4.       volume = volumeSlider.value;
+            _menuSelect5.       volume = volumeSlider.value;
+            _menuSelect6.       volume = musicVolume;
+            _menuSelect7.       volume = musicVolume;
         }
         public void ChangeVolume()
         {
             AudioListener.volume = volumeSlider.value;
             Save();
+            Debug.Log(volumeSlider.value);
         }
 
         private void Load()
@@ -114,14 +122,15 @@ namespace SwedishApp.Core
         {
             menuMusic.Stop();
             menuMusic.clip = _musicData.audioClip;
-            menuMusic.volume = _musicData.volume * musicVolume;
+            menuMusic.volume = _musicData.volume;
             menuMusic.pitch = _musicData.pitch;
-            menuMusic.panStereo = _musicData.pan;
             menuMusic.Play();
+            Debug.Log(_musicData.volume);
         }
         public void PlayMenuSelect1()
         {
             _menuSelect1.Play();
+            Debug.Log(volumeSlider.value);
         }
         public void PlayMenuSelect2()
         {
@@ -130,6 +139,22 @@ namespace SwedishApp.Core
         public void PlayMenuSelect3()
         {
             _menuSelect3.Play();
+        }
+        public void PlayMenuSelect4()
+        {
+            _menuSelect4.Play();
+        }
+        public void PlayMenuSelect5()
+        {
+            _menuSelect5.Play();
+        }
+        public void PlayMenuSelect6()
+        {
+            _menuSelect6.Play();
+        }
+        public void PlayMenuSelect7()
+        {
+            _menuSelect7.Play();
         }
         public void PlayLightModeToggle()
         {

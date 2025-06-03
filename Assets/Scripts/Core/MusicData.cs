@@ -8,6 +8,5 @@ namespace SwedishApp.Core
         public AudioClip audioClip;
         public float volume = 1.0f;
         public float pitch;
-        public float pan;
     }
 }
