@@ -1088,7 +1088,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect1
+        m_MethodName: PlayMenuSelect6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1349,8 +1349,9 @@ GameObject:
   - component: {fileID: 292850452}
   - component: {fileID: 292850451}
   - component: {fileID: 292850450}
+  - component: {fileID: 292850453}
   m_Layer: 5
-  m_Name: BGM3
+  m_Name: BGM3 btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1422,11 +1423,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartMenuMusic3
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 292850453}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1470,6 +1471,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292850448}
   m_CullTransparentMesh: 1
+--- !u!114 &292850453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292850448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 460be31b1a3a3204ba2e8a78e19f2a87, type: 3}
+  volume: 1
+  pitch: 1
+  pan: -0.3
 --- !u!1 &306954584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1572,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayIncorrect
+        m_MethodName: PlayMenuSelect6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1743,6 +1760,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269607156a923bd45a605ac85aa95dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &373754073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373754074}
+  - component: {fileID: 373754075}
+  m_Layer: 0
+  m_Name: MenuSelectDrum3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &373754074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373754073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 540753273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &373754075
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373754073}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3acbcb1aa0cbfab4a86eadd10ec7ccb5, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3acbcb1aa0cbfab4a86eadd10ec7ccb5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &435199156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,7 +2115,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect1
+        m_MethodName: PlayMenuSelect4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2663,11 +2809,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1011420754}
   - {fileID: 1207702316}
   - {fileID: 1224359216}
   - {fileID: 311768894}
+  - {fileID: 1549186990}
+  - {fileID: 1130868965}
+  - {fileID: 1573231368}
+  - {fileID: 373754074}
   - {fileID: 611631467}
-  - {fileID: 1011420754}
   - {fileID: 1014521928}
   - {fileID: 1800394848}
   - {fileID: 111855204}
@@ -3260,8 +3410,9 @@ GameObject:
   - component: {fileID: 651202445}
   - component: {fileID: 651202444}
   - component: {fileID: 651202443}
+  - component: {fileID: 651202446}
   m_Layer: 5
-  m_Name: BGM2
+  m_Name: BGM2 btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3333,11 +3484,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartMenuMusic2
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 651202446}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3381,6 +3532,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651202441}
   m_CullTransparentMesh: 1
+--- !u!114 &651202446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651202441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 77e94600b23b0fa4e97515a4e0dad559, type: 3}
+  volume: 1
+  pitch: 1
+  pan: -0.3
 --- !u!1 &682994695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,8 +3922,9 @@ GameObject:
   - component: {fileID: 735112214}
   - component: {fileID: 735112213}
   - component: {fileID: 735112212}
+  - component: {fileID: 735112215}
   m_Layer: 5
-  m_Name: BGM1
+  m_Name: BGM1 btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3828,11 +3996,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartMenuMusic1
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 735112215}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3876,6 +4044,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735112210}
   m_CullTransparentMesh: 1
+--- !u!114 &735112215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735112210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 0607c8a7e3da5154c9566b67b60e36d7, type: 3}
+  volume: 1
+  pitch: 0.7
+  pan: 0
 --- !u!1 &735774235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,12 +4560,12 @@ GameObject:
   m_Component:
   - component: {fileID: 771795196}
   m_Layer: 5
-  m_Name: TEST BUTTONS
+  m_Name: TEST BTNS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &771795196
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4640,8 +4824,9 @@ GameObject:
   - component: {fileID: 851720906}
   - component: {fileID: 851720905}
   - component: {fileID: 851720904}
+  - component: {fileID: 851720907}
   m_Layer: 5
-  m_Name: BGM4
+  m_Name: BGM4 btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4713,11 +4898,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartGameMusic
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 851720907}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4761,6 +4946,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851720902}
   m_CullTransparentMesh: 1
+--- !u!114 &851720907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851720902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 0ac79c6a2bb5aca4e93a86d415bbe13c, type: 3}
+  volume: 1
+  pitch: 0.9
+  pan: 0
 --- !u!114 &886155916 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3583364451934141585, guid: 031193864ce93f749b9b95cd103572a0, type: 3}
@@ -5243,7 +5444,7 @@ GameObject:
   - component: {fileID: 981611318}
   - component: {fileID: 981611317}
   m_Layer: 5
-  m_Name: AbortButton
+  m_Name: AbortBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6330,6 +6531,135 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1130868964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130868965}
+  - component: {fileID: 1130868966}
+  m_Layer: 0
+  m_Name: MenuSelectDrum1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1130868965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130868964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 540753273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1130868966
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130868964}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: acf8e932d70d8a244b56655c99ad440a, type: 3}
+  m_Resource: {fileID: 8300000, guid: acf8e932d70d8a244b56655c99ad440a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1132747402
 GameObject:
   m_ObjectHideFlags: 0
@@ -6890,8 +7220,9 @@ GameObject:
   - component: {fileID: 1248404199}
   - component: {fileID: 1248404198}
   - component: {fileID: 1248404197}
+  - component: {fileID: 1248404200}
   m_Layer: 5
-  m_Name: Buzzing
+  m_Name: Buzzing btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6963,11 +7294,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: StartBuzzing
-        m_Mode: 1
+        m_MethodName: StartMusic
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1248404200}
+          m_ObjectArgumentAssemblyTypeName: SwedishApp.Core.MusicData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7011,6 +7342,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248404195}
   m_CullTransparentMesh: 1
+--- !u!114 &1248404200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248404195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: ddc4107b8e36ca440b5c66c870a73f16, type: 3}
+  volume: 3
+  pitch: -0.25
+  pan: 0
 --- !u!1 &1260473996
 GameObject:
   m_ObjectHideFlags: 0
@@ -7076,7 +7423,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect1
+        m_MethodName: PlayMenuSelect4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7619,7 +7966,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect1
+        m_MethodName: PlayMenuSelect5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8138,6 +8485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441901106}
   - component: {fileID: 1441901105}
+  - component: {fileID: 1441901107}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -8157,14 +8505,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61493b2153bdbec4ebdb36094a1df266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuMusic1: {fileID: 1962702257}
-  _menuMusic2: {fileID: 1496958270}
-  _menuMusic3: {fileID: 482532269}
-  _gameMusic: {fileID: 1083686946}
+  menuMusic: {fileID: 1962702257}
   _menuSelect1: {fileID: 1207702317}
   _menuSelect2: {fileID: 1224359217}
   _menuSelect3: {fileID: 311768895}
-  _buzzing: {fileID: 1011420755}
+  _menuSelect4: {fileID: 1549186991}
+  _menuSelect5: {fileID: 1130868966}
+  _menuSelect6: {fileID: 1573231369}
+  _menuSelect7: {fileID: 373754075}
   _lightModeToggle: {fileID: 611631468}
   _inputSound: {fileID: 111855205}
   _correct: {fileID: 1014521929}
@@ -8187,6 +8535,22 @@ Transform:
   - {fileID: 540753273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1441901107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441901104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5124ab14ed048b445aaaedc5921f7782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 0607c8a7e3da5154c9566b67b60e36d7, type: 3}
+  volume: 1
+  pitch: 0.7
+  pan: 0
 --- !u!1 &1448593283
 GameObject:
   m_ObjectHideFlags: 0
@@ -8530,6 +8894,135 @@ MonoBehaviour:
   m_Spacing: {x: 50, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &1549186989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549186990}
+  - component: {fileID: 1549186991}
+  m_Layer: 0
+  m_Name: MenuSelectElevator2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1549186990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549186989}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 540753273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1549186991
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549186989}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6e2ec85a83463544bb1d4973d3e30d7a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6e2ec85a83463544bb1d4973d3e30d7a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1562606394
 GameObject:
   m_ObjectHideFlags: 0
@@ -8662,6 +9155,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562606394}
   m_CullTransparentMesh: 1
+--- !u!1 &1573231367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1573231368}
+  - component: {fileID: 1573231369}
+  m_Layer: 0
+  m_Name: MenuSelectDrum2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1573231368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573231367}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 540753273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1573231369
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573231367}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cd2f41a1fe7675846a6d2957b2727939, type: 3}
+  m_Resource: {fileID: 8300000, guid: cd2f41a1fe7675846a6d2957b2727939, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1628833341 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5675793369631037118, guid: 031193864ce93f749b9b95cd103572a0, type: 3}
@@ -9155,7 +9777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 799.68866, y: -600.0012}
+  m_AnchoredPosition: {x: 800.5638, y: -599.9979}
   m_SizeDelta: {x: 420, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1709460873
@@ -9204,7 +9826,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect3
+        m_MethodName: PlayMenuSelect6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9513,7 +10135,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect1
+        m_MethodName: PlayMenuSelect4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9896,7 +10518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 329.68866, y: -600.0012}
+  m_AnchoredPosition: {x: 330.56378, y: -599.9979}
   m_SizeDelta: {x: 420, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770697354
@@ -9945,7 +10567,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect1
+        m_MethodName: PlayMenuSelect5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10955,7 +11577,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayIncorrect
+        m_MethodName: PlayMenuSelect7
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11016,7 +11638,7 @@ GameObject:
   - component: {fileID: 1946117841}
   - component: {fileID: 1946117840}
   m_Layer: 5
-  m_Name: TOGGLEBUTTON
+  m_Name: TOGGLEBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12018,7 +12640,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect1
+        m_MethodName: PlayMenuSelect7
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12113,7 +12735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1269.6887, y: -600.0012}
+  m_AnchoredPosition: {x: 1270.5637, y: -599.9979}
   m_SizeDelta: {x: 420, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114844504
@@ -12162,7 +12784,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect3
+        m_MethodName: PlayMenuSelect7
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
