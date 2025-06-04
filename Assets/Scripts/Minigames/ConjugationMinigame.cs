@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using SwedishApp.Input;
 using SwedishApp.Words;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,7 +39,10 @@ namespace SwedishApp.Minigames
         [SerializeField] private TextMeshProUGUI finnishWordTxt;
         [SerializeField] private TextMeshProUGUI swedishBaseWordTxt;
         [SerializeField] private TextMeshProUGUI conjugationClassTxt;
-        [SerializeField] private GameObject irregularHint;
+        [SerializeField] private TextMeshProUGUI instructionTxt;
+        [SerializeField] private GameObject irregularHintObj;
+        [SerializeField] private Button irregularHintBtn;
+        [SerializeField] private TextMeshProUGUI irregularHintTxt;
         [SerializeField] private Button checkWordBtn;
         [SerializeField] private Button nextWordBtn;
         [SerializeField] private GameObject inputfieldHolder;
@@ -53,6 +55,10 @@ namespace SwedishApp.Minigames
         private List<TMP_InputField> singleInputfields;
         private List<TextMeshProUGUI> fieldTextRefs;
 
+        //Readonly
+        private readonly Vector2 holderPos = new(0, -100f);
+        private readonly string promptStart = "Taivuta muotoon:\n";
+
         private void Start()
         {
             wordFormsCount = System.Enum.GetNames(typeof(ConjugateInto)).Length;
@@ -61,6 +67,8 @@ namespace SwedishApp.Minigames
         public void InitializeGame(List<VerbWord> _verbList, ConjugateInto _conjugateInto)
         {
             gameObject.SetActive(true);
+            nextWordBtn.gameObject.SetActive(false);
+            irregularHintTxt.text = "Hint";
             conjugateInto = _conjugateInto;
             verbList = new(_verbList);
             correctWordsCount = 0;
@@ -70,6 +78,7 @@ namespace SwedishApp.Minigames
             inputReader.SubmitEventHeld += NextWord;
             checkWordBtn.onClick.AddListener(CheckWord);
             nextWordBtn.onClick.AddListener(NextWord);
+            irregularHintBtn.onClick.AddListener(ShowHint);
 
             InitializeNewWord();
         }
@@ -80,6 +89,8 @@ namespace SwedishApp.Minigames
             activeWord = verbList.Pop();
             wordWasChecked = false;
             conjugateInto = (ConjugateInto)Random.Range((int)ConjugateInto.preesens, wordFormsCount);
+            conjugationClassTxt.text = activeWord.conjugationClass.ToString();
+            instructionTxt.text = string.Concat(promptStart, conjugateInto);
             singleInputfields = new();
             fieldTextRefs = new();
 
@@ -110,8 +121,8 @@ namespace SwedishApp.Minigames
             }
 
             //Update GUI
-            if (!formIsRegular) irregularHint.SetActive(true);
-            else irregularHint.SetActive(false);
+            if (!formIsRegular) irregularHintObj.SetActive(true);
+            else irregularHintObj.SetActive(false);
 
             finnishWordTxt.text = activeWord.finnishWord;   //CHANGE THIS TO WORK WITH THE CURRENT FORM
             swedishBaseWordTxt.text = activeWord.swedishWord;
@@ -119,6 +130,7 @@ namespace SwedishApp.Minigames
 
             //Instantiate input field -related objects
             inputFieldHandling = Instantiate(inputfieldHolder, transform).GetComponent<InputFieldHandling>();
+            inputFieldHandling.GetComponent<RectTransform>().position = holderPos;
             List<char> chars = new();
             bool ignoreLetters = false;
 
@@ -230,10 +242,17 @@ namespace SwedishApp.Minigames
         private IEnumerator NextWordDelay()
         {
             checkWordBtn.interactable = false;
+            irregularHintTxt.text = "Hint";
             nextWordBtn.gameObject.SetActive(false);
             yield return new WaitForSeconds(newWordDelay);
             checkWordBtn.interactable = true;
             InitializeNewWord();
+        }
+
+        private void ShowHint()
+        {
+            if (!checkWordBtn.interactable) return;
+            irregularHintTxt.text = "taivutettu";
         }
 
         private IEnumerator GameEndDelay()
