@@ -31,11 +31,13 @@ namespace SwedishApp.Words
         public bool currentTenseIsRegular = false;
             [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string currentTenseEnd = "är";
+        public string currentTenseFinnish = "on";
 
         [Header ("Imperfekti")]
         public bool pastTenseIsRegular = true;
             [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string pastTenseEnd = "";
+        public string pastTenseFinnish = "oli";
 
         [Header ("Perfekti")]
         public bool pastPerfectTenseIsRegular = true;
@@ -43,6 +45,7 @@ namespace SwedishApp.Words
         public string pastPerfectTenseStart = "har ";
             [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string pastPerfectTenseEnd = "it";
+        public string pastPerfectTenseFinnish = "on ollut";
 
         [Header ("Pluskvamperfekti")]
         public bool pastPlusPerfectTenseIsRegular = true;
@@ -50,6 +53,7 @@ namespace SwedishApp.Words
         public string pastPlusPerfectTenseStart = "hade ";
             [Tooltip ("If this form is irregular, set this variable to be the whole word")]
         public string pastPlusPerfectTenseEnd = "it";
+        public string pastPlusPerfectTenseFinnish = "oli ollut";
 
         /// <summary>
         /// This outputs the word in its base form with the core highlighted.
