@@ -33,7 +33,9 @@ namespace SwedishApp.UI
         [Header("Minigame-Related")]
         [SerializeField] private Button startTranslationGameToFinnishBtn;
         [SerializeField] private Button startTranslationGameToSwedishBtn;
+        [SerializeField] private Button startConjugationGameBtn;
         [SerializeField] private TranslateMinigame translateMinigame;
+        [SerializeField] private ConjugationMinigame conjugationMinigame;
         [SerializeField] private GameObject flashcardGameTypeMenu;
         [SerializeField] private Button openFlashcardMenuBtn;
         [SerializeField] private Button closeFlashcardMenuBtn;
@@ -162,6 +164,7 @@ namespace SwedishApp.UI
                 translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList)));
             startTranslationGameToSwedishBtn.onClick.AddListener(() =>
                 translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList)));
+            startConjugationGameBtn.onClick.AddListener(() => conjugationMinigame.InitializeGame(verbList.verbList));
 
             //Add listeners to flashcard minigame buttons
             openFlashcardMenuBtn.onClick.AddListener(() => flashcardGameTypeMenu.SetActive(true));
