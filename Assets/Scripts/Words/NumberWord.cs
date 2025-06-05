@@ -1,0 +1,105 @@
+using UnityEngine;
+
+namespace SwedishApp.Words
+{
+    public class NumberWord : Word
+    {
+        public readonly string firstSwe      = "första";
+        public readonly string secondndSwe   = "andra";
+        public readonly string thirdSwe      = "tredje";
+        public readonly string fourthSwe     = "fjärde";
+        public readonly string fifthSwe      = "femte";
+        public readonly string sixthSwe      = "sjätte";
+        public readonly string seventhSwe    = "sjunde";
+        public readonly string eighthSwe     = "åttonde";
+        public readonly string ninthSwe      = "nionde";
+        public readonly string tenthSwe      = "tionde";
+        public readonly string eleventhSwe   = "elfte";
+        public readonly string twelfthSwe    = "tolfte";
+        public readonly string thirteenthSwe = "trettonde";
+        public readonly string fourteenthSwe = "fjortonde";
+        public readonly string fifteenthSwe  = "femtonde";
+        public readonly string sixteenthSwe  = "sextonde";
+        public readonly string seventeethSwe = "sjuttonde";
+        public readonly string eighteenthSwe = "artonde";
+        public readonly string nineteenthSwe = "nittonde";
+        public readonly string twentiethSwe      = "tjugonde";
+        public readonly string twentyFirstSwe    = "tjugoförsta";
+        public readonly string twentySecondSwe   = "tjugoförsta";
+        public readonly string twentyThirdSwe    = "tjugoförsta";
+        public readonly string twentyFourthSwe   = "tjugoförsta";
+        public readonly string twentyFifthSwe    = "tjugoförsta";
+        public readonly string twentySixthSwe    = "tjugoförsta";
+        public readonly string twentySeventhSwe  = "tjugoförsta";
+        public readonly string twentyEighthSwe   = "tjugoförsta";
+        public readonly string twentyNinthSwe    = "tjugoförsta";
+        public readonly string thirtiethSwe      = "trettionde";
+        public readonly string thirtyFirstSwe    = "trettioförsta";
+
+        public readonly string firstFin      = "första";
+        public readonly string secondndFin   = "andra";
+        public readonly string thirdFin      = "tredje";
+        public readonly string fourthFin     = "fjärde";
+        public readonly string fifthFin      = "femte";
+        public readonly string sixthFin      = "sjätte";
+        public readonly string seventhFin    = "sjunde";
+        public readonly string eighthFin     = "åttonde";
+        public readonly string ninthFin      = "nionde";
+        public readonly string tenthFin      = "tionde";
+        public readonly string eleventhFin   = "elfte";
+        public readonly string twelfthFin    = "tolfte";
+        public readonly string thirteenthFin = "trettonde";
+        public readonly string fourteenthFin = "fjortonde";
+        public readonly string fifteenthFin  = "femtonde";
+        public readonly string sixteenthFin  = "sextonde";
+        public readonly string seventeethFin = "sjuttonde";
+        public readonly string eighteenthFin = "artonde";
+        public readonly string nineteenthFin = "nittonde";
+        public readonly string twentiethFin      = "tjugonde";
+        public readonly string twentyFirstFin    = "tjugoförsta";
+        public readonly string twentySeconFin    = "tjugoförsta";
+        public readonly string twentyThirdFin    = "tjugoförsta";
+        public readonly string twentyFourthFin   = "tjugoförsta";
+        public readonly string twentyFifthFin    = "tjugoförsta";
+        public readonly string twentySixthFin    = "tjugoförsta";
+        public readonly string twentySeventhFin  = "tjugoförsta";
+        public readonly string twentyEighthFin   = "tjugoförsta";
+        public readonly string twentyNinthFin    = "tjugoförsta";
+        public readonly string thirtiethFin      = "trettionde";
+        public readonly string thirtyFirstFin    = "trettioförsta";
+
+        public readonly int one = 1;
+        public readonly int two = 2;
+        public readonly int three = 3;
+        public readonly int four = 4;
+        public readonly int five = 5;
+        public readonly int six = 6;
+        public readonly int seven = 7;
+        public readonly int eight = 8;
+        public readonly int nine = 9;
+        public readonly int ten = 10;
+        public readonly int eleven = 11;
+        public readonly int twelve = 12;
+        public readonly int thirteen = 13;
+        public readonly int fourteen = 14;
+        public readonly int fifteen = 15;
+        public readonly int sixteen = 16;
+        public readonly int seventeen = 17;
+        public readonly int eighteen = 18;
+        public readonly int nineteen = 19;
+        public readonly int twenty = 20;
+        public readonly int twentyOne = 21;
+        public readonly int twentyTwo = 22;
+        public readonly int twentyThree = 23;
+        public readonly int twentyFour = 24;
+        public readonly int twentyFive = 25;
+        public readonly int twentySix = 26;
+        public readonly int twentySeven = 27;
+        public readonly int twentyEight = 28;
+        public readonly int twentyNine = 29;
+        public readonly int thirty = 30;
+        public readonly int thirtyOne = 31;
+        public readonly int hundred = 100;
+        public readonly int thousand = 1000;
+    }
+}
