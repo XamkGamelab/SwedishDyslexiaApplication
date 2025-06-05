@@ -1,3 +1,5 @@
+using SwedishApp.UI;
+using TMPro;
 using UnityEngine;
 
 namespace SwedishApp.Words
