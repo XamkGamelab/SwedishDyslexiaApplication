@@ -23,14 +23,18 @@ MonoBehaviour:
     baseformEnd: a
     currentTenseIsRegular: 0
     currentTenseEnd: "\xE4r"
+    currentTenseFinnish: on
     pastTenseIsRegular: 0
     pastTenseEnd: var
+    pastTenseFinnish: oli
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
     pastPerfectTenseEnd: it
+    pastPerfectTenseFinnish: on ollut
     pastPlusPerfectTenseIsRegular: 1
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: it
+    pastPlusPerfectTenseFinnish: oli ollut
   - swedishWord: jobba
     finnishWord: "ty\xF6skennell\xE4"
     darkModeSprite: {fileID: 0}
@@ -41,11 +45,15 @@ MonoBehaviour:
     baseformEnd: 
     currentTenseIsRegular: 1
     currentTenseEnd: r
+    currentTenseFinnish: "ty\xF6skentelee"
     pastTenseIsRegular: 1
     pastTenseEnd: de
+    pastTenseFinnish: "ty\xF6skenteli"
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
     pastPerfectTenseEnd: t
+    pastPerfectTenseFinnish: "on ty\xF6skennellyt"
     pastPlusPerfectTenseIsRegular: 1
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: t
+    pastPlusPerfectTenseFinnish: "oli ty\xF6skennellyt"

@@ -1208,6 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: e1e34987a79ad114ebb32860cc353eef, type: 2}
+  abortBtn: {fileID: 1704818199}
   swedishBaseWordTxt: {fileID: 3319267}
   conjugationClassTxt: {fileID: 1262866941}
   instructionTxt: {fileID: 1717820047}
@@ -1220,6 +1221,7 @@ MonoBehaviour:
   singleInputfield: {fileID: 1032697241587179193, guid: a287a1566863930479dbb9e985532027, type: 3}
   newWordDelay: 1
   gameEndDelay: 1.5
+  conjugationClassImage: {fileID: 412175255}
 --- !u!1 &268246856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,7 +2158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.92156863, g: 0.92156863, b: 0.92156863, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4802,6 +4804,7 @@ MonoBehaviour:
   - {fileID: 1764682699}
   - {fileID: 1727957900}
   - {fileID: 806921980}
+  - {fileID: 2000831698}
   textObjectListReverseLight: []
   lightmodableImagesReverse:
   - {fileID: 1562606397}

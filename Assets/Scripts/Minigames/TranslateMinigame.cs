@@ -353,6 +353,8 @@ namespace SwedishApp.Minigames
             UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
             UIManager.instance.LightmodeOnEvent -= ToLightmode;
             UIManager.instance.LightmodeOffEvent -= ToDarkmode;
+            inputReader.SubmitEventCancelled -= CheckWord;
+            inputReader.SubmitEventHeld -= DeleteOldWord;
 
             //Clear variables
             words = new();

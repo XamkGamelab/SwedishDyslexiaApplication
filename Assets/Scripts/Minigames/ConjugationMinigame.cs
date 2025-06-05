@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using NUnit.Framework.Constraints;
 using SwedishApp.Input;
+using SwedishApp.UI;
 using SwedishApp.Words;
 using TMPro;
 using UnityEngine;
@@ -22,21 +25,9 @@ namespace SwedishApp.Minigames
             pluskvamperfekti
         }
 
-        private ConjugateInto conjugateInto;
-        private int wordFormsCount;
-        private Stack<VerbWord> verbList;
-        private VerbWord activeWord;
-        private string activeWordWantedForm;
-        private string activeWordWantedFormNoHighlight;
-        private bool formIsRegular;
-        private bool wordWasChecked;
-        private int correctWordsCount = 0;
-        private bool wordWasCorrect = false;
-        public bool gameIsEnding { get; private set; } = false;
-
         [Header("Variable References")]
         [SerializeField] private InputReader inputReader;
-        // [SerializeField] private TextMeshProUGUI finnishWordTxt;
+        [SerializeField] private Button abortBtn;
         [SerializeField] private TextMeshProUGUI swedishBaseWordTxt;
         [SerializeField] private TextMeshProUGUI conjugationClassTxt;
         [SerializeField] private TextMeshProUGUI instructionTxt;
@@ -55,6 +46,23 @@ namespace SwedishApp.Minigames
         private List<TMP_InputField> singleInputfields;
         private List<TextMeshProUGUI> fieldTextRefs;
 
+        [Header("Lightmode-related")]
+        [SerializeField] private Image conjugationClassImage;
+
+        //Other game-related variables
+        private ConjugateInto conjugateInto;
+        private int wordFormsCount;
+        private Stack<VerbWord> verbList;
+        private VerbWord activeWord;
+        private string activeWordWantedForm;
+        private string activeWordWantedFormNoHighlight;
+        private bool formIsRegular;
+        private bool wordWasChecked;
+        private int correctWordsCount = 0;
+        private bool wordWasCorrect = false;
+        public bool gameIsEnding { get; private set; } = false;
+        private List<TextMeshProUGUI> gameTextRefs;
+
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
         private readonly string promptStart = "Taivuta muotoon:\n";
@@ -64,8 +72,71 @@ namespace SwedishApp.Minigames
             wordFormsCount = System.Enum.GetNames(typeof(ConjugateInto)).Length;
         }
 
+        #region lightmode-related
+
+        private void ToLightmode()
+        {
+            abortBtn.image.sprite = UIManager.instance.abortSpriteLightmode;
+            checkWordBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
+            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
+            finnishHintBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
+            conjugationClassImage.color = UIManager.instance.Darkgrey;
+            gameTextRefs.ForEach((text) => text.color = UIManager.instance.Darkgrey);
+
+            if (singleInputfields == null || singleInputfields.Count == 0) return;
+            LightmodeInputFields();
+        }
+
+        private void ToDarkmode()
+        {
+            abortBtn.image.sprite = UIManager.instance.abortSpriteDarkmode;
+            checkWordBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
+            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
+            finnishHintBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
+            conjugationClassImage.color = UIManager.instance.Lightgrey;
+            gameTextRefs.ForEach((text) => text.color = UIManager.instance.Lightgrey);
+
+            if (singleInputfields == null || singleInputfields.Count == 0) return;
+            DarkmodeInputFields();
+        }
+
+        private void LightmodeInputFields()
+        {
+            for (int i = 0; i < singleInputfields.Count; i++)
+            {
+                var colorBlock = singleInputfields[i].colors;
+                colorBlock.normalColor = UIManager.instance.Darkgrey;
+                colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
+                colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
+                colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
+                colorBlock.disabledColor = UIManager.instance.DarkgreyHalfAlpha;
+                singleInputfields[i].colors = colorBlock;
+                fieldTextRefs[i].color = UIManager.instance.Lightgrey;
+            }
+        }
+
+        private void DarkmodeInputFields()
+        {
+            for (int i = 0; i < singleInputfields.Count; i++)
+            {
+                var colorBlock = singleInputfields[i].colors;
+                colorBlock.normalColor = UIManager.instance.Lightgrey;
+                colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
+                colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
+                colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
+                colorBlock.disabledColor = UIManager.instance.LightgreyHalfAlpha;
+                singleInputfields[i].colors = colorBlock;
+                fieldTextRefs[i].color = UIManager.instance.Darkgrey;
+            }
+        }
+
+        #endregion
+
+        #region game functionality
+
         public void InitializeGame(List<VerbWord> _verbList)
         {
+            gameTextRefs = transform.GetComponentsInChildren<TextMeshProUGUI>(true).ToList();
             gameObject.SetActive(true);
             nextWordBtn.gameObject.SetActive(false);
             finnishHintTxt.text = "Hint";
@@ -78,7 +149,20 @@ namespace SwedishApp.Minigames
             checkWordBtn.onClick.AddListener(CheckWord);
             nextWordBtn.onClick.AddListener(NextWord);
             finnishHintBtn.onClick.AddListener(ShowHint);
+            UIManager.instance.LightmodeOnEvent += ToLightmode;
+            UIManager.instance.LightmodeOffEvent += ToDarkmode;
 
+            //set initial colors dependending on if lightmode is on or off
+            if (UIManager.instance.LightmodeOn)
+            {
+                ToLightmode();
+            }
+            else
+            {
+                ToDarkmode();
+            }
+
+            //set the first task
             InitializeNewWord();
         }
 
@@ -87,7 +171,7 @@ namespace SwedishApp.Minigames
             //Get new active word & set relevant variables
             activeWord = verbList.Pop();
             wordWasChecked = false;
-            conjugateInto = (ConjugateInto)Random.Range((int)ConjugateInto.imperfekti, wordFormsCount+1);
+            conjugateInto = (ConjugateInto)Random.Range((int)ConjugateInto.imperfekti, wordFormsCount + 1);
             instructionTxt.text = string.Concat(promptStart, conjugateInto);
             singleInputfields = new();
             fieldTextRefs = new();
@@ -168,8 +252,9 @@ namespace SwedishApp.Minigames
                 indexer++;
             }
             activeWordWantedFormNoHighlight = new(chars.ToArray());
+            if (UIManager.instance.LightmodeOn) LightmodeInputFields();
+            else DarkmodeInputFields();
             singleInputfields[0].ActivateInputField();
-            Debug.Log($"Active word without highlight tags should be: {activeWordWantedFormNoHighlight}");
         }
 
         private void CheckWord()
@@ -247,6 +332,8 @@ namespace SwedishApp.Minigames
             checkWordBtn.onClick.RemoveListener(CheckWord);
             nextWordBtn.onClick.RemoveListener(NextWord);
             Destroy(inputFieldHandling.gameObject);
+            singleInputfields = null;
+            fieldTextRefs = null;
             StartCoroutine(GameEndDelay());
         }
 
@@ -263,7 +350,7 @@ namespace SwedishApp.Minigames
         private void ShowHint()
         {
             if (!checkWordBtn.interactable) return;
-            activeWord.GetConjugatedFinnish(conjugateInto);
+            finnishHintTxt.text = activeWord.GetConjugatedFinnish(conjugateInto);
         }
 
         private IEnumerator GameEndDelay()
@@ -272,5 +359,7 @@ namespace SwedishApp.Minigames
             gameObject.SetActive(false);
             gameIsEnding = false;
         }
+        
+        #endregion
     }
 }
