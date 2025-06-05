@@ -1,6 +1,6 @@
+using SwedishApp.Minigames;
 using SwedishApp.UI;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace SwedishApp.Words
 {
@@ -22,34 +22,38 @@ namespace SwedishApp.Words
 
         public string wordCore = "var";
 
-        [Header ("Perusmuoto")]
+        [Header("Perusmuoto")]
         public bool baseformIsRegular = true;
-            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+        [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string baseformEnd = "a";
 
-        [Header ("Preesens")]
+        [Header("Preesens")]
         public bool currentTenseIsRegular = false;
-            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+        [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string currentTenseEnd = "är";
+        public string currentTenseFinnish = "on";
 
-        [Header ("Imperfekti")]
+        [Header("Imperfekti")]
         public bool pastTenseIsRegular = true;
-            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+        [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string pastTenseEnd = "";
+        public string pastTenseFinnish = "oli";
 
-        [Header ("Perfekti")]
+        [Header("Perfekti")]
         public bool pastPerfectTenseIsRegular = true;
-            [Tooltip ("Please remember to put a space at the end of this string!")]
+        [Tooltip("Please remember to put a space at the end of this string!")]
         public string pastPerfectTenseStart = "har ";
-            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+        [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string pastPerfectTenseEnd = "it";
+        public string pastPerfectTenseFinnish = "on ollut";
 
-        [Header ("Pluskvamperfekti")]
+        [Header("Pluskvamperfekti")]
         public bool pastPlusPerfectTenseIsRegular = true;
-            [Tooltip ("Please remember to put a space at the end of this string!")]
+        [Tooltip("Please remember to put a space at the end of this string!")]
         public string pastPlusPerfectTenseStart = "hade ";
-            [Tooltip ("If this form is irregular, set this variable to be the whole word")]
+        [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string pastPlusPerfectTenseEnd = "it";
+        public string pastPlusPerfectTenseFinnish = "oli ollut";
 
         /// <summary>
         /// This outputs the word in its base form with the core highlighted.
@@ -81,22 +85,22 @@ namespace SwedishApp.Words
                 }
             }
         }
-            //if (baseformIsRegular && UIManager.instance.LightmodeOn)
-            //{
-            //    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, baseformEnd);
-            //}
-            //else if (baseformIsRegular && !UIManager.instance.LightmodeOn)
-            //{
-            //    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, baseformEnd);
-            //}
-            //else if (UIManager.instance.LightmodeOn)
-            //{
-            //    return string.Concat(colorTagStartLight, baseformEnd, colorTagEnd);
-            //}
-            //else
-            //{
-            //    return string.Concat(colorTagStartDark, baseformEnd, colorTagEnd);
-            //}
+        //if (baseformIsRegular && UIManager.instance.LightmodeOn)
+        //{
+        //    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, baseformEnd);
+        //}
+        //else if (baseformIsRegular && !UIManager.instance.LightmodeOn)
+        //{
+        //    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, baseformEnd);
+        //}
+        //else if (UIManager.instance.LightmodeOn)
+        //{
+        //    return string.Concat(colorTagStartLight, baseformEnd, colorTagEnd);
+        //}
+        //else
+        //{
+        //    return string.Concat(colorTagStartDark, baseformEnd, colorTagEnd);
+        //}
 
 
         /// <summary>
@@ -222,6 +226,30 @@ namespace SwedishApp.Words
                     return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, pastPlusPerfectTenseIsRegular, colorTagEnd);
                 }
             }
+        }
+
+        public string GetConjugatedSwedish(ConjugationMinigame.ConjugateInto _conjugateInto)
+        {
+            return _conjugateInto switch
+            {
+                ConjugationMinigame.ConjugateInto.preesens => CurrentTenseWord(),
+                ConjugationMinigame.ConjugateInto.imperfekti => PastTenseWord(),
+                ConjugationMinigame.ConjugateInto.perfekti => PastPerfectTenseWord(),
+                ConjugationMinigame.ConjugateInto.pluskvamperfekti => PastPlusPerfectTenseWord(),
+                _ => "",
+            };
+        }
+
+        public string GetConjugatedFinnish(ConjugationMinigame.ConjugateInto _conjugateInto)
+        {
+            return _conjugateInto switch
+            {
+                ConjugationMinigame.ConjugateInto.preesens => currentTenseFinnish,
+                ConjugationMinigame.ConjugateInto.imperfekti => pastTenseFinnish,
+                ConjugationMinigame.ConjugateInto.perfekti => pastPerfectTenseFinnish,
+                ConjugationMinigame.ConjugateInto.pluskvamperfekti => pastPlusPerfectTenseFinnish,
+                _ => "",
+            };
         }
     }
 }
