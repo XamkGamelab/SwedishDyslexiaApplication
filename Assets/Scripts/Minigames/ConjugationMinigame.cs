@@ -132,6 +132,42 @@ namespace SwedishApp.Minigames
 
         #endregion
 
+        #region font-related
+
+        private void ToHyperlegibleFont()
+        {
+            gameTextRefs.ForEach((text) =>
+            {
+                text.font = UIManager.instance.legibleFont;
+                text.characterSpacing = UIManager.instance.legibleSpacing;
+            });
+            if (fieldTextRefs == null || fieldTextRefs.Count == 0) return;
+            FieldsToHyperlegibleFont();
+        }
+
+        private void ToBasicFont()
+        {
+            gameTextRefs.ForEach((text) =>
+            {
+                text.font = UIManager.instance.basicFont;
+                text.characterSpacing = UIManager.instance.basicSpacing;
+            });
+            if (fieldTextRefs == null || fieldTextRefs.Count == 0) return;
+            FieldsToBasicFont();
+        }
+
+        private void FieldsToHyperlegibleFont()
+        {
+            fieldTextRefs.ForEach((text) => text.font = UIManager.instance.legibleFont);
+        }
+        
+        private void FieldsToBasicFont()
+        {
+            fieldTextRefs.ForEach((text) => text.font = UIManager.instance.basicFont);
+        }
+
+        #endregion
+
         #region game functionality
 
         public void InitializeGame(List<VerbWord> _verbList)
@@ -151,16 +187,14 @@ namespace SwedishApp.Minigames
             finnishHintBtn.onClick.AddListener(ShowHint);
             UIManager.instance.LightmodeOnEvent += ToLightmode;
             UIManager.instance.LightmodeOffEvent += ToDarkmode;
+            UIManager.instance.LegibleModeOnEvent += ToHyperlegibleFont;
+            UIManager.instance.LegibleModeOffEvent += ToBasicFont;
 
             //set initial colors dependending on if lightmode is on or off
-            if (UIManager.instance.LightmodeOn)
-            {
-                ToLightmode();
-            }
-            else
-            {
-                ToDarkmode();
-            }
+            if (UIManager.instance.LightmodeOn) ToLightmode();
+            else ToDarkmode();
+            if (UIManager.instance.hyperlegibleOn) ToHyperlegibleFont();
+            else ToBasicFont();
 
             //set the first task
             InitializeNewWord();
@@ -254,6 +288,8 @@ namespace SwedishApp.Minigames
             activeWordWantedFormNoHighlight = new(chars.ToArray());
             if (UIManager.instance.LightmodeOn) LightmodeInputFields();
             else DarkmodeInputFields();
+            if (UIManager.instance.hyperlegibleOn) FieldsToHyperlegibleFont();
+            else FieldsToBasicFont();
             singleInputfields[0].ActivateInputField();
         }
 
