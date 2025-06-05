@@ -70,6 +70,7 @@ namespace SwedishApp.Minigames
         private void Start()
         {
             wordFormsCount = System.Enum.GetNames(typeof(ConjugateInto)).Length;
+            abortBtn.onClick.AddListener(() => EndGame(true));
         }
 
         #region lightmode-related
@@ -358,10 +359,9 @@ namespace SwedishApp.Minigames
             Destroy(inputFieldHandling.gameObject);
         }
 
-        private void EndGame()
+        private void EndGame(bool _endInstantly = false)
         {
             //Shouldn't need to reset any variables as they're set at the start of the game anyway
-            gameIsEnding = true;
             inputReader.SubmitEventCancelled -= CheckWord;
             inputReader.SubmitEventHeld -= NextWord;
             checkWordBtn.onClick.RemoveListener(CheckWord);
@@ -369,7 +369,16 @@ namespace SwedishApp.Minigames
             Destroy(inputFieldHandling.gameObject);
             singleInputfields = null;
             fieldTextRefs = null;
-            StartCoroutine(GameEndDelay());
+
+            if (!_endInstantly)
+            {
+                gameIsEnding = true;
+                StartCoroutine(GameEndDelay());
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         private IEnumerator NextWordDelay()
