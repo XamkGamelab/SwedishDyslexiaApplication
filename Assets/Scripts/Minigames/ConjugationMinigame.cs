@@ -270,7 +270,6 @@ namespace SwedishApp.Minigames
 
                 //Grab refs
                 singleInputfields.Add(Instantiate(singleInputfield, inputFieldHandling.transform).GetComponent<TMP_InputField>());
-                Debug.Log(indexer + " " + singleInputfields.Count.ToString());
                 fieldTextRefs.Add(singleInputfields[indexer].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
                 if (activeWordWantedForm[i] == ' ' || activeWordWantedForm == "")
                 {
