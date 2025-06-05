@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework.Constraints;
 using SwedishApp.Input;
 using SwedishApp.UI;
 using SwedishApp.Words;
@@ -75,6 +74,9 @@ namespace SwedishApp.Minigames
 
         #region lightmode-related
 
+        /// <summary>
+        /// This method sets every relevant UI element to its lightmode version
+        /// </summary>
         private void ToLightmode()
         {
             abortBtn.image.sprite = UIManager.instance.abortSpriteLightmode;
@@ -88,6 +90,9 @@ namespace SwedishApp.Minigames
             LightmodeInputFields();
         }
 
+        /// <summary>
+        /// This method sets every relevant UI element to its darkmode version
+        /// </summary>
         private void ToDarkmode()
         {
             abortBtn.image.sprite = UIManager.instance.abortSpriteDarkmode;
@@ -101,6 +106,10 @@ namespace SwedishApp.Minigames
             DarkmodeInputFields();
         }
 
+        /// <summary>
+        /// This method handles setting all relevant colors for each of the word's input fields
+        /// to their light mode version
+        /// </summary>
         private void LightmodeInputFields()
         {
             for (int i = 0; i < singleInputfields.Count; i++)
@@ -116,6 +125,10 @@ namespace SwedishApp.Minigames
             }
         }
 
+        /// <summary>
+        /// This method handles setting all relevant colors for each of the word's input fields
+        /// to their dark mode version
+        /// </summary>
         private void DarkmodeInputFields()
         {
             for (int i = 0; i < singleInputfields.Count; i++)
@@ -135,6 +148,9 @@ namespace SwedishApp.Minigames
 
         #region font-related
 
+        /// <summary>
+        /// This method handles setting all of this minigame's text elements to the hyperlegible font
+        /// </summary>
         private void ToHyperlegibleFont()
         {
             gameTextRefs.ForEach((text) =>
@@ -146,6 +162,9 @@ namespace SwedishApp.Minigames
             FieldsToHyperlegibleFont();
         }
 
+        /// <summary>
+        /// This method handles setting all of this minigame's text elements to the basic font
+        /// </summary>
         private void ToBasicFont()
         {
             gameTextRefs.ForEach((text) =>
@@ -157,11 +176,17 @@ namespace SwedishApp.Minigames
             FieldsToBasicFont();
         }
 
+        /// <summary>
+        /// Sets input fields to legible font
+        /// </summary>
         private void FieldsToHyperlegibleFont()
         {
             fieldTextRefs.ForEach((text) => text.font = UIManager.instance.legibleFont);
         }
         
+        /// <summary>
+        /// Sets input fields to basic font
+        /// </summary>
         private void FieldsToBasicFont()
         {
             fieldTextRefs.ForEach((text) => text.font = UIManager.instance.basicFont);
@@ -171,6 +196,12 @@ namespace SwedishApp.Minigames
 
         #region game functionality
 
+        /// <summary>
+        /// This method initializes all the variables, GUI elements and event listeners
+        /// relevant to the conjugation minigame. This is called to start the minigame, and
+        /// eventually calls <see cref="InitializeNewWord"/> to show the first word.
+        /// </summary>
+        /// <param name="_verbList">List of VerbWord objects to use for this game</param>
         public void InitializeGame(List<VerbWord> _verbList)
         {
             gameTextRefs = transform.GetComponentsInChildren<TextMeshProUGUI>(true).ToList();
@@ -201,6 +232,10 @@ namespace SwedishApp.Minigames
             InitializeNewWord();
         }
 
+        /// <summary>
+        /// This method sets up all relevant UI elements to reflect the game's currently active word,
+        /// and then instantiates input fields for the word to be written into.
+        /// </summary>
         private void InitializeNewWord()
         {
             //Get new active word & set relevant variables
@@ -240,8 +275,6 @@ namespace SwedishApp.Minigames
             //Update GUI
             if (!formIsRegular) irregularHintObj.SetActive(true);
             else irregularHintObj.SetActive(false);
-
-            // finnishWordTxt.text = activeWord.finnishWord;   //CHANGE THIS TO WORK WITH THE CURRENT FORM
             swedishBaseWordTxt.text = activeWord.swedishWord;
             conjugationClassTxt.text = activeWord.conjugationClass.ToString();
 
@@ -293,6 +326,9 @@ namespace SwedishApp.Minigames
             singleInputfields[0].ActivateInputField();
         }
 
+        /// <summary>
+        /// This method handles checking if the word written in the input fields is correct.
+        /// </summary>
         private void CheckWord()
         {
             if (gameIsEnding || !checkWordBtn.interactable) return;
@@ -300,6 +336,7 @@ namespace SwedishApp.Minigames
             int correctLettersCount = 0;
             int wordLetterCount = 0;
 
+            //This bit is used to make sure that capitalized letters are also treated as correct
             List<char> chars = new();
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
@@ -314,6 +351,8 @@ namespace SwedishApp.Minigames
             string givenString = new(chars.ToArray());
             givenString.ToLower();
 
+            //Enable/disable indicators to show if a letter was correct or not, also add to a counter of
+            //correct letters, used for determining if the whole word was correct.
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
                 if (activeWordWantedFormNoHighlight[i] == ' ' || singleInputfields[i].text == "") continue;
@@ -342,6 +381,9 @@ namespace SwedishApp.Minigames
             nextWordBtn.gameObject.SetActive(true);
         }
 
+        /// <summary>
+        /// If there are words remaining in the word list, go to next word. Else, end game.
+        /// </summary>
         private void NextWord()
         {
             if (!wordWasChecked || gameIsEnding) return;
@@ -359,6 +401,12 @@ namespace SwedishApp.Minigames
             Destroy(inputFieldHandling.gameObject);
         }
 
+        /// <summary>
+        /// This method unsubscribes events that would break things, destroys the input fields,
+        /// and resets some variables.
+        /// </summary>
+        /// <param name="_endInstantly">If true, ends game immediately, defaults to false
+        /// to give time for an end-of-game animation to be played</param>
         private void EndGame(bool _endInstantly = false)
         {
             //Shouldn't need to reset any variables as they're set at the start of the game anyway
@@ -381,6 +429,11 @@ namespace SwedishApp.Minigames
             }
         }
 
+        /// <summary>
+        /// Coroutine used for delaying showing the next word for the purposes of a little
+        /// animation perhaps.
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator NextWordDelay()
         {
             checkWordBtn.interactable = false;
@@ -391,12 +444,20 @@ namespace SwedishApp.Minigames
             InitializeNewWord();
         }
 
+        /// <summary>
+        /// This method is subscribed to the hint button, and when clicked it shows the
+        /// finnish version of the desired word.
+        /// </summary>
         private void ShowHint()
         {
             if (!checkWordBtn.interactable) return;
             finnishHintTxt.text = activeWord.GetConjugatedFinnish(conjugateInto);
         }
 
+        /// <summary>
+        /// Coroutine, delays ending the game for a little end-of-game animation
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator GameEndDelay()
         {
             yield return new WaitForSeconds(gameEndDelay);
