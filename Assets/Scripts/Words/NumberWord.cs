@@ -1,9 +1,10 @@
 namespace SwedishApp.Words
 {
+    [System.Serializable]
     public class NumberWord : Word
     {
-        public string ordinalSwedish = "första";
-        public string ordinalFinnish = "ensimmäinen";
+        public string ordinalSwedish = "fï¿½rsta";
+        public string ordinalFinnish = "ensimmï¿½inen";
         public int number = 1;
     }
 }
