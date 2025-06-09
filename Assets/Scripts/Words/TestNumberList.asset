@@ -1,0 +1,246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a8f66423845fc4fb33219381a7c976, type: 3}
+  m_Name: TestNumberList
+  m_EditorClassIdentifier: 
+  numberList:
+  - swedishWord: ett
+    finnishWord: yksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "f\xF6rsta"
+    ordinalFinnish: "ensimm\xE4inen"
+    number: 1
+  - swedishWord: "tv\xE5"
+    finnishWord: kaksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: andra
+    ordinalFinnish: toinen
+    number: 2
+  - swedishWord: tre
+    finnishWord: kolme
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tredje
+    ordinalFinnish: kolmas
+    number: 3
+  - swedishWord: fyra
+    finnishWord: "nelj\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "fj\xE4rde"
+    ordinalFinnish: "nelj\xE4s"
+    number: 4
+  - swedishWord: fem
+    finnishWord: viisi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: femte
+    ordinalFinnish: viides
+    number: 5
+  - swedishWord: sex
+    finnishWord: kuusi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "sj\xE4tte"
+    ordinalFinnish: kuudes
+    number: 6
+  - swedishWord: sju
+    finnishWord: "seitsem\xE4n"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: sjunde
+    ordinalFinnish: "seitsem\xE4s"
+    number: 7
+  - swedishWord: "\xE5tta"
+    finnishWord: kahdeksan
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "\xE5ttonde"
+    ordinalFinnish: kahdeksas
+    number: 8
+  - swedishWord: nio
+    finnishWord: "yhdeks\xE4n"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: nionde
+    ordinalFinnish: "yhdeks\xE4s"
+    number: 9
+  - swedishWord: tio
+    finnishWord: kymmenen
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tionde
+    ordinalFinnish: kymmenes
+    number: 10
+  - swedishWord: elva
+    finnishWord: yksitoista
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: elfte
+    ordinalFinnish: yhdestoista
+    number: 11
+  - swedishWord: tolv
+    finnishWord: kaksitoista
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tolfte
+    ordinalFinnish: kahdestoista
+    number: 12
+  - swedishWord: tretton
+    finnishWord: kolmetoista
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: trettonde
+    ordinalFinnish: kolmastoista
+    number: 13
+  - swedishWord: fjorton
+    finnishWord: "nelj\xE4toista"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: fjortonde
+    ordinalFinnish: "nelj\xE4stoista"
+    number: 14
+  - swedishWord: femton
+    finnishWord: viisitoista
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: femtonde
+    ordinalFinnish: viidestoista
+    number: 15
+  - swedishWord: sexton
+    finnishWord: kuusitoista
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: sextonde
+    ordinalFinnish: kuudestoista
+    number: 16
+  - swedishWord: sjutton
+    finnishWord: "seitsem\xE4ntoista"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: sjuttonde
+    ordinalFinnish: "seitsem\xE4stoista"
+    number: 17
+  - swedishWord: arton
+    finnishWord: kahdeksantoista
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: artonde
+    ordinalFinnish: kahdeksastoista
+    number: 18
+  - swedishWord: nitton
+    finnishWord: "yhdeks\xE4ntoista"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: nittonde
+    ordinalFinnish: "yhdeks\xE4stoista"
+    number: 19
+  - swedishWord: tjugo
+    finnishWord: "kaksikymment\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tjugonde
+    ordinalFinnish: kahdeskymmenes
+    number: 20
+  - swedishWord: tjugoett
+    finnishWord: "kaksikymment\xE4yksi"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "tjugof\xF6rsta"
+    ordinalFinnish: "kahdeskymmenesensimm\xE4inen"
+    number: 21
+  - swedishWord: "tjugotv\xE5"
+    finnishWord: "kaksikymment\xE4kaksi"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tjugoandra
+    ordinalFinnish: kahdeskymmenestoinen
+    number: 22
+  - swedishWord: tjugotre
+    finnishWord: "kaksikymment\xE4kolme"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tjugotredje
+    ordinalFinnish: kahdeskymmeneskolmas
+    number: 23
+  - swedishWord: tjugofyra
+    finnishWord: "kaksikymment\xE4nelj\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "tjugofj\xE4rde"
+    ordinalFinnish: "kahdeskymmenesnelj\xE4s"
+    number: 24
+  - swedishWord: tjugofem
+    finnishWord: "kaksikymment\xE4viisi"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tjugofemte
+    ordinalFinnish: kahdeskymmenesviides
+    number: 25
+  - swedishWord: tjugosex
+    finnishWord: "kaksikymment\xE4kuusi"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "tjugosj\xE4tte"
+    ordinalFinnish: kahdeskymmeneskuudes
+    number: 26
+  - swedishWord: tjugosju
+    finnishWord: "kaksikymment\xE4seitsem\xE4n"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tjugosjunde
+    ordinalFinnish: "kahdeskymmenesseitsem\xE4s"
+    number: 27
+  - swedishWord: "tjugo\xE5tta"
+    finnishWord: "kaksikymment\xE4kahdeksan"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "tjugo\xE5ttonde"
+    ordinalFinnish: kahdeskymmeneskahdeksas
+    number: 28
+  - swedishWord: tjugonio
+    finnishWord: "kaksikymment\xE4yhdeks\xE4n"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tjugonionde
+    ordinalFinnish: "kahdeskymmenesyhdeks\xE4s"
+    number: 29
+  - swedishWord: trettio
+    finnishWord: "kolmekymment\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: trettionde
+    ordinalFinnish: kolmaskymmenes
+    number: 30
+  - swedishWord: trettioett
+    finnishWord: "kolmekymment\xE4yksi"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: "trettiof\xF6rsta"
+    ordinalFinnish: "kolmaskymmenesensimm\xE4inen"
+    number: 31
+  - swedishWord: hundra
+    finnishWord: sata
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: hundrade
+    ordinalFinnish: sadas
+    number: 100
+  - swedishWord: tusen
+    finnishWord: tuhat
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    ordinalSwedish: tusende
+    ordinalFinnish: tuhannes
+    number: 1000
