@@ -241,6 +241,7 @@ namespace SwedishApp.Minigames
             //Get new active word & set relevant variables
             activeWord = verbList.Pop();
             wordWasChecked = false;
+            wordWasCorrect = false;
             conjugateInto = (ConjugateInto)Random.Range((int)ConjugateInto.imperfekti, wordFormsCount + 1);
             instructionTxt.text = string.Concat(promptStart, conjugateInto);
             singleInputfields = new();
@@ -267,7 +268,7 @@ namespace SwedishApp.Minigames
                     break;
                 default:
                     string errorMessage = string.Concat($"Something went horribly wrong with randomly determining word conjugation form:\n",
-                    $"conjugateInto value was set to {conjugateInto} when only values between 2-5 can be safely handled! Ref: {typeof(ConjugateInto)}");
+                    $"conjugateInto value was set to {(int)conjugateInto} when only values between 2-5 can be safely handled! Ref: {typeof(ConjugateInto)}");
                     Debug.LogError(errorMessage);
                     return;
             }
@@ -333,6 +334,7 @@ namespace SwedishApp.Minigames
         {
             if (gameIsEnding || !checkWordBtn.interactable) return;
 
+            wordWasCorrect = false;
             int correctLettersCount = 0;
             int wordLetterCount = 0;
 
@@ -374,11 +376,14 @@ namespace SwedishApp.Minigames
             if (correctLettersCount == wordLetterCount)
             {
                 wordWasCorrect = true;      //PROBABLY PLAY SOME SORT OF AN EFFECT FOR CORRECT ANSWER HERE
+                wordWasCorrect = true;
                 correctWordsCount++;
             }
 
             wordWasChecked = true;
             nextWordBtn.gameObject.SetActive(true);
+
+            if (wordWasCorrect) Debug.Log("Word was correct!");
         }
 
         /// <summary>
