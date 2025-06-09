@@ -1,3 +1,4 @@
+using SwedishApp.Minigames;
 using SwedishApp.UI;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace SwedishApp.Words
     {
         public enum EnOrEtt
         {
-            en = 1, 
+            en = 1,
             ett = 2
         }
 
@@ -21,21 +22,25 @@ namespace SwedishApp.Words
         [Range(1, 5)]
         public int declensionClass;
 
+        public readonly string indefinitive = " (epäm.)";
+        public readonly string definitive = " (määr.)";
+        public string finnishPlural = "kissat";
+
         public string wordCore = "katt";
-        [Header ("Epämääräinen artikkeli")]
+        [Header("Epämääräinen artikkeli")]
         public string wordGenderStart = "en ";
-        [Header ("Määräinen pääte")]
+        [Header("Määräinen pääte")]
         public string wordGenderEnd = "en";
-        [Header ("Epämääräinen monikko")]
+        [Header("Epämääräinen monikko")]
         public bool wordPluralIsRegular = true;
-            [Tooltip("If this form is irregular, set this variable to be the whole word")]
+        [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string wordPluralEnd = "er";
-            [Tooltip ("Vaatiiko monikko \"flera\" sanan?")]
+        [Tooltip("Vaatiiko monikko \"flera\" sanan?")]
         public bool fleraPlural = false;
         private readonly string flera = "flera ";
-        [Header ("Määräinen monikko")]
+        [Header("Määräinen monikko")]
         public bool wordDefinitivePluralIsRegular = true;
-            [Tooltip("If this form is irregular, set this variable to be the whole word")]
+        [Tooltip("If this form is irregular, set this variable to be the whole word")]
         public string wordDefinitivePluralEnd = "erna";
 
         public string NounWithGenderStart()
@@ -140,6 +145,28 @@ namespace SwedishApp.Words
                     return string.Concat(colorTagStartDark, wordDefinitivePluralEnd, colorTagEnd);              // Dark mode on
                 }
             }
+        }
+
+        public string GetDeclenated(DeclensionMinigame.DeclenateInto _declenateInto)
+        {
+            return _declenateInto switch
+            {
+                DeclensionMinigame.DeclenateInto.definitiivi => NounWithGenderEnd(),
+                DeclensionMinigame.DeclenateInto.monikon_indefinitiivi => PluralNoun(),
+                DeclensionMinigame.DeclenateInto.monikon_definitiivi => PluralDefinitiveNoun(),
+                _ => "",
+            };
+        }
+
+        public string GetDeclenatedFinnish(DeclensionMinigame.DeclenateInto _declenateInto)
+        {
+            return _declenateInto switch
+            {
+                DeclensionMinigame.DeclenateInto.definitiivi => string.Concat(finnishWord, definitive),
+                DeclensionMinigame.DeclenateInto.monikon_indefinitiivi => string.Concat(finnishPlural, indefinitive),
+                DeclensionMinigame.DeclenateInto.monikon_definitiivi => string.Concat(finnishPlural, definitive),
+                _ => "",
+            };
         }
     }
 }

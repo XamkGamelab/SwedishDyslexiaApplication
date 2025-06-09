@@ -57,8 +57,6 @@ namespace SwedishApp.Minigames
             checkWordButton.onClick.AddListener(CheckWord);
             nextWordButton.onClick.AddListener(DeleteOldWord);
             abortGameButton.onClick.AddListener(AbortGame);
-            inputReader.SubmitEventCancelled += CheckWord;
-            inputReader.SubmitEventHeld += DeleteOldWord;
         }
 
         /// <summary>
@@ -84,6 +82,8 @@ namespace SwedishApp.Minigames
             //And make abort button react to light mode changes!
             UIManager.instance.LightmodeOnEvent += ToLightmode;
             UIManager.instance.LightmodeOffEvent += ToDarkmode;
+            inputReader.SubmitEventCancelled += CheckWord;
+            inputReader.SubmitEventHeld += DeleteOldWord;
             SetupNewWord();
         }
 
@@ -338,6 +338,8 @@ namespace SwedishApp.Minigames
             UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
             UIManager.instance.LightmodeOnEvent -= ToLightmode;
             UIManager.instance.LightmodeOffEvent -= ToDarkmode;
+            inputReader.SubmitEventCancelled -= CheckWord;
+            inputReader.SubmitEventHeld -= DeleteOldWord;
         }
 
         /// <summary>
