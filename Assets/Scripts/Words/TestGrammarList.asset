@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302577206b1107442844c67cd6ffb238, type: 3}
+  m_Name: TestGrammarList
+  m_EditorClassIdentifier: 
+  grammarList:
+  - swedishWord: "ocks\xE5"
+    finnishWord: "my\xF6s"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "b\xE5de, och"
+    finnishWord: "sek\xE4, ett\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: innan
+    finnishWord: ennen
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: Lause positiivinen
+  - swedishWord: "f\xF6rr\xE4n"
+    finnishWord: ennen
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: Lause negatiivinen
+  - swedishWord: "n\xE4r"
+    finnishWord: kun
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "d\xE4r"
+    finnishWord: jossa
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "d\xE4r"
+    finnishWord: jossa
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: att
+    finnishWord: "ett\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: eftersom
+    finnishWord: koska
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: om
+    finnishWord: jos
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: om
+    finnishWord: jos
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
