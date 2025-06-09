@@ -15,41 +15,41 @@ MonoBehaviour:
   timeList:
   - swedishWord: "f\xF6rra \xE5ret"
     finnishWord: viime vuonna
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "n\xE4sta \xE5r"
     finnishWord: ensi vuonna
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "f\xF6rra m\xE5naden"
     finnishWord: viime kuussa
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "n\xE4sta m\xE5nad"
     finnishWord: ensi kuussa
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "f\xF6rra veckan"
     finnishWord: viime viikolla
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "n\xE4sta vecka"
     finnishWord: ensi viikolla
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "i f\xF6rrg\xE5r"
     finnishWord: "toissap\xE4iv\xE4n\xE4"
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "i \xF6vermorgon"
     finnishWord: ylihuomenna
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "i g\xE5r"
     finnishWord: eilen
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: i dag
     finnishWord: "t\xE4n\xE4\xE4n"
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
