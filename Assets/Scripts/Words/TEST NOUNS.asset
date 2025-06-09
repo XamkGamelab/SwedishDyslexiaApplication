@@ -19,6 +19,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: 8406624337460424413, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
     enOrEtt: 1
     declensionClass: 3
+    finnishPlural: sukat
     wordCore: strump
     wordGenderStart: 'en '
     wordGenderEnd: an
@@ -33,6 +34,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: 4800491361462287803, guid: c9ec22da82b023e46a22c4f36041c4a6, type: 3}
     enOrEtt: 1
     declensionClass: 2
+    finnishPlural: kalat
     wordCore: fisk
     wordGenderStart: 'en '
     wordGenderEnd: en
@@ -47,6 +49,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: -3487294453972797993, guid: 8cc15415087d0554d91073ad4064cb69, type: 3}
     enOrEtt: 1
     declensionClass: 3
+    finnishPlural: appelsiinit
     wordCore: apelsin
     wordGenderStart: 'en '
     wordGenderEnd: en
@@ -61,6 +64,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: -2964730047163184024, guid: c1817d43664010b40a315c061f9cd7ed, type: 3}
     enOrEtt: 1
     declensionClass: 3
+    finnishPlural: kissat
     wordCore: katt
     wordGenderStart: 'en '
     wordGenderEnd: en
@@ -75,6 +79,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: -6259389986677317759, guid: 84948089c79714a4cb8f0629583338dc, type: 3}
     enOrEtt: 1
     declensionClass: 3
+    finnishPlural: kirjat
     wordCore: bok
     wordGenderStart: 'en '
     wordGenderEnd: en
