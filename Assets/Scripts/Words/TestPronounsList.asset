@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36db17f0bb423c41a82013504090c32, type: 3}
+  m_Name: TestPronounsList
+  m_EditorClassIdentifier: 
+  pronounsList:
+  - swedishWord: jag
+    finnishWord: "min\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: min
+    pronounPossessiveEttSwe: mitt
+    pronounPossessivePluralSwe: mina
+    pronounPossessiveFin: minun
+    pronounObjectSwe: mig
+    pronounObjectFin: minua/minut
+  - swedishWord: du
+    finnishWord: "sin\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: din
+    pronounPossessiveEttSwe: ditt
+    pronounPossessivePluralSwe: dina
+    pronounPossessiveFin: sinun
+    pronounObjectSwe: sig
+    pronounObjectFin: sinua/sinut
+  - swedishWord: han
+    finnishWord: "h\xE4n (mas.)"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: hans
+    pronounPossessiveEttSwe: 
+    pronounPossessivePluralSwe: 
+    pronounPossessiveFin: "h\xE4nen"
+    pronounObjectSwe: honom
+    pronounObjectFin: "h\xE4nt\xE4"
+  - swedishWord: hon
+    finnishWord: "h\xE4n (fem.)"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: hennes
+    pronounPossessiveEttSwe: 
+    pronounPossessivePluralSwe: 
+    pronounPossessiveFin: "h\xE4nen"
+    pronounObjectSwe: henne
+    pronounObjectFin: "h\xE4nt\xE4"
+  - swedishWord: hen
+    finnishWord: "h\xE4n (neu.)"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: hennes
+    pronounPossessiveEttSwe: 
+    pronounPossessivePluralSwe: 
+    pronounPossessiveFin: "h\xE4nen"
+    pronounObjectSwe: henne
+    pronounObjectFin: "h\xE4nt\xE4"
+  - swedishWord: den / det
+    finnishWord: se
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: dess
+    pronounPossessiveEttSwe: 
+    pronounPossessivePluralSwe: 
+    pronounPossessiveFin: sen
+    pronounObjectSwe: den / det
+    pronounObjectFin: "sit\xE4"
+  - swedishWord: vi
+    finnishWord: me
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: "v\xE5r"
+    pronounPossessiveEttSwe: "v\xE5rt"
+    pronounPossessivePluralSwe: "v\xE5ra"
+    pronounPossessiveFin: sen
+    pronounObjectSwe: den / det
+    pronounObjectFin: "sit\xE4"
+  - swedishWord: ni
+    finnishWord: te
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: er
+    pronounPossessiveEttSwe: ert
+    pronounPossessivePluralSwe: era
+    pronounPossessiveFin: "teid\xE4n"
+    pronounObjectSwe: er
+    pronounObjectFin: "teit\xE4"
+  - swedishWord: de
+    finnishWord: he
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: deras
+    pronounPossessiveEttSwe: 
+    pronounPossessivePluralSwe: 
+    pronounPossessiveFin: "heid\xE4n"
+    pronounObjectSwe: dem
+    pronounObjectFin: "heit\xE4"
+  - swedishWord: man
+    finnishWord: (passiivi)
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    pronounPossessiveEnSwe: sin
+    pronounPossessiveEttSwe: sitt
+    pronounPossessivePluralSwe: sina
+    pronounPossessiveFin: "itsens\xE4"
+    pronounObjectSwe: sig
+    pronounObjectFin: "itse\xE4\xE4n"
