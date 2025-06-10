@@ -33,6 +33,7 @@ namespace SwedishApp.Minigames
 
         [Header("Game variables")]
         [SerializeField] private float nextWordDelayTime = 1.5f;
+        [SerializeField] private int allowedMissedInputsCount = 2;
         private int score = 0;
         private int activeGameMaxPoints = 0;
 
@@ -97,10 +98,10 @@ namespace SwedishApp.Minigames
         private void CheckWord()
         {
             bool wordWasCorrect = false;
-            wordWasChecked = true;
             canDeleteWord = true;
             int correctLettersCount = 0;
             int wordLetterCount = 0;
+            int missedInputsCount = 0;
 
             //If the gamemode is set to translate into swedish
             if (gameMode == GameMode.ToSwedish)
@@ -116,7 +117,8 @@ namespace SwedishApp.Minigames
                 List<char> chars = new();
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
-                    chars.Add(wordLetterInputFields[i].text[0]);
+                    if (wordLetterInputFields[i].text != "") chars.Add(wordLetterInputFields[i].text[0]);
+                    else chars.Add(' ');
                 }
                 string givenString = new(chars.ToArray());
                 givenString.ToLower();
@@ -124,7 +126,12 @@ namespace SwedishApp.Minigames
                 //For every letter in the word, set a highlight depending if the letter was correct or not
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
-                    if (currentWord.swedishWord[i] == ' ' || wordLetterInputFields[i].text == "") continue;
+                    if (currentWord.swedishWord[i] == ' ') continue;
+                    if (wordLetterInputFields[i].text == "")
+                    {
+                        missedInputsCount++;
+                        continue;
+                    }
                     if (givenString[i] == currentWord.swedishWord[i])
                     {
                         //This is the 'correct' indicator
@@ -153,7 +160,8 @@ namespace SwedishApp.Minigames
                 List<char> chars = new();
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
-                    chars.Add(wordLetterInputFields[i].text[0]);
+                    if (wordLetterInputFields[i].text != "") chars.Add(wordLetterInputFields[i].text[0]);
+                    else chars.Add(' ');
                 }
                 string givenString = new(chars.ToArray());
                 givenString.ToLower();
@@ -161,7 +169,12 @@ namespace SwedishApp.Minigames
                 //For every letter in the word, set a highlight depending on if the letter was correct or not
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
-                    if (currentWord.finnishWord[i] == ' ' || wordLetterInputFields[i].text == "") continue;
+                    if (currentWord.finnishWord[i] == ' ') continue;
+                    if (wordLetterInputFields[i].text == "")
+                    {
+                        missedInputsCount++;
+                        continue;
+                    }
                     if (givenString[i] == currentWord.finnishWord[i])
                     {
                         //This is the 'correct' indicator
@@ -187,7 +200,12 @@ namespace SwedishApp.Minigames
             }
 
             wordLetterInputFields[0].Select();
-            nextWordButton.gameObject.SetActive(true);
+
+            if (missedInputsCount <= allowedMissedInputsCount)
+            {
+                wordWasChecked = true;
+                nextWordButton.gameObject.SetActive(true);
+            }
         }
 
         /// <summary>

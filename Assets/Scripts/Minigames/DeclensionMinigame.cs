@@ -36,6 +36,7 @@ namespace SwedishApp.Minigames
         [SerializeField] private GameObject singleInputfield;
         [SerializeField] private float newWordDelay = 1f;
         [SerializeField] private float gameEndDelay = 1.5f;
+        [SerializeField] private int allowedMissedInputsCount = 2;
 
         //Input field related references
         private InputFieldHandling inputFieldHandling;
@@ -339,6 +340,7 @@ namespace SwedishApp.Minigames
             wordWasCorrect = false;
             int correctLettersCount = 0;
             int wordLetterCount = 0;
+            int missedInputsCount = 0;
 
             //This bit is used to make sure that capitalized letters are also treated as correct
             List<char> chars = new();
@@ -360,7 +362,16 @@ namespace SwedishApp.Minigames
             //correct letters, used for determining if the whole word was correct.
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
-                if (activeWordWantedFormNoHighlight[i] == ' ' || singleInputfields[i].text == "") continue;
+                if (activeWordWantedFormNoHighlight[i] == ' ')
+                {
+                    chars.Add(' ');
+                    continue;
+                }
+                if (singleInputfields[i].text == "")
+                {
+                    missedInputsCount++;
+                    continue;
+                }
                 if (givenString[i] == activeWordWantedFormNoHighlight[i])
                 {
                     //Activate "correct" indicator
@@ -383,8 +394,11 @@ namespace SwedishApp.Minigames
                 correctWordsCount++;
             }
 
-            wordWasChecked = true;
-            nextWordBtn.gameObject.SetActive(true);
+            if (missedInputsCount <= allowedMissedInputsCount)
+            {
+                wordWasChecked = true;
+                nextWordBtn.gameObject.SetActive(true);
+            }
 
             if (wordWasCorrect)
             {
