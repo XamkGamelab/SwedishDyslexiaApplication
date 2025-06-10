@@ -53,6 +53,10 @@ MonoBehaviour:
     finnishWord: "t\xE4n\xE4\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+  - swedishWord: nu
+    finnishWord: nyt
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
   - swedishWord: "v\xE5r"
     finnishWord: "kev\xE4t"
     darkModeSprite: {fileID: 0}
