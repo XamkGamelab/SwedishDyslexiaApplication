@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +62,9 @@ namespace SwedishApp.Minigames
         private bool wordWasCorrect = false;
         public bool gameIsEnding { get; private set; } = false;
         private List<TextMeshProUGUI> gameTextRefs;
+
+        //Events
+        public event Action WordCorrectEvent;
 
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
@@ -242,7 +246,7 @@ namespace SwedishApp.Minigames
             activeWord = verbList.Pop();
             wordWasChecked = false;
             wordWasCorrect = false;
-            conjugateInto = (ConjugateInto)Random.Range((int)ConjugateInto.imperfekti, wordFormsCount + 1);
+            conjugateInto = (ConjugateInto)UnityEngine.Random.Range((int)ConjugateInto.imperfekti, wordFormsCount + 1);
             instructionTxt.text = string.Concat(promptStart, conjugateInto);
             singleInputfields = new();
             fieldTextRefs = new();
@@ -383,7 +387,11 @@ namespace SwedishApp.Minigames
             wordWasChecked = true;
             nextWordBtn.gameObject.SetActive(true);
 
-            if (wordWasCorrect) Debug.Log("Word was correct!");
+            if (wordWasCorrect)
+            {
+                WordCorrectEvent?.Invoke();
+                Debug.Log("Word was correct!");
+            }
         }
 
         /// <summary>
