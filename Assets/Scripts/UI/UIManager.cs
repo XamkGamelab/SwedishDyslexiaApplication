@@ -25,7 +25,6 @@ namespace SwedishApp.UI
         public NounList nounList;
         public AdjectiveList adjectiveList;
        
-
         [Header("Input-Related")]
         [SerializeField] private InputReader inputReader;
         private Vector2 mousePos;
@@ -102,8 +101,11 @@ namespace SwedishApp.UI
         [SerializeField] private TextMeshProUGUI openCreditsText;
         [SerializeField] private Button closeCreditsButton;
 
-        [Header("TEMPORARY")]
-        public TextMeshProUGUI TEST_VERB;
+        [Header("Effects-related")]
+        [SerializeField] private ParticleSystem yellowLeftSparkleFX;
+        [SerializeField] private ParticleSystem yellowRightSparkleFX;
+        [SerializeField] private ParticleSystem blueLeftSparkleFX;
+        [SerializeField] private ParticleSystem blueRightSparkleFX;
 
         enum FontSize
         {
@@ -188,6 +190,14 @@ namespace SwedishApp.UI
                 flashcardGameTypeMenu.SetActive(false);
             });
 
+            //Subscribe to word correct events
+            conjugationMinigame.WordCorrectEvent += PlayYellowSparkles;
+            conjugationMinigame.WordCorrectEvent += PlayBlueSparkles;
+            declensionMinigame.WordCorrectEvent += PlayYellowSparkles;
+            declensionMinigame.WordCorrectEvent += PlayBlueSparkles;
+            translateMinigame.WordCorrectEvent += PlayYellowSparkles;
+            translateMinigame.WordCorrectEvent += PlayBlueSparkles;
+
             inputReader.EnableInputs();
         }
 
@@ -201,8 +211,21 @@ namespace SwedishApp.UI
 
         #endregion
 
-        #region minigame-related methods
+        #region effects-related methods
 
+        private void PlayYellowSparkles()
+        {
+            if (LightmodeOn) return;
+            yellowLeftSparkleFX.Play();
+            yellowRightSparkleFX.Play();
+        }
+
+        private void PlayBlueSparkles()
+        {
+            if (!LightmodeOn) return;
+            blueLeftSparkleFX.Play();
+            blueRightSparkleFX.Play();
+        }
 
 
         #endregion

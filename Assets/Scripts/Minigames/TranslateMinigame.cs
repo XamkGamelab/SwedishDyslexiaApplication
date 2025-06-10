@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using SwedishApp.Core;
@@ -49,6 +50,9 @@ namespace SwedishApp.Minigames
         private InputFieldHandling inputFieldHandler;
         private List<TMP_InputField> wordLetterInputFields;
         private List<TextMeshProUGUI> letterTextRefs;
+        
+        //Events
+        public event Action WordCorrectEvent;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -178,6 +182,7 @@ namespace SwedishApp.Minigames
             if (wordWasCorrect)
             {
                 //DO A LITTLE THING IF WORD WAS CORRECT!!!
+                WordCorrectEvent?.Invoke();
                 score++;
             }
 

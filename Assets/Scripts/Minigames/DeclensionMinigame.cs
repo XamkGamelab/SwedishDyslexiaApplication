@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,9 @@ namespace SwedishApp.Minigames
         private bool wordWasCorrect = false;
         public bool gameIsEnding { get; private set; } = false;
         private List<TextMeshProUGUI> gameTextRefs;
+        
+        //Events
+        public event Action WordCorrectEvent;
 
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
@@ -242,7 +246,7 @@ namespace SwedishApp.Minigames
             activeWord = nounList.Pop();
             wordWasChecked = false;
             wordWasCorrect = false;
-            declenateInto = (DeclenateInto)Random.Range((int)DeclenateInto.definitiivi, wordFormsCount + 1);
+            declenateInto = (DeclenateInto)UnityEngine.Random.Range((int)DeclenateInto.definitiivi, wordFormsCount + 1);
             singleInputfields = new();
             fieldTextRefs = new();
 
@@ -382,7 +386,11 @@ namespace SwedishApp.Minigames
             wordWasChecked = true;
             nextWordBtn.gameObject.SetActive(true);
 
-            if (wordWasCorrect) Debug.Log("Word was correct!");
+            if (wordWasCorrect)
+            {
+                WordCorrectEvent?.Invoke();
+                Debug.Log("Word was correct!");
+            }
         }
 
         /// <summary>
