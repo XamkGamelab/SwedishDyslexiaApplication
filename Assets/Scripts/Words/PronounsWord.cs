@@ -14,6 +14,5 @@ namespace SwedishApp.Words
         [Header("Objektimuoto")]
         public string pronounObjectSwe = "mig";
         public string pronounObjectFin = "minua/minut";
-        // Just wanna say, a little something.. There is nothing I love more than PRONOUNS!! GENDER AMBIGUITY!!
     }
 }

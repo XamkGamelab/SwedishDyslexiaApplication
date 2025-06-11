@@ -13,43 +13,33 @@ MonoBehaviour:
   m_Name: TestGrammarList
   m_EditorClassIdentifier: 
   grammarList:
-  - swedishWord: "ocks\xE5"
-    finnishWord: "my\xF6s"
+  - swedishWord: om
+    finnishWord: jos
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: "b\xE5de, och"
-    finnishWord: "sek\xE4, ett\xE4"
+  - swedishWord: kanske
+    finnishWord: "ehk\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: innan
-    finnishWord: ennen
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    notices: Lause positiivinen
-  - swedishWord: "f\xF6rr\xE4n"
-    finnishWord: ennen
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    notices: Lause negatiivinen
-  - swedishWord: "n\xE4r"
-    finnishWord: kun
+  - swedishWord: "\xE4ntligen"
+    finnishWord: vihdoinkin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: "d\xE4r"
-    finnishWord: jossa
+  - swedishWord: "d\xE4rf\xF6r"
+    finnishWord: siksi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: "d\xE4r"
-    finnishWord: jossa
+  - swedishWord: "\xE5tminstone"
+    finnishWord: ainakin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: att
-    finnishWord: "ett\xE4"
+  - swedishWord: dock
+    finnishWord: kuitenkin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -58,8 +48,48 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: om
-    finnishWord: jos
+  - swedishWord: att
+    finnishWord: "ett\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
+  - swedishWord: "d\xE5"
+    finnishWord: silloin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 'adverbi: tuolloin/silloin, konjunktio: kun'
+  - swedishWord: fast
+    finnishWord: vaikka
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: innan
+    finnishWord: ennen kuin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: "P\xE4\xE4lause positiivinen"
+  - swedishWord: "f\xF6rr\xE4n"
+    finnishWord: ennen kuin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: "P\xE4\xE4lause kielteinen"
+  - swedishWord: medan
+    finnishWord: "sill\xE4 aikaa kun"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: /samalla kun /kun taas
+  - swedishWord: samtidigt
+    finnishWord: samanaikaisesti
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: mellan
+    finnishWord: "v\xE4liss\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: "/v\xE4lill\xE4 (paikka)"
+  - swedishWord: bland
+    finnishWord: joukossa
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: "/keskuudessa/keskell\xE4"
