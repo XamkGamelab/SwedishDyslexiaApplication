@@ -7,7 +7,9 @@ using SwedishApp.Input;
 using SwedishApp.Minigames;
 using SwedishApp.Words;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace SwedishApp.UI
@@ -116,6 +118,7 @@ namespace SwedishApp.UI
 
         [Header("Settings-Related")]
         private bool settingsOpen = false;
+        public bool mouseOverSettings { private get; set; } = false;
         [SerializeField] private Button toggleSettingsBtn;
         [SerializeField] private GameObject settingsMenu;
         [SerializeField] private Image settingsMenuImage;
@@ -394,8 +397,9 @@ namespace SwedishApp.UI
         /// </summary>
         private void ClickOffCloseSettings()
         {
+            Vector3 v;
             if (!settingsOpen) return;
-            if (!RectTransformUtility.RectangleContainsScreenPoint(settingsRect, mousePos))
+            if (!mouseOverSettings)
             {
                 settingsMenu.SetActive(false);
                 settingsOpen = false;

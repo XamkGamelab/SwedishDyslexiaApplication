@@ -657,6 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: e1e34987a79ad114ebb32860cc353eef, type: 2}
   nextWordDelayTime: 1.5
+  allowedMissedInputsCount: 2
   abortGameButton: {fileID: 981611317}
   translateMinigameBG: {fileID: 154069253}
   checkWordButton: {fileID: 1045111475}
@@ -1501,6 +1502,7 @@ MonoBehaviour:
   singleInputfield: {fileID: 1032697241587179193, guid: a287a1566863930479dbb9e985532027, type: 3}
   newWordDelay: 1
   gameEndDelay: 1.5
+  allowedMissedInputsCount: 2
   conjugationClassImage: {fileID: 412175255}
 --- !u!1 &268246856
 GameObject:
@@ -7060,6 +7062,7 @@ GameObject:
   - component: {fileID: 967184558}
   - component: {fileID: 967184557}
   - component: {fileID: 967184556}
+  - component: {fileID: 967184559}
   m_Layer: 5
   m_Name: SettingsBG
   m_TagString: Untagged
@@ -7159,6 +7162,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967184554}
   m_CullTransparentMesh: 1
+--- !u!114 &967184559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967184554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8458764e8b066ad498a9b34962979196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &981611315
 GameObject:
   m_ObjectHideFlags: 0
@@ -7377,6 +7392,7 @@ MonoBehaviour:
   singleInputfield: {fileID: 1032697241587179193, guid: a287a1566863930479dbb9e985532027, type: 3}
   newWordDelay: 1
   gameEndDelay: 1.5
+  allowedMissedInputsCount: 2
   conjugationClassImage: {fileID: 673170634}
 --- !u!1 &997764740
 GameObject:
@@ -12571,6 +12587,7 @@ GameObject:
   - component: {fileID: 1562606398}
   - component: {fileID: 1562606397}
   - component: {fileID: 1562606396}
+  - component: {fileID: 1562606399}
   m_Layer: 5
   m_Name: SettingsToggleBTN
   m_TagString: Untagged
@@ -12691,6 +12708,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562606394}
   m_CullTransparentMesh: 1
+--- !u!114 &1562606399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562606394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8458764e8b066ad498a9b34962979196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1573231367
 GameObject:
   m_ObjectHideFlags: 0
