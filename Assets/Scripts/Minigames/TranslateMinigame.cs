@@ -136,11 +136,13 @@ namespace SwedishApp.Minigames
                     {
                         //This is the 'correct' indicator
                         wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
+                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(false);
                         correctLettersCount++;
                     }
                     else
                     {
                         //This is the 'incorrect' indicator
+                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(false);
                         wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
                     }
                 }
@@ -248,10 +250,28 @@ namespace SwedishApp.Minigames
                     //Save references to the text slot of each input field, used when changing font settings!
                     letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
 
+
                     //Set initial input field background and font colors based on if light mode is enabled or not
-                    wordLetterInputFields[i].image.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
-                    letterTextRefs[i].color = UIManager.instance.LightmodeOn ? UIManager.instance.Lightgrey : UIManager.instance.Darkgrey;
-                    letterTextRefs[i].font = UIManager.instance.hyperlegibleOn ? UIManager.instance.legibleFont : UIManager.instance.basicFont;
+                    if (UIManager.instance.LightmodeOn)
+                    {
+                        var colorBlock = wordLetterInputFields[i].colors;
+                        colorBlock.normalColor = UIManager.instance.Darkgrey;
+                        colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
+                        colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
+                        colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
+                        wordLetterInputFields[i].colors = colorBlock;
+                        letterTextRefs[i].color = UIManager.instance.Lightgrey;
+                    }
+                    else
+                    {
+                        var colorBlock = wordLetterInputFields[i].colors;
+                        colorBlock.normalColor = UIManager.instance.Lightgrey;
+                        colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
+                        colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
+                        colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
+                        wordLetterInputFields[i].colors = colorBlock;
+                        letterTextRefs[i].color = UIManager.instance.Darkgrey;
+                    }
                 }
             }
             //If the gamemode is set to translate into finnish

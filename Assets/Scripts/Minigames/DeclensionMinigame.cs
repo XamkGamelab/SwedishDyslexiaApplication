@@ -405,6 +405,8 @@ namespace SwedishApp.Minigames
                 WordCorrectEvent?.Invoke();
                 Debug.Log("Word was correct!");
             }
+
+            singleInputfields[0].Select();
         }
 
         /// <summary>
