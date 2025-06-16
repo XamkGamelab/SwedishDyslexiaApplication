@@ -88,3 +88,78 @@ MonoBehaviour:
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 0
     wordDefinitivePluralEnd: "b\xF6ckerna"
+  - swedishWord: "yrkesh\xF6gskola"
+    finnishWord: ammattikorkeakoulu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 1
+    declensionClass: 1
+    finnishPlural: ammattikoulut
+    wordCore: "yrkesh\xF6gskol"
+    wordGenderStart: 'en '
+    wordGenderEnd: an
+    wordPluralIsRegular: 1
+    wordPluralEnd: ar
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: orna
+  - swedishWord: utbildning
+    finnishWord: koulutus
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 1
+    declensionClass: 2
+    finnishPlural: koulutukset
+    wordCore: utbildning
+    wordGenderStart: 'en '
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: ar
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: arna
+  - swedishWord: student
+    finnishWord: ylioppilas
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 1
+    declensionClass: 3
+    finnishPlural: ylioppilaat
+    wordCore: student
+    wordGenderStart: 'en '
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: erna
+  - swedishWord: elev
+    finnishWord: oppilas
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 1
+    declensionClass: 3
+    finnishPlural: oppilaat
+    wordCore: elev
+    wordGenderStart: 'en '
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: erna
+  - swedishWord: studerande
+    finnishWord: opiskelija
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 1
+    declensionClass: 5
+    finnishPlural: opiskelijat
+    wordCore: studerande
+    wordGenderStart: 'en '
+    wordGenderEnd: n
+    wordPluralIsRegular: 0
+    wordPluralEnd: studerande
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: na
