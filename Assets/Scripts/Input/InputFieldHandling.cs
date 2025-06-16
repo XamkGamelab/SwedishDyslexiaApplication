@@ -86,6 +86,21 @@ namespace SwedishApp.Input
         {
             if (!inputField.IsActive()) return;
 
+            if (_input.y > 0)
+            {
+
+                index = 0;
+                holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                return;
+            }
+            else if (_input.y < 0)
+            {
+
+                index = holder.childCount - 1;
+                holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                return;
+            }
+
             //If moving left
             if (_input.x < 0)
             {
@@ -121,7 +136,7 @@ namespace SwedishApp.Input
             {
                 if (controlHeld)
                 {
-                    index = holder.childCount-1;
+                    index = holder.childCount - 1;
                     holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
                     return;
                 }
