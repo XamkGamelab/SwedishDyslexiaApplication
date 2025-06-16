@@ -191,6 +191,24 @@ namespace SwedishApp.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Control"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b59004f-9655-44b7-9956-1e64d38eef9b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Backspace"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6ddae21-d282-4a48-8708-21f99b666b10"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -402,6 +420,28 @@ namespace SwedishApp.Input
                     ""action"": ""Tab"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd1d231e-04b1-43f2-9708-0d317f3344d9"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Control"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03cec96c-7feb-4c64-96b5-9796047644a7"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Backspace"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -482,6 +522,8 @@ namespace SwedishApp.Input
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
             m_UI_Tab = m_UI.FindAction("Tab", throwIfNotFound: true);
+            m_UI_Control = m_UI.FindAction("Control", throwIfNotFound: true);
+            m_UI_Backspace = m_UI.FindAction("Backspace", throwIfNotFound: true);
         }
 
         ~@InputMap()
@@ -573,6 +615,8 @@ namespace SwedishApp.Input
         private readonly InputAction m_UI_TrackedDevicePosition;
         private readonly InputAction m_UI_TrackedDeviceOrientation;
         private readonly InputAction m_UI_Tab;
+        private readonly InputAction m_UI_Control;
+        private readonly InputAction m_UI_Backspace;
         /// <summary>
         /// Provides access to input actions defined in input action map "UI".
         /// </summary>
@@ -628,6 +672,14 @@ namespace SwedishApp.Input
             /// Provides access to the underlying input action "UI/Tab".
             /// </summary>
             public InputAction @Tab => m_Wrapper.m_UI_Tab;
+            /// <summary>
+            /// Provides access to the underlying input action "UI/Control".
+            /// </summary>
+            public InputAction @Control => m_Wrapper.m_UI_Control;
+            /// <summary>
+            /// Provides access to the underlying input action "UI/Backspace".
+            /// </summary>
+            public InputAction @Backspace => m_Wrapper.m_UI_Backspace;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -687,6 +739,12 @@ namespace SwedishApp.Input
                 @Tab.started += instance.OnTab;
                 @Tab.performed += instance.OnTab;
                 @Tab.canceled += instance.OnTab;
+                @Control.started += instance.OnControl;
+                @Control.performed += instance.OnControl;
+                @Control.canceled += instance.OnControl;
+                @Backspace.started += instance.OnBackspace;
+                @Backspace.performed += instance.OnBackspace;
+                @Backspace.canceled += instance.OnBackspace;
             }
 
             /// <summary>
@@ -731,6 +789,12 @@ namespace SwedishApp.Input
                 @Tab.started -= instance.OnTab;
                 @Tab.performed -= instance.OnTab;
                 @Tab.canceled -= instance.OnTab;
+                @Control.started -= instance.OnControl;
+                @Control.performed -= instance.OnControl;
+                @Control.canceled -= instance.OnControl;
+                @Backspace.started -= instance.OnBackspace;
+                @Backspace.performed -= instance.OnBackspace;
+                @Backspace.canceled -= instance.OnBackspace;
             }
 
             /// <summary>
@@ -913,6 +977,20 @@ namespace SwedishApp.Input
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnTab(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Control" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnControl(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Backspace" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnBackspace(InputAction.CallbackContext context);
         }
     }
 }
