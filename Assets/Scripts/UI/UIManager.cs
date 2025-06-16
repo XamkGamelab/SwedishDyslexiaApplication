@@ -319,43 +319,43 @@ namespace SwedishApp.UI
         private void StartNounTranslateGameToFinnish()
         {
             translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList));
-            flashcardGameTypeMenu.SetActive(false);
-            startTranslateNounGameBtn.onClick.RemoveAllListeners();
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
         }
 
         private void StartNounTranslateGameToSwedish()
         {
             translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList));
-            flashcardGameTypeMenu.SetActive(false);
-            startTranslateNounGameBtn.onClick.RemoveAllListeners();
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
         }
 
         private void StartVerbTranslateGameToFinnish()
         {
             translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(verbList.verbList));
-            flashcardGameTypeMenu.SetActive(false);
-            startTranslateVerbGameBtn.onClick.RemoveAllListeners();
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
         }
 
         private void StartVerbTranslateGameToSwedish()
         {
             translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(verbList.verbList));
-            flashcardGameTypeMenu.SetActive(false);
-            startTranslateVerbGameBtn.onClick.RemoveAllListeners();
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
         }
 
         private void StartAdjectiveTranslateGameToFinnish()
         {
             translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(adjectiveList.adjectiveList));
-            flashcardGameTypeMenu.SetActive(false);
-            startTranslateAdjectiveGameBtn.onClick.RemoveAllListeners();
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
         }
 
         private void StartAdjectiveTranslateGameToSwedish()
         {
             translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(adjectiveList.adjectiveList));
-            flashcardGameTypeMenu.SetActive(false);
-            startTranslateAdjectiveGameBtn.onClick.RemoveAllListeners();
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
         }
 
         private void UnsubscribeTranslateStartButtons()
