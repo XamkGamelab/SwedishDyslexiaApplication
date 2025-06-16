@@ -37,6 +37,11 @@ namespace SwedishApp.UI
         [SerializeField] private Button startConjugationGameBtn;
         [SerializeField] private Button startDeclensionGameBtn;
         [SerializeField] private TranslateMinigame translateMinigame;
+        [SerializeField] private GameObject translateGameTypeMenu;
+        [SerializeField] private Button closeTranslateMenuBtn;
+        [SerializeField] private Button startTranslateNounGameBtn;
+        [SerializeField] private Button startTranslateVerbGameBtn;
+        [SerializeField] private Button startTranslateAdjectiveGameBtn;
         [SerializeField] private ConjugationMinigame conjugationMinigame;
         [SerializeField] private DeclensionMinigame declensionMinigame;
         [SerializeField] private GameObject flashcardGameTypeMenu;
@@ -49,7 +54,8 @@ namespace SwedishApp.UI
 
         [Header("Lightmode-Related")]
         [SerializeField] private Image backgroundImage;
-        [SerializeField] private Image cardtypeBackground;
+        [SerializeField] private Image flashcardGameTypeBackground;
+        [SerializeField] private Image translateGameTypeBackground;
         [SerializeField] private List<TextMeshProUGUI> textObjectList;
         [SerializeField] private List<Image> lightmodableImages;
         [SerializeField] private List<TextMeshProUGUI> textObjectListReverseLight;
@@ -166,11 +172,7 @@ namespace SwedishApp.UI
             openCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(true));
             closeCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(false));
 
-            //Add listeners to translate minigame buttons
-            startTranslationGameToFinnishBtn.onClick.AddListener(() =>
-                translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList)));
-            startTranslationGameToSwedishBtn.onClick.AddListener(() =>
-                translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList)));
+            //Add listeners to conjugation / declension minigame buttons
             startConjugationGameBtn.onClick.AddListener(() => conjugationMinigame.InitializeGame(verbList.verbList));
             startDeclensionGameBtn.onClick.AddListener(() => declensionMinigame.InitializeGame(nounList.nounList));
 
@@ -193,6 +195,27 @@ namespace SwedishApp.UI
                 flashcardGameTypeMenu.SetActive(false);
             });
 
+            //Add listeners to translate minigame buttons
+            startTranslationGameToFinnishBtn.onClick.AddListener(() =>
+            {
+                translateGameTypeMenu.SetActive(true);
+                startTranslateNounGameBtn.onClick.AddListener(StartNounTranslateGameToFinnish);
+                startTranslateVerbGameBtn.onClick.AddListener(StartVerbTranslateGameToFinnish);
+                startTranslateAdjectiveGameBtn.onClick.AddListener(StartAdjectiveTranslateGameToFinnish);
+            });
+            startTranslationGameToSwedishBtn.onClick.AddListener(() =>
+            {
+                translateGameTypeMenu.SetActive(true);
+                startTranslateNounGameBtn.onClick.AddListener(StartNounTranslateGameToSwedish);
+                startTranslateVerbGameBtn.onClick.AddListener(StartVerbTranslateGameToSwedish);
+                startTranslateAdjectiveGameBtn.onClick.AddListener(StartAdjectiveTranslateGameToSwedish);
+            });
+            closeTranslateMenuBtn.onClick.AddListener(() =>
+            {
+                translateGameTypeMenu.SetActive(false);
+                UnsubscribeTranslateStartButtons();
+            });
+            
             //Subscribe to word correct events
             conjugationMinigame.WordCorrectEvent += PlayYellowSparkles;
             conjugationMinigame.WordCorrectEvent += PlayBlueSparkles;
@@ -255,8 +278,10 @@ namespace SwedishApp.UI
                 buttonImages.ForEach((buttonImg) => buttonImg.sprite = buttonSpriteLightmode);
                 flashcardBases.ForEach((baseImg) => baseImg.sprite = cardSpriteLightmode);
 
-                cardtypeBackground.color = LightgreyMostAlpha;
+                flashcardGameTypeBackground.color = LightgreyMostAlpha;
+                translateGameTypeBackground.color = LightgreyMostAlpha;
                 closeFlashcardMenuBtn.image.sprite = abortSpriteLightmode;
+                closeTranslateMenuBtn.image.sprite = abortSpriteLightmode;
                 openCreditsText.color = Darkgrey;
                 settingsMenuImage.sprite = buttonSpriteLightmode;
 
@@ -275,14 +300,69 @@ namespace SwedishApp.UI
                 buttonImages.ForEach((buttonImg) => buttonImg.sprite = buttonSpriteDarkmode);
                 flashcardBases.ForEach((baseImg) => baseImg.sprite = cardSpriteDarkmode);
 
-                cardtypeBackground.color = DarkgreyMostAlpha;
+                flashcardGameTypeBackground.color = DarkgreyMostAlpha;
+                translateGameTypeBackground.color = DarkgreyMostAlpha;
                 closeFlashcardMenuBtn.image.sprite = abortSpriteDarkmode;
+                closeTranslateMenuBtn.image.sprite = abortSpriteDarkmode;
                 openCreditsText.color = Lightgrey;
                 settingsMenuImage.sprite = buttonSpriteDarkmode;
 
                 LightmodeOffEvent?.Invoke();
             }
             StartCoroutine(SliderLerp());
+        }
+
+        #endregion
+
+        #region minigame-related methods
+
+        private void StartNounTranslateGameToFinnish()
+        {
+            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList));
+            flashcardGameTypeMenu.SetActive(false);
+            startTranslateNounGameBtn.onClick.RemoveAllListeners();
+        }
+
+        private void StartNounTranslateGameToSwedish()
+        {
+            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList));
+            flashcardGameTypeMenu.SetActive(false);
+            startTranslateNounGameBtn.onClick.RemoveAllListeners();
+        }
+
+        private void StartVerbTranslateGameToFinnish()
+        {
+            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(verbList.verbList));
+            flashcardGameTypeMenu.SetActive(false);
+            startTranslateVerbGameBtn.onClick.RemoveAllListeners();
+        }
+
+        private void StartVerbTranslateGameToSwedish()
+        {
+            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(verbList.verbList));
+            flashcardGameTypeMenu.SetActive(false);
+            startTranslateVerbGameBtn.onClick.RemoveAllListeners();
+        }
+
+        private void StartAdjectiveTranslateGameToFinnish()
+        {
+            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(adjectiveList.adjectiveList));
+            flashcardGameTypeMenu.SetActive(false);
+            startTranslateAdjectiveGameBtn.onClick.RemoveAllListeners();
+        }
+
+        private void StartAdjectiveTranslateGameToSwedish()
+        {
+            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(adjectiveList.adjectiveList));
+            flashcardGameTypeMenu.SetActive(false);
+            startTranslateAdjectiveGameBtn.onClick.RemoveAllListeners();
+        }
+
+        private void UnsubscribeTranslateStartButtons()
+        {
+            startTranslateNounGameBtn.onClick.RemoveAllListeners();
+            startTranslateVerbGameBtn.onClick.RemoveAllListeners();
+            startTranslateAdjectiveGameBtn.onClick.RemoveAllListeners();
         }
 
         #endregion
@@ -397,7 +477,6 @@ namespace SwedishApp.UI
         /// </summary>
         private void ClickOffCloseSettings()
         {
-            Vector3 v;
             if (!settingsOpen) return;
             if (!mouseOverSettings)
             {
