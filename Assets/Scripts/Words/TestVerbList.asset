@@ -57,3 +57,179 @@ MonoBehaviour:
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: "oli ty\xF6skennellyt"
+  - swedishWord: spela
+    finnishWord: pelata
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    conjugationClass: 1
+    wordCore: spela
+    baseformIsRegular: 1
+    baseformEnd: 
+    currentTenseIsRegular: 1
+    currentTenseEnd: r
+    currentTenseFinnish: pelaa
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastTenseFinnish: pelasi
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: t
+    pastPerfectTenseFinnish: on pelannut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t
+    pastPlusPerfectTenseFinnish: oli pelannut
+  - swedishWord: bruka
+    finnishWord: olla tapana
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    conjugationClass: 1
+    wordCore: bruka
+    baseformIsRegular: 1
+    baseformEnd: 
+    currentTenseIsRegular: 1
+    currentTenseEnd: r
+    currentTenseFinnish: on tapana
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastTenseFinnish: oli tapana
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: t
+    pastPerfectTenseFinnish: on ollut tapana
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t
+    pastPlusPerfectTenseFinnish: oli ollut tapana
+  - swedishWord: utexaminera
+    finnishWord: valmistua
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    conjugationClass: 1
+    wordCore: utexaminera
+    baseformIsRegular: 1
+    baseformEnd: 
+    currentTenseIsRegular: 1
+    currentTenseEnd: r
+    currentTenseFinnish: valmistuu
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastTenseFinnish: valmistui
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: t
+    pastPerfectTenseFinnish: on valmistunut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t
+    pastPlusPerfectTenseFinnish: oli valmistunut
+  - swedishWord: studera
+    finnishWord: opiskella
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    conjugationClass: 1
+    wordCore: studera
+    baseformIsRegular: 1
+    baseformEnd: 
+    currentTenseIsRegular: 1
+    currentTenseEnd: r
+    currentTenseFinnish: opiskelee
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastTenseFinnish: opiskeli
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: t
+    pastPerfectTenseFinnish: on opiskellut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t
+    pastPlusPerfectTenseFinnish: oli opiskellut
+  - swedishWord: orka
+    finnishWord: jaksaa
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    conjugationClass: 1
+    wordCore: orka
+    baseformIsRegular: 1
+    baseformEnd: 
+    currentTenseIsRegular: 1
+    currentTenseEnd: r
+    currentTenseFinnish: jaksaa
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastTenseFinnish: jaksoi
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: t
+    pastPerfectTenseFinnish: on jaksanut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t
+    pastPlusPerfectTenseFinnish: oli jaksanut
+  - swedishWord: hyra
+    finnishWord: vuokrata
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    conjugationClass: 2
+    wordCore: hyr
+    baseformIsRegular: 1
+    baseformEnd: a
+    currentTenseIsRegular: 1
+    currentTenseEnd: 
+    currentTenseFinnish: vuokraa
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastTenseFinnish: vuokrasi
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: har
+    pastPerfectTenseEnd: t
+    pastPerfectTenseFinnish: on vuokrannut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t
+    pastPlusPerfectTenseFinnish: oli vuokrannut
+  - swedishWord: "beh\xF6va"
+    finnishWord: tarvita
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    conjugationClass: 2
+    wordCore: "beh\xF6v"
+    baseformIsRegular: 1
+    baseformEnd: a
+    currentTenseIsRegular: 1
+    currentTenseEnd: ar
+    currentTenseFinnish: vuokraa
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastTenseFinnish: vuokrasi
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: har
+    pastPerfectTenseEnd: t
+    pastPerfectTenseFinnish: on vuokrannut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t
+    pastPlusPerfectTenseFinnish: oli vuokrannut
+  - swedishWord: ha
+    finnishWord: omistaa
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    conjugationClass: 4
+    wordCore: ha
+    baseformIsRegular: 1
+    baseformEnd: 
+    currentTenseIsRegular: 1
+    currentTenseEnd: ar
+    currentTenseFinnish: omistaa
+    pastTenseIsRegular: 1
+    pastTenseEnd: de
+    pastTenseFinnish: omisti
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: har
+    pastPerfectTenseEnd: ft
+    pastPerfectTenseFinnish: on omistanut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: ft
+    pastPlusPerfectTenseFinnish: oli omistanut
