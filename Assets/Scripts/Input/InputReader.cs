@@ -8,7 +8,7 @@ namespace SwedishApp.Input
     /// <summary>
     /// This class handles reading the program's inputs.
     /// </summary>
-    [CreateAssetMenu (menuName = "InputReader")]
+    [CreateAssetMenu(menuName = "InputReader")]
     public class InputReader : ScriptableObject, InputMap.IUIActions
     {
         private InputMap inputMap;
@@ -34,6 +34,10 @@ namespace SwedishApp.Input
         public event Action RightClickEventCancelled;
         public event Action MiddleClickEvent;
         public event Action MiddleClickEventCancelled;
+        public event Action ControlEvent;
+        public event Action ControlEventCancelled;
+        public event Action BackspaceEvent;
+        public event Action BackspaceEventCancelled;
 
         /// <summary>
         /// This method initializes an InputMap if one isn't already initialized,
@@ -58,7 +62,7 @@ namespace SwedishApp.Input
         {
             inputMap.UI.Disable();
         }
-        
+
         private void OnDisable()
         {
             inputMap?.UI.Disable();
@@ -66,7 +70,7 @@ namespace SwedishApp.Input
 
         public void OnNavigate(InputAction.CallbackContext context)
         {
-            NavigateEvent?.Invoke(obj:context.ReadValue<Vector2>());
+            NavigateEvent?.Invoke(obj: context.ReadValue<Vector2>());
         }
 
         public void OnSubmit(InputAction.CallbackContext context)
@@ -79,7 +83,7 @@ namespace SwedishApp.Input
             else if (context.phase == InputActionPhase.Canceled)
             {
                 if (submitWasHeld == false)
-                SubmitEventCancelled?.Invoke();
+                    SubmitEventCancelled?.Invoke();
             }
             else if (context.phase == InputActionPhase.Performed)
             {
@@ -114,7 +118,7 @@ namespace SwedishApp.Input
 
         public void OnPoint(InputAction.CallbackContext context)
         {
-            PointEvent?.Invoke(obj:context.ReadValue<Vector2>());
+            PointEvent?.Invoke(obj: context.ReadValue<Vector2>());
         }
 
         public void OnClick(InputAction.CallbackContext context)
@@ -155,17 +159,41 @@ namespace SwedishApp.Input
 
         public void OnScrollWheel(InputAction.CallbackContext context)
         {
-            ScrollEvent?.Invoke(obj:context.ReadValue<Vector2>());
+            ScrollEvent?.Invoke(obj: context.ReadValue<Vector2>());
         }
 
         public void OnTrackedDevicePosition(InputAction.CallbackContext context)
         {
-            PositionChangeEvent?.Invoke(obj:context.ReadValue<Vector3>());
+            PositionChangeEvent?.Invoke(obj: context.ReadValue<Vector3>());
         }
 
         public void OnTrackedDeviceOrientation(InputAction.CallbackContext context)
         {
-            RotationChangeEvent?.Invoke(obj:context.ReadValue<Quaternion>());
+            RotationChangeEvent?.Invoke(obj: context.ReadValue<Quaternion>());
+        }
+
+        public void OnControl(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                ControlEvent?.Invoke();
+            }
+            else if (context.phase == InputActionPhase.Canceled)
+            {
+                ControlEventCancelled?.Invoke();
+            }
+        }
+
+        public void OnBackspace(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                BackspaceEvent?.Invoke();
+            }
+            else if (context.phase == InputActionPhase.Canceled)
+            {
+                BackspaceEventCancelled?.Invoke();
+            }
         }
     }
 }

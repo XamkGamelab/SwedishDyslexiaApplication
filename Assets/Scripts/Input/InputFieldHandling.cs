@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -14,17 +13,55 @@ namespace SwedishApp.Input
         private TMP_InputField inputField;
         private RectTransform holder;
         public int index;
+        private bool controlHeld = false;
+        private bool disableGoNext = false;
 
         private void Awake()
         {
             holder = GetComponent<RectTransform>();
             inputReader.NavigateEvent += Navigate;
+            inputReader.ControlEvent += ControlDownHandler;
+            inputReader.ControlEventCancelled += ControlUpHandler;
+            inputReader.BackspaceEvent += BackspaceDownHandler;
+
         }
 
         private void OnDestroy()
         {
             inputField.DeactivateInputField();
             inputReader.NavigateEvent -= Navigate;
+            inputReader.ControlEvent -= ControlDownHandler;
+            inputReader.ControlEventCancelled -= ControlUpHandler;
+            inputReader.BackspaceEvent -= BackspaceDownHandler;
+        }
+
+        private void ControlDownHandler()
+        {
+            controlHeld = true;
+        }
+
+        private void ControlUpHandler()
+        {
+            controlHeld = false;
+        }
+
+        private void BackspaceDownHandler()
+        {
+            if (controlHeld)
+            {
+                TMP_InputField[] inputFields = GetComponentsInChildren<TMP_InputField>();
+                disableGoNext = true;
+
+                for (int i = index; i >= 0; i--)
+                {
+                    inputFields[i].text = "";
+                }
+
+                index = 0;
+                inputField = holder.GetChild(index).GetComponent<TMP_InputField>();
+                inputField.ActivateInputField();
+                disableGoNext = false;
+            }
         }
 
         /// <summary>
@@ -49,9 +86,30 @@ namespace SwedishApp.Input
         {
             if (!inputField.IsActive()) return;
 
+            if (_input.y > 0)
+            {
+
+                index = 0;
+                holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                return;
+            }
+            else if (_input.y < 0)
+            {
+
+                index = holder.childCount - 1;
+                holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                return;
+            }
+
             //If moving left
             if (_input.x < 0)
             {
+                if (controlHeld)
+                {
+                    index = 0;
+                    holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                    return;
+                }
                 //And there is space to move left
                 if (index > 0)
                 {
@@ -76,6 +134,12 @@ namespace SwedishApp.Input
             //If moving right
             else if (_input.x > 0)
             {
+                if (controlHeld)
+                {
+                    index = holder.childCount - 1;
+                    holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                    return;
+                }
                 //And there is space to move right
                 if (index + 1 < holder.childCount)
                 {
@@ -106,7 +170,7 @@ namespace SwedishApp.Input
         /// </summary>
         public void GoNextField()
         {
-            if (!inputField.IsActive()) return;
+            if (!inputField.IsActive() || disableGoNext) return;
             if (inputField.text == " ")
             {
                 inputField.text = "";
