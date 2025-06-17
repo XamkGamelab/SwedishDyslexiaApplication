@@ -127,7 +127,11 @@ namespace SwedishApp.Minigames
                 //For every letter in the word, set a highlight depending if the letter was correct or not
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
-                    if (currentWord.swedishWord[i] == ' ') continue;
+                    if (currentWord.swedishWord[i] == ' ')
+                    {
+                        correctLettersCount++;
+                        continue;
+                    }
                     if (wordLetterInputFields[i].text == "")
                     {
                         missedInputsCount++;
@@ -172,7 +176,11 @@ namespace SwedishApp.Minigames
                 //For every letter in the word, set a highlight depending on if the letter was correct or not
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
-                    if (currentWord.finnishWord[i] == ' ') continue;
+                    if (currentWord.finnishWord[i] == ' ')
+                    {
+                        correctLettersCount++;
+                        continue;
+                    }
                     if (wordLetterInputFields[i].text == "")
                     {
                         missedInputsCount++;
