@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_LM_Reward_Sparkle_0: -4370446052669458323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
