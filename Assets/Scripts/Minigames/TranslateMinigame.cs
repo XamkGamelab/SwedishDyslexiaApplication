@@ -54,6 +54,7 @@ namespace SwedishApp.Minigames
         
         //Events
         public event Action WordCorrectEvent;
+        public event Action WordIncorrectEvent;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -199,6 +200,10 @@ namespace SwedishApp.Minigames
                 //DO A LITTLE THING IF WORD WAS CORRECT!!!
                 WordCorrectEvent?.Invoke();
                 score++;
+            }
+            else
+            {
+                WordIncorrectEvent?.Invoke();
             }
 
             wordLetterInputFields[0].Select();

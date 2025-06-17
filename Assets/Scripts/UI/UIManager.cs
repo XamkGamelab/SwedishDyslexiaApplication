@@ -7,9 +7,7 @@ using SwedishApp.Input;
 using SwedishApp.Minigames;
 using SwedishApp.Words;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace SwedishApp.UI
@@ -114,6 +112,10 @@ namespace SwedishApp.UI
         [SerializeField] private ParticleSystem yellowRightSparkleFX;
         [SerializeField] private ParticleSystem blueLeftSparkleFX;
         [SerializeField] private ParticleSystem blueRightSparkleFX;
+        [SerializeField] private ParticleSystem yellowLameLeftSparkleFX;
+        [SerializeField] private ParticleSystem yellowLameRightSparkleFX;
+        [SerializeField] private ParticleSystem blueLameLeftSparkleFX;
+        [SerializeField] private ParticleSystem blueLameRightSparkleFX;
 
         enum FontSize
         {
@@ -223,6 +225,12 @@ namespace SwedishApp.UI
             declensionMinigame.WordCorrectEvent += PlayBlueSparkles;
             translateMinigame.WordCorrectEvent += PlayYellowSparkles;
             translateMinigame.WordCorrectEvent += PlayBlueSparkles;
+            conjugationMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
+            conjugationMinigame.WordIncorrectEvent += PlayLameBlueSparkles;
+            declensionMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
+            declensionMinigame.WordIncorrectEvent += PlayLameBlueSparkles;
+            translateMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
+            translateMinigame.WordIncorrectEvent += PlayLameBlueSparkles;
 
             inputReader.EnableInputs();
         }
@@ -253,6 +261,19 @@ namespace SwedishApp.UI
             blueRightSparkleFX.Play();
         }
 
+        private void PlayLameYellowSparkles()
+        {
+            if (LightmodeOn) return;
+            yellowLameLeftSparkleFX.Play();
+            yellowLameRightSparkleFX.Play();
+        }
+
+        private void PlayLameBlueSparkles()
+        {
+            if (!LightmodeOn) return;
+            blueLameLeftSparkleFX.Play();
+            blueLameRightSparkleFX.Play();
+        }
 
         #endregion
 
