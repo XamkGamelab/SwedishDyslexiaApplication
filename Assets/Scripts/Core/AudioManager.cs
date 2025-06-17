@@ -34,6 +34,7 @@ namespace SwedishApp.Core
         [SerializeField] private AudioSource _menuSelect5;  // Drum 1
         [SerializeField] private AudioSource _menuSelect6;  // Drum 2
         [SerializeField] private AudioSource _menuSelect7;  // Drum 3
+        [SerializeField] private AudioSource _menuSelect8;  // Drum 4
 
         [SerializeField] private AudioSource _lightModeToggle;
         [SerializeField] private AudioSource _inputSound;
@@ -155,6 +156,10 @@ namespace SwedishApp.Core
         public void PlayMenuSelect7()
         {
             _menuSelect7.Play();
+        }
+        public void PlayMenuSelect8()
+        {
+            _menuSelect8.Play();
         }
         public void PlayLightModeToggle()
         {
