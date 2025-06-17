@@ -15,8 +15,8 @@ MonoBehaviour:
   adjectiveList:
   - swedishWord: varm
     finnishWord: "l\xE4mmin"
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
     wordCore: varm
     wordEnEnd: 
     wordEttEnd: t
@@ -33,8 +33,8 @@ MonoBehaviour:
     wordDefinitiveSuperlativeEnd: aste
   - swedishWord: liten
     finnishWord: pieni
-    darkModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
-    lightModeSprite: {fileID: 7482667652216324306, guid: 016e98066dc47db439f54e3060b6be3f, type: 3}
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
     wordCore: lite
     wordEnEnd: n
     wordEttEnd: t
