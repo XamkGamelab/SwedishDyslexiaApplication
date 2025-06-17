@@ -48,7 +48,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 0.15
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -669,7 +669,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -813,7 +813,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 90
       mode: 0
       spread: 0
       speed:
@@ -4806,7 +4806,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: -382552827
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_RenderMode: 0
+  m_RenderMode: 3
   m_MeshDistribution: 0
   m_SortMode: 3
   m_MinParticleSize: 0

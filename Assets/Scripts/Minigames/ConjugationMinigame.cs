@@ -66,6 +66,7 @@ namespace SwedishApp.Minigames
 
         //Events
         public event Action WordCorrectEvent;
+        public event Action WordIncorrectEvent;
 
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
@@ -406,6 +407,10 @@ namespace SwedishApp.Minigames
             {
                 WordCorrectEvent?.Invoke();
                 Debug.Log("Word was correct!");
+            }
+            else
+            {
+                WordIncorrectEvent?.Invoke();
             }
 
             singleInputfields[0].Select();
