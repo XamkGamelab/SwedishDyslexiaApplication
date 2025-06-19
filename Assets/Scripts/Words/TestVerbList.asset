@@ -182,7 +182,7 @@ MonoBehaviour:
     pastTenseEnd: de
     pastTenseFinnish: vuokrasi
     pastPerfectTenseIsRegular: 1
-    pastPerfectTenseStart: har
+    pastPerfectTenseStart: 'har '
     pastPerfectTenseEnd: t
     pastPerfectTenseFinnish: on vuokrannut
     pastPlusPerfectTenseIsRegular: 1
@@ -204,7 +204,7 @@ MonoBehaviour:
     pastTenseEnd: de
     pastTenseFinnish: vuokrasi
     pastPerfectTenseIsRegular: 1
-    pastPerfectTenseStart: har
+    pastPerfectTenseStart: 'har '
     pastPerfectTenseEnd: t
     pastPerfectTenseFinnish: on vuokrannut
     pastPlusPerfectTenseIsRegular: 1
@@ -226,7 +226,7 @@ MonoBehaviour:
     pastTenseEnd: de
     pastTenseFinnish: omisti
     pastPerfectTenseIsRegular: 1
-    pastPerfectTenseStart: har
+    pastPerfectTenseStart: 'har '
     pastPerfectTenseEnd: ft
     pastPerfectTenseFinnish: on omistanut
     pastPlusPerfectTenseIsRegular: 1
