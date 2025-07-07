@@ -24,6 +24,11 @@ namespace SwedishApp.UI
         public VerbList verbList;
         public NounList nounList;
         public AdjectiveList adjectiveList;
+        public TimeList timeList;
+        public NumberList numberList;
+        public GrammarList grammarList;
+        public PronounList pronounList;
+        public PhraseList phraseList;
        
         [Header("Input-Related")]
         [SerializeField] private InputReader inputReader;
@@ -40,6 +45,7 @@ namespace SwedishApp.UI
         [SerializeField] private Button startTranslateNounGameBtn;
         [SerializeField] private Button startTranslateVerbGameBtn;
         [SerializeField] private Button startTranslateAdjectiveGameBtn;
+        // [SerializeField] private Button startTranslateTimeGameBtn;
         [SerializeField] private ConjugationMinigame conjugationMinigame;
         [SerializeField] private DeclensionMinigame declensionMinigame;
         [SerializeField] private GameObject flashcardGameTypeMenu;
@@ -48,6 +54,11 @@ namespace SwedishApp.UI
         [SerializeField] private Button startFlashcardNounGameBtn;
         [SerializeField] private Button startFlashcardVerbGameBtn;
         [SerializeField] private Button startFlashcardAdjectiveGameBtn;
+        [SerializeField] private Button startFlashcardTimeGameBtn;
+        [SerializeField] private Button startFlashcardNumberGameBtn;
+        [SerializeField] private Button startFlashcardGrammarGameBtn;
+        [SerializeField] private Button startFlashcardPronounGameBtn;
+        [SerializeField] private Button startFlashcardPhraseGameBtn;
         [SerializeField] private FlashCardMinigame flashCardMinigame;
 
         [Header("Lightmode-Related")]
@@ -194,6 +205,26 @@ namespace SwedishApp.UI
             startFlashcardAdjectiveGameBtn.onClick.AddListener(() =>
             {
                 flashCardMinigame.StartAdjectiveGame(adjectiveList.adjectiveList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
+            startFlashcardTimeGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartTimeWordGame(timeList.timeList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
+            startFlashcardNumberGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartNumberGame(numberList.numberList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
+            startFlashcardGrammarGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartGrammarGame(grammarList.grammarList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
+            startFlashcardPronounGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartPronounGame(pronounList.pronounList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
 

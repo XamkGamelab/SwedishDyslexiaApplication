@@ -110,7 +110,7 @@ namespace SwedishApp.Minigames
                 //Grab the amount of valid letters in the swedish word
                 foreach (char letter in currentWord.swedishWord)
                 {
-                    if (letter != ' ')
+                    if (letter != ' ' || letter != '\u00AD')
                         wordLetterCount++;
                 }
 
@@ -127,17 +127,18 @@ namespace SwedishApp.Minigames
                 //For every letter in the word, set a highlight depending if the letter was correct or not
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
-                    if (currentWord.swedishWord[i] == ' ')
+                    if (currentWord.swedishWord[i] == '\u00AD') continue;
+                    else if (currentWord.swedishWord[i] == ' ')
                     {
                         correctLettersCount++;
                         continue;
                     }
-                    if (wordLetterInputFields[i].text == "")
+                    else if (wordLetterInputFields[i].text == "")
                     {
                         missedInputsCount++;
                         continue;
                     }
-                    if (givenString[i] == currentWord.swedishWord[i])
+                    else if (givenString[i] == currentWord.swedishWord[i])
                     {
                         //This is the 'correct' indicator
                         wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
@@ -159,7 +160,7 @@ namespace SwedishApp.Minigames
                 //Grab the amount of valid letters in the finnish word
                 foreach (char letter in currentWord.finnishWord)
                 {
-                    if (letter != ' ')
+                    if (letter != ' ' || letter != '\u00AD')
                         wordLetterCount++;
                 }
 
@@ -176,17 +177,18 @@ namespace SwedishApp.Minigames
                 //For every letter in the word, set a highlight depending on if the letter was correct or not
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
-                    if (currentWord.finnishWord[i] == ' ')
+                    if (currentWord.finnishWord[i] == '\u00AD') continue;
+                    else if (currentWord.finnishWord[i] == ' ')
                     {
                         correctLettersCount++;
                         continue;
                     }
-                    if (wordLetterInputFields[i].text == "")
+                    else if (wordLetterInputFields[i].text == "")
                     {
                         missedInputsCount++;
                         continue;
                     }
-                    if (givenString[i] == currentWord.finnishWord[i])
+                    else if (givenString[i] == currentWord.finnishWord[i])
                     {
                         //This is the 'correct' indicator
                         wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
