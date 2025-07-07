@@ -368,7 +368,7 @@ namespace SwedishApp.Minigames
         private IEnumerator DelayBeforeNewWord()
         {
             //hit a particle effect or some other thing if wordWasCorrect
-            AudioManager.Instance.PlayMenuSelect3();    // Probably just a temporary thing to signal that the game isn't lagging
+            //AudioManager.Instance.PlayMenuSelect3();    // Probably just a temporary thing to signal that the game isn't lagging
             yield return new WaitForSeconds(nextWordDelayTime);
 
             if (words.Count > 0)
