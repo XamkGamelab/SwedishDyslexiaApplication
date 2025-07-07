@@ -89,3 +89,51 @@ MonoBehaviour:
     finnishWord: talvella
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+  - swedishWord: januari
+    finnishWord: tammikuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: februari
+    finnishWord: helmikuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: mars
+    finnishWord: maaliskuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: april
+    finnishWord: huhtikuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: maj
+    finnishWord: toukokuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: juni
+    finnishWord: "kes\xE4kuu"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: juli
+    finnishWord: "hein\xE4kuu"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: augusti
+    finnishWord: elokuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: september
+    finnishWord: syyskuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: oktober
+    finnishWord: lokakuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: november
+    finnishWord: marraskuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: december
+    finnishWord: joulukuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
