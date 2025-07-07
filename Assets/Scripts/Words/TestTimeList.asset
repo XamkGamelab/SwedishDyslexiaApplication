@@ -17,75 +17,154 @@ MonoBehaviour:
     finnishWord: viime vuonna
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "n\xE4sta \xE5r"
     finnishWord: ensi vuonna
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "f\xF6rra m\xE5naden"
     finnishWord: viime kuussa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "n\xE4sta m\xE5nad"
     finnishWord: ensi kuussa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "f\xF6rra veckan"
     finnishWord: viime viikolla
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "n\xE4sta vecka"
     finnishWord: ensi viikolla
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "i f\xF6rrg\xE5r"
     finnishWord: "toissap\xE4iv\xE4n\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "i \xF6vermorgon"
     finnishWord: ylihuomenna
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "i g\xE5r"
     finnishWord: eilen
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: i dag
     finnishWord: "t\xE4n\xE4\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: nu
     finnishWord: nyt
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "v\xE5r"
     finnishWord: "kev\xE4t"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "p\xE5 v\xE5ren"
     finnishWord: "kev\xE4\xE4ll\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: sommar
     finnishWord: "kes\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "p\xE5 sommaren"
     finnishWord: "kes\xE4ll\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "h\xF6st"
     finnishWord: syksy
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "p\xE5 h\xF6sten"
     finnishWord: "syksyll\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: vinter
     finnishWord: talvi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "p\xE5 vintern"
     finnishWord: talvella
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    monthNumber: -1
+  - swedishWord: januari
+    finnishWord: tammikuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 1
+  - swedishWord: februari
+    finnishWord: helmikuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 2
+  - swedishWord: mars
+    finnishWord: maaliskuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 3
+  - swedishWord: april
+    finnishWord: huhtikuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 4
+  - swedishWord: maj
+    finnishWord: toukokuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 5
+  - swedishWord: juni
+    finnishWord: "kes\xE4kuu"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 6
+  - swedishWord: juli
+    finnishWord: "hein\xE4kuu"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 7
+  - swedishWord: augusti
+    finnishWord: elokuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 8
+  - swedishWord: september
+    finnishWord: syyskuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 9
+  - swedishWord: oktober
+    finnishWord: lokakuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 10
+  - swedishWord: november
+    finnishWord: marraskuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 11
+  - swedishWord: december
+    finnishWord: joulukuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 12
