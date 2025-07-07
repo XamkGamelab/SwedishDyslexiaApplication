@@ -227,6 +227,11 @@ namespace SwedishApp.UI
                 flashCardMinigame.StartPronounGame(pronounList.pronounList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
+            startFlashcardPhraseGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartPhraseGame(phraseList.phraseList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
 
             //Add listeners to translate minigame buttons
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
