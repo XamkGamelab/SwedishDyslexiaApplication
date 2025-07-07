@@ -106,7 +106,6 @@ namespace SwedishApp.Core
         {
             AudioListener.volume = volumeSlider.value;
             Save();
-            Debug.Log(volumeSlider.value);
         }
 
         private void Load()
