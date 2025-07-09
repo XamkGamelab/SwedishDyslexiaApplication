@@ -5,15 +5,6 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class PronounWord : Word
     {
-        public enum GrammaticalGender
-        {
-            masc = 1,
-            fem = 2,
-            neu = 3
-        }
-
-        public GrammaticalGender grammaticalGender;
-
         [Header("Omistusmuoto")]
         public string pronounPossessiveEnSwe     = "min";
         public string pronounPossessiveEttSwe    = "mitt";
