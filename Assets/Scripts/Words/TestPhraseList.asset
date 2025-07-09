@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestPhraseList
   m_EditorClassIdentifier: 
   phraseList:
-  - swedishWord: 
-    finnishWord: 
+  - swedishWord: bland annat
+    finnishWord: muun muassa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}

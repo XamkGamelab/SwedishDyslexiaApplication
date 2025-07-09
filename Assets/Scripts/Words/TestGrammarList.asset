@@ -193,3 +193,68 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
+  - swedishWord: "\xE4n"
+    finnishWord: kuin (komparatiivi)
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: esim. "isompi kuin"
+  - swedishWord: "m\xE5ste"
+    finnishWord: "t\xE4ytyy, olla pakko"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: hur
+    finnishWord: miten, kuinka
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: hurdan, hurdant, hurdana
+    finnishWord: "millainen, miten (mill\xE4 tavalla)"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "n\xE4r"
+    finnishWord: koska, milloin, kun
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: vad
+    finnishWord: "mit\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: vilken, vilket, vilka
+    finnishWord: "mik\xE4, mink\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: var
+    finnishWord: "miss\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "varf\xF6r"
+    finnishWord: miksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "varifr\xE5n"
+    finnishWord: "mist\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: vart
+    finnishWord: minne
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: vem
+    finnishWord: kuka
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: vems
+    finnishWord: kenen
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
