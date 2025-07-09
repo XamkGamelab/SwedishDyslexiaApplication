@@ -20783,6 +20783,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2937726210702664557, guid: 031193864ce93f749b9b95cd103572a0, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937726210702664557, guid: 031193864ce93f749b9b95cd103572a0, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937726210702664557, guid: 031193864ce93f749b9b95cd103572a0, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8261981010506507256, guid: 031193864ce93f749b9b95cd103572a0, type: 3}
       propertyPath: m_Name
       value: ClassNumber
@@ -21088,6 +21100,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7344394830586714322, guid: 3a32c80695c6cf44eba5e9d500cc459a, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344394830586714322, guid: 3a32c80695c6cf44eba5e9d500cc459a, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344394830586714322, guid: 3a32c80695c6cf44eba5e9d500cc459a, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7634327323236522653, guid: 3a32c80695c6cf44eba5e9d500cc459a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -21245,6 +21269,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 445618058}
     m_Modifications:
+    - target: {fileID: 2516471765542882388, guid: 6df0404c12c9ff64bae3889a166a3c30, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516471765542882388, guid: 6df0404c12c9ff64bae3889a166a3c30, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516471765542882388, guid: 6df0404c12c9ff64bae3889a166a3c30, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3828277911638441609, guid: 6df0404c12c9ff64bae3889a166a3c30, type: 3}
       propertyPath: m_Name
       value: FlashCardPronoun
@@ -21527,6 +21563,18 @@ PrefabInstance:
     - target: {fileID: 2600190465694511093, guid: 82e047785e9fe3a4f9748791e21887be, type: 3}
       propertyPath: m_Name
       value: FlashCardVerb
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760094982648274838, guid: 82e047785e9fe3a4f9748791e21887be, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760094982648274838, guid: 82e047785e9fe3a4f9748791e21887be, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760094982648274838, guid: 82e047785e9fe3a4f9748791e21887be, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7022660650410365234, guid: 82e047785e9fe3a4f9748791e21887be, type: 3}
       propertyPath: m_Pivot.x
