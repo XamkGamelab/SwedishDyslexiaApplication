@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc63a3793634aa44eb2494a0e4c1c0f4, type: 3}
   m_Name: TestPhraseList
   m_EditorClassIdentifier: 
-  phraseList: []
+  phraseList:
+  - swedishWord: 
+    finnishWord: 
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
