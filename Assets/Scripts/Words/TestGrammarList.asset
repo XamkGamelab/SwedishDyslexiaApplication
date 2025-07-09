@@ -322,4 +322,9 @@ MonoBehaviour:
     finnishWord: joka, jokainen, jokaisena
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: esim. "aikoisi"
+    notices: 
+  - swedishWord: annan, annat, andra
+    finnishWord: muu, muuta
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 

@@ -17,3 +17,51 @@ MonoBehaviour:
     finnishWord: muun muassa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+  - swedishWord: "f\xF6rl\xE5t"
+    finnishWord: anteeksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: "urs\xE4kta"
+    finnishWord: (suokaa) anteeksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: tack
+    finnishWord: kiitos
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: "var s\xE5 god"
+    finnishWord: "ole hyv\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: precis
+    finnishWord: juuri niin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: tycka IV att
+    finnishWord: "olla jotakin mielt\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: tycka IV om
+    finnishWord: "pit\xE4\xE4 jostain"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: "t\xE4nka II att"
+    finnishWord: "ajatella ett\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: "t\xE4nka II p\xE5"
+    finnishWord: ajatella jotain
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: "t\xE4nka II om"
+    finnishWord: ajatella jotain (jostakin)
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: "tro II p\xE5"
+    finnishWord: uskoa johonkin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+  - swedishWord: tro II att
+    finnishWord: "uskoa ett\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
