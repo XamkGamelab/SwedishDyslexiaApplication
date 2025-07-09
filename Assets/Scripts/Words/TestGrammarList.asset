@@ -28,6 +28,16 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
+  - swedishWord: men
+    finnishWord: mutta
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: dock
+    finnishWord: kuitenkin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
   - swedishWord: "f\xF6r"
     finnishWord: (jotakin) varten
     darkModeSprite: {fileID: 0}
@@ -95,6 +105,21 @@ MonoBehaviour:
     notices: 
   - swedishWord: "\xE5tminstone"
     finnishWord: ainakin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "\xE4nnu"
+    finnishWord: "viel\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: nog
+    finnishWord: kylliksi, tarpeeksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "tillr\xE4ckligt"
+    finnishWord: "tarpeeksi, riitt\xE4v\xE4sti"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -183,6 +208,11 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
+  - swedishWord: dit
+    finnishWord: sinne
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
   - swedishWord: "\xF6ver"
     finnishWord: "yli, (jonkin) yl\xE4puolella"
     darkModeSprite: {fileID: 0}
@@ -258,3 +288,38 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
+  - swedishWord: kan
+    finnishWord: osata, voida
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: ska
+    finnishWord: "aikoa, pit\xE4\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "m\xE5ste"
+    finnishWord: "t\xE4yty\xE4, pit\xE4\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "b\xF6r"
+    finnishWord: "pit\xE4\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "l\xE4r"
+    finnishWord: kuuluu, sanotaan
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: skulle
+    finnishWord: -isi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: esim. "aikoisi"
+  - swedishWord: varje
+    finnishWord: joka, jokainen, jokaisena
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: esim. "aikoisi"

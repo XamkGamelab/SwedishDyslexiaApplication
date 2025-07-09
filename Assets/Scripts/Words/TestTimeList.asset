@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: TestTimeList
   m_EditorClassIdentifier: 
   timeList:
+  - swedishWord: "i \xE5r"
+    finnishWord: "t\xE4n\xE4 vuonna"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: -1
   - swedishWord: "f\xF6rra \xE5ret"
     finnishWord: viime vuonna
     darkModeSprite: {fileID: 0}
