@@ -8,7 +8,6 @@ using SwedishApp.Minigames;
 using SwedishApp.Words;
 using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 namespace SwedishApp.UI
