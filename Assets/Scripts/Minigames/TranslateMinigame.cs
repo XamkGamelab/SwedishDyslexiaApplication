@@ -51,7 +51,7 @@ namespace SwedishApp.Minigames
         private InputFieldHandling inputFieldHandler;
         private List<TMP_InputField> wordLetterInputFields;
         private List<TextMeshProUGUI> letterTextRefs;
-        
+
         //Events
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
@@ -116,13 +116,15 @@ namespace SwedishApp.Minigames
 
                 //Translate given answer to lowercase to ease checking
                 List<char> chars = new();
-                for (int i = 0; i < currentWord.swedishWord.Length; i++)
+                for (int i = 0; i < wordLetterInputFields.Count; i++)
                 {
                     if (wordLetterInputFields[i].text != "") chars.Add(wordLetterInputFields[i].text[0]);
                     else chars.Add(' ');
                 }
                 string givenString = new(chars.ToArray());
                 givenString.ToLower();
+
+                int j = 0;
 
                 //For every letter in the word, set a highlight depending if the letter was correct or not
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
@@ -133,24 +135,26 @@ namespace SwedishApp.Minigames
                         correctLettersCount++;
                         continue;
                     }
-                    else if (wordLetterInputFields[i].text == "")
+                    else if (wordLetterInputFields[j].text == "")
                     {
                         missedInputsCount++;
                         continue;
                     }
-                    else if (givenString[i] == currentWord.swedishWord[i])
+                    else if (givenString[j] == currentWord.swedishWord[i])
                     {
                         //This is the 'correct' indicator
-                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
-                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(false);
+                        wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(true);
+                        wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(false);
                         correctLettersCount++;
                     }
                     else
                     {
                         //This is the 'incorrect' indicator
-                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(false);
-                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
+                        wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(false);
+                        wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(true);
                     }
+
+                    j++;
                 }
                 if (correctLettersCount == currentWord.swedishWord.Length) wordWasCorrect = true;
             }
@@ -166,13 +170,15 @@ namespace SwedishApp.Minigames
 
                 //Translate given answer to lowercase to ease checking
                 List<char> chars = new();
-                for (int i = 0; i < currentWord.finnishWord.Length; i++)
+                for (int i = 0; i < wordLetterInputFields.Count; i++)
                 {
                     if (wordLetterInputFields[i].text != "") chars.Add(wordLetterInputFields[i].text[0]);
                     else chars.Add(' ');
                 }
                 string givenString = new(chars.ToArray());
                 givenString.ToLower();
+
+                int j = 0;
 
                 //For every letter in the word, set a highlight depending on if the letter was correct or not
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
@@ -183,24 +189,26 @@ namespace SwedishApp.Minigames
                         correctLettersCount++;
                         continue;
                     }
-                    else if (wordLetterInputFields[i].text == "")
+                    else if (wordLetterInputFields[j].text == "")
                     {
                         missedInputsCount++;
                         continue;
                     }
-                    else if (givenString[i] == currentWord.finnishWord[i])
+                    else if (givenString[j] == currentWord.finnishWord[i])
                     {
                         //This is the 'correct' indicator
-                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(true);
-                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(false);
+                        wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(true);
+                        wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(false);
                         correctLettersCount++;
                     }
                     else
                     {
                         //This is the 'incorrect' indicator
-                        wordLetterInputFields[i].transform.GetChild(0).gameObject.SetActive(false);
-                        wordLetterInputFields[i].transform.GetChild(1).gameObject.SetActive(true);
+                        wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(false);
+                        wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(true);
                     }
+
+                    j++;
                 }
                 if (correctLettersCount == currentWord.finnishWord.Length) wordWasCorrect = true;
             }
@@ -245,48 +253,34 @@ namespace SwedishApp.Minigames
                 //Show the word to be translated
                 wordToTranslateText.text = currentWord.finnishWord;
 
+                int j = 0;
+
                 //Create an input field for every letter of the word
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
-                    int indexHolder = i;
+                    if (currentWord.swedishWord[i] == '\u00AD') continue;
+                    int indexHolder = j;
                     wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
 
                     //Add listeners to input fields. These are used for navigating between each input field of the word
-                    wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
-                    wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+                    wordLetterInputFields[j].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
+                    wordLetterInputFields[j].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
 
                     //If the letter in the word is a space, disable visuals and make input field unable to be interacted with
                     if (currentWord.swedishWord[i] == ' ')
                     {
-                        wordLetterInputFields[i].image.enabled = false;
-                        wordLetterInputFields[i].interactable = false;
+                        wordLetterInputFields[j].image.enabled = false;
+                        wordLetterInputFields[j].interactable = false;
                     }
 
                     //Save references to the text slot of each input field, used when changing font settings!
-                    letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
+                    letterTextRefs.Add(wordLetterInputFields[j].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
 
 
                     //Set initial input field background and font colors based on if light mode is enabled or not
-                    if (UIManager.instance.LightmodeOn)
-                    {
-                        var colorBlock = wordLetterInputFields[i].colors;
-                        colorBlock.normalColor = UIManager.instance.Darkgrey;
-                        colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
-                        colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
-                        colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
-                        wordLetterInputFields[i].colors = colorBlock;
-                        letterTextRefs[i].color = UIManager.instance.Lightgrey;
-                    }
-                    else
-                    {
-                        var colorBlock = wordLetterInputFields[i].colors;
-                        colorBlock.normalColor = UIManager.instance.Lightgrey;
-                        colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
-                        colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
-                        colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
-                        wordLetterInputFields[i].colors = colorBlock;
-                        letterTextRefs[i].color = UIManager.instance.Darkgrey;
-                    }
+                    FieldToRightColors(j);
+
+                    j++;
                 }
             }
             //If the gamemode is set to translate into finnish
@@ -295,47 +289,33 @@ namespace SwedishApp.Minigames
                 //Show the word to be translated
                 wordToTranslateText.text = currentWord.swedishWord;
 
+                int j = 0;
+
                 //Create an input field for every letter of the word
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
-                    int indexHolder = i;
+                    if (currentWord.finnishWord[i] == '\u00AD') continue;
+                    int indexHolder = j;
                     wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
 
                     //Add listeners to input fields. These are used for navigating between each input field of the word
-                    wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
-                    wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+                    wordLetterInputFields[j].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
+                    wordLetterInputFields[j].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
 
                     //If the letter in the word is a space, disable visuals and make input field unable to be interacted with
                     if (currentWord.finnishWord[i] == ' ')
                     {
-                        wordLetterInputFields[i].image.enabled = false;
-                        wordLetterInputFields[i].interactable = false;
+                        wordLetterInputFields[j].image.enabled = false;
+                        wordLetterInputFields[j].interactable = false;
                     }
 
                     //Save references to the text slot of each input field, used when changing font settings!
-                    letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
+                    letterTextRefs.Add(wordLetterInputFields[j].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
 
                     //Set initial input field background and font colors based on if light mode is enabled or not
-                    if (UIManager.instance.LightmodeOn)
-                    {
-                        var colorBlock = wordLetterInputFields[i].colors;
-                        colorBlock.normalColor = UIManager.instance.Darkgrey;
-                        colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
-                        colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
-                        colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
-                        wordLetterInputFields[i].colors = colorBlock;
-                        letterTextRefs[i].color = UIManager.instance.Lightgrey;
-                    }
-                    else
-                    {
-                        var colorBlock = wordLetterInputFields[i].colors;
-                        colorBlock.normalColor = UIManager.instance.Lightgrey;
-                        colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
-                        colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
-                        colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
-                        wordLetterInputFields[i].colors = colorBlock;
-                        letterTextRefs[i].color = UIManager.instance.Darkgrey;
-                    }
+                    FieldToRightColors(j);
+
+                    j++;
                 }
             }
             UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
@@ -505,6 +485,31 @@ namespace SwedishApp.Minigames
                 colorBlock.disabledColor = UIManager.instance.LightgreyHalfAlpha;
                 wordLetterInputFields[i].colors = colorBlock;
                 letterTextRefs[i].color = UIManager.instance.Darkgrey;
+            }
+        }
+
+        private void FieldToRightColors(int _i)
+        {
+
+            if (UIManager.instance.LightmodeOn)
+            {
+                var colorBlock = wordLetterInputFields[_i].colors;
+                colorBlock.normalColor = UIManager.instance.Darkgrey;
+                colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
+                colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
+                colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
+                wordLetterInputFields[_i].colors = colorBlock;
+                letterTextRefs[_i].color = UIManager.instance.Lightgrey;
+            }
+            else
+            {
+                var colorBlock = wordLetterInputFields[_i].colors;
+                colorBlock.normalColor = UIManager.instance.Lightgrey;
+                colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
+                colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
+                colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
+                wordLetterInputFields[_i].colors = colorBlock;
+                letterTextRefs[_i].color = UIManager.instance.Darkgrey;
             }
         }
 

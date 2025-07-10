@@ -212,7 +212,7 @@ MonoBehaviour:
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: oli vuokrannut
   - swedishWord: ha
-    finnishWord: omistaa
+    finnishWord: "o\xADmis\xADtaa"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 4
