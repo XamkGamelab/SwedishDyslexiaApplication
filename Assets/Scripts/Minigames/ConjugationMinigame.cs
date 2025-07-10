@@ -306,7 +306,7 @@ namespace SwedishApp.Minigames
                     ignoreLetters = false;
                     continue;
                 }
-                if (ignoreLetters) continue;
+                if (ignoreLetters || activeWordWantedForm[i] == '\u00AD') continue;
                 int indexHolder = indexer;
 
                 //Grab refs
@@ -349,13 +349,14 @@ namespace SwedishApp.Minigames
             List<char> chars = new();
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
-                if (activeWordWantedFormNoHighlight[i] == ' ')
-                {
-                    chars.Add(' ');
+                if (activeWordWantedFormNoHighlight[i] == '\u00AD')
                     continue;
-                }
-                if (singleInputfields[i].text != "") chars.Add(singleInputfields[i].text[0]);
-                else chars.Add(' ');
+                else if (activeWordWantedFormNoHighlight[i] == ' ')
+                    chars.Add(' ');
+                else if (singleInputfields[i].text != "")
+                    chars.Add(singleInputfields[i].text[0]);
+                else
+                    chars.Add(' ');
                 wordLetterCount++;
             }
             string givenString = new(chars.ToArray());
@@ -365,17 +366,13 @@ namespace SwedishApp.Minigames
             //correct letters, used for determining if the whole word was correct.
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
-                if (activeWordWantedFormNoHighlight[i] == ' ')
-                {
+                if (activeWordWantedFormNoHighlight[i] == '\u00AD')
+                    continue;
+                else if (activeWordWantedFormNoHighlight[i] == ' ')
                     chars.Add(' ');
-                    continue;
-                }
-                if (singleInputfields[i].text == "")
-                {
+                else if (singleInputfields[i].text == "")
                     missedInputsCount++;
-                    continue;
-                }
-                if (givenString[i] == activeWordWantedFormNoHighlight[i])
+                else if (givenString[i] == activeWordWantedFormNoHighlight[i])
                 {
                     //Activate "correct" indicator
                     singleInputfields[i].transform.GetChild(0).gameObject.SetActive(true);
