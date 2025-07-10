@@ -1,7 +1,6 @@
 using SwedishApp.Core;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace SwedishApp.Input
 {
