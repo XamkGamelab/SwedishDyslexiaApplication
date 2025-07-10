@@ -111,6 +111,9 @@ namespace SwedishApp.UI
         public event Action FontSmallEvent;
         public event Action FontMediumEvent;
         public event Action FontLargeEvent;
+        private const string spaceTagStart = "<cspace=-0.08em>";
+        private const string spaceTagEnd = "</cspace>";
+        private const string spaceTagsWithSoftHyphen = "<cspace=-0.08em>\u00AD</cspace>";
 
         [Header("Credits-Related")]
         [SerializeField] private GameObject creditsScreen;
@@ -166,6 +169,9 @@ namespace SwedishApp.UI
         {
             textFields = textObjectList;
             textFields.AddRange(textObjectListReverseLight);
+
+            //Add listener to every text field, called when a layout is changed. This then fixes character spacing for soft hyphens.
+            textFields.ForEach(field => field.RegisterDirtyLayoutCallback(() => FixTextSpacing(field)));
 
             settingsRect = settingsMenu.GetComponent<RectTransform>();
 
@@ -501,6 +507,36 @@ namespace SwedishApp.UI
                     FontLargeEvent?.Invoke();
                     break;
             }
+        }
+
+        private void FixTextSpacing(TextMeshProUGUI _textField)
+        {
+            string oldString = _textField.text;
+            string newString;
+
+            if (hyperlegibleOn)
+            {
+                if (oldString.Contains(spaceTagStart)) return;
+
+                newString = oldString.Replace("\u00AD", spaceTagsWithSoftHyphen);
+
+                while (newString.Contains(spaceTagsWithSoftHyphen))
+                {
+                    int index = newString.IndexOf(spaceTagsWithSoftHyphen);
+                    char charToMove = newString[index + spaceTagsWithSoftHyphen.Length];
+                    newString = newString.Remove(index + spaceTagsWithSoftHyphen.Length, 1);
+                    newString = newString.Insert(index + spaceTagStart.Length + 1, charToMove.ToString());
+                }
+            }
+            else
+            {
+                if (!oldString.Contains(spaceTagStart)) return;
+
+                newString = oldString.Replace(spaceTagStart, null);
+                newString = newString.Replace(spaceTagEnd, null);
+            }
+
+            if (newString != oldString) _textField.text = newString;
         }
 
         /// <summary>
