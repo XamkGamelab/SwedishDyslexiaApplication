@@ -1,5 +1,7 @@
+using SwedishApp.Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace SwedishApp.Input
 {
@@ -23,7 +25,6 @@ namespace SwedishApp.Input
             inputReader.ControlEvent += ControlDownHandler;
             inputReader.ControlEventCancelled += ControlUpHandler;
             inputReader.BackspaceEvent += BackspaceDownHandler;
-
         }
 
         private void OnDestroy()
@@ -73,7 +74,8 @@ namespace SwedishApp.Input
         public void GetActiveIndex(int _index)
         {
             index = _index;
-            inputField = holder.GetChild(index).GetComponent<TMP_InputField>();
+            inputField = holder.GetChild(_index).GetComponent<TMP_InputField>();
+            inputField.caretPosition = 0;
         }
 
         /// <summary>
@@ -213,6 +215,8 @@ namespace SwedishApp.Input
                 inputField.DeactivateInputField();
                 inputField.ActivateInputField();
             }
+
+            AudioManager.Instance.PlayInputSound();
         }
     }
 }

@@ -217,11 +217,13 @@ namespace SwedishApp.Minigames
             {
                 //DO A LITTLE THING IF WORD WAS CORRECT!!!
                 WordCorrectEvent?.Invoke();
+                AudioManager.Instance.PlayCorrect();
                 score++;
             }
             else
             {
                 WordIncorrectEvent?.Invoke();
+                AudioManager.Instance.PlayIncorrect();
             }
 
             wordLetterInputFields[0].Select();
