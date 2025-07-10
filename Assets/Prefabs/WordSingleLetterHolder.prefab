@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 3197761965890117718}
   - component: {fileID: 6423244122343525552}
   - component: {fileID: -1415124408913572185}
+  - component: {fileID: -5715310614581947465}
   m_Layer: 5
   m_Name: WordSingleLetterHolder
   m_TagString: Untagged
@@ -246,8 +247,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wiggleTimeOneWay: 0.06
-  wiggleMaxScale: {x: 1.1, y: 1.1}
-  originalScale: {x: 1, y: 1}
+  wiggleMaxScale: {x: 1.1, y: 1.1, z: 1.1}
+  originalScale: {x: 1, y: 1, z: 1}
+--- !u!114 &-5715310614581947465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032697241587179193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc483c35556cc04bb879647880a7d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1174532017861682922
 GameObject:
   m_ObjectHideFlags: 0
