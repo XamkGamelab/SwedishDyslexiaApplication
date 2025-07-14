@@ -20,6 +20,8 @@ namespace SwedishApp.UI
         //Singleton
         public static UIManager instance { get; private set; }
 
+        #region variables
+
         [Header("Word Lists")]
         public VerbList verbList;
         public NounList nounList;
@@ -153,6 +155,8 @@ namespace SwedishApp.UI
         [SerializeField] private Slider toggledSlider;
         [SerializeField] private float lerpDuration = 0.06f;
 
+        #endregion
+
         #region unity default methods
 
         private void Awake()
@@ -247,26 +251,26 @@ namespace SwedishApp.UI
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
             {
                 translateGameTypeMenu.SetActive(true);
-                startTranslateNounGameBtn.onClick.AddListener(StartNounTranslateGameToFinnish);
-                startTranslateVerbGameBtn.onClick.AddListener(StartVerbTranslateGameToFinnish);
-                startTranslateAdjectiveGameBtn.onClick.AddListener(StartAdjectiveTranslateGameToFinnish);
-                startTranslateTimeGameBtn.onClick.AddListener(StartTimeTranslateGameToFinnish);
-                startTranslateNumberGameBtn.onClick.AddListener(StartNumberTranslateGameToFinnish);
-                startTranslateGrammarGameBtn.onClick.AddListener(StartGrammarTranslateGameToFinnish);
-                startTranslatePronounGameBtn.onClick.AddListener(StartPronounTranslateGameToFinnish);
-                startTranslatePhraseGameBtn.onClick.AddListener(StartPhraseTranslateGameToFinnish);
+                startTranslateNounGameBtn.onClick.AddListener(() => StartNounTranslateGame(true));
+                startTranslateVerbGameBtn.onClick.AddListener(() => StartVerbTranslateGame(true));
+                startTranslateAdjectiveGameBtn.onClick.AddListener(() => StartAdjectiveTranslateGame(true));
+                startTranslateTimeGameBtn.onClick.AddListener(() => StartTimeTranslateGame(true));
+                startTranslateNumberGameBtn.onClick.AddListener(() => StartNumberTranslateGame(true));
+                startTranslateGrammarGameBtn.onClick.AddListener(() => StartGrammarTranslateGame(true));
+                startTranslatePronounGameBtn.onClick.AddListener(() => StartPronounTranslateGame(true));
+                startTranslatePhraseGameBtn.onClick.AddListener(() => StartPhraseTranslateGame(true));
             });
             startTranslationGameToSwedishBtn.onClick.AddListener(() =>
             {
                 translateGameTypeMenu.SetActive(true);
-                startTranslateNounGameBtn.onClick.AddListener(StartNounTranslateGameToSwedish);
-                startTranslateVerbGameBtn.onClick.AddListener(StartVerbTranslateGameToSwedish);
-                startTranslateAdjectiveGameBtn.onClick.AddListener(StartAdjectiveTranslateGameToSwedish);
-                startTranslateTimeGameBtn.onClick.AddListener(StartTimeTranslateGameToSwedish);
-                startTranslateNumberGameBtn.onClick.AddListener(StartNumberTranslateGameToSwedish);
-                startTranslateGrammarGameBtn.onClick.AddListener(StartGrammarTranslateGameToSwedish);
-                startTranslatePronounGameBtn.onClick.AddListener(StartPronounTranslateGameToSwedish);
-                startTranslatePhraseGameBtn.onClick.AddListener(StartPhraseTranslateGameToSwedish);
+                startTranslateNounGameBtn.onClick.AddListener(() => StartNounTranslateGame(false));
+                startTranslateVerbGameBtn.onClick.AddListener(() => StartVerbTranslateGame(false));
+                startTranslateAdjectiveGameBtn.onClick.AddListener(() => StartAdjectiveTranslateGame(false));
+                startTranslateTimeGameBtn.onClick.AddListener(() => StartTimeTranslateGame(false));
+                startTranslateNumberGameBtn.onClick.AddListener(() => StartNumberTranslateGame(false));
+                startTranslateGrammarGameBtn.onClick.AddListener(() => StartGrammarTranslateGame(false));
+                startTranslatePronounGameBtn.onClick.AddListener(() => StartPronounTranslateGame(false));
+                startTranslatePhraseGameBtn.onClick.AddListener(() => StartPhraseTranslateGame(false));
             });
             closeTranslateMenuBtn.onClick.AddListener(() =>
             {
@@ -393,114 +397,66 @@ namespace SwedishApp.UI
 
         #region minigame-related methods
 
-        private void StartNounTranslateGameToFinnish()
+        private void StartNounTranslateGame(bool _toFinnish)
         {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(nounList.nounList));
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(nounList.nounList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
 
-        private void StartNounTranslateGameToSwedish()
+        private void StartVerbTranslateGame(bool _toFinnish)
         {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(nounList.nounList));
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(verbList.verbList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
 
-        private void StartVerbTranslateGameToFinnish()
+        private void StartAdjectiveTranslateGame(bool _toFinnish)
         {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(verbList.verbList));
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(adjectiveList.adjectiveList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
 
-        private void StartVerbTranslateGameToSwedish()
+        private void StartTimeTranslateGame(bool _toFinnish)
         {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(verbList.verbList));
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(timeList.timeList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
 
-        private void StartAdjectiveTranslateGameToFinnish()
+        private void StartNumberTranslateGame(bool _toFinnish)
         {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(adjectiveList.adjectiveList));
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(numberList.numberList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
 
-        private void StartAdjectiveTranslateGameToSwedish()
+        private void StartGrammarTranslateGame(bool _toFinnish)
         {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(adjectiveList.adjectiveList));
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(grammarList.grammarList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
 
-        private void StartTimeTranslateGameToFinnish()
+        private void StartPronounTranslateGame(bool _toFinnish)
         {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(timeList.timeList));
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(pronounList.pronounList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
 
-        private void StartTimeTranslateGameToSwedish()
+        private void StartPhraseTranslateGame(bool _toFinnish)
         {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(timeList.timeList));
-            translateGameTypeMenu.SetActive(false);
-            UnsubscribeTranslateStartButtons();
-        }
-
-        private void StartNumberTranslateGameToFinnish()
-        {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(numberList.numberList));
-            translateGameTypeMenu.SetActive(false);
-            UnsubscribeTranslateStartButtons();
-        }
-
-        private void StartNumberTranslateGameToSwedish()
-        {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(numberList.numberList));
-            translateGameTypeMenu.SetActive(false);
-            UnsubscribeTranslateStartButtons();
-        }
-
-        private void StartGrammarTranslateGameToFinnish()
-        {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(grammarList.grammarList));
-            translateGameTypeMenu.SetActive(false);
-            UnsubscribeTranslateStartButtons();
-        }
-
-        private void StartGrammarTranslateGameToSwedish()
-        {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(grammarList.grammarList));
-            translateGameTypeMenu.SetActive(false);
-            UnsubscribeTranslateStartButtons();
-        }
-
-        private void StartPronounTranslateGameToFinnish()
-        {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(pronounList.pronounList));
-            translateGameTypeMenu.SetActive(false);
-            UnsubscribeTranslateStartButtons();
-        }
-
-        private void StartPronounTranslateGameToSwedish()
-        {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(pronounList.pronounList));
-            translateGameTypeMenu.SetActive(false);
-            UnsubscribeTranslateStartButtons();
-        }
-
-        private void StartPhraseTranslateGameToFinnish()
-        {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToFinnish, new List<Word>(phraseList.phraseList));
-            translateGameTypeMenu.SetActive(false);
-            UnsubscribeTranslateStartButtons();
-        }
-
-        private void StartPhraseTranslateGameToSwedish()
-        {
-            translateMinigame.StartGame(TranslateMinigame.GameMode.ToSwedish, new List<Word>(phraseList.phraseList));
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(phraseList.phraseList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
@@ -524,12 +480,10 @@ namespace SwedishApp.UI
         /// <summary>
         /// This method can be used to randomize the contents of the word lists
         /// </summary>
-        private void ScrambleWordLists()
+        private List<Word> ScrambleWordList(List<Word> _startList)
         {
             System.Random rng = new();
-            verbList.verbList = verbList.verbList.OrderBy(a => rng.Next()).ToList();
-            nounList.nounList = nounList.nounList.OrderBy(a => rng.Next()).ToList();
-            adjectiveList.adjectiveList = adjectiveList.adjectiveList.OrderBy(a => rng.Next()).ToList();
+            return _startList.OrderBy(a => rng.Next()).ToList();
         }
 
         #endregion

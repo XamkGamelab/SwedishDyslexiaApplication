@@ -56,6 +56,8 @@ namespace SwedishApp.Minigames
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
 
+        #region unity default methods
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -64,6 +66,10 @@ namespace SwedishApp.Minigames
             nextWordButton.onClick.AddListener(DeleteOldWord);
             abortGameButton.onClick.AddListener(AbortGame);
         }
+
+        #endregion
+
+        #region translate game handling
 
         /// <summary>
         /// This method sets up relevant variables required to start a game and calls the method to set up the first word
@@ -411,6 +417,8 @@ namespace SwedishApp.Minigames
             Destroy(wordInputFieldHolder.gameObject);
             translateMinigameBG.SetActive(false);
         }
+
+        #endregion
 
         #region font related
 
