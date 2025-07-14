@@ -251,26 +251,26 @@ namespace SwedishApp.UI
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
             {
                 translateGameTypeMenu.SetActive(true);
-                startTranslateNounGameBtn.onClick.AddListener(() => StartNounTranslateGame(true));
-                startTranslateVerbGameBtn.onClick.AddListener(() => StartVerbTranslateGame(true));
-                startTranslateAdjectiveGameBtn.onClick.AddListener(() => StartAdjectiveTranslateGame(true));
-                startTranslateTimeGameBtn.onClick.AddListener(() => StartTimeTranslateGame(true));
-                startTranslateNumberGameBtn.onClick.AddListener(() => StartNumberTranslateGame(true));
-                startTranslateGrammarGameBtn.onClick.AddListener(() => StartGrammarTranslateGame(true));
-                startTranslatePronounGameBtn.onClick.AddListener(() => StartPronounTranslateGame(true));
-                startTranslatePhraseGameBtn.onClick.AddListener(() => StartPhraseTranslateGame(true));
+                startTranslateNounGameBtn.onClick.AddListener(() => StartNounTranslateGame(_toFinnish: true));
+                startTranslateVerbGameBtn.onClick.AddListener(() => StartVerbTranslateGame(_toFinnish: true));
+                startTranslateAdjectiveGameBtn.onClick.AddListener(() => StartAdjectiveTranslateGame(_toFinnish: true));
+                startTranslateTimeGameBtn.onClick.AddListener(() => StartTimeTranslateGame(_toFinnish: true));
+                startTranslateNumberGameBtn.onClick.AddListener(() => StartNumberTranslateGame(_toFinnish: true));
+                startTranslateGrammarGameBtn.onClick.AddListener(() => StartGrammarTranslateGame(_toFinnish: true));
+                startTranslatePronounGameBtn.onClick.AddListener(() => StartPronounTranslateGame(_toFinnish: true));
+                startTranslatePhraseGameBtn.onClick.AddListener(() => StartPhraseTranslateGame(_toFinnish: true));
             });
             startTranslationGameToSwedishBtn.onClick.AddListener(() =>
             {
                 translateGameTypeMenu.SetActive(true);
-                startTranslateNounGameBtn.onClick.AddListener(() => StartNounTranslateGame(false));
-                startTranslateVerbGameBtn.onClick.AddListener(() => StartVerbTranslateGame(false));
-                startTranslateAdjectiveGameBtn.onClick.AddListener(() => StartAdjectiveTranslateGame(false));
-                startTranslateTimeGameBtn.onClick.AddListener(() => StartTimeTranslateGame(false));
-                startTranslateNumberGameBtn.onClick.AddListener(() => StartNumberTranslateGame(false));
-                startTranslateGrammarGameBtn.onClick.AddListener(() => StartGrammarTranslateGame(false));
-                startTranslatePronounGameBtn.onClick.AddListener(() => StartPronounTranslateGame(false));
-                startTranslatePhraseGameBtn.onClick.AddListener(() => StartPhraseTranslateGame(false));
+                startTranslateNounGameBtn.onClick.AddListener(() => StartNounTranslateGame(_toFinnish: false));
+                startTranslateVerbGameBtn.onClick.AddListener(() => StartVerbTranslateGame(_toFinnish: false));
+                startTranslateAdjectiveGameBtn.onClick.AddListener(() => StartAdjectiveTranslateGame(_toFinnish: false));
+                startTranslateTimeGameBtn.onClick.AddListener(() => StartTimeTranslateGame(_toFinnish: false));
+                startTranslateNumberGameBtn.onClick.AddListener(() => StartNumberTranslateGame(_toFinnish: false));
+                startTranslateGrammarGameBtn.onClick.AddListener(() => StartGrammarTranslateGame(_toFinnish: false));
+                startTranslatePronounGameBtn.onClick.AddListener(() => StartPronounTranslateGame(_toFinnish: false));
+                startTranslatePhraseGameBtn.onClick.AddListener(() => StartPhraseTranslateGame(_toFinnish: false));
             });
             closeTranslateMenuBtn.onClick.AddListener(() =>
             {
