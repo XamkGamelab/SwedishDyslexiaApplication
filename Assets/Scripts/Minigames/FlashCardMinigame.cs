@@ -730,7 +730,7 @@ namespace SwedishApp.Minigames
         /// <seealso cref="phraseWords"/> array with phrase words to be included in the game.
         /// </summary>
         /// <param name="_phraseWords">This parameter is used to populate the phraseWords array</param>
-        public void StartPhraseGame(Word[] _phraseWords)
+        public void StartPhraseGame(PhraseWord[] _phraseWords)
         {
             //Enable relevant objects
             gameObject.SetActive(true);
