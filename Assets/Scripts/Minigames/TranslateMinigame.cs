@@ -26,7 +26,7 @@ namespace SwedishApp.Minigames
         [SerializeField] private InputReader inputReader;
 
         private GameMode? gameMode = null;
-        private Stack<Word> words;
+        private Queue<Word> words;
         private Word currentWord = null;
         private bool wordWasChecked = false;
         private bool canDeleteWord = false;
@@ -240,7 +240,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void SetupNewWord()
         {
-            currentWord = words.Pop();
+            currentWord = words.Dequeue();
             wordLetterInputFields = new();
             letterTextRefs = new();
             wordWasChecked = false;
