@@ -9,6 +9,6 @@ namespace SwedishApp.Words
     [CreateAssetMenu(menuName = "PhraseList")]
     public class PhraseList : ScriptableObject
     {
-        public List<Word> phraseList;
+        public List<PhraseWord> phraseList;
     }
 }

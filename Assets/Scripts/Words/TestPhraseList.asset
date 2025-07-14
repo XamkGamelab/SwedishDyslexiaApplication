@@ -17,51 +17,64 @@ MonoBehaviour:
     finnishWord: muun muassa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    notices: 
   - swedishWord: "f\xF6rl\xE5t"
     finnishWord: anteeksi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    notices: 
   - swedishWord: "urs\xE4kta"
-    finnishWord: (suokaa) anteeksi
+    finnishWord: anteeksi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    notices: (suokaa) anteeksi
   - swedishWord: tack
     finnishWord: kiitos
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    notices: 
   - swedishWord: "var s\xE5 god"
     finnishWord: "ole hyv\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    notices: 
   - swedishWord: precis
     finnishWord: juuri niin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-  - swedishWord: tycka IV att
+    notices: 
+  - swedishWord: tycka att
     finnishWord: "olla jotakin mielt\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-  - swedishWord: tycka IV om
+    notices: tycka IV
+  - swedishWord: tycka om
     finnishWord: "pit\xE4\xE4 jostain"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-  - swedishWord: "t\xE4nka II att"
+    notices: tycka IV
+  - swedishWord: "t\xE4nka att"
     finnishWord: "ajatella ett\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-  - swedishWord: "t\xE4nka II p\xE5"
+    notices: "t\xE4nka II"
+  - swedishWord: "t\xE4nka p\xE5"
     finnishWord: ajatella jotain
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-  - swedishWord: "t\xE4nka II om"
-    finnishWord: ajatella jotain (jostakin)
+    notices: "t\xE4nka II"
+  - swedishWord: "t\xE4nka om"
+    finnishWord: ajatella jotain
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-  - swedishWord: "tro II p\xE5"
+    notices: "ajatella jotain (jostakin), t\xE4nka II"
+  - swedishWord: "tro p\xE5"
     finnishWord: uskoa johonkin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-  - swedishWord: tro II att
+    notices: tro II
+  - swedishWord: tro att
     finnishWord: "uskoa ett\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    notices: tro II
