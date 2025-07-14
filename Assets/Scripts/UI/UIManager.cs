@@ -37,6 +37,8 @@ namespace SwedishApp.UI
         private Vector2 mousePos;
 
         [Header("Minigame-Related")]
+        [SerializeField] private DictionaryHandler dictionaryHandler;
+        [SerializeField] private Button openDictionaryButton;
         [SerializeField] private Button startTranslationGameToFinnishBtn;
         [SerializeField] private Button startTranslationGameToSwedishBtn;
         [SerializeField] private Button startConjugationGameBtn;
@@ -170,13 +172,17 @@ namespace SwedishApp.UI
                 Destroy(this);  //Destroy is called at end of frame don't worry
                 Debug.LogError($"Found more than one UIManager, destroying duplicate. Fix this!");
             }
+
+            dictionaryHandler.InitializeDictionary();
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            textObjectList.AddRange(dictionaryHandler.GetDictionaryTextFields());
             textFields = textObjectList;
             textFields.AddRange(textObjectListReverseLight);
+            lightmodableImagesReverse.AddRange(dictionaryHandler.GetSpacerImages());
 
             //Add listener to every text field, called when a layout is changed. This then fixes character spacing for soft hyphens.
             textFields.ForEach(field => field.RegisterDirtyLayoutCallback(() => FixTextSpacing(field)));
@@ -186,6 +192,8 @@ namespace SwedishApp.UI
             //Add input events
             inputReader.ClickEvent += ClickOffCloseSettings;
             inputReader.PointEvent += GetMousePosition;
+
+            openDictionaryButton.onClick.AddListener(() => dictionaryHandler.gameObject.SetActive(true));
 
             //Add listeners to settings-related buttons
             fontSmallToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.small, toggleOn));
