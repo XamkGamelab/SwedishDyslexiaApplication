@@ -36,6 +36,7 @@ namespace SwedishApp.Minigames
         [SerializeField] private int allowedMissedInputsCount = 2;
         private int score = 0;
         private int activeGameMaxPoints = 0;
+        private string activeWordNoHighlight;
 
         [Header("UI related")]
         [SerializeField] private Button abortGameButton;
@@ -107,117 +108,51 @@ namespace SwedishApp.Minigames
             bool wordWasCorrect = false;
             canDeleteWord = true;
             int correctLettersCount = 0;
-            int wordLetterCount = 0;
             int missedInputsCount = 0;
 
-            //If the gamemode is set to translate into swedish
-            if (gameMode == GameMode.ToSwedish)
+            //Translate given answer to lowercase to ease checking
+            List<char> chars = new();
+            for (int i = 0; i < wordLetterInputFields.Count; i++)
             {
-                //Grab the amount of valid letters in the swedish word
-                foreach (char letter in currentWord.swedishWord)
-                {
-                    if (letter != ' ' || letter != '\u00AD')
-                        wordLetterCount++;
-                }
-
-                //Translate given answer to lowercase to ease checking
-                List<char> chars = new();
-                for (int i = 0; i < wordLetterInputFields.Count; i++)
-                {
-                    if (wordLetterInputFields[i].text != "") chars.Add(wordLetterInputFields[i].text[0]);
-                    else chars.Add(' ');
-                }
-                string givenString = new(chars.ToArray());
-                givenString.ToLower();
-
-                int j = 0;
-
-                //For every letter in the word, set a highlight depending if the letter was correct or not
-                for (int i = 0; i < currentWord.swedishWord.Length; i++)
-                {
-                    if (currentWord.swedishWord[i] == '\u00AD') continue;
-                    else if (currentWord.swedishWord[i] == ' ')
-                    {
-                        correctLettersCount++;
-                        continue;
-                    }
-                    else if (wordLetterInputFields[j].text == "")
-                    {
-                        missedInputsCount++;
-                        continue;
-                    }
-                    else if (givenString[j] == currentWord.swedishWord[i])
-                    {
-                        //This is the 'correct' indicator
-                        wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(true);
-                        wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(false);
-                        correctLettersCount++;
-                    }
-                    else
-                    {
-                        //This is the 'incorrect' indicator
-                        wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(false);
-                        wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(true);
-                    }
-
-                    j++;
-                }
-                if (correctLettersCount == currentWord.swedishWord.Length) wordWasCorrect = true;
+                if (wordLetterInputFields[i].text != "") chars.Add(wordLetterInputFields[i].text[0]);
+                else chars.Add(' ');
             }
-            //If the gamemode is set to translate into finnish
-            else if (gameMode == GameMode.ToFinnish)
+            string givenString = new(chars.ToArray());
+            givenString.ToLower();
+
+            int j = 0;
+
+            //For every letter in the word, set a highlight depending if the letter was correct or not
+            for (int i = 0; i < activeWordNoHighlight.Length; i++)
             {
-                //Grab the amount of valid letters in the finnish word
-                foreach (char letter in currentWord.finnishWord)
+                if (activeWordNoHighlight[i] == ' ')
                 {
-                    if (letter != ' ' || letter != '\u00AD')
-                        wordLetterCount++;
-                }
-
-                //Translate given answer to lowercase to ease checking
-                List<char> chars = new();
-                for (int i = 0; i < wordLetterInputFields.Count; i++)
-                {
-                    if (wordLetterInputFields[i].text != "") chars.Add(wordLetterInputFields[i].text[0]);
-                    else chars.Add(' ');
-                }
-                string givenString = new(chars.ToArray());
-                givenString.ToLower();
-
-                int j = 0;
-
-                //For every letter in the word, set a highlight depending on if the letter was correct or not
-                for (int i = 0; i < currentWord.finnishWord.Length; i++)
-                {
-                    if (currentWord.finnishWord[i] == '\u00AD') continue;
-                    else if (currentWord.finnishWord[i] == ' ')
-                    {
-                        correctLettersCount++;
-                        continue;
-                    }
-                    else if (wordLetterInputFields[j].text == "")
-                    {
-                        missedInputsCount++;
-                        continue;
-                    }
-                    else if (givenString[j] == currentWord.finnishWord[i])
-                    {
-                        //This is the 'correct' indicator
-                        wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(true);
-                        wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(false);
-                        correctLettersCount++;
-                    }
-                    else
-                    {
-                        //This is the 'incorrect' indicator
-                        wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(false);
-                        wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(true);
-                    }
-
+                    correctLettersCount++;
                     j++;
+                    continue;
                 }
-                if (correctLettersCount == currentWord.finnishWord.Length) wordWasCorrect = true;
+                else if (wordLetterInputFields[j].text == "")
+                {
+                    missedInputsCount++;
+                    continue;
+                }
+                else if (givenString[j] == activeWordNoHighlight[i])
+                {
+                    //This is the 'correct' indicator
+                    wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(true);
+                    wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(false);
+                    correctLettersCount++;
+                }
+                else
+                {
+                    //This is the 'incorrect' indicator
+                    wordLetterInputFields[j].transform.GetChild(0).gameObject.SetActive(false);
+                    wordLetterInputFields[j].transform.GetChild(1).gameObject.SetActive(true);
+                }
+
+                j++;
             }
+            if (correctLettersCount == activeWordNoHighlight.Length) wordWasCorrect = true;
 
             if (wordWasCorrect)
             {
@@ -250,6 +185,7 @@ namespace SwedishApp.Minigames
             wordLetterInputFields = new();
             letterTextRefs = new();
             wordWasChecked = false;
+            List<char> chars = new();
 
             //Setup a new holder for all the individual input fields
             wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
@@ -261,12 +197,24 @@ namespace SwedishApp.Minigames
                 //Show the word to be translated
                 wordToTranslateText.text = currentWord.finnishWord;
 
+                bool ignoreLetters = false;
                 int j = 0;
 
                 //Create an input field for every letter of the word
                 for (int i = 0; i < currentWord.swedishWord.Length; i++)
                 {
-                    if (currentWord.swedishWord[i] == '\u00AD') continue;
+                    if (currentWord.swedishWord[i] == '<')
+                    {
+                        ignoreLetters = true;
+                        continue;
+                    }
+                    else if (currentWord.swedishWord[i] == '>')
+                    {
+                        ignoreLetters = false;
+                        continue;
+                    }
+                    if (ignoreLetters || currentWord.swedishWord[i] == '\u00AD') continue;
+
                     int indexHolder = j;
                     wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
 
@@ -280,6 +228,7 @@ namespace SwedishApp.Minigames
                         wordLetterInputFields[j].image.enabled = false;
                         wordLetterInputFields[j].interactable = false;
                     }
+                    chars.Add(currentWord.swedishWord[i]);
 
                     //Save references to the text slot of each input field, used when changing font settings!
                     letterTextRefs.Add(wordLetterInputFields[j].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
@@ -297,12 +246,24 @@ namespace SwedishApp.Minigames
                 //Show the word to be translated
                 wordToTranslateText.text = currentWord.swedishWord;
 
+                bool ignoreLetters = false;
                 int j = 0;
 
                 //Create an input field for every letter of the word
                 for (int i = 0; i < currentWord.finnishWord.Length; i++)
                 {
-                    if (currentWord.finnishWord[i] == '\u00AD') continue;
+                    if (currentWord.finnishWord[i] == '<')
+                    {
+                        ignoreLetters = true;
+                        continue;
+                    }
+                    else if (currentWord.finnishWord[i] == '>')
+                    {
+                        ignoreLetters = false;
+                        continue;
+                    }
+                    if (ignoreLetters || currentWord.finnishWord[i] == '\u00AD') continue;
+
                     int indexHolder = j;
                     wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
 
@@ -316,6 +277,7 @@ namespace SwedishApp.Minigames
                         wordLetterInputFields[j].image.enabled = false;
                         wordLetterInputFields[j].interactable = false;
                     }
+                    chars.Add(currentWord.finnishWord[i]);
 
                     //Save references to the text slot of each input field, used when changing font settings!
                     letterTextRefs.Add(wordLetterInputFields[j].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
@@ -326,6 +288,7 @@ namespace SwedishApp.Minigames
                     j++;
                 }
             }
+            activeWordNoHighlight = new(chars.ToArray());
             UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
             UIManager.instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
             wordLetterInputFields[0].Select();
