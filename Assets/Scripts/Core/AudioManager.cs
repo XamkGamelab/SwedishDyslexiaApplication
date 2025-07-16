@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace SwedishApp.Core
 {
+    /// <summary>
+    /// This class manages the audio assets and necessary functions for them
+    /// </summary>
     public class AudioManager : MonoBehaviour
     {
         private static AudioManager _instance;
@@ -61,7 +64,7 @@ namespace SwedishApp.Core
 
         private void Start()
         {
-            if(!PlayerPrefs.HasKey("musicVolume"))      // If there isn't previous saved values, set volume to default
+            if (!PlayerPrefs.HasKey("musicVolume"))      // If there isn't previous saved values, set volume to default
             {
                 PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
             }
@@ -90,17 +93,17 @@ namespace SwedishApp.Core
             //_buzzing.           volume      = 3.0f;
             //_buzzing.           panStereo   = -0.25f;
 
-            menuSelect1.       volume = volumeSlider.value /*1.0f * */;
-            menuSelect2.       volume = volumeSlider.value /*2.0f * */;
-            menuSelect3.       volume = volumeSlider.value /*0.05f * */;
-            lightModeToggle.   volume = volumeSlider.value /*1.0f * */;
-            inputSound.        volume = volumeSlider.value /*1.0f * */;
-            correct.           volume = volumeSlider.value /*0.5f * */;
-            incorrect.         volume = volumeSlider.value /*1.0f * */;
-            menuSelect4.       volume = volumeSlider.value;
-            menuSelect5.       volume = volumeSlider.value;
-            menuSelect6.       volume = musicVolume;
-            menuSelect7.       volume = musicVolume;
+            menuSelect1.volume = volumeSlider.value /*1.0f * */;
+            menuSelect2.volume = volumeSlider.value /*2.0f * */;
+            menuSelect3.volume = volumeSlider.value /*0.05f * */;
+            lightModeToggle.volume = volumeSlider.value /*1.0f * */;
+            inputSound.volume = volumeSlider.value /*1.0f * */;
+            correct.volume = volumeSlider.value /*0.5f * */;
+            incorrect.volume = volumeSlider.value /*1.0f * */;
+            menuSelect4.volume = volumeSlider.value;
+            menuSelect5.volume = volumeSlider.value;
+            menuSelect6.volume = musicVolume;
+            menuSelect7.volume = musicVolume;
         }
         public void ChangeVolume()
         {
