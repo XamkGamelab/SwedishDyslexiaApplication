@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adjectiveList:
   - swedishWord: varm
-    finnishWord: "l\xE4mmin"
+    finnishWord: "l\xE4m\\u00ADmin"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    wordCore: varm
+    wordCore: varm\u00AD
     wordEnEnd: 
     wordEttEnd: t
     definitiveIsRegular: 1
@@ -30,27 +30,27 @@ MonoBehaviour:
     superlativeIsRegular: 1
     wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: aste
+    wordDefinitiveSuperlativeEnd: as\u00ADte
   - swedishWord: liten
-    finnishWord: pieni
+    finnishWord: pie\u00ADni
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    wordCore: lite
+    wordCore: li\u00ADte
     wordEnEnd: n
     wordEttEnd: t
     definitiveIsRegular: 0
-    wordDefinitiveEnd: lilla
+    wordDefinitiveEnd: lil\u00ADla
     definitivePluralIsRegular: 0
     wordDefinitivePluralIrregular: "sm\xE5"
     comparativeIsRegular: 0
-    wordComparativeEnd: mindre
+    wordComparativeEnd: mind\u00ADre
     comparativeDefinitiveIsRegular: 0
     superlativeIsRegular: 0
     wordSuperlativeEnd: mindst
     superlativeDefinitiveIsRegular: 0
     wordDefinitiveSuperlativeEnd: mindst
   - swedishWord: snabb
-    finnishWord: nopea
+    finnishWord: no\u00ADpe\u00ADa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     wordCore: snabb
@@ -61,17 +61,17 @@ MonoBehaviour:
     definitivePluralIsRegular: 1
     wordDefinitivePluralIrregular: 
     comparativeIsRegular: 1
-    wordComparativeEnd: are
+    wordComparativeEnd: \u00ADare
     comparativeDefinitiveIsRegular: 0
     superlativeIsRegular: 1
-    wordSuperlativeEnd: ast
+    wordSuperlativeEnd: \u00ADast
     superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: aste
+    wordDefinitiveSuperlativeEnd: \u00ADas\u00ADte
   - swedishWord: kort
-    finnishWord: lyhyt
+    finnishWord: ly\u00ADhyt
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    wordCore: kort
+    wordCore: kort\u00AD
     wordEnEnd: en
     wordEttEnd: et
     definitiveIsRegular: 1
@@ -84,9 +84,9 @@ MonoBehaviour:
     superlativeIsRegular: 1
     wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: aste
+    wordDefinitiveSuperlativeEnd: as\u00ADte
   - swedishWord: "l\xE5ng"
-    finnishWord: "pitk\xE4"
+    finnishWord: "pit\\u00ADk\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     wordCore: "l\xE5ng"
@@ -97,9 +97,9 @@ MonoBehaviour:
     definitivePluralIsRegular: 1
     wordDefinitivePluralIrregular: 
     comparativeIsRegular: 0
-    wordComparativeEnd: "l\xE4ngre"
+    wordComparativeEnd: "l\xE4ng\\u00ADre"
     comparativeDefinitiveIsRegular: 0
     superlativeIsRegular: 0
     wordSuperlativeEnd: "l\xE4ngst"
     superlativeDefinitiveIsRegular: 0
-    wordDefinitiveSuperlativeEnd: "l\xE4ngste"
+    wordDefinitiveSuperlativeEnd: "l\xE4ngs\\u00ADte"

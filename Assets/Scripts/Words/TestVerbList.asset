@@ -102,11 +102,11 @@ MonoBehaviour:
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: oli ollut tapana
   - swedishWord: utexaminera
-    finnishWord: valmistua
+    finnishWord: val\u00ADmis\u00ADtu\u00ADa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 1
-    wordCore: utexaminera
+    wordCore: ut\u00ADex\u00ADa\u00ADmi\u00ADne\u00ADra
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
@@ -124,11 +124,11 @@ MonoBehaviour:
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: oli valmistunut
   - swedishWord: studera
-    finnishWord: opiskella
+    finnishWord: o\u00ADpis\u00ADkel\u00ADla
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 1
-    wordCore: studera
+    wordCore: stu\u00ADde\u00ADra
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 2
-    wordCore: "beh\xF6v"
+    wordCore: "be\\u00ADh\xF6\\u00ADv"
     baseformIsRegular: 1
     baseformEnd: a
     currentTenseIsRegular: 1
