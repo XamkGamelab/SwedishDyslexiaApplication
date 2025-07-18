@@ -39,7 +39,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: "f\xF6r"
-    finnishWord: (jotakin) varten
+    finnishWord: varten
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -50,11 +50,6 @@ MonoBehaviour:
     notices: 'adverbi: tuolloin/silloin, konjunktio: kun'
   - swedishWord: fast
     finnishWord: vaikka
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    notices: 
-  - swedishWord: dock
-    finnishWord: kuitenkin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -124,20 +119,20 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: utan
-    finnishWord: ilman (jotakin)
+    finnishWord: ilman
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: ilman jotakin
   - swedishWord: med
     finnishWord: kanssa, mukana
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: hos
-    finnishWord: "(henkil\xF6n) luona"
+    finnishWord: luona
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "henkil\xF6n luona"
   - swedishWord: "\xE5t"
     finnishWord: jollekulle, -lle
     darkModeSprite: {fileID: 0}
