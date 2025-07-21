@@ -9,5 +9,6 @@ namespace SwedishApp.Minigames
     public class FlashCardNumber : FlashCardBase
     {
         public TextMeshProUGUI wordSwedishOrdinalText;
+        public TextMeshProUGUI wordFinnishOrdinalText;
     }
 }

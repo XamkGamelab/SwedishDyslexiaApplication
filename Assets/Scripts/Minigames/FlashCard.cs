@@ -22,8 +22,8 @@ namespace SwedishApp.Minigames
         }
         public State state { get; private set; }
         private Button thisButton;
-        private TextMeshProUGUI[] textsInChildren;
-        [SerializeField] public GameObject cardFinnishSide;
+        public TextMeshProUGUI[] textsInChildren { get; private set; }
+        [SerializeField] private GameObject cardFinnishSide;
         [SerializeField] private GameObject cardSwedishSide;
         [SerializeField] private Image hintImage;
         public Sprite darkmodeSprite { get; set; }
@@ -36,7 +36,7 @@ namespace SwedishApp.Minigames
 
         private void Awake()
         {
-            textsInChildren = transform.GetComponentsInChildren<TextMeshProUGUI>();
+            textsInChildren = transform.GetComponentsInChildren<TextMeshProUGUI>(true);
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -152,7 +152,6 @@ namespace SwedishApp.UI
         [SerializeField] private Button toggleSettingsBtn;
         [SerializeField] private GameObject settingsMenu;
         [SerializeField] private Image settingsMenuImage;
-        private RectTransform settingsRect;
         [SerializeField] private Button toggleLightmodeBtn;
         [SerializeField] private Slider toggledSlider;
         [SerializeField] private float lerpDuration = 0.06f;
@@ -186,8 +185,6 @@ namespace SwedishApp.UI
 
             //Add listener to every text field, called when a layout is changed. This then fixes character spacing for soft hyphens.
             textFields.ForEach(field => field.RegisterDirtyLayoutCallback(() => FixTextSpacing(field)));
-
-            settingsRect = settingsMenu.GetComponent<RectTransform>();
 
             //Add input events
             inputReader.ClickEvent += ClickOffCloseSettings;
