@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grammarList:
   - swedishWord: av
-    finnishWord: "-lta, -lt\xE4, joltakulta"
+    finnishWord: joltakulta
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: englanniksi "of"
+    notices: "\"-lta\", \"-lt\xE4\", englanniksi \"of\""
   - swedishWord: att
     finnishWord: "ett\xE4"
     darkModeSprite: {fileID: 0}
@@ -47,19 +47,19 @@ MonoBehaviour:
     finnishWord: silloin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 'adverbi: tuolloin/silloin, konjunktio: kun'
+    notices: 'adverbi: "tuolloin"/"silloin", konjunktio: "kun"'
   - swedishWord: fast
     finnishWord: vaikka
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: eftersom
-    finnishWord: koska
+  - swedishWord: ef\u00ADter\u00ADsom
+    finnishWord: kos\u00ADka
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: "d\xE4rf\xF6r"
-    finnishWord: siksi
+  - swedishWord: "d\xE4r\\u00ADf\xF6r"
+    finnishWord: sik\u00ADsi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -74,10 +74,10 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: efter
-    finnishWord: "j\xE4lkeen, j\xE4ljess\xE4"
+    finnishWord: "j\xE4lkeen"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"j\xE4ljess\xE4\""
   - swedishWord: innan
     finnishWord: ennen kuin
     darkModeSprite: {fileID: 0}
@@ -88,18 +88,18 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: "P\xE4\xE4lause kielteinen"
-  - swedishWord: samtidigt
-    finnishWord: samanaikaisesti
+  - swedishWord: sam\u00ADti\u00ADdigt
+    finnishWord: sa\u00ADman\u00ADai\u00ADkai\u00ADses\u00ADti
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: "\xE4ntligen"
-    finnishWord: vihdoinkin
+  - swedishWord: "\xE4nt\\u00ADli\\u00ADgen"
+    finnishWord: vih\u00ADdoin\u00ADkin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: "\xE5tminstone"
-    finnishWord: ainakin
+  - swedishWord: "\xE5t\\u00ADmin\\u00ADsto\\u00ADne"
+    finnishWord: ai\u00ADna\u00ADkin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -109,55 +109,55 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: nog
-    finnishWord: kylliksi, tarpeeksi
+    finnishWord: kylliksi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
-  - swedishWord: "tillr\xE4ckligt"
-    finnishWord: "tarpeeksi, riitt\xE4v\xE4sti"
+    notices: '"tarpeeksi"'
+  - swedishWord: "till\\u00ADr\xE4ck\\u00ADligt"
+    finnishWord: tar\u00ADpeek\u00ADsi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"riitt\xE4v\xE4sti\""
   - swedishWord: utan
     finnishWord: ilman
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: ilman jotakin
+    notices: ilman (jotakin)
   - swedishWord: med
-    finnishWord: kanssa, mukana
+    finnishWord: kanssa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"mukana"'
   - swedishWord: hos
     finnishWord: luona
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: "henkil\xF6n luona"
+    notices: "(henkil\xF6n) luona"
   - swedishWord: "\xE5t"
-    finnishWord: jollekulle, -lle
+    finnishWord: jollekulle
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"-lle"'
   - swedishWord: i
-    finnishWord: "-ssa, -ss\xE4 (jonkin sis\xE4ll\xE4, jossakin)"
+    finnishWord: "jonkin sis\xE4ll\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"-ssa\", \"-ss\xE4\" (jonkin sis\xE4ll\xE4, jossakin)"
   - swedishWord: "p\xE5"
-    finnishWord: "(jonkin) p\xE4\xE4ll\xE4, -lla, -ll\xE4"
+    finnishWord: "p\xE4\xE4ll\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"(jonkin) p\xE4\xE4ll\xE4\", \"-lla\", \"-ll\xE4\""
   - swedishWord: under
-    finnishWord: alla, alle
+    finnishWord: alla
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"alle"'
   - swedishWord: till
-    finnishWord: luokse, johonkin, -lle
+    finnishWord: johonkin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"luokse", "-lle"'
   - swedishWord: bakom
     finnishWord: takana
     darkModeSprite: {fileID: 0}
@@ -169,90 +169,90 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: "fr\xE5n"
-    finnishWord: "-sta, -st\xE4, -lta, -lt\xE4 (jostakin/joltakin)"
+    finnishWord: jostakin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"-sta\", \"-st\xE4\", \"-lta\", \"-lt\xE4\" (jostakin/joltakin)"
   - swedishWord: "f\xF6rbi"
-    finnishWord: (jonkin) ohi
+    finnishWord: ohi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"(jonkin) ohi"'
   - swedishWord: genom
-    finnishWord: "(jonkin) l\xE4vitse, l\xE4pi"
+    finnishWord: "l\xE4vitse"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"(jonkin) l\xE4vitse\", \"l\xE4pi\""
   - swedishWord: medan
-    finnishWord: "sill\xE4 aikaa kun"
+    finnishWord: samalla kun
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: /samalla kun /kun taas
+    notices: "\"sill\xE4 aikaa kun\", \"kun taas\""
   - swedishWord: mellan
     finnishWord: "v\xE4liss\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: "/v\xE4lill\xE4 (paikka)"
+    notices: "\"v\xE4lill\xE4\" (paikka)"
   - swedishWord: bland
     finnishWord: joukossa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: "/keskuudessa/keskell\xE4"
+    notices: "\"keskuudessa\", \"keskell\xE4\""
   - swedishWord: vid
-    finnishWord: "luona, vieress\xE4"
+    finnishWord: luona
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"vieress\xE4\""
   - swedishWord: dit
     finnishWord: sinne
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: "\xF6ver"
-    finnishWord: "yli, (jonkin) yl\xE4puolella"
+    finnishWord: yli
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"(jonkin) yl\xE4puolella\""
   - swedishWord: "n\xE4ra"
     finnishWord: "l\xE4hell\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: "\xE4n"
-    finnishWord: kuin (komparatiivi)
+    finnishWord: kuin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: esim. "isompi kuin"
+    notices: komparatiivi, esim. "isompi kuin"
   - swedishWord: "m\xE5ste"
-    finnishWord: "t\xE4ytyy, olla pakko"
+    finnishWord: "t\xE4ytyy"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"olla pakko"'
   - swedishWord: hur
-    finnishWord: miten, kuinka
+    finnishWord: miten
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"kuinka"'
   - swedishWord: hurdan, hurdant, hurdana
-    finnishWord: "millainen, miten (mill\xE4 tavalla)"
+    finnishWord: millainen
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"miten\" (mill\xE4 tavalla)"
   - swedishWord: "n\xE4r"
-    finnishWord: koska, milloin, kun
+    finnishWord: koska
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"milloin", "kun"'
   - swedishWord: vad
     finnishWord: "mit\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: vilken, vilket, vilka
-    finnishWord: "mik\xE4, mink\xE4"
+    finnishWord: "mik\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"mink\xE4\""
   - swedishWord: var
     finnishWord: "miss\xE4"
     darkModeSprite: {fileID: 0}
@@ -284,27 +284,27 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: kan
-    finnishWord: osata, voida
+    finnishWord: osata
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"voida"'
   - swedishWord: ska
-    finnishWord: "aikoa, pit\xE4\xE4"
+    finnishWord: aikoa
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"pit\xE4\xE4\""
   - swedishWord: "m\xE5ste"
-    finnishWord: "t\xE4yty\xE4, pit\xE4\xE4"
+    finnishWord: "t\xE4yty\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: "\"pit\xE4\xE4\""
   - swedishWord: "b\xF6r"
     finnishWord: "pit\xE4\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: "l\xE4r"
-    finnishWord: kuuluu, sanotaan
+    finnishWord: kuuluu
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -314,12 +314,12 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: esim. "aikoisi"
   - swedishWord: varje
-    finnishWord: joka, jokainen, jokaisena
+    finnishWord: jokainen
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
-  - swedishWord: annan, annat, andra
-    finnishWord: muu, muuta
+    notices: '"joka", "jokaisena"'
+  - swedishWord: annan
+    finnishWord: muu
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"muuta", ruotsin ett ja monikko: "annat", "andra"'

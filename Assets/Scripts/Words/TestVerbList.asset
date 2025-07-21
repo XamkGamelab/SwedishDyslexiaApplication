@@ -19,6 +19,8 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     conjugationClass: 4
     wordCore: var
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: va\u00ADr
     baseformIsRegular: 1
     baseformEnd: a
     currentTenseIsRegular: 0
@@ -36,18 +38,20 @@ MonoBehaviour:
     pastPlusPerfectTenseEnd: it
     pastPlusPerfectTenseFinnish: oli ollut
   - swedishWord: jobba
-    finnishWord: "ty\xF6skennell\xE4"
+    finnishWord: "ty\xF6s\\u00ADken\\u00ADnel\\u00ADl\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 1
-    wordCore: jobba
+    wordCore: job\u00ADba
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
     currentTenseEnd: r
     currentTenseFinnish: "ty\xF6skentelee"
     pastTenseIsRegular: 1
-    pastTenseEnd: de
+    pastTenseEnd: \u00ADde
     pastTenseFinnish: "ty\xF6skenteli"
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
@@ -62,14 +66,16 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 1
-    wordCore: spela
+    wordCore: spe\u00ADla
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
     currentTenseEnd: r
     currentTenseFinnish: pelaa
     pastTenseIsRegular: 1
-    pastTenseEnd: de
+    pastTenseEnd: \u00ADde
     pastTenseFinnish: pelasi
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
@@ -84,14 +90,16 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 1
-    wordCore: bruka
+    wordCore: bru\u00ADka
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
     currentTenseEnd: r
     currentTenseFinnish: on tapana
     pastTenseIsRegular: 1
-    pastTenseEnd: de
+    pastTenseEnd: \u00ADde
     pastTenseFinnish: oli tapana
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
@@ -107,13 +115,15 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     conjugationClass: 1
     wordCore: ut\u00ADex\u00ADa\u00ADmi\u00ADne\u00ADra
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
     currentTenseEnd: r
     currentTenseFinnish: valmistuu
     pastTenseIsRegular: 1
-    pastTenseEnd: de
+    pastTenseEnd: \u00ADde
     pastTenseFinnish: valmistui
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
@@ -129,13 +139,15 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     conjugationClass: 1
     wordCore: stu\u00ADde\u00ADra
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
     currentTenseEnd: r
     currentTenseFinnish: opiskelee
     pastTenseIsRegular: 1
-    pastTenseEnd: de
+    pastTenseEnd: \u00ADde
     pastTenseFinnish: opiskeli
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
@@ -150,14 +162,16 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 1
-    wordCore: orka
+    wordCore: or\u00ADka
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
     currentTenseEnd: r
     currentTenseFinnish: jaksaa
     pastTenseIsRegular: 1
-    pastTenseEnd: de
+    pastTenseEnd: \u00ADde
     pastTenseFinnish: jaksoi
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
@@ -173,6 +187,8 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     conjugationClass: 2
     wordCore: hyr
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: hy\u00ADr
     baseformIsRegular: 1
     baseformEnd: a
     currentTenseIsRegular: 1
@@ -194,7 +210,9 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     conjugationClass: 2
-    wordCore: "be\\u00ADh\xF6\\u00ADv"
+    wordCore: "beh\xF6v"
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: "be\\u00ADh\xF6\\u00ADv"
     baseformIsRegular: 1
     baseformEnd: a
     currentTenseIsRegular: 1
@@ -217,13 +235,15 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     conjugationClass: 4
     wordCore: ha
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
     currentTenseIsRegular: 1
-    currentTenseEnd: ar
+    currentTenseEnd: r
     currentTenseFinnish: omistaa
     pastTenseIsRegular: 1
-    pastTenseEnd: de
+    pastTenseEnd: \u00ADde
     pastTenseFinnish: omisti
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '

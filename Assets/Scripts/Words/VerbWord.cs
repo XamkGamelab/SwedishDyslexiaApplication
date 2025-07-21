@@ -21,6 +21,8 @@ namespace SwedishApp.Words
         public ConjugationClass conjugationClass;
 
         public string wordCore = "var";
+        public bool hyphenatesIrregularly = false;
+        public string wordCoreWithIrregularHyphenation = "";
 
         [Header("Perusmuoto")]
         public bool baseformIsRegular = true;
@@ -112,9 +114,11 @@ namespace SwedishApp.Words
         {
             if (UIManager.instance.LightmodeOn)
             {
+                string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
                 if (currentTenseIsRegular)
                 {
-                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, currentTenseEnd);
+                    return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, currentTenseEnd);
                 }
                 else
                 {
@@ -123,9 +127,11 @@ namespace SwedishApp.Words
             }
             else
             {
+                string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
                 if (currentTenseIsRegular)
                 {
-                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, currentTenseEnd);
+                    return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, currentTenseEnd);
                 }
                 else
                 {
@@ -144,9 +150,11 @@ namespace SwedishApp.Words
         {
             if (UIManager.instance.LightmodeOn)
             {
+                string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+                
                 if (pastTenseIsRegular)
                 {
-                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, pastTenseEnd);
+                    return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, pastTenseEnd);
                 }
                 else
                 {
@@ -155,9 +163,10 @@ namespace SwedishApp.Words
             }
             else
             {
+                string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
                 if (pastTenseIsRegular)
                 {
-                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, pastTenseEnd);
+                    return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, pastTenseEnd);
                 }
                 else
                 {
@@ -173,11 +182,13 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string PastPerfectTenseWord()
         {
+            string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+            
             if (UIManager.instance.LightmodeOn)
             {
                 if (pastPerfectTenseIsRegular)
                 {
-                    return string.Concat(pastPerfectTenseStart, colorTagStartLight, wordCore, colorTagEnd, pastPerfectTenseEnd);
+                    return string.Concat(pastPerfectTenseStart, colorTagStartLight, _actualCore, colorTagEnd, pastPerfectTenseEnd);
                 }
                 else
                 {
@@ -188,7 +199,7 @@ namespace SwedishApp.Words
             {
                 if (pastPerfectTenseIsRegular)
                 {
-                    return string.Concat(pastPerfectTenseStart, colorTagStartDark, wordCore, colorTagEnd, pastPerfectTenseEnd);
+                    return string.Concat(pastPerfectTenseStart, colorTagStartDark, _actualCore, colorTagEnd, pastPerfectTenseEnd);
                 }
                 else
                 {
@@ -206,9 +217,11 @@ namespace SwedishApp.Words
         {
             if (UIManager.instance.LightmodeOn)
             {
+                string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
                 if (pastPlusPerfectTenseIsRegular)
                 {
-                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartLight, wordCore, colorTagEnd, pastPlusPerfectTenseEnd);
+                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartLight, _actualCore, colorTagEnd, pastPlusPerfectTenseEnd);
                 }
                 else
                 {
@@ -217,9 +230,11 @@ namespace SwedishApp.Words
             }
             else
             {
+                string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+                
                 if (pastPlusPerfectTenseIsRegular)
                 {
-                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, wordCore, colorTagEnd, pastPlusPerfectTenseEnd);
+                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, _actualCore, colorTagEnd, pastPlusPerfectTenseEnd);
                 }
                 else
                 {
