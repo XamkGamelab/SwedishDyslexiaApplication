@@ -17,7 +17,11 @@ MonoBehaviour:
     finnishWord: "l\xE4m\\u00ADmin"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    wordCore: varm\u00AD
+    wordCore: varm
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: var\u00ADm
     wordEnEnd: 
     wordEttEnd: t
     definitiveIsRegular: 1
@@ -36,6 +40,10 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     wordCore: li\u00ADte
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     wordEnEnd: n
     wordEttEnd: t
     definitiveIsRegular: 0
@@ -54,6 +62,10 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     wordCore: snabb
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 1
+    superlativeHyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: snab\u00ADb
     wordEnEnd: 
     wordEttEnd: t
     definitiveIsRegular: 1
@@ -61,17 +73,21 @@ MonoBehaviour:
     definitivePluralIsRegular: 1
     wordDefinitivePluralIrregular: 
     comparativeIsRegular: 1
-    wordComparativeEnd: \u00ADare
+    wordComparativeEnd: a\u00ADre
     comparativeDefinitiveIsRegular: 0
     superlativeIsRegular: 1
-    wordSuperlativeEnd: \u00ADast
+    wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: \u00ADas\u00ADte
+    wordDefinitiveSuperlativeEnd: as\u00ADte
   - swedishWord: kort
     finnishWord: ly\u00ADhyt
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    wordCore: kort\u00AD
+    wordCore: kort
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: kor\u00ADt
     wordEnEnd: en
     wordEttEnd: et
     definitiveIsRegular: 1
@@ -79,7 +95,7 @@ MonoBehaviour:
     definitivePluralIsRegular: 1
     wordDefinitivePluralIrregular: 
     comparativeIsRegular: 1
-    wordComparativeEnd: are
+    wordComparativeEnd: a\u00ADre
     comparativeDefinitiveIsRegular: 0
     superlativeIsRegular: 1
     wordSuperlativeEnd: ast
@@ -90,6 +106,10 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     wordCore: "l\xE5ng"
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     wordEnEnd: 
     wordEttEnd: t
     definitiveIsRegular: 1

@@ -27,6 +27,10 @@ namespace SwedishApp.Words
         public string finnishPlural = "kissat";
 
         public string wordCore = "katt";
+
+        public bool hyphenatesIrregularly = false;
+        public string wordCoreWithIrregularHyphenation = "";
+
         [Header("Epämääräinen artikkeli")]
         public string wordGenderStart = "en ";
         [Header("Määräinen pääte")]
@@ -57,29 +61,33 @@ namespace SwedishApp.Words
 
         public string NounWithGenderEnd()
         {
+            string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+            
             if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordGenderEnd);
+                return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordGenderEnd);
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordGenderEnd);
+                return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordGenderEnd);
             }
         }
 
         public string PluralNoun()
         {
+            string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (wordPluralIsRegular)
                 {
                     if (fleraPlural)
                     {
-                        return string.Concat(flera, colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);
+                        return string.Concat(flera, colorTagStartLight, _actualCore, colorTagEnd, wordPluralEnd);
                     }
                     else
                     {
-                        return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordPluralEnd);
+                        return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordPluralEnd);
                     }
                 }
                 else
@@ -100,11 +108,11 @@ namespace SwedishApp.Words
                 {
                     if (fleraPlural)
                     {
-                        return string.Concat(flera, colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);
+                        return string.Concat(flera, colorTagStartDark, _actualCore, colorTagEnd, wordPluralEnd);
                     }
                     else
                     {
-                        return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordPluralEnd);
+                        return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordPluralEnd);
                     }
                 }
                 else
@@ -123,11 +131,13 @@ namespace SwedishApp.Words
 
         public string PluralDefinitiveNoun()
         {
+            string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+            
             if (UIManager.instance.LightmodeOn)
             {
                 if (wordDefinitivePluralIsRegular)
                 {
-                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordDefinitivePluralEnd);   // Light mode on
+                    return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordDefinitivePluralEnd);   // Light mode on
                 }
                 else
                 {
@@ -138,7 +148,7 @@ namespace SwedishApp.Words
             {
                 if (wordDefinitivePluralIsRegular)
                 {
-                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordDefinitivePluralEnd);    // Dark mode on
+                    return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordDefinitivePluralEnd);    // Dark mode on
                 }
                 else
                 {

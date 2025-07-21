@@ -12,6 +12,10 @@ namespace SwedishApp.Words
     {
         [Header("Perusmuoto")]
         public string wordCore = "varm";
+        public bool genderedHyphenatesIrregularly = false;
+        public bool comparativeHyphenatesIrregularly = false;
+        public bool superlativeHyphenatesIrregularly = false;
+        public string wordCoreWithIrregularHyphenation = "";
             [Tooltip("(e.g. 'n') Leave blank if just adding 't' to the core word makes the word's gender into ett")]
         public string wordEnEnd = "";
             [Tooltip("(e.g. 't')")]
@@ -25,7 +29,7 @@ namespace SwedishApp.Words
             [Tooltip("If a 4th form exists, set this variable to that word")]
         public string wordDefinitivePluralIrregular = "";
 
-        [Header ("Määrällinen muoto")]
+        [Header ("MÃ¤Ã¤rÃ¤llinen muoto")]
         public readonly string wordDefinitiveStartEn = "den ";
         public readonly string wordDefinitiveStartEtt = "det ";
         public readonly string wordDefinitiveStartPlural = "de ";
@@ -55,13 +59,15 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveEn()
         {
+            string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordEnEnd);
+                return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordEnEnd);
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordEnEnd);
+                return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordEnEnd);
             }
         }
 
@@ -72,13 +78,15 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveEtt()
         {
+            string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordEttEnd);
+                return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordEttEnd);
             }
             else
             {
-                return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordEttEnd);
+                return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordEttEnd);
             }
         }
 
@@ -89,11 +97,13 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveDefinitiveEn()
         {
+            string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (definitiveIsRegular)
                 {
-                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, _actualCore, colorTagEnd, wordDefinitiveEnd);
                 }
                 else
                 {
@@ -104,7 +114,7 @@ namespace SwedishApp.Words
             {
                 if (definitiveIsRegular)
                 {
-                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, _actualCore, colorTagEnd, wordDefinitiveEnd);
                 }
                 else
                 {
@@ -120,11 +130,13 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveDefinitiveEtt()
         {
+            string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (definitiveIsRegular)
                 {
-                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, _actualCore, colorTagEnd, wordDefinitiveEnd);
                 }
                 else
                 {
@@ -135,7 +147,7 @@ namespace SwedishApp.Words
             {
                 if (definitiveIsRegular)
                 {
-                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, _actualCore, colorTagEnd, wordDefinitiveEnd);
                 }
                 else
                 {
@@ -151,11 +163,13 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string AdjectiveDefinitivePlural()
         {
+            string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (definitivePluralIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveEnd);
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, _actualCore, colorTagEnd, wordDefinitiveEnd);
                 }
                 else
                 {   // Irregular
@@ -166,7 +180,7 @@ namespace SwedishApp.Words
             {
                 if (definitivePluralIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveEnd);
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, _actualCore, colorTagEnd, wordDefinitiveEnd);
                 }
                 else
                 {   // Irregular
@@ -179,16 +193,18 @@ namespace SwedishApp.Words
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
-        /// e.g. "varmare" or "större"
+        /// e.g. "varmare" or "stÃ¶rre"
         /// </summary>
         /// <returns>Return described above.</returns>
         public string AdjectiveComparative()
         {
+            string _actualCore = comparativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (comparativeIsRegular)
                 {   // Regular
-                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                    return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
                 else
                 {   // Irregular
@@ -199,7 +215,7 @@ namespace SwedishApp.Words
             {
                 if (comparativeIsRegular)
                 {   // Regular
-                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
+                    return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
                 else
                 {   // Irregular
@@ -211,16 +227,18 @@ namespace SwedishApp.Words
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
-        /// e.g. "den varmare" or "den större"
+        /// e.g. "den varmare" or "den stÃ¶rre"
         /// </summary>
         /// <returns>Return described above.</returns>
         public string AdjectiveComparativeDefinitiveEn()
         {
+            string _actualCore = comparativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
                 else
                 {   // Irregular
@@ -231,7 +249,7 @@ namespace SwedishApp.Words
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
                 else
                 {   // Irregular
@@ -243,16 +261,18 @@ namespace SwedishApp.Words
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
-        /// e.g. "det varmare" or "det större"
+        /// e.g. "det varmare" or "det stÃ¶rre"
         /// </summary>
         /// <returns>Return described above.</returns>
         public string AdjectiveComparativeDefinitiveEtt()
         {
+            string _actualCore = comparativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
                 else
                 {   // Irregular
@@ -263,7 +283,7 @@ namespace SwedishApp.Words
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
                 else
                 {   // Irregular
@@ -275,16 +295,18 @@ namespace SwedishApp.Words
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
-        /// e.g. "de varmare" or "de större"
+        /// e.g. "de varmare" or "de stÃ¶rre"
         /// </summary>
         /// <returns>Return described above.</returns>
         public string AdjectiveComparativeDefinitivePlural()
         {
+            string _actualCore = comparativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordComparativeEnd);
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
                 else
                 {   // Irregular
@@ -295,7 +317,7 @@ namespace SwedishApp.Words
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordComparativeEnd);
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
                 else
                 {   // Irregular
@@ -307,16 +329,18 @@ namespace SwedishApp.Words
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
-        /// e.g. "varmast" or "störst"
+        /// e.g. "varmast" or "stÃ¶rst"
         /// </summary>
         /// <returns>Return described above.</returns>
         public string AdjectiveSuperlative()
         {
+            string _actualCore = superlativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (superlativeIsRegular)
                 {   // Regular
-                    return string.Concat(colorTagStartLight, wordCore, colorTagEnd, wordSuperlativeEnd);
+                    return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordSuperlativeEnd);
                 }
                 else
                 {   // Irregular
@@ -327,7 +351,7 @@ namespace SwedishApp.Words
             {
                 if (superlativeIsRegular)
                 {   // Regular
-                    return string.Concat(colorTagStartDark, wordCore, colorTagEnd, wordSuperlativeEnd);
+                    return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordSuperlativeEnd);
                 }
                 else
                 {   // Irregular
@@ -339,16 +363,18 @@ namespace SwedishApp.Words
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
-        /// e.g. "den varmaste" or "den största"
+        /// e.g. "den varmaste" or "den stÃ¶rsta"
         /// </summary>
         /// <returns>Return described above.</returns>
         public string AdjectiveSuperlativeDefinitiveEn()
         {
+            string _actualCore = superlativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (superlativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartLight, _actualCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
                 }
                 else
                 {   // Irregular
@@ -359,7 +385,7 @@ namespace SwedishApp.Words
             {
                 if (superlativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                    return string.Concat(wordDefinitiveStartEn, colorTagStartDark, _actualCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
                 }
                 else
                 {   // Irregular
@@ -371,16 +397,18 @@ namespace SwedishApp.Words
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
-        /// e.g. "det varmaste" or "det största"
+        /// e.g. "det varmaste" or "det stÃ¶rsta"
         /// </summary>
         /// <returns>Return described above.</returns>
         public string AdjectiveSuperlativeDefinitiveEtt()
         {
+            string _actualCore = superlativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (superlativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartLight, _actualCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
                 }
                 else
                 {   // Irregular
@@ -391,7 +419,7 @@ namespace SwedishApp.Words
             {
                 if (superlativeDefinitiveIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                    return string.Concat(wordDefinitiveStartEtt, colorTagStartDark, _actualCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
                 }
                 else
                 {   // Irregular
@@ -403,16 +431,18 @@ namespace SwedishApp.Words
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// If the adjective is irregular, highlight the entire word. 
-        /// e.g. "de varmaste" or "de största"
+        /// e.g. "de varmaste" or "de stÃ¶rsta"
         /// </summary>
         /// <returns>Return described above.</returns>
         public string AdjectiveSuperlativeDefinitivePlural()
         {
+            string _actualCore = superlativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+
             if (UIManager.instance.LightmodeOn)
             {
                 if (definitivePluralIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartLight, _actualCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
                 }
                 else
                 {   // Irregular
@@ -423,7 +453,7 @@ namespace SwedishApp.Words
             {
                 if (definitivePluralIsRegular)
                 {   // Regular
-                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, wordCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
+                    return string.Concat(wordDefinitiveStartPlural, colorTagStartDark, _actualCore, colorTagEnd, wordDefinitiveSuperlativeEnd);
                 }
                 else
                 {   // Irregular

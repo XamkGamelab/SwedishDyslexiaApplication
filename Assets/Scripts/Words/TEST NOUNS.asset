@@ -21,6 +21,8 @@ MonoBehaviour:
     declensionClass: 3
     finnishPlural: sukat
     wordCore: strump\u00AD
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
     wordGenderEnd: an
     wordPluralIsRegular: 1
@@ -35,7 +37,9 @@ MonoBehaviour:
     enOrEtt: 1
     declensionClass: 2
     finnishPlural: ka\u00ADlat
-    wordCore: fisk\u00AD
+    wordCore: fisk
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: fis\u00ADk
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 1
@@ -51,6 +55,8 @@ MonoBehaviour:
     declensionClass: 3
     finnishPlural: ap\u00ADpel\u00ADsii\u00ADnit
     wordCore: a\u00ADpel\u00ADsin\u00AD
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 1
@@ -65,7 +71,9 @@ MonoBehaviour:
     enOrEtt: 1
     declensionClass: 3
     finnishPlural: kis\u00ADsat
-    wordCore: katt\u00AD
+    wordCore: katt
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: kat\u00ADt
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 1
@@ -80,7 +88,9 @@ MonoBehaviour:
     enOrEtt: 1
     declensionClass: 3
     finnishPlural: kir\u00ADjat
-    wordCore: bok\u00AD
+    wordCore: bok
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: bo\u00ADk
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 0
@@ -96,6 +106,8 @@ MonoBehaviour:
     declensionClass: 1
     finnishPlural: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlut
     wordCore: "yr\\u00ADkes\\u00ADh\xF6g\\u00ADsko\\u00ADl"
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
     wordGenderEnd: an
     wordPluralIsRegular: 1
@@ -111,6 +123,8 @@ MonoBehaviour:
     declensionClass: 2
     finnishPlural: kou\u00ADlu\u00ADtuk\u00ADset
     wordCore: ut\u00ADbild\u00ADning\u00AD
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 1
@@ -125,7 +139,9 @@ MonoBehaviour:
     enOrEtt: 1
     declensionClass: 3
     finnishPlural: ylioppilaat
-    wordCore: stu\u00ADdent\u00AD
+    wordCore: stu\u00ADdent
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: stu\u00ADden\u00ADt
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 1
@@ -140,7 +156,9 @@ MonoBehaviour:
     enOrEtt: 1
     declensionClass: 3
     finnishPlural: oppilaat
-    wordCore: e\u00ADlev\u00AD
+    wordCore: elev
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: ele\u00ADv
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 1
@@ -155,11 +173,13 @@ MonoBehaviour:
     enOrEtt: 1
     declensionClass: 5
     finnishPlural: opiskelijat
-    wordCore: stu\u00ADde\u00ADran\u00ADde\u00AD
+    wordCore: studerande
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: stu\u00ADde\u00ADran\u00ADde
     wordGenderStart: 'en '
     wordGenderEnd: n
     wordPluralIsRegular: 0
     wordPluralEnd: stu\u00ADde\u00ADran\u00ADde
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: na
+    wordDefinitivePluralEnd: stu\u00ADde\u00ADran\u00ADdena
