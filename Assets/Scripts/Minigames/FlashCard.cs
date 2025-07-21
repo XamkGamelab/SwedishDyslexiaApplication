@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using SwedishApp.UI;
 using TMPro;
 using UnityEngine;
@@ -22,8 +24,8 @@ namespace SwedishApp.Minigames
         }
         public State state { get; private set; }
         private Button thisButton;
-        private TextMeshProUGUI[] textsInChildren;
-        [SerializeField] public GameObject cardFinnishSide;
+        private List<TextMeshProUGUI> textsInChildren;
+        [SerializeField] private GameObject cardFinnishSide;
         [SerializeField] private GameObject cardSwedishSide;
         [SerializeField] private Image hintImage;
         public Sprite darkmodeSprite { get; set; }
@@ -36,7 +38,9 @@ namespace SwedishApp.Minigames
 
         private void Awake()
         {
-            textsInChildren = transform.GetComponentsInChildren<TextMeshProUGUI>();
+            textsInChildren = transform.GetComponentsInChildren<TextMeshProUGUI>(true).ToList();
+            //Add listener to every text field, called when a layout is changed. This then fixes character spacing for soft hyphens.
+            textsInChildren.ForEach(field => field.RegisterDirtyLayoutCallback(() => UIManager.instance.FixTextSpacing(field)));
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created

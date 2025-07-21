@@ -452,7 +452,9 @@ namespace SwedishApp.Minigames
         {
             Debug.Log(activeWordIndex);
             numberObject.wordFinnishText.text = numberWords[activeWordIndex].finnishWord;
+            numberObject.wordFinnishOrdinalText.text = numberWords[activeWordIndex].ordinalFinnish;
             numberObject.wordSwedishBaseText.text = numberWords[activeWordIndex].swedishWord;
+            numberObject.wordSwedishOrdinalText.text = numberWords[activeWordIndex].ordinalSwedish;
 
             numberObject.SetInitialElements(numberWords[activeWordIndex].lightModeSprite, numberWords[activeWordIndex].darkModeSprite);
         }
@@ -809,7 +811,7 @@ namespace SwedishApp.Minigames
             numberObject.gameObject.SetActive(false);
             grammarObject.gameObject.SetActive(false);
             pronounObject.gameObject.SetActive(false);
-            pronounObject.gameObject.SetActive(false);
+            phraseObject.gameObject.SetActive(false);
             nextWordBtn.onClick.RemoveAllListeners();
             UIManager.instance.LightmodeOnEvent -= DisplayCurrentNoun;
             UIManager.instance.LightmodeOffEvent -= DisplayCurrentNoun;
