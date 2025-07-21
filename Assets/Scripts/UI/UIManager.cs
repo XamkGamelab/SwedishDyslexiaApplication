@@ -122,6 +122,8 @@ namespace SwedishApp.UI
         private const string spaceTagStart = "<cspace=-0.08em>";
         private const string spaceTagEnd = "</cspace>";
         private const string spaceTagsWithSoftHyphen = "<cspace=-0.08em>\u00AD</cspace>";
+        private const string colorEndTag = "</color>";
+        private const string spaceEndWithColorEnd = "</cspace></color>";
 
         [Header("Credits-Related")]
         [SerializeField] private GameObject creditsScreen;
@@ -557,7 +559,11 @@ namespace SwedishApp.UI
             }
         }
 
-        private void FixTextSpacing(TextMeshProUGUI _textField)
+        /// <summary>
+        /// Assign this to a TextMeshProUGUI's RegisterDirtyLayoutCallback event to fix soft hyphen spacing
+        /// </summary>
+        /// <param name="_textField">TextMeshProUGUI to fix spacing for</param>
+        public void FixTextSpacing(TextMeshProUGUI _textField)
         {
             string oldString = _textField.text;
             string newString;
@@ -566,13 +572,23 @@ namespace SwedishApp.UI
             {
                 if (oldString.Contains(spaceTagStart)) return;
 
-                newString = oldString.Replace("\u00AD", spaceTagsWithSoftHyphen);
+                Debug.Log($"Text space fix called by {oldString}");
+
+                newString = oldString.Replace(@"\u00AD", spaceTagsWithSoftHyphen);
 
                 while (newString.Contains(spaceTagsWithSoftHyphen))
                 {
                     int index = newString.IndexOf(spaceTagsWithSoftHyphen);
-                    char charToMove = newString[index + spaceTagsWithSoftHyphen.Length];
-                    newString = newString.Remove(index + spaceTagsWithSoftHyphen.Length, 1);
+                    int offset = 0;
+                    if (newString.Contains(spaceEndWithColorEnd) && index + spaceTagsWithSoftHyphen.Length + colorEndTag.Length <= newString.Length
+                        && newString.Substring(index + spaceTagsWithSoftHyphen.Length, colorEndTag.Length) == colorEndTag)
+                    {
+                        // string test = newString.Substring(index + spaceTagsWithSoftHyphen.Length, colorEndTag.Length);
+                        offset = colorEndTag.Length;
+                    }
+                    if (index + offset + spaceTagsWithSoftHyphen.Length == newString.Length) break;
+                    char charToMove = newString[index + offset + spaceTagsWithSoftHyphen.Length];
+                    newString = newString.Remove(index + offset + spaceTagsWithSoftHyphen.Length, 1);
                     newString = newString.Insert(index + spaceTagStart.Length + 1, charToMove.ToString());
                 }
             }
@@ -583,6 +599,8 @@ namespace SwedishApp.UI
                 newString = oldString.Replace(spaceTagStart, null);
                 newString = newString.Replace(spaceTagEnd, null);
             }
+
+            newString = newString.Replace("\u00AD", @"\u00AD");
 
             if (newString != oldString) _textField.text = newString;
         }
