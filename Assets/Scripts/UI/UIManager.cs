@@ -572,24 +572,31 @@ namespace SwedishApp.UI
             {
                 if (oldString.Contains(spaceTagStart)) return;
 
-                Debug.Log($"Text space fix called by {oldString}");
-
                 newString = oldString.Replace(@"\u00AD", spaceTagsWithSoftHyphen);
 
                 while (newString.Contains(spaceTagsWithSoftHyphen))
                 {
+                    int colorEndIndex = newString.IndexOf(colorEndTag);
                     int index = newString.IndexOf(spaceTagsWithSoftHyphen);
                     int offset = 0;
                     if (newString.Contains(spaceEndWithColorEnd) && index + spaceTagsWithSoftHyphen.Length + colorEndTag.Length <= newString.Length
                         && newString.Substring(index + spaceTagsWithSoftHyphen.Length, colorEndTag.Length) == colorEndTag)
                     {
-                        // string test = newString.Substring(index + spaceTagsWithSoftHyphen.Length, colorEndTag.Length);
                         offset = colorEndTag.Length;
                     }
-                    if (index + offset + spaceTagsWithSoftHyphen.Length == newString.Length) break;
-                    char charToMove = newString[index + offset + spaceTagsWithSoftHyphen.Length];
-                    newString = newString.Remove(index + offset + spaceTagsWithSoftHyphen.Length, 1);
+                    int movedCharIndex = index + offset + spaceTagsWithSoftHyphen.Length;
+                    if (movedCharIndex == newString.Length) break;
+
+                    char charToMove = newString[movedCharIndex];
+                    newString = newString.Remove(movedCharIndex, 1);
                     newString = newString.Insert(index + spaceTagStart.Length + 1, charToMove.ToString());
+                    
+                    //moved character wasn't included by color tags before but is included now
+                    if (colorEndIndex < movedCharIndex && colorEndIndex > index + spaceTagStart.Length)
+                    {
+                        newString = newString.Replace(colorEndTag, null);
+                        newString = newString.Insert(index + spaceTagStart.Length + 1, colorEndTag);
+                    }
                 }
             }
             else
