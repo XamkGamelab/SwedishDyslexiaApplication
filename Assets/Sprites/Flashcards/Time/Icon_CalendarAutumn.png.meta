@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_CalendarAutumn_0: 551546965491501116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Icon_\xD6ver_LM_0": 6994096641153180787
+      "Icon_\xD6ver_LM_1": -1516002113240113332
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_Mellan_LM_0: -5392725892183006677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

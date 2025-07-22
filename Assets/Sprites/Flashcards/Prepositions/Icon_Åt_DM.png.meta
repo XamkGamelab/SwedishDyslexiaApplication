@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Icon_\xC5t_DM_0": -6719883393786221568
+      "Icon_\xC5t_DM_1": 5509275728494453608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

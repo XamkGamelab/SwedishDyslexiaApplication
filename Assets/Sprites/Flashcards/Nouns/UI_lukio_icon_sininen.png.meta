@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_lukio_icon_sininen_0: 8502182305300205289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

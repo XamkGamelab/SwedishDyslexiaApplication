@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_Bland_DM_0: 1230191639361949275
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Icon_F\xF6r_DM_0": -7624787383546038347
+      "Icon_F\xF6r_DM_1": -5095401274346431922
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

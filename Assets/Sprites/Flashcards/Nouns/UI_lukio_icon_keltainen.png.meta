@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_lukio_icon_keltainen_0: 4209729735621190544
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

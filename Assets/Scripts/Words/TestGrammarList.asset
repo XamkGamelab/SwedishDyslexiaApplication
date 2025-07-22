@@ -15,8 +15,8 @@ MonoBehaviour:
   grammarList:
   - swedishWord: av
     finnishWord: joltakulta
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -5549448982454518589, guid: 3a7c6f1c7b2c601449563439750a5820, type: 3}
+    lightModeSprite: {fileID: 5357448788408574367, guid: 71d6eed8cf1954b459a404789f4b947b, type: 3}
     notices: "\"-lta\", \"-lt\xE4\", englanniksi \"of\""
   - swedishWord: att
     finnishWord: "ett\xE4"
@@ -25,8 +25,8 @@ MonoBehaviour:
     notices: 
   - swedishWord: om
     finnishWord: jos
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 2641949740796127187, guid: b82d02e394f219e44af63643f1cf0228, type: 3}
+    lightModeSprite: {fileID: 6631808421477143726, guid: 6e8ff9504789a42498844b1edf8ba72e, type: 3}
     notices: 
   - swedishWord: men
     finnishWord: mutta
@@ -75,8 +75,8 @@ MonoBehaviour:
     notices: 
   - swedishWord: efter
     finnishWord: "j\xE4lkeen"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -8116617000636531111, guid: 196fcd5eccb43c0449a4ccb3f691f3de, type: 3}
+    lightModeSprite: {fileID: 5321009956458274366, guid: c5ad6fdf98df939409fb7b3dd4cabc52, type: 3}
     notices: "\"j\xE4ljess\xE4\""
   - swedishWord: innan
     finnishWord: ennen kuin
@@ -120,23 +120,23 @@ MonoBehaviour:
     notices: "\"riitt\xE4v\xE4sti\""
   - swedishWord: utan
     finnishWord: ilman
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 8814966859263761981, guid: 51c0f2f6ce252024eb19448258bd9ac0, type: 3}
+    lightModeSprite: {fileID: -7437970390663956294, guid: 692b1f7470ae1c949b0854f64f40c653, type: 3}
     notices: ilman (jotakin)
   - swedishWord: med
     finnishWord: kanssa
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 3082905363105344466, guid: 2c972f4606dfbbe45a12f4e1f5f6aa85, type: 3}
+    lightModeSprite: {fileID: 3082905363105344466, guid: 2c972f4606dfbbe45a12f4e1f5f6aa85, type: 3}
     notices: '"mukana"'
   - swedishWord: hos
     finnishWord: luona
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -4765694856792226866, guid: 805300af206919146ad4fa59c243914a, type: 3}
+    lightModeSprite: {fileID: -1413343461260442949, guid: e725b191399055348a55e322fc48d0bb, type: 3}
     notices: "(henkil\xF6n) luona"
   - swedishWord: "\xE5t"
     finnishWord: jollekulle
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -6719883393786221568, guid: a3cc98b8c8483da4b8b0eb0f2f8da801, type: 3}
+    lightModeSprite: {fileID: 2779606551407475467, guid: 36a3c63b7c73cd949b403c65df4500a6, type: 3}
     notices: '"-lle"'
   - swedishWord: i
     finnishWord: "jonkin sis\xE4ll\xE4"
@@ -145,8 +145,8 @@ MonoBehaviour:
     notices: "\"-ssa\", \"-ss\xE4\" (jonkin sis\xE4ll\xE4, jossakin)"
   - swedishWord: "p\xE5"
     finnishWord: "p\xE4\xE4ll\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -1425454781457869885, guid: 85b108e6e87f2d54a9cd1967dc75d868, type: 3}
+    lightModeSprite: {fileID: 5107669206988209560, guid: 79d149f01bbb24a4caf14b436bd77252, type: 3}
     notices: "\"(jonkin) p\xE4\xE4ll\xE4\", \"-lla\", \"-ll\xE4\""
   - swedishWord: under
     finnishWord: alla
@@ -165,18 +165,18 @@ MonoBehaviour:
     notices: 
   - swedishWord: "framf\xF6r"
     finnishWord: "edess\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -4590813607563086944, guid: 1716d2cb1e7c47345a8304244f930306, type: 3}
+    lightModeSprite: {fileID: -7642447770222464627, guid: 2e714af35ab39a549b6576fe5498f26e, type: 3}
     notices: 
   - swedishWord: "fr\xE5n"
     finnishWord: jostakin
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -8043652042565032313, guid: c91665be792c2c842a443e48aa099935, type: 3}
+    lightModeSprite: {fileID: 6220155382065365497, guid: 5919f69aaf3127e49a662e852a105a98, type: 3}
     notices: "\"-sta\", \"-st\xE4\", \"-lta\", \"-lt\xE4\" (jostakin/joltakin)"
   - swedishWord: "f\xF6rbi"
     finnishWord: ohi
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -2612766807230847792, guid: 67cc3a4ea10f6b8489c0f35902426085, type: 3}
+    lightModeSprite: {fileID: -5085007975415860063, guid: 5bfd2942fe1d2bd489e498f9f4e1a983, type: 3}
     notices: '"(jonkin) ohi"'
   - swedishWord: genom
     finnishWord: "l\xE4vitse"
@@ -190,8 +190,8 @@ MonoBehaviour:
     notices: "\"sill\xE4 aikaa kun\", \"kun taas\""
   - swedishWord: mellan
     finnishWord: "v\xE4liss\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 6213147856848120882, guid: 9c620731ed37c7944a9c09a4cbf47f54, type: 3}
+    lightModeSprite: {fileID: -5392725892183006677, guid: 27f3716d4edf1784eaf33c22dc323b87, type: 3}
     notices: "\"v\xE4lill\xE4\" (paikka)"
   - swedishWord: bland
     finnishWord: joukossa
@@ -215,8 +215,8 @@ MonoBehaviour:
     notices: "\"(jonkin) yl\xE4puolella\""
   - swedishWord: "n\xE4ra"
     finnishWord: "l\xE4hell\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -1684420974904672608, guid: 93b703bda131a0f4cb0d5dcfbf34897d, type: 3}
+    lightModeSprite: {fileID: 8504659179165548823, guid: 42778d49947b9da48a62d1bb2885d322, type: 3}
     notices: 
   - swedishWord: "\xE4n"
     finnishWord: kuin

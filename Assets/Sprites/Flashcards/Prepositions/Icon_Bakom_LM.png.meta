@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_Bakom_LM_0: -3642452758742210185
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

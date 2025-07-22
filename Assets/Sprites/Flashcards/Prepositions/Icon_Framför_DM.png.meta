@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Icon_Framf\xF6r_DM_0": -4590813607563086944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

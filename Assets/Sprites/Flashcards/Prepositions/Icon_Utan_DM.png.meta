@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_Utan_DM_0: 8814966859263761981
+      Icon_Utan_DM_1: -3569253037000213824
+      Icon_Utan_DM_2: -4871393748977950081
+      Icon_Utan_DM_3: -6832619595775535696
+      Icon_Utan_DM_4: -2998091916985089298
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

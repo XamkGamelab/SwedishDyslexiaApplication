@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_ammattikorkeakoulu_icon_sininen_0: -1630820653122873070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

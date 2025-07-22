@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_CalendarSummer_0: 2393874676665345606
+      Icon_CalendarSummer_1: 1439939056497168907
+      Icon_CalendarSummer_2: -6704498540971288634
+      Icon_CalendarSummer_3: 8270047097645267974
+      Icon_CalendarSummer_4: 7837524855417927688
+      Icon_CalendarSummer_5: 5205904130309850308
+      Icon_CalendarSummer_6: 943109727703514339
+      Icon_CalendarSummer_7: -8027698086157522773
+      Icon_CalendarSummer_8: -5735994212303915241
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
