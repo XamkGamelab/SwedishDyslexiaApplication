@@ -195,8 +195,8 @@ MonoBehaviour:
     notices: "\"v\xE4lill\xE4\" (paikka)"
   - swedishWord: bland
     finnishWord: joukossa
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 1230191639361949275, guid: df0d580f75feef9428dae7e4d5a3f4c0, type: 3}
+    lightModeSprite: {fileID: 3394833774815348800, guid: c1b61db5f3063a74ba94242286280923, type: 3}
     notices: "\"keskuudessa\", \"keskell\xE4\""
   - swedishWord: vid
     finnishWord: luona

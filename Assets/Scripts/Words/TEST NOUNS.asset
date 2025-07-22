@@ -100,8 +100,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: "b\xF6ck\\u00ADer\\u00ADna"
   - swedishWord: "yrkesh\xF6gskola"
     finnishWord: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: -4873954328395781719, guid: 27c887adc0c2425428b7372015e8f72d, type: 3}
+    lightModeSprite: {fileID: -1630820653122873070, guid: 827830ad387bf5d49b0d1e2eb8ffbb90, type: 3}
     enOrEtt: 1
     declensionClass: 1
     finnishPlural: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlut
@@ -111,7 +111,7 @@ MonoBehaviour:
     wordGenderStart: 'en '
     wordGenderEnd: an
     wordPluralIsRegular: 1
-    wordPluralEnd: ar
+    wordPluralEnd: or
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: or\u00ADna
@@ -183,3 +183,54 @@ MonoBehaviour:
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: stu\u00ADde\u00ADran\u00ADdena
+  - swedishWord: yrkesskola
+    finnishWord: ammattikoulu
+    darkModeSprite: {fileID: -1745876295966756770, guid: 03a2e93f132c51945abd87b3d8f2aa96, type: 3}
+    lightModeSprite: {fileID: 9135781353070070546, guid: 5af9d248a3dcf7d49891b4e082086673, type: 3}
+    enOrEtt: 1
+    declensionClass: 1
+    finnishPlural: ammattikoulut
+    wordCore: yrkesskol
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordGenderEnd: an
+    wordPluralIsRegular: 1
+    wordPluralEnd: or
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: or\u00ADna
+  - swedishWord: skola
+    finnishWord: koulu
+    darkModeSprite: {fileID: 2066437929131700630, guid: 8db0d7016acf18244a8aad316d68c2e7, type: 3}
+    lightModeSprite: {fileID: -5259652891941223501, guid: cda78abcdb8613f4ca5c1429f838080a, type: 3}
+    enOrEtt: 1
+    declensionClass: 1
+    finnishPlural: koulut
+    wordCore: skol
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordGenderEnd: an
+    wordPluralIsRegular: 1
+    wordPluralEnd: or
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: or\u00ADna
+  - swedishWord: skola
+    finnishWord: koulu
+    darkModeSprite: {fileID: 2066437929131700630, guid: 8db0d7016acf18244a8aad316d68c2e7, type: 3}
+    lightModeSprite: {fileID: -5259652891941223501, guid: cda78abcdb8613f4ca5c1429f838080a, type: 3}
+    enOrEtt: 1
+    declensionClass: 3
+    finnishPlural: koulut
+    wordCore: skol
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordGenderEnd: an
+    wordPluralIsRegular: 1
+    wordPluralEnd: or
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: or\u00ADna
