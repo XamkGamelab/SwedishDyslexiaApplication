@@ -3,10 +3,8 @@ using UnityEngine;
 
 namespace SwedishApp.UI
 {
-    public class DictionaryEntryWithForm : MonoBehaviour
+    public class DictionaryEntryWithForm : DictionaryEntry
     {
-        public TextMeshProUGUI FinnishWordTxt;
-        public TextMeshProUGUI SwedishWordTxt;
         public TextMeshProUGUI WordClassTxt;
     }
 }

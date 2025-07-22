@@ -181,5 +181,5 @@ MonoBehaviour:
     wordPluralIsRegular: 0
     wordPluralEnd: stu\u00ADde\u00ADran\u00ADde
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralIsRegular: 0
     wordDefinitivePluralEnd: stu\u00ADde\u00ADran\u00ADdena
