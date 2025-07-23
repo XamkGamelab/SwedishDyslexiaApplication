@@ -15,8 +15,8 @@ MonoBehaviour:
   grammarList:
   - swedishWord: av
     finnishWord: joltakulta
-    darkModeSprite: {fileID: -5549448982454518589, guid: 3a7c6f1c7b2c601449563439750a5820, type: 3}
-    lightModeSprite: {fileID: 5357448788408574367, guid: 71d6eed8cf1954b459a404789f4b947b, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 3a7c6f1c7b2c601449563439750a5820, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 71d6eed8cf1954b459a404789f4b947b, type: 3}
     notices: "\"-lta\", \"-lt\xE4\", englanniksi \"of\""
   - swedishWord: att
     finnishWord: "ett\xE4"
@@ -25,8 +25,8 @@ MonoBehaviour:
     notices: 
   - swedishWord: om
     finnishWord: jos
-    darkModeSprite: {fileID: 2641949740796127187, guid: b82d02e394f219e44af63643f1cf0228, type: 3}
-    lightModeSprite: {fileID: 6631808421477143726, guid: 6e8ff9504789a42498844b1edf8ba72e, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: b82d02e394f219e44af63643f1cf0228, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 6e8ff9504789a42498844b1edf8ba72e, type: 3}
     notices: 
   - swedishWord: men
     finnishWord: mutta
