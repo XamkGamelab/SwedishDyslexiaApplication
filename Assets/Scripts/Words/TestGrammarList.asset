@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grammarList:
   - swedishWord: av
-    finnishWord: joltakulta
+    finnishWord: jol\u00ADta\u00ADkul\u00ADta
     darkModeSprite: {fileID: 21300000, guid: 3a7c6f1c7b2c601449563439750a5820, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 71d6eed8cf1954b459a404789f4b947b, type: 3}
     notices: "\"-lta\", \"-lt\xE4\", englanniksi \"of\""
@@ -34,7 +34,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: dock
-    finnishWord: kuitenkin
+    finnishWord: kui\u00ADten\u00ADkin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -54,12 +54,12 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: ef\u00ADter\u00ADsom
-    finnishWord: kos\u00ADka
+    finnishWord: koska
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: "d\xE4r\\u00ADf\xF6r"
-    finnishWord: sik\u00ADsi
+    finnishWord: siksi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
@@ -69,10 +69,10 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: "f\xF6re"
-    finnishWord: ennen (jotakin)
+    finnishWord: ennen
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: ennen jotakin
   - swedishWord: efter
     finnishWord: "j\xE4lkeen"
     darkModeSprite: {fileID: -8116617000636531111, guid: 196fcd5eccb43c0449a4ccb3f691f3de, type: 3}
@@ -109,7 +109,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
   - swedishWord: nog
-    finnishWord: kylliksi
+    finnishWord: kyl\u00ADlik\u00ADsi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: '"tarpeeksi"'
@@ -139,7 +139,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: 2779606551407475467, guid: 36a3c63b7c73cd949b403c65df4500a6, type: 3}
     notices: '"-lle"'
   - swedishWord: i
-    finnishWord: "jonkin sis\xE4ll\xE4"
+    finnishWord: "sis\xE4ll\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: "\"-ssa\", \"-ss\xE4\" (jonkin sis\xE4ll\xE4, jossakin)"
