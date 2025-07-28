@@ -140,8 +140,30 @@ MonoBehaviour:
     wordDefinitivePluralIrregular: 
     comparativeIsRegular: 1
     wordComparativeEnd: are
-    comparativeDefinitiveIsRegular: 0
+    comparativeDefinitiveIsRegular: 1
     superlativeIsRegular: 1
     wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1
     wordDefinitiveSuperlativeEnd: aste
+  - swedishWord: dyr
+    finnishWord: kallis
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: dy\u00ADr
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 1
+    superlativeHyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: 
+    wordEnEnd: 
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: a
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 1
+    wordComparativeEnd: a\u00ADre
+    comparativeDefinitiveIsRegular: 1
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: ast
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: as\u00ADte
