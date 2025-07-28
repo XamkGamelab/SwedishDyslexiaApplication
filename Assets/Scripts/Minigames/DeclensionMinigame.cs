@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using SwedishApp.Input;
+using SwedishApp.Meta;
 using SwedishApp.UI;
 using SwedishApp.Words;
 using TMPro;
@@ -30,6 +31,8 @@ namespace SwedishApp.Minigames
         [SerializeField] private GameObject irregularHintObj;
         [SerializeField] private Button finnishHintBtn;
         [SerializeField] private TextMeshProUGUI finnishHintTxt;
+        [SerializeField] private TextMeshProUGUI translatedCounter;
+        [SerializeField] private TextMeshProUGUI correctCounter;
         [SerializeField] private Button checkWordBtn;
         [SerializeField] private Button nextWordBtn;
         [SerializeField] private GameObject inputfieldHolder;
@@ -55,7 +58,10 @@ namespace SwedishApp.Minigames
         private string activeWordWantedFormNoHighlight;
         private bool formIsRegular;
         private bool wordWasChecked;
-        private int correctWordsCount = 0;
+        private bool gotScoreForWord = false;
+        private int score = 0;
+        private int playedWordsCount = -1;
+        private int activeGameWordCount = 0;
         private bool wordWasCorrect = false;
         public bool gameIsEnding { get; private set; } = false;
         private List<TextMeshProUGUI> gameTextRefs;
@@ -63,6 +69,7 @@ namespace SwedishApp.Minigames
         //Events
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
+        public event Action PerfectScoreEvent;
 
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
@@ -215,7 +222,8 @@ namespace SwedishApp.Minigames
             nextWordBtn.gameObject.SetActive(false);
             finnishHintTxt.text = "Hint";
             nounList = new(_nounList);
-            correctWordsCount = 0;
+            activeGameWordCount = nounList.Count;
+            correctCounter.text = "0";
 
             //Like and subscribe
             inputReader.SubmitEventCancelled += CheckWord;
@@ -248,9 +256,11 @@ namespace SwedishApp.Minigames
             activeWord = nounList.Pop();
             wordWasChecked = false;
             wordWasCorrect = false;
+            gotScoreForWord = false;
             declenateInto = (DeclenateInto)UnityEngine.Random.Range((int)DeclenateInto.definitiivi, wordFormsCount + 1);
             singleInputfields = new();
             fieldTextRefs = new();
+            playedWordsCount++;
 
             //UGLY SWITCH CASE WARNING
             switch (declenateInto)
@@ -282,48 +292,30 @@ namespace SwedishApp.Minigames
             else irregularHintObj.SetActive(false);
             swedishBaseWordTxt.text = activeWord.swedishWord;
             declensionClassTxt.text = activeWord.declensionClass.ToString();
+            translatedCounter.text = string.Concat(playedWordsCount, "/", activeGameWordCount);
 
             //Instantiate input field -related objects
             inputFieldHandling = Instantiate(inputfieldHolder, transform).GetComponent<InputFieldHandling>();
             inputFieldHandling.GetComponent<RectTransform>().localPosition = holderPos;
-            List<char> chars = new();
-            bool ignoreLetters = false;
-            int indexer = 0;
+            activeWordWantedFormNoHighlight = Helpers.CleanWord(activeWordWantedForm);
 
-            for (int i = 0; i < activeWordWantedForm.Length; i++)
+            for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
-                //This part handles ignoring the word's highlight tags. Should eventually be replaced by a system
-                //that builds the word without the highlight directly in the word's class
-                if (activeWordWantedForm[i] == '<')
-                {
-                    ignoreLetters = true;
-                    continue;
-                }
-                else if (activeWordWantedForm[i] == '>')
-                {
-                    ignoreLetters = false;
-                    continue;
-                }
-                if (ignoreLetters || activeWordWantedForm[i] == '\u00AD') continue;
-                int indexHolder = indexer;
+                int indexHolder = i;
 
                 //Grab refs
                 singleInputfields.Add(Instantiate(singleInputfield, inputFieldHandling.transform).GetComponent<TMP_InputField>());
-                fieldTextRefs.Add(singleInputfields[indexer].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
+                fieldTextRefs.Add(singleInputfields[i].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
                 if (activeWordWantedForm[i] == ' ' || activeWordWantedForm == "")
                 {
-                    singleInputfields[indexer].interactable = false;
-                    singleInputfields[indexer].image.enabled = false;
+                    singleInputfields[i].interactable = false;
+                    singleInputfields[i].image.enabled = false;
                 }
-                chars.Add(activeWordWantedForm[i]);
 
                 //Like and subscribe
-                singleInputfields[indexer].onValueChanged.AddListener((s) => inputFieldHandling.GoNextField());
-                singleInputfields[indexer].onSelect.AddListener((s) => inputFieldHandling.GetActiveIndex(indexHolder));
-
-                indexer++;
+                singleInputfields[i].onValueChanged.AddListener((s) => inputFieldHandling.GoNextField());
+                singleInputfields[i].onSelect.AddListener((s) => inputFieldHandling.GetActiveIndex(indexHolder));
             }
-            activeWordWantedFormNoHighlight = new(chars.ToArray());
             if (UIManager.instance.LightmodeOn) LightmodeInputFields();
             else DarkmodeInputFields();
             if (UIManager.instance.hyperlegibleOn) FieldsToHyperlegibleFont();
@@ -347,9 +339,7 @@ namespace SwedishApp.Minigames
             List<char> chars = new();
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
-                if (activeWordWantedFormNoHighlight[i] == '\u00AD')
-                    continue;
-                else if (activeWordWantedFormNoHighlight[i] == ' ')
+                if (activeWordWantedFormNoHighlight[i] == ' ')
                     chars.Add(' ');
                 else if (singleInputfields[i].text != "")
                     chars.Add(singleInputfields[i].text[0]);
@@ -364,10 +354,11 @@ namespace SwedishApp.Minigames
             //correct letters, used for determining if the whole word was correct.
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
-                if (activeWordWantedFormNoHighlight[i] == '\u00AD')
-                    continue;
-                else if (activeWordWantedFormNoHighlight[i] == ' ')
+                if (activeWordWantedFormNoHighlight[i] == ' ')
+                {
                     chars.Add(' ');
+                    correctLettersCount++;
+                }
                 else if (singleInputfields[i].text == "")
                     missedInputsCount++;
                 else if (givenString[i] == activeWordWantedFormNoHighlight[i])
@@ -385,27 +376,28 @@ namespace SwedishApp.Minigames
                 }
             }
 
-            if (correctLettersCount == wordLetterCount)
-            {
-                wordWasCorrect = true;      //PROBABLY PLAY SOME SORT OF AN EFFECT FOR CORRECT ANSWER HERE
-                wordWasCorrect = true;
-                correctWordsCount++;
-            }
-
-            if (missedInputsCount <= allowedMissedInputsCount)
-            {
-                wordWasChecked = true;
-                nextWordBtn.gameObject.SetActive(true);
-            }
+            if (correctLettersCount == wordLetterCount) wordWasCorrect = true;
 
             if (wordWasCorrect)
             {
+                if (!gotScoreForWord)
+                {
+                    gotScoreForWord = true;
+                    score++;
+                }
+                correctCounter.text = score.ToString();
                 WordCorrectEvent?.Invoke();
                 Debug.Log("Word was correct!");
             }
             else
             {
                 WordIncorrectEvent?.Invoke();
+            }
+
+            if (missedInputsCount <= allowedMissedInputsCount)
+            {
+                wordWasChecked = true;
+                nextWordBtn.gameObject.SetActive(true);
             }
 
             singleInputfields[0].Select();
@@ -447,6 +439,9 @@ namespace SwedishApp.Minigames
             Destroy(inputFieldHandling.gameObject);
             singleInputfields = null;
             fieldTextRefs = null;
+            score = 0;
+            playedWordsCount = -1;
+            activeGameWordCount = 0;
 
             if (!_endInstantly)
             {
@@ -490,6 +485,10 @@ namespace SwedishApp.Minigames
         /// <returns></returns>
         private IEnumerator GameEndDelay()
         {
+            if (nounList.Count == 0 && score == activeGameWordCount)
+            {
+                PerfectScoreEvent?.Invoke();
+            }
             yield return new WaitForSeconds(gameEndDelay);
             gameObject.SetActive(false);
             gameIsEnding = false;

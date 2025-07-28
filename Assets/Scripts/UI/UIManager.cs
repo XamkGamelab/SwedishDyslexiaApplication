@@ -294,6 +294,12 @@ namespace SwedishApp.UI
             declensionMinigame.WordCorrectEvent += PlayBlueSparkles;
             translateMinigame.WordCorrectEvent += PlayYellowSparkles;
             translateMinigame.WordCorrectEvent += PlayBlueSparkles;
+            translateMinigame.PerfectScoreEvent += PlayYellowSparkles;
+            translateMinigame.PerfectScoreEvent += PlayBlueSparkles;
+            conjugationMinigame.PerfectScoreEvent += PlayYellowSparkles;
+            conjugationMinigame.PerfectScoreEvent += PlayBlueSparkles;
+            declensionMinigame.PerfectScoreEvent += PlayYellowSparkles;
+            declensionMinigame.PerfectScoreEvent += PlayBlueSparkles;
             conjugationMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
             conjugationMinigame.WordIncorrectEvent += PlayLameBlueSparkles;
             declensionMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
