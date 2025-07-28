@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using SwedishApp.Core;
 using SwedishApp.Input;
+using SwedishApp.Meta;
 using SwedishApp.UI;
 using SwedishApp.Words;
 using TMPro;
@@ -29,14 +30,17 @@ namespace SwedishApp.Minigames
         private GameMode? gameMode = null;
         private Queue<Word> words;
         private Word currentWord = null;
-        private bool wordWasChecked = false;
-        private bool canDeleteWord = false;
 
         [Header("Game variables")]
         [SerializeField] private float nextWordDelayTime = 1.5f;
         [SerializeField] private int allowedMissedInputsCount = 2;
+        private bool wordWasChecked = false;
+        private bool wordWasCorrect = false;
+        private bool canDeleteWord = false;
+        private bool gotScoreForWord = false;
         private int score = 0;
-        private int activeGameMaxPoints = 0;
+        private int playedWordsCount = -1;
+        private int activeGameWordCount = 0;
         private string activeWordNoHighlight;
 
         [Header("UI related")]
@@ -49,6 +53,8 @@ namespace SwedishApp.Minigames
         [SerializeField] private GameObject wordInputFieldHolderPrefab;
         [SerializeField] private GameObject wordLetterInputPrefab;
         [SerializeField] private TextMeshProUGUI wordToTranslateText;
+        [SerializeField] private TextMeshProUGUI translatedCounter;
+        [SerializeField] private TextMeshProUGUI correctCounter;
         private Transform wordInputFieldHolder;
         private InputFieldHandling inputFieldHandler;
         private List<TMP_InputField> wordLetterInputFields;
@@ -57,6 +63,7 @@ namespace SwedishApp.Minigames
         //Events
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
+        public event Action PerfectScoreEvent;
 
         #region unity default methods
 
@@ -83,7 +90,11 @@ namespace SwedishApp.Minigames
             translateMinigameBG.SetActive(true);
             gameMode = _gameMode;
             words = new(_words.ToArray());
-            activeGameMaxPoints = words.Count;
+            activeGameWordCount = words.Count;
+            correctCounter.text = "0";
+            score = 0;
+            correctCounter.text = score.ToString();
+            playedWordsCount = -1;
 
             //Buttons' sprites are set according to if light mode is on
             abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.abortSpriteLightmode : UIManager.instance.abortSpriteDarkmode;
@@ -106,7 +117,6 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void CheckWord()
         {
-            bool wordWasCorrect = false;
             canDeleteWord = true;
             int correctLettersCount = 0;
             int missedInputsCount = 0;
@@ -160,7 +170,11 @@ namespace SwedishApp.Minigames
                 //DO A LITTLE THING IF WORD WAS CORRECT!!!
                 WordCorrectEvent?.Invoke();
                 AudioManager.Instance.PlayCorrect();
-                score++;
+                if (!gotScoreForWord)
+                {
+                    score++;
+                    gotScoreForWord = true;
+                }
             }
             else
             {
@@ -169,8 +183,9 @@ namespace SwedishApp.Minigames
             }
 
             wordLetterInputFields[0].Select();
+            correctCounter.text = score.ToString();
 
-            if (missedInputsCount <= allowedMissedInputsCount)
+            if (wordWasCorrect || missedInputsCount <= allowedMissedInputsCount)
             {
                 wordWasChecked = true;
                 nextWordButton.gameObject.SetActive(true);
@@ -185,13 +200,17 @@ namespace SwedishApp.Minigames
             currentWord = words.Dequeue();
             wordLetterInputFields = new();
             letterTextRefs = new();
+            wordWasCorrect = false;
             wordWasChecked = false;
+            gotScoreForWord = false;
+            playedWordsCount++;
+            translatedCounter.text = string.Concat(playedWordsCount, "/", activeGameWordCount);
 
             //Setup a new holder for all the individual input fields
             wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
             inputFieldHandler = wordInputFieldHolder.GetComponent<InputFieldHandling>();
             string wordToTranslate = gameMode == GameMode.ToSwedish ? currentWord.finnishWord : currentWord.swedishWord;
-            activeWordNoHighlight = gameMode == GameMode.ToSwedish ? CleanWord(currentWord.swedishWord) : CleanWord(currentWord.finnishWord);
+            activeWordNoHighlight = gameMode == GameMode.ToSwedish ? Helpers.CleanWord(currentWord.swedishWord) : Helpers.CleanWord(currentWord.finnishWord);
 
             wordToTranslateText.text = wordToTranslate;
 
@@ -249,8 +268,11 @@ namespace SwedishApp.Minigames
         /// <returns></returns>
         private IEnumerator DelayBeforeNewWord()
         {
-            //hit a particle effect or some other thing if wordWasCorrect
-            //AudioManager.Instance.PlayMenuSelect3();    // Probably just a temporary thing to signal that the game isn't lagging
+            if (words.Count == 0 && score == activeGameWordCount)
+            {
+                PerfectScoreEvent?.Invoke();
+            }
+
             yield return new WaitForSeconds(nextWordDelayTime);
 
             if (words.Count > 0)
@@ -300,40 +322,12 @@ namespace SwedishApp.Minigames
             words = new();
             currentWord = new();
             wordToTranslateText.text = "";
-            score = 0;
-            activeGameMaxPoints = 0;
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
 
             //Destroy word object, disable translate minigame ui
             Destroy(wordInputFieldHolder.gameObject);
             translateMinigameBG.SetActive(false);
-        }
-
-        private string CleanWord(string _wordToClean)
-        {
-            List<char> chars = new();
-            bool ignoreLetters = false;
-            string cleanedWord = _wordToClean.Replace(@"\u00AD", null);
-
-            foreach (char c in cleanedWord)
-            {
-                if (c == '<')
-                {
-                    ignoreLetters = true;
-                    continue;
-                }
-                else if (c == '>')
-                {
-                    ignoreLetters = false;
-                    continue;
-                }
-                if (ignoreLetters) continue;
-
-                chars.Add(c);
-            }
-
-            return new(chars.ToArray());
         }
 
         #endregion
@@ -418,7 +412,6 @@ namespace SwedishApp.Minigames
 
         private void FieldToRightColors(int _i)
         {
-
             if (UIManager.instance.LightmodeOn)
             {
                 var colorBlock = wordLetterInputFields[_i].colors;
