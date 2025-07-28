@@ -1,4 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using SwedishApp.Input;
 using SwedishApp.Words;
 using TMPro;
 using UnityEngine;
@@ -8,6 +12,7 @@ namespace SwedishApp.UI
 {
     public class DictionaryHandler : MonoBehaviour
     {
+        [Header("UI")]
         [SerializeField] private Transform verbHolder;
         [SerializeField] private Transform nounHolder;
         [SerializeField] private Transform adjectiveHolder;
@@ -29,96 +34,271 @@ namespace SwedishApp.UI
         [SerializeField] private PronounList pronounList;
         [SerializeField] private PhraseList phraseList;
         [SerializeField] private Button closeButton;
+        [SerializeField] private GameObject verbHeader, nounHeader, adjectiveHeader,
+        timeHeader, numberHeader, grammarHeader, pronounHeader, phraseHeader;
+        private List<GameObject> headerObjects;
+        private Dictionary<DictionaryEntry, Image> dictionaryEntries;
         private List<TextMeshProUGUI> textFields;
         private List<Image> spacers;
+
+        [Header("Other variables")]
+        [SerializeField] private Button searchButton;
+        [SerializeField] private TMP_InputField searchField;
+        [SerializeField] private float searchClearDelay = 0.25f;
+        private WaitForSeconds searchClearWait;
+        private bool searchClearWaiting = false;
+        private bool searchInProgress = false;
+        private bool allObjectsActive = true;
+
+        private void Start()
+        {
+            searchField.onValueChanged.AddListener((s) => StartSearchClearCoroutine());
+        }
+
+        /// <summary>
+        /// This method returns a list of dictionary entries matching a string
+        /// </summary>
+        private Dictionary<DictionaryEntry, Image> DictionarySearcher(string _searchTerm)
+        {
+            Dictionary<DictionaryEntry, Image> matches = new();
+            foreach (var keyValuePair in dictionaryEntries)
+            {
+                string finCleanWord = GetCleanedWord(keyValuePair.Key.FinnishWordTxt.text);
+                string sweCleanWord = GetCleanedWord(keyValuePair.Key.SwedishWordTxt.text);
+
+                if (finCleanWord.Contains(_searchTerm, System.StringComparison.CurrentCultureIgnoreCase)
+                 || sweCleanWord.Contains(_searchTerm, System.StringComparison.CurrentCultureIgnoreCase))
+                {
+                    matches.Add(keyValuePair.Key, keyValuePair.Value);
+                }
+            }
+
+            return matches;
+        }
+
+        private async Task SearchAwait(string _searchTerm)
+        {
+            Debug.Log("Search called");
+            if (searchInProgress) return;
+            searchInProgress = true;
+            Dictionary<DictionaryEntry, Image> matches = await Task.Run(() => DictionarySearcher(_searchTerm));
+            foreach (var keyValuePair in dictionaryEntries)
+            {
+                keyValuePair.Key.gameObject.SetActive(false);
+                keyValuePair.Value.gameObject.SetActive(false);
+            }
+            headerObjects.ForEach((header) => header.SetActive(false));
+            foreach (var keyValuePair in matches)
+            {
+                keyValuePair.Key.gameObject.SetActive(true);
+                keyValuePair.Value.gameObject.SetActive(true);
+                switch (keyValuePair.Key.wordType)
+                {
+                    case DictionaryEntry.WordType.verb:
+                        verbHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.noun:
+                        nounHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.adjective:
+                        adjectiveHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.time:
+                        timeHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.number:
+                        numberHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.grammar:
+                        grammarHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.pronoun:
+                        pronounHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.phrase:
+                        phraseHeader.SetActive(true);
+                        break;
+                }
+            }
+
+            searchField.ActivateInputField();
+            searchInProgress = false;
+            allObjectsActive = false;
+        }
+
+        private async void CallDictionarySearch(string _searchTerm)
+        {
+            if (_searchTerm == "") ReactivateEntries();
+            else await SearchAwait(_searchTerm);
+        }
+
+        private async void SearchFromButton()
+        {
+            if (searchField.text == "") ReactivateEntries();
+            else await SearchAwait(searchField.text);
+        }
+
+        private void StartSearchClearCoroutine()
+        {
+            if (searchField.text != "")
+            {
+                searchClearWaiting = false;
+                return;
+            }
+            else if (!searchClearWaiting)
+            {
+                searchClearWaiting = true;
+                StartCoroutine(SearchClearWait());
+            }
+        }
+
+        private IEnumerator SearchClearWait()
+        {
+            float timer = 0f;
+            while (timer < searchClearDelay)
+            {
+                if (!searchClearWaiting || allObjectsActive) yield break;
+                timer += Time.deltaTime;
+                yield return null;
+            }
+
+            ReactivateEntries();
+
+            searchClearWaiting = false;
+        }
+
+        private void ReactivateEntries()
+        {
+            Debug.Log("Reactivate called");
+            if (allObjectsActive) return;
+            Debug.Log("Reactivating entries");
+            headerObjects.ForEach((header) => header.SetActive(true));
+            foreach (var keyValuePair in dictionaryEntries)
+            {
+                keyValuePair.Key.gameObject.SetActive(true);
+                keyValuePair.Value.gameObject.SetActive(true);
+            }
+            allObjectsActive = true;
+        }
 
         public void InitializeDictionary()
         {
             textFields = new();
             spacers = new();
+            dictionaryEntries = new();
+            headerObjects = new()
+            {
+                verbHeader,
+                nounHeader,
+                adjectiveHeader,
+                timeHeader,
+                numberHeader,
+                grammarHeader,
+                pronounHeader,
+                phraseHeader
+            };
+            searchButton.onClick.AddListener(SearchFromButton);
+            searchField.onSubmit.AddListener(CallDictionarySearch);
+            searchClearWait = new(searchClearDelay);
 
             verbList.verbList.ForEach(verb =>
             {
                 DictionaryEntryWithForm entry = Instantiate(verbEntry, verbHolder).GetComponent<DictionaryEntryWithForm>();
+                Image _spacer = Instantiate(spacer, verbHolder).GetComponent<Image>();
                 entry.FinnishWordTxt.text = verb.finnishWord;
                 entry.SwedishWordTxt.text = verb.swedishWord;
                 entry.WordClassTxt.text = verb.conjugationClass.ToString();
+                entry.wordType = DictionaryEntry.WordType.verb;
+                dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
                 textFields.Add(entry.WordClassTxt);
-                spacers.Add(Instantiate(spacer, verbHolder).GetComponent<Image>());
             });
 
             nounList.nounList.ForEach(noun =>
             {
                 DictionaryEntryWithForm entry = Instantiate(nounEntry, nounHolder).GetComponent<DictionaryEntryWithForm>();
+                Image _spacer = Instantiate(spacer, nounHolder).GetComponent<Image>();
                 entry.FinnishWordTxt.text = noun.finnishWord;
                 entry.SwedishWordTxt.text = noun.swedishWord;
                 entry.WordClassTxt.text = noun.declensionClass.ToString();
+                entry.wordType = DictionaryEntry.WordType.noun;
+                dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
                 textFields.Add(entry.WordClassTxt);
-                spacers.Add(Instantiate(spacer, nounHolder).GetComponent<Image>());
             });
 
             adjectiveList.adjectiveList.ForEach(adjective =>
             {
                 DictionaryEntry entry = Instantiate(baseEntry, adjectiveHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, adjectiveHolder).GetComponent<Image>();
                 entry.FinnishWordTxt.text = adjective.finnishWord;
                 entry.SwedishWordTxt.text = adjective.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.adjective;
+                dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
-                spacers.Add(Instantiate(spacer, adjectiveHolder).GetComponent<Image>());
             });
 
             timeList.timeList.ForEach(time =>
             {
                 DictionaryEntry entry = Instantiate(baseEntry, timeWordHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, timeWordHolder).GetComponent<Image>();
                 entry.FinnishWordTxt.text = time.finnishWord;
                 entry.SwedishWordTxt.text = time.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.time;
+                dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
-                spacers.Add(Instantiate(spacer, timeWordHolder).GetComponent<Image>());
             });
 
             numberList.numberList.ForEach(number =>
             {
                 DictionaryEntry entry = Instantiate(baseEntry, numberHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, numberHolder).GetComponent<Image>();
                 entry.FinnishWordTxt.text = number.finnishWord;
                 entry.SwedishWordTxt.text = number.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.number;
+                dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
-                spacers.Add(Instantiate(spacer, numberHolder).GetComponent<Image>());
             });
 
             grammarList.grammarList.ForEach(grammar =>
             {
                 DictionaryEntry entry = Instantiate(baseEntry, grammarHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, grammarHolder).GetComponent<Image>();
                 entry.FinnishWordTxt.text = grammar.finnishWord;
                 entry.SwedishWordTxt.text = grammar.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.grammar;
+                dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
-                spacers.Add(Instantiate(spacer, grammarHolder).GetComponent<Image>());
             });
 
             pronounList.pronounList.ForEach(pronoun =>
             {
                 DictionaryEntry entry = Instantiate(baseEntry, pronounHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, pronounHolder).GetComponent<Image>();
                 entry.FinnishWordTxt.text = pronoun.finnishWord;
                 entry.SwedishWordTxt.text = pronoun.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.pronoun;
+                dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
-                spacers.Add(Instantiate(spacer, pronounHolder).GetComponent<Image>());
             });
 
             phraseList.phraseList.ForEach(phrase =>
             {
                 DictionaryEntry entry = Instantiate(baseEntry, phraseHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, phraseHolder).GetComponent<Image>();
                 entry.FinnishWordTxt.text = phrase.finnishWord;
                 entry.SwedishWordTxt.text = phrase.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.phrase;
+                dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
-                spacers.Add(Instantiate(spacer, phraseHolder).GetComponent<Image>());
             });
 
             closeButton.onClick.AddListener(() => gameObject.SetActive(false));
@@ -131,7 +311,36 @@ namespace SwedishApp.UI
 
         public List<Image> GetSpacerImages()
         {
-            return spacers;
+            return dictionaryEntries.Values.ToList();
+        }
+
+        private string GetCleanedWord(string _oldWord)
+        {
+            string wordToClean = _oldWord.Replace(@"\u00AD", null);
+            List<char> letterList = new();
+            bool ignoreLetters = false;
+
+            foreach (char c in wordToClean)
+            {
+                if (c == '<')
+                {
+                    ignoreLetters = true;
+                    continue;
+                }
+                else if (c == '>')
+                {
+                    ignoreLetters = false;
+                    continue;
+                }
+                else if (ignoreLetters)
+                {
+                    continue;
+                }
+
+                letterList.Add(c);
+            }
+
+            return new(letterList.ToArray());
         }
     }
 }

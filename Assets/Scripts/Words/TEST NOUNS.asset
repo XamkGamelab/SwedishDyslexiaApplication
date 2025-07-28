@@ -181,7 +181,7 @@ MonoBehaviour:
     wordPluralIsRegular: 0
     wordPluralEnd: stu\u00ADde\u00ADran\u00ADde
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralIsRegular: 0
     wordDefinitivePluralEnd: stu\u00ADde\u00ADran\u00ADdena
   - swedishWord: yr\u00ADkes\u00ADsko\u00ADla
     finnishWord: am\u00ADmat\u00ADti\u00ADkou\u00ADlu

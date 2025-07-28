@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - verb
+  - noun
+  - adjective
+  - time
+  - number
+  - grammar
+  - pronoun
+  - phrase
   layers:
   - Default
   - TransparentFX
