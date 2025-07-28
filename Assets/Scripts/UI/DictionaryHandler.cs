@@ -34,12 +34,16 @@ namespace SwedishApp.UI
         [SerializeField] private PronounList pronounList;
         [SerializeField] private PhraseList phraseList;
         [SerializeField] private Button closeButton;
-        [SerializeField] private GameObject verbHeader, nounHeader, adjectiveHeader,
+        [SerializeField]
+        private GameObject verbHeader, nounHeader, adjectiveHeader,
         timeHeader, numberHeader, grammarHeader, pronounHeader, phraseHeader;
         private List<GameObject> headerObjects;
         private Dictionary<DictionaryEntry, Image> dictionaryEntries;
         private List<TextMeshProUGUI> textFields;
         private List<Image> spacers;
+        [SerializeField] private Image searchImg;
+        [SerializeField] private Sprite searchSpriteLightmode;
+        [SerializeField] private Sprite searchSpriteDarkmode;
 
         [Header("Other variables")]
         [SerializeField] private Button searchButton;
@@ -53,6 +57,8 @@ namespace SwedishApp.UI
         private void Start()
         {
             searchField.onValueChanged.AddListener((s) => StartSearchClearCoroutine());
+            UIManager.instance.LightmodeOnEvent += ToLightmode;
+            UIManager.instance.LightmodeOffEvent += ToDarkmode;
         }
 
         /// <summary>
@@ -341,6 +347,18 @@ namespace SwedishApp.UI
             }
 
             return new(letterList.ToArray());
+        }
+
+        private void ToLightmode()
+        {
+            searchImg.sprite = searchSpriteLightmode;
+            searchField.selectionColor = UIManager.instance.LightmodeHighlightTransparent;
+        }
+
+        private void ToDarkmode()
+        {
+            searchImg.sprite = searchSpriteDarkmode;
+            searchField.selectionColor = UIManager.instance.DarkmodeHighlightTransparent;
         }
     }
 }

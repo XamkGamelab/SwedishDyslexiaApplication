@@ -63,7 +63,10 @@ namespace SwedishApp.Minigames
             lightmodeSprite = _lightmodeSprite;
             darkmodeSprite = _darkmodeSprite;
             if (lightmodeSprite != null && darkmodeSprite != null)
+            {
+                hintImage.enabled = true;
                 hintImage.sprite = UIManager.instance.LightmodeOn ? lightmodeSprite : darkmodeSprite;
+            }
             else
                 hintImage.enabled = false;
         }
