@@ -9,7 +9,87 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef10a5ad5cbf54d48827fbe8c2e8080e, type: 3}
+  m_Script: {fileID: 11500000, guid: 918fa260ba4e0fa4e8cd4cae60c9df79, type: 3}
   m_Name: TestAdverbList
   m_EditorClassIdentifier: 
-  adverbList: []
+  adverbList:
+  - swedishWord: bara
+    finnishWord: vain
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: bland annat
+    finnishWord: muun muassa
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: bl.a.
+  - swedishWord: dit
+    finnishWord: sinne
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: dock
+    finnishWord: kuitenkin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "d\xE4r"
+    finnishWord: tuolla
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "d\xE4rf\xF6r"
+    finnishWord: siksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "f\xF6rr\xE4n"
+    finnishWord: ennen kuin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: "negatiivinen p\xE4\xE4lause"
+  - swedishWord: innan
+    finnishWord: ennen kuin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: "positiivinen p\xE4\xE4lause"
+  - swedishWord: kanske
+    finnishWord: "ehk\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: medan
+    finnishWord: "sill\xE4 aikaa kun"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: nog
+    finnishWord: tarpeeksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: "\"riitt\xE4v\xE4sti\""
+  - swedishWord: samtidigt
+    finnishWord: samanaikaisesti
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "tillr\xE4ckligt"
+    finnishWord: tarpeeksi
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: "\"riitt\xE4v\xE4sti\""
+  - swedishWord: "\xE5tminstone"
+    finnishWord: ainakin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "\xE4nnu"
+    finnishWord: "viel\xE4"
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+  - swedishWord: "\xE4ntligen"
+    finnishWord: vihdoinkin
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: '"vihdoin"'

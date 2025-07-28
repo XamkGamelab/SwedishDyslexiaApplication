@@ -149,11 +149,11 @@ MonoBehaviour:
     finnishWord: kallis
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    wordCore: dy\u00ADr
+    wordCore: dyr
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 1
     superlativeHyphenatesIrregularly: 1
-    wordCoreWithIrregularHyphenation: 
+    wordCoreWithIrregularHyphenation: dy\u00ADr
     wordEnEnd: 
     wordEttEnd: t
     definitiveIsRegular: 1
