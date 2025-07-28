@@ -123,3 +123,25 @@ MonoBehaviour:
     wordSuperlativeEnd: "l\xE4ngst"
     superlativeDefinitiveIsRegular: 0
     wordDefinitiveSuperlativeEnd: "l\xE4ngs\\u00ADte"
+  - swedishWord: billig
+    finnishWord: halpa
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: bil\u00ADlig
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 1
+    superlativeHyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: bil\u00ADli\u00ADg
+    wordEnEnd: 
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: a
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 1
+    wordComparativeEnd: are
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: ast
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: aste

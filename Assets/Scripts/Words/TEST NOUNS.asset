@@ -13,40 +13,6 @@ MonoBehaviour:
   m_Name: TEST NOUNS
   m_EditorClassIdentifier: 
   nounList:
-  - swedishWord: strumpa
-    finnishWord: suk\u00ADka
-    darkModeSprite: {fileID: -8176270613256908275, guid: f5b964d23557b964ca951d73d5132707, type: 3}
-    lightModeSprite: {fileID: 8406624337460424413, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
-    enOrEtt: 1
-    declensionClass: 3
-    finnishPlural: sukat
-    wordCore: strump\u00AD
-    hyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    wordGenderStart: 'en '
-    wordGenderEnd: an
-    wordPluralIsRegular: 1
-    wordPluralEnd: or
-    fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: or\u00ADna
-  - swedishWord: fisk
-    finnishWord: ka\u00ADla
-    darkModeSprite: {fileID: -5284978090353819794, guid: ae6373c18c5a7b8498726d237507185c, type: 3}
-    lightModeSprite: {fileID: 4800491361462287803, guid: c9ec22da82b023e46a22c4f36041c4a6, type: 3}
-    enOrEtt: 1
-    declensionClass: 2
-    finnishPlural: ka\u00ADlat
-    wordCore: fisk
-    hyphenatesIrregularly: 1
-    wordCoreWithIrregularHyphenation: fis\u00ADk
-    wordGenderStart: 'en '
-    wordGenderEnd: en
-    wordPluralIsRegular: 1
-    wordPluralEnd: ar
-    fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: ar\u00ADna
   - swedishWord: apelsin
     finnishWord: ap\u00ADpel\u00ADsii\u00ADni
     darkModeSprite: {fileID: -6976594321004325502, guid: 7bc7f498e3ef7d54191f4ff6f6103edd, type: 3}
@@ -57,23 +23,6 @@ MonoBehaviour:
     wordCore: a\u00ADpel\u00ADsin\u00AD
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
-    wordGenderStart: 'en '
-    wordGenderEnd: en
-    wordPluralIsRegular: 1
-    wordPluralEnd: er
-    fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: er\u00ADna
-  - swedishWord: katt
-    finnishWord: kis\u00ADsa
-    darkModeSprite: {fileID: -8158698541435643476, guid: 2a1abbdc5c511134397d4958c5a24010, type: 3}
-    lightModeSprite: {fileID: -2964730047163184024, guid: c1817d43664010b40a315c061f9cd7ed, type: 3}
-    enOrEtt: 1
-    declensionClass: 3
-    finnishPlural: kis\u00ADsat
-    wordCore: katt
-    hyphenatesIrregularly: 1
-    wordCoreWithIrregularHyphenation: kat\u00ADt
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 1
@@ -98,57 +47,6 @@ MonoBehaviour:
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 0
     wordDefinitivePluralEnd: "b\xF6ck\\u00ADer\\u00ADna"
-  - swedishWord: "yr\\u00ADkes\\u00ADh\xF6g\\u00ADsko\\u00ADla"
-    finnishWord: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlu
-    darkModeSprite: {fileID: 21300000, guid: 27c887adc0c2425428b7372015e8f72d, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 827830ad387bf5d49b0d1e2eb8ffbb90, type: 3}
-    enOrEtt: 1
-    declensionClass: 1
-    finnishPlural: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlut
-    wordCore: "yr\\u00ADkes\\u00ADh\xF6g\\u00ADsko\\u00ADl"
-    hyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    wordGenderStart: 'en '
-    wordGenderEnd: an
-    wordPluralIsRegular: 1
-    wordPluralEnd: or
-    fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: or\u00ADna
-  - swedishWord: utbildning
-    finnishWord: kou\u00ADlu\u00ADtus
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    enOrEtt: 1
-    declensionClass: 2
-    finnishPlural: kou\u00ADlu\u00ADtuk\u00ADset
-    wordCore: ut\u00ADbild\u00ADning\u00AD
-    hyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    wordGenderStart: 'en '
-    wordGenderEnd: en
-    wordPluralIsRegular: 1
-    wordPluralEnd: ar
-    fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: ar\u00ADna
-  - swedishWord: student
-    finnishWord: y\u00ADli\u00ADop\u00ADpi\u00ADlas
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    enOrEtt: 1
-    declensionClass: 3
-    finnishPlural: ylioppilaat
-    wordCore: stu\u00ADdent
-    hyphenatesIrregularly: 1
-    wordCoreWithIrregularHyphenation: stu\u00ADden\u00ADt
-    wordGenderStart: 'en '
-    wordGenderEnd: en
-    wordPluralIsRegular: 1
-    wordPluralEnd: er
-    fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: er\u00ADna
   - swedishWord: elev
     finnishWord: op\u00ADpi\u00ADlas
     darkModeSprite: {fileID: 0}
@@ -159,6 +57,108 @@ MonoBehaviour:
     wordCore: elev
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: ele\u00ADv
+    wordGenderStart: 'en '
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: er\u00ADna
+  - swedishWord: fisk
+    finnishWord: ka\u00ADla
+    darkModeSprite: {fileID: -5284978090353819794, guid: ae6373c18c5a7b8498726d237507185c, type: 3}
+    lightModeSprite: {fileID: 4800491361462287803, guid: c9ec22da82b023e46a22c4f36041c4a6, type: 3}
+    enOrEtt: 1
+    declensionClass: 2
+    finnishPlural: ka\u00ADlat
+    wordCore: fisk
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: fis\u00ADk
+    wordGenderStart: 'en '
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: ar
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: ar\u00ADna
+  - swedishWord: gym\u00ADna\u00ADsium
+    finnishWord: lukio
+    darkModeSprite: {fileID: 4209729735621190544, guid: 806517e56c5c7ed4d905bc04cd015870, type: 3}
+    lightModeSprite: {fileID: 8502182305300205289, guid: 98e98656ee944984a8ed65a2d5c591d7, type: 3}
+    enOrEtt: 2
+    declensionClass: 3
+    finnishPlural: lukiot
+    wordCore: gym\u00ADna\u00ADsi\u00AD
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'ett '
+    wordGenderEnd: et
+    wordPluralIsRegular: 1
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: er\u00ADna
+  - swedishWord: katt
+    finnishWord: kis\u00ADsa
+    darkModeSprite: {fileID: -8158698541435643476, guid: 2a1abbdc5c511134397d4958c5a24010, type: 3}
+    lightModeSprite: {fileID: -2964730047163184024, guid: c1817d43664010b40a315c061f9cd7ed, type: 3}
+    enOrEtt: 1
+    declensionClass: 3
+    finnishPlural: kis\u00ADsat
+    wordCore: katt
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: kat\u00ADt
+    wordGenderStart: 'en '
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: er\u00ADna
+  - swedishWord: skola
+    finnishWord: koulu
+    darkModeSprite: {fileID: 2066437929131700630, guid: 8db0d7016acf18244a8aad316d68c2e7, type: 3}
+    lightModeSprite: {fileID: -5259652891941223501, guid: cda78abcdb8613f4ca5c1429f838080a, type: 3}
+    enOrEtt: 1
+    declensionClass: 1
+    finnishPlural: koulut
+    wordCore: skol
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordGenderEnd: an
+    wordPluralIsRegular: 1
+    wordPluralEnd: or
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: or\u00ADna
+  - swedishWord: strumpa
+    finnishWord: suk\u00ADka
+    darkModeSprite: {fileID: -8176270613256908275, guid: f5b964d23557b964ca951d73d5132707, type: 3}
+    lightModeSprite: {fileID: 8406624337460424413, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
+    enOrEtt: 1
+    declensionClass: 3
+    finnishPlural: sukat
+    wordCore: strump\u00AD
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordGenderEnd: an
+    wordPluralIsRegular: 1
+    wordPluralEnd: or
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: or\u00ADna
+  - swedishWord: student
+    finnishWord: y\u00ADli\u00ADop\u00ADpi\u00ADlas
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 1
+    declensionClass: 3
+    finnishPlural: ylioppilaat
+    wordCore: stu\u00ADdent
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: stu\u00ADden\u00ADt
     wordGenderStart: 'en '
     wordGenderEnd: en
     wordPluralIsRegular: 1
@@ -183,6 +183,40 @@ MonoBehaviour:
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 0
     wordDefinitivePluralEnd: stu\u00ADde\u00ADran\u00ADdena
+  - swedishWord: utbildning
+    finnishWord: kou\u00ADlu\u00ADtus
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 1
+    declensionClass: 2
+    finnishPlural: kou\u00ADlu\u00ADtuk\u00ADset
+    wordCore: ut\u00ADbild\u00ADning\u00AD
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: ar
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: ar\u00ADna
+  - swedishWord: "yr\\u00ADkes\\u00ADh\xF6g\\u00ADsko\\u00ADla"
+    finnishWord: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlu
+    darkModeSprite: {fileID: 21300000, guid: 27c887adc0c2425428b7372015e8f72d, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 827830ad387bf5d49b0d1e2eb8ffbb90, type: 3}
+    enOrEtt: 1
+    declensionClass: 1
+    finnishPlural: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlut
+    wordCore: "yr\\u00ADkes\\u00ADh\xF6g\\u00ADsko\\u00ADl"
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordGenderEnd: an
+    wordPluralIsRegular: 1
+    wordPluralEnd: or
+    fleraPlural: 0
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: or\u00ADna
   - swedishWord: yr\u00ADkes\u00ADsko\u00ADla
     finnishWord: am\u00ADmat\u00ADti\u00ADkou\u00ADlu
     darkModeSprite: {fileID: 21300000, guid: 03a2e93f132c51945abd87b3d8f2aa96, type: 3}
@@ -200,37 +234,3 @@ MonoBehaviour:
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: or\u00ADna
-  - swedishWord: skola
-    finnishWord: koulu
-    darkModeSprite: {fileID: 2066437929131700630, guid: 8db0d7016acf18244a8aad316d68c2e7, type: 3}
-    lightModeSprite: {fileID: -5259652891941223501, guid: cda78abcdb8613f4ca5c1429f838080a, type: 3}
-    enOrEtt: 1
-    declensionClass: 1
-    finnishPlural: koulut
-    wordCore: skol
-    hyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    wordGenderStart: 'en '
-    wordGenderEnd: an
-    wordPluralIsRegular: 1
-    wordPluralEnd: or
-    fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: or\u00ADna
-  - swedishWord: gym\u00ADna\u00ADsium
-    finnishWord: lukio
-    darkModeSprite: {fileID: 4209729735621190544, guid: 806517e56c5c7ed4d905bc04cd015870, type: 3}
-    lightModeSprite: {fileID: 8502182305300205289, guid: 98e98656ee944984a8ed65a2d5c591d7, type: 3}
-    enOrEtt: 2
-    declensionClass: 3
-    finnishPlural: koulut
-    wordCore: gym\u00ADna\u00ADsi\u00AD
-    hyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    wordGenderStart: 'ett '
-    wordGenderEnd: et
-    wordPluralIsRegular: 1
-    wordPluralEnd: er
-    fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: er\u00ADna
