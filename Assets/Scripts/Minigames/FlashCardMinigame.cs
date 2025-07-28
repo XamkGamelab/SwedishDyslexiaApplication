@@ -278,7 +278,7 @@ namespace SwedishApp.Minigames
         {
             Debug.Log(activeWordIndex);
             adjectiveObject.wordFinnishText.text = adjectiveWords[activeWordIndex].finnishWord;
-            adjectiveObject.wordSwedishBaseText.text = adjectiveWords[activeWordIndex].swedishWord;
+            adjectiveObject.wordSwedishBaseText.text = adjectiveWords[activeWordIndex].HighlightedSwedishWord();
             adjectiveObject.wordSwedishComparativeText.text = adjectiveWords[activeWordIndex].AdjectiveComparative();
             adjectiveObject.wordSwedishSuperlativeText.text = adjectiveWords[activeWordIndex].AdjectiveSuperlative();
 

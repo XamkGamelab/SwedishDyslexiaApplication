@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using SwedishApp.Core;
 using SwedishApp.Input;
 using SwedishApp.UI;
@@ -185,110 +186,38 @@ namespace SwedishApp.Minigames
             wordLetterInputFields = new();
             letterTextRefs = new();
             wordWasChecked = false;
-            List<char> chars = new();
 
             //Setup a new holder for all the individual input fields
             wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
             inputFieldHandler = wordInputFieldHolder.GetComponent<InputFieldHandling>();
+            string wordToTranslate = gameMode == GameMode.ToSwedish ? currentWord.finnishWord : currentWord.swedishWord;
+            activeWordNoHighlight = gameMode == GameMode.ToSwedish ? CleanWord(currentWord.swedishWord) : CleanWord(currentWord.finnishWord);
 
-            //If the gamemode is set to translate into swedish
-            if (gameMode == GameMode.ToSwedish)
+            wordToTranslateText.text = wordToTranslate;
+
+            //Create an input field for every letter of the word
+            for (int i = 0; i < activeWordNoHighlight.Length; i++)
             {
-                //Show the word to be translated
-                wordToTranslateText.text = currentWord.finnishWord;
+                int indexHolder = i;
+                wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
 
-                bool ignoreLetters = false;
-                int j = 0;
+                //Add listeners to input fields. These are used for navigating between each input field of the word
+                wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
+                wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
 
-                //Create an input field for every letter of the word
-                for (int i = 0; i < currentWord.swedishWord.Length; i++)
+                //If the letter in the word is a space, disable visuals and make input field unable to be interacted with
+                if (activeWordNoHighlight[i] == ' ')
                 {
-                    if (currentWord.swedishWord[i] == '<')
-                    {
-                        ignoreLetters = true;
-                        continue;
-                    }
-                    else if (currentWord.swedishWord[i] == '>')
-                    {
-                        ignoreLetters = false;
-                        continue;
-                    }
-                    if (ignoreLetters || currentWord.swedishWord[i] == '\u00AD') continue;
-
-                    int indexHolder = j;
-                    wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
-
-                    //Add listeners to input fields. These are used for navigating between each input field of the word
-                    wordLetterInputFields[j].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
-                    wordLetterInputFields[j].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
-
-                    //If the letter in the word is a space, disable visuals and make input field unable to be interacted with
-                    if (currentWord.swedishWord[i] == ' ')
-                    {
-                        wordLetterInputFields[j].image.enabled = false;
-                        wordLetterInputFields[j].interactable = false;
-                    }
-                    chars.Add(currentWord.swedishWord[i]);
-
-                    //Save references to the text slot of each input field, used when changing font settings!
-                    letterTextRefs.Add(wordLetterInputFields[j].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
-
-
-                    //Set initial input field background and font colors based on if light mode is enabled or not
-                    FieldToRightColors(j);
-
-                    j++;
+                    wordLetterInputFields[i].image.enabled = false;
+                    wordLetterInputFields[i].interactable = false;
                 }
+
+                //Save references to the text slot of each input field, used when changing font settings!
+                letterTextRefs.Add(wordLetterInputFields[i].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
+
+                //Set initial input field background and font colors based on if light mode is enabled or not
+                FieldToRightColors(i);
             }
-            //If the gamemode is set to translate into finnish
-            else if (gameMode == GameMode.ToFinnish)
-            {
-                //Show the word to be translated
-                wordToTranslateText.text = currentWord.swedishWord;
-
-                bool ignoreLetters = false;
-                int j = 0;
-
-                //Create an input field for every letter of the word
-                for (int i = 0; i < currentWord.finnishWord.Length; i++)
-                {
-                    if (currentWord.finnishWord[i] == '<')
-                    {
-                        ignoreLetters = true;
-                        continue;
-                    }
-                    else if (currentWord.finnishWord[i] == '>')
-                    {
-                        ignoreLetters = false;
-                        continue;
-                    }
-                    if (ignoreLetters || currentWord.finnishWord[i] == '\u00AD') continue;
-
-                    int indexHolder = j;
-                    wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
-
-                    //Add listeners to input fields. These are used for navigating between each input field of the word
-                    wordLetterInputFields[j].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
-                    wordLetterInputFields[j].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
-
-                    //If the letter in the word is a space, disable visuals and make input field unable to be interacted with
-                    if (currentWord.finnishWord[i] == ' ')
-                    {
-                        wordLetterInputFields[j].image.enabled = false;
-                        wordLetterInputFields[j].interactable = false;
-                    }
-                    chars.Add(currentWord.finnishWord[i]);
-
-                    //Save references to the text slot of each input field, used when changing font settings!
-                    letterTextRefs.Add(wordLetterInputFields[j].transform.Find("Text Area").transform.Find("Text").GetComponent<TextMeshProUGUI>());
-
-                    //Set initial input field background and font colors based on if light mode is enabled or not
-                    FieldToRightColors(j);
-
-                    j++;
-                }
-            }
-            activeWordNoHighlight = new(chars.ToArray());
             UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
             UIManager.instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
             wordLetterInputFields[0].Select();
@@ -379,6 +308,32 @@ namespace SwedishApp.Minigames
             //Destroy word object, disable translate minigame ui
             Destroy(wordInputFieldHolder.gameObject);
             translateMinigameBG.SetActive(false);
+        }
+
+        private string CleanWord(string _wordToClean)
+        {
+            List<char> chars = new();
+            bool ignoreLetters = false;
+            string cleanedWord = _wordToClean.Replace(@"\u00AD", null);
+
+            foreach (char c in cleanedWord)
+            {
+                if (c == '<')
+                {
+                    ignoreLetters = true;
+                    continue;
+                }
+                else if (c == '>')
+                {
+                    ignoreLetters = false;
+                    continue;
+                }
+                if (ignoreLetters) continue;
+
+                chars.Add(c);
+            }
+
+            return new(chars.ToArray());
         }
 
         #endregion
