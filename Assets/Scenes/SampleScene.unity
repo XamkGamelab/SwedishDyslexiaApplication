@@ -7937,6 +7937,9 @@ MonoBehaviour:
   grammarHeader: {fileID: 1561476089}
   pronounHeader: {fileID: 1501508170}
   phraseHeader: {fileID: 299997779}
+  searchImg: {fileID: 1520432641}
+  searchSpriteLightmode: {fileID: 243632639859538890, guid: 608be18ff91fab14b86861fb98f267bd, type: 3}
+  searchSpriteDarkmode: {fileID: 782814508454303040, guid: 5db15bb8db6adfc43b765b99ef954be7, type: 3}
   searchButton: {fileID: 1520432640}
   searchField: {fileID: 829871295}
   searchClearDelay: 1
@@ -8736,6 +8739,7 @@ MonoBehaviour:
   - {fileID: 1305734936}
   - {fileID: 1454548649}
   - {fileID: 30279263}
+  - {fileID: 829871296}
   flashcardBases:
   - {fileID: 1913427434238011456}
   - {fileID: 2247274482428037956}
