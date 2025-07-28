@@ -52,6 +52,18 @@ namespace SwedishApp.Words
             [Tooltip("(e.g. 'aste') If this form is irregular, set this variable to be the whole word")]
         public string wordDefinitiveSuperlativeEnd = "aste";
 
+        public string HighlightedSwedishWord()
+        {
+            if (UIManager.instance.LightmodeOn)
+            {
+                return string.Concat(colorTagStartLight, swedishWord, colorTagEnd);
+            }
+            else
+            {
+                return string.Concat(colorTagStartDark, swedishWord, colorTagEnd);
+            }
+        }
+
         /// <summary>
         /// This outputs the resulting adjective with its core highlighted.
         /// e.g. "varm" or "stor"
