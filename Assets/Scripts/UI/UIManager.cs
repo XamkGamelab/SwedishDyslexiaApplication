@@ -101,6 +101,8 @@ namespace SwedishApp.UI
         public readonly Color32 DarkgreyMostAlpha = new(23, 26, 33, 248);
         public readonly Color32 LightmodeHighlight = new(1, 111, 185, 255);
         public readonly Color32 DarkmodeHighlight = new(239, 160, 11, 255);
+        public readonly Color32 LightmodeHighlightTransparent = new(1, 111, 185, 192);
+        public readonly Color32 DarkmodeHighlightTransparent = new(239, 160, 11, 192);
 
         [Header("Font-Related")]
         private List<TextMeshProUGUI> textFields;
