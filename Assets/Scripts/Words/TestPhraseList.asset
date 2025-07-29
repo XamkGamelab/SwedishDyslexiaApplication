@@ -22,7 +22,7 @@ MonoBehaviour:
     finnishWord: anteeksi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: (suokaa) anteeksi
+    notices: '"suokaa anteeksi", "excuse me"'
   - swedishWord: tack
     finnishWord: kiitos
     darkModeSprite: {fileID: 0}
@@ -37,7 +37,7 @@ MonoBehaviour:
     finnishWord: juuri niin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    notices: 
+    notices: '"tarkalleen"'
   - swedishWord: tycka att
     finnishWord: "olla jotakin mielt\xE4"
     darkModeSprite: {fileID: 0}
@@ -54,7 +54,7 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: "t\xE4nka II"
   - swedishWord: "t\xE4nka p\xE5"
-    finnishWord: ajatella jotain
+    finnishWord: ajatella jotakin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: "t\xE4nka II"
