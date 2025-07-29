@@ -60,8 +60,8 @@ MonoBehaviour:
     notices: ennen jotakin
   - swedishWord: genom
     finnishWord: "l\xE4vitse"
-    darkModeSprite: {fileID: -7084232291371023271, guid: 6f311685ba2ed7342b370d1487621b55, type: 3}
-    lightModeSprite: {fileID: 704661522013387184, guid: 9ac89505d1e71c549a702f756e6b8b8e, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 6f311685ba2ed7342b370d1487621b55, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 9ac89505d1e71c549a702f756e6b8b8e, type: 3}
     notices: "\"(jonkin) l\xE4vitse\", \"l\xE4pi\""
   - swedishWord: hos
     finnishWord: luona
@@ -70,8 +70,8 @@ MonoBehaviour:
     notices: "(henkil\xF6n) luona"
   - swedishWord: i
     finnishWord: "sis\xE4ll\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 93cdadfc2cc0a584c95967f511787887, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: f47f24bb1b89f9b4882f9746ee7de98b, type: 3}
     notices: "\"-ssa\", \"-ss\xE4\" (jonkin sis\xE4ll\xE4, jossakin)"
   - swedishWord: med
     finnishWord: kanssa
@@ -80,8 +80,8 @@ MonoBehaviour:
     notices: '"mukana"'
   - swedishWord: mellan
     finnishWord: "v\xE4liss\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 9c620731ed37c7944a9c09a4cbf47f54, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 27f3716d4edf1784eaf33c22dc323b87, type: 3}
     notices: "\"v\xE4lill\xE4\" (paikka)"
   - swedishWord: "n\xE4ra"
     finnishWord: "l\xE4hell\xE4"
@@ -100,8 +100,8 @@ MonoBehaviour:
     notices: "\"(jonkin) p\xE4\xE4ll\xE4\", \"-lla\", \"-ll\xE4\""
   - swedishWord: till
     finnishWord: johonkin
-    darkModeSprite: {fileID: -6502674646583711396, guid: 069a3dd111bcca248bab1b7b2f4ad1e2, type: 3}
-    lightModeSprite: {fileID: -1562945217976931972, guid: 229a50dcea11d6a42950f6ad1ccd3d45, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 069a3dd111bcca248bab1b7b2f4ad1e2, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 229a50dcea11d6a42950f6ad1ccd3d45, type: 3}
     notices: '"luokse", "-lle"'
   - swedishWord: under
     finnishWord: alla
