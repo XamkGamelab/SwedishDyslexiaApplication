@@ -15,6 +15,7 @@ namespace SwedishApp.Words
         public bool genderedHyphenatesIrregularly = false;
         public bool comparativeHyphenatesIrregularly = false;
         public bool superlativeHyphenatesIrregularly = false;
+        public bool wordUsesMerMest = false;
         public string wordCoreWithIrregularHyphenation = "";
             [Tooltip("(e.g. 'n') Leave blank if just adding 't' to the core word makes the word's gender into ett")]
         public string wordEnEnd = "";
@@ -41,6 +42,7 @@ namespace SwedishApp.Words
         public string wordComparativeEnd = "are";
             [Tooltip("Check this box if the word is regular")]
         public bool comparativeDefinitiveIsRegular = true;
+        public readonly string mer = "mer ";
 
         [Header("Superlatiivi")]
             [Tooltip("Check this box if the word is regular")]
@@ -51,6 +53,7 @@ namespace SwedishApp.Words
         public bool superlativeDefinitiveIsRegular = true;
             [Tooltip("(e.g. 'aste') If this form is irregular, set this variable to be the whole word")]
         public string wordDefinitiveSuperlativeEnd = "aste";
+        public readonly string mest = "mest ";
 
         public string HighlightedSwedishWord()
         {
@@ -214,7 +217,11 @@ namespace SwedishApp.Words
 
             if (UIManager.instance.LightmodeOn)
             {
-                if (comparativeIsRegular)
+                if (wordUsesMerMest)
+                {   // Regular
+                    return string.Concat(mer, colorTagStartLight, _actualCore, colorTagEnd);
+                }
+                else if (comparativeIsRegular)
                 {   // Regular
                     return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
@@ -225,7 +232,11 @@ namespace SwedishApp.Words
             }
             else    // Dark mode
             {
-                if (comparativeIsRegular)
+                if (wordUsesMerMest)
+                {   // Regular
+                    return string.Concat(mer, colorTagStartDark, _actualCore, colorTagEnd);
+                }
+                else if (comparativeIsRegular)
                 {   // Regular
                     return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordComparativeEnd);
                 }
@@ -350,7 +361,11 @@ namespace SwedishApp.Words
 
             if (UIManager.instance.LightmodeOn)
             {
-                if (superlativeIsRegular)
+                if (wordUsesMerMest)
+                {   // Regular
+                    return string.Concat(mest, colorTagStartLight, _actualCore, colorTagEnd);
+                }
+                else if (superlativeIsRegular)
                 {   // Regular
                     return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordSuperlativeEnd);
                 }
@@ -361,7 +376,11 @@ namespace SwedishApp.Words
             }
             else    // Dark mode
             {
-                if (superlativeIsRegular)
+                if (wordUsesMerMest)
+                {   // Regular
+                    return string.Concat(mest, colorTagStartDark, _actualCore, colorTagEnd);
+                }
+                else if (superlativeIsRegular)
                 {   // Regular
                     return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordSuperlativeEnd);
                 }

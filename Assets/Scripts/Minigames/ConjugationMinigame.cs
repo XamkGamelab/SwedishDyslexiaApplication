@@ -301,6 +301,8 @@ namespace SwedishApp.Minigames
             inputFieldHandling.GetComponent<RectTransform>().localPosition = holderPos;
             activeWordWantedFormNoHighlight = Helpers.CleanWord(activeWordWantedForm);
 
+            Debug.Log(activeWordWantedFormNoHighlight);
+
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
                 int indexHolder = i;

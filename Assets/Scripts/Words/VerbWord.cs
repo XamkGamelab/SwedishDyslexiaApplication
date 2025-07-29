@@ -228,7 +228,7 @@ namespace SwedishApp.Words
                 }
                 else
                 {
-                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartLight, pastPlusPerfectTenseIsRegular, colorTagEnd);
+                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartLight, pastPlusPerfectTenseEnd, colorTagEnd);
                 }
             }
             else
@@ -241,7 +241,7 @@ namespace SwedishApp.Words
                 }
                 else
                 {
-                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, pastPlusPerfectTenseIsRegular, colorTagEnd);
+                    return string.Concat(pastPlusPerfectTenseStart, colorTagStartDark, pastPlusPerfectTenseEnd, colorTagEnd);
                 }
             }
         }

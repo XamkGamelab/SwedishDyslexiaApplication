@@ -33,6 +33,7 @@ namespace SwedishApp.Words
 
         [Header("Epämääräinen artikkeli")]
         public string wordGenderStart = "en ";
+        public string wordIndefinitiveEnd = "";
         [Header("Määräinen pääte")]
         public string wordGenderEnd = "en";
         [Header("Epämääräinen monikko")]
@@ -51,11 +52,11 @@ namespace SwedishApp.Words
         {
             if (UIManager.instance.LightmodeOn)
             {
-                return string.Concat(wordGenderStart, colorTagStartLight, wordCore, colorTagEnd);
+                return string.Concat(wordGenderStart, colorTagStartLight, wordCore, colorTagEnd, wordIndefinitiveEnd);
             }
             else
             {
-                return string.Concat(wordGenderStart, colorTagStartDark, wordCore, colorTagEnd);
+                return string.Concat(wordGenderStart, colorTagStartDark, wordCore, colorTagEnd, wordIndefinitiveEnd);
             }
         }
 

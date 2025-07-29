@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 98e98656ee944984a8ed65a2d5c591d7
+guid: 41b07eea92df51d4b9d5d08eb116e220
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8502182305300205289
-    second: UI_lukio_icon_sininen_0
+      213: -2206612938617834134
+    second: Icon_yliopisto_icon_keltainen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_lukio_icon_sininen_0
+      name: Icon_yliopisto_icon_keltainen_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 820
-        height: 453
+        width: 300
+        height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9eec70b92c1ddf570800000000000000
-      internalID: 8502182305300205289
+      spriteID: a6537e439398061e0800000000000000
+      internalID: -2206612938617834134
       vertices: []
       indices: 
       edges: []
@@ -134,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      UI_lukio_icon_sininen_0: 8502182305300205289
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
