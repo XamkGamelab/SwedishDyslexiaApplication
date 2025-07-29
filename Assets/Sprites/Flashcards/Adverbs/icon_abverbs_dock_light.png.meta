@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: df6ee92384c72e249b366b1507508c6f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4380602377547283928
+    second: icon_abverbs_dock_light_0
+  - first:
+      213: 7410487360072665302
+    second: icon_abverbs_dock_light_1
+  - first:
+      213: -4028837095023870996
+    second: icon_abverbs_dock_light_2
+  - first:
+      213: -8568325358977890219
+    second: icon_abverbs_dock_light_3
+  - first:
+      213: 9077867488840416329
+    second: icon_abverbs_dock_light_4
+  - first:
+      213: -4141261815798847833
+    second: icon_abverbs_dock_light_5
+  - first:
+      213: -327217427095413405
+    second: icon_abverbs_dock_light_6
+  - first:
+      213: 291039243355680820
+    second: icon_abverbs_dock_light_7
+  - first:
+      213: 3226568269746927708
+    second: icon_abverbs_dock_light_8
+  - first:
+      213: -7702948177023823306
+    second: icon_abverbs_dock_light_9
+  - first:
+      213: -5386428406449961368
+    second: icon_abverbs_dock_light_10
+  - first:
+      213: 8547225381809291873
+    second: icon_abverbs_dock_light_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 68
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8220018d859f433c0800000000000000
+      internalID: -4380602377547283928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 87
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d847a5ddf657d660800000000000000
+      internalID: 7410487360072665302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 68
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb7f2df102b618c0800000000000000
+      internalID: -4028837095023870996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_3
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 58
+        width: 166
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558c622ab71371980800000000000000
+      internalID: -8568325358977890219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c766e62601bfd70800000000000000
+      internalID: 9077867488840416329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_5
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 34
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6ab63e1584786c0800000000000000
+      internalID: -4141261815798847833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_6
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 35
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d19a5db7d757bf0800000000000000
+      internalID: -327217427095413405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_7
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 29
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 430f9eb56aaf90400800000000000000
+      internalID: 291039243355680820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 7
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58ffc90fb217cc20800000000000000
+      internalID: 3226568269746927708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 14
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6329049e171a91590800000000000000
+      internalID: -7702948177023823306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 7
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8660a7127ef8f35b0800000000000000
+      internalID: -5386428406449961368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_dock_light_11
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 30
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16202f91338dd9670800000000000000
+      internalID: 8547225381809291873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      icon_abverbs_dock_light_0: -4380602377547283928
+      icon_abverbs_dock_light_1: 7410487360072665302
+      icon_abverbs_dock_light_10: -5386428406449961368
+      icon_abverbs_dock_light_11: 8547225381809291873
+      icon_abverbs_dock_light_2: -4028837095023870996
+      icon_abverbs_dock_light_3: -8568325358977890219
+      icon_abverbs_dock_light_4: 9077867488840416329
+      icon_abverbs_dock_light_5: -4141261815798847833
+      icon_abverbs_dock_light_6: -327217427095413405
+      icon_abverbs_dock_light_7: 291039243355680820
+      icon_abverbs_dock_light_8: 3226568269746927708
+      icon_abverbs_dock_light_9: -7702948177023823306
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

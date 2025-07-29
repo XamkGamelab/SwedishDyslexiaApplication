@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 66c65179c37cd7946af69cda254e67ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4925750772894796147
+    second: icon_question_vilken_light_0
+  - first:
+      213: -6691349854463348705
+    second: icon_question_vilken_light_1
+  - first:
+      213: -407638219407680070
+    second: icon_question_vilken_light_2
+  - first:
+      213: -985379517706149290
+    second: icon_question_vilken_light_3
+  - first:
+      213: -5207475151359846737
+    second: icon_question_vilken_light_4
+  - first:
+      213: -7337810964942650245
+    second: icon_question_vilken_light_5
+  - first:
+      213: 2918072395956864930
+    second: icon_question_vilken_light_6
+  - first:
+      213: 3266500659101280948
+    second: icon_question_vilken_light_7
+  - first:
+      213: -3164041787546428083
+    second: icon_question_vilken_light_8
+  - first:
+      213: 2981997673125447371
+    second: icon_question_vilken_light_9
+  - first:
+      213: 4831145196981709963
+    second: icon_question_vilken_light_10
+  - first:
+      213: 7969826190896360012
+    second: icon_question_vilken_light_11
+  - first:
+      213: -5435659960037890602
+    second: icon_question_vilken_light_12
+  - first:
+      213: -463597177769157059
+    second: icon_question_vilken_light_13
+  - first:
+      213: -2366777921359009959
+    second: icon_question_vilken_light_14
+  - first:
+      213: 3967650721476575837
+    second: icon_question_vilken_light_15
+  - first:
+      213: 4826449769798982968
+    second: icon_question_vilken_light_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: icon_question_vilken_light_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 183
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86ff7115c734abb0800000000000000
+      internalID: -4925750772894796147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 154
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10b9d872cc8323a0800000000000000
+      internalID: -6691349854463348705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_2
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 153
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd155ff237c75af0800000000000000
+      internalID: -407638219407680070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_3
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 137
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652ed26ac8a3352f0800000000000000
+      internalID: -985379517706149290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_4
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 58
+        width: 64
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa6d582b0f45bb7b0800000000000000
+      internalID: -5207475151359846737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 106
+        width: 12
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7480a50ecbda2a90800000000000000
+      internalID: -7337810964942650245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_6
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 67
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7c1ed22631f7820800000000000000
+      internalID: 2918072395956864930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_7
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 67
+        width: 11
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4baaf44fa01f45d20800000000000000
+      internalID: 3266500659101280948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_8
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 30
+        width: 13
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d9dce02c01714d0800000000000000
+      internalID: -3164041787546428083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_9
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 5
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc60fab951f226920800000000000000
+      internalID: 2981997673125447371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_10
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 29
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ced6cc5fcab0340800000000000000
+      internalID: 4831145196981709963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_11
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 5
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a6bf5d1b28a9e60800000000000000
+      internalID: 7969826190896360012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 29
+        width: 12
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5a022d018a094b0800000000000000
+      internalID: -5435659960037890602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_13
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 13
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3e1234b2d8f099f0800000000000000
+      internalID: -463597177769157059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_14
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 957a82f2504872fd0800000000000000
+      internalID: -2366777921359009959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_15
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 36
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d520f664f4def0730800000000000000
+      internalID: 3967650721476575837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_light_16
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 0
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d52277e7efaf240800000000000000
+      internalID: 4826449769798982968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      icon_question_vilken_light_0: -4925750772894796147
+      icon_question_vilken_light_1: -6691349854463348705
+      icon_question_vilken_light_10: 4831145196981709963
+      icon_question_vilken_light_11: 7969826190896360012
+      icon_question_vilken_light_12: -5435659960037890602
+      icon_question_vilken_light_13: -463597177769157059
+      icon_question_vilken_light_14: -2366777921359009959
+      icon_question_vilken_light_15: 3967650721476575837
+      icon_question_vilken_light_16: 4826449769798982968
+      icon_question_vilken_light_2: -407638219407680070
+      icon_question_vilken_light_3: -985379517706149290
+      icon_question_vilken_light_4: -5207475151359846737
+      icon_question_vilken_light_5: -7337810964942650245
+      icon_question_vilken_light_6: 2918072395956864930
+      icon_question_vilken_light_7: 3266500659101280948
+      icon_question_vilken_light_8: -3164041787546428083
+      icon_question_vilken_light_9: 2981997673125447371
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
