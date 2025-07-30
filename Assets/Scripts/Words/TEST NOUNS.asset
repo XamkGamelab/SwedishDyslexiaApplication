@@ -69,8 +69,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: er\u00ADna
   - swedishWord: fisk
     finnishWord: ka\u00ADla
-    darkModeSprite: {fileID: -5284978090353819794, guid: ae6373c18c5a7b8498726d237507185c, type: 3}
-    lightModeSprite: {fileID: 4800491361462287803, guid: c9ec22da82b023e46a22c4f36041c4a6, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: ae6373c18c5a7b8498726d237507185c, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: c9ec22da82b023e46a22c4f36041c4a6, type: 3}
     enOrEtt: 1
     declensionClass: 2
     finnishPlural: ka\u00ADlat
@@ -87,8 +87,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: ar\u00ADna
   - swedishWord: gym\u00ADna\u00ADsium
     finnishWord: lukio
-    darkModeSprite: {fileID: 8932622136031760861, guid: 3320ad3f48eaab0489793fc81a101dcd, type: 3}
-    lightModeSprite: {fileID: -7673254659951722054, guid: 07b50f5298505714fb7e68638b051096, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 3320ad3f48eaab0489793fc81a101dcd, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 07b50f5298505714fb7e68638b051096, type: 3}
     enOrEtt: 2
     declensionClass: 3
     finnishPlural: lukiot
@@ -105,8 +105,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: er\u00ADna
   - swedishWord: katt
     finnishWord: kis\u00ADsa
-    darkModeSprite: {fileID: -8158698541435643476, guid: 2a1abbdc5c511134397d4958c5a24010, type: 3}
-    lightModeSprite: {fileID: -2964730047163184024, guid: c1817d43664010b40a315c061f9cd7ed, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 2a1abbdc5c511134397d4958c5a24010, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: c1817d43664010b40a315c061f9cd7ed, type: 3}
     enOrEtt: 1
     declensionClass: 3
     finnishPlural: kis\u00ADsat
@@ -123,8 +123,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: er\u00ADna
   - swedishWord: skola
     finnishWord: koulu
-    darkModeSprite: {fileID: 3779912112058353319, guid: 649dd7a1dafa55e49987c1e5165cd747, type: 3}
-    lightModeSprite: {fileID: 7120780197391503235, guid: 4888e20011666c14bb64804993a47ed6, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 649dd7a1dafa55e49987c1e5165cd747, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 4888e20011666c14bb64804993a47ed6, type: 3}
     enOrEtt: 1
     declensionClass: 1
     finnishPlural: koulut
@@ -141,8 +141,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: or\u00ADna
   - swedishWord: strumpa
     finnishWord: suk\u00ADka
-    darkModeSprite: {fileID: -8176270613256908275, guid: f5b964d23557b964ca951d73d5132707, type: 3}
-    lightModeSprite: {fileID: 8406624337460424413, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: f5b964d23557b964ca951d73d5132707, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
     enOrEtt: 1
     declensionClass: 3
     finnishPlural: sukat
