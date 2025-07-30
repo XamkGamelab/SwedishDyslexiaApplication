@@ -39,6 +39,7 @@ namespace SwedishApp.UI
         timeHeader, numberHeader, grammarHeader, pronounHeader, phraseHeader;
         private List<GameObject> headerObjects;
         private Dictionary<DictionaryEntry, Image> dictionaryEntries;
+        private Dictionary<DictionaryEntry, Image> matches;
         private List<TextMeshProUGUI> textFields;
         private List<Image> spacers;
         [SerializeField] private Image searchImg;
@@ -49,7 +50,7 @@ namespace SwedishApp.UI
         [SerializeField] private Button searchButton;
         [SerializeField] private TMP_InputField searchField;
         [SerializeField] private float searchClearDelay = 0.25f;
-        private WaitForSeconds searchClearWait;
+        [SerializeField] private int maxComparisonsPerUpdate = 30;
         private bool searchClearWaiting = false;
         private bool searchInProgress = false;
         private bool allObjectsActive = true;
@@ -59,14 +60,18 @@ namespace SwedishApp.UI
             searchField.onValueChanged.AddListener((s) => StartSearchClearCoroutine());
             UIManager.instance.LightmodeOnEvent += ToLightmode;
             UIManager.instance.LightmodeOffEvent += ToDarkmode;
+            closeButton.onClick.AddListener(() => gameObject.SetActive(false));
         }
 
         /// <summary>
         /// This method returns a list of dictionary entries matching a string
         /// </summary>
-        private Dictionary<DictionaryEntry, Image> DictionarySearcher(string _searchTerm)
+        private IEnumerator DictionarySearcher(string _searchTerm)
         {
-            Dictionary<DictionaryEntry, Image> matches = new();
+            int loopCount = 0;
+            matches = new();
+            searchInProgress = true;
+
             foreach (var keyValuePair in dictionaryEntries)
             {
                 string finCleanWord = GetCleanedWord(keyValuePair.Key.FinnishWordTxt.text);
@@ -77,23 +82,25 @@ namespace SwedishApp.UI
                 {
                     matches.Add(keyValuePair.Key, keyValuePair.Value);
                 }
+
+                loopCount++;
+                if (loopCount == maxComparisonsPerUpdate)
+                {
+                    loopCount = 0;
+                    yield return null;
+                }
             }
 
-            return matches;
-        }
+            yield return null;
 
-        private async Task SearchAwait(string _searchTerm)
-        {
-            Debug.Log("Search called");
-            if (searchInProgress) return;
-            searchInProgress = true;
-            Dictionary<DictionaryEntry, Image> matches = await Task.Run(() => DictionarySearcher(_searchTerm));
             foreach (var keyValuePair in dictionaryEntries)
             {
                 keyValuePair.Key.gameObject.SetActive(false);
                 keyValuePair.Value.gameObject.SetActive(false);
             }
+
             headerObjects.ForEach((header) => header.SetActive(false));
+
             foreach (var keyValuePair in matches)
             {
                 keyValuePair.Key.gameObject.SetActive(true);
@@ -131,17 +138,18 @@ namespace SwedishApp.UI
             searchInProgress = false;
             allObjectsActive = false;
         }
-
-        private async void CallDictionarySearch(string _searchTerm)
+        private void CallDictionarySearch(string _searchTerm)
         {
+            if (searchInProgress) return;
             if (_searchTerm == "") ReactivateEntries();
-            else await SearchAwait(_searchTerm);
+            else StartCoroutine(DictionarySearcher(_searchTerm));
         }
 
-        private async void SearchFromButton()
+        private void SearchFromButton()
         {
+            if (searchInProgress) return;
             if (searchField.text == "") ReactivateEntries();
-            else await SearchAwait(searchField.text);
+            else StartCoroutine(DictionarySearcher(searchField.text));
         }
 
         private void StartSearchClearCoroutine()
@@ -175,9 +183,7 @@ namespace SwedishApp.UI
 
         private void ReactivateEntries()
         {
-            Debug.Log("Reactivate called");
             if (allObjectsActive) return;
-            Debug.Log("Reactivating entries");
             headerObjects.ForEach((header) => header.SetActive(true));
             foreach (var keyValuePair in dictionaryEntries)
             {
@@ -205,7 +211,6 @@ namespace SwedishApp.UI
             };
             searchButton.onClick.AddListener(SearchFromButton);
             searchField.onSubmit.AddListener(CallDictionarySearch);
-            searchClearWait = new(searchClearDelay);
 
             verbList.verbList.ForEach(verb =>
             {
@@ -306,8 +311,6 @@ namespace SwedishApp.UI
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
             });
-
-            closeButton.onClick.AddListener(() => gameObject.SetActive(false));
         }
 
         public List<TextMeshProUGUI> GetDictionaryTextFields()

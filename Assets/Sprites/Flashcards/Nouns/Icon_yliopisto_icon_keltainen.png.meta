@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_yliopisto_icon_keltainen_0: -2206612938617834134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

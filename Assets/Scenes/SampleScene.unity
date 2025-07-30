@@ -8357,6 +8357,7 @@ MonoBehaviour:
   searchButton: {fileID: 1520432640}
   searchField: {fileID: 829871295}
   searchClearDelay: 1
+  maxComparisonsPerUpdate: 30
 --- !u!1 &721939382
 GameObject:
   m_ObjectHideFlags: 0
@@ -9101,6 +9102,19 @@ MonoBehaviour:
   - {fileID: 988570387}
   - {fileID: 733452209}
   - {fileID: 1375010435}
+  - {fileID: 1549139676}
+  - {fileID: 481028084}
+  - {fileID: 1685555923}
+  - {fileID: 1080323679}
+  - {fileID: 1616586302}
+  - {fileID: 772760529}
+  - {fileID: 951938097}
+  - {fileID: 1908057682}
+  - {fileID: 775506832}
+  - {fileID: 1695432893}
+  - {fileID: 614669116}
+  - {fileID: 71897006}
+  - {fileID: 890845607}
   lightmodableImages:
   - {fileID: 1764682699}
   - {fileID: 1727957900}
@@ -9154,6 +9168,9 @@ MonoBehaviour:
   - {fileID: 1454548649}
   - {fileID: 30279263}
   - {fileID: 829871296}
+  - {fileID: 1059087757}
+  - {fileID: 2063987203}
+  - {fileID: 1648428428}
   flashcardBases:
   - {fileID: 1913427434238011456}
   - {fileID: 2247274482428037956}
@@ -11004,7 +11021,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.92156863, g: 0.92156863, b: 0.92156863, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

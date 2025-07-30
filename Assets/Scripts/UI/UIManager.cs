@@ -598,7 +598,7 @@ namespace SwedishApp.UI
                     char charToMove = newString[movedCharIndex];
                     newString = newString.Remove(movedCharIndex, 1);
                     newString = newString.Insert(index + spaceTagStart.Length + 1, charToMove.ToString());
-                    
+
                     //moved character wasn't included by color tags before but is included now
                     if (colorEndIndex < movedCharIndex && colorEndIndex > index + spaceTagStart.Length)
                     {

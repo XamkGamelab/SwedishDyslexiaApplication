@@ -32,6 +32,7 @@ namespace SwedishApp.UI
             if (button == null) button = GetComponent<Button>();
             if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
             if (originalScale == null || originalScale == Vector3.zero) originalScale = rectTransform.localScale;
+            rectTransform.localScale = originalScale;
             button.onClick.AddListener(ClickEffect);
         }
 

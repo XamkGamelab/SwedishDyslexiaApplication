@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_ammattikoulu_icon_keltainen_0: -8449304990306230482
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
