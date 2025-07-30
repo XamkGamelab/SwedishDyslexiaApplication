@@ -7,8 +7,8 @@ namespace SwedishApp.Words
     /// This class simply houses a list of adverb-related words to be used in minigames.
     /// </summary>
     [CreateAssetMenu(menuName = "AdverbList")]
-    public class AdvebList : ScriptableObject
+    public class AdverbList : ScriptableObject
     {
-        public List<AdverbWord> adverbList;
+        public List<GrammarWord> adverbList;
     }
 }

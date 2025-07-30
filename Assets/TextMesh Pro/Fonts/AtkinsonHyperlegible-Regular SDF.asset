@@ -1597,13 +1597,9 @@ MonoBehaviour:
     m_Y: 80
     m_Width: 46
     m_Height: 28
-  - m_X: 198
-    m_Y: 691
-    m_Width: 55
-    m_Height: 64
   - m_X: 292
     m_Y: 0
-    m_Width: 80
+    m_Width: 51
     m_Height: 80
   - m_X: 253
     m_Y: 691

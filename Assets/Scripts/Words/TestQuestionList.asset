@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b319c99ad94c324d81ea9db5ed54bf1, type: 3}
+  m_Name: TestQuestionList
+  m_EditorClassIdentifier: 
+  questionList:
+  - swedishWord: hur
+    finnishWord: miten
+    darkModeSprite: {fileID: 21300000, guid: 7486528bb9f6a664d89c290d680da283, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: be623fe5dba4ac443b01ef38c0a9285c, type: 3}
+    notices: '"kuinka"'
+  - swedishWord: hurdan
+    finnishWord: millainen
+    darkModeSprite: {fileID: 21300000, guid: 8e4d5c1ae161dc749b2dec5f2775c501, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: ca53dc6d53b37d14880e85e063b5705d, type: 3}
+    notices: "hurdan, hurdant, hurdana, \"miten\" (mill\xE4 tavalla)"
+  - swedishWord: "n\xE4r"
+    finnishWord: koska
+    darkModeSprite: {fileID: 21300000, guid: a91377a15d75ab440b7de019eea75590, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: ad3d35c741c80eb40866e712e4675f86, type: 3}
+    notices: '"milloin?", "kun"'
+  - swedishWord: vad
+    finnishWord: "mit\xE4"
+    darkModeSprite: {fileID: 21300000, guid: 264aeecc6b8d22d44ac87d0247e9bf93, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 8996da7967546ff45819ecc90c35b58b, type: 3}
+    notices: 
+  - swedishWord: var
+    finnishWord: "miss\xE4"
+    darkModeSprite: {fileID: 21300000, guid: 1f5b46d0068d8f54f87e4611d887e136, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 2eb9195e4c470364796d2b663f970417, type: 3}
+    notices: 
+  - swedishWord: "varf\xF6r"
+    finnishWord: miksi
+    darkModeSprite: {fileID: 21300000, guid: 5b182ec92934617438043102dc10fae2, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 0048c8700f7cf874a8e0c1389661cb10, type: 3}
+    notices: 
+  - swedishWord: "varifr\xE5n"
+    finnishWord: "mist\xE4"
+    darkModeSprite: {fileID: 21300000, guid: d1847ad74878ed54b845f1c573d662c9, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: a4863e91562418544aa0f251ecb2f6c1, type: 3}
+    notices: 
+  - swedishWord: vart
+    finnishWord: minne
+    darkModeSprite: {fileID: 21300000, guid: 1f33b49950af89340b673d1cd5f95a09, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 75c46a8268fdf664ebc90eb2616dbc62, type: 3}
+    notices: 
+  - swedishWord: vem
+    finnishWord: kuka
+    darkModeSprite: {fileID: 21300000, guid: f6ec0285bc3f8674c971f7e4ed208cd0, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: d29436b84ec8ac5488078842abec3dc4, type: 3}
+    notices: 
+  - swedishWord: vems
+    finnishWord: kenen
+    darkModeSprite: {fileID: 21300000, guid: 2b718ceb4e57d3842b2a677e2d9861b2, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 6248308449b453346812c4abfaac6197, type: 3}
+    notices: 
+  - swedishWord: vilken
+    finnishWord: "mik\xE4"
+    darkModeSprite: {fileID: 21300000, guid: f89ef396de56c7a4fb3b51dee7d503c2, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 66c65179c37cd7946af69cda254e67ab, type: 3}
+    notices: "vilken, vilket, vilka, \"mink\xE4\""

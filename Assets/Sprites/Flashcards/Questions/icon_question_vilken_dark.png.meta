@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: f89ef396de56c7a4fb3b51dee7d503c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -650651556159735797
+    second: icon_question_vilken_dark_0
+  - first:
+      213: -2413722598720704102
+    second: icon_question_vilken_dark_1
+  - first:
+      213: 5874114583809252437
+    second: icon_question_vilken_dark_2
+  - first:
+      213: -3637974979639204505
+    second: icon_question_vilken_dark_3
+  - first:
+      213: -6374183049804499064
+    second: icon_question_vilken_dark_4
+  - first:
+      213: -8997641802654016445
+    second: icon_question_vilken_dark_5
+  - first:
+      213: 539104053926388126
+    second: icon_question_vilken_dark_6
+  - first:
+      213: -6109184621180592752
+    second: icon_question_vilken_dark_7
+  - first:
+      213: -3300585376568106246
+    second: icon_question_vilken_dark_8
+  - first:
+      213: 6098114423141380929
+    second: icon_question_vilken_dark_9
+  - first:
+      213: -1194985870492644018
+    second: icon_question_vilken_dark_10
+  - first:
+      213: 3927768134902087176
+    second: icon_question_vilken_dark_11
+  - first:
+      213: -4777610251745135398
+    second: icon_question_vilken_dark_12
+  - first:
+      213: -2539095297233801029
+    second: icon_question_vilken_dark_13
+  - first:
+      213: -6276246249673805080
+    second: icon_question_vilken_dark_14
+  - first:
+      213: -5634292178903573434
+    second: icon_question_vilken_dark_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 182
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b083b826bdb68f6f0800000000000000
+      internalID: -650651556159735797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 153
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a917becb51cb08ed0800000000000000
+      internalID: -2413722598720704102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_2
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 153
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c54e1771c058150800000000000000
+      internalID: 5874114583809252437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_3
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 136
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765a8d4e701538dc0800000000000000
+      internalID: -3637974979639204505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_4
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 57
+        width: 64
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887361fb94a5a87a0800000000000000
+      internalID: -6374183049804499064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 105
+        width: 12
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c1a98b374f12380800000000000000
+      internalID: -8997641802654016445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_6
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 66
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91614fd7484b7700800000000000000
+      internalID: 539104053926388126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_7
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 66
+        width: 12
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d504374f0d73ba0800000000000000
+      internalID: -6109184621180592752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_8
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 29
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af22fc65617f132d0800000000000000
+      internalID: -3300585376568106246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_9
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 28
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143370732cad0a450800000000000000
+      internalID: 6098114423141380929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_10
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 29
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4dccad9eae8a6fe0800000000000000
+      internalID: -1194985870492644018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_11
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 5
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80effe8fe4c328630800000000000000
+      internalID: 3927768134902087176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_12
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 33
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad47775f9c482bdb0800000000000000
+      internalID: -4777610251745135398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 37
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0b385a74253ccd0800000000000000
+      internalID: -2539095297233801029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_14
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 0
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2b055f94b46e8a0800000000000000
+      internalID: -6276246249673805080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_question_vilken_dark_15
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 4
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64cd0b37d19fec1b0800000000000000
+      internalID: -5634292178903573434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      icon_question_vilken_dark_0: -650651556159735797
+      icon_question_vilken_dark_1: -2413722598720704102
+      icon_question_vilken_dark_10: -1194985870492644018
+      icon_question_vilken_dark_11: 3927768134902087176
+      icon_question_vilken_dark_12: -4777610251745135398
+      icon_question_vilken_dark_13: -2539095297233801029
+      icon_question_vilken_dark_14: -6276246249673805080
+      icon_question_vilken_dark_15: -5634292178903573434
+      icon_question_vilken_dark_2: 5874114583809252437
+      icon_question_vilken_dark_3: -3637974979639204505
+      icon_question_vilken_dark_4: -6374183049804499064
+      icon_question_vilken_dark_5: -8997641802654016445
+      icon_question_vilken_dark_6: 539104053926388126
+      icon_question_vilken_dark_7: -6109184621180592752
+      icon_question_vilken_dark_8: -3300585376568106246
+      icon_question_vilken_dark_9: 6098114423141380929
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
