@@ -24,6 +24,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: en
     wordPluralIsRegular: 1
     wordPluralEnd: er
@@ -41,6 +42,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: bo\u00ADk
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: en
     wordPluralIsRegular: 0
     wordPluralEnd: "b\xF6ck\\u00ADer"
@@ -58,6 +60,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: ele\u00ADv
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: en
     wordPluralIsRegular: 1
     wordPluralEnd: er
@@ -75,6 +78,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: fis\u00ADk
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: en
     wordPluralIsRegular: 1
     wordPluralEnd: ar
@@ -83,8 +87,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: ar\u00ADna
   - swedishWord: gym\u00ADna\u00ADsium
     finnishWord: lukio
-    darkModeSprite: {fileID: 21300000, guid: 806517e56c5c7ed4d905bc04cd015870, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 98e98656ee944984a8ed65a2d5c591d7, type: 3}
+    darkModeSprite: {fileID: 8932622136031760861, guid: 3320ad3f48eaab0489793fc81a101dcd, type: 3}
+    lightModeSprite: {fileID: -7673254659951722054, guid: 07b50f5298505714fb7e68638b051096, type: 3}
     enOrEtt: 2
     declensionClass: 3
     finnishPlural: lukiot
@@ -92,6 +96,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'ett '
+    wordIndefinitiveEnd: um
     wordGenderEnd: et
     wordPluralIsRegular: 1
     wordPluralEnd: er
@@ -109,6 +114,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: kat\u00ADt
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: en
     wordPluralIsRegular: 1
     wordPluralEnd: er
@@ -117,8 +123,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: er\u00ADna
   - swedishWord: skola
     finnishWord: koulu
-    darkModeSprite: {fileID: 2066437929131700630, guid: 8db0d7016acf18244a8aad316d68c2e7, type: 3}
-    lightModeSprite: {fileID: -5259652891941223501, guid: cda78abcdb8613f4ca5c1429f838080a, type: 3}
+    darkModeSprite: {fileID: 3779912112058353319, guid: 649dd7a1dafa55e49987c1e5165cd747, type: 3}
+    lightModeSprite: {fileID: 7120780197391503235, guid: 4888e20011666c14bb64804993a47ed6, type: 3}
     enOrEtt: 1
     declensionClass: 1
     finnishPlural: koulut
@@ -126,6 +132,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: an
     wordPluralIsRegular: 1
     wordPluralEnd: or
@@ -143,6 +150,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: a
     wordGenderEnd: an
     wordPluralIsRegular: 1
     wordPluralEnd: or
@@ -160,6 +168,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: stu\u00ADden\u00ADt
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: en
     wordPluralIsRegular: 1
     wordPluralEnd: er
@@ -177,6 +186,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: stu\u00ADde\u00ADran\u00ADde
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: n
     wordPluralIsRegular: 0
     wordPluralEnd: stu\u00ADde\u00ADran\u00ADde
@@ -194,6 +204,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: en
     wordPluralIsRegular: 1
     wordPluralEnd: ar
@@ -202,8 +213,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: ar\u00ADna
   - swedishWord: "yr\\u00ADkes\\u00ADh\xF6g\\u00ADsko\\u00ADla"
     finnishWord: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlu
-    darkModeSprite: {fileID: 21300000, guid: 27c887adc0c2425428b7372015e8f72d, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 827830ad387bf5d49b0d1e2eb8ffbb90, type: 3}
+    darkModeSprite: {fileID: -6545539617038003697, guid: 88edab1f1edd7b94d936f2577582c6c3, type: 3}
+    lightModeSprite: {fileID: -6992698291403978821, guid: 1e853e7ea749cf042bd1666d75e56cff, type: 3}
     enOrEtt: 1
     declensionClass: 1
     finnishPlural: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlut
@@ -211,6 +222,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: an
     wordPluralIsRegular: 1
     wordPluralEnd: or
@@ -219,8 +231,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: or\u00ADna
   - swedishWord: yr\u00ADkes\u00ADsko\u00ADla
     finnishWord: am\u00ADmat\u00ADti\u00ADkou\u00ADlu
-    darkModeSprite: {fileID: 21300000, guid: 03a2e93f132c51945abd87b3d8f2aa96, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 5af9d248a3dcf7d49891b4e082086673, type: 3}
+    darkModeSprite: {fileID: -8449304990306230482, guid: 9181f32aa3afb7b4a81229e8c501a5ce, type: 3}
+    lightModeSprite: {fileID: -8966664613614905690, guid: 3db49a5faffcfbf4795a941033615e14, type: 3}
     enOrEtt: 1
     declensionClass: 1
     finnishPlural: am\u00ADmat\u00ADti\u00ADkou\u00ADlut
@@ -228,6 +240,7 @@ MonoBehaviour:
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
     wordGenderEnd: an
     wordPluralIsRegular: 1
     wordPluralEnd: or

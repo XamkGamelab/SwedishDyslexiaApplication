@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8db0d7016acf18244a8aad316d68c2e7
+guid: 3320ad3f48eaab0489793fc81a101dcd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2066437929131700630
-    second: UI_koulu_icon_keltainen_0
+      213: 8932622136031760861
+    second: Icon_lukio_icon_keltainen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_koulu_icon_keltainen_0
+      name: Icon_lukio_icon_keltainen_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 882
-        height: 404
+        width: 300
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 691f94c19567dac10800000000000000
-      internalID: 2066437929131700630
+      spriteID: dd1d6f2718c07fb70800000000000000
+      internalID: 8932622136031760861
       vertices: []
       indices: 
       edges: []
@@ -134,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      UI_koulu_icon_keltainen_0: 2066437929131700630
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
