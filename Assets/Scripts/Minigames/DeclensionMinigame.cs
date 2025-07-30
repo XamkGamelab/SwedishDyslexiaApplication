@@ -83,6 +83,7 @@ namespace SwedishApp.Minigames
         {
             wordFormsCount = System.Enum.GetNames(typeof(DeclenateInto)).Length;
             abortBtn.onClick.AddListener(() => EndGame(true));
+            swedishBaseWordTxt.RegisterDirtyLayoutCallback(() => UIManager.instance.FixTextSpacing(swedishBaseWordTxt));
         }
 
         #region lightmode-related

@@ -74,6 +74,7 @@ namespace SwedishApp.Minigames
             checkWordButton.onClick.AddListener(CheckWord);
             nextWordButton.onClick.AddListener(DeleteOldWord);
             abortGameButton.onClick.AddListener(AbortGame);
+            wordToTranslateText.RegisterDirtyLayoutCallback(() => UIManager.instance.FixTextSpacing(wordToTranslateText));
         }
 
         #endregion
@@ -117,6 +118,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void CheckWord()
         {
+            if (!checkWordButton.interactable) return;
             canDeleteWord = true;
             int correctLettersCount = 0;
             int missedInputsCount = 0;
@@ -203,6 +205,7 @@ namespace SwedishApp.Minigames
             wordWasCorrect = false;
             wordWasChecked = false;
             gotScoreForWord = false;
+            checkWordButton.interactable = true;
             playedWordsCount++;
             translatedCounter.text = string.Concat(playedWordsCount, "/", activeGameWordCount);
 
@@ -251,6 +254,7 @@ namespace SwedishApp.Minigames
             if (!canDeleteWord) return;
 
             canDeleteWord = false;
+            checkWordButton.interactable = false;
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
             Destroy(wordInputFieldHolder.gameObject);
