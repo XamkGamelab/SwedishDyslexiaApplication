@@ -21,6 +21,7 @@ MonoBehaviour:
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 1
     superlativeHyphenatesIrregularly: 1
+    wordUsesMerMest: 0
     wordCoreWithIrregularHyphenation: bil\u00ADli\u00ADg
     wordEnEnd: 
     wordEttEnd: t
@@ -43,6 +44,7 @@ MonoBehaviour:
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 1
     superlativeHyphenatesIrregularly: 1
+    wordUsesMerMest: 0
     wordCoreWithIrregularHyphenation: dy\u00ADr
     wordEnEnd: 
     wordEttEnd: t
@@ -65,6 +67,7 @@ MonoBehaviour:
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 1
     superlativeHyphenatesIrregularly: 1
+    wordUsesMerMest: 0
     wordCoreWithIrregularHyphenation: kal\u00ADl
     wordEnEnd: 
     wordEttEnd: t
@@ -79,72 +82,6 @@ MonoBehaviour:
     wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1
     wordDefinitiveSuperlativeEnd: as\u00ADte
-  - swedishWord: kort
-    finnishWord: ly\u00ADhyt
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    wordCore: kort
-    genderedHyphenatesIrregularly: 0
-    comparativeHyphenatesIrregularly: 0
-    superlativeHyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: kor\u00ADt
-    wordEnEnd: 
-    wordEttEnd: et
-    definitiveIsRegular: 1
-    wordDefinitiveEnd: a
-    definitivePluralIsRegular: 1
-    wordDefinitivePluralIrregular: 
-    comparativeIsRegular: 1
-    wordComparativeEnd: a\u00ADre
-    comparativeDefinitiveIsRegular: 0
-    superlativeIsRegular: 1
-    wordSuperlativeEnd: ast
-    superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: as\u00ADte
-  - swedishWord: liten
-    finnishWord: pie\u00ADni
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    wordCore: li\u00ADte
-    genderedHyphenatesIrregularly: 0
-    comparativeHyphenatesIrregularly: 0
-    superlativeHyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    wordEnEnd: n
-    wordEttEnd: t
-    definitiveIsRegular: 0
-    wordDefinitiveEnd: lil\u00ADla
-    definitivePluralIsRegular: 0
-    wordDefinitivePluralIrregular: "sm\xE5"
-    comparativeIsRegular: 0
-    wordComparativeEnd: mind\u00ADre
-    comparativeDefinitiveIsRegular: 0
-    superlativeIsRegular: 0
-    wordSuperlativeEnd: minst
-    superlativeDefinitiveIsRegular: 0
-    wordDefinitiveSuperlativeEnd: minsta
-  - swedishWord: "l\xE5ng"
-    finnishWord: "pit\\u00ADk\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    wordCore: "l\xE5ng"
-    genderedHyphenatesIrregularly: 0
-    comparativeHyphenatesIrregularly: 0
-    superlativeHyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    wordEnEnd: 
-    wordEttEnd: t
-    definitiveIsRegular: 1
-    wordDefinitiveEnd: a
-    definitivePluralIsRegular: 1
-    wordDefinitivePluralIrregular: 
-    comparativeIsRegular: 0
-    wordComparativeEnd: "l\xE4ng\\u00ADre"
-    comparativeDefinitiveIsRegular: 0
-    superlativeIsRegular: 0
-    wordSuperlativeEnd: "l\xE4ngst"
-    superlativeDefinitiveIsRegular: 0
-    wordDefinitiveSuperlativeEnd: "l\xE4ngs\\u00ADta"
   - swedishWord: "l\xE5ngsam"
     finnishWord: hidas
     darkModeSprite: {fileID: 0}
@@ -153,6 +90,7 @@ MonoBehaviour:
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 0
     superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
     wordCoreWithIrregularHyphenation: 
     wordEnEnd: 
     wordEttEnd: t
@@ -167,28 +105,52 @@ MonoBehaviour:
     wordSuperlativeEnd: \u00ADmast
     superlativeDefinitiveIsRegular: 1
     wordDefinitiveSuperlativeEnd: \u00ADmas\u00ADte
-  - swedishWord: nuvarande
-    finnishWord: nykyinen
+  - swedishWord: "l\xE5ng"
+    finnishWord: "pit\\u00ADk\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    wordCore: nu\u00ADva\u00ADran\u00ADde
+    wordCore: "l\xE5ng"
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 0
     superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
     wordCoreWithIrregularHyphenation: 
     wordEnEnd: 
-    wordEttEnd: 
-    definitiveIsRegular: 0
-    wordDefinitiveEnd: nuvarande
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: a
     definitivePluralIsRegular: 1
     wordDefinitivePluralIrregular: 
-    comparativeIsRegular: 1
-    wordComparativeEnd: 
-    comparativeDefinitiveIsRegular: 1
-    superlativeIsRegular: 1
-    wordSuperlativeEnd: 
-    superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: 
+    comparativeIsRegular: 0
+    wordComparativeEnd: "l\xE4ng\\u00ADre"
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: "l\xE4ngst"
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: "l\xE4ngs\\u00ADta"
+  - swedishWord: liten
+    finnishWord: pie\u00ADni
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: li\u00ADte
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: 
+    wordEnEnd: n
+    wordEttEnd: t
+    definitiveIsRegular: 0
+    wordDefinitiveEnd: lil\u00ADla
+    definitivePluralIsRegular: 0
+    wordDefinitivePluralIrregular: "sm\xE5"
+    comparativeIsRegular: 0
+    wordComparativeEnd: mind\u00ADre
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: minst
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: minsta
   - swedishWord: praktisk
     finnishWord: "k\xE4y\\u00ADt\xE4n\\u00ADn\xF6l\\u00ADli\\u00ADnen"
     darkModeSprite: {fileID: 0}
@@ -197,6 +159,7 @@ MonoBehaviour:
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 0
     superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 1
     wordCoreWithIrregularHyphenation: 
     wordEnEnd: 
     wordEttEnd: t
@@ -211,17 +174,18 @@ MonoBehaviour:
     wordSuperlativeEnd: 
     superlativeDefinitiveIsRegular: 1
     wordDefinitiveSuperlativeEnd: 
-  - swedishWord: snabb
-    finnishWord: no\u00ADpe\u00ADa
+  - swedishWord: kort
+    finnishWord: ly\u00ADhyt
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    wordCore: snabb
+    wordCore: kort
     genderedHyphenatesIrregularly: 0
-    comparativeHyphenatesIrregularly: 1
-    superlativeHyphenatesIrregularly: 1
-    wordCoreWithIrregularHyphenation: snab\u00ADb
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: kor\u00ADt
     wordEnEnd: 
-    wordEttEnd: t
+    wordEttEnd: et
     definitiveIsRegular: 1
     wordDefinitiveEnd: a
     definitivePluralIsRegular: 1
@@ -241,6 +205,7 @@ MonoBehaviour:
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 0
     superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
     wordCoreWithIrregularHyphenation: var\u00ADm
     wordEnEnd: 
     wordEttEnd: t
@@ -255,3 +220,95 @@ MonoBehaviour:
     wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1
     wordDefinitiveSuperlativeEnd: as\u00ADte
+  - swedishWord: nuvarande
+    finnishWord: nykyinen
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: nu\u00ADva\u00ADran\u00ADde
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: 
+    wordEnEnd: 
+    wordEttEnd: 
+    definitiveIsRegular: 0
+    wordDefinitiveEnd: nuvarande
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 1
+    wordComparativeEnd: 
+    comparativeDefinitiveIsRegular: 1
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: 
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: 
+  - swedishWord: snabb
+    finnishWord: no\u00ADpe\u00ADa
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: snabb
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 1
+    superlativeHyphenatesIrregularly: 1
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: snab\u00ADb
+    wordEnEnd: 
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: a
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 1
+    wordComparativeEnd: a\u00ADre
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: ast
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: as\u00ADte
+  - swedishWord: stor
+    finnishWord: iso
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: stor
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 1
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: sto\u00ADr
+    wordEnEnd: 
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: a
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 0
+    wordComparativeEnd: "st\xF6r\\u00ADre"
+    comparativeDefinitiveIsRegular: 1
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: "st\xF6rst"
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: "st\xF6rs\\u00ADta"
+  - swedishWord: "f\xF6rfluten"
+    finnishWord: mennyt
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: "f\xF6r\\u00ADflu\\u00ADt"
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 1
+    superlativeHyphenatesIrregularly: 1
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: "f\xF6r\\u00ADflut\\u00AD"
+    wordEnEnd: en
+    wordEttEnd: et
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: na
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 0
+    wordComparativeEnd: "f\xF6r\\u00ADflu\\u00ADten"
+    comparativeDefinitiveIsRegular: 1
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: "f\xF6r\\u00ADflu\\u00ADten"
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: "f\xF6r\\u00ADflu\\u00ADten"
