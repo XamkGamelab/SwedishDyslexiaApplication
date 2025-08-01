@@ -179,6 +179,7 @@ MonoBehaviour:
   wordFinnishText: {fileID: 3128833471715178828}
   wordSwedishBaseText: {fileID: 707946417843708338}
   wordNoticeText: {fileID: 6729885861536217307}
+  infoHover: {fileID: 0}
 --- !u!1 &1904510729572119755
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +781,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoTextObject: {fileID: 4587654054659032317}
+  tipBG: {fileID: 0}
+  tipTxt: {fileID: 0}
+  darkmodeSprite: {fileID: 0}
+  lightmodeSprite: {fileID: 0}
   hoverDelayTime: 0.25
 --- !u!1 &7092697918210953484
 GameObject:

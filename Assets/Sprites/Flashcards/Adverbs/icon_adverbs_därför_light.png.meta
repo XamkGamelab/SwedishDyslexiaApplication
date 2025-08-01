@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 16ba512a1886a064ea0a7300357c9948
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6985969088901000897
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_0"
+  - first:
+      213: -3437626031999474459
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_1"
+  - first:
+      213: 8357242244160029748
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_2"
+  - first:
+      213: 850060786422290348
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_3"
+  - first:
+      213: -8877317085331566402
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_4"
+  - first:
+      213: -1999001102689690673
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_5"
+  - first:
+      213: -8883809897186022576
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_6"
+  - first:
+      213: 1686865873096212186
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_7"
+  - first:
+      213: 7026495169288763254
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_8"
+  - first:
+      213: 1793884421021073987
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_9"
+  - first:
+      213: -2496097855889179073
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_10"
+  - first:
+      213: -3246967043572908343
+    second: "icon_abverbs_da\u0308rfo\u0308r_light_11"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_0"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 94
+        width: 155
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ceadc38fd523f060800000000000000
+      internalID: 6985969088901000897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_1"
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 101
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4290456591b40d0800000000000000
+      internalID: -3437626031999474459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_2"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 65
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4340c01ea83eaf370800000000000000
+      internalID: 8357242244160029748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_3"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 83
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7903c08c50ccb00800000000000000
+      internalID: 850060786422290348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_4"
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 65
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb05e4a152f6dc480800000000000000
+      internalID: -8877317085331566402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_5"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 7
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb1198961f1244e0800000000000000
+      internalID: -1999001102689690673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_6"
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 29
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05ba02a87fd56b480800000000000000
+      internalID: -8883809897186022576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_7"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 33
+        width: 8
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adef0adf293f86710800000000000000
+      internalID: 1686865873096212186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_8"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 6
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6777475e020238160800000000000000
+      internalID: 7026495169288763254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_9"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 11
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3428113606825e810800000000000000
+      internalID: 1793884421021073987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_10"
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 6
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e7c1799341c5dd0800000000000000
+      internalID: -2496097855889179073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_abverbs_da\u0308rfo\u0308r_light_11"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cebf625da470f2d0800000000000000
+      internalID: -3246967043572908343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "icon_abverbs_da\u0308rfo\u0308r_light_0": 6985969088901000897
+      "icon_abverbs_da\u0308rfo\u0308r_light_1": -3437626031999474459
+      "icon_abverbs_da\u0308rfo\u0308r_light_10": -2496097855889179073
+      "icon_abverbs_da\u0308rfo\u0308r_light_11": -3246967043572908343
+      "icon_abverbs_da\u0308rfo\u0308r_light_2": 8357242244160029748
+      "icon_abverbs_da\u0308rfo\u0308r_light_3": 850060786422290348
+      "icon_abverbs_da\u0308rfo\u0308r_light_4": -8877317085331566402
+      "icon_abverbs_da\u0308rfo\u0308r_light_5": -1999001102689690673
+      "icon_abverbs_da\u0308rfo\u0308r_light_6": -8883809897186022576
+      "icon_abverbs_da\u0308rfo\u0308r_light_7": 1686865873096212186
+      "icon_abverbs_da\u0308rfo\u0308r_light_8": 7026495169288763254
+      "icon_abverbs_da\u0308rfo\u0308r_light_9": 1793884421021073987
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

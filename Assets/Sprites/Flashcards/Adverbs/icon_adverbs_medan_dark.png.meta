@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 741f71e8c8bae964682435e701cad272
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6602985559191928199
+    second: icon_abverbs_medan_dark_0
+  - first:
+      213: 4036802347080006453
+    second: icon_abverbs_medan_dark_1
+  - first:
+      213: 2890053286187544671
+    second: icon_abverbs_medan_dark_2
+  - first:
+      213: 1901973833192062115
+    second: icon_abverbs_medan_dark_3
+  - first:
+      213: 8174642868879740394
+    second: icon_abverbs_medan_dark_4
+  - first:
+      213: -7631199210007903941
+    second: icon_abverbs_medan_dark_5
+  - first:
+      213: -7968495986481393920
+    second: icon_abverbs_medan_dark_6
+  - first:
+      213: -4147125696185278911
+    second: icon_abverbs_medan_dark_7
+  - first:
+      213: 1147606327653768434
+    second: icon_abverbs_medan_dark_8
+  - first:
+      213: -2456744347461395885
+    second: icon_abverbs_medan_dark_9
+  - first:
+      213: -7860559002912357514
+    second: icon_abverbs_medan_dark_10
+  - first:
+      213: -5674864256025731949
+    second: icon_abverbs_medan_dark_11
+  - first:
+      213: 817330675796415646
+    second: icon_abverbs_medan_dark_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 121
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d3ba8c16482ab50800000000000000
+      internalID: 6602985559191928199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 87
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53bba26c85a950830800000000000000
+      internalID: 4036802347080006453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 110
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50b821d6288b1820800000000000000
+      internalID: 2890053286187544671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_3
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 87
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac308bcf1b256a10800000000000000
+      internalID: 1901973833192062115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_4
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 48
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aedc14dc06a227170800000000000000
+      internalID: 8174642868879740394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 25
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b31cc3510c8881690800000000000000
+      internalID: -7631199210007903941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 46
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f86a38e173a6190800000000000000
+      internalID: -7968495986481393920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 41
+        width: 41
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e5bf7d6237276c0800000000000000
+      internalID: -4147125696185278911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_8
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 46
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc1bcdefdd1def00800000000000000
+      internalID: 1147606327653768434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_9
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 11
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a5d994804e7edd0800000000000000
+      internalID: -2456744347461395885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_10
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 22
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 673096fdb3fa9e290800000000000000
+      internalID: -7860559002912357514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_11
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 11
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c560f9605de31b0800000000000000
+      internalID: -5674864256025731949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_abverbs_medan_dark_12
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 2
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9410e25bedb75b00800000000000000
+      internalID: 817330675796415646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      icon_abverbs_medan_dark_0: 6602985559191928199
+      icon_abverbs_medan_dark_1: 4036802347080006453
+      icon_abverbs_medan_dark_10: -7860559002912357514
+      icon_abverbs_medan_dark_11: -5674864256025731949
+      icon_abverbs_medan_dark_12: 817330675796415646
+      icon_abverbs_medan_dark_2: 2890053286187544671
+      icon_abverbs_medan_dark_3: 1901973833192062115
+      icon_abverbs_medan_dark_4: 8174642868879740394
+      icon_abverbs_medan_dark_5: -7631199210007903941
+      icon_abverbs_medan_dark_6: -7968495986481393920
+      icon_abverbs_medan_dark_7: -4147125696185278911
+      icon_abverbs_medan_dark_8: 1147606327653768434
+      icon_abverbs_medan_dark_9: -2456744347461395885
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
