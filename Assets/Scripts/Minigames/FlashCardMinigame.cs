@@ -22,6 +22,9 @@ namespace SwedishApp.Minigames
         private GrammarWord[] grammarWords;
         private PronounWord[] pronounWords;
         private Word[] phraseWords;
+        private Word[] adverbWords;
+        private Word[] prepositionWords;
+        private Word[] questionWords;
         private int activeWordIndex = 0;
 
         [Header("Set delays related to game flow")]
@@ -39,8 +42,11 @@ namespace SwedishApp.Minigames
         [SerializeField] private FlashCardGrammar grammarObject;
         [SerializeField] private FlashCardPronoun pronounObject;
         [SerializeField] private FlashCardBase phraseObject;
+        [SerializeField] private FlashCardBase adverbObject;
+        [SerializeField] private FlashCardBase prepositionObject;
+        [SerializeField] private FlashCardBase questionObject;
 
-        [Header("Game flow related buttons")]
+        [Header("Game flow-related buttons")]
         [SerializeField] private Button nextWordBtn;
         [SerializeField] private TextMeshProUGUI nextWordTxt;
         [SerializeField] private Button abortGameButton;
@@ -61,7 +67,7 @@ namespace SwedishApp.Minigames
             nextWordTxt.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
         }
 
-        #region lightmode related methods
+        #region lightmode-related methods
 
         /// <summary>
         /// This method is subscribed to <see cref="UIManager.LightmodeOnEvent"/>, and handles changing sprites
@@ -87,7 +93,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region noun related methods
+        #region noun-related methods
 
         /// <summary>
         /// This method updates all of the noun flashcard's text fields to match the current word
@@ -178,7 +184,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region verb related methods
+        #region verb-related methods
 
         /// <summary>
         /// This method updates all of the verb flashcard's text fields to match the current word
@@ -269,7 +275,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region adjective related methods
+        #region adjective-related methods
 
         /// <summary>
         /// This method updates all of the adjective flashcard's text fields to match the current word
@@ -357,7 +363,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region time related methods
+        #region time-related methods
 
         /// <summary>
         /// This method updates all of the time flashcard's text fields to match the current word
@@ -443,7 +449,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region number related methods
+        #region number-related methods
 
         /// <summary>
         /// This method updates all of the number flashcard's text fields to match the current word
@@ -531,7 +537,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region grammar related methods
+        #region grammar-related methods
 
         /// <summary>
         /// This method updates all of the grammar flashcard's text fields to match the current word
@@ -621,7 +627,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region pronoun related methods
+        #region pronoun-related methods
 
         /// <summary>
         /// This method updates all of the pronoun flashcard's text fields to match the current word
@@ -713,7 +719,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region phrase related methods
+        #region phrase-related methods
 
         /// <summary>
         /// This method updates all of the phrase flashcard's text fields to match the current word
@@ -795,6 +801,265 @@ namespace SwedishApp.Minigames
             phraseObject.ResetToFinnishSide();
             activeWordIndex++;
             StartCoroutine(DisplayPhraseWord());
+        }
+
+        #endregion
+
+        #region adverb-related methods
+
+        /// <summary>
+        /// This method updates all of the phrase flashcard's text fields to match the current word
+        /// </summary>
+        private void DisplayCurrentAdverbWord()
+        {
+            Debug.Log(activeWordIndex);
+            adverbObject.wordFinnishText.text = adverbWords[activeWordIndex].finnishWord;
+            adverbObject.wordSwedishBaseText.text = adverbWords[activeWordIndex].swedishWord;
+
+            adverbObject.SetInitialElements(adverbWords[activeWordIndex].lightModeSprite, adverbWords[activeWordIndex].darkModeSprite);
+        }
+
+        /// <summary>
+        /// This method sets up and starts the adverb word game. Enables relevant game objects, populates the
+        /// <seealso cref="adverbWords"/> array with adverb words to be included in the game.
+        /// </summary>
+        /// <param name="_adverbWords">This parameter is used to populate the adverbWords array</param>
+        public void StartAdverbGame(GrammarWord[] _adverbWords)
+        {
+            //Enable relevant objects
+            gameObject.SetActive(true);
+            adverbObject.gameObject.SetActive(true);
+
+            //Set initial colors
+            if (UIManager.instance.LightmodeOn)
+                adverbObject.LightsOn();
+            else
+                adverbObject.LightsOff();
+
+            //(Re)set variables
+            adverbWords = _adverbWords;
+            activeWordIndex = 0;
+
+            //Add relevant listeners to game and UI events
+            nextWordBtn.onClick.AddListener(NextAdverbWord);
+            UIManager.instance.LightmodeOnEvent += DisplayCurrentAdverbWord;
+            UIManager.instance.LightmodeOffEvent += DisplayCurrentAdverbWord;
+
+            //Start displaying words and reset the flash card to the finnish side if it was flipped
+            StartCoroutine(DisplayAdverbWord());
+            phraseObject.ResetToFinnishSide();
+        }
+
+        /// <summary>
+        /// After a short delay determined by <see cref="nextWordDelay"/>, shows the next flash card
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator DisplayAdverbWord()
+        {
+            //Disable button, hide the flashcard and populate its text fields
+            nextWordBtn.interactable = false;
+            adverbObject.gameObject.SetActive(false);
+            DisplayCurrentAdverbWord();
+
+            //After a delay, display the flashcard again
+            yield return nextWordWait;
+            adverbObject.gameObject.SetActive(true);
+
+            //After another delay of the same length, enable button again
+            yield return nextWordWait;
+            nextWordBtn.interactable = true;
+        }
+
+        /// <summary>
+        /// This method is subscribed to the "Next" button on screen, and calls relevant methods
+        /// based on the state of the current flashcard and the overall game. If the game can keep
+        /// going, reset card, increment the currently active word int and display the next word.
+        /// If not, end game without doing anything.
+        /// </summary>
+        private void NextAdverbWord()
+        {
+            if (adverbObject.state == FlashCardBase.State.Flipping) return;
+            if (activeWordIndex + 1 >= adverbWords.Length)
+            {
+                EndGame();
+                return;
+            }
+            adverbObject.ResetToFinnishSide();
+            activeWordIndex++;
+            StartCoroutine(DisplayAdverbWord());
+        }
+
+        #endregion
+
+        #region preposition-related methods
+
+        /// <summary>
+        /// This method updates all of the phrase flashcard's text fields to match the current word
+        /// </summary>
+        private void DisplayCurrentPrepositionWord()
+        {
+            Debug.Log(activeWordIndex);
+            prepositionObject.wordFinnishText.text = prepositionWords[activeWordIndex].finnishWord;
+            prepositionObject.wordSwedishBaseText.text = prepositionWords[activeWordIndex].swedishWord;
+
+            prepositionObject.SetInitialElements(prepositionWords[activeWordIndex].lightModeSprite, prepositionWords[activeWordIndex].darkModeSprite);
+        }
+
+        /// <summary>
+        /// This method sets up and starts the preposition word game. Enables relevant game objects, populates the
+        /// <seealso cref="prepositionWords"/> array with preposition words to be included in the game.
+        /// </summary>
+        /// <param name="_prepositionWords">This parameter is used to populate the prepositionWords array</param>
+        public void StartPrepositionGame(GrammarWord[] _prepositionWords)
+        {
+            //Enable relevant objects
+            gameObject.SetActive(true);
+            prepositionObject.gameObject.SetActive(true);
+
+            //Set initial colors
+            if (UIManager.instance.LightmodeOn)
+                prepositionObject.LightsOn();
+            else
+                prepositionObject.LightsOff();
+
+            //(Re)set variables
+            prepositionWords = _prepositionWords;
+            activeWordIndex = 0;
+
+            //Add relevant listeners to game and UI events
+            nextWordBtn.onClick.AddListener(NextPrepositionWord);
+            UIManager.instance.LightmodeOnEvent += DisplayCurrentPrepositionWord;
+            UIManager.instance.LightmodeOffEvent += DisplayCurrentPrepositionWord;
+
+            //Start displaying words and reset the flash card to the finnish side if it was flipped
+            StartCoroutine(DisplayPrepositionWord());
+            phraseObject.ResetToFinnishSide();
+        }
+
+        /// <summary>
+        /// After a short delay determined by <see cref="nextWordDelay"/>, shows the next flash card
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator DisplayPrepositionWord()
+        {
+            //Disable button, hide the flashcard and populate its text fields
+            nextWordBtn.interactable = false;
+            prepositionObject.gameObject.SetActive(false);
+            DisplayCurrentPrepositionWord();
+
+            //After a delay, display the flashcard again
+            yield return nextWordWait;
+            prepositionObject.gameObject.SetActive(true);
+
+            //After another delay of the same length, enable button again
+            yield return nextWordWait;
+            nextWordBtn.interactable = true;
+        }
+
+        /// <summary>
+        /// This method is subscribed to the "Next" button on screen, and calls relevant methods
+        /// based on the state of the current flashcard and the overall game. If the game can keep
+        /// going, reset card, increment the currently active word int and display the next word.
+        /// If not, end game without doing anything.
+        /// </summary>
+        private void NextPrepositionWord()
+        {
+            if (prepositionObject.state == FlashCardBase.State.Flipping) return;
+            if (activeWordIndex + 1 >= prepositionWords.Length)
+            {
+                EndGame();
+                return;
+            }
+            prepositionObject.ResetToFinnishSide();
+            activeWordIndex++;
+            StartCoroutine(DisplayPrepositionWord());
+        }
+
+        #endregion
+
+
+        #region question-related methods
+
+        /// <summary>
+        /// This method updates all of the phrase flashcard's text fields to match the current word
+        /// </summary>
+        private void DisplayCurrentQuestionWord()
+        {
+            Debug.Log(activeWordIndex);
+            questionObject.wordFinnishText.text = questionWords[activeWordIndex].finnishWord;
+            questionObject.wordSwedishBaseText.text = questionWords[activeWordIndex].swedishWord;
+
+            questionObject.SetInitialElements(questionWords[activeWordIndex].lightModeSprite, questionWords[activeWordIndex].darkModeSprite);
+        }
+
+        /// <summary>
+        /// This method sets up and starts the question word game. Enables relevant game objects, populates the
+        /// <seealso cref="questionWords"/> array with question words to be included in the game.
+        /// </summary>
+        /// <param name="_questionWords">This parameter is used to populate the questionWords array</param>
+        public void StartQuestionGame(GrammarWord[] _questionWords)
+        {
+            //Enable relevant objects
+            gameObject.SetActive(true);
+            questionObject.gameObject.SetActive(true);
+
+            //Set initial colors
+            if (UIManager.instance.LightmodeOn)
+                questionObject.LightsOn();
+            else
+                questionObject.LightsOff();
+
+            //(Re)set variables
+            questionWords = _questionWords;
+            activeWordIndex = 0;
+
+            //Add relevant listeners to game and UI events
+            nextWordBtn.onClick.AddListener(NextQuestionWord);
+            UIManager.instance.LightmodeOnEvent += DisplayCurrentQuestionWord;
+            UIManager.instance.LightmodeOffEvent += DisplayCurrentQuestionWord;
+
+            //Start displaying words and reset the flash card to the finnish side if it was flipped
+            StartCoroutine(DisplayQuestionWord());
+            phraseObject.ResetToFinnishSide();
+        }
+
+        /// <summary>
+        /// After a short delay determined by <see cref="nextWordDelay"/>, shows the next flash card
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator DisplayQuestionWord()
+        {
+            //Disable button, hide the flashcard and populate its text fields
+            nextWordBtn.interactable = false;
+            questionObject.gameObject.SetActive(false);
+            DisplayCurrentQuestionWord();
+
+            //After a delay, display the flashcard again
+            yield return nextWordWait;
+            questionObject.gameObject.SetActive(true);
+
+            //After another delay of the same length, enable button again
+            yield return nextWordWait;
+            nextWordBtn.interactable = true;
+        }
+
+        /// <summary>
+        /// This method is subscribed to the "Next" button on screen, and calls relevant methods
+        /// based on the state of the current flashcard and the overall game. If the game can keep
+        /// going, reset card, increment the currently active word int and display the next word.
+        /// If not, end game without doing anything.
+        /// </summary>
+        private void NextQuestionWord()
+        {
+            if (questionObject.state == FlashCardBase.State.Flipping) return;
+            if (activeWordIndex + 1 >= questionWords.Length)
+            {
+                EndGame();
+                return;
+            }
+            questionObject.ResetToFinnishSide();
+            activeWordIndex++;
+            StartCoroutine(DisplayQuestionWord());
         }
 
         #endregion
