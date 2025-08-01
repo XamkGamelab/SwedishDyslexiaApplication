@@ -20,76 +20,76 @@ MonoBehaviour:
     notices: 
   - swedishWord: bland annat
     finnishWord: muun muassa
-    darkModeSprite: {fileID: 21300000, guid: 038de975bf5101747ae847582c08a059, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 11920853c5aedb949998f6a93c3433b4, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: bf71448d366743d4eb989420658ae290, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: d9b646fdb5d0c3d44bf77e4257dfd07f, type: 3}
     notices: bl.a.
   - swedishWord: dit
     finnishWord: sinne
-    darkModeSprite: {fileID: 21300000, guid: 9bd00667cc477ce46875c5cf63f5ceb0, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 2e0f14220aa307347b5b072683ed42b7, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 73d74b1e41be0aa4891d62459b0786ac, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 068328dcd8103564e9ff37a79409aa77, type: 3}
     notices: 
   - swedishWord: dock
     finnishWord: kuitenkin
-    darkModeSprite: {fileID: 21300000, guid: 1bca0e5d83eb17d4291cc838820043f6, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: df6ee92384c72e249b366b1507508c6f, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: d138cc309f93d854a8044c86f832bc60, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 254edfd403afc904591f247c6d93a835, type: 3}
     notices: 
   - swedishWord: "d\xE4r"
     finnishWord: tuolla
-    darkModeSprite: {fileID: 21300000, guid: a3356b6543bbbae4d95bfbffa03036bc, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: f49050436f7839a41a7f8faf37523188, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: d096bbdf26071804ca5d1d07bedae871, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 488ba3b60c41b13449754ce53af66f3b, type: 3}
     notices: 
   - swedishWord: "d\xE4rf\xF6r"
     finnishWord: siksi
-    darkModeSprite: {fileID: 21300000, guid: 96db0d3610288c847b65ca5d90108e11, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: fb97324bd302e4e438b5cb12c1b36101, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: adb593e85d655754e8fb447fa2ca8ec1, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 0741c74f18e9d3a4f8687aca4217ec73, type: 3}
     notices: 
   - swedishWord: "f\xF6rr\xE4n"
     finnishWord: ennen kuin
-    darkModeSprite: {fileID: 21300000, guid: 354b3652b07796740a15d40510bf64d5, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 384a50e1ea80f9440a08c154c43015d2, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 83b206aba62ba5b44840fbefb0841e55, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: cebf28d0a63139f40a15e71494dcc8df, type: 3}
     notices: "negatiivinen p\xE4\xE4lause"
   - swedishWord: innan
     finnishWord: ennen kuin
-    darkModeSprite: {fileID: 21300000, guid: 972bd56a41917b84e9edc51e05283614, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 4fd5ab40dcc19ff459f701e5cd0d7f03, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 8b10fb26545a63f43a6268a61c92e09e, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 2667d5e3c96869344b1d706eb8b251f9, type: 3}
     notices: "positiivinen p\xE4\xE4lause"
   - swedishWord: kanske
     finnishWord: "ehk\xE4"
-    darkModeSprite: {fileID: 21300000, guid: 47d4b9c9742873c4cb1cfaa57c1139ed, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 1abafd249c7396b4694a196228563244, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 829a3fa42bbedb34b8c13cdcf2fc4d8c, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 6b6339f39a1a17f428caec3d09dad0d5, type: 3}
     notices: 
   - swedishWord: medan
     finnishWord: "sill\xE4 aikaa kun"
-    darkModeSprite: {fileID: 21300000, guid: 7b3f6a9a576d2dd4ca432c913922ddcf, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 3d67c240be0128d4e9ff945d4def558f, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 741f71e8c8bae964682435e701cad272, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 2ab04694eef52864db41da20ee0884ae, type: 3}
     notices: 
   - swedishWord: nog
     finnishWord: tarpeeksi
-    darkModeSprite: {fileID: 21300000, guid: 04afcece80369524f9f0b770ccc035fb, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: acad0fae1fd2867438fb04bc80bc8b97, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 4b42f3b3307661441bdae0ffe472f6d7, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 1b03092f61143254b9b76101b9de3292, type: 3}
     notices: "\"riitt\xE4v\xE4sti\""
   - swedishWord: samtidigt
     finnishWord: samanaikaisesti
-    darkModeSprite: {fileID: 21300000, guid: 8707778a46100f14aa5e97206374facd, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 9e36f277e6394a04fb21fb5e31e1cc7f, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: d35c2d2664ad29d4ea46fc0a754e75ff, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 3b0be5a6308fcce4dadf2d8fd22ccd4b, type: 3}
     notices: 
   - swedishWord: "tillr\xE4ckligt"
     finnishWord: tarpeeksi
-    darkModeSprite: {fileID: 21300000, guid: 440055233293a3c40ab09675041253e2, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 3600669eca507a0469ab6cc750ebad76, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 6cbd2bfb2fb9a8c41b0d369ade0d90ac, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 04ef5e2756ba00b4e8979fbc447f661f, type: 3}
     notices: "\"riitt\xE4v\xE4sti\""
   - swedishWord: "\xE5tminstone"
     finnishWord: ainakin
-    darkModeSprite: {fileID: 21300000, guid: 5daa45281b5008c48ae12d2dc6478bf3, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 80fb9efa005f21c478253f841b3a5ac4, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: a26eab9d7f88743499bace20688d48f2, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: ba9219986156e4e45b8cd6b02dac5dfc, type: 3}
     notices: 
   - swedishWord: "\xE4nnu"
     finnishWord: "viel\xE4"
-    darkModeSprite: {fileID: 21300000, guid: 9b966eb9bdeade94bac886828f2b2322, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: f2de3a40a32963043822ffd1884decec, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 0db2119b5da775e4d8772a429f9ad059, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 553bf1f22383d1340af33eb2f1809c55, type: 3}
     notices: 
   - swedishWord: "\xE4ntligen"
     finnishWord: vihdoinkin
-    darkModeSprite: {fileID: 21300000, guid: 7a1fcc1e8f608b74bb4d4e7454f826f6, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: eea69bdbfcd8730468c9e4badada3895, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: d28e20ba037b04c4daaa1061dbe04fe3, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: c7c9a002a254bac4daacbbf993dac74b, type: 3}
     notices: '"vihdoin"'
