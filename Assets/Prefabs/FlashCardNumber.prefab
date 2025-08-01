@@ -851,3 +851,4 @@ MonoBehaviour:
   wordFinnishText: {fileID: 2304173574540952933}
   wordSwedishBaseText: {fileID: 5106682378938896311}
   wordSwedishOrdinalText: {fileID: 5622391569426654632}
+  wordFinnishOrdinalText: {fileID: 0}
