@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: be9ca76267724c24eabf6c7ad019a7e6
+guid: 6591d61fb9c5850469f096b73123b828
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1036626971416711901
-    second: Icon_cold_LM_0
-  - first:
-      213: 8277041786777715160
-    second: Icon_cold_LM_1
+      213: -1312185706594164717
+    second: Icon_Snabb_LM_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon_cold_LM_0
+      name: Icon_Snabb_LM_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 104
-        width: 101
-        height: 171
+        x: 2
+        y: 2
+        width: 296
+        height: 296
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32d2e1403492d91f0800000000000000
-      internalID: -1036626971416711901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Icon_cold_LM_1
-      rect:
-        serializedVersion: 2
-        x: 141
-        y: 1
-        width: 103
-        height: 297
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d143f3c6a5fdd270800000000000000
-      internalID: 8277041786777715160
+      spriteID: 3102c175d0e2acde0800000000000000
+      internalID: -1312185706594164717
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icon_cold_LM_0: -1036626971416711901
-      Icon_cold_LM_1: 8277041786777715160
+      Icon_Snabb_LM_0: -1312185706594164717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
