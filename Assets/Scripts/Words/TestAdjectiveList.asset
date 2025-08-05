@@ -63,25 +63,25 @@ MonoBehaviour:
     finnishWord: mennyt
     darkModeSprite: {fileID: 21300000, guid: 8439919e312b7314bb9aaa82c916de59, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 00c161a8ba250ce419fef7d0727d4f8f, type: 3}
-    wordCore: "f\xF6r\\u00ADflu\\u00ADt"
-    genderedHyphenatesIrregularly: 0
-    comparativeHyphenatesIrregularly: 1
-    superlativeHyphenatesIrregularly: 1
+    wordCore: "f\xF6r\\u00ADflu\\u00ADten"
+    genderedHyphenatesIrregularly: 1
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
     wordUsesMerMest: 1
-    wordCoreWithIrregularHyphenation: 
-    wordEnEnd: en
-    wordEttEnd: et
-    definitiveIsRegular: 1
+    wordCoreWithIrregularHyphenation: "f\xF6r\\u00ADflu"
+    wordEnEnd: \u00ADten
+    wordEttEnd: \u00ADtet
+    definitiveIsRegular: 0
     wordDefinitiveEnd: na
-    definitivePluralIsRegular: 1
-    wordDefinitivePluralIrregular: 
-    comparativeIsRegular: 0
-    wordComparativeEnd: "f\xF6r\\u00ADflu\\u00ADten"
-    comparativeDefinitiveIsRegular: 0
-    superlativeIsRegular: 0
-    wordSuperlativeEnd: "f\xF6r\\u00ADflu\\u00ADten"
-    superlativeDefinitiveIsRegular: 0
-    wordDefinitiveSuperlativeEnd: "f\xF6r\\u00ADflu\\u00ADten"
+    definitivePluralIsRegular: 0
+    wordDefinitivePluralIrregular: na
+    comparativeIsRegular: 1
+    wordComparativeEnd: 
+    comparativeDefinitiveIsRegular: 1
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: 
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: 
   - swedishWord: kall
     finnishWord: "kylm\xE4"
     darkModeSprite: {fileID: 21300000, guid: cb51dff9be8738045a06f705f0368a20, type: 3}
@@ -118,16 +118,16 @@ MonoBehaviour:
     wordEnEnd: 
     wordEttEnd: 
     definitiveIsRegular: 1
-    wordDefinitiveEnd: 
+    wordDefinitiveEnd: kom\u00ADman\u00ADde
     definitivePluralIsRegular: 1
-    wordDefinitivePluralIrregular: 
+    wordDefinitivePluralIrregular: kom\u00ADman\u00ADde
     comparativeIsRegular: 1
-    wordComparativeEnd: 
+    wordComparativeEnd: kom\u00ADman\u00ADde
     comparativeDefinitiveIsRegular: 1
     superlativeIsRegular: 1
-    wordSuperlativeEnd: 
+    wordSuperlativeEnd: kom\u00ADman\u00ADde
     superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: 
+    wordDefinitiveSuperlativeEnd: kom\u00ADman\u00ADde
   - swedishWord: kort
     finnishWord: ly\u00ADhyt
     darkModeSprite: {fileID: 21300000, guid: 95864b6015b1854489f6a6f53eebe3a5, type: 3}
