@@ -37,6 +37,7 @@ namespace SwedishApp.UI
         [SerializeField]
         private GameObject verbHeader, nounHeader, adjectiveHeader,
         timeHeader, numberHeader, grammarHeader, pronounHeader, phraseHeader;
+        [SerializeField] private DictionaryFormHolder wordFormHolder;
         private List<GameObject> headerObjects;
         private Dictionary<DictionaryEntry, Image> dictionaryEntries;
         private Dictionary<DictionaryEntry, Image> matches;
@@ -221,6 +222,17 @@ namespace SwedishApp.UI
                 entry.WordClassTxt.text = verb.conjugationClass.ToString();
                 entry.wordType = DictionaryEntry.WordType.verb;
                 dictionaryEntries.Add(entry, _spacer);
+                DictionaryFormEnabler formEnabler = entry.SwedishWordTxt.GetComponent<DictionaryFormEnabler>();
+                formEnabler.wordFormHolder = wordFormHolder;
+                string[] wordForms =
+                {
+                    verb.BaseformWord(),
+                    verb.CurrentTenseWord(),
+                    verb.PastTenseWord(),
+                    verb.PastPerfectTenseWord(),
+                    verb.PastPlusPerfectTenseWord()
+                };
+                formEnabler.Init(wordForms);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
                 textFields.Add(entry.WordClassTxt);
