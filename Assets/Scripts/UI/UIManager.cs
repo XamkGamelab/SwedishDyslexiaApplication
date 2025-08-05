@@ -267,17 +267,17 @@ namespace SwedishApp.UI
             });
                 startFlashcardAdverbGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartAdverbGame(adverbList.adverbList.ToArray());
+                flashCardMinigame.StartGrammarGame(adverbList.adverbList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
                 startFlashcardPrepositionGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartPrepositionGame(prepositionList.prepositionList.ToArray());
+                flashCardMinigame.StartGrammarGame(prepositionList.prepositionList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
                 startFlashcardQuestionGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartQuestionGame(questionList.questionList.ToArray());
+                flashCardMinigame.StartGrammarGame(questionList.questionList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
 
