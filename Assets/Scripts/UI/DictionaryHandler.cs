@@ -37,6 +37,7 @@ namespace SwedishApp.UI
         [SerializeField]
         private GameObject verbHeader, nounHeader, adjectiveHeader,
         timeHeader, numberHeader, grammarHeader, pronounHeader, phraseHeader;
+        [SerializeField] private DictionaryFormHolder wordFormHolder;
         private List<GameObject> headerObjects;
         private Dictionary<DictionaryEntry, Image> dictionaryEntries;
         private Dictionary<DictionaryEntry, Image> matches;
@@ -221,6 +222,9 @@ namespace SwedishApp.UI
                 entry.WordClassTxt.text = verb.conjugationClass.ToString();
                 entry.wordType = DictionaryEntry.WordType.verb;
                 dictionaryEntries.Add(entry, _spacer);
+                DictionaryFormEnabler formEnabler = entry.SwedishWordTxt.GetComponent<DictionaryFormEnabler>();
+                formEnabler.wordFormHolder = wordFormHolder;
+                formEnabler.Init(verb);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
                 textFields.Add(entry.WordClassTxt);
@@ -235,6 +239,9 @@ namespace SwedishApp.UI
                 entry.WordClassTxt.text = noun.declensionClass.ToString();
                 entry.wordType = DictionaryEntry.WordType.noun;
                 dictionaryEntries.Add(entry, _spacer);
+                DictionaryFormEnabler formEnabler = entry.SwedishWordTxt.GetComponent<DictionaryFormEnabler>();
+                formEnabler.wordFormHolder = wordFormHolder;
+                formEnabler.Init(noun);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
                 textFields.Add(entry.WordClassTxt);
@@ -248,6 +255,9 @@ namespace SwedishApp.UI
                 entry.SwedishWordTxt.text = adjective.swedishWord;
                 entry.wordType = DictionaryEntry.WordType.adjective;
                 dictionaryEntries.Add(entry, _spacer);
+                DictionaryFormEnabler formEnabler = entry.SwedishWordTxt.GetComponent<DictionaryFormEnabler>();
+                formEnabler.wordFormHolder = wordFormHolder;
+                formEnabler.Init(adjective);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
             });

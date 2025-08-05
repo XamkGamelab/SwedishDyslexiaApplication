@@ -501,6 +501,21 @@ namespace SwedishApp.UI
             return _startList.OrderBy(a => rng.Next()).ToList();
         }
 
+        public void AddToTextLists(List<TextMeshProUGUI> _fieldsToAdd)
+        {
+            textObjectList.AddRange(_fieldsToAdd);
+            textFields.AddRange(_fieldsToAdd);
+        }
+
+        public void RemoveFromTextLists(List<TextMeshProUGUI> _fieldsToRemove)
+        {
+            _fieldsToRemove.ForEach(field =>
+            {
+                textObjectList.Remove(field);
+                textFields.Remove(field);
+            });
+        }
+
         #endregion
 
         #region settings-related methods

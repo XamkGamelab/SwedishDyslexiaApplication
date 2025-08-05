@@ -88,6 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FinnishWordTxt: {fileID: 1603053829184727579}
   SwedishWordTxt: {fileID: 1699440405689785982}
+  wordType: 0
 --- !u!1 &4209318497755790102
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +236,7 @@ GameObject:
   - component: {fileID: 874058981580610030}
   - component: {fileID: 4734472328337064822}
   - component: {fileID: 1699440405689785982}
+  - component: {fileID: 8958487864983100427}
   m_Layer: 5
   m_Name: SweWordTXT
   m_TagString: Untagged
@@ -360,3 +362,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8958487864983100427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7565346885820902411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7925ed541f4512f45a6ad4569b19667d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordFormHolder: {fileID: 0}
+  hoverTime: 0.5
