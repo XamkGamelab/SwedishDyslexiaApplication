@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using SwedishApp.Words;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,36 +15,40 @@ namespace SwedishApp.UI
         private Coroutine delayCoroutine;
         private Coroutine checkerCoroutine;
         public bool pointerOnThis { get; private set; } = false;
+        public VerbWord verbWord;
+        public NounWord nounWord;
+        public AdjectiveWord adjectiveWord;
 
         private void Start()
         {
             hoverWait = new(hoverTime);
         }
 
-        public void Init(string[] _wordForms)
+        public void Init(VerbWord _verb)
         {
-            wordForms = _wordForms;
+            verbWord = _verb;
+        }
+
+        public void Init(NounWord _noun)
+        {
+            nounWord = _noun;
+        }
+
+        public void Init(AdjectiveWord _adjective)
+        {
+            adjectiveWord = _adjective;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
             pointerOnThis = true;
             checkerCoroutine ??= StartCoroutine(MousePosChecker());
-            // if (!wordFormHolder.mouseOnHolder)
-            // {
-                delayCoroutine ??= StartCoroutine(ShowDelay());
-            // }
+            delayCoroutine ??= StartCoroutine(ShowDelay());
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             pointerOnThis = false;
-            // Debug.Log(wordFormHolder.hasBeenHovered);
-            // if ((wordFormHolder.mouseOnHolder && wordFormHolder.hasBeenHovered) || (!wordFormHolder.mouseOnHolder && wordFormHolder.hasBeenHovered))
-            // {
-            //     delayCoroutine = null;
-            //     wordFormHolder.gameObject.SetActive(false);
-            // }
         }
 
         private IEnumerator ShowDelay()
@@ -55,7 +61,10 @@ namespace SwedishApp.UI
             }
 
             wordFormHolder.gameObject.SetActive(true);
-            wordFormHolder.InitWords(wordForms, this);
+
+            if (verbWord != null) wordFormHolder.InitHolder(verbWord, this);
+            else if (nounWord != null) wordFormHolder.InitHolder(nounWord, this);
+            else if (adjectiveWord != null) wordFormHolder.InitHolder(adjectiveWord, this);
             wordFormHolder.transform.position = transform.position;
             delayCoroutine = null;
         }
