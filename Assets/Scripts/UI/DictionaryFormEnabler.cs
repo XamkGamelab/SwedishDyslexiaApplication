@@ -10,14 +10,15 @@ namespace SwedishApp.UI
     {
         [HideInInspector] public DictionaryFormHolder wordFormHolder;
         [SerializeField] private float hoverTime;
-        private string[] wordForms;
-        private WaitForSeconds hoverWait;
-        private Coroutine delayCoroutine;
-        private Coroutine checkerCoroutine;
-        public bool pointerOnThis { get; private set; } = false;
         public VerbWord verbWord;
         public NounWord nounWord;
         public AdjectiveWord adjectiveWord;
+        private WaitForSeconds hoverWait;
+        private Coroutine delayCoroutine;
+        private Coroutine checkerCoroutine;
+        private bool pointerOnThis = false;
+        private bool wasInit = false;
+
 
         private void Start()
         {
@@ -27,20 +28,30 @@ namespace SwedishApp.UI
         public void Init(VerbWord _verb)
         {
             verbWord = _verb;
+            nounWord = null;
+            adjectiveWord = null;
+            wasInit = true;
         }
 
         public void Init(NounWord _noun)
         {
             nounWord = _noun;
+            verbWord = null;
+            adjectiveWord = null;
+            wasInit = true;
         }
 
         public void Init(AdjectiveWord _adjective)
         {
             adjectiveWord = _adjective;
+            verbWord = null;
+            nounWord = null;
+            wasInit = true;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (!wasInit) return;
             pointerOnThis = true;
             checkerCoroutine ??= StartCoroutine(MousePosChecker());
             delayCoroutine ??= StartCoroutine(ShowDelay());
@@ -48,6 +59,7 @@ namespace SwedishApp.UI
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (!wasInit) return;
             pointerOnThis = false;
         }
 
