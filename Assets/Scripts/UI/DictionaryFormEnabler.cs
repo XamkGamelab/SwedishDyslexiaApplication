@@ -1,14 +1,17 @@
 using System;
 using System.Collections;
 using SwedishApp.Words;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace SwedishApp.UI
 {
+    [RequireComponent(typeof(TextMeshProUGUI))]
     public class DictionaryFormEnabler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [HideInInspector] public DictionaryFormHolder wordFormHolder;
+        private TextMeshProUGUI text;
         [SerializeField] private float hoverTime;
         public VerbWord verbWord;
         public NounWord nounWord;
@@ -23,6 +26,7 @@ namespace SwedishApp.UI
         private void Start()
         {
             hoverWait = new(hoverTime);
+            text = GetComponent<TextMeshProUGUI>();
         }
 
         public void Init(VerbWord _verb)
@@ -53,6 +57,7 @@ namespace SwedishApp.UI
         {
             if (!wasInit) return;
             pointerOnThis = true;
+            text.color = UIManager.instance.LightmodeOn ? UIManager.instance.LightmodeHighlight : UIManager.instance.DarkmodeHighlight;
             checkerCoroutine ??= StartCoroutine(MousePosChecker());
             delayCoroutine ??= StartCoroutine(ShowDelay());
         }
@@ -60,6 +65,7 @@ namespace SwedishApp.UI
         public void OnPointerExit(PointerEventData eventData)
         {
             if (!wasInit) return;
+            text.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
             pointerOnThis = false;
         }
 
