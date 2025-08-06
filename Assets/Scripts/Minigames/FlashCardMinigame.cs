@@ -19,12 +19,12 @@ namespace SwedishApp.Minigames
         private AdjectiveWord[] adjectiveWords;
         private TimeWord[] timeWords;
         private NumberWord[] numberWords;
+        private Word[] phraseWords;
         private GrammarWord[] grammarWords;
         private PronounWord[] pronounWords;
-        private Word[] phraseWords;
-        private Word[] adverbWords;
-        private Word[] prepositionWords;
-        private Word[] questionWords;
+        private GrammarWord[] adverbWords;
+        private GrammarWord[] prepositionWords;
+        private GrammarWord[] questionWords;
         private int activeWordIndex = 0;
 
         [Header("Set delays related to game flow")]
@@ -39,12 +39,12 @@ namespace SwedishApp.Minigames
         [SerializeField] private FlashCardAdjective adjectiveObject;
         [SerializeField] private FlashCardBase timeObject;
         [SerializeField] private FlashCardNumber numberObject;
+        [SerializeField] private FlashCardBase phraseObject;
         [SerializeField] private FlashCardGrammar grammarObject;
         [SerializeField] private FlashCardPronoun pronounObject;
-        [SerializeField] private FlashCardBase phraseObject;
-        [SerializeField] private FlashCardBase adverbObject;
-        [SerializeField] private FlashCardBase prepositionObject;
-        [SerializeField] private FlashCardBase questionObject;
+        [SerializeField] private FlashCardGrammar adverbObject;
+        [SerializeField] private FlashCardGrammar prepositionObject;
+        [SerializeField] private FlashCardGrammar questionObject;
 
         [Header("Game flow-related buttons")]
         [SerializeField] private Button nextWordBtn;
