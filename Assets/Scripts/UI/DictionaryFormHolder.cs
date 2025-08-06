@@ -14,7 +14,6 @@ namespace SwedishApp.UI
         [HideInInspector] public DictionaryFormEnabler lastEnabler;
         private List<TextMeshProUGUI> currentFields;
         public bool mouseOnHolder = true;
-        private bool wasLightmode = false;
 
         public void InitHolder(VerbWord _verb, DictionaryFormEnabler _lastEnabler)
         {
