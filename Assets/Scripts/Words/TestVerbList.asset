@@ -19,25 +19,56 @@ MonoBehaviour:
     lightModeSprite: {fileID: 0}
     notices: 
     conjugationClass: 2
-    wordCore: "beh\xF6v"
-    hyphenatesIrregularly: 1
-    wordCoreWithIrregularHyphenation: "be\\u00ADh\xF6\\u00ADv"
+    wordCore: "be\\u00ADh\xF6\\u00ADv"
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 1
+    pastPlusPerfectHyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: "be\\u00ADh\xF6v"
     baseformIsRegular: 1
     baseformEnd: a
     currentTenseIsRegular: 1
-    currentTenseEnd: ar
-    currentTenseFinnish: vuokraa
+    currentTenseEnd: er
+    currentTenseFinnish: tarvitsee
     pastTenseIsRegular: 1
-    pastTenseEnd: de
-    pastTenseFinnish: vuokrasi
+    pastTenseEnd: \u00ADde
+    pastTenseFinnish: tarvitsi
     pastPerfectTenseIsRegular: 1
     pastPerfectTenseStart: 'har '
     pastPerfectTenseEnd: t
-    pastPerfectTenseFinnish: on vuokrannut
+    pastPerfectTenseFinnish: on tarvinnut
     pastPlusPerfectTenseIsRegular: 1
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: t
-    pastPlusPerfectTenseFinnish: oli vuokrannut
+    pastPlusPerfectTenseFinnish: oli tarvinnut
+  - swedishWord: "be\\u00ADh\xF6\\u00ADva inte"
+    finnishWord: ei tar\u00ADvi\u00ADta
+    darkModeSprite: {fileID: 21300000, guid: 45d7fa4b719a36747bd9867c1c06cb84, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: dc82c4a363b565c4782d901698b2ea4f, type: 3}
+    notices: "be\\u00ADh\xF6v"
+    conjugationClass: 2
+    wordCore: "be\\u00ADh\xF6\\u00ADv"
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 1
+    pastPlusPerfectHyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: "be\\u00ADh\xF6v"
+    baseformIsRegular: 1
+    baseformEnd: a inte
+    currentTenseIsRegular: 1
+    currentTenseEnd: \u00ADer inte
+    currentTenseFinnish: ei tarvitse
+    pastTenseIsRegular: 1
+    pastTenseEnd: \u00ADde inte
+    pastTenseFinnish: ei tarvinnut
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: t inte
+    pastPerfectTenseFinnish: ei ole tarvinnut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: t inte
+    pastPlusPerfectTenseFinnish: ei ollut tarvinnut
   - swedishWord: bruka
     finnishWord: olla tapana
     darkModeSprite: {fileID: 0}
@@ -45,7 +76,10 @@ MonoBehaviour:
     notices: 
     conjugationClass: 1
     wordCore: bru\u00ADka
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -63,14 +97,45 @@ MonoBehaviour:
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: oli ollut tapana
+  - swedishWord: "b\xF6ra"
+    finnishWord: "pit\xE4\xE4"
+    darkModeSprite: {fileID: 21300000, guid: 1f676cffa60b01b47bb52f7dc525aa75, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 3a1cb8b00a1b5274ca312fab668eafe6, type: 3}
+    notices: "\"t\xE4yty\xE4\""
+    conjugationClass: 4
+    wordCore: "b\xF6r"
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    baseformIsRegular: 1
+    baseformEnd: a
+    currentTenseIsRegular: 1
+    currentTenseEnd: 
+    currentTenseFinnish: "t\xE4ytyy"
+    pastTenseIsRegular: 0
+    pastTenseEnd: borde
+    pastTenseFinnish: "t\xE4ytyi"
+    pastPerfectTenseIsRegular: 0
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: bort
+    pastPerfectTenseFinnish: "on t\xE4ytynyt"
+    pastPlusPerfectTenseIsRegular: 0
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: bort
+    pastPlusPerfectTenseFinnish: "oli t\xE4ytynyt"
   - swedishWord: "f\xE5"
     finnishWord: saada
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: b153262ee79b96e4586be9e9fff2d58d, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 7c2fe4dcecc432e4d9ae7c7df747c16b, type: 3}
     notices: 
     conjugationClass: 4
     wordCore: "f\xE5"
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -90,12 +155,15 @@ MonoBehaviour:
     pastPlusPerfectTenseFinnish: oli saanut
   - swedishWord: "g\xE5"
     finnishWord: "menn\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 48b29fb2600f21842806ba7ab6e63ee5, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 77a89453aa137304dbac1dbe6073a174, type: 3}
     notices: "\"k\xE4vell\xE4\""
     conjugationClass: 4
     wordCore: "g\xE5"
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -120,7 +188,10 @@ MonoBehaviour:
     notices: 
     conjugationClass: 4
     wordCore: "g\xF6r"
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 0
     baseformEnd: "g\xF6ra"
@@ -140,12 +211,15 @@ MonoBehaviour:
     pastPlusPerfectTenseFinnish: oli tehnyt
   - swedishWord: ha
     finnishWord: "o\xADmis\xADtaa"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 3bc6013ea9a0b144481be958e5731f98, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: a22e5276004a8dc4c9d0bb9c64b51bbe, type: 3}
     notices: 
     conjugationClass: 4
     wordCore: ha
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -170,7 +244,10 @@ MonoBehaviour:
     notices: 
     conjugationClass: 2
     wordCore: hyr
-    hyphenatesIrregularly: 1
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: hy\u00ADr
     baseformIsRegular: 1
     baseformEnd: a
@@ -195,7 +272,10 @@ MonoBehaviour:
     notices: 
     conjugationClass: 1
     wordCore: job\u00ADba
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -220,7 +300,10 @@ MonoBehaviour:
     notices: 
     conjugationClass: 1
     wordCore: or\u00ADka
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -238,14 +321,45 @@ MonoBehaviour:
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: oli jaksanut
+  - swedishWord: skriva
+    finnishWord: kir\u00ADjoit\u00ADtaa
+    darkModeSprite: {fileID: 21300000, guid: 0b5bdec4111873e4baa6930afb2048e3, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 0a4bf479f62cffa42971df9686b6d539, type: 3}
+    notices: 
+    conjugationClass: 4
+    wordCore: skriv\u00AD
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: skri\u00ADv
+    baseformIsRegular: 1
+    baseformEnd: a
+    currentTenseIsRegular: 1
+    currentTenseEnd: er
+    currentTenseFinnish: kirjoittaa
+    pastTenseIsRegular: 0
+    pastTenseEnd: skrev
+    pastTenseFinnish: kirjoitti
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: it
+    pastPerfectTenseFinnish: on kir\u00ADjoit\u00ADta\u00ADnut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: it
+    pastPlusPerfectTenseFinnish: oli kir\u00ADjoit\u00ADta\u00ADnut
   - swedishWord: spela
     finnishWord: pelata
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: a489cf8ad95e81d47980973042e049e9, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: d1e17235c5fd3da4fb217f0373d27388, type: 3}
     notices: 
     conjugationClass: 1
     wordCore: spe\u00ADla
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -265,12 +379,15 @@ MonoBehaviour:
     pastPlusPerfectTenseFinnish: oli pelannut
   - swedishWord: studera
     finnishWord: o\u00ADpis\u00ADkel\u00ADla
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: be697ff1bd4aa39449b059ade6dd04b1, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 7a58fc11d6c06be42bd7ba594a91a515, type: 3}
     notices: 
     conjugationClass: 1
     wordCore: stu\u00ADde\u00ADra
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -295,7 +412,10 @@ MonoBehaviour:
     notices: 
     conjugationClass: 4
     wordCore: ta
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -320,7 +440,10 @@ MonoBehaviour:
     notices: 
     conjugationClass: 1
     wordCore: utex\u00ADa\u00ADmi\u00ADne\u00ADra
-    hyphenatesIrregularly: 0
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
     baseformEnd: 
@@ -338,28 +461,31 @@ MonoBehaviour:
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: oli valmistunut
-  - swedishWord: var
-    finnishWord: olla
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    notices: 
+  - swedishWord: vilja
+    finnishWord: haluta
+    darkModeSprite: {fileID: 21300000, guid: 06252887aa3d51446825b80208b99c1c, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 5ea9f8bc3f1f9e84aad1f61027f55955, type: 3}
+    notices: '"tahtoa"'
     conjugationClass: 4
-    wordCore: var
-    hyphenatesIrregularly: 1
-    wordCoreWithIrregularHyphenation: va\u00ADr
+    wordCore: vil
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
     baseformIsRegular: 1
-    baseformEnd: a
+    baseformEnd: ja
     currentTenseIsRegular: 0
-    currentTenseEnd: "\xE4r"
-    currentTenseFinnish: on
+    currentTenseEnd: vill
+    currentTenseFinnish: haluaa
     pastTenseIsRegular: 0
-    pastTenseEnd: var
-    pastTenseFinnish: oli
-    pastPerfectTenseIsRegular: 1
+    pastTenseEnd: ville
+    pastTenseFinnish: halusi
+    pastPerfectTenseIsRegular: 0
     pastPerfectTenseStart: 'har '
-    pastPerfectTenseEnd: it
-    pastPerfectTenseFinnish: on ollut
-    pastPlusPerfectTenseIsRegular: 1
+    pastPerfectTenseEnd: velat
+    pastPerfectTenseFinnish: on halunnut
+    pastPlusPerfectTenseIsRegular: 0
     pastPlusPerfectTenseStart: 'hade '
-    pastPlusPerfectTenseEnd: it
-    pastPlusPerfectTenseFinnish: oli ollut
+    pastPlusPerfectTenseEnd: velat
+    pastPlusPerfectTenseFinnish: oli halunnut
