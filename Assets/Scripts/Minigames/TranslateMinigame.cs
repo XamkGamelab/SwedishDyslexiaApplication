@@ -29,9 +29,12 @@ namespace SwedishApp.Minigames
 
         private GameMode? gameMode = null;
         private Queue<Word> words;
+        private List<Word> wordsToImprove;
         private Word currentWord = null;
 
         [Header("Game variables")]
+        [Tooltip("Value between 0 and 1; percentage")]
+        [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float nextWordDelayTime = 1.5f;
         [SerializeField] private int allowedMissedInputsCount = 2;
         private bool wordWasChecked = false;
@@ -63,7 +66,6 @@ namespace SwedishApp.Minigames
         //Events
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
-        public event Action PerfectScoreEvent;
 
         #region unity default methods
 
@@ -74,7 +76,7 @@ namespace SwedishApp.Minigames
             checkWordButton.onClick.AddListener(CheckWord);
             nextWordButton.onClick.AddListener(DeleteOldWord);
             abortGameButton.onClick.AddListener(AbortGame);
-            wordToTranslateText.RegisterDirtyLayoutCallback(() => UIManager.instance.FixTextSpacing(wordToTranslateText));
+            wordToTranslateText.RegisterDirtyLayoutCallback(() => UIManager.Instance.FixTextSpacing(wordToTranslateText));
         }
 
         #endregion
@@ -91,6 +93,7 @@ namespace SwedishApp.Minigames
             translateMinigameBG.SetActive(true);
             gameMode = _gameMode;
             words = new(_words.ToArray());
+            wordsToImprove = new();
             activeGameWordCount = words.Count;
             correctCounter.text = "0";
             score = 0;
@@ -98,16 +101,16 @@ namespace SwedishApp.Minigames
             playedWordsCount = -1;
 
             //Buttons' sprites are set according to if light mode is on
-            abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.abortSpriteLightmode : UIManager.instance.abortSpriteDarkmode;
-            checkWordButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.buttonSpriteLightmode : UIManager.instance.buttonSpriteDarkmode;
-            nextWordButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.buttonSpriteLightmode : UIManager.instance.buttonSpriteDarkmode;
+            abortGameButton.image.sprite = UIManager.Instance.LightmodeOn ? UIManager.Instance.AbortSpriteLightmode : UIManager.Instance.AbortSpriteDarkmode;
+            checkWordButton.image.sprite = UIManager.Instance.LightmodeOn ? UIManager.Instance.ButtonSpriteLightmode : UIManager.Instance.ButtonSpriteDarkmode;
+            nextWordButton.image.sprite = UIManager.Instance.LightmodeOn ? UIManager.Instance.ButtonSpriteLightmode : UIManager.Instance.ButtonSpriteDarkmode;
             //Text colors as well
-            checkWordTxt.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
-            nextWordTxt.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
+            checkWordTxt.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.Darkgrey : UIManager.Instance.Lightgrey;
+            nextWordTxt.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.Darkgrey : UIManager.Instance.Lightgrey;
 
             //And make abort button react to light mode changes!
-            UIManager.instance.LightmodeOnEvent += ToLightmode;
-            UIManager.instance.LightmodeOffEvent += ToDarkmode;
+            UIManager.Instance.LightmodeOnEvent += ToLightmode;
+            UIManager.Instance.LightmodeOffEvent += ToDarkmode;
             inputReader.SubmitEventCancelled += CheckWord;
             inputReader.SubmitEventHeld += DeleteOldWord;
             SetupNewWord();
@@ -240,8 +243,8 @@ namespace SwedishApp.Minigames
                 //Set initial input field background and font colors based on if light mode is enabled or not
                 FieldToRightColors(i);
             }
-            UIManager.instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
-            UIManager.instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
+            UIManager.Instance.LegibleModeOnEvent += SwapFieldsToLegibleFont;
+            UIManager.Instance.LegibleModeOffEvent += SwapFieldsToBasicFont;
             wordLetterInputFields[0].Select();
         }
 
@@ -257,10 +260,11 @@ namespace SwedishApp.Minigames
             checkWordButton.interactable = false;
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
+            if (!wordWasCorrect) wordsToImprove.Add(currentWord);
             Destroy(wordInputFieldHolder.gameObject);
             nextWordButton.gameObject.SetActive(false);
-            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
-            UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
+            UIManager.Instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
+            UIManager.Instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
             wordToTranslateText.text = "";
 
             StartCoroutine(DelayBeforeNewWord());
@@ -272,20 +276,15 @@ namespace SwedishApp.Minigames
         /// <returns></returns>
         private IEnumerator DelayBeforeNewWord()
         {
-            if (words.Count == 0 && score == activeGameWordCount)
-            {
-                PerfectScoreEvent?.Invoke();
-            }
-
-            yield return new WaitForSeconds(nextWordDelayTime);
-
             if (words.Count > 0)
             {
+                yield return new WaitForSeconds(nextWordDelayTime);
                 SetupNewWord();
             }
             else
             {
                 CompleteGame();
+                yield break;
             }
         }
 
@@ -294,16 +293,11 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void CompleteGame()
         {
-            Debug.Log("game completed yippee");
-            translateMinigameBG.SetActive(false);
+            UnsubscribeEvents();
 
-            //Unsubscribe events
-            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
-            UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
-            UIManager.instance.LightmodeOnEvent -= ToLightmode;
-            UIManager.instance.LightmodeOffEvent -= ToDarkmode;
-            inputReader.SubmitEventCancelled -= CheckWord;
-            inputReader.SubmitEventHeld -= DeleteOldWord;
+            translateMinigameBG.SetActive(false);
+            UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,
+                _goodScoreThreshold: goodScoreThreshold, _wordsToImprove: wordsToImprove);
         }
 
         /// <summary>
@@ -312,26 +306,20 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void AbortGame()
         {
-            Debug.Log("game aborted");
+            UnsubscribeEvents();
 
-            //Unsubscribe events
-            UIManager.instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
-            UIManager.instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
-            UIManager.instance.LightmodeOnEvent -= ToLightmode;
-            UIManager.instance.LightmodeOffEvent -= ToDarkmode;
+            translateMinigameBG.SetActive(false);
+            Destroy(wordInputFieldHolder.gameObject);
+        }
+
+        private void UnsubscribeEvents()
+        {
+            UIManager.Instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
+            UIManager.Instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
+            UIManager.Instance.LightmodeOnEvent -= ToLightmode;
+            UIManager.Instance.LightmodeOffEvent -= ToDarkmode;
             inputReader.SubmitEventCancelled -= CheckWord;
             inputReader.SubmitEventHeld -= DeleteOldWord;
-
-            //Clear variables
-            words = new();
-            currentWord = new();
-            wordToTranslateText.text = "";
-            wordLetterInputFields.Clear();
-            letterTextRefs.Clear();
-
-            //Destroy word object, disable translate minigame ui
-            Destroy(wordInputFieldHolder.gameObject);
-            translateMinigameBG.SetActive(false);
         }
 
         #endregion
@@ -345,7 +333,7 @@ namespace SwedishApp.Minigames
         {
             foreach (TMP_InputField inputField in wordLetterInputFields)
             {
-                inputField.fontAsset = UIManager.instance.legibleFont;
+                inputField.fontAsset = UIManager.Instance.LegibleFont;
             }
         }
 
@@ -356,7 +344,7 @@ namespace SwedishApp.Minigames
         {
             foreach (TMP_InputField inputField in wordLetterInputFields)
             {
-                inputField.fontAsset = UIManager.instance.basicFont;
+                inputField.fontAsset = UIManager.Instance.BasicFont;
             }
         }
 
@@ -369,23 +357,23 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void ToLightmode()
         {
-            abortGameButton.image.sprite = UIManager.instance.abortSpriteLightmode;
-            checkWordButton.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            nextWordButton.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            checkWordTxt.color = UIManager.instance.Darkgrey;
-            nextWordTxt.color = UIManager.instance.Darkgrey;
+            abortGameButton.image.sprite = UIManager.Instance.AbortSpriteLightmode;
+            checkWordButton.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            nextWordButton.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            checkWordTxt.color = UIManager.Instance.Darkgrey;
+            nextWordTxt.color = UIManager.Instance.Darkgrey;
 
             //Input fields
             for (int i = 0; i < wordLetterInputFields.Count; i++)
             {
                 var colorBlock = wordLetterInputFields[i].colors;
-                colorBlock.normalColor = UIManager.instance.Darkgrey;
-                colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
-                colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
-                colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
-                colorBlock.disabledColor = UIManager.instance.DarkgreyHalfAlpha;
+                colorBlock.normalColor = UIManager.Instance.Darkgrey;
+                colorBlock.selectedColor = UIManager.Instance.LightmodeHighlight;
+                colorBlock.highlightedColor = UIManager.Instance.DarkgreyLighter;
+                colorBlock.pressedColor = UIManager.Instance.DarkgreyLighter;
+                colorBlock.disabledColor = UIManager.Instance.DarkgreyHalfAlpha;
                 wordLetterInputFields[i].colors = colorBlock;
-                letterTextRefs[i].color = UIManager.instance.Lightgrey;
+                letterTextRefs[i].color = UIManager.Instance.Lightgrey;
             }
         }
 
@@ -394,47 +382,47 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void ToDarkmode()
         {
-            abortGameButton.image.sprite = UIManager.instance.abortSpriteDarkmode;
-            checkWordButton.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            nextWordButton.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            checkWordTxt.color = UIManager.instance.Lightgrey;
-            nextWordTxt.color = UIManager.instance.Lightgrey;
+            abortGameButton.image.sprite = UIManager.Instance.AbortSpriteDarkmode;
+            checkWordButton.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            nextWordButton.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            checkWordTxt.color = UIManager.Instance.Lightgrey;
+            nextWordTxt.color = UIManager.Instance.Lightgrey;
 
             //Input fields
             for (int i = 0; i < wordLetterInputFields.Count; i++)
             {
                 var colorBlock = wordLetterInputFields[i].colors;
-                colorBlock.normalColor = UIManager.instance.Lightgrey;
-                colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
-                colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
-                colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
-                colorBlock.disabledColor = UIManager.instance.LightgreyHalfAlpha;
+                colorBlock.normalColor = UIManager.Instance.Lightgrey;
+                colorBlock.selectedColor = UIManager.Instance.DarkmodeHighlight;
+                colorBlock.highlightedColor = UIManager.Instance.LightgreyDarker;
+                colorBlock.pressedColor = UIManager.Instance.LightgreyDarker;
+                colorBlock.disabledColor = UIManager.Instance.LightgreyHalfAlpha;
                 wordLetterInputFields[i].colors = colorBlock;
-                letterTextRefs[i].color = UIManager.instance.Darkgrey;
+                letterTextRefs[i].color = UIManager.Instance.Darkgrey;
             }
         }
 
         private void FieldToRightColors(int _i)
         {
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 var colorBlock = wordLetterInputFields[_i].colors;
-                colorBlock.normalColor = UIManager.instance.Darkgrey;
-                colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
-                colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
-                colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
+                colorBlock.normalColor = UIManager.Instance.Darkgrey;
+                colorBlock.selectedColor = UIManager.Instance.LightmodeHighlight;
+                colorBlock.highlightedColor = UIManager.Instance.DarkgreyLighter;
+                colorBlock.pressedColor = UIManager.Instance.DarkgreyLighter;
                 wordLetterInputFields[_i].colors = colorBlock;
-                letterTextRefs[_i].color = UIManager.instance.Lightgrey;
+                letterTextRefs[_i].color = UIManager.Instance.Lightgrey;
             }
             else
             {
                 var colorBlock = wordLetterInputFields[_i].colors;
-                colorBlock.normalColor = UIManager.instance.Lightgrey;
-                colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
-                colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
-                colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
+                colorBlock.normalColor = UIManager.Instance.Lightgrey;
+                colorBlock.selectedColor = UIManager.Instance.DarkmodeHighlight;
+                colorBlock.highlightedColor = UIManager.Instance.LightgreyDarker;
+                colorBlock.pressedColor = UIManager.Instance.LightgreyDarker;
                 wordLetterInputFields[_i].colors = colorBlock;
-                letterTextRefs[_i].color = UIManager.instance.Darkgrey;
+                letterTextRefs[_i].color = UIManager.Instance.Darkgrey;
             }
         }
 

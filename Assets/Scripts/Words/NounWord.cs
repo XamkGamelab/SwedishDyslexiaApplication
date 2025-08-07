@@ -50,7 +50,7 @@ namespace SwedishApp.Words
 
         public string NounWithGenderStart()
         {
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 return string.Concat(wordGenderStart, colorTagStartLight, wordCore, colorTagEnd, wordIndefinitiveEnd);
             }
@@ -64,7 +64,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
             
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordGenderEnd);
             }
@@ -78,7 +78,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (wordPluralIsRegular)
                 {
@@ -134,7 +134,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
             
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (wordDefinitivePluralIsRegular)
                 {

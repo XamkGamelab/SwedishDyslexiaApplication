@@ -18,7 +18,7 @@ namespace SwedishApp.UI
     public class UIManager : MonoBehaviour
     {
         //Singleton
-        public static UIManager instance { get; private set; }
+        public static UIManager Instance { get; private set; }
 
         #region variables
 
@@ -38,11 +38,14 @@ namespace SwedishApp.UI
 
         [Header("Input-Related")]
         [SerializeField] private InputReader inputReader;
-        private Vector2 mousePos;
 
         [Header("Minigame-Related")]
+
+        //Dictionary
         [SerializeField] private DictionaryHandler dictionaryHandler;
         [SerializeField] private Button openDictionaryButton;
+
+        //Translate-, conjugation- & declension minigames
         [SerializeField] private Button startTranslationGameToFinnishBtn;
         [SerializeField] private Button startTranslationGameToSwedishBtn;
         [SerializeField] private Button startConjugationGameBtn;
@@ -63,6 +66,8 @@ namespace SwedishApp.UI
         [SerializeField] private Button startTranslateQuestionGameBtn;
         [SerializeField] private ConjugationMinigame conjugationMinigame;
         [SerializeField] private DeclensionMinigame declensionMinigame;
+
+        //Flashcard minigame
         [SerializeField] private GameObject flashcardGameTypeMenu;
         [SerializeField] private Button openFlashcardMenuBtn;
         [SerializeField] private Button closeFlashcardMenuBtn;
@@ -79,24 +84,38 @@ namespace SwedishApp.UI
         [SerializeField] private Button startFlashcardQuestionGameBtn;
         [SerializeField] private FlashCardMinigame flashCardMinigame;
 
+        //Minigame Endscreen
+        [SerializeField] private GameObject minigameEndscreen;
+        [SerializeField] private GameObject minigameEndscreenImprovementObject;
+        [SerializeField] private Button disableMinigameEndscreenBtn;
+        [SerializeField] private Transform mistakeWordsHolder;
+        [SerializeField] private GameObject mistakeWordPrefab;
+        [SerializeField] private TextMeshProUGUI endMessageField;
+        [SerializeField] private TextMeshProUGUI scoreField;
+        [SerializeField] private Scrollbar mistakeScroller;
+        private const string endMessagePerfect = "Täydet pisteet!";
+        private const string endMessageGood = "Hyvä suoritus!";
+        private const string endMessageMid = "Parannuksen varaa!";
+
         [Header("Lightmode-Related")]
         [SerializeField] private Image backgroundImage;
         [SerializeField] private Image flashcardGameTypeBackground;
         [SerializeField] private Image translateGameTypeBackground;
         [SerializeField] private List<TextMeshProUGUI> textObjectList;
-        [SerializeField] private List<Image> lightmodableImages;
         [SerializeField] private List<TextMeshProUGUI> textObjectListReverseLight;
+        [SerializeField] private List<TextMeshProUGUI> textObjectListHighlight;
+        [SerializeField] private List<Image> lightmodableImages;
         [SerializeField] private List<Image> lightmodableImagesReverse;
         [SerializeField] private List<Image> highlightImages;
         [SerializeField] private List<Image> highlightImagesReverse;
         [SerializeField] private List<Image> buttonImages;
         [SerializeField] private List<Image> flashcardBases;
-        [field: SerializeField] public Sprite abortSpriteDarkmode { get; private set; }
-        [field: SerializeField] public Sprite abortSpriteLightmode { get; private set; }
-        [field: SerializeField] public Sprite buttonSpriteDarkmode { get; private set; }
-        [field: SerializeField] public Sprite buttonSpriteLightmode { get; private set; }
-        [field: SerializeField] public Sprite cardSpriteDarkmode { get; private set; }
-        [field: SerializeField] public Sprite cardSpriteLightmode { get; private set; }
+        [field: SerializeField] public Sprite AbortSpriteDarkmode { get; private set; }
+        [field: SerializeField] public Sprite AbortSpriteLightmode { get; private set; }
+        [field: SerializeField] public Sprite ButtonSpriteDarkmode { get; private set; }
+        [field: SerializeField] public Sprite ButtonSpriteLightmode { get; private set; }
+        [field: SerializeField] public Sprite CardSpriteDarkmode { get; private set; }
+        [field: SerializeField] public Sprite CardSpriteLightmode { get; private set; }
         private bool lightmodeHelper = false;
         public bool LightmodeOn { get; private set; } = false;
         public event Action LightmodeOnEvent;
@@ -116,15 +135,15 @@ namespace SwedishApp.UI
 
         [Header("Font-Related")]
         private List<TextMeshProUGUI> textFields;
-        public bool hyperlegibleOn { get; private set; } = true;
+        public bool HyperlegibleOn { get; private set; } = true;
         [SerializeField] private Toggle toggleHyperlegible;
         [SerializeField] private Toggle fontSmallToggle;
         [SerializeField] private Toggle fontMediumToggle;
         [SerializeField] private Toggle fontLargeToggle;
-        [field: SerializeField] public TMP_FontAsset legibleFont { get; private set; }
-        [field: SerializeField] public TMP_FontAsset basicFont { get; private set; }
-        public int legibleSpacing { get; private set; } = 8;
-        public int basicSpacing { get; private set; } = 0;
+        [field: SerializeField] public TMP_FontAsset LegibleFont { get; private set; }
+        [field: SerializeField] public TMP_FontAsset BasicFont { get; private set; }
+        public int LegibleSpacing { get; private set; } = 8;
+        public int BasicSpacing { get; private set; } = 0;
         // private bool fontSettingsSubscribed = false;
         public event Action LegibleModeOnEvent;
         public event Action LegibleModeOffEvent;
@@ -176,9 +195,9 @@ namespace SwedishApp.UI
 
         private void Awake()
         {
-            if (instance == null)
+            if (Instance == null)
             {
-                instance = this;
+                Instance = this;
             }
             else
             {
@@ -202,7 +221,6 @@ namespace SwedishApp.UI
 
             //Add input events
             inputReader.ClickEvent += ClickOffCloseSettings;
-            inputReader.PointEvent += GetMousePosition;
 
             openDictionaryButton.onClick.AddListener(() => dictionaryHandler.gameObject.SetActive(true));
 
@@ -265,21 +283,21 @@ namespace SwedishApp.UI
                 flashCardMinigame.StartPhraseGame(phraseList.phraseList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
-                startFlashcardAdverbGameBtn.onClick.AddListener(() =>
-            {
-                flashCardMinigame.StartGrammarGame(adverbList.adverbList.ToArray());
-                flashcardGameTypeMenu.SetActive(false);
-            });
-                startFlashcardPrepositionGameBtn.onClick.AddListener(() =>
-            {
-                flashCardMinigame.StartGrammarGame(prepositionList.prepositionList.ToArray());
-                flashcardGameTypeMenu.SetActive(false);
-            });
-                startFlashcardQuestionGameBtn.onClick.AddListener(() =>
-            {
-                flashCardMinigame.StartGrammarGame(questionList.questionList.ToArray());
-                flashcardGameTypeMenu.SetActive(false);
-            });
+            startFlashcardAdverbGameBtn.onClick.AddListener(() =>
+        {
+            flashCardMinigame.StartGrammarGame(adverbList.adverbList.ToArray());
+            flashcardGameTypeMenu.SetActive(false);
+        });
+            startFlashcardPrepositionGameBtn.onClick.AddListener(() =>
+        {
+            flashCardMinigame.StartGrammarGame(prepositionList.prepositionList.ToArray());
+            flashcardGameTypeMenu.SetActive(false);
+        });
+            startFlashcardQuestionGameBtn.onClick.AddListener(() =>
+        {
+            flashCardMinigame.StartGrammarGame(questionList.questionList.ToArray());
+            flashcardGameTypeMenu.SetActive(false);
+        });
 
             //Add listeners to translate minigame buttons
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
@@ -317,7 +335,7 @@ namespace SwedishApp.UI
                 translateGameTypeMenu.SetActive(false);
                 UnsubscribeTranslateStartButtons();
             });
-            
+
             //Subscribe to word correct events
             conjugationMinigame.WordCorrectEvent += PlayYellowSparkles;
             conjugationMinigame.WordCorrectEvent += PlayBlueSparkles;
@@ -325,12 +343,6 @@ namespace SwedishApp.UI
             declensionMinigame.WordCorrectEvent += PlayBlueSparkles;
             translateMinigame.WordCorrectEvent += PlayYellowSparkles;
             translateMinigame.WordCorrectEvent += PlayBlueSparkles;
-            translateMinigame.PerfectScoreEvent += PlayYellowSparkles;
-            translateMinigame.PerfectScoreEvent += PlayBlueSparkles;
-            conjugationMinigame.PerfectScoreEvent += PlayYellowSparkles;
-            conjugationMinigame.PerfectScoreEvent += PlayBlueSparkles;
-            declensionMinigame.PerfectScoreEvent += PlayYellowSparkles;
-            declensionMinigame.PerfectScoreEvent += PlayBlueSparkles;
             conjugationMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
             conjugationMinigame.WordIncorrectEvent += PlayLameBlueSparkles;
             declensionMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
@@ -391,26 +403,28 @@ namespace SwedishApp.UI
         /// </summary>
         private void ToggleLightmode()
         {
+            LightmodeOn = !LightmodeOn;
+            
             //Lightmode goes ON here
-            if (!LightmodeOn)
+            if (LightmodeOn)
             {
-                LightmodeOn = true;
                 AudioManager.Instance.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
-                lightmodableImages.ForEach((imgObject) => imgObject.color = Lightgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Lightgrey);
+                textObjectListHighlight.ForEach((textObject) => textObject.color = LightmodeHighlight);
+                lightmodableImages.ForEach((imgObject) => imgObject.color = Lightgrey);
                 lightmodableImagesReverse.ForEach((imgObject) => imgObject.color = Darkgrey);
                 highlightImages.ForEach((imgObject) => imgObject.color = LightmodeHighlight);
                 highlightImagesReverse.ForEach((imgObject) => imgObject.color = DarkmodeHighlight);
-                buttonImages.ForEach((buttonImg) => buttonImg.sprite = buttonSpriteLightmode);
-                flashcardBases.ForEach((baseImg) => baseImg.sprite = cardSpriteLightmode);
+                buttonImages.ForEach((buttonImg) => buttonImg.sprite = ButtonSpriteLightmode);
+                flashcardBases.ForEach((baseImg) => baseImg.sprite = CardSpriteLightmode);
 
                 flashcardGameTypeBackground.color = LightgreyMostAlpha;
                 translateGameTypeBackground.color = LightgreyMostAlpha;
-                closeFlashcardMenuBtn.image.sprite = abortSpriteLightmode;
-                closeTranslateMenuBtn.image.sprite = abortSpriteLightmode;
+                closeFlashcardMenuBtn.image.sprite = AbortSpriteLightmode;
+                closeTranslateMenuBtn.image.sprite = AbortSpriteLightmode;
                 openCreditsText.color = Darkgrey;
-                settingsMenuImage.sprite = buttonSpriteLightmode;
+                settingsMenuImage.sprite = ButtonSpriteLightmode;
 
                 LightmodeOnEvent?.Invoke();
             }
@@ -419,20 +433,21 @@ namespace SwedishApp.UI
                 LightmodeOn = false;
                 AudioManager.Instance.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
-                lightmodableImages.ForEach((imgObject) => imgObject.color = Darkgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
+                textObjectListHighlight.ForEach((textObject) => textObject.color = DarkmodeHighlight);
+                lightmodableImages.ForEach((imgObject) => imgObject.color = Darkgrey);
                 lightmodableImagesReverse.ForEach((imgObject) => imgObject.color = Lightgrey);
                 highlightImages.ForEach((imgObject) => imgObject.color = DarkmodeHighlight);
                 highlightImagesReverse.ForEach((imgObject) => imgObject.color = LightmodeHighlight);
-                buttonImages.ForEach((buttonImg) => buttonImg.sprite = buttonSpriteDarkmode);
-                flashcardBases.ForEach((baseImg) => baseImg.sprite = cardSpriteDarkmode);
+                buttonImages.ForEach((buttonImg) => buttonImg.sprite = ButtonSpriteDarkmode);
+                flashcardBases.ForEach((baseImg) => baseImg.sprite = CardSpriteDarkmode);
 
                 flashcardGameTypeBackground.color = DarkgreyMostAlpha;
                 translateGameTypeBackground.color = DarkgreyMostAlpha;
-                closeFlashcardMenuBtn.image.sprite = abortSpriteDarkmode;
-                closeTranslateMenuBtn.image.sprite = abortSpriteDarkmode;
+                closeFlashcardMenuBtn.image.sprite = AbortSpriteDarkmode;
+                closeTranslateMenuBtn.image.sprite = AbortSpriteDarkmode;
                 openCreditsText.color = Lightgrey;
-                settingsMenuImage.sprite = buttonSpriteDarkmode;
+                settingsMenuImage.sprite = ButtonSpriteDarkmode;
 
                 LightmodeOffEvent?.Invoke();
             }
@@ -546,6 +561,66 @@ namespace SwedishApp.UI
             startTranslateQuestionGameBtn.onClick.RemoveAllListeners();
         }
 
+        public void ActivateMinigameEndscreen(int _maxScore, int _realScore, float _goodScoreThreshold, List<Word> _wordsToImprove)
+        {
+            minigameEndscreen.SetActive(true);
+            float scorePercentage = _realScore / (float)_maxScore;
+            scoreField.text = string.Concat(_realScore, "/", _maxScore);
+            disableMinigameEndscreenBtn.onClick.AddListener(() => minigameEndscreen.SetActive(false));
+            mistakeScroller.value = 0f;
+
+            //Handle endscreen message
+            if (_realScore == _maxScore)
+            {
+                //Perfect score means no words to improve, can return here.
+                PlayYellowSparkles();
+                PlayBlueSparkles();
+                endMessageField.text = endMessagePerfect;
+                minigameEndscreenImprovementObject.SetActive(false);
+                return;
+            }
+            else if (scorePercentage > _goodScoreThreshold)
+            {
+                endMessageField.text = endMessageGood;
+            }
+            else
+            {
+                endMessageField.text = endMessageMid;
+            }
+
+            //If no words to improve, method is done.
+            if (_wordsToImprove.Count == 0)
+            {
+                minigameEndscreenImprovementObject.SetActive(false);
+                return;
+            }
+
+            minigameEndscreenImprovementObject.SetActive(true);
+            List<TextMeshProUGUI> fields = new();
+
+            foreach (Word wordToImprove in _wordsToImprove)
+            {
+                MistakeWordHandler mistakeWordHandler = Instantiate(mistakeWordPrefab, mistakeWordsHolder).GetComponent<MistakeWordHandler>();
+                mistakeWordHandler.finnishWordField.text = wordToImprove.finnishWord;
+                mistakeWordHandler.swedishWordField.text = wordToImprove.swedishWord;
+                InitTextFieldAppearance(ref mistakeWordHandler.finnishWordField);
+                InitTextFieldAppearance(ref mistakeWordHandler.swedishWordField);
+
+                fields.Add(mistakeWordHandler.finnishWordField);
+                fields.Add(mistakeWordHandler.swedishWordField);
+            }
+
+            AddToTextLists(fields);
+            disableMinigameEndscreenBtn.onClick.AddListener(() =>
+            {
+                RemoveFromTextLists(fields);
+                foreach (Transform child in mistakeWordsHolder)
+                {
+                    Destroy(child.gameObject);
+                }
+            });
+        }
+
         #endregion
 
         #region word list-related methods
@@ -582,21 +657,21 @@ namespace SwedishApp.UI
         {
             if (_toggledOn)
             {
-                hyperlegibleOn = true;
+                HyperlegibleOn = true;
                 textFields.ForEach((textObject) =>
                 {
-                    textObject.font = legibleFont;
-                    textObject.characterSpacing = legibleSpacing;
+                    textObject.font = LegibleFont;
+                    textObject.characterSpacing = LegibleSpacing;
                 });
                 LegibleModeOnEvent?.Invoke();
             }
             else
             {
-                hyperlegibleOn = false;
+                HyperlegibleOn = false;
                 textFields.ForEach((textObject) =>
                 {
-                    textObject.font = basicFont;
-                    textObject.characterSpacing = basicSpacing;
+                    textObject.font = BasicFont;
+                    textObject.characterSpacing = BasicSpacing;
                 });
                 LegibleModeOffEvent?.Invoke();
             }
@@ -649,7 +724,7 @@ namespace SwedishApp.UI
             string oldString = _textField.text;
             string newString;
 
-            if (hyperlegibleOn)
+            if (HyperlegibleOn)
             {
                 if (oldString.Contains(spaceTagStart)) return;
 
@@ -711,15 +786,6 @@ namespace SwedishApp.UI
         }
 
         /// <summary>
-        /// This method fetches the mouse position based on the input reader
-        /// </summary>
-        /// <param name="_pos">Vector2 indicating the position of the mouse</param>
-        private void GetMousePosition(Vector2 _pos)
-        {
-            mousePos = _pos;
-        }
-
-        /// <summary>
         /// When the player clicks outside of the settings window while it's active, it gets deactivated.
         /// </summary>
         private void ClickOffCloseSettings()
@@ -763,6 +829,29 @@ namespace SwedishApp.UI
             }
 
             toggleLightmodeBtn.interactable = true;
+        }
+
+        public void InitTextFieldAppearance(ref TextMeshProUGUI _field)
+        {
+            if (LightmodeOn)
+            {
+                _field.color = Darkgrey;
+            }
+            else
+            {
+                _field.color = Lightgrey;
+            }
+
+            if (HyperlegibleOn)
+            {
+                _field.font = LegibleFont;
+                _field.characterSpacing = LegibleSpacing;
+            }
+            else
+            {
+                _field.font = BasicFont;
+                _field.characterSpacing = BasicSpacing;
+            }
         }
 
         #endregion

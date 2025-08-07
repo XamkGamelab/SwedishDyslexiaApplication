@@ -14,9 +14,9 @@ namespace SwedishApp.UI
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            UIManager.instance.FontSmallEvent += () => testText.fontSize = smallSize;
-            UIManager.instance.FontMediumEvent += () => testText.fontSize = mediumSize;
-            UIManager.instance.FontLargeEvent += () => testText.fontSize = largeSize;
+            UIManager.Instance.FontSmallEvent += () => testText.fontSize = smallSize;
+            UIManager.Instance.FontMediumEvent += () => testText.fontSize = mediumSize;
+            UIManager.Instance.FontLargeEvent += () => testText.fontSize = largeSize;
         }
     }
 }

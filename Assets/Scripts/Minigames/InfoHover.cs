@@ -23,9 +23,9 @@ namespace SwedishApp.Minigames
         {
             hoverWait = new(hoverDelayTime);
             infoImg = GetComponent<Image>();
-            infoImg.sprite = UIManager.instance.LightmodeOn ? lightmodeSprite : darkmodeSprite;
-            UIManager.instance.LightmodeOnEvent += () => infoImg.sprite = lightmodeSprite;
-            UIManager.instance.LightmodeOffEvent += () => infoImg.sprite = darkmodeSprite;
+            infoImg.sprite = UIManager.Instance.LightmodeOn ? lightmodeSprite : darkmodeSprite;
+            UIManager.Instance.LightmodeOnEvent += () => infoImg.sprite = lightmodeSprite;
+            UIManager.Instance.LightmodeOffEvent += () => infoImg.sprite = darkmodeSprite;
         }
 
         public void OnPointerEnter(PointerEventData eventData)

@@ -59,7 +59,7 @@ namespace SwedishApp.UI
             if (currentFields == null) currentFields = new();
             else
             {
-                UIManager.instance.RemoveFromTextLists(currentFields);
+                UIManager.Instance.RemoveFromTextLists(currentFields);
                 currentFields = new();
             }
 
@@ -73,22 +73,22 @@ namespace SwedishApp.UI
                 TextMeshProUGUI wordForm = Instantiate(wordFormPrefab, wordHolder).GetComponent<TextMeshProUGUI>();
                 wordForm.text = _words[i];
                 currentFields.Add(wordForm);
-                if (UIManager.instance.hyperlegibleOn)
+                if (UIManager.Instance.HyperlegibleOn)
                 {
-                    wordForm.font = UIManager.instance.legibleFont;
-                    wordForm.characterSpacing = UIManager.instance.legibleSpacing;
+                    wordForm.font = UIManager.Instance.LegibleFont;
+                    wordForm.characterSpacing = UIManager.Instance.LegibleSpacing;
                 }
                 else
                 {
-                    wordForm.font = UIManager.instance.basicFont;
-                    wordForm.characterSpacing = UIManager.instance.basicSpacing;
+                    wordForm.font = UIManager.Instance.BasicFont;
+                    wordForm.characterSpacing = UIManager.Instance.BasicSpacing;
                 }
-                if (UIManager.instance.LightmodeOn) wordForm.color = UIManager.instance.Darkgrey;
-                else wordForm.color = UIManager.instance.Lightgrey;
+                if (UIManager.Instance.LightmodeOn) wordForm.color = UIManager.Instance.Darkgrey;
+                else wordForm.color = UIManager.Instance.Lightgrey;
                 
-                UIManager.instance.FixTextSpacing(wordForm);
+                UIManager.Instance.FixTextSpacing(wordForm);
             }
-            UIManager.instance.AddToTextLists(currentFields);
+            UIManager.Instance.AddToTextLists(currentFields);
         }
 
         public void OnPointerEnter(PointerEventData eventData)

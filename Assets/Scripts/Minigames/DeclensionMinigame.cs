@@ -37,8 +37,9 @@ namespace SwedishApp.Minigames
         [SerializeField] private Button nextWordBtn;
         [SerializeField] private GameObject inputfieldHolder;
         [SerializeField] private GameObject singleInputfield;
+        [Tooltip("Value between 0 and 1; percentage")]
+        [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float newWordDelay = 1f;
-        [SerializeField] private float gameEndDelay = 1.5f;
         [SerializeField] private int allowedMissedInputsCount = 2;
 
         //Input field related references
@@ -52,7 +53,8 @@ namespace SwedishApp.Minigames
         //Other game-related variables
         private DeclenateInto declenateInto;
         private int wordFormsCount;
-        private Stack<NounWord> nounList;
+        private Queue<NounWord> nounList;
+        private List<Word> wordsToImprove;
         private NounWord activeWord;
         private string activeWordWantedForm;
         private string activeWordWantedFormNoHighlight;
@@ -63,13 +65,11 @@ namespace SwedishApp.Minigames
         private int playedWordsCount = -1;
         private int activeGameWordCount = 0;
         private bool wordWasCorrect = false;
-        public bool gameIsEnding { get; private set; } = false;
         private List<TextMeshProUGUI> gameTextRefs;
         
         //Events
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
-        public event Action PerfectScoreEvent;
 
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
@@ -82,8 +82,8 @@ namespace SwedishApp.Minigames
         void Start()
         {
             wordFormsCount = System.Enum.GetNames(typeof(DeclenateInto)).Length;
-            abortBtn.onClick.AddListener(() => EndGame(true));
-            swedishBaseWordTxt.RegisterDirtyLayoutCallback(() => UIManager.instance.FixTextSpacing(swedishBaseWordTxt));
+            abortBtn.onClick.AddListener(AbortGame);
+            swedishBaseWordTxt.RegisterDirtyLayoutCallback(() => UIManager.Instance.FixTextSpacing(swedishBaseWordTxt));
         }
 
         #region lightmode-related
@@ -93,12 +93,12 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void ToLightmode()
         {
-            abortBtn.image.sprite = UIManager.instance.abortSpriteLightmode;
-            checkWordBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            finnishHintBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            conjugationClassImage.color = UIManager.instance.Darkgrey;
-            gameTextRefs.ForEach((text) => text.color = UIManager.instance.Darkgrey);
+            abortBtn.image.sprite = UIManager.Instance.AbortSpriteLightmode;
+            checkWordBtn.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            nextWordBtn.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            finnishHintBtn.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            conjugationClassImage.color = UIManager.Instance.Darkgrey;
+            gameTextRefs.ForEach((text) => text.color = UIManager.Instance.Darkgrey);
 
             if (singleInputfields == null || singleInputfields.Count == 0) return;
             LightmodeInputFields();
@@ -109,12 +109,12 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void ToDarkmode()
         {
-            abortBtn.image.sprite = UIManager.instance.abortSpriteDarkmode;
-            checkWordBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            finnishHintBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            conjugationClassImage.color = UIManager.instance.Lightgrey;
-            gameTextRefs.ForEach((text) => text.color = UIManager.instance.Lightgrey);
+            abortBtn.image.sprite = UIManager.Instance.AbortSpriteDarkmode;
+            checkWordBtn.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            nextWordBtn.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            finnishHintBtn.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            conjugationClassImage.color = UIManager.Instance.Lightgrey;
+            gameTextRefs.ForEach((text) => text.color = UIManager.Instance.Lightgrey);
 
             if (singleInputfields == null || singleInputfields.Count == 0) return;
             DarkmodeInputFields();
@@ -129,13 +129,13 @@ namespace SwedishApp.Minigames
             for (int i = 0; i < singleInputfields.Count; i++)
             {
                 var colorBlock = singleInputfields[i].colors;
-                colorBlock.normalColor = UIManager.instance.Darkgrey;
-                colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
-                colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
-                colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
-                colorBlock.disabledColor = UIManager.instance.DarkgreyHalfAlpha;
+                colorBlock.normalColor = UIManager.Instance.Darkgrey;
+                colorBlock.selectedColor = UIManager.Instance.LightmodeHighlight;
+                colorBlock.highlightedColor = UIManager.Instance.DarkgreyLighter;
+                colorBlock.pressedColor = UIManager.Instance.DarkgreyLighter;
+                colorBlock.disabledColor = UIManager.Instance.DarkgreyHalfAlpha;
                 singleInputfields[i].colors = colorBlock;
-                fieldTextRefs[i].color = UIManager.instance.Lightgrey;
+                fieldTextRefs[i].color = UIManager.Instance.Lightgrey;
             }
         }
 
@@ -148,13 +148,13 @@ namespace SwedishApp.Minigames
             for (int i = 0; i < singleInputfields.Count; i++)
             {
                 var colorBlock = singleInputfields[i].colors;
-                colorBlock.normalColor = UIManager.instance.Lightgrey;
-                colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
-                colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
-                colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
-                colorBlock.disabledColor = UIManager.instance.LightgreyHalfAlpha;
+                colorBlock.normalColor = UIManager.Instance.Lightgrey;
+                colorBlock.selectedColor = UIManager.Instance.DarkmodeHighlight;
+                colorBlock.highlightedColor = UIManager.Instance.LightgreyDarker;
+                colorBlock.pressedColor = UIManager.Instance.LightgreyDarker;
+                colorBlock.disabledColor = UIManager.Instance.LightgreyHalfAlpha;
                 singleInputfields[i].colors = colorBlock;
-                fieldTextRefs[i].color = UIManager.instance.Darkgrey;
+                fieldTextRefs[i].color = UIManager.Instance.Darkgrey;
             }
         }
 
@@ -169,8 +169,8 @@ namespace SwedishApp.Minigames
         {
             gameTextRefs.ForEach((text) =>
             {
-                text.font = UIManager.instance.legibleFont;
-                text.characterSpacing = UIManager.instance.legibleSpacing;
+                text.font = UIManager.Instance.LegibleFont;
+                text.characterSpacing = UIManager.Instance.LegibleSpacing;
             });
             if (fieldTextRefs == null || fieldTextRefs.Count == 0) return;
             FieldsToHyperlegibleFont();
@@ -183,8 +183,8 @@ namespace SwedishApp.Minigames
         {
             gameTextRefs.ForEach((text) =>
             {
-                text.font = UIManager.instance.basicFont;
-                text.characterSpacing = UIManager.instance.basicSpacing;
+                text.font = UIManager.Instance.BasicFont;
+                text.characterSpacing = UIManager.Instance.BasicSpacing;
             });
             if (fieldTextRefs == null || fieldTextRefs.Count == 0) return;
             FieldsToBasicFont();
@@ -195,7 +195,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void FieldsToHyperlegibleFont()
         {
-            fieldTextRefs.ForEach((text) => text.font = UIManager.instance.legibleFont);
+            fieldTextRefs.ForEach((text) => text.font = UIManager.Instance.LegibleFont);
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void FieldsToBasicFont()
         {
-            fieldTextRefs.ForEach((text) => text.font = UIManager.instance.basicFont);
+            fieldTextRefs.ForEach((text) => text.font = UIManager.Instance.BasicFont);
         }
 
         #endregion
@@ -223,6 +223,9 @@ namespace SwedishApp.Minigames
             nextWordBtn.gameObject.SetActive(false);
             finnishHintTxt.text = "Hint";
             nounList = new(_nounList);
+            wordsToImprove = new();
+            score = 0;
+            playedWordsCount = -1;
             activeGameWordCount = nounList.Count;
             correctCounter.text = "0";
 
@@ -232,15 +235,15 @@ namespace SwedishApp.Minigames
             checkWordBtn.onClick.AddListener(CheckWord);
             nextWordBtn.onClick.AddListener(NextWord);
             finnishHintBtn.onClick.AddListener(ShowHint);
-            UIManager.instance.LightmodeOnEvent += ToLightmode;
-            UIManager.instance.LightmodeOffEvent += ToDarkmode;
-            UIManager.instance.LegibleModeOnEvent += ToHyperlegibleFont;
-            UIManager.instance.LegibleModeOffEvent += ToBasicFont;
+            UIManager.Instance.LightmodeOnEvent += ToLightmode;
+            UIManager.Instance.LightmodeOffEvent += ToDarkmode;
+            UIManager.Instance.LegibleModeOnEvent += ToHyperlegibleFont;
+            UIManager.Instance.LegibleModeOffEvent += ToBasicFont;
 
             //set initial colors dependending on if lightmode is on or off
-            if (UIManager.instance.LightmodeOn) ToLightmode();
+            if (UIManager.Instance.LightmodeOn) ToLightmode();
             else ToDarkmode();
-            if (UIManager.instance.hyperlegibleOn) ToHyperlegibleFont();
+            if (UIManager.Instance.HyperlegibleOn) ToHyperlegibleFont();
             else ToBasicFont();
 
             //set the first task
@@ -254,7 +257,7 @@ namespace SwedishApp.Minigames
         private void InitializeNewWord()
         {
             //Get new active word & set relevant variables
-            activeWord = nounList.Pop();
+            activeWord = nounList.Dequeue();
             wordWasChecked = false;
             wordWasCorrect = false;
             gotScoreForWord = false;
@@ -317,9 +320,9 @@ namespace SwedishApp.Minigames
                 singleInputfields[i].onValueChanged.AddListener((s) => inputFieldHandling.GoNextField());
                 singleInputfields[i].onSelect.AddListener((s) => inputFieldHandling.GetActiveIndex(indexHolder));
             }
-            if (UIManager.instance.LightmodeOn) LightmodeInputFields();
+            if (UIManager.Instance.LightmodeOn) LightmodeInputFields();
             else DarkmodeInputFields();
-            if (UIManager.instance.hyperlegibleOn) FieldsToHyperlegibleFont();
+            if (UIManager.Instance.HyperlegibleOn) FieldsToHyperlegibleFont();
             else FieldsToBasicFont();
             singleInputfields[0].ActivateInputField();
         }
@@ -329,7 +332,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void CheckWord()
         {
-            if (gameIsEnding || !checkWordBtn.interactable) return;
+            if (!checkWordBtn.interactable) return;
 
             wordWasCorrect = false;
             int correctLettersCount = 0;
@@ -409,19 +412,16 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void NextWord()
         {
-            if (!wordWasChecked || gameIsEnding) return;
+            if (!wordWasChecked) return;
+            
+            Destroy(inputFieldHandling.gameObject);
             if (nounList == null || nounList.Count == 0)
             {
-                EndGame();
+                CompleteGame();
                 return;
             }
-            DeleteOldWord();
+            if (!wordWasCorrect) wordsToImprove.Add(activeWord);
             StartCoroutine(NextWordDelay());
-        }
-
-        private void DeleteOldWord()
-        {
-            Destroy(inputFieldHandling.gameObject);
         }
 
         /// <summary>
@@ -430,29 +430,30 @@ namespace SwedishApp.Minigames
         /// </summary>
         /// <param name="_endInstantly">If true, ends game immediately, defaults to false
         /// to give time for an end-of-game animation to be played</param>
-        private void EndGame(bool _endInstantly = false)
+        private void AbortGame()
         {
             //Shouldn't need to reset any variables as they're set at the start of the game anyway
+            UnsubcribeEvents();
+            Destroy(inputFieldHandling.gameObject);
+
+            gameObject.SetActive(false);
+            
+        }
+
+        private void CompleteGame()
+        {
+            UnsubcribeEvents();
+            gameObject.SetActive(false);
+            UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,
+                _goodScoreThreshold: goodScoreThreshold, _wordsToImprove: wordsToImprove);
+        }
+
+        private void UnsubcribeEvents()
+        {
             inputReader.SubmitEventCancelled -= CheckWord;
             inputReader.SubmitEventHeld -= NextWord;
             checkWordBtn.onClick.RemoveListener(CheckWord);
             nextWordBtn.onClick.RemoveListener(NextWord);
-            Destroy(inputFieldHandling.gameObject);
-            singleInputfields = null;
-            fieldTextRefs = null;
-            score = 0;
-            playedWordsCount = -1;
-            activeGameWordCount = 0;
-
-            if (!_endInstantly)
-            {
-                gameIsEnding = true;
-                StartCoroutine(GameEndDelay());
-            }
-            else
-            {
-                gameObject.SetActive(false);
-            }
         }
 
         /// <summary>
@@ -478,21 +479,6 @@ namespace SwedishApp.Minigames
         {
             if (!checkWordBtn.interactable) return;
             finnishHintTxt.text = activeWord.GetDeclenatedFinnish(declenateInto);
-        }
-
-        /// <summary>
-        /// Coroutine, delays ending the game for a little end-of-game animation
-        /// </summary>
-        /// <returns></returns>
-        private IEnumerator GameEndDelay()
-        {
-            if (nounList.Count == 0 && score == activeGameWordCount)
-            {
-                PerfectScoreEvent?.Invoke();
-            }
-            yield return new WaitForSeconds(gameEndDelay);
-            gameObject.SetActive(false);
-            gameIsEnding = false;
         }
 
         #endregion

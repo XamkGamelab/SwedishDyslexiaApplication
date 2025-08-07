@@ -57,7 +57,7 @@ namespace SwedishApp.Words
 
         public string HighlightedSwedishWord()
         {
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 return string.Concat(colorTagStartLight, swedishWord, colorTagEnd);
             }
@@ -76,7 +76,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordEnEnd);
             }
@@ -95,7 +95,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordEttEnd);
             }
@@ -114,7 +114,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (definitiveIsRegular)
                 {
@@ -147,7 +147,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (definitiveIsRegular)
                 {
@@ -180,7 +180,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = genderedHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (definitivePluralIsRegular)
                 {   // Regular
@@ -215,7 +215,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = comparativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (wordUsesMerMest)
                 {   // Regular
@@ -257,7 +257,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = comparativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
@@ -291,7 +291,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = comparativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
@@ -325,7 +325,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = comparativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (comparativeDefinitiveIsRegular)
                 {   // Regular
@@ -359,7 +359,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = superlativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (wordUsesMerMest)
                 {   // Regular
@@ -401,7 +401,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = superlativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (superlativeDefinitiveIsRegular)
                 {   // Regular
@@ -435,7 +435,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = superlativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (superlativeDefinitiveIsRegular)
                 {   // Regular
@@ -469,7 +469,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = superlativeHyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (definitivePluralIsRegular)
                 {   // Regular

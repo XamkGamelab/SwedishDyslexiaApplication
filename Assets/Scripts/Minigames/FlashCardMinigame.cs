@@ -56,15 +56,15 @@ namespace SwedishApp.Minigames
         {
             nounObject.gameObject.SetActive(false);
             abortGameButton.onClick.AddListener(EndGame);
-            UIManager.instance.LightmodeOnEvent += FlashcardGameToLightmode;
-            UIManager.instance.LightmodeOffEvent += FlashcardGameToDarkmode;
+            UIManager.Instance.LightmodeOnEvent += FlashcardGameToLightmode;
+            UIManager.Instance.LightmodeOffEvent += FlashcardGameToDarkmode;
             nextWordWait = new(nextWordDelay);
             gameEndWait = new(gameEndDelay);
 
             //Buttons' sprites are set according to whether or not light mode is on
-            abortGameButton.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.abortSpriteLightmode : UIManager.instance.abortSpriteDarkmode;
-            nextWordBtn.image.sprite = UIManager.instance.LightmodeOn ? UIManager.instance.buttonSpriteLightmode : UIManager.instance.buttonSpriteDarkmode;
-            nextWordTxt.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
+            abortGameButton.image.sprite = UIManager.Instance.LightmodeOn ? UIManager.Instance.AbortSpriteLightmode : UIManager.Instance.AbortSpriteDarkmode;
+            nextWordBtn.image.sprite = UIManager.Instance.LightmodeOn ? UIManager.Instance.ButtonSpriteLightmode : UIManager.Instance.ButtonSpriteDarkmode;
+            nextWordTxt.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.Darkgrey : UIManager.Instance.Lightgrey;
         }
 
         #region lightmode-related methods
@@ -75,9 +75,9 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void FlashcardGameToLightmode()
         {
-            abortGameButton.image.sprite = UIManager.instance.abortSpriteLightmode;
-            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            nextWordTxt.color = UIManager.instance.Darkgrey;
+            abortGameButton.image.sprite = UIManager.Instance.AbortSpriteLightmode;
+            nextWordBtn.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            nextWordTxt.color = UIManager.Instance.Darkgrey;
         }
 
         /// <summary>
@@ -86,9 +86,9 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void FlashcardGameToDarkmode()
         {
-            abortGameButton.image.sprite = UIManager.instance.abortSpriteDarkmode;
-            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            nextWordTxt.color = UIManager.instance.Lightgrey;
+            abortGameButton.image.sprite = UIManager.Instance.AbortSpriteDarkmode;
+            nextWordBtn.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            nextWordTxt.color = UIManager.Instance.Lightgrey;
         }
 
         #endregion
@@ -127,7 +127,7 @@ namespace SwedishApp.Minigames
             activeWordIndex = 0;
 
             //Set initial colors
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
                 nounObject.LightsOn();
             else
                 nounObject.LightsOff();
@@ -135,8 +135,8 @@ namespace SwedishApp.Minigames
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextNoun);
-            UIManager.instance.LightmodeOnEvent += DisplayCurrentNoun;
-            UIManager.instance.LightmodeOffEvent += DisplayCurrentNoun;
+            UIManager.Instance.LightmodeOnEvent += DisplayCurrentNoun;
+            UIManager.Instance.LightmodeOffEvent += DisplayCurrentNoun;
 
             //Start displaying words and reset the flash card to the finnish side if it was flipped
             StartCoroutine(DisplayNoun());
@@ -215,7 +215,7 @@ namespace SwedishApp.Minigames
             verbObject.gameObject.SetActive(true);
 
             //Set initial colors
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
                 verbObject.LightsOn();
             else
                 verbObject.LightsOff();
@@ -226,8 +226,8 @@ namespace SwedishApp.Minigames
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextVerb);
-            UIManager.instance.LightmodeOnEvent += DisplayCurrentVerb;
-            UIManager.instance.LightmodeOffEvent += DisplayCurrentVerb;
+            UIManager.Instance.LightmodeOnEvent += DisplayCurrentVerb;
+            UIManager.Instance.LightmodeOffEvent += DisplayCurrentVerb;
 
             //Start displaying words and reset the flash card to the finnish side if it was flipped
             StartCoroutine(DisplayVerb());
@@ -303,7 +303,7 @@ namespace SwedishApp.Minigames
             adjectiveObject.gameObject.SetActive(true);
 
             //Set initial colors
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
                 adjectiveObject.LightsOn();
             else
                 adjectiveObject.LightsOff();
@@ -314,8 +314,8 @@ namespace SwedishApp.Minigames
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextAdjective);
-            UIManager.instance.LightmodeOnEvent += DisplayCurrentAdjective;
-            UIManager.instance.LightmodeOffEvent += DisplayCurrentAdjective;
+            UIManager.Instance.LightmodeOnEvent += DisplayCurrentAdjective;
+            UIManager.Instance.LightmodeOffEvent += DisplayCurrentAdjective;
 
             //Start displaying words and reset the flash card to the finnish side if it was flipped
             StartCoroutine(DisplayAdjective());
@@ -389,7 +389,7 @@ namespace SwedishApp.Minigames
             timeObject.gameObject.SetActive(true);
 
             //Set initial colors
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
                 timeObject.LightsOn();
             else
                 timeObject.LightsOff();
@@ -400,8 +400,8 @@ namespace SwedishApp.Minigames
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextTimeWord);
-            UIManager.instance.LightmodeOnEvent += DisplayCurrentTimeWord;
-            UIManager.instance.LightmodeOffEvent += DisplayCurrentTimeWord;
+            UIManager.Instance.LightmodeOnEvent += DisplayCurrentTimeWord;
+            UIManager.Instance.LightmodeOffEvent += DisplayCurrentTimeWord;
 
             //Start displaying words and reset the flash card to the finnish side if it was flipped
             StartCoroutine(DisplayTimeWord());
@@ -477,7 +477,7 @@ namespace SwedishApp.Minigames
             numberObject.gameObject.SetActive(true);
 
             //Set initial colors
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
                 numberObject.LightsOn();
             else
                 numberObject.LightsOff();
@@ -488,8 +488,8 @@ namespace SwedishApp.Minigames
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextNumberWord);
-            UIManager.instance.LightmodeOnEvent += DisplayCurrentNumberWord;
-            UIManager.instance.LightmodeOffEvent += DisplayCurrentNumberWord;
+            UIManager.Instance.LightmodeOnEvent += DisplayCurrentNumberWord;
+            UIManager.Instance.LightmodeOffEvent += DisplayCurrentNumberWord;
 
             //Start displaying words and reset the flash card to the finnish side if it was flipped
             StartCoroutine(DisplayNumberWord());
@@ -566,7 +566,7 @@ namespace SwedishApp.Minigames
             grammarObject.gameObject.SetActive(true);
 
             //Set initial colors
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
                 grammarObject.LightsOn();
             else
                 grammarObject.LightsOff();
@@ -577,8 +577,8 @@ namespace SwedishApp.Minigames
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextGrammarWord);
-            UIManager.instance.LightmodeOnEvent += DisplayCurrentGrammarWord;
-            UIManager.instance.LightmodeOffEvent += DisplayCurrentGrammarWord;
+            UIManager.Instance.LightmodeOnEvent += DisplayCurrentGrammarWord;
+            UIManager.Instance.LightmodeOffEvent += DisplayCurrentGrammarWord;
 
             //Start displaying words and reset the flash card to the finnish side if it was flipped
             StartCoroutine(DisplayGrammarWord());
@@ -659,7 +659,7 @@ namespace SwedishApp.Minigames
             pronounObject.gameObject.SetActive(true);
 
             //Set initial colors
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
                 pronounObject.LightsOn();
             else
                 pronounObject.LightsOff();
@@ -670,8 +670,8 @@ namespace SwedishApp.Minigames
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextPronounWord);
-            UIManager.instance.LightmodeOnEvent += DisplayCurrentPronounWord;
-            UIManager.instance.LightmodeOffEvent += DisplayCurrentPronounWord;
+            UIManager.Instance.LightmodeOnEvent += DisplayCurrentPronounWord;
+            UIManager.Instance.LightmodeOffEvent += DisplayCurrentPronounWord;
 
             //Start displaying words and reset the flash card to the finnish side if it was flipped
             StartCoroutine(DisplayPronounWord());
@@ -745,7 +745,7 @@ namespace SwedishApp.Minigames
             phraseObject.gameObject.SetActive(true);
 
             //Set initial colors
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
                 phraseObject.LightsOn();
             else
                 phraseObject.LightsOff();
@@ -756,8 +756,8 @@ namespace SwedishApp.Minigames
 
             //Add relevant listeners to game and UI events
             nextWordBtn.onClick.AddListener(NextPhraseWord);
-            UIManager.instance.LightmodeOnEvent += DisplayCurrentPhraseWord;
-            UIManager.instance.LightmodeOffEvent += DisplayCurrentPhraseWord;
+            UIManager.Instance.LightmodeOnEvent += DisplayCurrentPhraseWord;
+            UIManager.Instance.LightmodeOffEvent += DisplayCurrentPhraseWord;
 
             //Start displaying words and reset the flash card to the finnish side if it was flipped
             StartCoroutine(DisplayPhraseWord());
@@ -819,8 +819,8 @@ namespace SwedishApp.Minigames
             pronounObject.gameObject.SetActive(false);
             phraseObject.gameObject.SetActive(false);
             nextWordBtn.onClick.RemoveAllListeners();
-            UIManager.instance.LightmodeOnEvent -= DisplayCurrentNoun;
-            UIManager.instance.LightmodeOffEvent -= DisplayCurrentNoun;
+            UIManager.Instance.LightmodeOnEvent -= DisplayCurrentNoun;
+            UIManager.Instance.LightmodeOffEvent -= DisplayCurrentNoun;
             StartCoroutine(GameEndDelay());
         }
 
