@@ -86,7 +86,7 @@ MonoBehaviour:
     pastPerfectTenseFinnish: on saanut
     pastPlusPerfectTenseIsRegular: 0
     pastPlusPerfectTenseStart: 'hade '
-    pastPlusPerfectTenseEnd: "g\xE5tt"
+    pastPlusPerfectTenseEnd: "f\xE5tt"
     pastPlusPerfectTenseFinnish: oli saanut
   - swedishWord: "g\xE5"
     finnishWord: "menn\xE4"

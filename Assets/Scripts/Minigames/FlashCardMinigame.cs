@@ -19,9 +19,12 @@ namespace SwedishApp.Minigames
         private AdjectiveWord[] adjectiveWords;
         private TimeWord[] timeWords;
         private NumberWord[] numberWords;
+        private Word[] phraseWords;
         private GrammarWord[] grammarWords;
         private PronounWord[] pronounWords;
-        private Word[] phraseWords;
+        private GrammarWord[] adverbWords;
+        private GrammarWord[] prepositionWords;
+        private GrammarWord[] questionWords;
         private int activeWordIndex = 0;
 
         [Header("Set delays related to game flow")]
@@ -36,11 +39,14 @@ namespace SwedishApp.Minigames
         [SerializeField] private FlashCardAdjective adjectiveObject;
         [SerializeField] private FlashCardBase timeObject;
         [SerializeField] private FlashCardNumber numberObject;
+        [SerializeField] private FlashCardBase phraseObject;
         [SerializeField] private FlashCardGrammar grammarObject;
         [SerializeField] private FlashCardPronoun pronounObject;
-        [SerializeField] private FlashCardBase phraseObject;
+        [SerializeField] private FlashCardGrammar adverbObject;
+        [SerializeField] private FlashCardGrammar prepositionObject;
+        [SerializeField] private FlashCardGrammar questionObject;
 
-        [Header("Game flow related buttons")]
+        [Header("Game flow-related buttons")]
         [SerializeField] private Button nextWordBtn;
         [SerializeField] private TextMeshProUGUI nextWordTxt;
         [SerializeField] private Button abortGameButton;
@@ -61,7 +67,7 @@ namespace SwedishApp.Minigames
             nextWordTxt.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
         }
 
-        #region lightmode related methods
+        #region lightmode-related methods
 
         /// <summary>
         /// This method is subscribed to <see cref="UIManager.LightmodeOnEvent"/>, and handles changing sprites
@@ -87,7 +93,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region noun related methods
+        #region noun-related methods
 
         /// <summary>
         /// This method updates all of the noun flashcard's text fields to match the current word
@@ -178,7 +184,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region verb related methods
+        #region verb-related methods
 
         /// <summary>
         /// This method updates all of the verb flashcard's text fields to match the current word
@@ -269,7 +275,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region adjective related methods
+        #region adjective-related methods
 
         /// <summary>
         /// This method updates all of the adjective flashcard's text fields to match the current word
@@ -357,7 +363,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region time related methods
+        #region time-related methods
 
         /// <summary>
         /// This method updates all of the time flashcard's text fields to match the current word
@@ -443,7 +449,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region number related methods
+        #region number-related methods
 
         /// <summary>
         /// This method updates all of the number flashcard's text fields to match the current word
@@ -531,7 +537,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region grammar related methods
+        #region grammar-related methods
 
         /// <summary>
         /// This method updates all of the grammar flashcard's text fields to match the current word
@@ -621,7 +627,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region pronoun related methods
+        #region pronoun-related methods
 
         /// <summary>
         /// This method updates all of the pronoun flashcard's text fields to match the current word
@@ -713,7 +719,7 @@ namespace SwedishApp.Minigames
 
         #endregion
 
-        #region phrase related methods
+        #region phrase-related methods
 
         /// <summary>
         /// This method updates all of the phrase flashcard's text fields to match the current word

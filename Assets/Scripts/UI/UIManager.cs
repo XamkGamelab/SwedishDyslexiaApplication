@@ -31,7 +31,11 @@ namespace SwedishApp.UI
         public GrammarList grammarList;
         public PronounList pronounList;
         public PhraseList phraseList;
-       
+        public AdverbList adverbList;
+        public PrepositionList prepositionList;
+        public QuestionList questionList;
+
+
         [Header("Input-Related")]
         [SerializeField] private InputReader inputReader;
         private Vector2 mousePos;
@@ -54,6 +58,9 @@ namespace SwedishApp.UI
         [SerializeField] private Button startTranslateGrammarGameBtn;
         [SerializeField] private Button startTranslatePronounGameBtn;
         [SerializeField] private Button startTranslatePhraseGameBtn;
+        [SerializeField] private Button startTranslateAdverbGameBtn;
+        [SerializeField] private Button startTranslatePrepositionGameBtn;
+        [SerializeField] private Button startTranslateQuestionGameBtn;
         [SerializeField] private ConjugationMinigame conjugationMinigame;
         [SerializeField] private DeclensionMinigame declensionMinigame;
         [SerializeField] private GameObject flashcardGameTypeMenu;
@@ -67,6 +74,9 @@ namespace SwedishApp.UI
         [SerializeField] private Button startFlashcardGrammarGameBtn;
         [SerializeField] private Button startFlashcardPronounGameBtn;
         [SerializeField] private Button startFlashcardPhraseGameBtn;
+        [SerializeField] private Button startFlashcardAdverbGameBtn;
+        [SerializeField] private Button startFlashcardPrepositionGameBtn;
+        [SerializeField] private Button startFlashcardQuestionGameBtn;
         [SerializeField] private FlashCardMinigame flashCardMinigame;
 
         [Header("Lightmode-Related")]
@@ -255,6 +265,21 @@ namespace SwedishApp.UI
                 flashCardMinigame.StartPhraseGame(phraseList.phraseList.ToArray());
                 flashcardGameTypeMenu.SetActive(false);
             });
+                startFlashcardAdverbGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartGrammarGame(adverbList.adverbList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
+                startFlashcardPrepositionGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartGrammarGame(prepositionList.prepositionList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
+                startFlashcardQuestionGameBtn.onClick.AddListener(() =>
+            {
+                flashCardMinigame.StartGrammarGame(questionList.questionList.ToArray());
+                flashcardGameTypeMenu.SetActive(false);
+            });
 
             //Add listeners to translate minigame buttons
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
@@ -268,6 +293,9 @@ namespace SwedishApp.UI
                 startTranslateGrammarGameBtn.onClick.AddListener(() => StartGrammarTranslateGame(_toFinnish: true));
                 startTranslatePronounGameBtn.onClick.AddListener(() => StartPronounTranslateGame(_toFinnish: true));
                 startTranslatePhraseGameBtn.onClick.AddListener(() => StartPhraseTranslateGame(_toFinnish: true));
+                startTranslateAdverbGameBtn.onClick.AddListener(() => StartAdverbTranslateGame(_toFinnish: true));
+                startTranslatePrepositionGameBtn.onClick.AddListener(() => StartPrepositionTranslateGame(_toFinnish: true));
+                startTranslateQuestionGameBtn.onClick.AddListener(() => StartQuestionTranslateGame(_toFinnish: true));
             });
             startTranslationGameToSwedishBtn.onClick.AddListener(() =>
             {
@@ -280,6 +308,9 @@ namespace SwedishApp.UI
                 startTranslateGrammarGameBtn.onClick.AddListener(() => StartGrammarTranslateGame(_toFinnish: false));
                 startTranslatePronounGameBtn.onClick.AddListener(() => StartPronounTranslateGame(_toFinnish: false));
                 startTranslatePhraseGameBtn.onClick.AddListener(() => StartPhraseTranslateGame(_toFinnish: false));
+                startTranslateAdverbGameBtn.onClick.AddListener(() => StartAdverbTranslateGame(_toFinnish: false));
+                startTranslatePrepositionGameBtn.onClick.AddListener(() => StartPrepositionTranslateGame(_toFinnish: false));
+                startTranslateQuestionGameBtn.onClick.AddListener(() => StartQuestionTranslateGame(_toFinnish: false));
             });
             closeTranslateMenuBtn.onClick.AddListener(() =>
             {
@@ -476,6 +507,30 @@ namespace SwedishApp.UI
             UnsubscribeTranslateStartButtons();
         }
 
+        private void StartAdverbTranslateGame(bool _toFinnish)
+        {
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(adverbList.adverbList)));
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
+        }
+
+        private void StartPrepositionTranslateGame(bool _toFinnish)
+        {
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(prepositionList.prepositionList)));
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
+        }
+
+        private void StartQuestionTranslateGame(bool _toFinnish)
+        {
+            TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(questionList.questionList)));
+            translateGameTypeMenu.SetActive(false);
+            UnsubscribeTranslateStartButtons();
+        }
+
         private void UnsubscribeTranslateStartButtons()
         {
             startTranslateNounGameBtn.onClick.RemoveAllListeners();
@@ -486,6 +541,9 @@ namespace SwedishApp.UI
             startTranslateGrammarGameBtn.onClick.RemoveAllListeners();
             startTranslatePronounGameBtn.onClick.RemoveAllListeners();
             startTranslatePhraseGameBtn.onClick.RemoveAllListeners();
+            startTranslateAdverbGameBtn.onClick.RemoveAllListeners();
+            startTranslatePrepositionGameBtn.onClick.RemoveAllListeners();
+            startTranslateQuestionGameBtn.onClick.RemoveAllListeners();
         }
 
         #endregion
