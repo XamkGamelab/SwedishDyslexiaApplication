@@ -29,9 +29,12 @@ namespace SwedishApp.Minigames
 
         private GameMode? gameMode = null;
         private Queue<Word> words;
+        private List<Word> wordsToImprove;
         private Word currentWord = null;
 
         [Header("Game variables")]
+        [Tooltip("Value between 0 and 1; percentage")]
+        [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float nextWordDelayTime = 1.5f;
         [SerializeField] private int allowedMissedInputsCount = 2;
         private bool wordWasChecked = false;
@@ -63,7 +66,6 @@ namespace SwedishApp.Minigames
         //Events
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
-        public event Action PerfectScoreEvent;
 
         #region unity default methods
 
@@ -91,6 +93,7 @@ namespace SwedishApp.Minigames
             translateMinigameBG.SetActive(true);
             gameMode = _gameMode;
             words = new(_words.ToArray());
+            wordsToImprove = new();
             activeGameWordCount = words.Count;
             correctCounter.text = "0";
             score = 0;
@@ -257,6 +260,7 @@ namespace SwedishApp.Minigames
             checkWordButton.interactable = false;
             wordLetterInputFields.Clear();
             letterTextRefs.Clear();
+            if (!wordWasCorrect) wordsToImprove.Add(currentWord);
             Destroy(wordInputFieldHolder.gameObject);
             nextWordButton.gameObject.SetActive(false);
             UIManager.Instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
@@ -272,20 +276,15 @@ namespace SwedishApp.Minigames
         /// <returns></returns>
         private IEnumerator DelayBeforeNewWord()
         {
-            if (words.Count == 0 && score == activeGameWordCount)
-            {
-                PerfectScoreEvent?.Invoke();
-            }
-
-            yield return new WaitForSeconds(nextWordDelayTime);
-
             if (words.Count > 0)
             {
+                yield return new WaitForSeconds(nextWordDelayTime);
                 SetupNewWord();
             }
             else
             {
                 CompleteGame();
+                yield break;
             }
         }
 
@@ -294,16 +293,11 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void CompleteGame()
         {
-            Debug.Log("game completed yippee");
-            translateMinigameBG.SetActive(false);
+            UnsubscribeEvents();
 
-            //Unsubscribe events
-            UIManager.Instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
-            UIManager.Instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
-            UIManager.Instance.LightmodeOnEvent -= ToLightmode;
-            UIManager.Instance.LightmodeOffEvent -= ToDarkmode;
-            inputReader.SubmitEventCancelled -= CheckWord;
-            inputReader.SubmitEventHeld -= DeleteOldWord;
+            translateMinigameBG.SetActive(false);
+            UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,
+                _goodScoreThreshold: goodScoreThreshold, _wordsToImprove: wordsToImprove);
         }
 
         /// <summary>
@@ -312,26 +306,20 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void AbortGame()
         {
-            Debug.Log("game aborted");
+            UnsubscribeEvents();
 
-            //Unsubscribe events
+            translateMinigameBG.SetActive(false);
+            Destroy(wordInputFieldHolder.gameObject);
+        }
+
+        private void UnsubscribeEvents()
+        {
             UIManager.Instance.LegibleModeOnEvent -= SwapFieldsToLegibleFont;
             UIManager.Instance.LegibleModeOffEvent -= SwapFieldsToBasicFont;
             UIManager.Instance.LightmodeOnEvent -= ToLightmode;
             UIManager.Instance.LightmodeOffEvent -= ToDarkmode;
             inputReader.SubmitEventCancelled -= CheckWord;
             inputReader.SubmitEventHeld -= DeleteOldWord;
-
-            //Clear variables
-            words = new();
-            currentWord = new();
-            wordToTranslateText.text = "";
-            wordLetterInputFields.Clear();
-            letterTextRefs.Clear();
-
-            //Destroy word object, disable translate minigame ui
-            Destroy(wordInputFieldHolder.gameObject);
-            translateMinigameBG.SetActive(false);
         }
 
         #endregion

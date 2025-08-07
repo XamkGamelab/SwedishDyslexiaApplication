@@ -38,7 +38,6 @@ namespace SwedishApp.UI
 
         [Header("Input-Related")]
         [SerializeField] private InputReader inputReader;
-        private Vector2 mousePos;
 
         [Header("Minigame-Related")]
 
@@ -87,11 +86,13 @@ namespace SwedishApp.UI
 
         //Minigame Endscreen
         [SerializeField] private GameObject minigameEndscreen;
+        [SerializeField] private GameObject minigameEndscreenImprovementObject;
         [SerializeField] private Button disableMinigameEndscreenBtn;
         [SerializeField] private Transform mistakeWordsHolder;
         [SerializeField] private GameObject mistakeWordPrefab;
         [SerializeField] private TextMeshProUGUI endMessageField;
         [SerializeField] private TextMeshProUGUI scoreField;
+        [SerializeField] private Scrollbar mistakeScroller;
         private const string endMessagePerfect = "Täydet pisteet!";
         private const string endMessageGood = "Hyvä suoritus!";
         private const string endMessageMid = "Parannuksen varaa!";
@@ -101,8 +102,9 @@ namespace SwedishApp.UI
         [SerializeField] private Image flashcardGameTypeBackground;
         [SerializeField] private Image translateGameTypeBackground;
         [SerializeField] private List<TextMeshProUGUI> textObjectList;
-        [SerializeField] private List<Image> lightmodableImages;
         [SerializeField] private List<TextMeshProUGUI> textObjectListReverseLight;
+        [SerializeField] private List<TextMeshProUGUI> textObjectListHighlight;
+        [SerializeField] private List<Image> lightmodableImages;
         [SerializeField] private List<Image> lightmodableImagesReverse;
         [SerializeField] private List<Image> highlightImages;
         [SerializeField] private List<Image> highlightImagesReverse;
@@ -219,7 +221,6 @@ namespace SwedishApp.UI
 
             //Add input events
             inputReader.ClickEvent += ClickOffCloseSettings;
-            inputReader.PointEvent += GetMousePosition;
 
             openDictionaryButton.onClick.AddListener(() => dictionaryHandler.gameObject.SetActive(true));
 
@@ -342,12 +343,6 @@ namespace SwedishApp.UI
             declensionMinigame.WordCorrectEvent += PlayBlueSparkles;
             translateMinigame.WordCorrectEvent += PlayYellowSparkles;
             translateMinigame.WordCorrectEvent += PlayBlueSparkles;
-            translateMinigame.PerfectScoreEvent += PlayYellowSparkles;
-            translateMinigame.PerfectScoreEvent += PlayBlueSparkles;
-            conjugationMinigame.PerfectScoreEvent += PlayYellowSparkles;
-            conjugationMinigame.PerfectScoreEvent += PlayBlueSparkles;
-            declensionMinigame.PerfectScoreEvent += PlayYellowSparkles;
-            declensionMinigame.PerfectScoreEvent += PlayBlueSparkles;
             conjugationMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
             conjugationMinigame.WordIncorrectEvent += PlayLameBlueSparkles;
             declensionMinigame.WordIncorrectEvent += PlayLameYellowSparkles;
@@ -408,14 +403,16 @@ namespace SwedishApp.UI
         /// </summary>
         private void ToggleLightmode()
         {
+            LightmodeOn = !LightmodeOn;
+            
             //Lightmode goes ON here
-            if (!LightmodeOn)
+            if (LightmodeOn)
             {
-                LightmodeOn = true;
                 AudioManager.Instance.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
-                lightmodableImages.ForEach((imgObject) => imgObject.color = Lightgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Lightgrey);
+                textObjectListHighlight.ForEach((textObject) => textObject.color = LightmodeHighlight);
+                lightmodableImages.ForEach((imgObject) => imgObject.color = Lightgrey);
                 lightmodableImagesReverse.ForEach((imgObject) => imgObject.color = Darkgrey);
                 highlightImages.ForEach((imgObject) => imgObject.color = LightmodeHighlight);
                 highlightImagesReverse.ForEach((imgObject) => imgObject.color = DarkmodeHighlight);
@@ -436,8 +433,9 @@ namespace SwedishApp.UI
                 LightmodeOn = false;
                 AudioManager.Instance.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
-                lightmodableImages.ForEach((imgObject) => imgObject.color = Darkgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
+                textObjectListHighlight.ForEach((textObject) => textObject.color = DarkmodeHighlight);
+                lightmodableImages.ForEach((imgObject) => imgObject.color = Darkgrey);
                 lightmodableImagesReverse.ForEach((imgObject) => imgObject.color = Lightgrey);
                 highlightImages.ForEach((imgObject) => imgObject.color = DarkmodeHighlight);
                 highlightImagesReverse.ForEach((imgObject) => imgObject.color = LightmodeHighlight);
@@ -563,17 +561,23 @@ namespace SwedishApp.UI
             startTranslateQuestionGameBtn.onClick.RemoveAllListeners();
         }
 
-        public void ActivateMinigameEndscreen(int _maxScore, int _realScore, float _goodScoreThreshold, List<Word> _wordsToImprove = null)
+        public void ActivateMinigameEndscreen(int _maxScore, int _realScore, float _goodScoreThreshold, List<Word> _wordsToImprove)
         {
+            minigameEndscreen.SetActive(true);
             float scorePercentage = _realScore / (float)_maxScore;
             scoreField.text = string.Concat(_realScore, "/", _maxScore);
             disableMinigameEndscreenBtn.onClick.AddListener(() => minigameEndscreen.SetActive(false));
+            mistakeScroller.value = 0f;
 
             //Handle endscreen message
             if (_realScore == _maxScore)
             {
-                endMessageField.text = endMessagePerfect;
                 //Perfect score means no words to improve, can return here.
+                PlayYellowSparkles();
+                PlayBlueSparkles();
+                endMessageField.text = endMessagePerfect;
+                minigameEndscreenImprovementObject.SetActive(false);
+                return;
             }
             else if (scorePercentage > _goodScoreThreshold)
             {
@@ -584,9 +588,14 @@ namespace SwedishApp.UI
                 endMessageField.text = endMessageMid;
             }
 
-            //if no words to improve, method is done.
-            if (_wordsToImprove == null) return;
+            //If no words to improve, method is done.
+            if (_wordsToImprove.Count == 0)
+            {
+                minigameEndscreenImprovementObject.SetActive(false);
+                return;
+            }
 
+            minigameEndscreenImprovementObject.SetActive(true);
             List<TextMeshProUGUI> fields = new();
 
             foreach (Word wordToImprove in _wordsToImprove)
@@ -774,15 +783,6 @@ namespace SwedishApp.UI
                 settingsMenu.SetActive(true);
                 settingsOpen = true;
             }
-        }
-
-        /// <summary>
-        /// This method fetches the mouse position based on the input reader
-        /// </summary>
-        /// <param name="_pos">Vector2 indicating the position of the mouse</param>
-        private void GetMousePosition(Vector2 _pos)
-        {
-            mousePos = _pos;
         }
 
         /// <summary>

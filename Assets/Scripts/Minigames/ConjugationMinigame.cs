@@ -41,8 +41,9 @@ namespace SwedishApp.Minigames
         [SerializeField] private Button nextWordBtn;
         [SerializeField] private GameObject inputfieldHolder;
         [SerializeField] private GameObject singleInputfield;
+        [Tooltip("Value between 0 and 1; percentage")]
+        [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float newWordDelay = 1f;
-        [SerializeField] private float gameEndDelay = 1.5f;
         [SerializeField] private int allowedMissedInputsCount = 2;
 
         //Input field related references
@@ -56,7 +57,8 @@ namespace SwedishApp.Minigames
         //Other game-related variables
         private ConjugateInto conjugateInto;
         private int wordFormsCount;
-        private Stack<VerbWord> verbList;
+        private Queue<VerbWord> verbList;
+        private List<Word> wordsToImprove;
         private VerbWord activeWord;
         private string activeWordWantedForm;
         private string activeWordWantedFormNoHighlight;
@@ -67,13 +69,11 @@ namespace SwedishApp.Minigames
         private int playedWordsCount = -1;
         private int activeGameWordCount = 0;
         private bool wordWasCorrect = false;
-        public bool gameIsEnding { get; private set; } = false;
         private List<TextMeshProUGUI> gameTextRefs;
 
         //Events
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
-        public event Action PerfectScoreEvent;
 
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
@@ -82,7 +82,7 @@ namespace SwedishApp.Minigames
         private void Start()
         {
             wordFormsCount = System.Enum.GetNames(typeof(ConjugateInto)).Length;
-            abortBtn.onClick.AddListener(() => EndGame(true));
+            abortBtn.onClick.AddListener(AbortGame);
             swedishBaseWordTxt.RegisterDirtyLayoutCallback(() => UIManager.Instance.FixTextSpacing(swedishBaseWordTxt));
         }
 
@@ -223,6 +223,9 @@ namespace SwedishApp.Minigames
             nextWordBtn.gameObject.SetActive(false);
             finnishHintTxt.text = "Hint";
             verbList = new(_verbList);
+            wordsToImprove = new();
+            score = 0;
+            playedWordsCount = -1;
             activeGameWordCount = verbList.Count;
             correctCounter.text = "0";
 
@@ -254,7 +257,7 @@ namespace SwedishApp.Minigames
         private void InitializeNewWord()
         {
             //Get new active word & set relevant variables
-            activeWord = verbList.Pop();
+            activeWord = verbList.Dequeue();
             wordWasChecked = false;
             wordWasCorrect = false;
             gotScoreForWord = false;
@@ -333,7 +336,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void CheckWord()
         {
-            if (gameIsEnding || !checkWordBtn.interactable) return;
+            if (!checkWordBtn.interactable) return;
 
             wordWasCorrect = false;
             int correctLettersCount = 0;
@@ -413,19 +416,17 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void NextWord()
         {
-            if (!wordWasChecked || gameIsEnding) return;
+            if (!wordWasChecked) return;
+
+            Destroy(inputFieldHandling.gameObject);
             if (verbList == null || verbList.Count == 0)
             {
-                EndGame();
+                CompleteGame();
                 return;
             }
-            DeleteOldWord();
-            StartCoroutine(NextWordDelay());
-        }
 
-        private void DeleteOldWord()
-        {
-            Destroy(inputFieldHandling.gameObject);
+            if (!wordWasCorrect) wordsToImprove.Add(activeWord);
+            StartCoroutine(NextWordDelay());
         }
 
         /// <summary>
@@ -434,29 +435,30 @@ namespace SwedishApp.Minigames
         /// </summary>
         /// <param name="_endInstantly">If true, ends game immediately, defaults to false
         /// to give time for an end-of-game animation to be played</param>
-        private void EndGame(bool _endInstantly = false)
+        private void AbortGame()
         {
             //Shouldn't need to reset any variables as they're set at the start of the game anyway
+            UnsubcribeEvents();
+            Destroy(inputFieldHandling.gameObject);
+
+            gameObject.SetActive(false);
+            
+        }
+
+        private void CompleteGame()
+        {
+            UnsubcribeEvents();
+            gameObject.SetActive(false);
+            UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,
+                _goodScoreThreshold: goodScoreThreshold, _wordsToImprove: wordsToImprove);
+        }
+
+        private void UnsubcribeEvents()
+        {
             inputReader.SubmitEventCancelled -= CheckWord;
             inputReader.SubmitEventHeld -= NextWord;
             checkWordBtn.onClick.RemoveListener(CheckWord);
             nextWordBtn.onClick.RemoveListener(NextWord);
-            Destroy(inputFieldHandling.gameObject);
-            singleInputfields = null;
-            fieldTextRefs = null;
-            score = 0;
-            playedWordsCount = -1;
-            activeGameWordCount = 0;
-
-            if (!_endInstantly)
-            {
-                gameIsEnding = true;
-                StartCoroutine(GameEndDelay());
-            }
-            else
-            {
-                gameObject.SetActive(false);
-            }
         }
 
         /// <summary>
@@ -482,21 +484,6 @@ namespace SwedishApp.Minigames
         {
             if (!checkWordBtn.interactable) return;
             finnishHintTxt.text = activeWord.GetConjugatedFinnish(conjugateInto);
-        }
-
-        /// <summary>
-        /// Coroutine, delays ending the game for a little end-of-game animation
-        /// </summary>
-        /// <returns></returns>
-        private IEnumerator GameEndDelay()
-        {
-            if (verbList.Count == 0 && score == activeGameWordCount)
-            {
-                PerfectScoreEvent?.Invoke();
-            }
-            yield return new WaitForSeconds(gameEndDelay);
-            gameObject.SetActive(false);
-            gameIsEnding = false;
         }
         
         #endregion
