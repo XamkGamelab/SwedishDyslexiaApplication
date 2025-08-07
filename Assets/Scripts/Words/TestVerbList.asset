@@ -461,6 +461,34 @@ MonoBehaviour:
     pastPlusPerfectTenseStart: 'hade '
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: oli valmistunut
+  - swedishWord: vara
+    finnishWord: olla
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: '"olla olemassa"'
+    conjugationClass: 4
+    wordCore: var
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    baseformIsRegular: 1
+    baseformEnd: a
+    currentTenseIsRegular: 0
+    currentTenseEnd: "\xE4r"
+    currentTenseFinnish: on
+    pastTenseIsRegular: 1
+    pastTenseEnd: 
+    pastTenseFinnish: oli
+    pastPerfectTenseIsRegular: 0
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: varit
+    pastPerfectTenseFinnish: on ollut
+    pastPlusPerfectTenseIsRegular: 0
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: varit
+    pastPlusPerfectTenseFinnish: oli ollut
   - swedishWord: vilja
     finnishWord: haluta
     darkModeSprite: {fileID: 21300000, guid: 06252887aa3d51446825b80208b99c1c, type: 3}
