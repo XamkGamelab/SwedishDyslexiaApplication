@@ -83,7 +83,7 @@ namespace SwedishApp.Minigames
         {
             wordFormsCount = System.Enum.GetNames(typeof(ConjugateInto)).Length;
             abortBtn.onClick.AddListener(() => EndGame(true));
-            swedishBaseWordTxt.RegisterDirtyLayoutCallback(() => UIManager.instance.FixTextSpacing(swedishBaseWordTxt));
+            swedishBaseWordTxt.RegisterDirtyLayoutCallback(() => UIManager.Instance.FixTextSpacing(swedishBaseWordTxt));
         }
 
         #region lightmode-related
@@ -93,12 +93,12 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void ToLightmode()
         {
-            abortBtn.image.sprite = UIManager.instance.abortSpriteLightmode;
-            checkWordBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            finnishHintBtn.image.sprite = UIManager.instance.buttonSpriteLightmode;
-            conjugationClassImage.color = UIManager.instance.Darkgrey;
-            gameTextRefs.ForEach((text) => text.color = UIManager.instance.Darkgrey);
+            abortBtn.image.sprite = UIManager.Instance.AbortSpriteLightmode;
+            checkWordBtn.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            nextWordBtn.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            finnishHintBtn.image.sprite = UIManager.Instance.ButtonSpriteLightmode;
+            conjugationClassImage.color = UIManager.Instance.Darkgrey;
+            gameTextRefs.ForEach((text) => text.color = UIManager.Instance.Darkgrey);
 
             if (singleInputfields == null || singleInputfields.Count == 0) return;
             LightmodeInputFields();
@@ -109,12 +109,12 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void ToDarkmode()
         {
-            abortBtn.image.sprite = UIManager.instance.abortSpriteDarkmode;
-            checkWordBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            nextWordBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            finnishHintBtn.image.sprite = UIManager.instance.buttonSpriteDarkmode;
-            conjugationClassImage.color = UIManager.instance.Lightgrey;
-            gameTextRefs.ForEach((text) => text.color = UIManager.instance.Lightgrey);
+            abortBtn.image.sprite = UIManager.Instance.AbortSpriteDarkmode;
+            checkWordBtn.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            nextWordBtn.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            finnishHintBtn.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
+            conjugationClassImage.color = UIManager.Instance.Lightgrey;
+            gameTextRefs.ForEach((text) => text.color = UIManager.Instance.Lightgrey);
 
             if (singleInputfields == null || singleInputfields.Count == 0) return;
             DarkmodeInputFields();
@@ -129,13 +129,13 @@ namespace SwedishApp.Minigames
             for (int i = 0; i < singleInputfields.Count; i++)
             {
                 var colorBlock = singleInputfields[i].colors;
-                colorBlock.normalColor = UIManager.instance.Darkgrey;
-                colorBlock.selectedColor = UIManager.instance.LightmodeHighlight;
-                colorBlock.highlightedColor = UIManager.instance.DarkgreyLighter;
-                colorBlock.pressedColor = UIManager.instance.DarkgreyLighter;
-                colorBlock.disabledColor = UIManager.instance.DarkgreyHalfAlpha;
+                colorBlock.normalColor = UIManager.Instance.Darkgrey;
+                colorBlock.selectedColor = UIManager.Instance.LightmodeHighlight;
+                colorBlock.highlightedColor = UIManager.Instance.DarkgreyLighter;
+                colorBlock.pressedColor = UIManager.Instance.DarkgreyLighter;
+                colorBlock.disabledColor = UIManager.Instance.DarkgreyHalfAlpha;
                 singleInputfields[i].colors = colorBlock;
-                fieldTextRefs[i].color = UIManager.instance.Lightgrey;
+                fieldTextRefs[i].color = UIManager.Instance.Lightgrey;
             }
         }
 
@@ -148,13 +148,13 @@ namespace SwedishApp.Minigames
             for (int i = 0; i < singleInputfields.Count; i++)
             {
                 var colorBlock = singleInputfields[i].colors;
-                colorBlock.normalColor = UIManager.instance.Lightgrey;
-                colorBlock.selectedColor = UIManager.instance.DarkmodeHighlight;
-                colorBlock.highlightedColor = UIManager.instance.LightgreyDarker;
-                colorBlock.pressedColor = UIManager.instance.LightgreyDarker;
-                colorBlock.disabledColor = UIManager.instance.LightgreyHalfAlpha;
+                colorBlock.normalColor = UIManager.Instance.Lightgrey;
+                colorBlock.selectedColor = UIManager.Instance.DarkmodeHighlight;
+                colorBlock.highlightedColor = UIManager.Instance.LightgreyDarker;
+                colorBlock.pressedColor = UIManager.Instance.LightgreyDarker;
+                colorBlock.disabledColor = UIManager.Instance.LightgreyHalfAlpha;
                 singleInputfields[i].colors = colorBlock;
-                fieldTextRefs[i].color = UIManager.instance.Darkgrey;
+                fieldTextRefs[i].color = UIManager.Instance.Darkgrey;
             }
         }
 
@@ -169,8 +169,8 @@ namespace SwedishApp.Minigames
         {
             gameTextRefs.ForEach((text) =>
             {
-                text.font = UIManager.instance.legibleFont;
-                text.characterSpacing = UIManager.instance.legibleSpacing;
+                text.font = UIManager.Instance.LegibleFont;
+                text.characterSpacing = UIManager.Instance.LegibleSpacing;
             });
             if (fieldTextRefs == null || fieldTextRefs.Count == 0) return;
             FieldsToHyperlegibleFont();
@@ -183,8 +183,8 @@ namespace SwedishApp.Minigames
         {
             gameTextRefs.ForEach((text) =>
             {
-                text.font = UIManager.instance.basicFont;
-                text.characterSpacing = UIManager.instance.basicSpacing;
+                text.font = UIManager.Instance.BasicFont;
+                text.characterSpacing = UIManager.Instance.BasicSpacing;
             });
             if (fieldTextRefs == null || fieldTextRefs.Count == 0) return;
             FieldsToBasicFont();
@@ -195,7 +195,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void FieldsToHyperlegibleFont()
         {
-            fieldTextRefs.ForEach((text) => text.font = UIManager.instance.legibleFont);
+            fieldTextRefs.ForEach((text) => text.font = UIManager.Instance.LegibleFont);
         }
         
         /// <summary>
@@ -203,7 +203,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void FieldsToBasicFont()
         {
-            fieldTextRefs.ForEach((text) => text.font = UIManager.instance.basicFont);
+            fieldTextRefs.ForEach((text) => text.font = UIManager.Instance.BasicFont);
         }
 
         #endregion
@@ -232,15 +232,15 @@ namespace SwedishApp.Minigames
             checkWordBtn.onClick.AddListener(CheckWord);
             nextWordBtn.onClick.AddListener(NextWord);
             finnishHintBtn.onClick.AddListener(ShowHint);
-            UIManager.instance.LightmodeOnEvent += ToLightmode;
-            UIManager.instance.LightmodeOffEvent += ToDarkmode;
-            UIManager.instance.LegibleModeOnEvent += ToHyperlegibleFont;
-            UIManager.instance.LegibleModeOffEvent += ToBasicFont;
+            UIManager.Instance.LightmodeOnEvent += ToLightmode;
+            UIManager.Instance.LightmodeOffEvent += ToDarkmode;
+            UIManager.Instance.LegibleModeOnEvent += ToHyperlegibleFont;
+            UIManager.Instance.LegibleModeOffEvent += ToBasicFont;
 
             //set initial colors dependending on if lightmode is on or off
-            if (UIManager.instance.LightmodeOn) ToLightmode();
+            if (UIManager.Instance.LightmodeOn) ToLightmode();
             else ToDarkmode();
-            if (UIManager.instance.hyperlegibleOn) ToHyperlegibleFont();
+            if (UIManager.Instance.HyperlegibleOn) ToHyperlegibleFont();
             else ToBasicFont();
 
             //set the first task
@@ -321,9 +321,9 @@ namespace SwedishApp.Minigames
                 singleInputfields[i].onValueChanged.AddListener((s) => inputFieldHandling.GoNextField());
                 singleInputfields[i].onSelect.AddListener((s) => inputFieldHandling.GetActiveIndex(indexHolder));
             }
-            if (UIManager.instance.LightmodeOn) LightmodeInputFields();
+            if (UIManager.Instance.LightmodeOn) LightmodeInputFields();
             else DarkmodeInputFields();
-            if (UIManager.instance.hyperlegibleOn) FieldsToHyperlegibleFont();
+            if (UIManager.Instance.HyperlegibleOn) FieldsToHyperlegibleFont();
             else FieldsToBasicFont();
             singleInputfields[0].ActivateInputField();
         }

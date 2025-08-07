@@ -11,8 +11,8 @@ namespace SwedishApp.UI
 
         private void Start()
         {
-            UIManager.instance.LightmodeOnEvent += ToLightmode;
-            UIManager.instance.LightmodeOffEvent += ToDarkmode;
+            UIManager.Instance.LightmodeOnEvent += ToLightmode;
+            UIManager.Instance.LightmodeOffEvent += ToDarkmode;
         }
 
         private void ToLightmode()

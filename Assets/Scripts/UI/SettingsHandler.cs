@@ -7,12 +7,12 @@ namespace SwedishApp.UI
     {
         public void OnPointerEnter(PointerEventData eventData)
         {
-            UIManager.instance.mouseOverSettings = true;
+            UIManager.Instance.mouseOverSettings = true;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            UIManager.instance.mouseOverSettings = false;
+            UIManager.Instance.mouseOverSettings = false;
         }
     }
 }

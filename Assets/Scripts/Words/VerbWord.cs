@@ -67,7 +67,7 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string BaseformWord()
         {
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (baseformIsRegular)
                 {
@@ -115,7 +115,7 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string CurrentTenseWord()
         {
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 
@@ -151,7 +151,7 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string PastTenseWord()
         {
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
                 
@@ -187,7 +187,7 @@ namespace SwedishApp.Words
         {
             string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
             
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 if (pastPerfectTenseIsRegular)
                 {
@@ -218,7 +218,7 @@ namespace SwedishApp.Words
         /// <returns>Return described above.</returns>
         public string PastPlusPerfectTenseWord()
         {
-            if (UIManager.instance.LightmodeOn)
+            if (UIManager.Instance.LightmodeOn)
             {
                 string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
 

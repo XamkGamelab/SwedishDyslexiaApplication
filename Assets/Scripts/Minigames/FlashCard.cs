@@ -40,7 +40,7 @@ namespace SwedishApp.Minigames
         {
             textsInChildren = transform.GetComponentsInChildren<TextMeshProUGUI>(true).ToList();
             //Add listener to every text field, called when a layout is changed. This then fixes character spacing for soft hyphens.
-            textsInChildren.ForEach(field => field.RegisterDirtyLayoutCallback(() => UIManager.instance.FixTextSpacing(field)));
+            textsInChildren.ForEach(field => field.RegisterDirtyLayoutCallback(() => UIManager.Instance.FixTextSpacing(field)));
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,8 +54,8 @@ namespace SwedishApp.Minigames
 
             //like and subscribe
             thisButton.onClick.AddListener(CallFlip);
-            UIManager.instance.LightmodeOnEvent += LightsOn;
-            UIManager.instance.LightmodeOffEvent += LightsOff;
+            UIManager.Instance.LightmodeOnEvent += LightsOn;
+            UIManager.Instance.LightmodeOffEvent += LightsOff;
         }
 
         public void SetInitialElements(Sprite _lightmodeSprite = null, Sprite _darkmodeSprite = null)
@@ -65,7 +65,7 @@ namespace SwedishApp.Minigames
             if (lightmodeSprite != null && darkmodeSprite != null)
             {
                 hintImage.enabled = true;
-                hintImage.sprite = UIManager.instance.LightmodeOn ? lightmodeSprite : darkmodeSprite;
+                hintImage.sprite = UIManager.Instance.LightmodeOn ? lightmodeSprite : darkmodeSprite;
             }
             else
                 hintImage.enabled = false;
@@ -87,7 +87,7 @@ namespace SwedishApp.Minigames
         {
             foreach (TextMeshProUGUI text in textsInChildren)
             {
-                text.color = UIManager.instance.Darkgrey;
+                text.color = UIManager.Instance.Darkgrey;
             }
             if (lightmodeSprite != null)
             {
@@ -102,7 +102,7 @@ namespace SwedishApp.Minigames
         {
             foreach (TextMeshProUGUI text in textsInChildren)
             {
-                text.color = UIManager.instance.Lightgrey;
+                text.color = UIManager.Instance.Lightgrey;
             }
             if (darkmodeSprite != null)
             {

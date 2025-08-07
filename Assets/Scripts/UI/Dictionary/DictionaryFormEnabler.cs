@@ -57,7 +57,7 @@ namespace SwedishApp.UI
         {
             if (!wasInit) return;
             pointerOnThis = true;
-            text.color = UIManager.instance.LightmodeOn ? UIManager.instance.LightmodeHighlight : UIManager.instance.DarkmodeHighlight;
+            text.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.LightmodeHighlight : UIManager.Instance.DarkmodeHighlight;
             checkerCoroutine ??= StartCoroutine(MousePosChecker());
             delayCoroutine ??= StartCoroutine(ShowDelay());
         }
@@ -65,7 +65,7 @@ namespace SwedishApp.UI
         public void OnPointerExit(PointerEventData eventData)
         {
             if (!wasInit) return;
-            text.color = UIManager.instance.LightmodeOn ? UIManager.instance.Darkgrey : UIManager.instance.Lightgrey;
+            text.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.Darkgrey : UIManager.Instance.Lightgrey;
             pointerOnThis = false;
         }
 

@@ -59,8 +59,8 @@ namespace SwedishApp.UI
         private void Start()
         {
             searchField.onValueChanged.AddListener((s) => StartSearchClearCoroutine());
-            UIManager.instance.LightmodeOnEvent += ToLightmode;
-            UIManager.instance.LightmodeOffEvent += ToDarkmode;
+            UIManager.Instance.LightmodeOnEvent += ToLightmode;
+            UIManager.Instance.LightmodeOffEvent += ToDarkmode;
             closeButton.onClick.AddListener(() => gameObject.SetActive(false));
         }
 
@@ -365,13 +365,13 @@ namespace SwedishApp.UI
         private void ToLightmode()
         {
             searchImg.sprite = searchSpriteLightmode;
-            searchField.selectionColor = UIManager.instance.LightmodeHighlightTransparent;
+            searchField.selectionColor = UIManager.Instance.LightmodeHighlightTransparent;
         }
 
         private void ToDarkmode()
         {
             searchImg.sprite = searchSpriteDarkmode;
-            searchField.selectionColor = UIManager.instance.DarkmodeHighlightTransparent;
+            searchField.selectionColor = UIManager.Instance.DarkmodeHighlightTransparent;
         }
     }
 }
