@@ -19,6 +19,9 @@ namespace SwedishApp.UI
         [SerializeField] private Transform timeWordHolder;
         [SerializeField] private Transform numberHolder;
         [SerializeField] private Transform grammarHolder;
+        [SerializeField] private Transform adverbHolder;
+        [SerializeField] private Transform prepositionHolder;
+        [SerializeField] private Transform questionHolder;
         [SerializeField] private Transform pronounHolder;
         [SerializeField] private Transform phraseHolder;
         [SerializeField] private GameObject spacer;
@@ -31,12 +34,16 @@ namespace SwedishApp.UI
         [SerializeField] private TimeList timeList;
         [SerializeField] private NumberList numberList;
         [SerializeField] private GrammarList grammarList;
+        [SerializeField] private GrammarList adverbList;
+        [SerializeField] private GrammarList prepositionList;
+        [SerializeField] private GrammarList questionList;
         [SerializeField] private PronounList pronounList;
         [SerializeField] private PhraseList phraseList;
         [SerializeField] private Button closeButton;
         [SerializeField]
         private GameObject verbHeader, nounHeader, adjectiveHeader,
-        timeHeader, numberHeader, grammarHeader, pronounHeader, phraseHeader;
+        timeHeader, numberHeader, grammarHeader, adverbHeader,
+        prepositionHeader, questionHeader, pronounHeader, phraseHeader;
         [SerializeField] private DictionaryFormHolder wordFormHolder;
         private List<GameObject> headerObjects;
         private Dictionary<DictionaryEntry, Image> dictionaryEntries;
@@ -126,6 +133,15 @@ namespace SwedishApp.UI
                     case DictionaryEntry.WordType.grammar:
                         grammarHeader.SetActive(true);
                         break;
+                    case DictionaryEntry.WordType.adverb:
+                        adverbHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.preposition:
+                        prepositionHeader.SetActive(true);
+                        break;
+                    case DictionaryEntry.WordType.question:
+                        questionHeader.SetActive(true);
+                        break;
                     case DictionaryEntry.WordType.pronoun:
                         pronounHeader.SetActive(true);
                         break;
@@ -207,6 +223,9 @@ namespace SwedishApp.UI
                 timeHeader,
                 numberHeader,
                 grammarHeader,
+                adverbHeader,
+                prepositionHeader,
+                questionHeader,
                 pronounHeader,
                 phraseHeader
             };
@@ -293,6 +312,42 @@ namespace SwedishApp.UI
                 entry.FinnishWordTxt.text = grammar.finnishWord;
                 entry.SwedishWordTxt.text = grammar.swedishWord;
                 entry.wordType = DictionaryEntry.WordType.grammar;
+                dictionaryEntries.Add(entry, _spacer);
+                textFields.Add(entry.FinnishWordTxt);
+                textFields.Add(entry.SwedishWordTxt);
+            });
+
+            adverbList.grammarList.ForEach(adverb =>
+            {
+                DictionaryEntry entry = Instantiate(baseEntry, adverbHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, adverbHolder).GetComponent<Image>();
+                entry.FinnishWordTxt.text = adverb.finnishWord;
+                entry.SwedishWordTxt.text = adverb.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.adverb;
+                dictionaryEntries.Add(entry, _spacer);
+                textFields.Add(entry.FinnishWordTxt);
+                textFields.Add(entry.SwedishWordTxt);
+            });
+
+            prepositionList.grammarList.ForEach(preposition =>
+            {
+                DictionaryEntry entry = Instantiate(baseEntry, prepositionHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, prepositionHolder).GetComponent<Image>();
+                entry.FinnishWordTxt.text = preposition.finnishWord;
+                entry.SwedishWordTxt.text = preposition.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.preposition;
+                dictionaryEntries.Add(entry, _spacer);
+                textFields.Add(entry.FinnishWordTxt);
+                textFields.Add(entry.SwedishWordTxt);
+            });
+
+            questionList.grammarList.ForEach(question =>
+            {
+                DictionaryEntry entry = Instantiate(baseEntry, questionHolder).GetComponent<DictionaryEntry>();
+                Image _spacer = Instantiate(spacer, questionHolder).GetComponent<Image>();
+                entry.FinnishWordTxt.text = question.finnishWord;
+                entry.SwedishWordTxt.text = question.swedishWord;
+                entry.wordType = DictionaryEntry.WordType.question;
                 dictionaryEntries.Add(entry, _spacer);
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
