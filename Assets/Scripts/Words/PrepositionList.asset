@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef10a5ad5cbf54d48827fbe8c2e8080e, type: 3}
-  m_Name: TestPrepositionList
+  m_Script: {fileID: 11500000, guid: 302577206b1107442844c67cd6ffb238, type: 3}
+  m_Name: PrepositionList
   m_EditorClassIdentifier: 
-  prepositionList:
+  grammarList:
   - swedishWord: av
     finnishWord: jol\u00ADta\u00ADkul\u00ADta
     darkModeSprite: {fileID: 21300000, guid: 3a7c6f1c7b2c601449563439750a5820, type: 3}

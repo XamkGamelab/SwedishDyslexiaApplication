@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b319c99ad94c324d81ea9db5ed54bf1, type: 3}
-  m_Name: TestQuestionList
+  m_Script: {fileID: 11500000, guid: 302577206b1107442844c67cd6ffb238, type: 3}
+  m_Name: QuestionList
   m_EditorClassIdentifier: 
-  questionList:
+  grammarList:
   - swedishWord: hur
     finnishWord: miten
     darkModeSprite: {fileID: 21300000, guid: 7486528bb9f6a664d89c290d680da283, type: 3}
@@ -24,10 +24,10 @@ MonoBehaviour:
     lightModeSprite: {fileID: 21300000, guid: ca53dc6d53b37d14880e85e063b5705d, type: 3}
     notices: "hurdan, hurdant, hurdana, \"miten\" (mill\xE4 tavalla)"
   - swedishWord: "n\xE4r"
-    finnishWord: koska
+    finnishWord: milloin
     darkModeSprite: {fileID: 21300000, guid: a91377a15d75ab440b7de019eea75590, type: 3}
     lightModeSprite: {fileID: 21300000, guid: ad3d35c741c80eb40866e712e4675f86, type: 3}
-    notices: '"milloin?", "kun"'
+    notices: '"koska?", "kun"'
   - swedishWord: vad
     finnishWord: "mit\xE4"
     darkModeSprite: {fileID: 21300000, guid: 264aeecc6b8d22d44ac87d0247e9bf93, type: 3}

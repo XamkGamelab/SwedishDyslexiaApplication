@@ -13,6 +13,9 @@ namespace SwedishApp.UI
             number,
             time,
             grammar,
+            adverb,
+            preposition,
+            question,
             pronoun,
             phrase
         }

@@ -29,11 +29,11 @@ namespace SwedishApp.UI
         public TimeList timeList;
         public NumberList numberList;
         public GrammarList grammarList;
+        public GrammarList adverbList;
+        public GrammarList prepositionList;
+        public GrammarList questionList;
         public PronounList pronounList;
         public PhraseList phraseList;
-        public AdverbList adverbList;
-        public PrepositionList prepositionList;
-        public QuestionList questionList;
 
 
         [Header("Input-Related")]
@@ -285,17 +285,17 @@ namespace SwedishApp.UI
             });
             startFlashcardAdverbGameBtn.onClick.AddListener(() =>
         {
-            flashCardMinigame.StartGrammarGame(adverbList.adverbList.ToArray());
+            flashCardMinigame.StartGrammarGame(adverbList.grammarList.ToArray());
             flashcardGameTypeMenu.SetActive(false);
         });
             startFlashcardPrepositionGameBtn.onClick.AddListener(() =>
         {
-            flashCardMinigame.StartGrammarGame(prepositionList.prepositionList.ToArray());
+            flashCardMinigame.StartGrammarGame(prepositionList.grammarList.ToArray());
             flashcardGameTypeMenu.SetActive(false);
         });
             startFlashcardQuestionGameBtn.onClick.AddListener(() =>
         {
-            flashCardMinigame.StartGrammarGame(questionList.questionList.ToArray());
+            flashCardMinigame.StartGrammarGame(questionList.grammarList.ToArray());
             flashcardGameTypeMenu.SetActive(false);
         });
 
@@ -525,7 +525,7 @@ namespace SwedishApp.UI
         private void StartAdverbTranslateGame(bool _toFinnish)
         {
             TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
-            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(adverbList.adverbList)));
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(adverbList.grammarList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
@@ -533,7 +533,7 @@ namespace SwedishApp.UI
         private void StartPrepositionTranslateGame(bool _toFinnish)
         {
             TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
-            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(prepositionList.prepositionList)));
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(prepositionList.grammarList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }
@@ -541,7 +541,7 @@ namespace SwedishApp.UI
         private void StartQuestionTranslateGame(bool _toFinnish)
         {
             TranslateMinigame.GameMode mode = _toFinnish ? TranslateMinigame.GameMode.ToFinnish : TranslateMinigame.GameMode.ToSwedish;
-            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(questionList.questionList)));
+            translateMinigame.StartGame(mode, ScrambleWordList(new List<Word>(questionList.grammarList)));
             translateGameTypeMenu.SetActive(false);
             UnsubscribeTranslateStartButtons();
         }

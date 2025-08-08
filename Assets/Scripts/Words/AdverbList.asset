@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 918fa260ba4e0fa4e8cd4cae60c9df79, type: 3}
-  m_Name: TestAdverbList
+  m_Script: {fileID: 11500000, guid: 302577206b1107442844c67cd6ffb238, type: 3}
+  m_Name: AdverbList
   m_EditorClassIdentifier: 
-  adverbList:
+  grammarList:
   - swedishWord: bara
     finnishWord: vain
     darkModeSprite: {fileID: 0}
