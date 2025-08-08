@@ -40,8 +40,8 @@ MonoBehaviour:
     notices: 
   - swedishWord: kan
     finnishWord: osata
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 8e709376ca056794b8ff7404d2d14fc5, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: ee79bbe585c56e642bb5e3dd3311d971, type: 3}
     notices: '"voida"'
   - swedishWord: men
     finnishWord: mutta
@@ -50,18 +50,18 @@ MonoBehaviour:
     notices: 
   - swedishWord: "m\xE5ste"
     finnishWord: "t\xE4yty\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: acdcd09763ea7db469aa8915392b0215, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 7b59725a6eeeee84499aac5313fd3479, type: 3}
     notices: "\"olla pakko\", \"pit\xE4\xE4\""
   - swedishWord: ska
     finnishWord: aikoa
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: fcebfde3e14098743b31c9c5e791813e, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 6b12910cbabcd40469837405a9010c24, type: 3}
     notices: "\"pit\xE4\xE4\""
   - swedishWord: skulle
     finnishWord: -isi
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 09113c8d436e02b4f9a9c97ead6d6feb, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: e2039eb8d34e93a4f862fadcdb18a295, type: 3}
     notices: esim. "aikoisi"
   - swedishWord: varje
     finnishWord: jokainen
