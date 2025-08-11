@@ -137,9 +137,6 @@ namespace SwedishApp.UI
         private List<TextMeshProUGUI> textFields;
         public bool HyperlegibleOn { get; private set; } = true;
         [SerializeField] private Toggle toggleHyperlegible;
-        [SerializeField] private Toggle fontSmallToggle;
-        [SerializeField] private Toggle fontMediumToggle;
-        [SerializeField] private Toggle fontLargeToggle;
         [field: SerializeField] public TMP_FontAsset LegibleFont { get; private set; }
         [field: SerializeField] public TMP_FontAsset BasicFont { get; private set; }
         public int LegibleSpacing { get; private set; } = 8;
@@ -147,9 +144,6 @@ namespace SwedishApp.UI
         // private bool fontSettingsSubscribed = false;
         public event Action LegibleModeOnEvent;
         public event Action LegibleModeOffEvent;
-        public event Action FontSmallEvent;
-        public event Action FontMediumEvent;
-        public event Action FontLargeEvent;
         private const string spaceTagStart = "<cspace=-0.08em>";
         private const string spaceTagEnd = "</cspace>";
         private const string spaceTagsWithSoftHyphen = "<cspace=-0.08em>\u00AD</cspace>";
@@ -225,9 +219,6 @@ namespace SwedishApp.UI
             openDictionaryButton.onClick.AddListener(() => dictionaryHandler.gameObject.SetActive(true));
 
             //Add listeners to settings-related buttons
-            fontSmallToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.small, toggleOn));
-            fontMediumToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.medium, toggleOn));
-            fontLargeToggle.onValueChanged.AddListener((toggleOn) => PickFontSize(FontSize.large, toggleOn));
             toggleHyperlegible.onValueChanged.AddListener((toggleOn) => ToggleHyperlegibleFont(toggleOn));
             toggleLightmodeBtn.onClick.AddListener(ToggleLightmode);
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
@@ -679,44 +670,6 @@ namespace SwedishApp.UI
                     textObject.characterSpacing = BasicSpacing;
                 });
                 LegibleModeOffEvent?.Invoke();
-            }
-        }
-
-        /// <summary>
-        /// Changes the font size
-        /// </summary>
-        /// <param name="_size"> Changes font size (small, medium or large) </param>
-        /// <param name="_toggledOn"> If _toggledOn = true, check the font size </param>
-        private void PickFontSize(FontSize _size, bool _toggledOn)   //font size is an enum, 1=small, 2=medium, 3=large
-        {
-            if (!_toggledOn) return; // Doesn't go through the case options
-
-            switch (_size)           // _toggledOn = true
-            {
-                case FontSize.small:
-                    fontSmallToggle.interactable = false;
-                    fontMediumToggle.interactable = true;
-                    fontLargeToggle.interactable = true;
-                    fontMediumToggle.isOn = false;
-                    fontLargeToggle.isOn = false;
-                    FontSmallEvent?.Invoke();
-                    break;
-                case FontSize.medium:
-                    fontSmallToggle.interactable = true;
-                    fontMediumToggle.interactable = false;
-                    fontLargeToggle.interactable = true;
-                    fontSmallToggle.isOn = false;
-                    fontLargeToggle.isOn = false;
-                    FontMediumEvent?.Invoke();
-                    break;
-                case FontSize.large:
-                    fontSmallToggle.interactable = true;
-                    fontMediumToggle.interactable = true;
-                    fontLargeToggle.interactable = false;
-                    fontSmallToggle.isOn = false;
-                    fontMediumToggle.isOn = false;
-                    FontLargeEvent?.Invoke();
-                    break;
             }
         }
 
