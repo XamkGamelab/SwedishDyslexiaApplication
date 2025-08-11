@@ -440,15 +440,14 @@ namespace SwedishApp.Minigames
             //Shouldn't need to reset any variables as they're set at the start of the game anyway
             UnsubcribeEvents();
             Destroy(inputFieldHandling.gameObject);
-
             gameObject.SetActive(false);
-            
         }
 
         private void CompleteGame()
         {
             UnsubcribeEvents();
             gameObject.SetActive(false);
+
             UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,
                 _goodScoreThreshold: goodScoreThreshold, _wordsToImprove: wordsToImprove);
         }
@@ -457,6 +456,10 @@ namespace SwedishApp.Minigames
         {
             inputReader.SubmitEventCancelled -= CheckWord;
             inputReader.SubmitEventHeld -= NextWord;
+            UIManager.Instance.LightmodeOnEvent -= ToLightmode;
+            UIManager.Instance.LightmodeOffEvent -= ToDarkmode;
+            UIManager.Instance.LegibleModeOnEvent -= ToHyperlegibleFont;
+            UIManager.Instance.LegibleModeOffEvent -= ToBasicFont;
             checkWordBtn.onClick.RemoveListener(CheckWord);
             nextWordBtn.onClick.RemoveListener(NextWord);
         }

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SwedishApp.UI
 {
@@ -7,5 +8,6 @@ namespace SwedishApp.UI
     {
         public TextMeshProUGUI finnishWordField;
         public TextMeshProUGUI swedishWordField;
+        public Image spacer;
     }
 }

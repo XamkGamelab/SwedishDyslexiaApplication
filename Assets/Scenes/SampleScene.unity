@@ -6445,8 +6445,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -125}
+  m_SizeDelta: {x: 0, y: -250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474197939
 MonoBehaviour:
@@ -6468,7 +6468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Flash Cards\n\n(T\xE4\xE4 vois literally\nolla kuva kortista?)"
+  m_text: Flash Cards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 742ee39f1f7c18347b8df876ecea9fbd, type: 2}
   m_sharedMaterial: {fileID: 5071666107028240711, guid: 742ee39f1f7c18347b8df876ecea9fbd, type: 2}
@@ -7467,7 +7467,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.09019608, g: 0.101960786, b: 0.12941177, a: 0}
+  m_BackGroundColor: {r: 0.09019608, g: 0.101960786, b: 0.12941177, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10311,7 +10311,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
+  m_UpdateRectTransformForStandalone: 1
   m_SortingLayerID: -382552827
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -10492,6 +10492,7 @@ MonoBehaviour:
   - {fileID: 510563397}
   - {fileID: 915847396}
   - {fileID: 1823390023}
+  - {fileID: 1386109684}
   textObjectListReverseLight: []
   textObjectListHighlight:
   - {fileID: 1813940888}
@@ -10502,6 +10503,7 @@ MonoBehaviour:
   - {fileID: 2000831698}
   - {fileID: 1266397798}
   - {fileID: 581258747}
+  - {fileID: 377437450}
   lightmodableImagesReverse:
   - {fileID: 1562606397}
   - {fileID: 146365279}
@@ -10520,6 +10522,7 @@ MonoBehaviour:
   - {fileID: 2070543271}
   - {fileID: 306954587}
   - {fileID: 1899608743}
+  - {fileID: 1161408114}
   highlightImages: []
   highlightImagesReverse:
   - {fileID: 554158021}
@@ -10528,6 +10531,7 @@ MonoBehaviour:
   - {fileID: 1674582732}
   - {fileID: 565767547}
   - {fileID: 958102120}
+  - {fileID: 619576067}
   buttonImages:
   - {fileID: 1260473998}
   - {fileID: 1580720503}
@@ -10558,6 +10562,7 @@ MonoBehaviour:
   - {fileID: 1792374589}
   - {fileID: 1409615257}
   - {fileID: 123021346}
+  - {fileID: 323063311}
   flashcardBases:
   - {fileID: 1913427434238011456}
   - {fileID: 2247274482428037956}
@@ -20773,6 +20778,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 474197938}
+  - {fileID: 2076035318}
   m_Father: {fileID: 1852373265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -30487,10 +30493,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translateToSweImg: {fileID: 435548065}
   translateToFinImg: {fileID: 109035581}
+  flashcardIcon: {fileID: 2076035319}
   toSweDarkmode: {fileID: 5804316316073431585, guid: ae9a3bca4f72a834f88e1869c9d19c34, type: 3}
   toSweLightmode: {fileID: 2558428111419973684, guid: 275fb17f951cd864a8d1f1dfbc3a33bf, type: 3}
   toFinDarkmode: {fileID: -6750740397030927473, guid: 392fd8ba33d757644895b5d7c3325132, type: 3}
   toFinLightmode: {fileID: -2979543015645835479, guid: fb7e9af5d814f8243b79ed283eb9d270, type: 3}
+  flashcardLightmode: {fileID: 21300000, guid: b6ab728f65d5d1d41b20899042e8f688, type: 3}
+  flashcardDarkmode: {fileID: 21300000, guid: 87527eba57b4f714f8f32e3092604e1e, type: 3}
 --- !u!1 &1858952969
 GameObject:
   m_ObjectHideFlags: 0
@@ -33485,6 +33494,81 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5914477728137786837, guid: da4fcfa26610d314d84689583b549d17, type: 3}
   m_PrefabInstance: {fileID: 1633204490}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2076035317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2076035318}
+  - component: {fileID: 2076035320}
+  - component: {fileID: 2076035319}
+  m_Layer: 5
+  m_Name: Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2076035318
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076035317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1347353697}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 248.8, y: 226.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2076035319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076035317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 87527eba57b4f714f8f32e3092604e1e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2076035320
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076035317}
+  m_CullTransparentMesh: 1
 --- !u!1 &2101207355
 GameObject:
   m_ObjectHideFlags: 0

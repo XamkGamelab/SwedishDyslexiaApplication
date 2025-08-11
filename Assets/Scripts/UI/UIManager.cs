@@ -597,23 +597,28 @@ namespace SwedishApp.UI
 
             minigameEndscreenImprovementObject.SetActive(true);
             List<TextMeshProUGUI> fields = new();
+            List<Image> spacers = new();
 
             foreach (Word wordToImprove in _wordsToImprove)
             {
                 MistakeWordHandler mistakeWordHandler = Instantiate(mistakeWordPrefab, mistakeWordsHolder).GetComponent<MistakeWordHandler>();
                 mistakeWordHandler.finnishWordField.text = wordToImprove.finnishWord;
                 mistakeWordHandler.swedishWordField.text = wordToImprove.swedishWord;
+                mistakeWordHandler.spacer.color = LightmodeOn ? Darkgrey : Lightgrey;
                 InitTextFieldAppearance(ref mistakeWordHandler.finnishWordField);
                 InitTextFieldAppearance(ref mistakeWordHandler.swedishWordField);
 
+                spacers.Add(mistakeWordHandler.spacer);
                 fields.Add(mistakeWordHandler.finnishWordField);
                 fields.Add(mistakeWordHandler.swedishWordField);
             }
 
             AddToTextLists(fields);
+            lightmodableImagesReverse.AddRange(spacers);
             disableMinigameEndscreenBtn.onClick.AddListener(() =>
             {
                 RemoveFromTextLists(fields);
+                spacers.ForEach(spacer => lightmodableImagesReverse.Remove(spacer));
                 foreach (Transform child in mistakeWordsHolder)
                 {
                     Destroy(child.gameObject);
