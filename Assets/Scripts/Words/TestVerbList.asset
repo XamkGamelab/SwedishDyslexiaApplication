@@ -15,8 +15,8 @@ MonoBehaviour:
   verbList:
   - swedishWord: "be\\u00ADh\xF6\\u00ADva"
     finnishWord: tar\u00ADvi\u00ADta
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: d4c05dd07c61b9f409f6154d8903ba26, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 086afcc061339a84380b0c0eef57dd50, type: 3}
     notices: 
     conjugationClass: 2
     wordCore: "be\\u00ADh\xF6\\u00ADv"
