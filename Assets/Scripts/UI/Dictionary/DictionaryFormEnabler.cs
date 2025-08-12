@@ -13,9 +13,9 @@ namespace SwedishApp.UI
         [HideInInspector] public DictionaryFormHolder wordFormHolder;
         private TextMeshProUGUI text;
         [SerializeField] private float hoverTime;
-        public VerbWord verbWord;
-        public NounWord nounWord;
-        public AdjectiveWord adjectiveWord;
+        [HideInInspector] public VerbWord verbWord;
+        [HideInInspector] public NounWord nounWord;
+        [HideInInspector] public AdjectiveWord adjectiveWord;
         private WaitForSeconds hoverWait;
         private Coroutine delayCoroutine;
         private Coroutine checkerCoroutine;
@@ -83,7 +83,7 @@ namespace SwedishApp.UI
             if (verbWord != null) wordFormHolder.InitHolder(verbWord, this);
             else if (nounWord != null) wordFormHolder.InitHolder(nounWord, this);
             else if (adjectiveWord != null) wordFormHolder.InitHolder(adjectiveWord, this);
-            wordFormHolder.transform.position = transform.position;
+            wordFormHolder.transform.position = new(wordFormHolder.transform.position.x, transform.position.y);
             delayCoroutine = null;
         }
 
