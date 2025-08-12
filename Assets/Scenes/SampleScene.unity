@@ -9857,6 +9857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 735774239}
   - component: {fileID: 735774238}
+  - component: {fileID: 735774241}
   - component: {fileID: 735774237}
   - component: {fileID: 735774236}
   - component: {fileID: 735774240}
@@ -9906,7 +9907,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &735774238
 Canvas:
   m_ObjectHideFlags: 0
@@ -9916,7 +9917,7 @@ Canvas:
   m_GameObject: {fileID: 735774235}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 1
   m_PixelPerfect: 1
@@ -9938,8 +9939,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735774235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -9}
+  m_LocalScale: {x: 0.008333333, y: 0.008333333, z: 0.008333333}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1764682698}
@@ -9966,8 +9967,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 1200}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735774240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10204,6 +10205,20 @@ MonoBehaviour:
   toggleLightmodeBtn: {fileID: 1946117840}
   toggledSlider: {fileID: 141912690}
   lerpDuration: 0.06
+--- !u!114 &735774241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735774235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1.3333334
 --- !u!1 &739687503
 GameObject:
   m_ObjectHideFlags: 0
@@ -16708,7 +16723,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordFormPrefab: {fileID: 2703423927755262026, guid: f67a0274bf739c046932477df4255377, type: 3}
-  posOffset: {x: 0, y: 0}
   lastEnabler: {fileID: 0}
   mouseOnHolder: 0
 --- !u!114 &1153887554 stripped
@@ -34467,7 +34481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordFormPrefab: {fileID: 2703423927755262026, guid: f67a0274bf739c046932477df4255377, type: 3}
-  posOffset: {x: 0, y: 0}
   lastEnabler: {fileID: 0}
   mouseOnHolder: 0
 --- !u!1001 &7374640761119541098
