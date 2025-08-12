@@ -10,7 +10,6 @@ namespace SwedishApp.UI
     public class DictionaryFormHolder : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     {
         [SerializeField] private GameObject wordFormPrefab;
-        public Vector2 posOffset = Vector2.zero;
         [HideInInspector] public DictionaryFormEnabler lastEnabler;
         private List<TextMeshProUGUI> currentFields;
         [HideInInspector] public bool mouseOnHolder = true;
