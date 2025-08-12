@@ -93,6 +93,7 @@ namespace SwedishApp.UI
         [SerializeField] private TextMeshProUGUI endMessageField;
         [SerializeField] private TextMeshProUGUI scoreField;
         [SerializeField] private Scrollbar mistakeScroller;
+        [SerializeField] private DictionaryFormHolder mistakeFormHolder;
         private const string endMessagePerfect = "Täydet pisteet!";
         private const string endMessageGood = "Hyvä suoritus!";
         private const string endMessageMid = "Parannuksen varaa!";
@@ -579,13 +580,12 @@ namespace SwedishApp.UI
                 endMessageField.text = endMessageMid;
             }
 
-            //If no words to improve, method is done.
-            if (_wordsToImprove.Count == 0)
-            {
-                minigameEndscreenImprovementObject.SetActive(false);
-                return;
-            }
+            if (_wordsToImprove.Count == 0) minigameEndscreenImprovementObject.SetActive(false);
+            else HandleMistakeWords(_wordsToImprove);
+        }
 
+        private void HandleMistakeWords(List<Word> _wordsToImprove)
+        {
             minigameEndscreenImprovementObject.SetActive(true);
             List<TextMeshProUGUI> fields = new();
             List<Image> spacers = new();
@@ -593,11 +593,28 @@ namespace SwedishApp.UI
             foreach (Word wordToImprove in _wordsToImprove)
             {
                 MistakeWordHandler mistakeWordHandler = Instantiate(mistakeWordPrefab, mistakeWordsHolder).GetComponent<MistakeWordHandler>();
+                DictionaryFormEnabler formEnabler = mistakeWordHandler.swedishWordField.GetComponent<DictionaryFormEnabler>();
                 mistakeWordHandler.finnishWordField.text = wordToImprove.finnishWord;
                 mistakeWordHandler.swedishWordField.text = wordToImprove.swedishWord;
                 mistakeWordHandler.spacer.color = LightmodeOn ? Darkgrey : Lightgrey;
+                mistakeWordHandler.finnishWordField.RegisterDirtyLayoutCallback(() => FixTextSpacing(mistakeWordHandler.finnishWordField));
+                mistakeWordHandler.swedishWordField.RegisterDirtyLayoutCallback(() => FixTextSpacing(mistakeWordHandler.swedishWordField));
                 InitTextFieldAppearance(ref mistakeWordHandler.finnishWordField);
                 InitTextFieldAppearance(ref mistakeWordHandler.swedishWordField);
+                formEnabler.wordFormHolder = mistakeFormHolder;
+
+                if (wordToImprove is VerbWord)
+                {
+                    formEnabler.Init(wordToImprove as VerbWord);
+                }
+                else if (wordToImprove is NounWord)
+                {
+                    formEnabler.Init(wordToImprove as NounWord);
+                }
+                else if (wordToImprove is AdjectiveWord)
+                {
+                    formEnabler.Init(wordToImprove as AdjectiveWord);
+                }
 
                 spacers.Add(mistakeWordHandler.spacer);
                 fields.Add(mistakeWordHandler.finnishWordField);

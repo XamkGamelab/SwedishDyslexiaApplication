@@ -9,11 +9,10 @@ namespace SwedishApp.UI
 {
     public class DictionaryFormHolder : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     {
-        [SerializeField] private Transform wordHolder;
         [SerializeField] private GameObject wordFormPrefab;
         [HideInInspector] public DictionaryFormEnabler lastEnabler;
         private List<TextMeshProUGUI> currentFields;
-        public bool mouseOnHolder = true;
+        [HideInInspector] public bool mouseOnHolder = true;
 
         public void InitHolder(VerbWord _verb, DictionaryFormEnabler _lastEnabler)
         {
@@ -70,7 +69,7 @@ namespace SwedishApp.UI
 
             for (int i = 0; i < _words.Length; i++)
             {
-                TextMeshProUGUI wordForm = Instantiate(wordFormPrefab, wordHolder).GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI wordForm = Instantiate(wordFormPrefab, transform).GetComponent<TextMeshProUGUI>();
                 wordForm.text = _words[i];
                 currentFields.Add(wordForm);
                 if (UIManager.Instance.HyperlegibleOn)
