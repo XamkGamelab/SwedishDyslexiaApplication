@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 302577206b1107442844c67cd6ffb238, type: 3}
-  m_Name: TestGrammarList
+  m_Name: _GrammarList
   m_EditorClassIdentifier: 
   grammarList:
   - swedishWord: annan
     finnishWord: muu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: e45dd33a4ee685c4c9bedd891d6b1cea, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 972a47170ac167545b8058330722d0c6, type: 3}
     notices: annan, annat, andra, "muu"
   - swedishWord: att
     finnishWord: "ett\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 7a425c53aaf1647448eec3a50e4bb6f9, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 122fefb9454396541915a830985024be, type: 3}
     notices: 
   - swedishWord: "d\xE5"
     finnishWord: silloin
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 9c4b99a7ef591024e89514e98f5113de, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 4f21f77bf9f815c4d8c7fdc8a03c8cf1, type: 3}
     notices: 'adverbi: "tuolloin"/"silloin", konjunktio: "kun"'
   - swedishWord: ef\u00ADter\u00ADsom
     finnishWord: koska
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: e0dce8824ad093042ad2e9ccd48f9068, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: ac9c102fe9e797a419db7c15f2fc5efc, type: 3}
     notices: 
   - swedishWord: fast
     finnishWord: vaikka
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 104f2bfb5931ef64f84bc6b1d94d42ec, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: f703625675e4fdd40ac43118e6bf405f, type: 3}
     notices: 
   - swedishWord: kan
     finnishWord: osata
@@ -45,8 +45,8 @@ MonoBehaviour:
     notices: '"voida"'
   - swedishWord: men
     finnishWord: mutta
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 19abc9ff4e6491c4ba799bc99e1cab2d, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 2286df9350d367344a4cc487b99ec1f3, type: 3}
     notices: 
   - swedishWord: "m\xE5ste"
     finnishWord: "t\xE4yty\xE4"
@@ -65,11 +65,11 @@ MonoBehaviour:
     notices: esim. "aikoisi"
   - swedishWord: varje
     finnishWord: jokainen
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 338b7239feb42454ead25d3dd0680fee, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 51ce93fa29fd69e438aef663aa911a0e, type: 3}
     notices: '"joka", "jokaisena"'
   - swedishWord: "\xE4n"
     finnishWord: kuin
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: d9fad3e6719d4d247a72372deb49120c, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: c9549510fcbbbfb4d8bfaea60c35eb01, type: 3}
     notices: komparatiivi, esim. "isompi kuin"
