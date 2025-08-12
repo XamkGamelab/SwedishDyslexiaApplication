@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 302577206b1107442844c67cd6ffb238, type: 3}
-  m_Name: TestAdverbList
+  m_Name: _AdverbList
   m_EditorClassIdentifier: 
   grammarList:
   - swedishWord: bara

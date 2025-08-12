@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 026dcdc482ebafb4080dee3c35c214e8, type: 3}
-  m_Name: TestVerbList
+  m_Name: _VerbList
   m_EditorClassIdentifier: 
   verbList:
   - swedishWord: "be\\u00ADh\xF6\\u00ADva"
