@@ -296,6 +296,7 @@ namespace SwedishApp.Minigames
             UnsubscribeEvents();
 
             translateMinigameBG.SetActive(false);
+            UIManager.Instance.TriggerTipChange();
             UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,
                 _goodScoreThreshold: goodScoreThreshold, _wordsToImprove: wordsToImprove);
         }
@@ -310,6 +311,7 @@ namespace SwedishApp.Minigames
 
             translateMinigameBG.SetActive(false);
             Destroy(wordInputFieldHolder.gameObject);
+            UIManager.Instance.TriggerTipChange();
         }
 
         private void UnsubscribeEvents()

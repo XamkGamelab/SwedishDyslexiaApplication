@@ -68,7 +68,11 @@ namespace SwedishApp.UI
             searchField.onValueChanged.AddListener((s) => StartSearchClearCoroutine());
             UIManager.Instance.LightmodeOnEvent += ToLightmode;
             UIManager.Instance.LightmodeOffEvent += ToDarkmode;
-            closeButton.onClick.AddListener(() => gameObject.SetActive(false));
+            closeButton.onClick.AddListener(() =>
+            {
+                UIManager.Instance.TriggerTipChange();
+                gameObject.SetActive(false);
+            });
         }
 
         /// <summary>

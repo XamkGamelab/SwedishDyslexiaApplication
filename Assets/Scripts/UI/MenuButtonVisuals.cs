@@ -8,7 +8,9 @@ namespace SwedishApp.UI
         [SerializeField] private Image translateToSweImg;
         [SerializeField] private Image translateToFinImg;
         [SerializeField] private Image flashcardIcon;
-        [SerializeField] private Sprite toSweDarkmode, toSweLightmode, toFinDarkmode, toFinLightmode, flashcardLightmode, flashcardDarkmode;
+        [SerializeField] private Image dictionaryIcon;
+        [SerializeField] private Sprite toSweDarkmode, toSweLightmode, toFinDarkmode, toFinLightmode, flashcardLightmode, flashcardDarkmode,
+        dictionaryLightmode, dictionaryDarkmode;
 
         private void Start()
         {
@@ -21,6 +23,7 @@ namespace SwedishApp.UI
             translateToSweImg.sprite = toSweLightmode;
             translateToFinImg.sprite = toFinLightmode;
             flashcardIcon.sprite = flashcardLightmode;
+            dictionaryIcon.sprite = dictionaryLightmode;
         }
 
         private void ToDarkmode()
@@ -28,6 +31,7 @@ namespace SwedishApp.UI
             translateToSweImg.sprite = toSweDarkmode;
             translateToFinImg.sprite = toFinDarkmode;
             flashcardIcon.sprite = flashcardDarkmode;
+            dictionaryIcon.sprite = dictionaryDarkmode;
         }
     }
 }
