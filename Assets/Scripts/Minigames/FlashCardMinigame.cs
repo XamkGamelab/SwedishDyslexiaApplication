@@ -815,6 +815,7 @@ namespace SwedishApp.Minigames
             nextWordBtn.onClick.RemoveAllListeners();
             UIManager.Instance.LightmodeOnEvent -= DisplayCurrentNoun;
             UIManager.Instance.LightmodeOffEvent -= DisplayCurrentNoun;
+            UIManager.Instance.TriggerTipChange();
             StartCoroutine(GameEndDelay());
         }
 

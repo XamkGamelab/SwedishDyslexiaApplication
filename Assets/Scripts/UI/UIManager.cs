@@ -184,6 +184,10 @@ namespace SwedishApp.UI
         [SerializeField] private Slider toggledSlider;
         [SerializeField] private float lerpDuration = 0.06f;
 
+        //Misc variables
+        [SerializeField] private TipsHandler tipsHandler;
+        public void TriggerTipChange() { tipsHandler.RandomizeTip(); }
+
         #endregion
 
         #region unity default methods
@@ -226,7 +230,11 @@ namespace SwedishApp.UI
 
             //Add listeners to credits buttons
             openCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(true));
-            closeCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(false));
+            closeCreditsButton.onClick.AddListener(() =>
+            {
+                TriggerTipChange();
+                creditsScreen.SetActive(false);
+            });
 
             //Add listeners to conjugation / declension minigame buttons
             startConjugationGameBtn.onClick.AddListener(() => conjugationMinigame.InitializeGame(verbList.verbList));
