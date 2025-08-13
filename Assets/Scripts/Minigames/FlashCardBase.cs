@@ -56,6 +56,8 @@ namespace SwedishApp.Minigames
             thisButton.onClick.AddListener(CallFlip);
             UIManager.Instance.LightmodeOnEvent += LightsOn;
             UIManager.Instance.LightmodeOffEvent += LightsOff;
+            UIManager.Instance.LegibleModeOnEvent += LegibleOn;
+            UIManager.Instance.LegibleModeOffEvent += LegibleOff;
         }
 
         public void SetInitialElements(Sprite _lightmodeSprite = null, Sprite _darkmodeSprite = null)
@@ -107,6 +109,30 @@ namespace SwedishApp.Minigames
             if (darkmodeSprite != null)
             {
                 hintImage.sprite = darkmodeSprite;
+            }
+        }
+
+        /// <summary>
+        /// This method handles changing all the card's relevant elements to legible font
+        /// </summary>
+        public void LegibleOn()
+        {
+            foreach (TextMeshProUGUI text in textsInChildren)
+            {
+                text.font = UIManager.Instance.LegibleFont;
+                text.characterSpacing = UIManager.Instance.LegibleSpacing;
+            }
+        }
+
+        /// <summary>
+        /// This method handles changing all the card's relevant elements to basic font
+        /// </summary>
+        public void LegibleOff()
+        {
+            foreach (TextMeshProUGUI text in textsInChildren)
+            {
+                text.font = UIManager.Instance.BasicFont;
+                text.characterSpacing = UIManager.Instance.BasicSpacing;
             }
         }
 

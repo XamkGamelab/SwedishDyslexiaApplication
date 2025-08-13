@@ -10106,6 +10106,8 @@ MonoBehaviour:
   - {fileID: 915847396}
   - {fileID: 1823390023}
   - {fileID: 1386109684}
+  - {fileID: 1389664064}
+  - {fileID: 947479133}
   textObjectListReverseLight: []
   textObjectListHighlight:
   - {fileID: 1813940888}
@@ -30250,9 +30252,9 @@ MonoBehaviour:
   m_fontSize: 56
   m_fontSizeBase: 56
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 55.5
+  m_fontSizeMax: 56
   m_fontStyle: 0
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
