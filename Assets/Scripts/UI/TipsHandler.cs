@@ -14,8 +14,8 @@ namespace SwedishApp
             //If necessary, add soft hyphenation to the words to ease line changes.
 
             "Voit etsiä tiettyjä sanoja sanaston \"sanahaku\" toiminnon avulla!",
-            "Kun koet hallitsevasi verbien kääntämisen, kokeile niiden taivuttamista!",
-            "Valtaosa verbeistä seuraavat luokkansa (esim. I, II...) taivutussääntöjä.",
+            "Kun koet hallitsevasi verbien kään\u00ADtämisen, kokeile niiden taivuttamista!",
+            "Valtaosa verbeistä seuraavat luok\u00ADkansa (esim. I, II...) taivutussääntöjä.",
             "Substantiivien sanaluokka (esim. 1, 2...) kertoo, miten sana taipuu"
         };
 
