@@ -6625,7 +6625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWordDelay: 0.25
-  gameEndDelay: 0.5
+  gameEndDelay: 0
   nounObject: {fileID: 886155916}
   verbObject: {fileID: 2247274482428037957}
   adjectiveObject: {fileID: 341208352}

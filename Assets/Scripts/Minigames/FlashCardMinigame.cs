@@ -821,6 +821,11 @@ namespace SwedishApp.Minigames
 
         private IEnumerator GameEndDelay()
         {
+            if (gameEndDelay == 0f)
+            {
+                gameObject.SetActive(false);
+                yield break;
+            }
             yield return gameEndWait;
             gameObject.SetActive(false);
         }
