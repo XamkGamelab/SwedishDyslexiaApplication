@@ -183,6 +183,13 @@ namespace SwedishApp.UI
         [SerializeField] private Button toggleLightmodeBtn;
         [SerializeField] private Slider toggledSlider;
         [SerializeField] private float lerpDuration = 0.06f;
+        [SerializeField] private Button toggleMute;
+        private bool muted = false;
+        [SerializeField] private Image muteImage;
+        [SerializeField] private Sprite unmutedSpriteDark;
+        [SerializeField] private Sprite unmutedSpriteLight;
+        [SerializeField] private Sprite mutedSpriteDark;
+        [SerializeField] private Sprite mutedSpriteLight;
 
         //Misc variables
         [SerializeField] private TipsHandler tipsHandler;
@@ -227,6 +234,19 @@ namespace SwedishApp.UI
             toggleHyperlegible.onValueChanged.AddListener((toggleOn) => ToggleHyperlegibleFont(toggleOn));
             toggleLightmodeBtn.onClick.AddListener(ToggleLightmode);
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
+            toggleMute.onClick.AddListener(() =>
+            {
+                muted = !muted;
+
+                if (muted)
+                {
+                    muteImage.sprite = LightmodeOn ? mutedSpriteLight : mutedSpriteDark;
+                }
+                else
+                {
+                    muteImage.sprite = LightmodeOn ? unmutedSpriteLight : unmutedSpriteDark;
+                }
+            });
 
             //Add listeners to credits buttons
             openCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(true));
@@ -408,7 +428,6 @@ namespace SwedishApp.UI
             //Lightmode goes ON here
             if (LightmodeOn)
             {
-                AudioManager.Instance.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Darkgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Lightgrey);
                 textObjectListHighlight.ForEach((textObject) => textObject.color = LightmodeHighlight);
@@ -425,13 +444,13 @@ namespace SwedishApp.UI
                 closeTranslateMenuBtn.image.sprite = AbortSpriteLightmode;
                 openCreditsText.color = Darkgrey;
                 settingsMenuImage.sprite = ButtonSpriteLightmode;
+                muteImage.sprite = muted ? mutedSpriteLight : unmutedSpriteLight;
 
                 LightmodeOnEvent?.Invoke();
             }
             else //Darkmode goes ON here
             {
                 LightmodeOn = false;
-                AudioManager.Instance.PlayLightModeToggle();
                 textObjectList.ForEach((textObject) => textObject.color = Lightgrey);
                 textObjectListReverseLight.ForEach((textObject) => textObject.color = Darkgrey);
                 textObjectListHighlight.ForEach((textObject) => textObject.color = DarkmodeHighlight);
@@ -448,6 +467,7 @@ namespace SwedishApp.UI
                 closeTranslateMenuBtn.image.sprite = AbortSpriteDarkmode;
                 openCreditsText.color = Lightgrey;
                 settingsMenuImage.sprite = ButtonSpriteDarkmode;
+                muteImage.sprite = muted ? mutedSpriteDark : unmutedSpriteDark;
 
                 LightmodeOffEvent?.Invoke();
             }

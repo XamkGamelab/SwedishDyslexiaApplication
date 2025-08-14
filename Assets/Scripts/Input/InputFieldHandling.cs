@@ -11,6 +11,7 @@ namespace SwedishApp.Input
     public class InputFieldHandling : MonoBehaviour
     {
         [SerializeField] private InputReader inputReader;
+        [SerializeField] private AudioClip inputClip;
         private TMP_InputField inputField;
         private RectTransform holder;
         public int index;
@@ -215,7 +216,7 @@ namespace SwedishApp.Input
                 inputField.ActivateInputField();
             }
 
-            AudioManager.Instance.PlayInputSound();
+            AudioManager.Instance.PlayClip(inputClip);
         }
     }
 }
