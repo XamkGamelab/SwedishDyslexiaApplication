@@ -62,12 +62,12 @@ MonoBehaviour:
     pastTenseEnd: \u00ADde inte
     pastTenseFinnish: ei tarvinnut
     pastPerfectTenseIsRegular: 1
-    pastPerfectTenseStart: 'har '
-    pastPerfectTenseEnd: t inte
+    pastPerfectTenseStart: 'har inte '
+    pastPerfectTenseEnd: t
     pastPerfectTenseFinnish: ei ole tarvinnut
     pastPlusPerfectTenseIsRegular: 1
-    pastPlusPerfectTenseStart: 'hade '
-    pastPlusPerfectTenseEnd: t inte
+    pastPlusPerfectTenseStart: 'hade inte '
+    pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: ei ollut tarvinnut
   - swedishWord: bruka
     finnishWord: olla tapana
