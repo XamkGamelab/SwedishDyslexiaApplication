@@ -134,7 +134,7 @@ namespace SwedishApp.Minigames
                 else chars.Add(' ');
             }
             string givenString = new(chars.ToArray());
-            givenString.ToLower();
+            givenString = givenString.ToLower();
 
             int j = 0;
 

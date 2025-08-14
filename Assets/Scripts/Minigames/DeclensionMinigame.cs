@@ -310,7 +310,7 @@ namespace SwedishApp.Minigames
                 //Grab refs
                 singleInputfields.Add(Instantiate(singleInputfield, inputFieldHandling.transform).GetComponent<TMP_InputField>());
                 fieldTextRefs.Add(singleInputfields[i].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
-                if (activeWordWantedForm[i] == ' ' || activeWordWantedForm == "")
+                if (activeWordWantedFormNoHighlight[i] == ' ' || activeWordWantedFormNoHighlight == "")
                 {
                     singleInputfields[i].interactable = false;
                     singleInputfields[i].image.enabled = false;
@@ -352,7 +352,7 @@ namespace SwedishApp.Minigames
                 wordLetterCount++;
             }
             string givenString = new(chars.ToArray());
-            givenString.ToLower();
+            givenString = givenString.ToLower();
 
             //Enable/disable indicators to show if a letter was correct or not, also add to a counter of
             //correct letters, used for determining if the whole word was correct.
