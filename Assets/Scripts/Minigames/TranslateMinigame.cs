@@ -45,6 +45,8 @@ namespace SwedishApp.Minigames
         private int playedWordsCount = -1;
         private int activeGameWordCount = 0;
         private string activeWordNoHighlight;
+        [SerializeField] private AudioClip correctClip;
+        [SerializeField] private AudioClip incorrectClip;
 
         [Header("UI related")]
         [SerializeField] private Button abortGameButton;
@@ -174,7 +176,7 @@ namespace SwedishApp.Minigames
             {
                 //DO A LITTLE THING IF WORD WAS CORRECT!!!
                 WordCorrectEvent?.Invoke();
-                AudioManager.Instance.PlayCorrect();
+                AudioManager.Instance.PlayClip(correctClip);
                 if (!gotScoreForWord)
                 {
                     score++;
@@ -184,7 +186,7 @@ namespace SwedishApp.Minigames
             else
             {
                 WordIncorrectEvent?.Invoke();
-                AudioManager.Instance.PlayIncorrect();
+                AudioManager.Instance.PlayClip(incorrectClip);
             }
 
             wordLetterInputFields[0].Select();
