@@ -41,7 +41,7 @@ MonoBehaviour:
   - swedishWord: "fr\xE5n"
     finnishWord: jostakin
     darkModeSprite: {fileID: 21300000, guid: c91665be792c2c842a443e48aa099935, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: c91665be792c2c842a443e48aa099935, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 5919f69aaf3127e49a662e852a105a98, type: 3}
     notices: "\"-sta\", \"-st\xE4\", \"-lta\", \"-lt\xE4\" (jostakin/joltakin)"
   - swedishWord: "f\xF6r"
     finnishWord: jollekin
