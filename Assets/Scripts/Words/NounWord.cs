@@ -34,8 +34,10 @@ namespace SwedishApp.Words
         [Header("Epämääräinen artikkeli")]
         public string wordGenderStart = "en ";
         public string wordIndefinitiveEnd = "";
+
         [Header("Määräinen pääte")]
         public string wordGenderEnd = "en";
+
         [Header("Epämääräinen monikko")]
         public bool wordPluralIsRegular = true;
         [Tooltip("If this form is irregular, set this variable to be the whole word")]
@@ -43,10 +45,9 @@ namespace SwedishApp.Words
         [Tooltip("Vaatiiko monikko \"flera\" sanan?")]
         public bool fleraPlural = false;
         private readonly string flera = "flera ";
+
         [Header("Määräinen monikko")]
-        public bool wordDefinitivePluralIsRegular = true;
-        [Tooltip("If this form is irregular, set this variable to be the whole word")]
-        public string wordDefinitivePluralEnd = "erna";
+        public string wordDefinitivePluralEnd = "na";
 
         public string NounWithGenderStart()
         {
@@ -132,30 +133,7 @@ namespace SwedishApp.Words
 
         public string PluralDefinitiveNoun()
         {
-            string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
-            
-            if (UIManager.Instance.LightmodeOn)
-            {
-                if (wordDefinitivePluralIsRegular)
-                {
-                    return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordDefinitivePluralEnd);   // Light mode on
-                }
-                else
-                {
-                    return string.Concat(colorTagStartLight, wordDefinitivePluralEnd, colorTagEnd);             // Light mode on
-                }
-            }
-            else
-            {
-                if (wordDefinitivePluralIsRegular)
-                {
-                    return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordDefinitivePluralEnd);    // Dark mode on
-                }
-                else
-                {
-                    return string.Concat(colorTagStartDark, wordDefinitivePluralEnd, colorTagEnd);              // Dark mode on
-                }
-            }
+            return string.Concat(PluralNoun(), wordDefinitivePluralEnd);
         }
 
         public string GetDeclenated(DeclensionMinigame.DeclenateInto _declenateInto)

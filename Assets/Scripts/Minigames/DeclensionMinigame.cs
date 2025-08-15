@@ -280,7 +280,7 @@ namespace SwedishApp.Minigames
                     instructionTxt.text = string.Concat(promptStart, plural_indef);
                     break;
                 case DeclenateInto.monikon_definitiivi:
-                    formIsRegular = activeWord.wordDefinitivePluralIsRegular;
+                    formIsRegular = activeWord.wordPluralIsRegular;
                     activeWordWantedForm = activeWord.PluralDefinitiveNoun();
                     instructionTxt.text = string.Concat(promptStart, plural_def);
                     break;

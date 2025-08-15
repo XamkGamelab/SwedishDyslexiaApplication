@@ -30,7 +30,7 @@ MonoBehaviour:
     wordPluralEnd: er
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: er\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: bok
     finnishWord: kir\u00ADja
     darkModeSprite: {fileID: 21300000, guid: f3bb133b5149a03409ace3db4e2b69f3, type: 3}
@@ -47,8 +47,8 @@ MonoBehaviour:
     wordPluralIsRegular: 0
     wordPluralEnd: "b\xF6ck\\u00ADer"
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 0
-    wordDefinitivePluralEnd: "b\xF6ck\\u00ADer\\u00ADna"
+    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: elev
     finnishWord: op\u00ADpi\u00ADlas
     darkModeSprite: {fileID: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
     wordPluralEnd: er
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: er\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: fisk
     finnishWord: ka\u00ADla
     darkModeSprite: {fileID: 21300000, guid: ae6373c18c5a7b8498726d237507185c, type: 3}
@@ -84,7 +84,7 @@ MonoBehaviour:
     wordPluralEnd: ar
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: ar\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: gym\u00ADna\u00ADsium
     finnishWord: lukio
     darkModeSprite: {fileID: 21300000, guid: 3320ad3f48eaab0489793fc81a101dcd, type: 3}
@@ -102,7 +102,7 @@ MonoBehaviour:
     wordPluralEnd: er
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: er\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: katt
     finnishWord: kis\u00ADsa
     darkModeSprite: {fileID: 21300000, guid: 2a1abbdc5c511134397d4958c5a24010, type: 3}
@@ -120,7 +120,7 @@ MonoBehaviour:
     wordPluralEnd: er
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: er\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: skola
     finnishWord: koulu
     darkModeSprite: {fileID: 21300000, guid: 649dd7a1dafa55e49987c1e5165cd747, type: 3}
@@ -138,7 +138,7 @@ MonoBehaviour:
     wordPluralEnd: or
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: or\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: strumpa
     finnishWord: suk\u00ADka
     darkModeSprite: {fileID: 21300000, guid: f5b964d23557b964ca951d73d5132707, type: 3}
@@ -156,7 +156,7 @@ MonoBehaviour:
     wordPluralEnd: or
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: or\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: student
     finnishWord: y\u00ADli\u00ADop\u00ADpi\u00ADlas
     darkModeSprite: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
     wordPluralEnd: er
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: er\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: studerande
     finnishWord: o\u00ADpis\u00ADke\u00ADli\u00ADja
     darkModeSprite: {fileID: 0}
@@ -210,7 +210,7 @@ MonoBehaviour:
     wordPluralEnd: ar
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: ar\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: "yr\\u00ADkes\\u00ADh\xF6g\\u00ADsko\\u00ADla"
     finnishWord: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlu
     darkModeSprite: {fileID: -6545539617038003697, guid: 88edab1f1edd7b94d936f2577582c6c3, type: 3}
@@ -228,7 +228,7 @@ MonoBehaviour:
     wordPluralEnd: or
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: or\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
   - swedishWord: yr\u00ADkes\u00ADsko\u00ADla
     finnishWord: am\u00ADmat\u00ADti\u00ADkou\u00ADlu
     darkModeSprite: {fileID: -8449304990306230482, guid: 9181f32aa3afb7b4a81229e8c501a5ce, type: 3}
@@ -246,4 +246,4 @@ MonoBehaviour:
     wordPluralEnd: or
     fleraPlural: 0
     wordDefinitivePluralIsRegular: 1
-    wordDefinitivePluralEnd: or\u00ADna
+    wordDefinitivePluralEnd: \u00ADna
