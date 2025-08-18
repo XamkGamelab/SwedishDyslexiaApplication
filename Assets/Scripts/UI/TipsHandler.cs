@@ -1,8 +1,8 @@
-using SwedishApp.UI;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace SwedishApp
+namespace SwedishApp.UI
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TipsHandler : MonoBehaviour
@@ -14,9 +14,12 @@ namespace SwedishApp
             //If necessary, add soft hyphenation to the words to ease line changes.
 
             "Voit etsiä tiettyjä sanoja sanaston \"sanahaku\" toiminnon avulla!",
-            "Kun koet hallitsevasi verbien kään\u00ADtämisen, kokeile niiden taivuttamista!",
-            "Valtaosa verbeistä seuraavat luok\u00ADkansa (esim. I, II...) taivutussääntöjä.",
-            "Substantiivien sanaluokka (esim. 1, 2...) kertoo, miten sana taipuu"
+            "Kun koet hallitsevasi verbien kääntämi\u00ADsen, kokeile niiden taivuttamista!",
+            "Kun koet osaavasi substantiivien kään\u00ADtämisen, kokeile myös taivuttamista!",
+            "Valtaosa verbeistä seuraavat luokkan\u00ADsa (esim. I, II...) taivutussääntöjä.",
+            "Joidenkin sanojen opettelukorteissa on lisätietoa sanan käytöstä!",
+            "Substantiivien sanaluokka (esim. 1, 2...) kertoo, miten sana taipuu.",
+            "Yritä muistella peruskoulun muistisään\u00ADtöjä, kuten KoPuTuS-X tai KonSuKiePre"
         };
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +27,20 @@ namespace SwedishApp
         {
             tipField = GetComponent<TextMeshProUGUI>();
             tipField.RegisterDirtyLayoutCallback(() => UIManager.Instance.FixTextSpacing(tipField));
+            // StartCoroutine(CycleTipsTEST());
+        }
+
+        private IEnumerator CycleTipsTEST()
+        {
+            int i = 0;
+
+            while (true)
+            {
+                yield return new WaitForSeconds(3f);
+                tipField.text = tips[i];
+                i++;
+                if (i >= tips.Length) i = 0;
+            }
         }
 
         public void RandomizeTip()

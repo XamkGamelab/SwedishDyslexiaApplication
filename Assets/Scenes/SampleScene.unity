@@ -1205,7 +1205,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 198, y: 145}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &109035581
 MonoBehaviour:
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6750740397030927473, guid: 392fd8ba33d757644895b5d7c3325132, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2a25bcad8dc82d4ab60c7989608590b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2704,7 +2704,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -480}
-  m_SizeDelta: {x: 900, y: 180}
+  m_SizeDelta: {x: 1000, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208731299
 MonoBehaviour:
@@ -5628,7 +5628,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 198, y: 145}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435548065
 MonoBehaviour:
@@ -5650,7 +5650,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5804316316073431585, guid: ae9a3bca4f72a834f88e1869c9d19c34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8978a1d8cf0e034409c84e8731eba7c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7080,7 +7080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -50, y: -200}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546730397
@@ -7137,7 +7137,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 4
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 8
@@ -9397,6 +9397,7 @@ MonoBehaviour:
   - {fileID: 1386109684}
   - {fileID: 1389664064}
   - {fileID: 947479133}
+  - {fileID: 208731299}
   textObjectListReverseLight: []
   textObjectListHighlight:
   - {fileID: 1813940888}
@@ -11364,8 +11365,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: -940, y: -470}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -940, y: -330.00003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874064625
 MonoBehaviour:
@@ -15224,8 +15225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -100}
-  m_SizeDelta: {x: 1200, y: 700}
+  m_AnchoredPosition: {x: 0, y: -100}
+  m_SizeDelta: {x: 1400, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115960649
 MonoBehaviour:
@@ -15244,11 +15245,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 150
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -23353,8 +23354,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 260, y: -350}
-  m_SizeDelta: {x: 520, y: 700}
+  m_AnchoredPosition: {x: 322.2425, y: -382.5}
+  m_SizeDelta: {x: 644.485, y: 765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648502877
 MonoBehaviour:
@@ -23378,24 +23379,27 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Team Lead
 
-    Designer
+    Designer & Illustrator
 
-    Designer
-
-    Illustrator
+    Designer & Illustrator
 
     Illustrator
-
-    UI
-
-    UI
 
     Lead
     Programmer
 
     Programmer
 
-    Music & SFX'
+    Music & SFX
+
+    Music & SFX
+
+    UI & Scenes
+
+    QA
+    & UX Design
+
+    Testing'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 742ee39f1f7c18347b8df876ecea9fbd, type: 2}
   m_sharedMaterial: {fileID: 5071666107028240711, guid: 742ee39f1f7c18347b8df876ecea9fbd, type: 2}
@@ -27608,10 +27612,10 @@ MonoBehaviour:
   translateToFinImg: {fileID: 109035581}
   flashcardIcon: {fileID: 2076035319}
   dictionaryIcon: {fileID: 38082647}
-  toSweDarkmode: {fileID: 5804316316073431585, guid: ae9a3bca4f72a834f88e1869c9d19c34, type: 3}
-  toSweLightmode: {fileID: 2558428111419973684, guid: 275fb17f951cd864a8d1f1dfbc3a33bf, type: 3}
-  toFinDarkmode: {fileID: -6750740397030927473, guid: 392fd8ba33d757644895b5d7c3325132, type: 3}
-  toFinLightmode: {fileID: -2979543015645835479, guid: fb7e9af5d814f8243b79ed283eb9d270, type: 3}
+  toSweDarkmode: {fileID: 21300000, guid: 8978a1d8cf0e034409c84e8731eba7c7, type: 3}
+  toSweLightmode: {fileID: 21300000, guid: 6fff1ccb2bbfcf34fa40041bdd67d526, type: 3}
+  toFinDarkmode: {fileID: 21300000, guid: c2a25bcad8dc82d4ab60c7989608590b, type: 3}
+  toFinLightmode: {fileID: 21300000, guid: ec2a5c948a18a8d4ebc50f76c4f5c8ba, type: 3}
   flashcardLightmode: {fileID: 21300000, guid: b6ab728f65d5d1d41b20899042e8f688, type: 3}
   flashcardDarkmode: {fileID: 21300000, guid: 87527eba57b4f714f8f32e3092604e1e, type: 3}
   dictionaryLightmode: {fileID: 21300000, guid: 84948089c79714a4cb8f0629583338dc, type: 3}
@@ -29512,8 +29516,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 970, y: -312.5}
-  m_SizeDelta: {x: 600, y: 625}
+  m_AnchoredPosition: {x: 1097.2424, y: -382.5}
+  m_SizeDelta: {x: 605.515, y: 765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977462822
 MonoBehaviour:
@@ -29535,27 +29539,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nilla Yliluoma
+  m_text: 'Veera Raita
 
     Beck Ollas
 
     Aira Karhula
 
-    Beck Ollas
+    Meeri Koskenkangas
 
-    Aira
-    Karhula
-
-    Nilla Yliluoma
-
-    Veera Raita
-
-    Veera Raita
+    Veera
+    Raita
 
     Meeri Koskenkangas
 
-    Meeri
-    Koskenkangas'
+    Nilla Yliluoma
+
+    Meeri Koskenkangas
+
+    Veera
+    Raita
+
+    Nilla Yliluoma
+
+    Everyone above'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 742ee39f1f7c18347b8df876ecea9fbd, type: 2}
   m_sharedMaterial: {fileID: 5071666107028240711, guid: 742ee39f1f7c18347b8df876ecea9fbd, type: 2}
