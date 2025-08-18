@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using SwedishApp.Core;
 using SwedishApp.Input;
 using SwedishApp.Meta;
 using SwedishApp.UI;
@@ -41,6 +42,8 @@ namespace SwedishApp.Minigames
         [SerializeField] private Button nextWordBtn;
         [SerializeField] private GameObject inputfieldHolder;
         [SerializeField] private GameObject singleInputfield;
+        [SerializeField] private AudioClip correctClip;
+        [SerializeField] private AudioClip incorrectClip;
         [Tooltip("Value between 0 and 1; percentage")]
         [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float newWordDelay = 1f;
@@ -297,6 +300,7 @@ namespace SwedishApp.Minigames
             if (!formIsRegular) irregularHintObj.SetActive(true);
             else irregularHintObj.SetActive(false);
             swedishBaseWordTxt.text = activeWord.swedishWord;
+            UIManager.Instance.FixTextSpacing(swedishBaseWordTxt);
             conjugationClassTxt.text = activeWord.conjugationClass.ToString();
             translatedCounter.text = string.Concat(playedWordsCount, "/", activeGameWordCount);
 
@@ -395,11 +399,13 @@ namespace SwedishApp.Minigames
                 }
                 correctCounter.text = score.ToString();
                 WordCorrectEvent?.Invoke();
+                AudioManager.Instance.PlayClip(correctClip);
                 Debug.Log("Word was correct!");
             }
             else
             {
                 WordIncorrectEvent?.Invoke();
+                AudioManager.Instance.PlayClip(incorrectClip);
             }
 
             if (missedInputsCount <= allowedMissedInputsCount)
@@ -416,7 +422,11 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void NextWord()
         {
-            if (!wordWasChecked) return;
+            if (!wordWasChecked)
+            {
+                CheckWord();
+                return;
+            }
 
             Destroy(inputFieldHandling.gameObject);
             if (verbList == null || verbList.Count == 0)

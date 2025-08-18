@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using SwedishApp.UI;
 using SwedishApp.Words;
 using TMPro;
@@ -45,6 +46,9 @@ namespace SwedishApp.Minigames
         [SerializeField] private TextMeshProUGUI nextWordTxt;
         [SerializeField] private Button abortGameButton;
 
+        [Header("Tutorial-related")]
+        [SerializeField] private List<TutorialHandler> flashcardTutorials;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start()
         {
@@ -61,7 +65,7 @@ namespace SwedishApp.Minigames
             nextWordTxt.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.Darkgrey : UIManager.Instance.Lightgrey;
         }
 
-        #region lightmode-related methods
+        #region settings-related methods
 
         /// <summary>
         /// This method is subscribed to <see cref="UIManager.LightmodeOnEvent"/>, and handles changing sprites
@@ -83,6 +87,25 @@ namespace SwedishApp.Minigames
             abortGameButton.image.sprite = UIManager.Instance.AbortSpriteDarkmode;
             nextWordBtn.image.sprite = UIManager.Instance.ButtonSpriteDarkmode;
             nextWordTxt.color = UIManager.Instance.Lightgrey;
+        }
+
+        private void ShowRelevantTutorial()
+        {
+            if (UIManager.Instance.TutorialsOff) return;
+
+            bool foundTutorialToShow = false;
+            foreach (TutorialHandler tutorial in flashcardTutorials)
+            {
+                if (!tutorial.TutorialSeen() && !foundTutorialToShow)
+                {
+                    tutorial.ShowTutorial();
+                    foundTutorialToShow = true;
+                }
+                else
+                {
+                    tutorial.gameObject.SetActive(false);
+                }
+            }
         }
 
         #endregion
@@ -115,6 +138,7 @@ namespace SwedishApp.Minigames
             //Enable relevant objects
             gameObject.SetActive(true);
             nounObject.gameObject.SetActive(true);
+            ShowRelevantTutorial();
 
             //(Re)set variables
             nounWords = _nounWords;
@@ -207,6 +231,7 @@ namespace SwedishApp.Minigames
             //Enable relevant objects
             gameObject.SetActive(true);
             verbObject.gameObject.SetActive(true);
+            ShowRelevantTutorial();
 
             //Set initial colors
             if (UIManager.Instance.LightmodeOn)
@@ -295,6 +320,7 @@ namespace SwedishApp.Minigames
             //Enable relevant objects
             gameObject.SetActive(true);
             adjectiveObject.gameObject.SetActive(true);
+            ShowRelevantTutorial();
 
             //Set initial colors
             if (UIManager.Instance.LightmodeOn)
@@ -381,6 +407,7 @@ namespace SwedishApp.Minigames
             //Enable relevant objects
             gameObject.SetActive(true);
             timeObject.gameObject.SetActive(true);
+            ShowRelevantTutorial();
 
             //Set initial colors
             if (UIManager.Instance.LightmodeOn)
@@ -469,6 +496,7 @@ namespace SwedishApp.Minigames
             //Enable relevant objects
             gameObject.SetActive(true);
             numberObject.gameObject.SetActive(true);
+            ShowRelevantTutorial();
 
             //Set initial colors
             if (UIManager.Instance.LightmodeOn)
@@ -558,6 +586,7 @@ namespace SwedishApp.Minigames
             //Enable relevant objects
             gameObject.SetActive(true);
             grammarObject.gameObject.SetActive(true);
+            ShowRelevantTutorial();
 
             //Set initial colors
             if (UIManager.Instance.LightmodeOn)
@@ -651,6 +680,7 @@ namespace SwedishApp.Minigames
             //Enable relevant objects
             gameObject.SetActive(true);
             pronounObject.gameObject.SetActive(true);
+            ShowRelevantTutorial();
 
             //Set initial colors
             if (UIManager.Instance.LightmodeOn)
@@ -737,6 +767,7 @@ namespace SwedishApp.Minigames
             //Enable relevant objects
             gameObject.SetActive(true);
             phraseObject.gameObject.SetActive(true);
+            ShowRelevantTutorial();
 
             //Set initial colors
             if (UIManager.Instance.LightmodeOn)

@@ -221,6 +221,7 @@ namespace SwedishApp.Minigames
             activeWordNoHighlight = gameMode == GameMode.ToSwedish ? Helpers.CleanWord(currentWord.swedishWord) : Helpers.CleanWord(currentWord.finnishWord);
 
             wordToTranslateText.text = wordToTranslate;
+            UIManager.Instance.FixTextSpacing(wordToTranslateText);
 
             //Create an input field for every letter of the word
             for (int i = 0; i < activeWordNoHighlight.Length; i++)
@@ -255,7 +256,11 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void DeleteOldWord()
         {
-            if (!wordWasChecked) return;
+            if (!wordWasChecked)
+            {
+                CheckWord();
+                return;
+            }
             if (!canDeleteWord) return;
 
             canDeleteWord = false;
