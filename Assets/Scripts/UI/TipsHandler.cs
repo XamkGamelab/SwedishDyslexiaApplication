@@ -14,12 +14,12 @@ namespace SwedishApp.UI
             //If necessary, add soft hyphenation to the words to ease line changes.
 
             "Voit etsiä tiettyjä sanoja sanaston \"sanahaku\" toiminnon avulla!",
-            "Kun koet hallitsevasi verbien kään\u00ADtämisen, kokeile niiden taivuttamista!",
+            "Kun koet hallitsevasi verbien kääntämi\u00ADsen, kokeile niiden taivuttamista!",
             "Kun koet osaavasi substantiivien kään\u00ADtämisen, kokeile myös taivuttamista!",
-            "Valtaosa verbeistä seuraavat luok\u00ADkansa (esim. I, II...) taivutussääntöjä.",
-            "Joidenkin sanojen opettelukorteis\u00ADsa on lisätietoa sanan käytöstä!",
+            "Valtaosa verbeistä seuraavat luokkan\u00ADsa (esim. I, II...) taivutussääntöjä.",
+            "Joidenkin sanojen opettelukorteissa on lisätietoa sanan käytöstä!",
             "Substantiivien sanaluokka (esim. 1, 2...) kertoo, miten sana taipuu.",
-            "Yritä muistella peruskoulun muisti\u00ADsääntöjä, kuten KoPuTuS-X tai KonSuKiePre"
+            "Yritä muistella peruskoulun muistisään\u00ADtöjä, kuten KoPuTuS-X tai KonSuKiePre"
         };
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,7 +27,7 @@ namespace SwedishApp.UI
         {
             tipField = GetComponent<TextMeshProUGUI>();
             tipField.RegisterDirtyLayoutCallback(() => UIManager.Instance.FixTextSpacing(tipField));
-            StartCoroutine(CycleTipsTEST());
+            // StartCoroutine(CycleTipsTEST());
         }
 
         private IEnumerator CycleTipsTEST()
