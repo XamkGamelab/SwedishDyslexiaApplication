@@ -91,8 +91,6 @@ namespace SwedishApp.Minigames
 
         private void ShowRelevantTutorial()
         {
-            if (UIManager.Instance.TutorialsOff) return;
-
             bool foundTutorialToShow = false;
             foreach (TutorialHandler tutorial in flashcardTutorials)
             {

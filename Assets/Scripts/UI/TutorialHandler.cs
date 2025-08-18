@@ -25,8 +25,11 @@ namespace SwedishApp.UI
 
         public void ShowTutorial()
         {
-            gameObject.SetActive(true);
             shouldBeVisible = true;
+            if (!UIManager.Instance.TutorialsOff)
+            {
+                gameObject.SetActive(true);
+            }
         }
 
         public void ResetSeen()

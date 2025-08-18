@@ -226,9 +226,12 @@ namespace SwedishApp.UI
             lightmodableImagesReverse.AddRange(dictionaryHandler.GetSpacerImages());
 
             tutorialArray = FindObjectsByType<TutorialHandler>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+            #region DEBUG
             Dictionary<string, string> uniqueIds = new();
             for (int i = 0; i < tutorialArray.Length; i++)
             {
+                //////// Keep the 4 lines below this point when removing debug features. ////////
                 LightmodeOnEvent += tutorialArray[i].ToLightmode;
                 LightmodeOffEvent += tutorialArray[i].ToDarkmode;
                 LegibleModeOnEvent += tutorialArray[i].ToLegibleFont;
@@ -246,11 +249,12 @@ namespace SwedishApp.UI
                     Debug.LogError(error);
                     break;
                 }
-                uniqueIds.Add(tutorialArray[i].tutUniqueId, tutorialArray[i].gameObject.name)
+                uniqueIds.Add(tutorialArray[i].tutUniqueId, tutorialArray[i].gameObject.name);
             }
+            #endregion
 
             //Add listener to every text field, called when a layout is changed. This then fixes character spacing for soft hyphens.
-                textFields.ForEach(field => field.RegisterDirtyLayoutCallback(() => FixTextSpacing(field)));
+            textFields.ForEach(field => field.RegisterDirtyLayoutCallback(() => FixTextSpacing(field)));
 
             //Add input events
             inputReader.ClickEvent += ClickOffCloseSettings;

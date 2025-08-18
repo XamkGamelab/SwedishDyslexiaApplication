@@ -69,6 +69,11 @@ namespace SwedishApp.Minigames
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
 
+        [Header("Tutorials")]
+        [SerializeField] private TutorialHandler initialTutorial;
+        [SerializeField] private TutorialHandler nextWordTutorial;
+        [SerializeField] private TutorialHandler incorrectTutorial;
+
         #region unity default methods
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -101,6 +106,9 @@ namespace SwedishApp.Minigames
             score = 0;
             correctCounter.text = score.ToString();
             playedWordsCount = -1;
+            initialTutorial.gameObject.SetActive(false);
+            nextWordTutorial.gameObject.SetActive(false);
+            incorrectTutorial.gameObject.SetActive(false);
 
             //Buttons' sprites are set according to if light mode is on
             abortGameButton.image.sprite = UIManager.Instance.LightmodeOn ? UIManager.Instance.AbortSpriteLightmode : UIManager.Instance.AbortSpriteDarkmode;
@@ -185,6 +193,7 @@ namespace SwedishApp.Minigames
             }
             else
             {
+                if (!incorrectTutorial.TutorialSeen()) incorrectTutorial.ShowTutorial();
                 WordIncorrectEvent?.Invoke();
                 AudioManager.Instance.PlayClip(incorrectClip);
             }
@@ -197,6 +206,8 @@ namespace SwedishApp.Minigames
                 wordWasChecked = true;
                 nextWordButton.gameObject.SetActive(true);
             }
+
+            if (!nextWordTutorial.TutorialSeen()) nextWordTutorial.ShowTutorial();
         }
 
         /// <summary>
@@ -214,8 +225,10 @@ namespace SwedishApp.Minigames
             playedWordsCount++;
             translatedCounter.text = string.Concat(playedWordsCount, "/", activeGameWordCount);
 
+            if (!initialTutorial.TutorialSeen()) initialTutorial.ShowTutorial();
+
             //Setup a new holder for all the individual input fields
-            wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
+                wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
             inputFieldHandler = wordInputFieldHolder.GetComponent<InputFieldHandling>();
             string wordToTranslate = gameMode == GameMode.ToSwedish ? currentWord.finnishWord : currentWord.swedishWord;
             activeWordNoHighlight = gameMode == GameMode.ToSwedish ? Helpers.CleanWord(currentWord.swedishWord) : Helpers.CleanWord(currentWord.finnishWord);
