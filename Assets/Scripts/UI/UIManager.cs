@@ -438,6 +438,7 @@ namespace SwedishApp.UI
                 buttonImages.ForEach((buttonImg) => buttonImg.sprite = ButtonSpriteLightmode);
                 flashcardBases.ForEach((baseImg) => baseImg.sprite = CardSpriteLightmode);
 
+                Camera.main.backgroundColor = Lightgrey;
                 flashcardGameTypeBackground.color = LightgreyMostAlpha;
                 translateGameTypeBackground.color = LightgreyMostAlpha;
                 closeFlashcardMenuBtn.image.sprite = AbortSpriteLightmode;
@@ -461,6 +462,7 @@ namespace SwedishApp.UI
                 buttonImages.ForEach((buttonImg) => buttonImg.sprite = ButtonSpriteDarkmode);
                 flashcardBases.ForEach((baseImg) => baseImg.sprite = CardSpriteDarkmode);
 
+                Camera.main.backgroundColor = Darkgrey;
                 flashcardGameTypeBackground.color = DarkgreyMostAlpha;
                 translateGameTypeBackground.color = DarkgreyMostAlpha;
                 closeFlashcardMenuBtn.image.sprite = AbortSpriteDarkmode;
