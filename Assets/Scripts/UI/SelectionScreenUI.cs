@@ -59,9 +59,6 @@ namespace SwedishApp.UI
             buttonProportion = buttonHeight / scrollerRect.rect.height;
             buttonProportion -= offsetFix;
 
-            Debug.Log($"height: {scrollerRect.rect.height}");
-            Debug.Log($"Calculated buttonHeight: {buttonHeight}\nCalculated buttonProportion {buttonProportion}");
-
             goUpButton.onClick.AddListener(() =>
             {
                 scrollbar.value = Mathf.Clamp(scrollbar.value + buttonProportion, 0f, 1f);
