@@ -17,9 +17,9 @@ namespace SwedishApp.UI
             "Kun koet hallitsevasi verbien kään\u00ADtämisen, kokeile niiden taivuttamista!",
             "Kun koet osaavasi substantiivien kään\u00ADtämisen, kokeile myös taivuttamista!",
             "Valtaosa verbeistä seuraavat luok\u00ADkansa (esim. I, II...) taivutussääntöjä.",
-            "Joidenkin sanojen opettelukorteissa on lisätietoa sanan käytöstä!",
+            "Joidenkin sanojen opettelukorteis\u00ADsa on lisätietoa sanan käytöstä!",
             "Substantiivien sanaluokka (esim. 1, 2...) kertoo, miten sana taipuu.",
-            "Yritä muistella peruskoulun muistisääntöjä, kuten KoPuTuS-X tai KonSuKiePre"
+            "Yritä muistella peruskoulun muisti\u00ADsääntöjä, kuten KoPuTuS-X tai KonSuKiePre"
         };
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
