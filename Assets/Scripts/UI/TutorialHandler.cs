@@ -6,7 +6,7 @@ namespace SwedishApp.UI
 {
     public class TutorialHandler : MonoBehaviour
     {
-        public string tutUniqueId;
+        public string uniqueId;
         [SerializeField] private Button tutBackgroundButton;
         [SerializeField] private Button tutInfoButton;
         [SerializeField] private Image bgImage;
@@ -33,19 +33,19 @@ namespace SwedishApp.UI
 
         public void ResetSeen()
         {
-            PlayerPrefs.SetInt(tutUniqueId, 0);
+            PlayerPrefs.SetInt(uniqueId, 0);
         }
 
         public bool TutorialSeen()
         {
-            return PlayerPrefs.GetInt(tutUniqueId) == 1;
+            return PlayerPrefs.GetInt(uniqueId) == 1;
         }
 
         private void CloseTutorial()
         {
             gameObject.SetActive(false);
             shouldBeVisible = false;
-            PlayerPrefs.SetInt(tutUniqueId, 1);
+            PlayerPrefs.SetInt(uniqueId, 1);
         }
 
         public void ToLightmode()
