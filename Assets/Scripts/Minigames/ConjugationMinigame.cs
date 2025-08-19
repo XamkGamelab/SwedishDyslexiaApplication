@@ -78,6 +78,12 @@ namespace SwedishApp.Minigames
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
 
+        [Header("Tutorials")]
+        [SerializeField] private TutorialHandler typingTutorial;
+        [SerializeField] private TutorialHandler hintTutorial;
+        [SerializeField] private TutorialHandler nextWordTutorial;
+        [SerializeField] private TutorialHandler incorrectTutorial;
+
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
         private readonly string promptStart = "Taivuta muotoon:\n";
@@ -231,6 +237,13 @@ namespace SwedishApp.Minigames
             playedWordsCount = -1;
             activeGameWordCount = verbList.Count;
             correctCounter.text = "0";
+            typingTutorial.gameObject.SetActive(false);
+            hintTutorial.gameObject.SetActive(false);
+            nextWordTutorial.gameObject.SetActive(false);
+            incorrectTutorial.gameObject.SetActive(false);
+            if (!typingTutorial.TutorialSeen()) typingTutorial.ShowTutorial();
+            if (!hintTutorial.TutorialSeen()) hintTutorial.ShowTutorial();
+
 
             //Like and subscribe
             inputReader.SubmitEventCancelled += CheckWord;
@@ -405,6 +418,7 @@ namespace SwedishApp.Minigames
             else
             {
                 WordIncorrectEvent?.Invoke();
+                if (!incorrectTutorial.TutorialSeen()) incorrectTutorial.ShowTutorial();
                 AudioManager.Instance.PlayClip(incorrectClip);
             }
 
@@ -415,6 +429,8 @@ namespace SwedishApp.Minigames
             }
 
             singleInputfields[0].Select();
+
+            if (!nextWordTutorial.TutorialSeen()) nextWordTutorial.ShowTutorial();
         }
 
         /// <summary>

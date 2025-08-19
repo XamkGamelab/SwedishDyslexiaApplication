@@ -228,7 +228,7 @@ namespace SwedishApp.UI
             tutorialArray = FindObjectsByType<TutorialHandler>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
             #region DEBUG
-            Dictionary<string, string> uniqueIds = new();
+            // Dictionary<string, string> uniqueIds = new();
             for (int i = 0; i < tutorialArray.Length; i++)
             {
                 //////// Keep the 4 lines below this point when removing debug features. ////////
@@ -237,19 +237,19 @@ namespace SwedishApp.UI
                 LegibleModeOnEvent += tutorialArray[i].ToLegibleFont;
                 LegibleModeOffEvent += tutorialArray[i].ToBasicFont;
 
-                if (uniqueIds.Count == 0)
-                {
-                    uniqueIds.Add(tutorialArray[i].tutUniqueId, tutorialArray[i].gameObject.name);
-                    continue;
-                }
-                if (uniqueIds.Keys.Contains(tutorialArray[i].tutUniqueId))
-                {
-                    string error = string.Concat($"Error while checking UniqueIDs: {tutorialArray[i].tutUniqueId} has duplicates!\n",
-                    $"Object names: {uniqueIds[tutorialArray[i].tutUniqueId]} & {tutorialArray[i].gameObject.name}");
-                    Debug.LogError(error);
-                    break;
-                }
-                uniqueIds.Add(tutorialArray[i].tutUniqueId, tutorialArray[i].gameObject.name);
+                // if (uniqueIds.Count == 0)
+                // {
+                //     uniqueIds.Add(tutorialArray[i].tutUniqueId, tutorialArray[i].gameObject.name);
+                //     continue;
+                // }
+                // if (uniqueIds.Keys.Contains(tutorialArray[i].tutUniqueId))
+                // {
+                //     string error = string.Concat($"Error while checking UniqueIDs: {tutorialArray[i].tutUniqueId} has duplicates!\n",
+                //     $"Object names: {uniqueIds[tutorialArray[i].tutUniqueId]} & {tutorialArray[i].gameObject.name}");
+                //     Debug.LogError(error);
+                //     break;
+                // }
+                // uniqueIds.Add(tutorialArray[i].tutUniqueId, tutorialArray[i].gameObject.name);
             }
             #endregion
 
