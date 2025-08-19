@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using SwedishApp.Core;
 using SwedishApp.Input;
 using SwedishApp.Minigames;
 using SwedishApp.Words;
@@ -137,7 +136,6 @@ namespace SwedishApp.UI
         [Header("Font-Related")]
         private List<TextMeshProUGUI> textFields;
         public bool HyperlegibleOn { get; private set; } = true;
-        [SerializeField] private Toggle toggleHyperlegible;
         [field: SerializeField] public TMP_FontAsset LegibleFont { get; private set; }
         [field: SerializeField] public TMP_FontAsset BasicFont { get; private set; }
         public int LegibleSpacing { get; private set; } = 8;
@@ -176,20 +174,25 @@ namespace SwedishApp.UI
 
         [Header("Settings-Related")]
         private bool settingsOpen = false;
-        public bool mouseOverSettings { private get; set; } = false;
+        public bool MouseOverSettings { private get; set; } = false;
         [SerializeField] private Button toggleSettingsBtn;
         [SerializeField] private GameObject settingsMenu;
         [SerializeField] private Image settingsMenuImage;
+        [SerializeField] private Toggle toggleHyperlegible;
         [SerializeField] private Button toggleLightmodeBtn;
         [SerializeField] private Slider toggledSlider;
         [SerializeField] private float lerpDuration = 0.06f;
         [SerializeField] private Button toggleMute;
-        private bool muted = false;
+        public bool Muted { get; private set; } = false;
         [SerializeField] private Image muteImage;
         [SerializeField] private Sprite unmutedSpriteDark;
         [SerializeField] private Sprite unmutedSpriteLight;
         [SerializeField] private Sprite mutedSpriteDark;
         [SerializeField] private Sprite mutedSpriteLight;
+        [SerializeField] private Toggle toggleTutorials;
+        public bool TutorialsOff { get; private set; } = false;
+        [SerializeField] private Button resetAllTutorialsButton;
+        private TutorialHandler[] tutorialArray;
 
         //Misc variables
         [SerializeField] private TipsHandler tipsHandler;
@@ -222,6 +225,34 @@ namespace SwedishApp.UI
             textFields.AddRange(textObjectListReverseLight);
             lightmodableImagesReverse.AddRange(dictionaryHandler.GetSpacerImages());
 
+            tutorialArray = FindObjectsByType<TutorialHandler>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+            #region DEBUG
+            // Dictionary<string, string> uniqueIds = new();
+            for (int i = 0; i < tutorialArray.Length; i++)
+            {
+                //////// Keep the 4 lines below this point when removing debug features. ////////
+                LightmodeOnEvent += tutorialArray[i].ToLightmode;
+                LightmodeOffEvent += tutorialArray[i].ToDarkmode;
+                LegibleModeOnEvent += tutorialArray[i].ToLegibleFont;
+                LegibleModeOffEvent += tutorialArray[i].ToBasicFont;
+
+                // if (uniqueIds.Count == 0)
+                // {
+                //     uniqueIds.Add(tutorialArray[i].tutUniqueId, tutorialArray[i].gameObject.name);
+                //     continue;
+                // }
+                // if (uniqueIds.Keys.Contains(tutorialArray[i].tutUniqueId))
+                // {
+                //     string error = string.Concat($"Error while checking UniqueIDs: {tutorialArray[i].tutUniqueId} has duplicates!\n",
+                //     $"Object names: {uniqueIds[tutorialArray[i].tutUniqueId]} & {tutorialArray[i].gameObject.name}");
+                //     Debug.LogError(error);
+                //     break;
+                // }
+                // uniqueIds.Add(tutorialArray[i].tutUniqueId, tutorialArray[i].gameObject.name);
+            }
+            #endregion
+
             //Add listener to every text field, called when a layout is changed. This then fixes character spacing for soft hyphens.
             textFields.ForEach(field => field.RegisterDirtyLayoutCallback(() => FixTextSpacing(field)));
 
@@ -236,9 +267,9 @@ namespace SwedishApp.UI
             toggleSettingsBtn.onClick.AddListener(ToggleSettingsMenu);
             toggleMute.onClick.AddListener(() =>
             {
-                muted = !muted;
+                Muted = !Muted;
 
-                if (muted)
+                if (Muted)
                 {
                     muteImage.sprite = LightmodeOn ? mutedSpriteLight : mutedSpriteDark;
                 }
@@ -247,6 +278,19 @@ namespace SwedishApp.UI
                     muteImage.sprite = LightmodeOn ? unmutedSpriteLight : unmutedSpriteDark;
                 }
             });
+            toggleTutorials.onValueChanged.AddListener((_toggleValue) =>
+            {
+                TutorialsOff = _toggleValue;
+                foreach (TutorialHandler tutorial in tutorialArray)
+                {
+                    if (TutorialsOff) tutorial.gameObject.SetActive(false);
+                    else if (tutorial.shouldBeVisible)
+                    {
+                        tutorial.gameObject.SetActive(true);
+                    }
+                }
+            });
+            resetAllTutorialsButton.onClick.AddListener(ResetAllTutorials);
 
             //Add listeners to credits buttons
             openCreditsButton.onClick.AddListener(() => creditsScreen.SetActive(true));
@@ -304,20 +348,20 @@ namespace SwedishApp.UI
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardAdverbGameBtn.onClick.AddListener(() =>
-        {
+            {
             flashCardMinigame.StartGrammarGame(adverbList.grammarList.ToArray());
             flashcardGameTypeMenu.SetActive(false);
-        });
+            });
             startFlashcardPrepositionGameBtn.onClick.AddListener(() =>
-        {
+            {
             flashCardMinigame.StartGrammarGame(prepositionList.grammarList.ToArray());
             flashcardGameTypeMenu.SetActive(false);
-        });
+            });
             startFlashcardQuestionGameBtn.onClick.AddListener(() =>
-        {
+            {
             flashCardMinigame.StartGrammarGame(questionList.grammarList.ToArray());
             flashcardGameTypeMenu.SetActive(false);
-        });
+            });
 
             //Add listeners to translate minigame buttons
             startTranslationGameToFinnishBtn.onClick.AddListener(() =>
@@ -445,7 +489,7 @@ namespace SwedishApp.UI
                 closeTranslateMenuBtn.image.sprite = AbortSpriteLightmode;
                 openCreditsText.color = Darkgrey;
                 settingsMenuImage.sprite = ButtonSpriteLightmode;
-                muteImage.sprite = muted ? mutedSpriteLight : unmutedSpriteLight;
+                muteImage.sprite = Muted ? mutedSpriteLight : unmutedSpriteLight;
 
                 LightmodeOnEvent?.Invoke();
             }
@@ -469,7 +513,7 @@ namespace SwedishApp.UI
                 closeTranslateMenuBtn.image.sprite = AbortSpriteDarkmode;
                 openCreditsText.color = Lightgrey;
                 settingsMenuImage.sprite = ButtonSpriteDarkmode;
-                muteImage.sprite = muted ? mutedSpriteDark : unmutedSpriteDark;
+                muteImage.sprite = Muted ? mutedSpriteDark : unmutedSpriteDark;
 
                 LightmodeOffEvent?.Invoke();
             }
@@ -796,7 +840,7 @@ namespace SwedishApp.UI
         private void ClickOffCloseSettings()
         {
             if (!settingsOpen) return;
-            if (!mouseOverSettings)
+            if (!MouseOverSettings)
             {
                 settingsMenu.SetActive(false);
                 settingsOpen = false;
@@ -834,6 +878,14 @@ namespace SwedishApp.UI
             }
 
             toggleLightmodeBtn.interactable = true;
+        }
+
+        private void ResetAllTutorials()
+        {
+            foreach (TutorialHandler tutorial in tutorialArray)
+            {
+                tutorial.ResetSeen();
+            }
         }
 
         public void InitTextFieldAppearance(ref TextMeshProUGUI _field)

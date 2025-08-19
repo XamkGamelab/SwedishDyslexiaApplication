@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using SwedishApp.Core;
 using SwedishApp.Input;
 using SwedishApp.Meta;
 using SwedishApp.UI;
@@ -41,6 +42,8 @@ namespace SwedishApp.Minigames
         [SerializeField] private Button nextWordBtn;
         [SerializeField] private GameObject inputfieldHolder;
         [SerializeField] private GameObject singleInputfield;
+        [SerializeField] private AudioClip correctClip;
+        [SerializeField] private AudioClip incorrectClip;
         [Tooltip("Value between 0 and 1; percentage")]
         [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float newWordDelay = 1f;
@@ -74,6 +77,12 @@ namespace SwedishApp.Minigames
         //Events
         public event Action WordCorrectEvent;
         public event Action WordIncorrectEvent;
+
+        [Header("Tutorials")]
+        [SerializeField] private TutorialHandler typingTutorial;
+        [SerializeField] private TutorialHandler hintTutorial;
+        [SerializeField] private TutorialHandler nextWordTutorial;
+        [SerializeField] private TutorialHandler incorrectTutorial;
 
         //Readonly
         private readonly Vector2 holderPos = new(0, -100f);
@@ -228,6 +237,13 @@ namespace SwedishApp.Minigames
             playedWordsCount = -1;
             activeGameWordCount = verbList.Count;
             correctCounter.text = "0";
+            typingTutorial.gameObject.SetActive(false);
+            hintTutorial.gameObject.SetActive(false);
+            nextWordTutorial.gameObject.SetActive(false);
+            incorrectTutorial.gameObject.SetActive(false);
+            if (!typingTutorial.TutorialSeen()) typingTutorial.ShowTutorial();
+            if (!hintTutorial.TutorialSeen()) hintTutorial.ShowTutorial();
+
 
             //Like and subscribe
             inputReader.SubmitEventCancelled += CheckWord;
@@ -297,6 +313,7 @@ namespace SwedishApp.Minigames
             if (!formIsRegular) irregularHintObj.SetActive(true);
             else irregularHintObj.SetActive(false);
             swedishBaseWordTxt.text = activeWord.swedishWord;
+            UIManager.Instance.FixTextSpacing(swedishBaseWordTxt);
             conjugationClassTxt.text = activeWord.conjugationClass.ToString();
             translatedCounter.text = string.Concat(playedWordsCount, "/", activeGameWordCount);
 
@@ -395,11 +412,14 @@ namespace SwedishApp.Minigames
                 }
                 correctCounter.text = score.ToString();
                 WordCorrectEvent?.Invoke();
+                AudioManager.Instance.PlayClip(correctClip);
                 Debug.Log("Word was correct!");
             }
             else
             {
                 WordIncorrectEvent?.Invoke();
+                if (!incorrectTutorial.TutorialSeen()) incorrectTutorial.ShowTutorial();
+                AudioManager.Instance.PlayClip(incorrectClip);
             }
 
             if (missedInputsCount <= allowedMissedInputsCount)
@@ -409,6 +429,8 @@ namespace SwedishApp.Minigames
             }
 
             singleInputfields[0].Select();
+
+            if (!nextWordTutorial.TutorialSeen()) nextWordTutorial.ShowTutorial();
         }
 
         /// <summary>
@@ -416,7 +438,11 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void NextWord()
         {
-            if (!wordWasChecked) return;
+            if (!wordWasChecked)
+            {
+                CheckWord();
+                return;
+            }
 
             Destroy(inputFieldHandling.gameObject);
             if (verbList == null || verbList.Count == 0)
