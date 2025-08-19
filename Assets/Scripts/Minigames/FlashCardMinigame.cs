@@ -655,8 +655,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void DisplayCurrentPronounWord()
         {
-            Debug.Log(activeWordIndex);
-            pronounObject.wordFinnishText.text = pronounWords[activeWordIndex].finnishWord;
+            pronounObject.wordFinnishText.text = pronounWords[activeWordIndex].finnishWithExplanation;
             pronounObject.wordSwedishBaseText.text = pronounWords[activeWordIndex].swedishWord;
             pronounObject.wordSwedishPossessiveEn.text = pronounWords[activeWordIndex].pronounPossessiveEnSwe;
             pronounObject.wordSwedishPossessiveEtt.text = pronounWords[activeWordIndex].pronounPossessiveEttSwe;

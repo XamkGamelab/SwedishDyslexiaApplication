@@ -24,6 +24,7 @@ namespace SwedishApp.UI
         {
             scrollbar.value = 1f;
             goUpButton.gameObject.SetActive(false);
+            goDownButton.gameObject.SetActive(true);
             scrollbar.onValueChanged.AddListener(ScrollbarHandler);
         }
 

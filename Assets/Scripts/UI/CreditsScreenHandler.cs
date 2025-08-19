@@ -17,16 +17,15 @@ namespace SwedishApp.UI
         void Start()
         {
             creditTexts = transform.GetComponentsInChildren<TextMeshProUGUI>();
-            if (UIManager.Instance.LightmodeOn)
-            {
-                ToLightmode();
-            }
-            else
-            {
-                ToDarkmode();
-            }
+            if (UIManager.Instance.LightmodeOn) ToLightmode();
+            else ToDarkmode();
+            if (UIManager.Instance.HyperlegibleOn) ToLegibleFont();
+            else ToBasicFont();
+            
             UIManager.Instance.LightmodeOnEvent += ToLightmode;
             UIManager.Instance.LightmodeOffEvent += ToDarkmode;
+            UIManager.Instance.LegibleModeOnEvent += ToLegibleFont;
+            UIManager.Instance.LegibleModeOffEvent += ToBasicFont;
         }
 
         private void ToLightmode()
@@ -49,6 +48,24 @@ namespace SwedishApp.UI
             backButton.image.sprite = UIManager.Instance.AbortSpriteDarkmode;
             background.color = UIManager.Instance.Darkgrey;
             xgsLogo.sprite = xgsLogoDM;
+        }
+
+        private void ToLegibleFont()
+        {
+            foreach (TextMeshProUGUI text in creditTexts)
+            {
+                text.font = UIManager.Instance.LegibleFont;
+                text.characterSpacing = UIManager.Instance.LegibleSpacing;
+            }
+        }
+
+        private void ToBasicFont()
+        {
+            foreach (TextMeshProUGUI text in creditTexts)
+            {
+                text.font = UIManager.Instance.BasicFont;
+                text.characterSpacing = UIManager.Instance.BasicSpacing;
+            }
         }
     }
 }

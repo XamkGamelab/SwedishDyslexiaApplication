@@ -466,6 +466,7 @@ namespace SwedishApp.Minigames
             //Shouldn't need to reset any variables as they're set at the start of the game anyway
             UnsubcribeEvents();
             Destroy(inputFieldHandling.gameObject);
+            singleInputfields = new();
             UIManager.Instance.TriggerTipChange();
             gameObject.SetActive(false);
         }
@@ -474,6 +475,7 @@ namespace SwedishApp.Minigames
         {
             UnsubcribeEvents();
             gameObject.SetActive(false);
+            singleInputfields = new();
             UIManager.Instance.TriggerTipChange();
 
             UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,

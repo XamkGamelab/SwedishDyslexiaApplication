@@ -8,6 +8,7 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class PronounWord : Word
     {
+        public string finnishWithExplanation     = "hän (neut.)";
         [Header("Omistusmuoto")]
         public string pronounPossessiveEnSwe     = "min";
         public string pronounPossessiveEttSwe    = "mitt";
