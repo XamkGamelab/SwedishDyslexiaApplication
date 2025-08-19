@@ -6,7 +6,6 @@ namespace SwedishApp.UI
 {
     public class TutorialHandler : MonoBehaviour
     {
-        [Header("MAKE SURE THE UNIQUE ID IS UNIQUE")]
         public string tutUniqueId;
         [SerializeField] private Button tutBackgroundButton;
         [SerializeField] private Button tutInfoButton;
