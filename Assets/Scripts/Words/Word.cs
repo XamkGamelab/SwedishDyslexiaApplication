@@ -8,7 +8,7 @@ namespace SwedishApp.Words
     [System.Serializable]
     public class Word
     {
-        [Header ("Opeteltava sana")]
+        [Header("Opeteltava sana")]
         public string swedishWord;
         public string finnishWord;
 
@@ -19,5 +19,10 @@ namespace SwedishApp.Words
         [Header("Sprite")]
         public Sprite darkModeSprite;
         public Sprite lightModeSprite;
+
+        public Word ShallowClone()
+        {
+            return (Word)MemberwiseClone();
+        }
     }
 }

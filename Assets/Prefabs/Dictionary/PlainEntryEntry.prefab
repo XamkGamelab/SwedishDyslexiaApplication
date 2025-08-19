@@ -375,4 +375,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordFormHolder: {fileID: 0}
-  hoverTime: 0.5
+  hoverTime: 0.25
+  verbWord:
+    swedishWord: 
+    finnishWord: 
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+    conjugationClass: 0
+    wordCore: var
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    baseformIsRegular: 1
+    baseformEnd: a
+    currentTenseIsRegular: 0
+    currentTenseEnd: "\xE4r"
+    currentTenseFinnish: on
+    pastTenseIsRegular: 1
+    pastTenseEnd: 
+    pastTenseFinnish: oli
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: it
+    pastPerfectTenseFinnish: on ollut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: it
+    pastPlusPerfectTenseFinnish: oli ollut
+  nounWord:
+    swedishWord: 
+    finnishWord: 
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 0
+    declensionClass: 0
+    finnishPlural: kissat
+    wordCore: katt
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordDefinitivePluralEnd: na
+  adjectiveWord:
+    swedishWord: 
+    finnishWord: 
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: varm
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: 
+    wordEnEnd: 
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: a
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 1
+    wordComparativeEnd: are
+    comparativeDefinitiveIsRegular: 1
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: ast
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: aste

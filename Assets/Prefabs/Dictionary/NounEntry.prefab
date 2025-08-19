@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordFormHolder: {fileID: 0}
-  hoverTime: 0.5
+  hoverTime: 0.25
   verbWord:
     swedishWord: 
     finnishWord: 
@@ -560,7 +560,6 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: er
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: erna
   adjectiveWord:
     swedishWord: 

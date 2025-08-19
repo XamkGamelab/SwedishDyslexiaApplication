@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phraseList:
   - swedishWord: "f\xF6rl\xE5t"
-    finnishWord: anteeksi
+    finnishWord: pahoittelut
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 

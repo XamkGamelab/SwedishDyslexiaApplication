@@ -32,6 +32,8 @@ namespace SwedishApp.Minigames
         [SerializeField] private GameObject irregularHintObj;
         [SerializeField] private Button finnishHintBtn;
         [SerializeField] private TextMeshProUGUI finnishHintTxt;
+        private readonly string hintString = "Vihje";
+        private bool hintVisible = false;
         [SerializeField] private TextMeshProUGUI translatedCounter;
         [SerializeField] private TextMeshProUGUI correctCounter;
         [SerializeField] private Button checkWordBtn;
@@ -230,7 +232,8 @@ namespace SwedishApp.Minigames
             gameTextRefs = transform.GetComponentsInChildren<TextMeshProUGUI>(true).ToList();
             gameObject.SetActive(true);
             nextWordBtn.gameObject.SetActive(false);
-            finnishHintTxt.text = "Hint";
+            finnishHintTxt.text = hintString;
+            hintVisible = false;
             nounList = new(_nounList);
             wordsToImprove = new();
             score = 0;
@@ -460,6 +463,7 @@ namespace SwedishApp.Minigames
             //Shouldn't need to reset any variables as they're set at the start of the game anyway
             UnsubcribeEvents();
             Destroy(inputFieldHandling.gameObject);
+            singleInputfields = new();
             UIManager.Instance.TriggerTipChange();
             gameObject.SetActive(false);
         }
@@ -468,6 +472,7 @@ namespace SwedishApp.Minigames
         {
             UnsubcribeEvents();
             gameObject.SetActive(false);
+            singleInputfields = new();
             UIManager.Instance.TriggerTipChange();
 
             UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,
@@ -478,8 +483,13 @@ namespace SwedishApp.Minigames
         {
             inputReader.SubmitEventCancelled -= CheckWord;
             inputReader.SubmitEventHeld -= NextWord;
+            UIManager.Instance.LightmodeOnEvent -= ToLightmode;
+            UIManager.Instance.LightmodeOffEvent -= ToDarkmode;
+            UIManager.Instance.LegibleModeOnEvent -= ToHyperlegibleFont;
+            UIManager.Instance.LegibleModeOffEvent -= ToBasicFont;
             checkWordBtn.onClick.RemoveListener(CheckWord);
             nextWordBtn.onClick.RemoveListener(NextWord);
+            finnishHintBtn.onClick.RemoveListener(ShowHint);
         }
 
         /// <summary>
@@ -490,7 +500,8 @@ namespace SwedishApp.Minigames
         private IEnumerator NextWordDelay()
         {
             checkWordBtn.interactable = false;
-            finnishHintTxt.text = "Hint";
+            finnishHintTxt.text = hintString;
+            hintVisible = false;
             nextWordBtn.gameObject.SetActive(false);
             yield return new WaitForSeconds(newWordDelay);
             checkWordBtn.interactable = true;
@@ -504,7 +515,15 @@ namespace SwedishApp.Minigames
         private void ShowHint()
         {
             if (!checkWordBtn.interactable) return;
-            finnishHintTxt.text = activeWord.GetDeclenatedFinnish(declenateInto);
+            hintVisible = !hintVisible;
+            if (hintVisible)
+            {
+                finnishHintTxt.text = activeWord.GetDeclenatedFinnish(declenateInto);
+            }
+            else
+            {
+                finnishHintTxt.text = hintString;
+            }
         }
 
         #endregion

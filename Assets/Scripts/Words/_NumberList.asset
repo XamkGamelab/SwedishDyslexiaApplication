@@ -210,7 +210,7 @@ MonoBehaviour:
     ordinalFinnish: kah\u00ADdes\u00ADkym\u00ADme\u00ADnes\u00ADkah\u00ADdek\u00ADsas
     number: 28
   - swedishWord: tju\u00ADgo\u00ADnio
-    finnishWord: "kaksikymment\xE4yhdeks\xE4n"
+    finnishWord: "kak\\u00ADsi\\u00ADkym\\u00ADmen\\u00ADt\xE4\\u00ADyh\\u00ADdek\\u00ADs\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     ordinalSwedish: tju\u00ADgo\u00ADni\u00ADon\u00ADde

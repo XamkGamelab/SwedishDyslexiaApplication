@@ -17,6 +17,7 @@ MonoBehaviour:
     finnishWord: "min\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: "min\xE4"
     pronounPossessiveEnSwe: min
     pronounPossessiveEttSwe: mitt
     pronounPossessivePluralSwe: mina
@@ -27,6 +28,7 @@ MonoBehaviour:
     finnishWord: "sin\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: "sin\xE4"
     pronounPossessiveEnSwe: din
     pronounPossessiveEttSwe: ditt
     pronounPossessivePluralSwe: dina
@@ -37,6 +39,7 @@ MonoBehaviour:
     finnishWord: "h\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: "h\xE4n (mask.)"
     pronounPossessiveEnSwe: hans
     pronounPossessiveEttSwe: hans
     pronounPossessivePluralSwe: hans
@@ -47,6 +50,7 @@ MonoBehaviour:
     finnishWord: "h\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: "h\xE4n (fem.)"
     pronounPossessiveEnSwe: hennes
     pronounPossessiveEttSwe: hennes
     pronounPossessivePluralSwe: hennes
@@ -57,6 +61,7 @@ MonoBehaviour:
     finnishWord: "h\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: "h\xE4n (neut.)"
     pronounPossessiveEnSwe: hens
     pronounPossessiveEttSwe: hens
     pronounPossessivePluralSwe: hens
@@ -67,6 +72,7 @@ MonoBehaviour:
     finnishWord: se
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: se
     pronounPossessiveEnSwe: dess
     pronounPossessiveEttSwe: dess
     pronounPossessivePluralSwe: dess
@@ -77,6 +83,7 @@ MonoBehaviour:
     finnishWord: me
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: me
     pronounPossessiveEnSwe: "v\xE5r"
     pronounPossessiveEttSwe: "v\xE5rt"
     pronounPossessivePluralSwe: "v\xE5ra"
@@ -87,6 +94,7 @@ MonoBehaviour:
     finnishWord: te
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: te
     pronounPossessiveEnSwe: er
     pronounPossessiveEttSwe: ert
     pronounPossessivePluralSwe: era
@@ -97,6 +105,7 @@ MonoBehaviour:
     finnishWord: he
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: he
     pronounPossessiveEnSwe: deras
     pronounPossessiveEttSwe: deras
     pronounPossessivePluralSwe: deras
@@ -107,6 +116,7 @@ MonoBehaviour:
     finnishWord: passiivi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
+    finnishWithExplanation: passiivi
     pronounPossessiveEnSwe: sin
     pronounPossessiveEttSwe: sitt
     pronounPossessivePluralSwe: sina
