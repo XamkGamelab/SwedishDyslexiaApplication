@@ -14,27 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pronounList:
   - swedishWord: jag
-    finnishWord: "min\xE4"
+    finnishWord: "mi\\u00ADn\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    finnishWithExplanation: "min\xE4"
+    finnishWithExplanation: "mi\\u00ADn\xE4"
     pronounPossessiveEnSwe: min
     pronounPossessiveEttSwe: mitt
-    pronounPossessivePluralSwe: mina
-    pronounPossessiveFin: minun
+    pronounPossessivePluralSwe: mi\u00ADna
+    pronounPossessiveFin: mi\u00ADnun
     pronounObjectSwe: mig
-    pronounObjectFin: minut
+    pronounObjectFin: mi\u00ADnut
   - swedishWord: du
-    finnishWord: "sin\xE4"
+    finnishWord: "si\\u00ADn\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    finnishWithExplanation: "sin\xE4"
+    finnishWithExplanation: "si\\u00ADn\xE4"
     pronounPossessiveEnSwe: din
     pronounPossessiveEttSwe: ditt
-    pronounPossessivePluralSwe: dina
-    pronounPossessiveFin: sinun
+    pronounPossessivePluralSwe: di\u00ADna
+    pronounPossessiveFin: si\u00ADnun
     pronounObjectSwe: dig
-    pronounObjectFin: sinut
+    pronounObjectFin: si\u00ADnut
   - swedishWord: han
     finnishWord: "h\xE4n"
     darkModeSprite: {fileID: 0}
@@ -43,20 +43,20 @@ MonoBehaviour:
     pronounPossessiveEnSwe: hans
     pronounPossessiveEttSwe: hans
     pronounPossessivePluralSwe: hans
-    pronounPossessiveFin: "h\xE4nen"
-    pronounObjectSwe: honom
-    pronounObjectFin: "h\xE4net"
+    pronounPossessiveFin: "h\xE4\\u00ADnen"
+    pronounObjectSwe: ho\u00ADnom
+    pronounObjectFin: "h\xE4\\u00ADnet"
   - swedishWord: hon
     finnishWord: "h\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     finnishWithExplanation: "h\xE4n (fem.)"
-    pronounPossessiveEnSwe: hennes
-    pronounPossessiveEttSwe: hennes
-    pronounPossessivePluralSwe: hennes
-    pronounPossessiveFin: "h\xE4nen"
-    pronounObjectSwe: henne
-    pronounObjectFin: "h\xE4net"
+    pronounPossessiveEnSwe: hen\u00ADnes
+    pronounPossessiveEttSwe: hen\u00ADnes
+    pronounPossessivePluralSwe: hen\u00ADnes
+    pronounPossessiveFin: "h\xE4\\u00ADnen"
+    pronounObjectSwe: hen\u00ADne
+    pronounObjectFin: "h\xE4\\u00ADnet"
   - swedishWord: hen
     finnishWord: "h\xE4n"
     darkModeSprite: {fileID: 0}
@@ -65,9 +65,9 @@ MonoBehaviour:
     pronounPossessiveEnSwe: hens
     pronounPossessiveEttSwe: hens
     pronounPossessivePluralSwe: hens
-    pronounPossessiveFin: "h\xE4nen"
-    pronounObjectSwe: hen/henom
-    pronounObjectFin: "h\xE4net"
+    pronounPossessiveFin: "h\xE4\\u00ADnen"
+    pronounObjectSwe: hen
+    pronounObjectFin: "h\xE4\\u00ADnet"
   - swedishWord: den
     finnishWord: se
     darkModeSprite: {fileID: 0}
@@ -78,7 +78,7 @@ MonoBehaviour:
     pronounPossessivePluralSwe: dess
     pronounPossessiveFin: sen
     pronounObjectSwe: den
-    pronounObjectFin: "h\xE4net"
+    pronounObjectFin: "h\xE4\\u00ADnet"
   - swedishWord: vi
     finnishWord: me
     darkModeSprite: {fileID: 0}
@@ -86,10 +86,10 @@ MonoBehaviour:
     finnishWithExplanation: me
     pronounPossessiveEnSwe: "v\xE5r"
     pronounPossessiveEttSwe: "v\xE5rt"
-    pronounPossessivePluralSwe: "v\xE5ra"
-    pronounPossessiveFin: "meid\xE4n"
+    pronounPossessivePluralSwe: "v\xE5\\u00ADra"
+    pronounPossessiveFin: "mei\\u00ADd\xE4n"
     pronounObjectSwe: oss
-    pronounObjectFin: "meid\xE4t"
+    pronounObjectFin: "mei\\u00ADd\xE4t"
   - swedishWord: ni
     finnishWord: te
     darkModeSprite: {fileID: 0}
@@ -98,28 +98,28 @@ MonoBehaviour:
     pronounPossessiveEnSwe: er
     pronounPossessiveEttSwe: ert
     pronounPossessivePluralSwe: era
-    pronounPossessiveFin: "teid\xE4n"
+    pronounPossessiveFin: "tei\\u00ADd\xE4n"
     pronounObjectSwe: er
-    pronounObjectFin: "teid\xE4t"
+    pronounObjectFin: "tei\\u00ADd\xE4t"
   - swedishWord: de
     finnishWord: he
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     finnishWithExplanation: he
-    pronounPossessiveEnSwe: deras
-    pronounPossessiveEttSwe: deras
-    pronounPossessivePluralSwe: deras
-    pronounPossessiveFin: "heid\xE4n"
+    pronounPossessiveEnSwe: de\u00ADras
+    pronounPossessiveEttSwe: de\u00ADras
+    pronounPossessivePluralSwe: de\u00ADras
+    pronounPossessiveFin: "hei\\u00ADd\xE4n"
     pronounObjectSwe: dem
-    pronounObjectFin: "heid\xE4t"
+    pronounObjectFin: "hei\\u00ADd\xE4t"
   - swedishWord: man
-    finnishWord: passiivi
+    finnishWord: pas\u00ADsii\u00ADvi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    finnishWithExplanation: passiivi
+    finnishWithExplanation: pas\u00ADsii\u00ADvi
     pronounPossessiveEnSwe: sin
     pronounPossessiveEttSwe: sitt
-    pronounPossessivePluralSwe: sina
-    pronounPossessiveFin: "itsens\xE4"
+    pronounPossessivePluralSwe: si\u00ADna
+    pronounPossessiveFin: "it\\u00ADsen\\u00ADs\xE4"
     pronounObjectSwe: sig
-    pronounObjectFin: "itse\xE4\xE4n"
+    pronounObjectFin: "it\\u00ADse\\u00AD\xE4\xE4n"

@@ -18,78 +18,78 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: 
-  - swedishWord: bland annat
-    finnishWord: muun muassa
+  - swedishWord: bland an\u00ADnat
+    finnishWord: muun muas\u00ADsa
     darkModeSprite: {fileID: 21300000, guid: bf71448d366743d4eb989420658ae290, type: 3}
     lightModeSprite: {fileID: 21300000, guid: d9b646fdb5d0c3d44bf77e4257dfd07f, type: 3}
     notices: bl.a.
   - swedishWord: dit
-    finnishWord: sinne
+    finnishWord: sin\u00ADne
     darkModeSprite: {fileID: 21300000, guid: 73d74b1e41be0aa4891d62459b0786ac, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 068328dcd8103564e9ff37a79409aa77, type: 3}
     notices: 
   - swedishWord: dock
-    finnishWord: kuitenkin
+    finnishWord: kui\u00ADten\u00ADkin
     darkModeSprite: {fileID: 21300000, guid: d138cc309f93d854a8044c86f832bc60, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 254edfd403afc904591f247c6d93a835, type: 3}
     notices: 
   - swedishWord: "d\xE4r"
-    finnishWord: tuolla
+    finnishWord: tuol\u00ADla
     darkModeSprite: {fileID: 21300000, guid: d096bbdf26071804ca5d1d07bedae871, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 488ba3b60c41b13449754ce53af66f3b, type: 3}
     notices: 
-  - swedishWord: "d\xE4rf\xF6r"
-    finnishWord: siksi
+  - swedishWord: "d\xE4r\\u00ADf\xF6r"
+    finnishWord: sik\u00ADsi
     darkModeSprite: {fileID: 21300000, guid: adb593e85d655754e8fb447fa2ca8ec1, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 0741c74f18e9d3a4f8687aca4217ec73, type: 3}
     notices: 
-  - swedishWord: "f\xF6rr\xE4n"
-    finnishWord: ennen kuin
+  - swedishWord: "f\xF6r\\u00ADr\xE4n"
+    finnishWord: en\u00ADnen kuin
     darkModeSprite: {fileID: 21300000, guid: 83b206aba62ba5b44840fbefb0841e55, type: 3}
     lightModeSprite: {fileID: 21300000, guid: cebf28d0a63139f40a15e71494dcc8df, type: 3}
     notices: "negatiivinen p\xE4\xE4lause"
-  - swedishWord: innan
-    finnishWord: ennen kuin
+  - swedishWord: in\u00ADnan
+    finnishWord: en\u00ADnen kuin
     darkModeSprite: {fileID: 21300000, guid: 8b10fb26545a63f43a6268a61c92e09e, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 2667d5e3c96869344b1d706eb8b251f9, type: 3}
     notices: "positiivinen p\xE4\xE4lause"
   - swedishWord: kanske
-    finnishWord: "ehk\xE4"
+    finnishWord: "eh\\u00ADk\xE4"
     darkModeSprite: {fileID: 21300000, guid: 829a3fa42bbedb34b8c13cdcf2fc4d8c, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 6b6339f39a1a17f428caec3d09dad0d5, type: 3}
     notices: 
-  - swedishWord: medan
-    finnishWord: "sill\xE4 aikaa kun"
+  - swedishWord: me\u00ADdan
+    finnishWord: "sil\\u00ADl\xE4 ai\\u00ADkaa kun"
     darkModeSprite: {fileID: 21300000, guid: 741f71e8c8bae964682435e701cad272, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 2ab04694eef52864db41da20ee0884ae, type: 3}
     notices: 
   - swedishWord: nog
-    finnishWord: tarpeeksi
+    finnishWord: tar\u00ADpeek\u00ADsi
     darkModeSprite: {fileID: 21300000, guid: 4b42f3b3307661441bdae0ffe472f6d7, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 1b03092f61143254b9b76101b9de3292, type: 3}
     notices: "\"riitt\xE4v\xE4sti\""
-  - swedishWord: samtidigt
-    finnishWord: samanaikaisesti
+  - swedishWord: sam\u00ADti\u00ADdigt
+    finnishWord: sa\u00ADman\u00ADai\u00ADkai\u00ADses\u00ADti
     darkModeSprite: {fileID: 21300000, guid: d35c2d2664ad29d4ea46fc0a754e75ff, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 3b0be5a6308fcce4dadf2d8fd22ccd4b, type: 3}
     notices: 
-  - swedishWord: "tillr\xE4ckligt"
-    finnishWord: tarpeeksi
+  - swedishWord: "till\\u00ADr\xE4ck\\u00ADligt"
+    finnishWord: tar\u00ADpeek\u00ADsi
     darkModeSprite: {fileID: 21300000, guid: 6cbd2bfb2fb9a8c41b0d369ade0d90ac, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 04ef5e2756ba00b4e8979fbc447f661f, type: 3}
     notices: "\"riitt\xE4v\xE4sti\""
-  - swedishWord: "\xE5tminstone"
-    finnishWord: ainakin
+  - swedishWord: "\xE5t\\u00ADminsto\\u00ADne"
+    finnishWord: ai\u00ADna\u00ADkin
     darkModeSprite: {fileID: 21300000, guid: a26eab9d7f88743499bace20688d48f2, type: 3}
     lightModeSprite: {fileID: 21300000, guid: ba9219986156e4e45b8cd6b02dac5dfc, type: 3}
     notices: 
-  - swedishWord: "\xE4nnu"
-    finnishWord: "viel\xE4"
+  - swedishWord: "\xE4n\\u00ADnu"
+    finnishWord: "vie\\u00ADl\xE4"
     darkModeSprite: {fileID: 21300000, guid: 0db2119b5da775e4d8772a429f9ad059, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 553bf1f22383d1340af33eb2f1809c55, type: 3}
     notices: 
-  - swedishWord: "\xE4ntligen"
-    finnishWord: vihdoinkin
-    darkModeSprite: {fileID: 21300000, guid: d28e20ba037b04c4daaa1061dbe04fe3, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: c7c9a002a254bac4daacbbf993dac74b, type: 3}
+  - swedishWord: "\xE4nt\\u00ADli\\u00ADgen"
+    finnishWord: vih\u00ADdoin\u00ADkin
+    darkModeSprite: {fileID: 21300000, guid: 23bf173f66abd8f44833a6a029677064, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 6649785e8a4f5f74db432d5676b200dd, type: 3}
     notices: '"vihdoin"'

@@ -14,139 +14,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberList:
   - swedishWord: ett
-    finnishWord: yksi
+    finnishWord: yk\u00ADsi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: "f\xF6rsta"
-    ordinalFinnish: "ensim\\u00ADm\xE4i\\u00ADnen"
+    ordinalSwedish: "f\xF6rs\\u00ADta"
+    ordinalFinnish: "en\\u00ADsim\\u00ADm\xE4i\\u00ADnen"
     number: 1
   - swedishWord: "tv\xE5"
-    finnishWord: kaksi
+    finnishWord: kak\u00ADsi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: andra
-    ordinalFinnish: toinen
+    ordinalSwedish: and\u00ADra
+    ordinalFinnish: toi\u00ADnen
     number: 2
   - swedishWord: tre
-    finnishWord: kolme
+    finnishWord: kol\u00ADme
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: tredje
-    ordinalFinnish: kolmas
+    ordinalSwedish: tred\u00ADje
+    ordinalFinnish: kol\u00ADmas
     number: 3
-  - swedishWord: fyra
-    finnishWord: "nelj\xE4"
+  - swedishWord: fy\u00ADra
+    finnishWord: "nel\\u00ADj\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: "fj\xE4rde"
-    ordinalFinnish: "nelj\xE4s"
+    ordinalSwedish: "fj\xE4r\\u00ADde"
+    ordinalFinnish: "nel\\u00ADj\xE4s"
     number: 4
   - swedishWord: fem
-    finnishWord: viisi
+    finnishWord: vii\u00ADsi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: femte
-    ordinalFinnish: viides
+    ordinalSwedish: fem\u00ADte
+    ordinalFinnish: vii\u00ADdes
     number: 5
   - swedishWord: sex
-    finnishWord: kuusi
+    finnishWord: kuu\u00ADsi
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: "sj\xE4tte"
-    ordinalFinnish: kuudes
+    ordinalSwedish: "sj\xE4t\\u00ADte"
+    ordinalFinnish: kuu\u00ADdes
     number: 6
   - swedishWord: sju
     finnishWord: "seit\\u00ADse\\u00ADm\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: sjunde
+    ordinalSwedish: sjun\u00ADde
     ordinalFinnish: "seit\\u00ADse\\u00ADm\xE4s"
     number: 7
-  - swedishWord: "\xE5tta"
+  - swedishWord: "\xE5t\\u00ADta"
     finnishWord: kah\u00ADdek\u00ADsan
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: "\xE5ttonde"
+    ordinalSwedish: "\xE5t\\u00ADton\\u00ADde"
     ordinalFinnish: kah\u00ADdek\u00ADsas
     number: 8
   - swedishWord: nio
     finnishWord: "yh\\u00ADdek\\u00ADs\xE4n"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: nionde
+    ordinalSwedish: ni\u00ADon\u00ADde
     ordinalFinnish: "yh\\u00ADdek\\u00ADs\xE4s"
     number: 9
   - swedishWord: tio
     finnishWord: kym\u00ADme\u00ADnen
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: tionde
+    ordinalSwedish: ti\u00ADon\u00ADde
     ordinalFinnish: kym\u00ADme\u00ADnes
     number: 10
-  - swedishWord: elva
+  - swedishWord: el\u00ADva
     finnishWord: yk\u00ADsi\u00ADtois\u00ADta
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: elfte
+    ordinalSwedish: elf\u00ADte
     ordinalFinnish: yh\u00ADdes\u00ADtois\u00ADta
     number: 11
   - swedishWord: tolv
     finnishWord: kak\u00ADsi\u00ADtois\u00ADta
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: tolfte
+    ordinalSwedish: tolf\u00ADte
     ordinalFinnish: kah\u00ADdes\u00ADtois\u00ADta
     number: 12
-  - swedishWord: tretton
+  - swedishWord: tret\u00ADton
     finnishWord: kol\u00ADme\u00ADtois\u00ADta
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     ordinalSwedish: tret\u00ADton\u00ADde
     ordinalFinnish: kol\u00ADmas\u00ADtois\u00ADta
     number: 13
-  - swedishWord: fjorton
+  - swedishWord: fjor\u00ADton
     finnishWord: "nel\\u00ADj\xE4\\u00ADtois\\u00ADta"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     ordinalSwedish: fjor\u00ADton\u00ADde
     ordinalFinnish: "nel\\u00ADj\xE4s\\u00ADtois\\u00ADta"
     number: 14
-  - swedishWord: femton
+  - swedishWord: fem\u00ADton
     finnishWord: vii\u00ADsi\u00ADtois\u00ADta
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     ordinalSwedish: fem\u00ADton\u00ADde
     ordinalFinnish: vii\u00ADdes\u00ADtois\u00ADta
     number: 15
-  - swedishWord: sexton
+  - swedishWord: sex\u00ADton
     finnishWord: kuu\u00ADsi\u00ADtois\u00ADta
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     ordinalSwedish: sex\u00ADton\u00ADde
     ordinalFinnish: kuu\u00ADdes\u00ADtois\u00ADta
     number: 16
-  - swedishWord: sjutton
+  - swedishWord: sjut\u00ADton
     finnishWord: "seit\\u00ADse\\u00ADm\xE4n\\u00ADtois\\u00ADta"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     ordinalSwedish: sjut\u00ADton\u00ADde
     ordinalFinnish: "seit\\u00ADse\\u00ADm\xE4s\\u00ADtois\\u00ADta"
     number: 17
-  - swedishWord: arton
+  - swedishWord: ar\u00ADton
     finnishWord: kah\u00ADdek\u00ADsan\u00ADtois\u00ADta
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     ordinalSwedish: ar\u00ADton\u00ADde
     ordinalFinnish: kah\u00ADdek\u00ADsas\u00ADtois\u00ADta
     number: 18
-  - swedishWord: nitton
+  - swedishWord: nit\u00ADton
     finnishWord: "yh\\u00ADdek\\u00ADs\xE4n\\u00ADtois\\u00ADta"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     ordinalSwedish: nit\u00ADton\u00ADde
     ordinalFinnish: "yh\\u00ADdek\\u00ADs\xE4s\\u00ADtois\\u00ADta"
     number: 19
-  - swedishWord: tjugo
+  - swedishWord: tju\u00ADgo
     finnishWord: "kak\\u00ADsi\\u00ADkym\\u00ADmen\\u00ADt\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
     finnishWord: "kak\\u00ADsi\\u00ADkym\\u00ADmen\\u00ADt\xE4\\u00ADkak\\u00ADsi"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: tjugoandra
+    ordinalSwedish: tju\u00ADgo\u00ADand\u00ADra
     ordinalFinnish: kah\u00ADdes\u00ADkym\u00ADme\u00ADnes\u00ADtoi\u00ADnen
     number: 22
   - swedishWord: tju\u00ADgo\u00ADtre
@@ -230,17 +230,17 @@ MonoBehaviour:
     ordinalSwedish: "tret\\u00ADtio\\u00ADf\xF6rs\\u00ADta"
     ordinalFinnish: "kol\\u00ADmas\\u00ADkym\\u00ADme\\u00ADnes\\u00ADen\\u00ADsim\\u00ADm\xE4i\\u00ADnen"
     number: 31
-  - swedishWord: hundra
-    finnishWord: sata
+  - swedishWord: hund\u00ADra
+    finnishWord: sa\u00ADta
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: hundrade
-    ordinalFinnish: sadas
+    ordinalSwedish: hund\u00ADra\u00ADde
+    ordinalFinnish: sa\u00ADdas
     number: 100
-  - swedishWord: tusen
-    finnishWord: tuhat
+  - swedishWord: tu\u00ADsen
+    finnishWord: tu\u00ADhat
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
-    ordinalSwedish: tusende
-    ordinalFinnish: tuhannes
+    ordinalSwedish: tu\u00ADsen\u00ADde
+    ordinalFinnish: tu\u00ADhan\u00ADnes
     number: 1000

@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 47ef860302082c34da0102342564a5e8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2371272567786678681
+    second: "icon_tro_p\xE5_light_0"
+  - first:
+      213: -4617192364977118926
+    second: "icon_tro_p\xE5_light_1"
+  - first:
+      213: -7067915393893324231
+    second: "icon_tro_p\xE5_light_2"
+  - first:
+      213: -3510748673048768312
+    second: "icon_tro_p\xE5_light_3"
+  - first:
+      213: -4587836610754717226
+    second: "icon_tro_p\xE5_light_4"
+  - first:
+      213: 7628527954805120821
+    second: "icon_tro_p\xE5_light_5"
+  - first:
+      213: -2195586291593465403
+    second: "icon_tro_p\xE5_light_6"
+  - first:
+      213: 5218096989897957984
+    second: "icon_tro_p\xE5_light_7"
+  - first:
+      213: -1848729511098626067
+    second: "icon_tro_p\xE5_light_8"
+  - first:
+      213: 2077907472634672802
+    second: "icon_tro_p\xE5_light_9"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_0"
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 260
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7665273c92c871fd0800000000000000
+      internalID: -2371272567786678681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_1"
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 269
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231a4e9c1007cefb0800000000000000
+      internalID: -4617192364977118926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_2"
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 260
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a297c8568b9ed90800000000000000
+      internalID: -7067915393893324231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_3"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 236
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0114fbea0574fc0800000000000000
+      internalID: -3510748673048768312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_4"
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 219
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9de60f8eab450c0800000000000000
+      internalID: -4587836610754717226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_5"
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 236
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53fdb49d1c9fdd960800000000000000
+      internalID: 7628527954805120821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_6"
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 200
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1bad786e5b781e0800000000000000
+      internalID: -2195586291593465403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_7"
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 184
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062276ec0976a6840800000000000000
+      internalID: 5218096989897957984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_8"
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 200
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def4f2dfd4ef756e0800000000000000
+      internalID: -1848729511098626067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "icon_tro_p\xE5_light_9"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6f48e46d536dc10800000000000000
+      internalID: 2077907472634672802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "icon_tro_p\xE5_light_0": -2371272567786678681
+      "icon_tro_p\xE5_light_1": -4617192364977118926
+      "icon_tro_p\xE5_light_2": -7067915393893324231
+      "icon_tro_p\xE5_light_3": -3510748673048768312
+      "icon_tro_p\xE5_light_4": -4587836610754717226
+      "icon_tro_p\xE5_light_5": 7628527954805120821
+      "icon_tro_p\xE5_light_6": -2195586291593465403
+      "icon_tro_p\xE5_light_7": 5218096989897957984
+      "icon_tro_p\xE5_light_8": -1848729511098626067
+      "icon_tro_p\xE5_light_9": 2077907472634672802
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
