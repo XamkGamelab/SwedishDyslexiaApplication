@@ -10,6 +10,10 @@ namespace SwedishApp.UI
         [SerializeField] private RectTransform scrollerRect;
         [SerializeField] private Button goUpButton;
         [SerializeField] private Button goDownButton;
+        [SerializeField] private Image goUpImage;
+        [SerializeField] private Image goDownImage;
+        [SerializeField] private Sprite arrowSpriteDarkmode;
+        [SerializeField] private Sprite arrowSpriteLightmode;
         [SerializeField] private int visibleButtonCount = 4;
         [SerializeField] private float offsetFix = 0.001f;
         private float buttonHeight;
@@ -18,6 +22,10 @@ namespace SwedishApp.UI
         private void Start()
         {
             StartCoroutine(DelayedCalculation());
+            UIManager.Instance.LightmodeOnEvent += ToLightmode;
+            UIManager.Instance.LightmodeOffEvent += ToDarkmode;
+            if (UIManager.Instance.LightmodeOn) ToLightmode();
+            else ToDarkmode();
         }
 
         private void OnEnable()
@@ -68,6 +76,18 @@ namespace SwedishApp.UI
             {
                 scrollbar.value = Mathf.Clamp(scrollbar.value - buttonProportion, 0f, 1f);
             });
+        }
+
+        private void ToLightmode()
+        {
+            goDownImage.sprite = arrowSpriteLightmode;
+            goUpImage.sprite = arrowSpriteLightmode;
+        }
+
+        private void ToDarkmode()
+        {
+            goDownImage.sprite = arrowSpriteDarkmode;
+            goUpImage.sprite = arrowSpriteDarkmode;
         }
     }
 }

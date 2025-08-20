@@ -17,6 +17,7 @@ namespace SwedishApp.UI
         private RectTransform rectTransform;
         private Coroutine wiggleCoroutine;
         private Button button;
+        private int activeTweenId = -1;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -45,26 +46,31 @@ namespace SwedishApp.UI
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (wiggleCoroutine != null) StopCoroutine(wiggleCoroutine);
+            if (activeTweenId >= 0) LeanTween.cancel(rectTransform);
             wiggleCoroutine = StartCoroutine(ButtonWiggler(wiggleIntensity));
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            StopCoroutine(wiggleCoroutine);
+            if (wiggleCoroutine != null) StopCoroutine(wiggleCoroutine);
+            if (activeTweenId >= 0) LeanTween.cancel(rectTransform);
             wiggleCoroutine = StartCoroutine(ButtonReturn());
         }
 
         private void ClickEffect()
         {
-            StopCoroutine(wiggleCoroutine);
+            if (wiggleCoroutine != null) StopCoroutine(wiggleCoroutine);
             if (gameObject.activeInHierarchy)
             wiggleCoroutine = StartCoroutine(ButtonWiggler(wiggleIntensity + clickIntensityIncrease, wiggleDuration));
         }
 
         private IEnumerator ButtonWiggler(float _multiplier, float? _returnDelay = null)
         {
-            LeanTween.scale(rectTransform, originalScale * _multiplier, wiggleDuration).setEaseInOutQuad();
+            yield return null;
+            activeTweenId = LeanTween.scale(rectTransform, originalScale * _multiplier, wiggleDuration).setEaseInOutQuad().id;
             yield return wiggleWait;
+            if (activeTweenId >= 0) activeTweenId = -1;
             if (_returnDelay == null) yield break;
             yield return new WaitForSeconds((float)_returnDelay);
             wiggleCoroutine = StartCoroutine(ButtonReturn());
@@ -72,8 +78,10 @@ namespace SwedishApp.UI
 
         private IEnumerator ButtonReturn()
         {
-            LeanTween.scale(rectTransform, originalScale, wiggleDuration).setEaseInOutQuad();
+            yield return null;
+            activeTweenId = LeanTween.scale(rectTransform, originalScale, wiggleDuration).setEaseInOutQuad().id;
             yield return wiggleWait;
+            if (activeTweenId >= 0) activeTweenId = -1;
         }
     }
 }

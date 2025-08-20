@@ -58,6 +58,15 @@ namespace SwedishApp.Minigames
             UIManager.Instance.LightmodeOffEvent += LightsOff;
             UIManager.Instance.LegibleModeOnEvent += LegibleOn;
             UIManager.Instance.LegibleModeOffEvent += LegibleOff;
+            if (UIManager.Instance.LightmodeOn) LightsOn();
+            else LightsOff();
+            if (UIManager.Instance.HyperlegibleOn) LegibleOn();
+            else LegibleOff();
+        }
+
+        public void FixTextFields()
+        {
+            textsInChildren.ForEach(field => UIManager.Instance.FixTextSpacing(field));
         }
 
         public void SetInitialElements(Sprite _lightmodeSprite = null, Sprite _darkmodeSprite = null)
