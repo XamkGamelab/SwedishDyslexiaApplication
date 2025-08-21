@@ -64,7 +64,7 @@ namespace SwedishApp.Words
         public string NounWithGenderEnd()
         {
             string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
-            
+
             if (UIManager.Instance.LightmodeOn)
             {
                 return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordGenderEnd);
@@ -78,55 +78,28 @@ namespace SwedishApp.Words
         public string PluralNoun()
         {
             string _actualCore = hyphenatesIrregularly ? wordCoreWithIrregularHyphenation : wordCore;
+            string colorTagStart = UIManager.Instance.LightmodeOn ? colorTagStartLight : colorTagStartDark;
 
-            if (UIManager.Instance.LightmodeOn)
+            if (wordPluralIsRegular)
             {
-                if (wordPluralIsRegular)
+                if (fleraPlural)
                 {
-                    if (fleraPlural)
-                    {
-                        return string.Concat(flera, colorTagStartLight, _actualCore, colorTagEnd, wordPluralEnd);
-                    }
-                    else
-                    {
-                        return string.Concat(colorTagStartLight, _actualCore, colorTagEnd, wordPluralEnd);
-                    }
+                    return string.Concat(flera, colorTagStart, _actualCore, colorTagEnd, wordPluralEnd);
                 }
                 else
                 {
-                    if (fleraPlural)
-                    {
-                        return string.Concat(flera, colorTagStartLight, wordPluralEnd, colorTagEnd);
-                    }
-                    else
-                    {
-                        return string.Concat(colorTagStartLight, wordPluralEnd, colorTagEnd);
-                    }
+                    return string.Concat(colorTagStart, _actualCore, colorTagEnd, wordPluralEnd);
                 }
             }
             else
             {
-                if (wordPluralIsRegular)
+                if (fleraPlural)
                 {
-                    if (fleraPlural)
-                    {
-                        return string.Concat(flera, colorTagStartDark, _actualCore, colorTagEnd, wordPluralEnd);
-                    }
-                    else
-                    {
-                        return string.Concat(colorTagStartDark, _actualCore, colorTagEnd, wordPluralEnd);
-                    }
+                    return string.Concat(flera, colorTagStart, wordPluralEnd, colorTagEnd);
                 }
                 else
                 {
-                    if (fleraPlural)
-                    {
-                        return string.Concat(flera, colorTagStartDark, wordPluralEnd, colorTagEnd);
-                    }
-                    else
-                    {
-                        return string.Concat(colorTagStartDark, wordPluralEnd, colorTagEnd);
-                    }
+                    return string.Concat(colorTagStart, wordPluralEnd, colorTagEnd);
                 }
             }
         }

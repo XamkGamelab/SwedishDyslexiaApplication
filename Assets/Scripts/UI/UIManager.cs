@@ -292,57 +292,57 @@ namespace SwedishApp.UI
             closeFlashcardMenuBtn.onClick.AddListener(() => flashcardGameTypeMenu.SetActive(false));
             startFlashcardNounGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartNounGame(nounList.nounList.ToArray());
+                flashCardMinigame.StartGame(nounList.nounList.ToArray(), FlashCardMinigame.GameType.noun);
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardVerbGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartVerbGame(verbList.verbList.ToArray());
+                flashCardMinigame.StartGame(verbList.verbList.ToArray(), FlashCardMinigame.GameType.verb);
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardAdjectiveGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartAdjectiveGame(adjectiveList.adjectiveList.ToArray());
+                flashCardMinigame.StartGame(adjectiveList.adjectiveList.ToArray(), FlashCardMinigame.GameType.adjective);
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardTimeGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartTimeWordGame(timeList.timeList.ToArray());
+                flashCardMinigame.StartGame(timeList.timeList.ToArray(), FlashCardMinigame.GameType.time);
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardNumberGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartNumberGame(numberList.numberList.ToArray());
+                flashCardMinigame.StartGame(numberList.numberList.ToArray(), FlashCardMinigame.GameType.number);
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardGrammarGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartGrammarGame(grammarList.grammarList.ToArray());
+                flashCardMinigame.StartGame(grammarList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardPronounGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartPronounGame(pronounList.pronounList.ToArray());
+                flashCardMinigame.StartGame(pronounList.pronounList.ToArray(), FlashCardMinigame.GameType.pronoun);
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardPhraseGameBtn.onClick.AddListener(() =>
             {
-                flashCardMinigame.StartPhraseGame(phraseList.phraseList.ToArray());
+                flashCardMinigame.StartGame(phraseList.phraseList.ToArray(), FlashCardMinigame.GameType.phrase);
                 flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardAdverbGameBtn.onClick.AddListener(() =>
             {
-            flashCardMinigame.StartGrammarGame(adverbList.grammarList.ToArray());
+            flashCardMinigame.StartGame(adverbList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
             flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardPrepositionGameBtn.onClick.AddListener(() =>
             {
-            flashCardMinigame.StartGrammarGame(prepositionList.grammarList.ToArray());
+            flashCardMinigame.StartGame(prepositionList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
             flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardQuestionGameBtn.onClick.AddListener(() =>
             {
-            flashCardMinigame.StartGrammarGame(questionList.grammarList.ToArray());
+            flashCardMinigame.StartGame(questionList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
             flashcardGameTypeMenu.SetActive(false);
             });
 
