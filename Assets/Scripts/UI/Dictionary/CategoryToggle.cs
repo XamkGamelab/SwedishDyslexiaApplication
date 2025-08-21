@@ -35,16 +35,7 @@ namespace SwedishApp.UI
                 float openRotation = -180f;
                 categoryHolder.SetActive(true);
                 if (tweenId >= 0) LeanTween.cancel(imageRect.gameObject);
-
                 tweenId = LeanTween.rotateZ(imageRect.gameObject, openRotation, tweenTime).setEaseInOutQuad().id;
-
-                // tweenId = LeanTween.value(
-                //     imageRect.gameObject,
-                //     (newValue) => imageRect.rotation = Quaternion.Euler(0, 0, newValue),
-                //     imageRect.rotation.z,
-                //     openRotation,
-                //     tweenTime).
-                //     setEaseInOutQuad().id;
                 Invoke(nameof(ResetTweenId), tweenTime);
             }
             else
@@ -52,16 +43,7 @@ namespace SwedishApp.UI
                 float closedRotation = -90f;
                 categoryHolder.SetActive(false);
                 if (tweenId >= 0) LeanTween.cancel(imageRect.gameObject);
-
                 tweenId = LeanTween.rotateZ(imageRect.gameObject, closedRotation, tweenTime).setEaseInOutQuad().id;
-
-                // tweenId = LeanTween.value(
-                //     imageRect.gameObject,
-                //     (newValue) => imageRect.rotation = Quaternion.Euler(0, 0, newValue),
-                //     imageRect.rotation.z,
-                //     closedRotation,
-                //     tweenTime).
-                //     setEaseInOutQuad().id;
                 Invoke(nameof(ResetTweenId), tweenTime);
             }
         }
