@@ -7,11 +7,11 @@ using UnityEngine.EventSystems;
 
 namespace SwedishApp.UI
 {
-    [RequireComponent(typeof(TextMeshProUGUI))]
     public class DictionaryFormEnabler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [HideInInspector] public DictionaryFormHolder wordFormHolder;
-        private TextMeshProUGUI text;
+        [SerializeField] private TextMeshProUGUI finText;
+        [SerializeField] private TextMeshProUGUI sweText;
         [SerializeField] private float hoverTime;
         [HideInInspector] public VerbWord verbWord;
         [HideInInspector] public NounWord nounWord;
@@ -26,7 +26,6 @@ namespace SwedishApp.UI
         private void Start()
         {
             hoverWait = new(hoverTime);
-            text = GetComponent<TextMeshProUGUI>();
         }
 
         public void Init(VerbWord _verb)
@@ -55,17 +54,18 @@ namespace SwedishApp.UI
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (!wasInit) return;
             pointerOnThis = true;
-            text.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.LightmodeHighlight : UIManager.Instance.DarkmodeHighlight;
+            finText.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.LightmodeHighlight : UIManager.Instance.DarkmodeHighlight;
+            sweText.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.LightmodeHighlight : UIManager.Instance.DarkmodeHighlight;
+            if (!wasInit) return;
             checkerCoroutine ??= StartCoroutine(MousePosChecker());
             delayCoroutine ??= StartCoroutine(ShowDelay());
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (!wasInit) return;
-            text.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.Darkgrey : UIManager.Instance.Lightgrey;
+            finText.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.Darkgrey : UIManager.Instance.Lightgrey;
+            sweText.color = UIManager.Instance.LightmodeOn ? UIManager.Instance.Darkgrey : UIManager.Instance.Lightgrey;
             pointerOnThis = false;
         }
 
@@ -83,7 +83,7 @@ namespace SwedishApp.UI
             if (verbWord != null) wordFormHolder.InitHolder(verbWord, this);
             else if (nounWord != null) wordFormHolder.InitHolder(nounWord, this);
             else if (adjectiveWord != null) wordFormHolder.InitHolder(adjectiveWord, this);
-            wordFormHolder.transform.position = new(wordFormHolder.transform.position.x, transform.position.y);
+            wordFormHolder.transform.position = transform.position;
             delayCoroutine = null;
         }
 

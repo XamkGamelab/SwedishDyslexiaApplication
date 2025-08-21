@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1088139321619514938}
   - component: {fileID: 5766095999822118691}
   - component: {fileID: 4876600012493783622}
+  - component: {fileID: 4383039214507326324}
   m_Layer: 5
   m_Name: PlainEntryEntry
   m_TagString: Untagged
@@ -89,6 +90,93 @@ MonoBehaviour:
   FinnishWordTxt: {fileID: 1603053829184727579}
   SwedishWordTxt: {fileID: 1699440405689785982}
   wordType: 0
+--- !u!114 &4383039214507326324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121582296723953301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7925ed541f4512f45a6ad4569b19667d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordFormHolder: {fileID: 0}
+  finText: {fileID: 1603053829184727579}
+  sweText: {fileID: 1699440405689785982}
+  hoverTime: 0.25
+  verbWord:
+    swedishWord: 
+    finnishWord: 
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    notices: 
+    conjugationClass: 0
+    wordCore: var
+    presentHyphenatesIrregularly: 0
+    pastHyphenatesIrregularly: 0
+    pastPerfectHyphenatesIrregularly: 0
+    pastPlusPerfectHyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    baseformIsRegular: 1
+    baseformEnd: a
+    currentTenseIsRegular: 0
+    currentTenseEnd: "\xE4r"
+    currentTenseFinnish: on
+    pastTenseIsRegular: 1
+    pastTenseEnd: 
+    pastTenseFinnish: oli
+    pastPerfectTenseIsRegular: 1
+    pastPerfectTenseStart: 'har '
+    pastPerfectTenseEnd: it
+    pastPerfectTenseFinnish: on ollut
+    pastPlusPerfectTenseIsRegular: 1
+    pastPlusPerfectTenseStart: 'hade '
+    pastPlusPerfectTenseEnd: it
+    pastPlusPerfectTenseFinnish: oli ollut
+  nounWord:
+    swedishWord: 
+    finnishWord: 
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    enOrEtt: 0
+    declensionClass: 0
+    finnishPlural: kissat
+    wordCore: katt
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
+    wordGenderEnd: en
+    wordPluralIsRegular: 1
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordDefinitivePluralEnd: na
+  adjectiveWord:
+    swedishWord: 
+    finnishWord: 
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    wordCore: varm
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: 
+    wordEnEnd: 
+    wordEttEnd: t
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: a
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 1
+    wordComparativeEnd: are
+    comparativeDefinitiveIsRegular: 1
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: ast
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: aste
 --- !u!1 &4209318497755790102
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +324,6 @@ GameObject:
   - component: {fileID: 874058981580610030}
   - component: {fileID: 4734472328337064822}
   - component: {fileID: 1699440405689785982}
-  - component: {fileID: 8958487864983100427}
   m_Layer: 5
   m_Name: SweWordTXT
   m_TagString: Untagged
@@ -362,88 +449,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8958487864983100427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565346885820902411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7925ed541f4512f45a6ad4569b19667d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wordFormHolder: {fileID: 0}
-  hoverTime: 0.25
-  verbWord:
-    swedishWord: 
-    finnishWord: 
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    notices: 
-    conjugationClass: 0
-    wordCore: var
-    presentHyphenatesIrregularly: 0
-    pastHyphenatesIrregularly: 0
-    pastPerfectHyphenatesIrregularly: 0
-    pastPlusPerfectHyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    baseformIsRegular: 1
-    baseformEnd: a
-    currentTenseIsRegular: 0
-    currentTenseEnd: "\xE4r"
-    currentTenseFinnish: on
-    pastTenseIsRegular: 1
-    pastTenseEnd: 
-    pastTenseFinnish: oli
-    pastPerfectTenseIsRegular: 1
-    pastPerfectTenseStart: 'har '
-    pastPerfectTenseEnd: it
-    pastPerfectTenseFinnish: on ollut
-    pastPlusPerfectTenseIsRegular: 1
-    pastPlusPerfectTenseStart: 'hade '
-    pastPlusPerfectTenseEnd: it
-    pastPlusPerfectTenseFinnish: oli ollut
-  nounWord:
-    swedishWord: 
-    finnishWord: 
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    enOrEtt: 0
-    declensionClass: 0
-    finnishPlural: kissat
-    wordCore: katt
-    hyphenatesIrregularly: 0
-    wordCoreWithIrregularHyphenation: 
-    wordGenderStart: 'en '
-    wordIndefinitiveEnd: 
-    wordGenderEnd: en
-    wordPluralIsRegular: 1
-    wordPluralEnd: er
-    fleraPlural: 0
-    wordDefinitivePluralEnd: na
-  adjectiveWord:
-    swedishWord: 
-    finnishWord: 
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    wordCore: varm
-    genderedHyphenatesIrregularly: 0
-    comparativeHyphenatesIrregularly: 0
-    superlativeHyphenatesIrregularly: 0
-    wordUsesMerMest: 0
-    wordCoreWithIrregularHyphenation: 
-    wordEnEnd: 
-    wordEttEnd: t
-    definitiveIsRegular: 1
-    wordDefinitiveEnd: a
-    definitivePluralIsRegular: 1
-    wordDefinitivePluralIrregular: 
-    comparativeIsRegular: 1
-    wordComparativeEnd: are
-    comparativeDefinitiveIsRegular: 1
-    superlativeIsRegular: 1
-    wordSuperlativeEnd: ast
-    superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: aste
