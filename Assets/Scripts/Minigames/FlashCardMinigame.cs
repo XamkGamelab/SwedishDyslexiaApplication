@@ -57,7 +57,7 @@ namespace SwedishApp.Minigames
         [SerializeField] private FlashCardNoun nounObject;
         [SerializeField] private FlashCardVerb verbObject;
         [SerializeField] private FlashCardAdjective adjectiveObject;
-        [SerializeField] private FlashCardBase timeObject;
+        [SerializeField] private FlashCardTime timeObject;
         [SerializeField] private FlashCardNumber numberObject;
         [SerializeField] private FlashCardBase phraseObject;
         [SerializeField] private FlashCardGrammar grammarObject;
@@ -367,9 +367,11 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void DisplayCurrentTimeWord()
         {
-            Word activeWord = activeWordArray[ActiveWordIndex];
+            TimeWord activeWord = activeWordArray[ActiveWordIndex] as TimeWord;
             timeObject.wordFinnishText.text = activeWord.finnishWord;
             timeObject.wordSwedishBaseText.text = activeWord.swedishWord;
+            if (activeWord.monthNumber <= 0) timeObject.wordMonthNumber.text = "";
+            else timeObject.wordMonthNumber.text = activeWord.monthNumber.ToString();
 
             timeObject.SetInitialElements(activeWord.lightModeSprite, activeWord.darkModeSprite);
         }

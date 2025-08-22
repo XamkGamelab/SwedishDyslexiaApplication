@@ -95,12 +95,13 @@ namespace SwedishApp.Minigames
         /// <summary>
         /// This method handles changing all the card's relevant elements to lightmode
         /// </summary>
-        public void LightsOn()
+        public virtual void LightsOn()
         {
             foreach (TextMeshProUGUI text in textsInChildren)
             {
                 text.color = UIManager.Instance.Darkgrey;
             }
+            if (hintImage == null) return;
             if (lightmodeSprite != null)
             {
                 hintImage.sprite = lightmodeSprite;
@@ -110,12 +111,13 @@ namespace SwedishApp.Minigames
         /// <summary>
         /// This method handles changing all the card's relevant elements to darkmode
         /// </summary>
-        public void LightsOff()
+        public virtual void LightsOff()
         {
             foreach (TextMeshProUGUI text in textsInChildren)
             {
                 text.color = UIManager.Instance.Lightgrey;
             }
+            if (hintImage == null) return;
             if (darkmodeSprite != null)
             {
                 hintImage.sprite = darkmodeSprite;
