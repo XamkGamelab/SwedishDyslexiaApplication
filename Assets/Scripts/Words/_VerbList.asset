@@ -38,7 +38,7 @@ MonoBehaviour:
     pastPerfectTenseEnd: t
     pastPerfectTenseFinnish: on tar\u00ADvin\u00ADnut
     pastPlusPerfectTenseIsRegular: 1
-    pastPlusPerfectTenseStart: ha\u00ADde
+    pastPlusPerfectTenseStart: 'ha\u00ADde '
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: o\u00ADli tar\u00ADvin\u00ADnut
   - swedishWord: "be\\u00ADh\xF6\\u00ADva in\\u00ADte"
@@ -94,7 +94,7 @@ MonoBehaviour:
     pastPerfectTenseEnd: t
     pastPerfectTenseFinnish: on ol\u00ADlut ta\u00ADpa\u00ADna
     pastPlusPerfectTenseIsRegular: 1
-    pastPlusPerfectTenseStart: ha\u00ADde
+    pastPlusPerfectTenseStart: 'ha\u00ADde '
     pastPlusPerfectTenseEnd: t
     pastPlusPerfectTenseFinnish: o\u00ADli ol\u00ADlut ta\u00ADpa\u00ADna
   - swedishWord: "b\xF6\\u00ADra"
@@ -122,7 +122,7 @@ MonoBehaviour:
     pastPerfectTenseEnd: bort
     pastPerfectTenseFinnish: "on t\xE4y\\u00ADty\\u00ADnyt"
     pastPlusPerfectTenseIsRegular: 0
-    pastPlusPerfectTenseStart: ha\u00ADde
+    pastPlusPerfectTenseStart: 'ha\u00ADde '
     pastPlusPerfectTenseEnd: bort
     pastPlusPerfectTenseFinnish: "o\\u00ADli t\xE4y\\u00ADty\\u00ADnyt"
   - swedishWord: "f\xE5"
@@ -150,7 +150,7 @@ MonoBehaviour:
     pastPerfectTenseEnd: "f\xE5tt"
     pastPerfectTenseFinnish: on saa\u00ADnut
     pastPlusPerfectTenseIsRegular: 0
-    pastPlusPerfectTenseStart: ha\u00ADde
+    pastPlusPerfectTenseStart: 'ha\u00ADde '
     pastPlusPerfectTenseEnd: "f\xE5tt"
     pastPlusPerfectTenseFinnish: o\u00ADli saa\u00ADnut
   - swedishWord: "g\xE5"
@@ -178,7 +178,7 @@ MonoBehaviour:
     pastPerfectTenseEnd: "g\xE5tt"
     pastPerfectTenseFinnish: on men\u00ADnyt
     pastPlusPerfectTenseIsRegular: 0
-    pastPlusPerfectTenseStart: ha\u00ADde
+    pastPlusPerfectTenseStart: 'ha\u00ADde '
     pastPlusPerfectTenseEnd: "g\xE5tt"
     pastPlusPerfectTenseFinnish: o\u00ADli men\u00ADnyt
   - swedishWord: "g\xF6\\u00ADra"
@@ -210,7 +210,7 @@ MonoBehaviour:
     pastPlusPerfectTenseEnd: gjort
     pastPlusPerfectTenseFinnish: o\u00ADli teh\u00ADnyt
   - swedishWord: ha
-    finnishWord: "o\xAD\\u00ADmis\xAD\\u00ADtaa"
+    finnishWord: o\u00ADmis\u00ADtaa
     darkModeSprite: {fileID: 21300000, guid: 3bc6013ea9a0b144481be958e5731f98, type: 3}
     lightModeSprite: {fileID: 21300000, guid: a22e5276004a8dc4c9d0bb9c64b51bbe, type: 3}
     notices: 

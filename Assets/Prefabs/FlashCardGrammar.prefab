@@ -76,7 +76,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 450, y: 650}
+  m_SizeDelta: {x: 520, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5676303378438692761
 CanvasRenderer:
@@ -106,8 +106,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4977559380755642629, guid: 7f379786e7a1ac94cb89027c7ceeae5a, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 7f379786e7a1ac94cb89027c7ceeae5a, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -135,7 +135,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -179,7 +179,7 @@ MonoBehaviour:
   wordFinnishText: {fileID: 3128833471715178828}
   wordSwedishBaseText: {fileID: 707946417843708338}
   wordNoticeText: {fileID: 6729885861536217307}
-  infoHover: {fileID: 0}
+  infoHover: {fileID: 7276846202028954743}
 --- !u!1 &1904510729572119755
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +728,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 110, y: 75}
-  m_SizeDelta: {x: 80, y: 80}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6270472834762868366
 CanvasRenderer:
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2595501377460564358, guid: 9dc7844f7ed19054baafb1df23e81b94, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d897f96f3b0a3be49b11c265af0ee8f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -781,10 +781,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoTextObject: {fileID: 4587654054659032317}
-  tipBG: {fileID: 0}
-  tipTxt: {fileID: 0}
-  darkmodeSprite: {fileID: 0}
-  lightmodeSprite: {fileID: 0}
+  tipBG: {fileID: 4001458755454171237}
+  tipTxt: {fileID: 6729885861536217307}
+  darkmodeSprite: {fileID: 21300000, guid: d897f96f3b0a3be49b11c265af0ee8f3, type: 3}
+  lightmodeSprite: {fileID: 21300000, guid: 3be2f1add426b814095e4ac1260db8f5, type: 3}
   hoverDelayTime: 0.25
 --- !u!1 &7092697918210953484
 GameObject:
@@ -821,7 +821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: 95}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5281424886264913511
@@ -910,8 +910,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -175}
-  m_SizeDelta: {x: 380, y: 70}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: 400, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1861150168900922197
 CanvasRenderer:

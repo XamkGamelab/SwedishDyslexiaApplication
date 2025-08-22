@@ -57,7 +57,7 @@ namespace SwedishApp.Minigames
         [SerializeField] private FlashCardNoun nounObject;
         [SerializeField] private FlashCardVerb verbObject;
         [SerializeField] private FlashCardAdjective adjectiveObject;
-        [SerializeField] private FlashCardBase timeObject;
+        [SerializeField] private FlashCardTime timeObject;
         [SerializeField] private FlashCardNumber numberObject;
         [SerializeField] private FlashCardBase phraseObject;
         [SerializeField] private FlashCardGrammar grammarObject;
@@ -180,6 +180,7 @@ namespace SwedishApp.Minigames
                     UIManager.Instance.LightmodeOnEvent += DisplayCurrentGrammarWord;
                     UIManager.Instance.LightmodeOffEvent += DisplayCurrentGrammarWord;
                     displayWordAction = DisplayCurrentGrammarWord;
+                    displayWordAction += grammarObject.HideInfo;
                     break;
                 case GameType.pronoun:
                     activeFlashcard = pronounObject;
@@ -266,26 +267,6 @@ namespace SwedishApp.Minigames
             StartCoroutine(DisplayWord());
         }
 
-        #endregion
-
-        #region noun-related methods
-
-        /// <summary>
-        /// This method updates all of the noun flashcard's text fields to match the current word
-        /// </summary>
-        private void DisplayCurrentNoun()
-        {
-            NounWord activeWord = activeWordArray[ActiveWordIndex] as NounWord;
-            nounObject.wordFinnishText.text = activeWord.finnishWord;
-            nounObject.wordSwedishBaseText.text = activeWord.NounWithGenderStart();
-            nounObject.wordSwedishDefinitiveText.text = activeWord.NounWithGenderEnd();
-            nounObject.wordSwedishPluralText.text = activeWord.PluralNoun();
-            nounObject.wordSwedishDefinitivePluralText.text = activeWord.PluralDefinitiveNoun();
-            nounObject.wordDeclensionClassText.text = activeWord.declensionClass.ToString();
-
-            nounObject.SetInitialElements(activeWord.lightModeSprite, activeWord.darkModeSprite);
-        }
-
         private void EndGame()
         {
             nounObject.gameObject.SetActive(false);
@@ -316,6 +297,26 @@ namespace SwedishApp.Minigames
             UIManager.Instance.LightmodeOffEvent -= DisplayCurrentPhraseWord;
             UIManager.Instance.TriggerTipChange();
             gameObject.SetActive(false);
+        }
+
+        #endregion
+
+        #region noun-related methods
+
+        /// <summary>
+        /// This method updates all of the noun flashcard's text fields to match the current word
+        /// </summary>
+        private void DisplayCurrentNoun()
+        {
+            NounWord activeWord = activeWordArray[ActiveWordIndex] as NounWord;
+            nounObject.wordFinnishText.text = activeWord.finnishWord;
+            nounObject.wordSwedishBaseText.text = activeWord.NounWithGenderStart();
+            nounObject.wordSwedishDefinitiveText.text = activeWord.NounWithGenderEnd();
+            nounObject.wordSwedishPluralText.text = activeWord.PluralNoun();
+            nounObject.wordSwedishDefinitivePluralText.text = activeWord.PluralDefinitiveNoun();
+            nounObject.wordDeclensionClassText.text = activeWord.declensionClass.ToString();
+
+            nounObject.SetInitialElements(activeWord.lightModeSprite, activeWord.darkModeSprite);
         }
 
         #endregion
@@ -366,9 +367,11 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void DisplayCurrentTimeWord()
         {
-            Word activeWord = activeWordArray[ActiveWordIndex];
+            TimeWord activeWord = activeWordArray[ActiveWordIndex] as TimeWord;
             timeObject.wordFinnishText.text = activeWord.finnishWord;
             timeObject.wordSwedishBaseText.text = activeWord.swedishWord;
+            if (activeWord.monthNumber <= 0) timeObject.wordMonthNumber.text = "";
+            else timeObject.wordMonthNumber.text = activeWord.monthNumber.ToString();
 
             timeObject.SetInitialElements(activeWord.lightModeSprite, activeWord.darkModeSprite);
         }
@@ -384,7 +387,7 @@ namespace SwedishApp.Minigames
         {
             NumberWord activeWord = activeWordArray[ActiveWordIndex] as NumberWord;
             numberObject.wordFinnishText.text = activeWord.finnishWord;
-            numberObject.wordFinnishOrdinalText.text = activeWord.ordinalFinnish;
+            numberObject.wordNumberText.text = activeWord.number.ToString();
             numberObject.wordSwedishBaseText.text = activeWord.swedishWord;
             numberObject.wordSwedishOrdinalText.text = activeWord.ordinalSwedish;
 

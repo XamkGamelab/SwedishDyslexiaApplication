@@ -120,61 +120,61 @@ MonoBehaviour:
     monthNumber: -1
   - swedishWord: ja\u00ADnu\u00ADa\u00ADri
     finnishWord: tam\u00ADmi\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 1
   - swedishWord: feb\u00ADru\u00ADa\u00ADri
     finnishWord: hel\u00ADmi\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 2
   - swedishWord: mars
     finnishWord: maa\u00ADlis\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 3
   - swedishWord: april
     finnishWord: huh\u00ADti\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 4
   - swedishWord: maj
     finnishWord: tou\u00ADko\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 5
   - swedishWord: ju\u00ADni
     finnishWord: "ke\\u00ADs\xE4\\u00ADkuu"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 6
   - swedishWord: ju\u00ADli
     finnishWord: "hei\\u00ADn\xE4\\u00ADkuu"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 7
   - swedishWord: au\u00ADgus\u00ADti
     finnishWord: e\u00ADlo\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 8
   - swedishWord: sep\u00ADtem\u00ADber
     finnishWord: syys\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 9
   - swedishWord: ok\u00ADto\u00ADber
     finnishWord: lo\u00ADka\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 10
-  - swedishWord: de\u00ADcem\u00ADber
-    finnishWord: jou\u00ADlu\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    monthNumber: 12
   - swedishWord: no\u00ADvem\u00ADber
     finnishWord: mar\u00ADras\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
     monthNumber: 11
+  - swedishWord: de\u00ADcem\u00ADber
+    finnishWord: jou\u00ADlu\u00ADkuu
+    darkModeSprite: {fileID: 21300000, guid: 2342a7de13642a5408e7f404bfaf4456, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: fa572209cb9b86a4f9ced9471e7b0ed8, type: 3}
+    monthNumber: 12

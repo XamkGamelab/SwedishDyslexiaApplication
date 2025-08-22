@@ -42,6 +42,7 @@ namespace SwedishApp.Minigames
         [SerializeField] private TextMeshProUGUI correctCounter;
         [SerializeField] private Button checkWordBtn;
         [SerializeField] private Button nextWordBtn;
+        [SerializeField] private Transform wordAnchor;
         [SerializeField] private GameObject inputfieldHolder;
         [SerializeField] private GameObject singleInputfield;
         [SerializeField] private AudioClip correctClip;
@@ -49,7 +50,7 @@ namespace SwedishApp.Minigames
         [Tooltip("Value between 0 and 1; percentage")]
         [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float newWordDelay = 1f;
-        [SerializeField] private int allowedMissedInputsCount = 2;
+        [SerializeField] private float allowedMissedLettersPercentage = 0.9f;
 
         //Input field related references
         private InputFieldHandling inputFieldHandling;
@@ -87,7 +88,6 @@ namespace SwedishApp.Minigames
         [SerializeField] private TutorialHandler incorrectTutorial;
 
         //Readonly
-        private readonly Vector2 holderPos = new(0, -100f);
         private readonly string promptStart = "Taivuta muotoon:\n";
 
         private void Start()
@@ -321,11 +321,8 @@ namespace SwedishApp.Minigames
             translatedCounter.text = string.Concat(playedWordsCount, "/", activeGameWordCount);
 
             //Instantiate input field -related objects
-            inputFieldHandling = Instantiate(inputfieldHolder, transform).GetComponent<InputFieldHandling>();
-            inputFieldHandling.GetComponent<RectTransform>().localPosition = holderPos;
+            inputFieldHandling = Instantiate(inputfieldHolder, wordAnchor).GetComponent<InputFieldHandling>();
             activeWordWantedFormNoHighlight = Helpers.CleanWord(activeWordWantedForm);
-
-            Debug.Log(activeWordWantedFormNoHighlight);
 
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)
             {
@@ -424,6 +421,8 @@ namespace SwedishApp.Minigames
                 if (!incorrectTutorial.TutorialSeen()) incorrectTutorial.ShowTutorial();
                 AudioManager.Instance.PlayClip(incorrectClip);
             }
+
+            int allowedMissedInputsCount = Mathf.RoundToInt((float)activeWordWantedFormNoHighlight.Length * (1f - allowedMissedLettersPercentage));
 
             if (missedInputsCount <= allowedMissedInputsCount)
             {

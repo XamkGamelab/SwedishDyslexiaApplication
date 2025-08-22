@@ -40,6 +40,8 @@ namespace SwedishApp.UI
         [SerializeField] private PronounList pronounList;
         [SerializeField] private PhraseList phraseList;
         [SerializeField] private Button closeButton;
+        [SerializeField] private Button showAllCategories;
+        [SerializeField] private Button hideAllCategories;
         [SerializeField]
         private GameObject verbHeader, nounHeader, adjectiveHeader,
         timeHeader, numberHeader, grammarHeader, adverbHeader,
@@ -62,9 +64,11 @@ namespace SwedishApp.UI
         private bool searchClearWaiting = false;
         private bool searchInProgress = false;
         private bool allObjectsActive = true;
+        private CategoryToggle[] categoryToggles;
 
         private void Start()
         {
+            categoryToggles = GetComponentsInChildren<CategoryToggle>(includeInactive: true);
             searchField.onValueChanged.AddListener((s) => StartSearchClearCoroutine());
             UIManager.Instance.LightmodeOnEvent += ToLightmode;
             UIManager.Instance.LightmodeOffEvent += ToDarkmode;
@@ -73,6 +77,8 @@ namespace SwedishApp.UI
                 UIManager.Instance.TriggerTipChange();
                 gameObject.SetActive(false);
             });
+            showAllCategories.onClick.AddListener(ShowAllCategories);
+            hideAllCategories.onClick.AddListener(HideAllCategories);
         }
 
         /// <summary>
@@ -380,6 +386,22 @@ namespace SwedishApp.UI
                 textFields.Add(entry.FinnishWordTxt);
                 textFields.Add(entry.SwedishWordTxt);
             });
+        }
+
+        private void ShowAllCategories()
+        {
+            foreach (CategoryToggle categoryToggle in categoryToggles)
+            {
+                categoryToggle.ShowCategory();
+            }
+        }
+
+        private void HideAllCategories()
+        {
+            foreach (CategoryToggle categoryToggle in categoryToggles)
+            {
+                categoryToggle.HideCategory();
+            }
         }
 
         public List<TextMeshProUGUI> GetDictionaryTextFields()
