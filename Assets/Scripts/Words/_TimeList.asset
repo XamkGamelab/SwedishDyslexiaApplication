@@ -14,37 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeList:
   - swedishWord: "i \xE5r"
-    finnishWord: "t\xE4n\xE4 vuonna"
+    finnishWord: "t\xE4\\u00ADn\xE4 vuon\\u00ADna"
     darkModeSprite: {fileID: 21300000, guid: 20eaeaf7abb7dfd4da07d9b19d2f580d, type: 3}
     lightModeSprite: {fileID: 21300000, guid: e632c2fdc5c495e48849f5ef2537344c, type: 3}
     monthNumber: -1
-  - swedishWord: "f\xF6rra \xE5ret"
-    finnishWord: viime vuonna
+  - swedishWord: "f\xF6r\\u00ADra \xE5ret"
+    finnishWord: vii\u00ADme vuon\u00ADna
     darkModeSprite: {fileID: 21300000, guid: 8f66001958212714da15ee9149eb8b3c, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 5bf2dddc619f42c4e9ec0e56d453650e, type: 3}
     monthNumber: -1
-  - swedishWord: "n\xE4sta \xE5r"
-    finnishWord: ensi vuonna
+  - swedishWord: "n\xE4s\\u00ADta \xE5r"
+    finnishWord: en\u00ADsi vuon\u00ADna
     darkModeSprite: {fileID: 21300000, guid: 0f04c7f7fc0ddc347821ead16020dee1, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 30fe72d23b336cd428ce31cad48e6bbf, type: 3}
     monthNumber: -1
-  - swedishWord: "f\xF6rra m\xE5naden"
-    finnishWord: viime kuussa
+  - swedishWord: "f\xF6r\\u00ADra m\xE5\\u00ADna\\u00ADden"
+    finnishWord: vii\u00ADme kuus\u00ADsa
     darkModeSprite: {fileID: 21300000, guid: 278294195f73bd64bbde9cbd0af2ec75, type: 3}
     lightModeSprite: {fileID: 21300000, guid: cb86a132f2041954999c084a1a357c1a, type: 3}
     monthNumber: -1
-  - swedishWord: "n\xE4sta m\xE5nad"
-    finnishWord: ensi kuussa
+  - swedishWord: "n\xE4s\\u00ADta m\xE5\\u00ADnad"
+    finnishWord: en\u00ADsi kuus\u00ADsa
     darkModeSprite: {fileID: 21300000, guid: 1f96a290fe5e6ee4ba8bffde0135b453, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 7b8461a1609d00c4f9d0d31ec9282d0d, type: 3}
     monthNumber: -1
-  - swedishWord: "f\xF6rra veckan"
-    finnishWord: viime viikolla
+  - swedishWord: "f\xF6r\\u00ADra vec\\u00ADkan"
+    finnishWord: vii\u00ADme vii\u00ADkol\u00ADla
     darkModeSprite: {fileID: 21300000, guid: 292aff8aa1c50494f954689bd3116f55, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 815d839e3bb12d344ae7ca5c7b0075f7, type: 3}
     monthNumber: -1
-  - swedishWord: "n\xE4sta vecka"
-    finnishWord: ensi viikolla
+  - swedishWord: "n\xE4s\\u00ADta vec\\u00ADka"
+    finnishWord: en\u00ADsi vii\u00ADkol\u00ADla
     darkModeSprite: {fileID: 21300000, guid: 5b0dcb7cb1d6bc741974b68bc0f483da, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 088a946532ba2e74da9fe172e7b8478e, type: 3}
     monthNumber: -1
@@ -59,17 +59,17 @@ MonoBehaviour:
     lightModeSprite: {fileID: 21300000, guid: c4ba046d6e33a124e9b31956c377dfd2, type: 3}
     monthNumber: -1
   - swedishWord: "i g\xE5r"
-    finnishWord: eilen
+    finnishWord: ei\u00ADlen
     darkModeSprite: {fileID: 21300000, guid: 406fa0bd7a9e1124da3363280343909d, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 2b7a3ffb0c0b4744ea93a2ee765fb0be, type: 3}
     monthNumber: -1
-  - swedishWord: i morgon
-    finnishWord: huomenna
+  - swedishWord: i mor\u00ADgon
+    finnishWord: huo\u00ADmen\u00ADna
     darkModeSprite: {fileID: 21300000, guid: f7b7dfcbef81c1c4885cc7aa31348705, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 50ebf5e50eb22d84294429f60826616b, type: 3}
     monthNumber: -1
   - swedishWord: i dag
-    finnishWord: "t\xE4n\xE4\xE4n"
+    finnishWord: "t\xE4\\u00ADn\xE4\xE4n"
     darkModeSprite: {fileID: 21300000, guid: d85057a82e82b7c43a4faccf0eef685e, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 54ba756863d18844381ad07fc5987f49, type: 3}
     monthNumber: -1
@@ -83,12 +83,12 @@ MonoBehaviour:
     darkModeSprite: {fileID: 21300000, guid: 74d0fb27efcc59940a72eaad50e8bb38, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 74d0fb27efcc59940a72eaad50e8bb38, type: 3}
     monthNumber: -1
-  - swedishWord: "p\xE5 v\xE5ren"
+  - swedishWord: "p\xE5 v\xE5\\u00ADren"
     finnishWord: "ke\\u00ADv\xE4\xE4\\u00ADll\xE4"
     darkModeSprite: {fileID: 21300000, guid: 74d0fb27efcc59940a72eaad50e8bb38, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 74d0fb27efcc59940a72eaad50e8bb38, type: 3}
     monthNumber: -1
-  - swedishWord: sommar
+  - swedishWord: som\u00ADmar
     finnishWord: "ke\\u00ADs\xE4"
     darkModeSprite: {fileID: 21300000, guid: c6c5c795a656c1048908ab57effd15b2, type: 3}
     lightModeSprite: {fileID: 21300000, guid: c6c5c795a656c1048908ab57effd15b2, type: 3}
@@ -103,17 +103,17 @@ MonoBehaviour:
     darkModeSprite: {fileID: 21300000, guid: b7a94c78470a90449ac39318a9c76f5c, type: 3}
     lightModeSprite: {fileID: 21300000, guid: b7a94c78470a90449ac39318a9c76f5c, type: 3}
     monthNumber: -1
-  - swedishWord: "p\xE5 h\xF6sten"
+  - swedishWord: "p\xE5 h\xF6s\\u00ADten"
     finnishWord: "syk\\u00ADsyl\\u00ADl\xE4"
     darkModeSprite: {fileID: 21300000, guid: b7a94c78470a90449ac39318a9c76f5c, type: 3}
     lightModeSprite: {fileID: 21300000, guid: b7a94c78470a90449ac39318a9c76f5c, type: 3}
     monthNumber: -1
-  - swedishWord: vinter
+  - swedishWord: vin\u00ADter
     finnishWord: tal\u00ADvi
     darkModeSprite: {fileID: 21300000, guid: e1941c8138aec974baf015b1c3d3f13f, type: 3}
     lightModeSprite: {fileID: 21300000, guid: e1941c8138aec974baf015b1c3d3f13f, type: 3}
     monthNumber: -1
-  - swedishWord: "p\xE5 vintern"
+  - swedishWord: "p\xE5 vin\\u00ADtern"
     finnishWord: tal\u00ADvel\u00ADla
     darkModeSprite: {fileID: 21300000, guid: e1941c8138aec974baf015b1c3d3f13f, type: 3}
     lightModeSprite: {fileID: 21300000, guid: e1941c8138aec974baf015b1c3d3f13f, type: 3}
@@ -143,12 +143,12 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     monthNumber: 5
-  - swedishWord: juni
+  - swedishWord: ju\u00ADni
     finnishWord: "ke\\u00ADs\xE4\\u00ADkuu"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     monthNumber: 6
-  - swedishWord: juli
+  - swedishWord: ju\u00ADli
     finnishWord: "hei\\u00ADn\xE4\\u00ADkuu"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
@@ -168,13 +168,13 @@ MonoBehaviour:
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     monthNumber: 10
-  - swedishWord: no\u00ADvem\u00ADber
-    finnishWord: mar\u00ADras\u00ADkuu
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
-    monthNumber: 11
   - swedishWord: de\u00ADcem\u00ADber
     finnishWord: jou\u00ADlu\u00ADkuu
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     monthNumber: 12
+  - swedishWord: no\u00ADvem\u00ADber
+    finnishWord: mar\u00ADras\u00ADkuu
+    darkModeSprite: {fileID: 0}
+    lightModeSprite: {fileID: 0}
+    monthNumber: 11

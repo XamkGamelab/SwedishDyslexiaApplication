@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: _NounList
   m_EditorClassIdentifier: 
   nounList:
-  - swedishWord: apelsin
+  - swedishWord: apel\u00ADsin
     finnishWord: ap\u00ADpel\u00ADsii\u00ADni
     darkModeSprite: {fileID: 21300000, guid: 7bc7f498e3ef7d54191f4ff6f6103edd, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 8cc15415087d0554d91073ad4064cb69, type: 3}
     enOrEtt: 1
     declensionClass: 3
     finnishPlural: ap\u00ADpel\u00ADsii\u00ADnit
-    wordCore: a\u00ADpel\u00ADsin\u00AD
+    wordCore: apel\u00ADsin\u00AD
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
     wordGenderStart: 'en '
@@ -29,7 +29,6 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: er
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
   - swedishWord: bok
     finnishWord: kir\u00ADja
@@ -47,15 +46,14 @@ MonoBehaviour:
     wordPluralIsRegular: 0
     wordPluralEnd: "b\xF6ck\\u00ADer"
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
   - swedishWord: elev
     finnishWord: op\u00ADpi\u00ADlas
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 51e4742027e281f43ba70cfadb9592e6, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: edc0c4a339c58664babf173e6579909f, type: 3}
     enOrEtt: 1
     declensionClass: 3
-    finnishPlural: oppilaat
+    finnishPlural: op\u00ADpi\u00ADlaat
     wordCore: elev
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: ele\u00ADv
@@ -65,7 +63,6 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: er
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
   - swedishWord: fisk
     finnishWord: ka\u00ADla
@@ -83,15 +80,31 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: ar
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
+    wordDefinitivePluralEnd: \u00ADna
+  - swedishWord: grund\u00ADsko\u00ADla
+    finnishWord: pe\u00ADrus\u00ADkou\u00ADlu
+    darkModeSprite: {fileID: 21300000, guid: 649dd7a1dafa55e49987c1e5165cd747, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 4888e20011666c14bb64804993a47ed6, type: 3}
+    enOrEtt: 1
+    declensionClass: 1
+    finnishPlural: pe\u00ADrus\u00ADkou\u00ADlut
+    wordCore: grund\u00ADskol
+    hyphenatesIrregularly: 0
+    wordCoreWithIrregularHyphenation: 
+    wordGenderStart: 'en '
+    wordIndefinitiveEnd: 
+    wordGenderEnd: an
+    wordPluralIsRegular: 1
+    wordPluralEnd: or
+    fleraPlural: 0
     wordDefinitivePluralEnd: \u00ADna
   - swedishWord: gym\u00ADna\u00ADsium
-    finnishWord: lukio
+    finnishWord: lu\u00ADki\u00ADo
     darkModeSprite: {fileID: 21300000, guid: 3320ad3f48eaab0489793fc81a101dcd, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 07b50f5298505714fb7e68638b051096, type: 3}
     enOrEtt: 2
     declensionClass: 3
-    finnishPlural: lukiot
+    finnishPlural: lu\u00ADki\u00ADot
     wordCore: gym\u00ADna\u00ADsi\u00AD
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
@@ -101,7 +114,6 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: er
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
   - swedishWord: katt
     finnishWord: kis\u00ADsa
@@ -119,15 +131,14 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: er
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
-  - swedishWord: skola
-    finnishWord: koulu
+  - swedishWord: sko\u00ADla
+    finnishWord: kou\u00ADlu
     darkModeSprite: {fileID: 21300000, guid: 649dd7a1dafa55e49987c1e5165cd747, type: 3}
     lightModeSprite: {fileID: 21300000, guid: 4888e20011666c14bb64804993a47ed6, type: 3}
     enOrEtt: 1
     declensionClass: 1
-    finnishPlural: koulut
+    finnishPlural: kou\u00ADlut
     wordCore: skol
     hyphenatesIrregularly: 0
     wordCoreWithIrregularHyphenation: 
@@ -137,9 +148,8 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: or
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
-  - swedishWord: strumpa
+  - swedishWord: strum\u00ADpa
     finnishWord: suk\u00ADka
     darkModeSprite: {fileID: 21300000, guid: f5b964d23557b964ca951d73d5132707, type: 3}
     lightModeSprite: {fileID: 21300000, guid: a312a929c3eb73a48b29798c50ecd149, type: 3}
@@ -155,15 +165,14 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: or
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
-  - swedishWord: student
+  - swedishWord: stu\u00ADdent
     finnishWord: y\u00ADli\u00ADop\u00ADpi\u00ADlas
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: fb22de6ab75b67049b64a299966139d9, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: baf1c1dfe2f286a4c98fe40c3e55bd96, type: 3}
     enOrEtt: 1
     declensionClass: 3
-    finnishPlural: ylioppilaat
+    finnishPlural: y\u00ADli\u00ADop\u00ADpi\u00ADlaat
     wordCore: stu\u00ADdent
     hyphenatesIrregularly: 1
     wordCoreWithIrregularHyphenation: stu\u00ADden\u00ADt
@@ -173,12 +182,11 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: er
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
-  - swedishWord: studerande
+  - swedishWord: stu\u00ADde\u00ADran\u00ADde
     finnishWord: o\u00ADpis\u00ADke\u00ADli\u00ADja
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: f5ad9abac25a1dc438995a38fdb75f20, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 887f6e599066aa845b6c5d71785f8de7, type: 3}
     enOrEtt: 1
     declensionClass: 5
     finnishPlural: opiskelijat
@@ -191,12 +199,28 @@ MonoBehaviour:
     wordPluralIsRegular: 0
     wordPluralEnd: stu\u00ADde\u00ADran\u00ADde
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: na
-  - swedishWord: utbildning
+  - swedishWord: uni\u00ADver\u00ADsi\u00ADtet
+    finnishWord: y\u00ADli\u00ADo\u00ADpis\u00ADto
+    darkModeSprite: {fileID: 21300000, guid: 41b07eea92df51d4b9d5d08eb116e220, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 6cc77e4effd96c546a014ddb82fd9924, type: 3}
+    enOrEtt: 1
+    declensionClass: 5
+    finnishPlural: yliopistot
+    wordCore: uni\u00ADver\u00ADsi\u00ADtet\u00AD
+    hyphenatesIrregularly: 1
+    wordCoreWithIrregularHyphenation: uni\u00ADver\u00ADsi\u00ADte\u00ADt
+    wordGenderStart: 'ett '
+    wordIndefinitiveEnd: 
+    wordGenderEnd: et
+    wordPluralIsRegular: 1
+    wordPluralEnd: er
+    fleraPlural: 0
+    wordDefinitivePluralEnd: \u00ADna
+  - swedishWord: ut\u00ADbild\u00ADning
     finnishWord: kou\u00ADlu\u00ADtus
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 9c01cfcf5fbdfc545a57c79bfaba8e69, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 42b2857a39cce5b4a8ad6331081019f0, type: 3}
     enOrEtt: 1
     declensionClass: 2
     finnishPlural: kou\u00ADlu\u00ADtuk\u00ADset
@@ -209,12 +233,11 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: ar
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
   - swedishWord: "yr\\u00ADkes\\u00ADh\xF6g\\u00ADsko\\u00ADla"
     finnishWord: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlu
-    darkModeSprite: {fileID: -6545539617038003697, guid: 88edab1f1edd7b94d936f2577582c6c3, type: 3}
-    lightModeSprite: {fileID: -6992698291403978821, guid: 1e853e7ea749cf042bd1666d75e56cff, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 88edab1f1edd7b94d936f2577582c6c3, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 1e853e7ea749cf042bd1666d75e56cff, type: 3}
     enOrEtt: 1
     declensionClass: 1
     finnishPlural: am\u00ADmat\u00ADti\u00ADkor\u00ADkea\u00ADkou\u00ADlut
@@ -227,12 +250,11 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: or
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna
   - swedishWord: yr\u00ADkes\u00ADsko\u00ADla
     finnishWord: am\u00ADmat\u00ADti\u00ADkou\u00ADlu
-    darkModeSprite: {fileID: -8449304990306230482, guid: 9181f32aa3afb7b4a81229e8c501a5ce, type: 3}
-    lightModeSprite: {fileID: -8966664613614905690, guid: 3db49a5faffcfbf4795a941033615e14, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 9181f32aa3afb7b4a81229e8c501a5ce, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 3db49a5faffcfbf4795a941033615e14, type: 3}
     enOrEtt: 1
     declensionClass: 1
     finnishPlural: am\u00ADmat\u00ADti\u00ADkou\u00ADlut
@@ -245,5 +267,4 @@ MonoBehaviour:
     wordPluralIsRegular: 1
     wordPluralEnd: or
     fleraPlural: 0
-    wordDefinitivePluralIsRegular: 1
     wordDefinitivePluralEnd: \u00ADna

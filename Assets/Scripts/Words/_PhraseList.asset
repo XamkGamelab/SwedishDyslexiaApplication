@@ -13,63 +13,68 @@ MonoBehaviour:
   m_Name: _PhraseList
   m_EditorClassIdentifier: 
   phraseList:
-  - swedishWord: "f\xF6rl\xE5t"
-    finnishWord: pahoittelut
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+  - swedishWord: "f\xF6r\\u00ADl\xE5t"
+    finnishWord: pa\u00ADhoit\u00ADte\u00ADlut
+    darkModeSprite: {fileID: 21300000, guid: ee1f745b26ec9f544a0dc67fac30abbd, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 7d1cea0f84b3eb7468697b5d4c2a89a2, type: 3}
     notices: 
-  - swedishWord: precis
-    finnishWord: juuri niin
+  - swedishWord: "l\xE4r"
+    finnishWord: sa\u00ADno\u00ADtaan
+    darkModeSprite: {fileID: 21300000, guid: f96198ec22a35b642aff2ad2d37dcb02, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 486936fb0dd12644eaa78af5646735b1, type: 3}
+    notices: "\"oletettavasti\", \"v\xE4itet\xE4\xE4n\""
+  - swedishWord: pre\u00ADcis
+    finnishWord: juu\u00ADri niin
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: '"tarkalleen"'
   - swedishWord: tack
-    finnishWord: kiitos
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    finnishWord: kii\u00ADtos
+    darkModeSprite: {fileID: 21300000, guid: 18d6b67080a261446b877d4e8ba4abc6, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: b1296b99e86e07e4b99d40e2e468847a, type: 3}
     notices: 
   - swedishWord: tro att
-    finnishWord: "uskoa ett\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    finnishWord: "us\\u00ADko\\u00ADa et\\u00ADt\xE4"
+    darkModeSprite: {fileID: 21300000, guid: 6a4c6b64a5be2f9498d6bb11cfff2cb8, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: e3054efb727d4634eba6d4906bf98d0a, type: 3}
     notices: tro II
   - swedishWord: "tro p\xE5"
-    finnishWord: uskoa johonkin
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    finnishWord: us\u00ADko\u00ADa jo\u00ADhon\u00ADkin
+    darkModeSprite: {fileID: 21300000, guid: d0ba04232fa2d4b47906341dd59e6064, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 47ef860302082c34da0102342564a5e8, type: 3}
     notices: tro II
-  - swedishWord: tycka att
-    finnishWord: "olla jotakin mielt\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+  - swedishWord: tyc\u00ADka att
+    finnishWord: "ol\\u00ADla jo\\u00ADta\\u00ADkin miel\\u00ADt\xE4"
+    darkModeSprite: {fileID: 21300000, guid: 4ba0f0b0e4bf1e34d88d59790e0a8846, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 90217c7d47ffb4d47bb34db2c9822860, type: 3}
     notices: tycka IV
-  - swedishWord: tycka om
-    finnishWord: "pit\xE4\xE4 jostain"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+  - swedishWord: tyc\u00ADka om
+    finnishWord: "pi\\u00ADt\xE4\xE4 jos\\u00ADtain"
+    darkModeSprite: {fileID: 21300000, guid: 6027b1940ba174343a898ce98879e859, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 6fc52211ca6543044883b6c7e64644fb, type: 3}
     notices: tycka IV
-  - swedishWord: "t\xE4nka att"
-    finnishWord: "ajatella ett\xE4"
+  - swedishWord: "t\xE4n\\u00ADka att"
+    finnishWord: "a\\u00ADja\\u00ADtel\\u00ADla et\\u00ADt\xE4"
     darkModeSprite: {fileID: 0}
     lightModeSprite: {fileID: 0}
     notices: "t\xE4nka II"
-  - swedishWord: "t\xE4nka om"
-    finnishWord: ajatella jotain
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+  - swedishWord: "t\xE4n\\u00ADka om"
+    finnishWord: a\u00ADja\u00ADtel\u00ADla jo\u00ADtain
+    darkModeSprite: {fileID: 21300000, guid: cc744f8521196e640a07ad817ae0983d, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: ce2f98b96a2b40a43898a37fa64fae90, type: 3}
     notices: "ajatella jotain (jostakin), t\xE4nka II"
-  - swedishWord: "t\xE4nka p\xE5"
-    finnishWord: ajatella jotakin
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+  - swedishWord: "t\xE4n\\u00ADka p\xE5"
+    finnishWord: a\u00ADja\u00ADtel\u00ADla jo\u00ADta\u00ADkin
+    darkModeSprite: {fileID: 21300000, guid: e19a5903a92356a41947086ddcb7567c, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 62f5beb73c7c1c3448beaeb2c04df7ec, type: 3}
     notices: "t\xE4nka II"
-  - swedishWord: "urs\xE4kta"
-    finnishWord: anteeksi
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+  - swedishWord: "ur\\u00ADs\xE4k\\u00ADta"
+    finnishWord: an\u00ADteek\u00ADsi
+    darkModeSprite: {fileID: 21300000, guid: a6d232a3acd21ac4fb4322583513bdec, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 15a63a7d87411074db977a8b4fed64da, type: 3}
     notices: '"suokaa anteeksi", "excuse me"'
   - swedishWord: "var s\xE5 god"
-    finnishWord: "ole hyv\xE4"
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    finnishWord: "o\\u00ADle hy\\u00ADv\xE4"
+    darkModeSprite: {fileID: 21300000, guid: 972a0fdd595b9fb459efcf2f4c390da8, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 56e57233e734e61488156fe073ca93c5, type: 3}
     notices: 
