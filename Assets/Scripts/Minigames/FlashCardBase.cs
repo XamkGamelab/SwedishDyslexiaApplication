@@ -71,6 +71,7 @@ namespace SwedishApp.Minigames
 
         public void SetInitialElements(Sprite _lightmodeSprite = null, Sprite _darkmodeSprite = null)
         {
+            if (hintImage == null) return;
             lightmodeSprite = _lightmodeSprite;
             darkmodeSprite = _darkmodeSprite;
             if (lightmodeSprite != null && darkmodeSprite != null)

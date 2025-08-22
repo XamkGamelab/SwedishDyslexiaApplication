@@ -693,7 +693,7 @@ namespace SwedishApp.UI
             foreach (Word wordToImprove in _wordsToImprove)
             {
                 MistakeWordHandler mistakeWordHandler = Instantiate(mistakeWordPrefab, mistakeWordsHolder).GetComponent<MistakeWordHandler>();
-                DictionaryFormEnabler formEnabler = mistakeWordHandler.swedishWordField.GetComponent<DictionaryFormEnabler>();
+                DictionaryFormEnabler formEnabler = mistakeWordHandler.mistakeEnabler;
                 mistakeWordHandler.finnishWordField.text = wordToImprove.finnishWord;
                 mistakeWordHandler.swedishWordField.text = wordToImprove.swedishWord;
                 mistakeWordHandler.spacer.color = LightmodeOn ? Darkgrey : Lightgrey;

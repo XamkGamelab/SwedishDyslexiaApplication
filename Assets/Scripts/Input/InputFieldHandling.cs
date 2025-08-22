@@ -76,6 +76,7 @@ namespace SwedishApp.Input
             index = _index;
             inputField = holder.GetChild(_index).GetComponent<TMP_InputField>();
             inputField.caretPosition = 0;
+            if (SystemInfo.deviceType == DeviceType.Handheld) TouchScreenKeyboard.Open("");
         }
 
         /// <summary>

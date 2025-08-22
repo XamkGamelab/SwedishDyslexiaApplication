@@ -45,7 +45,7 @@ namespace SwedishApp.Minigames
         [Tooltip("Value between 0 and 1; percentage")]
         [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float newWordDelay = 1f;
-        [SerializeField] private int allowedMissedInputsCount = 2;
+        [SerializeField] private float allowedMissedLettersPercentage = 0.9f;
 
         //Input field related references
         private InputFieldHandling inputFieldHandling;
@@ -419,6 +419,8 @@ namespace SwedishApp.Minigames
                 if (!incorrectTutorial.TutorialSeen()) incorrectTutorial.ShowTutorial();
                 AudioManager.Instance.PlayClip(incorrectClip);
             }
+
+            int allowedMissedInputsCount = Mathf.RoundToInt((float)activeWordWantedFormNoHighlight.Length * (1f - allowedMissedLettersPercentage));
 
             if (missedInputsCount <= allowedMissedInputsCount)
             {

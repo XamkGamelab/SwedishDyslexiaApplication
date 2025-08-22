@@ -8,6 +8,7 @@ namespace SwedishApp.UI
     {
         public TextMeshProUGUI finnishWordField;
         public TextMeshProUGUI swedishWordField;
+        public DictionaryFormEnabler mistakeEnabler;
         public Image spacer;
     }
 }

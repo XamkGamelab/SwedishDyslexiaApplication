@@ -180,6 +180,7 @@ namespace SwedishApp.Minigames
                     UIManager.Instance.LightmodeOnEvent += DisplayCurrentGrammarWord;
                     UIManager.Instance.LightmodeOffEvent += DisplayCurrentGrammarWord;
                     displayWordAction = DisplayCurrentGrammarWord;
+                    displayWordAction += grammarObject.HideInfo;
                     break;
                 case GameType.pronoun:
                     activeFlashcard = pronounObject;
@@ -266,26 +267,6 @@ namespace SwedishApp.Minigames
             StartCoroutine(DisplayWord());
         }
 
-        #endregion
-
-        #region noun-related methods
-
-        /// <summary>
-        /// This method updates all of the noun flashcard's text fields to match the current word
-        /// </summary>
-        private void DisplayCurrentNoun()
-        {
-            NounWord activeWord = activeWordArray[ActiveWordIndex] as NounWord;
-            nounObject.wordFinnishText.text = activeWord.finnishWord;
-            nounObject.wordSwedishBaseText.text = activeWord.NounWithGenderStart();
-            nounObject.wordSwedishDefinitiveText.text = activeWord.NounWithGenderEnd();
-            nounObject.wordSwedishPluralText.text = activeWord.PluralNoun();
-            nounObject.wordSwedishDefinitivePluralText.text = activeWord.PluralDefinitiveNoun();
-            nounObject.wordDeclensionClassText.text = activeWord.declensionClass.ToString();
-
-            nounObject.SetInitialElements(activeWord.lightModeSprite, activeWord.darkModeSprite);
-        }
-
         private void EndGame()
         {
             nounObject.gameObject.SetActive(false);
@@ -316,6 +297,26 @@ namespace SwedishApp.Minigames
             UIManager.Instance.LightmodeOffEvent -= DisplayCurrentPhraseWord;
             UIManager.Instance.TriggerTipChange();
             gameObject.SetActive(false);
+        }
+
+        #endregion
+
+        #region noun-related methods
+
+        /// <summary>
+        /// This method updates all of the noun flashcard's text fields to match the current word
+        /// </summary>
+        private void DisplayCurrentNoun()
+        {
+            NounWord activeWord = activeWordArray[ActiveWordIndex] as NounWord;
+            nounObject.wordFinnishText.text = activeWord.finnishWord;
+            nounObject.wordSwedishBaseText.text = activeWord.NounWithGenderStart();
+            nounObject.wordSwedishDefinitiveText.text = activeWord.NounWithGenderEnd();
+            nounObject.wordSwedishPluralText.text = activeWord.PluralNoun();
+            nounObject.wordSwedishDefinitivePluralText.text = activeWord.PluralDefinitiveNoun();
+            nounObject.wordDeclensionClassText.text = activeWord.declensionClass.ToString();
+
+            nounObject.SetInitialElements(activeWord.lightModeSprite, activeWord.darkModeSprite);
         }
 
         #endregion
@@ -384,7 +385,7 @@ namespace SwedishApp.Minigames
         {
             NumberWord activeWord = activeWordArray[ActiveWordIndex] as NumberWord;
             numberObject.wordFinnishText.text = activeWord.finnishWord;
-            numberObject.wordFinnishOrdinalText.text = activeWord.ordinalFinnish;
+            numberObject.wordNumberText.text = activeWord.number.ToString();
             numberObject.wordSwedishBaseText.text = activeWord.swedishWord;
             numberObject.wordSwedishOrdinalText.text = activeWord.ordinalSwedish;
 

@@ -35,7 +35,7 @@ namespace SwedishApp.Minigames
         [Tooltip("Value between 0 and 1; percentage")]
         [SerializeField] private float goodScoreThreshold = 0.5f;
         [SerializeField] private float nextWordDelayTime = 1.5f;
-        [SerializeField] private int allowedMissedInputsCount = 2;
+        [SerializeField] private float allowedMissedLettersPercentage = 0.9f;
         private bool wordWasChecked = false;
         private bool wordWasCorrect = false;
         private bool canDeleteWord = false;
@@ -199,6 +199,8 @@ namespace SwedishApp.Minigames
 
             wordLetterInputFields[0].Select();
             correctCounter.text = score.ToString();
+
+            int allowedMissedInputsCount = Mathf.RoundToInt((float)activeWordNoHighlight.Length * (1f - allowedMissedLettersPercentage));
 
             if (wordWasCorrect || missedInputsCount <= allowedMissedInputsCount)
             {
