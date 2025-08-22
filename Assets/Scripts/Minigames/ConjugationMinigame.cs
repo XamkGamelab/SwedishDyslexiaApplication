@@ -42,6 +42,7 @@ namespace SwedishApp.Minigames
         [SerializeField] private TextMeshProUGUI correctCounter;
         [SerializeField] private Button checkWordBtn;
         [SerializeField] private Button nextWordBtn;
+        [SerializeField] private Transform wordAnchor;
         [SerializeField] private GameObject inputfieldHolder;
         [SerializeField] private GameObject singleInputfield;
         [SerializeField] private AudioClip correctClip;
@@ -87,7 +88,6 @@ namespace SwedishApp.Minigames
         [SerializeField] private TutorialHandler incorrectTutorial;
 
         //Readonly
-        private readonly Vector2 holderPos = new(0, -100f);
         private readonly string promptStart = "Taivuta muotoon:\n";
 
         private void Start()
@@ -321,8 +321,7 @@ namespace SwedishApp.Minigames
             translatedCounter.text = string.Concat(playedWordsCount, "/", activeGameWordCount);
 
             //Instantiate input field -related objects
-            inputFieldHandling = Instantiate(inputfieldHolder, transform).GetComponent<InputFieldHandling>();
-            inputFieldHandling.GetComponent<RectTransform>().localPosition = holderPos;
+            inputFieldHandling = Instantiate(inputfieldHolder, wordAnchor).GetComponent<InputFieldHandling>();
             activeWordWantedFormNoHighlight = Helpers.CleanWord(activeWordWantedForm);
 
             for (int i = 0; i < activeWordWantedFormNoHighlight.Length; i++)

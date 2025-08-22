@@ -32,20 +32,32 @@ namespace SwedishApp.UI
 
             if (categoryVisible)
             {
-                float openRotation = -180f;
-                categoryHolder.SetActive(true);
-                if (tweenId >= 0) LeanTween.cancel(imageRect.gameObject);
-                tweenId = LeanTween.rotateZ(imageRect.gameObject, openRotation, tweenTime).setEaseInOutQuad().id;
-                Invoke(nameof(ResetTweenId), tweenTime);
+                ShowCategory();
             }
             else
             {
-                float closedRotation = -90f;
-                categoryHolder.SetActive(false);
-                if (tweenId >= 0) LeanTween.cancel(imageRect.gameObject);
-                tweenId = LeanTween.rotateZ(imageRect.gameObject, closedRotation, tweenTime).setEaseInOutQuad().id;
-                Invoke(nameof(ResetTweenId), tweenTime);
+                HideCategory();
             }
+        }
+
+        public void HideCategory()
+        {
+            categoryVisible = false;
+            float closedRotation = -90f;
+            categoryHolder.SetActive(false);
+            if (tweenId >= 0) LeanTween.cancel(imageRect.gameObject);
+            tweenId = LeanTween.rotateZ(imageRect.gameObject, closedRotation, tweenTime).setEaseInOutQuad().id;
+            Invoke(nameof(ResetTweenId), tweenTime);
+        }
+
+        public void ShowCategory()
+        {
+            categoryVisible = true;
+            float openRotation = -180f;
+            categoryHolder.SetActive(true);
+            if (tweenId >= 0) LeanTween.cancel(imageRect.gameObject);
+            tweenId = LeanTween.rotateZ(imageRect.gameObject, openRotation, tweenTime).setEaseInOutQuad().id;
+            Invoke(nameof(ResetTweenId), tweenTime);
         }
 
         private void ResetTweenId()

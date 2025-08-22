@@ -50,6 +50,7 @@ namespace SwedishApp.Minigames
         [Header("UI related")]
         [SerializeField] private Button abortGameButton;
         [SerializeField] private GameObject translateMinigameBG;
+        [SerializeField] private Transform wordAnchor;
         [SerializeField] private Button checkWordButton;
         [SerializeField] private Button nextWordButton;
         [SerializeField] private TextMeshProUGUI checkWordTxt;
@@ -96,7 +97,7 @@ namespace SwedishApp.Minigames
         /// <param name="_words">Give a list of Word-objects as parameter, this is used as the word list for the translation game</param>
         public void StartGame(GameMode _gameMode, List<Word> _words)
         {
-            translateMinigameBG.SetActive(true);
+            gameObject.SetActive(true);
             gameMode = _gameMode;
             words = new(_words.ToArray());
             wordsToImprove = new();
@@ -229,7 +230,7 @@ namespace SwedishApp.Minigames
             if (!initialTutorial.TutorialSeen()) initialTutorial.ShowTutorial();
 
             //Setup a new holder for all the individual input fields
-                wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, translateMinigameBG.transform).transform;
+            wordInputFieldHolder = Instantiate(wordInputFieldHolderPrefab, wordAnchor).transform;
             inputFieldHandler = wordInputFieldHolder.GetComponent<InputFieldHandling>();
             string wordToTranslate = gameMode == GameMode.ToSwedish ? currentWord.finnishWord : currentWord.swedishWord;
             activeWordNoHighlight = gameMode == GameMode.ToSwedish ? Helpers.CleanWord(currentWord.swedishWord) : Helpers.CleanWord(currentWord.finnishWord);
@@ -316,7 +317,7 @@ namespace SwedishApp.Minigames
         {
             UnsubscribeEvents();
 
-            translateMinigameBG.SetActive(false);
+            gameObject.SetActive(false);
             UIManager.Instance.TriggerTipChange();
             UIManager.Instance.ActivateMinigameEndscreen(_maxScore: activeGameWordCount, _realScore: score,
                 _goodScoreThreshold: goodScoreThreshold, _wordsToImprove: wordsToImprove);
@@ -330,7 +331,7 @@ namespace SwedishApp.Minigames
         {
             UnsubscribeEvents();
 
-            translateMinigameBG.SetActive(false);
+            gameObject.SetActive(false);
             Destroy(wordInputFieldHolder.gameObject);
             UIManager.Instance.TriggerTipChange();
         }
