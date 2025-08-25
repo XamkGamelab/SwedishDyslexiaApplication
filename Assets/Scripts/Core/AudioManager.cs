@@ -1,3 +1,4 @@
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -27,6 +28,8 @@ namespace SwedishApp.Core
 
         [Header("Music")]
         [SerializeField] private AudioSource musicSource;
+        [SerializeField] private AudioClip[] musicArray;
+        private int musicIndex = 0;
 
         [Header("SFX")]
         [SerializeField] private AudioSource sfxSource;
@@ -50,6 +53,24 @@ namespace SwedishApp.Core
             SetVolume(savedVol);
             volumeSlider.value = savedVol;
             volumeSlider.onValueChanged.AddListener(SetVolume);
+            musicSource.Play();
+        }
+
+        private void Update()
+        {
+            if (!musicSource.isPlaying) NextMusic();
+        }
+
+        private void NextMusic()
+        {
+            musicIndex++;
+            if (musicIndex >= musicArray.Length)
+            {
+                musicIndex = 0;
+            }
+
+            musicSource.clip = musicArray[musicIndex];
+            musicSource.Play();
         }
 
         private void SetVolume(float _volume)
@@ -62,6 +83,12 @@ namespace SwedishApp.Core
 
             mixer.GetFloat("Volume", out float test);
             Debug.Log($"new adjusted volume {test}");
+        }
+
+        public void ToggleMute(bool _mute)
+        {
+            musicSource.mute = _mute;
+            sfxSource.mute = _mute;
         }
 
         public void PlayClip(AudioClip _clipToPlay)

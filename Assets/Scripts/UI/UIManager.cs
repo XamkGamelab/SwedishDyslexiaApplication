@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using SwedishApp.Core;
 using SwedishApp.Input;
 using SwedishApp.Minigames;
 using SwedishApp.Words;
@@ -251,6 +252,7 @@ namespace SwedishApp.UI
             toggleMute.onClick.AddListener(() =>
             {
                 Muted = !Muted;
+                AudioManager.Instance.ToggleMute(Muted);
 
                 if (Muted)
                 {
