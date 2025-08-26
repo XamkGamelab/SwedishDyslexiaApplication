@@ -512,6 +512,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1339080515400473373, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
       propertyPath: m_SizeDelta.y
       value: 395.69
@@ -1112,11 +1176,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1379,11 +1443,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1942,6 +2006,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 292.01
       objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1824712379096641012, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_text
       value: "N\xE4hd\xE4ksesi sanan suomenkielisen k\xE4\xE4nn\xF6ksen, klikkaa
@@ -2058,6 +2154,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: HintTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6289718861340227946, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2682,11 +2810,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2753,8 +2881,8 @@ MonoBehaviour:
   goodScoreThreshold: 0.5
   nextWordDelayTime: 0.5
   allowedMissedLettersPercentage: 0.9
-  correctClip: {fileID: 8300000, guid: 5a676b70ebe624642b73babf912eaceb, type: 3}
-  incorrectClip: {fileID: 8300000, guid: 7ead63a333491c648818ce78c3a33625, type: 3}
+  correctClip: {fileID: 8300000, guid: ec9080b27fe10d742a1f96edd28cfee1, type: 3}
+  incorrectClip: {fileID: 8300000, guid: b215b17f4dbfab846a36abc138c00822, type: 3}
   abortGameButton: {fileID: 981611317}
   translateMinigameBG: {fileID: 154069253}
   wordAnchor: {fileID: 1051726952}
@@ -3027,7 +3155,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 176098548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &176098548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4554,11 +4694,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4684,8 +4824,8 @@ MonoBehaviour:
   wordAnchor: {fileID: 1446382200}
   inputfieldHolder: {fileID: 7857989566756401837, guid: c3541a26aac0b9c48986a169487da94b, type: 3}
   singleInputfield: {fileID: 1032697241587179193, guid: a287a1566863930479dbb9e985532027, type: 3}
-  correctClip: {fileID: 8300000, guid: 5a676b70ebe624642b73babf912eaceb, type: 3}
-  incorrectClip: {fileID: 8300000, guid: 7ead63a333491c648818ce78c3a33625, type: 3}
+  correctClip: {fileID: 8300000, guid: ec9080b27fe10d742a1f96edd28cfee1, type: 3}
+  incorrectClip: {fileID: 8300000, guid: b215b17f4dbfab846a36abc138c00822, type: 3}
   goodScoreThreshold: 0.5
   newWordDelay: 0.5
   allowedMissedLettersPercentage: 0.9
@@ -4779,7 +4919,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 268246859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &268246859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5302,7 +5454,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 306954587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &306954587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5694,7 +5858,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 323063311}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &323063311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6052,7 +6228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359624194}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &359624194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6220,6 +6408,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 395.69
       objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1824712379096641012, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_text
       value: "Kirjoita taivutettu sana kenttiin.\nVoit tarkistaa sanan klikkaamalla
@@ -6336,6 +6556,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: TypingTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7112065855320786688, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_Name
@@ -7045,11 +7297,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7508,7 +7760,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 448989938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &448989938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7856,7 +8120,7 @@ GameObject:
   - component: {fileID: 474618953}
   - component: {fileID: 474618952}
   m_Layer: 5
-  m_Name: Label
+  m_Name: MuteTXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8264,7 +8528,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 487857293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &487857293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9374,6 +9650,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 395.69
       objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2505056978986620509, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -9485,6 +9793,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: NextWordTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7112065855320786688, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_Name
@@ -11722,6 +12062,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1339080515400473373, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
       propertyPath: m_SizeDelta.y
       value: 240.17
@@ -12399,7 +12803,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 774868901}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &774868901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12675,11 +13091,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12874,6 +13290,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 395.69
       objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1824712379096641012, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_text
       value: "Voit korjata taivutustasi niin monta kertaa kun haluat.\nPeliss\xE4
@@ -12991,6 +13439,38 @@ PrefabInstance:
       propertyPath: tutUniqueId
       value: IncorrectTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6289718861340227946, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 200
@@ -13035,6 +13515,38 @@ PrefabInstance:
     - target: {fileID: 299328719991005618, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_SizeDelta.y
       value: 395.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2505056978986620509, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -13147,6 +13659,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: NextWordTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7112065855320786688, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_Name
@@ -13296,7 +13840,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 87472185915bb8746b86098162830a1c, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13437,7 +13993,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 836784604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &836784604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14105,11 +14673,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -15420,11 +15988,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -15550,7 +16118,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 981611318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &981611318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15963,8 +16543,8 @@ MonoBehaviour:
   wordAnchor: {fileID: 1168225792}
   inputfieldHolder: {fileID: 7857989566756401837, guid: c3541a26aac0b9c48986a169487da94b, type: 3}
   singleInputfield: {fileID: 1032697241587179193, guid: a287a1566863930479dbb9e985532027, type: 3}
-  correctClip: {fileID: 8300000, guid: 5a676b70ebe624642b73babf912eaceb, type: 3}
-  incorrectClip: {fileID: 8300000, guid: 7ead63a333491c648818ce78c3a33625, type: 3}
+  correctClip: {fileID: 8300000, guid: ec9080b27fe10d742a1f96edd28cfee1, type: 3}
+  incorrectClip: {fileID: 8300000, guid: b215b17f4dbfab846a36abc138c00822, type: 3}
   goodScoreThreshold: 0.5
   newWordDelay: 0.5
   allowedMissedLettersPercentage: 0.9
@@ -16056,7 +16636,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 997764743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &997764743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16720,7 +17312,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1045111476}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1045111476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17060,7 +17664,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055753708}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1055753708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17291,11 +17907,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect2
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18140,11 +18756,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19192,7 +19808,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1193918030}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1193918030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19810,11 +20438,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20045,7 +20673,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1251188441}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1259767509 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9129667637351299875, guid: 6165bee3a66a64c46a54aededf7570ef, type: 3}
@@ -20114,7 +20754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1260473998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1260473998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20847,11 +21499,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21071,11 +21723,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21412,11 +22064,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21777,6 +22429,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 292.01
       objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1824712379096641012, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_text
       value: "Korjauksia voi tehd\xE4 niin paljon kun haluaa.\nRiitt\xE4\xE4, ett\xE4
@@ -21893,6 +22577,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: IncorrectTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6289718861340227946, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -22181,7 +22897,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1347353699}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1347353699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23282,7 +24010,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e4e2fc5340218d441a7d9a18d8b2b60f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1409615254
 GameObject:
@@ -23423,11 +24163,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -23599,8 +24339,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 02696da859749314cb0f17a0f7ee4075, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0607c8a7e3da5154c9566b67b60e36d7, type: 3}
-  m_Resource: {fileID: 8300000, guid: 0607c8a7e3da5154c9566b67b60e36d7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 84463ca485092bf42bd8b6e895b568bc, type: 3}
+  m_Resource: {fileID: 8300000, guid: 84463ca485092bf42bd8b6e895b568bc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -23776,7 +24516,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1433230538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24112,6 +24864,10 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 02696da859749314cb0f17a0f7ee4075, type: 2}
   volumeSlider: {fileID: 194931270}
   musicSource: {fileID: 1427072335}
+  musicArray:
+  - {fileID: 8300000, guid: 84463ca485092bf42bd8b6e895b568bc, type: 3}
+  - {fileID: 8300000, guid: 4490d6e2bd2a20a40ace8ccb1655cea7, type: 3}
+  - {fileID: 8300000, guid: 7a8a63f343c1f9248bc6247571cfdc3b, type: 3}
   sfxSource: {fileID: 540753274}
 --- !u!4 &1441901106
 Transform:
@@ -24610,6 +25366,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1454548645
 GameObject:
   m_ObjectHideFlags: 0
@@ -24711,11 +25479,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -25735,7 +26503,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1492676199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1500678457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25747,6 +26527,38 @@ PrefabInstance:
     - target: {fileID: 299328719991005618, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_SizeDelta.y
       value: 395.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1824712379096641012, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_text
@@ -25864,6 +26676,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: IncorrectTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7112065855320786688, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_Name
@@ -26046,7 +26890,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1520432641}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1520432641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26539,7 +27395,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1545077649}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1545077649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26802,7 +27670,7 @@ MonoBehaviour:
         m_MethodName: PlayClip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 27f7646a798062c4d8af3d08431079f5, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -27124,11 +27992,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -27926,7 +28794,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1625917002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1625917002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28273,11 +29153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -28289,15 +29169,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayMenuSelect2
+      value: PlayClip
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SwedishApp.Core.AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+    - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29064,7 +29948,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1694456195}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e4e2fc5340218d441a7d9a18d8b2b60f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1695432891
 GameObject:
   m_ObjectHideFlags: 0
@@ -29288,7 +30184,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1704818200}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1704818200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29428,11 +30336,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -29858,11 +30766,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -30026,7 +30934,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1728065012}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1728065012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30164,7 +31084,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e4e2fc5340218d441a7d9a18d8b2b60f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1754405361
 GameObject:
@@ -30805,11 +31737,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -31092,7 +32024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 448989938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1781615784
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31270,11 +32214,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -32020,11 +32964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -32036,15 +32980,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayMenuSelect2
+      value: PlayClip
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SwedishApp.Core.AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+    - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32165,6 +33113,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
         m_MethodName: PlayMenuSelect2
@@ -33287,11 +34247,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -33381,7 +34341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1899608743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1899608743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33826,6 +34798,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1197138987835858104, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1282712578045986187, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1339080515400473373, guid: dc2615563ef559542b71ad6d539859f9, type: 3}
       propertyPath: m_SizeDelta.y
       value: 395.69
@@ -34015,7 +35051,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1917646200}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1930798539
 GameObject:
   m_ObjectHideFlags: 0
@@ -34402,7 +35450,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1946117841}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e4e2fc5340218d441a7d9a18d8b2b60f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1946117841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35072,11 +36132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -35088,15 +36148,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayMenuSelect2
+      value: PlayClip
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SwedishApp.Core.AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+    - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35382,6 +36446,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 292.01
       objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1824712379096641012, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_text
       value: "N\xE4hd\xE4ksesi sanan suomenkielisen k\xE4\xE4nn\xF6ksen, klikkaa
@@ -35498,6 +36594,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: HintTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6289718861340227946, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -35941,6 +37069,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 395.69
       objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1824712379096641012, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_text
       value: "Kirjoita taivutettu sana kenttiin.\nVoit tarkistaa sanan klikkaamalla
@@ -36057,6 +37217,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: TypingTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7112065855320786688, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_Name
@@ -36307,7 +37499,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2049498993}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2049498993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36701,7 +37905,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2070543271}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441901105}
+        m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2070543271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37399,11 +38615,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1441901105}
         m_TargetAssemblyTypeName: SwedishApp.Core.AudioManager, Assembly-CSharp
-        m_MethodName: PlayMenuSelect8
-        m_Mode: 1
+        m_MethodName: PlayClip
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -38958,11 +40174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -38974,15 +40190,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayMenuSelect2
+      value: PlayClip
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SwedishApp.Core.AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 0712cec9069e7e04f986346836bb1dae, type: 3}
+    - target: {fileID: 6607599822820686677, guid: 1cd4155160e0d444da0682e87840dbd3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39519,6 +40739,38 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 395.69
       objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 1101582895039682832, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2505056978986620509, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -39630,6 +40882,38 @@ PrefabInstance:
     - target: {fileID: 5454067103050342355, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: tutUniqueId
       value: NextWordTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441901105}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwedishApp.Core.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a77d2ed9c64aa64ea4f32c0b90a7e10, type: 3}
+    - target: {fileID: 5553263582310457640, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7112065855320786688, guid: 12a88b940e390a54d81a03acfea1ebfb, type: 3}
       propertyPath: m_Name
