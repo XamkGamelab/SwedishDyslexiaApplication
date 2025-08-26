@@ -63,9 +63,9 @@ GameObject:
   - component: {fileID: 2769467848719636029}
   - component: {fileID: 1760848503888274249}
   - component: {fileID: 3197761965890117718}
-  - component: {fileID: 6423244122343525552}
+  - component: {fileID: 6990676656496776961}
   - component: {fileID: -1415124408913572185}
-  - component: {fileID: -5715310614581947465}
+  - component: {fileID: -8393629102035826897}
   m_Layer: 5
   m_Name: WordSingleLetterHolder
   m_TagString: Untagged
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6423244122343525552
+--- !u!114 &6990676656496776961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1032697241587179193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Script: {fileID: 11500000, guid: b39f036ca416fd24a95a1e0c0a88a96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_HideSoftKeyboard: 0
   m_CharacterValidation: 0
   m_RegexValue: 
-  m_GlobalPointSize: 16
+  m_GlobalPointSize: 56
   m_CharacterLimit: 1
   m_OnEndEdit:
     m_PersistentCalls:
@@ -218,7 +218,7 @@ MonoBehaviour:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
   m_CustomCaretColor: 1
-  m_SelectionColor: {r: 0.9372549, g: 0.627451, b: 0.043137256, a: 0}
+  m_SelectionColor: {r: 1, g: 1, b: 1, a: 0}
   m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
@@ -249,7 +249,7 @@ MonoBehaviour:
   wiggleTimeOneWay: 0.06
   wiggleMaxScale: {x: 1.1, y: 1.1, z: 1.1}
   originalScale: {x: 1, y: 1, z: 1}
---- !u!114 &-5715310614581947465
+--- !u!114 &-8393629102035826897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -640,8 +640,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 56
+  m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
