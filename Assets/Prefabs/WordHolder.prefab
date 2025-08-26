@@ -76,5 +76,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: e1e34987a79ad114ebb32860cc353eef, type: 2}
-  inputClip: {fileID: 8300000, guid: a63f8697afef3bf41bd0214cfe1e3627, type: 3}
+  inputClip: {fileID: 8300000, guid: 87472185915bb8746b86098162830a1c, type: 3}
   index: 0
