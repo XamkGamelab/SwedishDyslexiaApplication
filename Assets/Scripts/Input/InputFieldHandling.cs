@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace SwedishApp.Input
 {
+    [RequireComponent(typeof(RectTransform))]
     /// <summary>
     /// This class should be attached to a holder housing an input field for each character in a word.
     /// If an input field is active, navigation is enabled.
@@ -91,7 +92,6 @@ namespace SwedishApp.Input
 
             if (_input.y > 0)
             {
-
                 index = 0;
                 holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
                 return;
