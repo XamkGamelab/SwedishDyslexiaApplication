@@ -2538,7 +2538,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -11559,6 +11559,8 @@ MonoBehaviour:
   minigameEndscreenImprovementObject: {fileID: 1823390021}
   disableMinigameEndscreenBtn: {fileID: 323063310}
   mistakeWordsHolder: {fileID: 1030033963}
+  mistakeWordsScrollerTransform: {fileID: 188366107}
+  mistakeWordsScroller: {fileID: 188366110}
   mistakeWordPrefab: {fileID: 3021908892456582045, guid: 6165bee3a66a64c46a54aededf7570ef, type: 3}
   endMessageField: {fileID: 915847396}
   scoreField: {fileID: 1813940888}

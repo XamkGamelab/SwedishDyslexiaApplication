@@ -89,7 +89,9 @@ namespace SwedishApp.UI
         [SerializeField] private GameObject minigameEndscreen;
         [SerializeField] private GameObject minigameEndscreenImprovementObject;
         [SerializeField] private Button disableMinigameEndscreenBtn;
-        [SerializeField] private Transform mistakeWordsHolder;
+        [SerializeField] private RectTransform mistakeWordsHolder;
+        [SerializeField] private RectTransform mistakeWordsScrollerTransform;
+        [SerializeField] private ScrollRect mistakeWordsScroller;
         [SerializeField] private GameObject mistakeWordPrefab;
         [SerializeField] private TextMeshProUGUI endMessageField;
         [SerializeField] private TextMeshProUGUI scoreField;
@@ -334,18 +336,18 @@ namespace SwedishApp.UI
             });
             startFlashcardAdverbGameBtn.onClick.AddListener(() =>
             {
-            flashCardMinigame.StartGame(adverbList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
-            flashcardGameTypeMenu.SetActive(false);
+                flashCardMinigame.StartGame(adverbList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
+                flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardPrepositionGameBtn.onClick.AddListener(() =>
             {
-            flashCardMinigame.StartGame(prepositionList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
-            flashcardGameTypeMenu.SetActive(false);
+                flashCardMinigame.StartGame(prepositionList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
+                flashcardGameTypeMenu.SetActive(false);
             });
             startFlashcardQuestionGameBtn.onClick.AddListener(() =>
             {
-            flashCardMinigame.StartGame(questionList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
-            flashcardGameTypeMenu.SetActive(false);
+                flashCardMinigame.StartGame(questionList.grammarList.ToArray(), FlashCardMinigame.GameType.grammar);
+                flashcardGameTypeMenu.SetActive(false);
             });
 
             //Add listeners to translate minigame buttons
@@ -458,7 +460,7 @@ namespace SwedishApp.UI
         private void ToggleLightmode()
         {
             LightmodeOn = !LightmodeOn;
-            
+
             //Lightmode goes ON here
             if (LightmodeOn)
             {
@@ -692,6 +694,15 @@ namespace SwedishApp.UI
             List<TextMeshProUGUI> fields = new();
             List<Image> spacers = new();
 
+            if (mistakeWordsHolder.rect.height < mistakeWordsScrollerTransform.rect.height)
+            {
+                mistakeWordsScroller.vertical = false;
+            }
+            else
+            {
+                mistakeWordsScroller.vertical = true;
+            }
+
             foreach (Word wordToImprove in _wordsToImprove)
             {
                 MistakeWordHandler mistakeWordHandler = Instantiate(mistakeWordPrefab, mistakeWordsHolder).GetComponent<MistakeWordHandler>();
@@ -734,6 +745,18 @@ namespace SwedishApp.UI
                     Destroy(child.gameObject);
                 }
             });
+
+            StartCoroutine(DoAfterFrame(() =>
+            {
+                if (mistakeWordsHolder.rect.height < mistakeWordsScrollerTransform.rect.height)
+                {
+                    mistakeWordsScroller.vertical = false;
+                }
+                else
+                {
+                    mistakeWordsScroller.vertical = true;
+                }
+            }));
         }
 
         #endregion
@@ -937,6 +960,12 @@ namespace SwedishApp.UI
                 _field.font = BasicFont;
                 _field.characterSpacing = BasicSpacing;
             }
+        }
+
+        private IEnumerator DoAfterFrame(Action _action)
+        {
+            yield return null;
+            _action?.Invoke();
         }
 
         #endregion
