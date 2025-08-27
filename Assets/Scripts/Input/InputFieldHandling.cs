@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace SwedishApp.Input
 {
+    [RequireComponent(typeof(RectTransform))]
     /// <summary>
     /// This class should be attached to a holder housing an input field for each character in a word.
     /// If an input field is active, navigation is enabled.
@@ -12,7 +13,7 @@ namespace SwedishApp.Input
     {
         [SerializeField] private InputReader inputReader;
         [SerializeField] private AudioClip inputClip;
-        private TMP_InputField inputField;
+        private MinigameInputField inputField;
         private RectTransform holder;
         public int index;
         private bool controlHeld = false;
@@ -50,7 +51,7 @@ namespace SwedishApp.Input
         {
             if (controlHeld)
             {
-                TMP_InputField[] inputFields = GetComponentsInChildren<TMP_InputField>();
+                MinigameInputField[] inputFields = GetComponentsInChildren<MinigameInputField>();
                 disableGoNext = true;
 
                 for (int i = index; i >= 0; i--)
@@ -59,7 +60,7 @@ namespace SwedishApp.Input
                 }
 
                 index = 0;
-                inputField = holder.GetChild(index).GetComponent<TMP_InputField>();
+                inputField = holder.GetChild(index).GetComponent<MinigameInputField>();
                 inputField.ActivateInputField();
                 disableGoNext = false;
             }
@@ -74,9 +75,8 @@ namespace SwedishApp.Input
         public void GetActiveIndex(int _index)
         {
             index = _index;
-            inputField = holder.GetChild(_index).GetComponent<TMP_InputField>();
+            inputField = holder.GetChild(_index).GetComponent<MinigameInputField>();
             inputField.caretPosition = 0;
-            if (SystemInfo.deviceType == DeviceType.Handheld) TouchScreenKeyboard.Open("");
         }
 
         /// <summary>
@@ -91,16 +91,15 @@ namespace SwedishApp.Input
 
             if (_input.y > 0)
             {
-
                 index = 0;
-                holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                holder.GetChild(index).GetComponent<MinigameInputField>().ActivateInputField();
                 return;
             }
             else if (_input.y < 0)
             {
 
                 index = holder.childCount - 1;
-                holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                holder.GetChild(index).GetComponent<MinigameInputField>().ActivateInputField();
                 return;
             }
 
@@ -110,13 +109,13 @@ namespace SwedishApp.Input
                 if (controlHeld)
                 {
                     index = 0;
-                    holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                    holder.GetChild(index).GetComponent<MinigameInputField>().ActivateInputField();
                     return;
                 }
                 //And there is space to move left
                 if (index > 0)
                 {
-                    TMP_InputField nextField = holder.GetChild(index - 1).GetComponent<TMP_InputField>();
+                    MinigameInputField nextField = holder.GetChild(index - 1).GetComponent<MinigameInputField>();
                     //And the next field is interactable, set it active
                     if (nextField.interactable)
                     {
@@ -125,7 +124,7 @@ namespace SwedishApp.Input
                     //Or if the next field is not interactable and there is space, skip it
                     else if (index > 1)
                     {
-                        holder.GetChild(index - 2).GetComponent<TMP_InputField>().ActivateInputField();
+                        holder.GetChild(index - 2).GetComponent<MinigameInputField>().ActivateInputField();
                     }
                 }
                 else
@@ -140,13 +139,13 @@ namespace SwedishApp.Input
                 if (controlHeld)
                 {
                     index = holder.childCount - 1;
-                    holder.GetChild(index).GetComponent<TMP_InputField>().ActivateInputField();
+                    holder.GetChild(index).GetComponent<MinigameInputField>().ActivateInputField();
                     return;
                 }
                 //And there is space to move right
                 if (index + 1 < holder.childCount)
                 {
-                    TMP_InputField nextField = holder.GetChild(index + 1).GetComponent<TMP_InputField>();
+                    MinigameInputField nextField = holder.GetChild(index + 1).GetComponent<MinigameInputField>();
                     //And the next field is interactable, set it active
                     if (nextField.interactable)
                     {
@@ -155,7 +154,7 @@ namespace SwedishApp.Input
                     //Or if the next field is not interactable and there is space, skip it
                     else if (index + 2 < holder.childCount)
                     {
-                        holder.GetChild(index + 2).GetComponent<TMP_InputField>().ActivateInputField();
+                        holder.GetChild(index + 2).GetComponent<MinigameInputField>().ActivateInputField();
                     }
                 }
                 else
@@ -184,7 +183,7 @@ namespace SwedishApp.Input
             //Go to previous valid input field if the current field was cleared
             if (inputField.text.Length == 0 && index > 0)
             {
-                TMP_InputField nextField = holder.GetChild(index - 1).GetComponent<TMP_InputField>();
+                MinigameInputField nextField = holder.GetChild(index - 1).GetComponent<MinigameInputField>();
                 //If next field is interactable, set it active
                 if (nextField.interactable)
                 {
@@ -193,13 +192,13 @@ namespace SwedishApp.Input
                 //Else, if there is enough space and the input field is not interactable, skip it
                 else if (index > 1)
                 {
-                    holder.GetChild(index - 2).GetComponent<TMP_InputField>().ActivateInputField();
+                    holder.GetChild(index - 2).GetComponent<MinigameInputField>().ActivateInputField();
                 }
             }
             //Go to next valid input field if the current field was filled
             else if (inputField.text.Length == 1 && index + 1 < holder.childCount)
             {
-                TMP_InputField nextField = holder.GetChild(index + 1).GetComponent<TMP_InputField>();
+                MinigameInputField nextField = holder.GetChild(index + 1).GetComponent<MinigameInputField>();
                 //If next field is interactable, set it active
                 if (nextField.interactable)
                 {
@@ -208,7 +207,7 @@ namespace SwedishApp.Input
                 //If next field was not interactable and there is space, skip and activate next field
                 else if (index + 2 < holder.childCount)
                 {
-                    holder.GetChild(index + 2).GetComponent<TMP_InputField>().ActivateInputField();
+                    holder.GetChild(index + 2).GetComponent<MinigameInputField>().ActivateInputField();
                 }
             }
             else

@@ -54,7 +54,7 @@ namespace SwedishApp.Minigames
 
         //Input field related references
         private InputFieldHandling inputFieldHandling;
-        private List<TMP_InputField> singleInputfields;
+        private List<MinigameInputField> singleInputfields;
         private List<TextMeshProUGUI> fieldTextRefs;
 
         [Header("Lightmode-related")]
@@ -329,7 +329,7 @@ namespace SwedishApp.Minigames
                 int indexHolder = i;
 
                 //Grab refs
-                singleInputfields.Add(Instantiate(singleInputfield, inputFieldHandling.transform).GetComponent<TMP_InputField>());
+                singleInputfields.Add(Instantiate(singleInputfield, inputFieldHandling.transform).GetComponent<MinigameInputField>());
                 fieldTextRefs.Add(singleInputfields[i].transform.Find("Text Area").Find("Text").GetComponent<TextMeshProUGUI>());
                 if (activeWordWantedFormNoHighlight[i] == ' ' || activeWordWantedFormNoHighlight == "")
                 {

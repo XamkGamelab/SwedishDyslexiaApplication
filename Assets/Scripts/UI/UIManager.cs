@@ -224,6 +224,8 @@ namespace SwedishApp.UI
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            if (SystemInfo.deviceType == DeviceType.Handheld) TouchScreenKeyboard.hideInput = true;
+
             textObjectList.AddRange(dictionaryHandler.GetDictionaryTextFields());
             textFields = textObjectList;
             textFields.AddRange(textObjectListReverseLight);
@@ -962,12 +964,12 @@ namespace SwedishApp.UI
             }
         }
 
+        #endregion
+
         private IEnumerator DoAfterFrame(Action _action)
         {
             yield return null;
             _action?.Invoke();
         }
-
-        #endregion
     }
 }

@@ -62,7 +62,7 @@ namespace SwedishApp.Minigames
         [SerializeField] private TextMeshProUGUI correctCounter;
         private Transform wordInputFieldHolder;
         private InputFieldHandling inputFieldHandler;
-        private List<TMP_InputField> wordLetterInputFields;
+        private List<MinigameInputField> wordLetterInputFields;
         private List<TextMeshProUGUI> letterTextRefs;
 
         //Events
@@ -242,7 +242,7 @@ namespace SwedishApp.Minigames
             for (int i = 0; i < activeWordNoHighlight.Length; i++)
             {
                 int indexHolder = i;
-                wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<TMP_InputField>());
+                wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<MinigameInputField>());
 
                 //Add listeners to input fields. These are used for navigating between each input field of the word
                 wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
@@ -355,7 +355,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void SwapFieldsToLegibleFont()
         {
-            foreach (TMP_InputField inputField in wordLetterInputFields)
+            foreach (MinigameInputField inputField in wordLetterInputFields)
             {
                 inputField.fontAsset = UIManager.Instance.LegibleFont;
             }
@@ -366,7 +366,7 @@ namespace SwedishApp.Minigames
         /// </summary>
         private void SwapFieldsToBasicFont()
         {
-            foreach (TMP_InputField inputField in wordLetterInputFields)
+            foreach (MinigameInputField inputField in wordLetterInputFields)
             {
                 inputField.fontAsset = UIManager.Instance.BasicFont;
             }
