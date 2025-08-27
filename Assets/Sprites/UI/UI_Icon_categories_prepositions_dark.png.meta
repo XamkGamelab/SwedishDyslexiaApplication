@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 481e2e0f319a81b47909130eb448bdfb
+guid: b639d35a9a410a94985c020ef1633d0e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3043373619960164178
-    second: Icon_Noun_Katt_LM_0
+      213: 1242998897004102563
+    second: icon_categories_prepositions_dark_0
+  - first:
+      213: 155189968198907508
+    second: icon_categories_prepositions_dark_1
+  - first:
+      213: -2709740307635542083
+    second: icon_categories_prepositions_dark_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon_Noun_Katt_LM_0
+      name: icon_categories_prepositions_dark_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 50
-        width: 300
-        height: 200
+        x: 18
+        y: 96
+        width: 32
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25f2580de2c3c3a20800000000000000
-      internalID: 3043373619960164178
+      spriteID: 3a3c12049e4004110800000000000000
+      internalID: 1242998897004102563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_categories_prepositions_dark_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 18
+        width: 111
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476333f2478572200800000000000000
+      internalID: 155189968198907508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_categories_prepositions_dark_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db763d90c81156ad0800000000000000
+      internalID: -2709740307635542083
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icon_Noun_Katt_LM_0: 3043373619960164178
+      icon_categories_prepositions_dark_0: 1242998897004102563
+      icon_categories_prepositions_dark_1: 155189968198907508
+      icon_categories_prepositions_dark_2: -2709740307635542083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

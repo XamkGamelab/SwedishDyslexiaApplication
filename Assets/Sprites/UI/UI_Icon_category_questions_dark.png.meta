@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 481e2e0f319a81b47909130eb448bdfb
+guid: b48a9843bb291044887330acfdf37e0d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3043373619960164178
-    second: Icon_Noun_Katt_LM_0
+      213: 7507126167591570322
+    second: icon_category_questions_dark_0
+  - first:
+      213: 4192844897437635856
+    second: icon_category_questions_dark_1
+  - first:
+      213: 5424039926025102198
+    second: icon_category_questions_dark_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon_Noun_Katt_LM_0
+      name: icon_category_questions_dark_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 50
-        width: 300
-        height: 200
+        y: 0
+        width: 130
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25f2580de2c3c3a20800000000000000
-      internalID: 3043373619960164178
+      spriteID: 29bc557997bae2860800000000000000
+      internalID: 7507126167591570322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_category_questions_dark_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 77
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0155416383aff2a30800000000000000
+      internalID: 4192844897437635856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_category_questions_dark_2
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 65
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 673234e239f064b40800000000000000
+      internalID: 5424039926025102198
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icon_Noun_Katt_LM_0: 3043373619960164178
+      icon_category_questions_dark_0: 7507126167591570322
+      icon_category_questions_dark_1: 4192844897437635856
+      icon_category_questions_dark_2: 5424039926025102198
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

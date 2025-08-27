@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 481e2e0f319a81b47909130eb448bdfb
+guid: 56f8e43d2bc84b94f9b07e1e155bdfd7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3043373619960164178
-    second: Icon_Noun_Katt_LM_0
+      213: 3994427293347248692
+    second: Icon_Adjective_Liknande_LM_0
+  - first:
+      213: 5241488527673730177
+    second: Icon_Adjective_Liknande_LM_1
+  - first:
+      213: 6507407446685354357
+    second: Icon_Adjective_Liknande_LM_2
+  - first:
+      213: -805270946659012943
+    second: Icon_Adjective_Liknande_LM_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon_Noun_Katt_LM_0
+      name: Icon_Adjective_Liknande_LM_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 50
-        width: 300
-        height: 200
+        y: 99
+        width: 93
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25f2580de2c3c3a20800000000000000
-      internalID: 3043373619960164178
+      spriteID: 43a761db57e0f6730800000000000000
+      internalID: 3994427293347248692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Adjective_Liknande_LM_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 145
+        width: 93
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 184274a9b028db840800000000000000
+      internalID: 5241488527673730177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Adjective_Liknande_LM_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 115
+        width: 93
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57989645894fe4a50800000000000000
+      internalID: 6507407446685354357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_Adjective_Liknande_LM_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 101
+        width: 93
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be627c275a13d4f0800000000000000
+      internalID: -805270946659012943
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icon_Noun_Katt_LM_0: 3043373619960164178
+      Icon_Adjective_Liknande_LM_0: 3994427293347248692
+      Icon_Adjective_Liknande_LM_1: 5241488527673730177
+      Icon_Adjective_Liknande_LM_2: 6507407446685354357
+      Icon_Adjective_Liknande_LM_3: -805270946659012943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

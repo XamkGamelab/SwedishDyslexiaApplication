@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 481e2e0f319a81b47909130eb448bdfb
+guid: 5f97988d9c387b34bbd31a32d6787961
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3043373619960164178
-    second: Icon_Noun_Katt_LM_0
+      213: 319338873726566081
+    second: UI_Icon_Lausahdukset_DM_0
+  - first:
+      213: 753164066895510149
+    second: UI_Icon_Lausahdukset_DM_1
+  - first:
+      213: -1996766566382237700
+    second: UI_Icon_Lausahdukset_DM_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon_Noun_Katt_LM_0
+      name: UI_Icon_Lausahdukset_DM_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 50
-        width: 300
-        height: 200
+        x: 16
+        y: 53
+        width: 52
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25f2580de2c3c3a20800000000000000
-      internalID: 3043373619960164178
+      spriteID: 1cef17383058e6400800000000000000
+      internalID: 319338873726566081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Icon_Lausahdukset_DM_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 81
+        width: 69
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a35e87ab6c37a00800000000000000
+      internalID: 753164066895510149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Icon_Lausahdukset_DM_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 81
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf7096f136f0a44e0800000000000000
+      internalID: -1996766566382237700
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icon_Noun_Katt_LM_0: 3043373619960164178
+      UI_Icon_Lausahdukset_DM_0: 319338873726566081
+      UI_Icon_Lausahdukset_DM_1: 753164066895510149
+      UI_Icon_Lausahdukset_DM_2: -1996766566382237700
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
