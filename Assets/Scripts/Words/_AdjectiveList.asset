@@ -151,6 +151,29 @@ MonoBehaviour:
     wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1
     wordDefinitiveSuperlativeEnd: as\u00ADte
+  - swedishWord: lik\u00ADnan\u00ADde
+    finnishWord: sa\u00ADman\u00ADlai\u00ADnen
+    darkModeSprite: {fileID: 21300000, guid: 9ed816fe4ff734645ae86f0177f842b7, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 56f8e43d2bc84b94f9b07e1e155bdfd7, type: 3}
+    wordCore: lik\u00ADnan\u00ADde
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 0
+    wordCoreWithIrregularHyphenation: lik\u00ADnan\u00ADde
+    wordEnEnd: 
+    wordEttEnd: 
+    definitiveIsRegular: 0
+    wordDefinitiveEnd: 
+    definitivePluralIsRegular: 0
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 0
+    wordComparativeEnd: 
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: 
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: 
   - swedishWord: li\u00ADten
     finnishWord: pie\u00ADni
     darkModeSprite: {fileID: 21300000, guid: f606b0f026688c0429d6dc68446799b5, type: 3}
@@ -308,6 +331,29 @@ MonoBehaviour:
     comparativeIsRegular: 1
     wordComparativeEnd: a\u00ADre
     comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 1
+    wordSuperlativeEnd: ast
+    superlativeDefinitiveIsRegular: 1
+    wordDefinitiveSuperlativeEnd: as\u00ADte
+  - swedishWord: "sp\xE4n\\u00ADnan\\u00ADde"
+    finnishWord: "j\xE4n\\u00ADnit\\u00ADt\xE4\\u00ADv\xE4"
+    darkModeSprite: {fileID: 21300000, guid: 6b35d9afa5370444aae2c07dde0e5090, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 67d620538ca407e42bc6e392ade56a6d, type: 3}
+    wordCore: "sp\xE4n\\u00ADnan\\u00ADde"
+    genderedHyphenatesIrregularly: 0
+    comparativeHyphenatesIrregularly: 0
+    superlativeHyphenatesIrregularly: 0
+    wordUsesMerMest: 1
+    wordCoreWithIrregularHyphenation: "sp\xE4n\\u00ADnan\\u00ADde"
+    wordEnEnd: 
+    wordEttEnd: 
+    definitiveIsRegular: 1
+    wordDefinitiveEnd: 
+    definitivePluralIsRegular: 1
+    wordDefinitivePluralIrregular: 
+    comparativeIsRegular: 1
+    wordComparativeEnd: are
+    comparativeDefinitiveIsRegular: 1
     superlativeIsRegular: 1
     wordSuperlativeEnd: ast
     superlativeDefinitiveIsRegular: 1

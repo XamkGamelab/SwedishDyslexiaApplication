@@ -71,8 +71,8 @@ MonoBehaviour:
     pastPlusPerfectTenseFinnish: ei ol\u00ADlut tar\u00ADvin\u00ADnut
   - swedishWord: bru\u00ADka
     finnishWord: ol\u00ADla ta\u00ADpa\u00ADna
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 483a724a7c40c4d45a96da653bba47b7, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: dbfa08f2df8e9e645898cae8bea64724, type: 3}
     notices: 
     conjugationClass: 1
     wordCore: bru\u00ADka

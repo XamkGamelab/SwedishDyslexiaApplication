@@ -14,6 +14,17 @@ namespace SwedishApp.UI
         [SerializeField] private Image goDownImage;
         [SerializeField] private Sprite arrowSpriteDarkmode;
         [SerializeField] private Sprite arrowSpriteLightmode;
+
+        [SerializeField]    //All the references for word category ui images
+        private Image verbImage, nounImage, adjectiveImage, timeWordImage, numberWordImage, grammarImage, adverbImage, prepositionImage,
+        questionImage, pronounImage, phraseImage;
+
+        [SerializeField]    //All the dark- & lightmode sprites for word category icons
+        private Sprite verbSpriteDarkmode, verbSpriteLightmode, nounSpriteDarkmode, nounSpriteLightmode, adjectiveSpriteDarkmode, adjectiveSpriteLightmode,
+        timeWordSpriteDarkmode, timeWordSpriteLightmode, numberSpriteDarkmode, numberSpriteLightmode, grammarSpriteDarkmode, grammarSpriteLightmode,
+        adverbSpriteDarkmode, adverbSpriteLightmode, prepositionSpriteDarkmode, prepositionSpriteLightmode, questionSpriteDarkmode, questionSpriteLightmode,
+        pronounSpriteDarkmode, pronounSpriteLightmode, phraseSpriteDarkmode, phraseSpriteLightmode;
+
         [SerializeField] private int visibleButtonCount = 4;
         [SerializeField] private float offsetFix = 0.001f;
         private float buttonHeight;
@@ -82,12 +93,34 @@ namespace SwedishApp.UI
         {
             goDownImage.sprite = arrowSpriteLightmode;
             goUpImage.sprite = arrowSpriteLightmode;
+            verbImage.sprite = verbSpriteLightmode;
+            nounImage.sprite = nounSpriteLightmode;
+            adjectiveImage.sprite = adjectiveSpriteLightmode;
+            timeWordImage.sprite = timeWordSpriteLightmode;
+            numberWordImage.sprite = numberSpriteLightmode;
+            grammarImage.sprite = grammarSpriteLightmode;
+            adverbImage.sprite = adverbSpriteLightmode;
+            prepositionImage.sprite = prepositionSpriteLightmode;
+            questionImage.sprite = questionSpriteLightmode;
+            pronounImage.sprite = pronounSpriteLightmode;
+            phraseImage.sprite = phraseSpriteLightmode;
         }
 
         private void ToDarkmode()
         {
             goDownImage.sprite = arrowSpriteDarkmode;
             goUpImage.sprite = arrowSpriteDarkmode;
+            verbImage.sprite = verbSpriteDarkmode;
+            nounImage.sprite = nounSpriteDarkmode;
+            adjectiveImage.sprite = adjectiveSpriteDarkmode;
+            timeWordImage.sprite = timeWordSpriteDarkmode;
+            numberWordImage.sprite = numberSpriteDarkmode;
+            grammarImage.sprite = grammarSpriteDarkmode;
+            adverbImage.sprite = adverbSpriteDarkmode;
+            prepositionImage.sprite = prepositionSpriteDarkmode;
+            questionImage.sprite = questionSpriteDarkmode;
+            pronounImage.sprite = pronounSpriteDarkmode;
+            phraseImage.sprite = phraseSpriteDarkmode;
         }
     }
 }
