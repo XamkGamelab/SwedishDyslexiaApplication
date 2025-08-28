@@ -520,6 +520,7 @@ namespace SwedishApp.Minigames
             if (hintVisible)
             {
                 finnishHintTxt.text = activeWord.GetDeclenatedFinnish(declenateInto);
+                UIManager.Instance.FixTextSpacing(finnishHintTxt);
             }
             else
             {
