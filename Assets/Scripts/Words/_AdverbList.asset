@@ -83,6 +83,11 @@ MonoBehaviour:
     darkModeSprite: {fileID: 21300000, guid: a26eab9d7f88743499bace20688d48f2, type: 3}
     lightModeSprite: {fileID: 21300000, guid: ba9219986156e4e45b8cd6b02dac5dfc, type: 3}
     notices: 
+  - swedishWord: "\xE4n"
+    finnishWord: "vie\\u00ADl\xE4"
+    darkModeSprite: {fileID: 21300000, guid: 23bf173f66abd8f44833a6a029677064, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 6649785e8a4f5f74db432d5676b200dd, type: 3}
+    notices: "tahansa, hyv\xE4ns\xE4"
   - swedishWord: "\xE4n\\u00ADnu"
     finnishWord: "vie\\u00ADl\xE4"
     darkModeSprite: {fileID: 21300000, guid: 0db2119b5da775e4d8772a429f9ad059, type: 3}
