@@ -3044,7 +3044,7 @@ MonoBehaviour:
   checkWordTxt: {fileID: 1389664064}
   nextWordTxt: {fileID: 947479133}
   wordInputFieldHolderPrefab: {fileID: 7857989566756401837, guid: c3541a26aac0b9c48986a169487da94b, type: 3}
-  wordLetterInputPrefab: {fileID: 1032697241587179193, guid: a287a1566863930479dbb9e985532027, type: 3}
+  wordLetterInputPrefab: {fileID: 1032697241587179193, guid: 7f38c46aaee049a44ba258ee17e7eab6, type: 3}
   wordToTranslateText: {fileID: 1801618785}
   translatedCounter: {fileID: 1549139676}
   correctCounter: {fileID: 481028084}
@@ -5127,7 +5127,7 @@ MonoBehaviour:
   nextWordBtn: {fileID: 1193918029}
   wordAnchor: {fileID: 1446382200}
   inputfieldHolder: {fileID: 7857989566756401837, guid: c3541a26aac0b9c48986a169487da94b, type: 3}
-  singleInputfield: {fileID: 1032697241587179193, guid: a287a1566863930479dbb9e985532027, type: 3}
+  singleInputfield: {fileID: 1032697241587179193, guid: 7f38c46aaee049a44ba258ee17e7eab6, type: 3}
   correctClip: {fileID: 8300000, guid: ec9080b27fe10d742a1f96edd28cfee1, type: 3}
   incorrectClip: {fileID: 8300000, guid: b215b17f4dbfab846a36abc138c00822, type: 3}
   goodScoreThreshold: 0.5
@@ -17377,7 +17377,7 @@ MonoBehaviour:
   nextWordBtn: {fileID: 2049498992}
   wordAnchor: {fileID: 1168225792}
   inputfieldHolder: {fileID: 7857989566756401837, guid: c3541a26aac0b9c48986a169487da94b, type: 3}
-  singleInputfield: {fileID: 1032697241587179193, guid: a287a1566863930479dbb9e985532027, type: 3}
+  singleInputfield: {fileID: 1032697241587179193, guid: 7f38c46aaee049a44ba258ee17e7eab6, type: 3}
   correctClip: {fileID: 8300000, guid: ec9080b27fe10d742a1f96edd28cfee1, type: 3}
   incorrectClip: {fileID: 8300000, guid: b215b17f4dbfab846a36abc138c00822, type: 3}
   goodScoreThreshold: 0.5
