@@ -338,8 +338,8 @@ namespace SwedishApp.Minigames
                 }
 
                 //Like and subscribe
-                singleInputfields[i].onValueChanged.AddListener((s) => inputFieldHandling.GoNextField());
-                singleInputfields[i].onSelect.AddListener((s) => inputFieldHandling.GetActiveIndex(indexHolder));
+                singleInputfields[i].onValueChanged.AddListener(_ => inputFieldHandling.GoNextField());
+                singleInputfields[i].onSelect.AddListener(_ => inputFieldHandling.GetActiveIndex(indexHolder));
             }
             if (UIManager.Instance.LightmodeOn) LightmodeInputFields();
             else DarkmodeInputFields();
@@ -524,6 +524,7 @@ namespace SwedishApp.Minigames
             if (hintVisible)
             {
                 finnishHintTxt.text = activeWord.GetConjugatedFinnish(conjugateInto);
+                UIManager.Instance.FixTextSpacing(finnishHintTxt);
             }
             else
             {

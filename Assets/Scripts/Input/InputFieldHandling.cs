@@ -18,6 +18,7 @@ namespace SwedishApp.Input
         public int index;
         private bool controlHeld = false;
         private bool disableGoNext = false;
+        private bool stopNextCall = false;
 
         private void Awake()
         {
@@ -61,7 +62,7 @@ namespace SwedishApp.Input
 
                 index = 0;
                 inputField = holder.GetChild(index).GetComponent<MinigameInputField>();
-                inputField.ActivateInputField();
+                inputField.Select();
                 disableGoNext = false;
             }
         }
@@ -75,6 +76,7 @@ namespace SwedishApp.Input
         public void GetActiveIndex(int _index)
         {
             index = _index;
+            Debug.Log($"Active index is {index}");
             inputField = holder.GetChild(_index).GetComponent<MinigameInputField>();
             inputField.caretPosition = 0;
         }
@@ -87,7 +89,8 @@ namespace SwedishApp.Input
         /// this method</param>
         private void Navigate(Vector2 _input)
         {
-            if (!inputField.IsActive()) return;
+            Debug.Log($"Trying to navigate");
+            if (!inputField.IsActive() || _input == Vector2.zero) return;
 
             if (_input.y > 0)
             {
@@ -129,8 +132,8 @@ namespace SwedishApp.Input
                 }
                 else
                 {
-                    inputField.DeactivateInputField();
-                    inputField.ActivateInputField();
+                    inputField.stringPosition = 1;
+                    inputField.selectionStringAnchorPosition = 0;
                 }
             }
             //If moving right
@@ -159,8 +162,8 @@ namespace SwedishApp.Input
                 }
                 else
                 {
-                    inputField.DeactivateInputField();
-                    inputField.ActivateInputField();
+                    inputField.stringPosition = 1;
+                    inputField.selectionStringAnchorPosition = 0;
                 }
             }
         }
@@ -172,11 +175,12 @@ namespace SwedishApp.Input
         /// </summary>
         public void GoNextField()
         {
-            if (!inputField.IsActive() || disableGoNext) return;
+            if (!inputField.IsActive() || disableGoNext || stopNextCall) return;
             if (inputField.text == " ")
             {
+                stopNextCall = true;
                 inputField.text = "";
-                inputField.ActivateInputField();
+                stopNextCall = false;
                 return;
             }
 
@@ -187,12 +191,12 @@ namespace SwedishApp.Input
                 //If next field is interactable, set it active
                 if (nextField.interactable)
                 {
-                    nextField.ActivateInputField();
+                    nextField.Select();
                 }
                 //Else, if there is enough space and the input field is not interactable, skip it
                 else if (index > 1)
                 {
-                    holder.GetChild(index - 2).GetComponent<MinigameInputField>().ActivateInputField();
+                    holder.GetChild(index - 2).GetComponent<MinigameInputField>().Select();
                 }
             }
             //Go to next valid input field if the current field was filled
@@ -202,18 +206,18 @@ namespace SwedishApp.Input
                 //If next field is interactable, set it active
                 if (nextField.interactable)
                 {
-                    nextField.ActivateInputField();
+                    nextField.Select();
                 }
                 //If next field was not interactable and there is space, skip and activate next field
                 else if (index + 2 < holder.childCount)
                 {
-                    holder.GetChild(index + 2).GetComponent<MinigameInputField>().ActivateInputField();
+                    holder.GetChild(index + 2).GetComponent<MinigameInputField>().Select();
                 }
             }
             else
             {
-                inputField.DeactivateInputField();
-                inputField.ActivateInputField();
+                inputField.stringPosition = 1;
+                inputField.selectionStringAnchorPosition = 0;
             }
 
             AudioManager.Instance.PlayClip(inputClip);

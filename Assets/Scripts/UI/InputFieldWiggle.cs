@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace SwedishApp.UI
 {
@@ -20,7 +19,7 @@ namespace SwedishApp.UI
             rect = GetComponent<RectTransform>();
             waitTime = new(wiggleTimeOneWay);
 
-            GetComponent<TMP_InputField>().onValueChanged.AddListener((s) =>
+            GetComponent<TMP_InputField>().onValueChanged.AddListener(_ =>
             {
                 if (wiggleCoroutine != null)
                 {

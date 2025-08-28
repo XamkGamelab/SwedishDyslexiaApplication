@@ -245,8 +245,8 @@ namespace SwedishApp.Minigames
                 wordLetterInputFields.Add(Instantiate(wordLetterInputPrefab, wordInputFieldHolder).GetComponent<MinigameInputField>());
 
                 //Add listeners to input fields. These are used for navigating between each input field of the word
-                wordLetterInputFields[i].onValueChanged.AddListener((s) => inputFieldHandler.GoNextField());
-                wordLetterInputFields[i].onSelect.AddListener((s) => inputFieldHandler.GetActiveIndex(indexHolder));
+                wordLetterInputFields[i].onValueChanged.AddListener(_ => inputFieldHandler.GoNextField());
+                wordLetterInputFields[i].onSelect.AddListener(_ => inputFieldHandler.GetActiveIndex(indexHolder));
 
                 //If the letter in the word is a space, disable visuals and make input field unable to be interacted with
                 if (activeWordNoHighlight[i] == ' ')
