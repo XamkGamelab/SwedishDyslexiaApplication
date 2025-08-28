@@ -37,13 +37,13 @@ namespace SwedishApp.UI
             UIManager.Instance.LightmodeOffEvent += ToDarkmode;
             if (UIManager.Instance.LightmodeOn) ToLightmode();
             else ToDarkmode();
+            scrollbar.value = 1f;
+            goUpButton.gameObject.SetActive(false);
+            goDownButton.gameObject.SetActive(true);
         }
 
         private void OnEnable()
         {
-            scrollbar.value = 1f;
-            goUpButton.gameObject.SetActive(false);
-            goDownButton.gameObject.SetActive(true);
             scrollbar.onValueChanged.AddListener(ScrollbarHandler);
         }
 
