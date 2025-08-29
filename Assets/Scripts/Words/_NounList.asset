@@ -219,8 +219,8 @@ MonoBehaviour:
     wordDefinitivePluralEnd: \u00ADna
   - swedishWord: ut\u00ADbild\u00ADning
     finnishWord: kou\u00ADlu\u00ADtus
-    darkModeSprite: {fileID: 21300000, guid: 9c01cfcf5fbdfc545a57c79bfaba8e69, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 42b2857a39cce5b4a8ad6331081019f0, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: e290b5eb1cf993f45a704da63c01544f, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: c436ce3bea72f654cb1b1e3c1fc66c35, type: 3}
     enOrEtt: 1
     declensionClass: 2
     finnishPlural: kou\u00ADlu\u00ADtuk\u00ADset

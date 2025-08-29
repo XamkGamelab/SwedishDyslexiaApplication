@@ -121,12 +121,12 @@ MonoBehaviour:
     wordDefinitiveEnd: kom\u00ADman\u00ADde
     definitivePluralIsRegular: 1
     wordDefinitivePluralIrregular: kom\u00ADman\u00ADde
-    comparativeIsRegular: 1
+    comparativeIsRegular: 0
     wordComparativeEnd: kom\u00ADman\u00ADde
-    comparativeDefinitiveIsRegular: 1
-    superlativeIsRegular: 1
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 0
     wordSuperlativeEnd: kom\u00ADman\u00ADde
-    superlativeDefinitiveIsRegular: 1
+    superlativeDefinitiveIsRegular: 0
     wordDefinitiveSuperlativeEnd: kom\u00ADman\u00ADde
   - swedishWord: kort
     finnishWord: ly\u00ADhyt
@@ -159,7 +159,7 @@ MonoBehaviour:
     genderedHyphenatesIrregularly: 0
     comparativeHyphenatesIrregularly: 0
     superlativeHyphenatesIrregularly: 0
-    wordUsesMerMest: 0
+    wordUsesMerMest: 1
     wordCoreWithIrregularHyphenation: lik\u00ADnan\u00ADde
     wordEnEnd: 
     wordEttEnd: 
@@ -259,13 +259,13 @@ MonoBehaviour:
     wordDefinitiveEnd: nuvarande
     definitivePluralIsRegular: 1
     wordDefinitivePluralIrregular: 
-    comparativeIsRegular: 1
-    wordComparativeEnd: 
-    comparativeDefinitiveIsRegular: 1
-    superlativeIsRegular: 1
-    wordSuperlativeEnd: 
-    superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: 
+    comparativeIsRegular: 0
+    wordComparativeEnd: nu\u00ADva\u00ADran\u00ADde
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: nu\u00ADva\u00ADran\u00ADde
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: nu\u00ADva\u00ADran\u00ADde
   - swedishWord: o\u00ADprak\u00ADtisk
     finnishWord: "e\\u00ADp\xE4\\u00ADk\xE4y\\u00ADt\xE4n\\u00ADn\xF6l\\u00ADli\\u00ADnen"
     darkModeSprite: {fileID: 21300000, guid: 548c991027c820d4b8e7499fb50363d0, type: 3}
@@ -351,13 +351,13 @@ MonoBehaviour:
     wordDefinitiveEnd: 
     definitivePluralIsRegular: 1
     wordDefinitivePluralIrregular: 
-    comparativeIsRegular: 1
-    wordComparativeEnd: are
-    comparativeDefinitiveIsRegular: 1
-    superlativeIsRegular: 1
-    wordSuperlativeEnd: ast
-    superlativeDefinitiveIsRegular: 1
-    wordDefinitiveSuperlativeEnd: as\u00ADte
+    comparativeIsRegular: 0
+    wordComparativeEnd: "sp\xE4n\\u00ADnan\\u00ADde"
+    comparativeDefinitiveIsRegular: 0
+    superlativeIsRegular: 0
+    wordSuperlativeEnd: "sp\xE4n\\u00ADnan\\u00ADde"
+    superlativeDefinitiveIsRegular: 0
+    wordDefinitiveSuperlativeEnd: "sp\xE4n\\u00ADnan\\u00ADde"
   - swedishWord: stor
     finnishWord: iso
     darkModeSprite: {fileID: 21300000, guid: f851bdc0ea0a0ef49acfd79fca5eada2, type: 3}

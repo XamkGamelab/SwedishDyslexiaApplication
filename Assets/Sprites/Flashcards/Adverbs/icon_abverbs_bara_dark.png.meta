@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e290b5eb1cf993f45a704da63c01544f
+guid: 05576e6cae86dfd4eae22653e33946d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8219163413556770260
-    second: icon_noun_Utbildning_dark_0
+      213: 7885274865730587191
+    second: icon_abverbs_bara_dark_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: icon_noun_Utbildning_dark_0
+      name: icon_abverbs_bara_dark_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 230
-        height: 211
+        width: 153
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d530ffd395501270800000000000000
-      internalID: 8219163413556770260
+      spriteID: 73a003066bf1e6d60800000000000000
+      internalID: 7885274865730587191
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      icon_noun_Utbildning_dark_0: 8219163413556770260
+      icon_abverbs_bara_dark_0: 7885274865730587191
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
