@@ -15,8 +15,8 @@ MonoBehaviour:
   grammarList:
   - swedishWord: bara
     finnishWord: vain
-    darkModeSprite: {fileID: 0}
-    lightModeSprite: {fileID: 0}
+    darkModeSprite: {fileID: 21300000, guid: 05576e6cae86dfd4eae22653e33946d7, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 2af44e81ad9f04d4b9aa79e569182114, type: 3}
     notices: 
   - swedishWord: bland an\u00ADnat
     finnishWord: muun muas\u00ADsa
@@ -85,8 +85,8 @@ MonoBehaviour:
     notices: 
   - swedishWord: "\xE4n"
     finnishWord: "vie\\u00ADl\xE4"
-    darkModeSprite: {fileID: 21300000, guid: 23bf173f66abd8f44833a6a029677064, type: 3}
-    lightModeSprite: {fileID: 21300000, guid: 6649785e8a4f5f74db432d5676b200dd, type: 3}
+    darkModeSprite: {fileID: 21300000, guid: 15c51df409de2394aaf343ddf1eb2a7e, type: 3}
+    lightModeSprite: {fileID: 21300000, guid: 02b21b8fe42900c48806a236604a99f5, type: 3}
     notices: "tahansa, hyv\xE4ns\xE4"
   - swedishWord: "\xE4n\\u00ADnu"
     finnishWord: "vie\\u00ADl\xE4"
