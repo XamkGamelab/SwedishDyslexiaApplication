@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icon_conjunction_om_dark_0: -7949220065055953620
+      icon_conjunction_om_dark_1: -6908838561608942858
+      icon_conjunction_om_dark_2: -479456004058894982
+      icon_conjunction_om_dark_3: -3594393649004738156
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

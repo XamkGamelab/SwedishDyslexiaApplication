@@ -78,7 +78,7 @@ MonoBehaviour:
     comparativeIsRegular: 1
     wordComparativeEnd: 
     comparativeDefinitiveIsRegular: 1
-    superlativeIsRegular: 1
+    superlativeIsRegular: 0
     wordSuperlativeEnd: 
     superlativeDefinitiveIsRegular: 1
     wordDefinitiveSuperlativeEnd: 
@@ -168,10 +168,10 @@ MonoBehaviour:
     definitivePluralIsRegular: 0
     wordDefinitivePluralIrregular: 
     comparativeIsRegular: 0
-    wordComparativeEnd: 
+    wordComparativeEnd: lik\u00ADnan\u00ADde
     comparativeDefinitiveIsRegular: 0
     superlativeIsRegular: 0
-    wordSuperlativeEnd: 
+    wordSuperlativeEnd: lik\u00ADnan\u00ADde
     superlativeDefinitiveIsRegular: 0
     wordDefinitiveSuperlativeEnd: 
   - swedishWord: li\u00ADten
